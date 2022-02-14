@@ -1,0 +1,9 @@
+<div class="container">
+    <app-header [pageName]="'menu.plan'"></app-header>
+    <div class="plan">
+        <app-select [group]="form" [collapsed]="true" controlName="floor" translatePrefix="building-plan" [options]="floors"></app-select>
+        <div>
+            <img [src]="'../../../assets/svg/map/' + selectedFloor + '.svg'">
+        </div>
+    </div>
+</div>

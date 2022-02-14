@@ -1,0 +1,43 @@
+<div class="router-child">
+    <ng-container *ngIf="!isLoading">
+        <i class="las la-arrow-left back" (click)="previousPage()"></i>
+        <div *ngIf="viewCounter === 0" class="view">
+            <h5>{{'competitor-zone.add-fight-result.title.1.1' | translate}}<span>{{'competitor-zone.add-fight-result.title.1.2' | translate}}</span></h5>
+            <span>{{'competitor-zone.add-fight-result.1.1' | translate}}</span>
+            <div class="grid">
+                <div>
+                    <p>{{'competitor-zone.add-fight-result.1.2' | translate}}<br><label>{{walka?.robot1_nazwa}}</label></p>
+                    <app-input [group]="formUUID1" controlName="constructor_uuid"></app-input>
+                    <button class="submit-button grid-button" (click)="callTheConstructor(walka.robot1_uuid, walka.robot1_nazwa)">{{'competitor-zone.add-fight-result.1.3' | translate}} {{walka?.robot1_nazwa}}&nbsp;<i class="las la-sms"></i></button>
+                </div>
+                <div>
+                    <p>{{'competitor-zone.add-fight-result.1.2' | translate}}<br><label>{{walka?.robot2_nazwa}}</label></p>
+                    <app-input [group]="formUUID2" controlName="constructor_uuid"></app-input>
+                    <button class="submit-button grid-button" (click)="callTheConstructor(walka.robot2_uuid, walka.robot2_nazwa)">{{'competitor-zone.add-fight-result.1.3' | translate}} {{walka?.robot2_nazwa}}&nbsp;<i class="las la-sms"></i></button>
+
+                </div>
+            </div>
+            <button class="submit-button" [disabled]="!isFormUserUUIDValid && !userService.isAdmin" (click)="goToSetFight()">{{'competitor-zone.add-fight-result.next' | translate}}<i class="las la-forward"></i></button>
+        </div>
+        <div *ngIf="viewCounter === 1" class="robots view">
+            <h5>{{'competitor-zone.add-fight-result.title.1.1' | translate}}<span>{{'competitor-zone.add-fight-result.title.1.2' | translate}}</span></h5>
+            <span>{{'competitor-zone.add-fight-result.2.1' | translate}}</span>
+            <div class="grid grid-2">
+                <div>
+                    <p>{{'competitor-zone.add-fight-result.2.2' | translate}}<br><label>{{walka?.robot1_nazwa}}</label></p>
+                    <app-input [group]="formResult1" controlName="fight_result" class="result" type="number"></app-input>
+                </div>
+                <span>VS</span>
+                <div>
+                    <p>{{'competitor-zone.add-fight-result.2.2' | translate}}<br><label>{{walka?.robot2_nazwa}}</label></p>
+                    <app-input [group]="formResult2" controlName="fight_result" class="result" type="number"></app-input>
+                </div>
+            </div>
+            <button class="submit-button" [disabled]="!isFormResultValid" (click)="setFight()">{{'competitor-zone.add-fight-result.add' | translate}}<i class="las la-forward"></i></button>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="isLoading">
+        <app-spinner></app-spinner>
+    </ng-container>
+
+</div>

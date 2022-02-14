@@ -1,0 +1,22 @@
+<div class="router-child">
+    <div class="filter">
+        <div>
+            <h5><span>{{'competitor-zone.robots.title.1' | translate}}</span>{{'competitor-zone.robots.title.2' | translate}}</h5>
+            <label *ngIf="robotsFiltered">{{'competitor-zone.competitors.on-list' | translate}}{{robotsFiltered.length}}</label>
+        </div>
+        <app-select [group]="formOption" [collapsed]="true" controlName="filter" translatePrefix="controls" [options]="filterOptions"></app-select>
+        <app-input [group]="formFilter" [collapsed]="true" controlName="filter_name"></app-input>
+    </div>
+    <div class="my-robots">
+        <div class="my-robots-element" *ngFor="let robot of robotsFiltered" (click)="editRobot(robot.robot_uuid)">
+            <div class="my-robots-element-info">
+                <p class="my-robots-element-uuid">{{robot.robot_uuid}}</p>
+                <p class="my-robots-element-name">{{robot.nazwa_robota}}</p>
+            </div>
+            <span class="my-robots-element-categories">{{robot.kategorie}}</span>
+            <span class="my-robots-element-edit">{{'competitor-zone.competitors.more' | translate}}<i class="las la-angle-double-right"></i></span>
+            <button *ngIf="robot.czy_dotarl === 0 && userService.isAdmin" class="submit-button confirm" (click)="confirmArrival(robot, $event)">{{'competitor-zone.robots.confirm' | translate}}</button>
+        </div>
+        <app-spinner *ngIf="!allRobots"></app-spinner>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="router-child">
+    <div class="scroll">
+        <section class="top">
+            <a>{{'competitor-zone.settings.user'  | translate}}</a>
+            <div class="row">
+                <app-input [group]="formName" controlName="name"></app-input>
+                <app-input [group]="formName" controlName="surname"></app-input>
+                <button *ngIf="authService.canModify" class="submit-button" [disabled]="!isFormGroupNameValid" (click)="onSubmitNameForm()"><i class="las la-save"></i></button>
+            </div>
+            <div class="row">
+                <div class="uuid">
+                    <span>{{'menu.uuid' | translate}}</span>
+                    <div (click)="copyUUID()">
+                        <a>{{userService.userUUID}}</a>
+                        <i class="las la-copy"></i>
+                    </div>
+                </div>
+                <label>{{'competitor-zone.settings.user-info'  | translate}}</label>
+            </div>
+        </section>
+        <section>
+            <a>{{'competitor-zone.settings.phone'  | translate}}</a>
+            <ng-container *ngIf="!confirmingPhone">
+                <div class="row">
+                    <app-phone [group]="formPhone" controlName="phone" phoneCodeControlName="country_code"></app-phone>
+                    <button class="submit-button" [disabled]="!isFormGroupPhoneValid || !isPhoneChanged" (click)="onSubmitPhone()"><i class="las la-save"></i></button>
+                </div>
+                <label>{{'competitor-zone.settings.phone-info'  | translate}}</label>
+            </ng-container>
+            <ng-container *ngIf="confirmingPhone">
+                <div class="row">
+                    <app-input [group]="formCode" controlName="code"></app-input>
+                    <button class="submit-button" [disabled]="!isFormGroupCodeValid" (click)="onConfirmCode()"><i class="las la-save"></i></button>
+                </div>
+            </ng-container>
+        </section>
+        <section>
+            <a>{{'competitor-zone.settings.password'  | translate}}</a>
+            <app-input [group]="formPassword" controlName="actualPassword"></app-input>
+            <app-input [group]="formPassword" controlName="newPassword"></app-input>
+            <div class="row">
+                <app-input [group]="formPassword" controlName="repeatNewPassword"></app-input>
+                <button class="submit-button" [disabled]="!isFormGroupPasswordValid" (click)="onSubmitPasswordForm()"><i class="las la-save"></i></button>
+            </div>
+            <label><br></label>
+        </section>
+    </div>
+
+</div>

@@ -1,0 +1,11 @@
+<div class="top" [formGroup]="group" [ngClass]="{'collapsed': collapsed}">
+    <div class="form">
+        <select type="text" [id]="controlName" class="form__select" [ngClass]="{'form__select-invalid': isFormInvalid, 'choosed': isSeleted}" [formControlName]="controlName" [name]="controlName">
+            <option *ngFor="let option of getOptions" [value]="option.id" [selected]="option.id === 1">{{option.value | translate}}</option>
+        </select>
+        <label [for]="controlName" class="form__label" [ngClass]="{'form__label-invalid': isFormInvalid, 'selected': isSeleted}">{{(translatePrefix+'.'+controlName+'.name') | translate}}</label>
+    </div>
+    <div class="errors" *ngIf="isFormInvalid">
+        <span *ngFor="let error of getErrors">{{(translatePrefix+'.'+controlName+'.validators.'+error) | translate}}</span>
+    </div>
+</div>

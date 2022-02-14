@@ -1,0 +1,1050 @@
+{
+    "menu": {
+        "home": "Strona główna",
+        "tutorial": "Poradnik zawodnika",
+        "program": "Program wydarzenia",
+        "competitions": "Konkurencje",
+        "location": "Lokalizacja",
+        "patreons": "Patroni",
+        "results": "Wyniki",
+        "timetable": "Harmonogram",
+        "plan": "Plan budynku",
+        "competitor-zone": "Strefa Zawodnika",
+        "app-rules": "Regulamin i polityka prywatności",
+        "hello": "Witaj",
+        "logout": "Wyloguj",
+        "uuid": "Identyfikator użytkownika (UUID):"
+    },
+    "home": {
+        "event-info": {
+            "status": {
+                "ended": "Wydarzenie zakończyło się",
+                "live": "Wydarzenie właśnie trwa!",
+                "coming": "Wydarzenie zaczyna się za"
+            },
+            "time": {
+                "days": "Dni",
+                "hours": "Godzin",
+                "minutes": "Minut",
+                "seconds": "Sekund"
+            },
+            "university": {
+                "hall": "Regionalne Centrum Sportowo-Widowiskowe",
+                "name": "\"Podpromie\""
+            },
+            "covid": {
+                "1": "Wstęp na wydarzenie jest całkowicie darmowy. Podczas trwania wydarzenia na terenie obiektu należy obowiązkowo przestrzegać regulaminu znajdującego się w zakładce",
+                "2": "'Regulamin i polityka prywatności'",
+                "3": "oraz stosować się do restrykcji epidemiologicznych m.in. dezynfekcji rąk i noszenia maseczek."
+            },
+            "details": "Po krótkiej przerwie jedne z najlepszych zawodów w Polsce powracają do Rzeszowa z wielkim przytupem! Tym razem oprócz klasycznych konkurencji typu Sumo, czy LineFollower, jako pierwsi w Polsce przygotowaliśmy dla Was wyjątkową kategorię - Smash Bots by RoboLAB! Młodszym uczestnikom  z pewnością spodobają się konkurencje związane z LEGO, natomiast jeżeli ktoś ma chęć jedynie przyjść i pooglądać - na pewno nie będzie się nudzić.",
+            "results": "Zobacz wyniki!",
+            "open": "Rejestracja jest jeszcze otwarta!",
+            "important": "Ważne informacje dla konstruktorów robotów kategorii Line Follower, Drag Race, Micromouse oraz SmashBots by RoboLAB (28.10.2021)",
+            "important-choose": "!!! WAŻNE !!! Ankieta dla zawodników"
+        },
+        "event-program": {
+            "eventsList": [
+                { "id": 1, "name": "Ekscytujące konkurencje", "description": "Uczestnicy będą mogli zmierzyć się w aż 8 kategoriach czyli 15 konkurencjach. Organizatorzy przygotowali areny do zmagań na torach dla LineFollower’ów czy walk Sumo. Sam tor w kategorii LF przetestuje umiejętności programistyczne i konstrukcyjne wielu robotyków. Oprócz standardowych konkurencji organizatorzy przygotowali wiele niespodzianek. Każdy konstruktor niezależnie czy dopiero zaczyna przygodę z elektroniką czy jest już doświadczony na pewno znajdzie coś dla siebie. Nie zabraknie także konkurencji dedykowanych fanom marki LEGO®.", "icon": "la-trophy" },
+                { "id": 2, "name": "Po raz pierwszy w Polsce", "description": "Tegoroczna edycja powraca z dużym hukiem. W związku z tym organizatorzy pragną zaprosić wszystkich do wzięcia udziału w specjalnej konkurencji by RoboLab: Smash Bots! Potężne, zdalnie sterowane śmiercionośne maszyny staną do walki w dedykowanej zamkniętej arenie. Ze względu na pierwsze takie wydarzenie w Polsce organizatorzy zmniejszyli wymagania maszyn do rozmiarów 30x30 (wysokość max 2 metry). Zachęcamy wszystkich miłośników, studentów oraz uczniów aby spróbowali swoich sił i wzięli udział w tej niesamowitej walce. Do zgarnięcia za podium będą nagrody pieniężne.", "icon": "la-robot" },
+                { "id": 3, "name": "Najlepsi konstruktorzy", "description": "Każda edycja ROBO~motion skupia wielu profesjonalistów, entuzjastów i uczonych w dziedzinie robotyki. Jest to niesamowita okazja aby nawiązać nowe kontakty, zetknąć się ze specjalistami podczas pracy lub poznać najcenniejsze tajniki techniki od osób z całego świata. Przyjedź, pokaż się od jak najlepszej strony i zagwarantuj sobie świetlaną przyszłość!", "icon": "la-wrench" }
+            ]
+        },
+        "competitions": {
+            "title": "KONKURENCJE",
+            "learn": "DOWIEDZ SIĘ WIĘCEJ",
+            "regulations": "Regulamin",
+            "categories": [
+                { "id": 1, "name": "Smash Bots by RoboLAB", "description": "Smash Botsy by RoboLAB to z pewnością najbardziej wymagająca konkurencja na naszych zawodach! W specjalnej arenie zdalnie sterowane roboty będą walczyć ze sobą do ostaniego tchu. Tutaj będzie się wiele działo!", "icon": "battlebot.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/ErCZ78rxSrpKs8EPimRWR0YBZNeY4CiKhoORwosxpt8iXQ?e=eyWCg8" },
+                { "id": 2, "name": "Freestyle", "description": "W tej konkurencji zawodnicy mogą wystawić całkowicie dowolny projekt, robota lub maszynę. Konstrukcje są oceniane prze sędziów oraz odwiedzających. Każdy głosujący wypełnia ankietę, w której przyznaje punkty każdemu projektowi, dlatego ważne jest, aby każdy zawodnik jak najlepiej zaprezentował swój projekt.", "icon": "freestyle.gif", "linkToRegulation": "https://bit.ly/robomotion21fs" },
+                { "id": 3, "name": "Robot Sprint", "description": "Robot sprint to konkurencja, w której liczy się nie tylko pomysłowość ale także szybkość poruszania się robota po planszy. W tej konkurencji udział mogą wziąć wszystkie roboty, których sposób poruszania przypomina chodzenie. Wygrana będzie należała do robota, który uzbiera największą ilość punktów podczas wszystkich rund.", "icon": "humanoid_sprint.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/EuHkMduHWcdGrRk0_ZHTSuYBZMeydZy-cCFBMRvDA-5iIA?e=7fscaM" },
+                { "id": 4, "name": "Line Follower", "description": "Celem robota w tej konkurencji jest jak najszybsze pokonanie trasy wyznaczonej przez czarną linię narysowaną na planszy. Robot musi poruszać się po linii możliwie dokładnie, bez omijania czy ścinania zakrętów.", "icon": "line_follower.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/Erv3ruktMJtImHEgknuiI8EB5tQCTr3wcBGiN_7RSbGXSA?e=8Rcm8i" },
+                { "id": 5, "name": "Micromouse", "description": "Robot ma za zadanie odnaleźć najszybszą drogę od pola startu do obszaru składającego się z czterech pól ułożonych w kwadrat. Robot musi być bardzo dokładny, aby nie odbijał się od ścianek.", "icon": "micromouse.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/EvYRR3lUptJEpI-C4x7lImMBarbOxNHynINVX_kPnTS5Xw?e=ElSUyd" },
+                { "id": 6, "name": "Cebula House", "description": "Jest to zmodyfikowana wersja konkurencji znanej pod nazwą Ketchup House. My postawiliśmy na polskie produkty i smaki, dlatego na naszych zawodach przedmiotem do zbierania będzie cebula. Bo czemu nie? Na tą konkurencję można się stawić z samodzielnie wyselekcjonowaną cebulą.", "icon": "onion_house.gif", "linkToRegulation": "https://bit.ly/robomotion21oh" },
+                { "id": 7, "name": "Sumo", "description": "Roboty niczym zawodnicy SUMO muszą wypchnąć przeciwnika poza specjalnie przygotowany ring. Wiele kategorii pozwoli z łatwością wybrać odpowiednią klasę robota dla swoich preferencji i możliwości.", "icon": "sumo.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/EgFJDKRkgFNMsfiUJ7UXLf4BTxsKUOtO2AborrY1uriUIA?e=3KVkGb" },
+                { "id": 8, "name": "LEGO® Tug of War", "description": "Ta konkurencja jest również zupełnie nowa! Dwa roboty ustawione naprzeciwko siebie, będą rywalizować w przeciąganiu liny. Wygrywa ten, któremu uda się przeciągnąć większą część liny na swoją stronę. Konkurencja ta jest przeznaczona jedynie dla robotów zbudowanych z klocków LEGO®", "icon": "tug_of_war.gif", "linkToRegulation": "https://bit.ly/robomotion21tow" }
+            ]
+        },
+        "location": {
+            "title": "LOKALIZACJA",
+            "showOnMap": "Pokaż na mapie"
+        },
+        "patreons": {
+            "organizer": {
+                "title": "ORGANIZATORZY",
+                "name": "Koło Naukowe Automatyków i Robotyków “ROBO”"
+            },
+            "organizer2": {
+                "title": "ORGANIZER",
+                "name": "Fundacja Wspierania Edukacji przy Stowarzyszeniu Dolina Lotnicza",
+                "src": "../../assets/svg/Fundacja-white-pl.svg"
+            },
+            "organizer3": {
+                "title": "ORGANIZER",
+                "name": "RoboLAB – Local STEM Incubator"
+            },
+            "organizer4": {
+                "title": "ORGANIZER",
+                "name": "PTI - Polskie Towarzystwo Informatyczne"
+            },
+            "organizer5": {
+                "title": "ORGANIZER",
+                "name": "Rzeszowska Grupa IT"
+            },
+            "organizer6": {
+                "title": "ORGANIZER",
+                "name": "Koło Naukowe Elektroniki i Technologii Informacyjnych"
+            },
+            "title": "Partnerzy",
+            "question": "Chcesz zostać patronem? Skontaktuj się z nami pod adresem kontakt@kneiti.prz.edu.pl",
+            "patreonList": [
+                { "id": 1, "patreonCategory": 1, "description": "WAGO", "image": "../../assets/svg/wago.png", "linkToSite": "https://www.wago.com/" },
+                { "id": 2, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/svg/forbot.svg", "linkToSite": "https://forbot.pl/" },
+                { "id": 3, "patreonCategory": 6, "description": "Botland", "image": "../../assets/jpg/botland.webp", "linkToSite": "https://botland.com.pl/" },
+                { "id": 5, "patreonCategory": 6, "description": "Kurier Rzeszowski", "image": "../../assets/jpg/kurier.jpg", "linkToSite": "https://kurierrzeszowski.pl/" },
+                { "id": 6, "patreonCategory": 6, "description": "Biznes i styl", "image": "../../assets/jpg/biznesistyl.jpg", "linkToSite": "https://www.biznesistyl.pl/" },
+                { "id": 8, "patreonCategory": 1, "description": "Europa Systems", "image": "../../assets/jpg/es.png", "linkToSite": "https://europasystems.pl/" },
+                { "id": 9, "patreonCategory": 1, "description": "Stowarzyszenie Elektryków Polskich Oddział Rzeszowski", "image": "../../assets/jpg/sep.gif", "linkToSite": "http://www.seprzeszow.pl/" },
+                { "id": 10, "patreonCategory": 1, "description": "EDOCS", "image": "../../assets/jpg/edocs.png", "linkToSite": "https://edocssystems.com/" },
+                { "id": 11, "patreonCategory": 0, "description": "BorgWarner", "image": "../../assets/jpg/borg.png", "linkToSite": "https://www.pracuj.pl/praca/borgwarner%20poland%20sp.%20z%20o.o.%20-%20morse%20systems;en" },
+                { "id": 17, "patreonCategory": 0, "description": "Pratt & Whitney", "image": "../../assets/jpg/pratt.png", "linkToSite": "https://pwrze.com/" },
+                { "id": 12, "patreonCategory": 0, "description": "Deloitte", "image": "../../assets/svg/deloitte.svg", "linkToSite": "https://www2.deloitte.com/pl/pl.html" },
+                { "id": 13, "patreonCategory": 4, "description": "Studenckie Koło Naukowe Informatyków KOD", "image": "../../assets/jpg/skni.png", "linkToSite": "https://kod.prz.edu.pl/" },
+                { "id": 14, "patreonCategory": 4, "description": "Koło fotograficzne Uniwersytetu Rzeszowskiego LENS", "image": "../../assets/jpg/lens.png", "linkToSite": "https://www.facebook.com/Lens.Uniwersytet.Rzeszowski/" },
+                { "id": 15, "patreonCategory": 0, "description": "MTU Aero Engines Polska", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/company/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
+                { "id": 4, "patreonCategory": 0, "description": "Sędziszów Małopolski", "image": "../../assets/jpg/sedziszow.png", "linkToSite": "https://sedziszow-mlp.pl/" },
+                { "id": 16, "patreonCategory": 2, "description": "Toltech", "image": "../../assets/jpg/toltech.png", "linkToSite": "http://www.toltech.pl/" },
+                { "id": 18, "patreonCategory": 4, "description": "Podkarpackie Centrum Ratownictwa Medycznego", "image": "../../assets/jpg/pcmr.png", "linkToSite": "https://pcrm.com.pl/" },
+                { "id": 19, "patreonCategory": 4, "description": "OSP Sietesz", "image": "../../assets/jpg/osp.png", "linkToSite": "https://www.facebook.com/Ochotnicza-Stra%C5%BC-Po%C5%BCarna-w-Sieteszy-159280490780836/" },
+                { "id": 21, "patreonCategory": 5, "description": "Rzeszów stolica innowacji", "image": "../../assets/jpg/rzeszow_stolica.png", "linkToSite": "https://www.erzeszow.pl/" },
+                { "id": 20, "patreonCategory": 4, "description": "OSP Łopuszka Mała", "image": "../../assets/jpg/osp2.png", "linkToSite": "https://www.facebook.com/OSP-%C5%81opuszka-Ma%C5%82a-105292021378333/" },
+                { "id": 17, "patreonCategory": 0, "description": "Prezydent Miasta Rzeszowa", "image": "../../assets/jpg/rzeszow.png", "linkToSite": "https://bip.erzeszow.pl/" },
+                { "id": 17, "patreonCategory": 5, "description": "Marszałek Województwa Podkarpackiego", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/index.php/zarzad-wojewodztwa/" },
+                { "id": 17, "patreonCategory": 5, "description": "Podkarpacki Kurator Oświaty", "image": "../../assets/jpg/kuratorium.png", "linkToSite": "https://www.ko.rzeszow.pl/" },
+                { "id": 17, "patreonCategory": 6, "description": "msalamon.pl", "image": "../../assets/jpg/salamon.png", "linkToSite": "https://msalamon.pl/" },
+                { "id": 17, "patreonCategory": 1, "description": "InfoSoftware", "image": "../../assets/jpg/infosoft.png", "linkToSite": "https://infosoftware.pl/" },
+                { "id": 17, "patreonCategory": 1, "description": "Kawasaki Robotics", "image": "../../assets/jpg/astor.png", "linkToSite": "https://www.kawasakirobotics.pl/" },
+                { "id": 17, "patreonCategory": 1, "description": "Solvera", "image": "../../assets/jpg/solvera.png", "linkToSite": "http://solvera.pl/" },
+                { "id": 17, "patreonCategory": 3, "description": "Cobot Planet", "image": "../../assets/jpg/cobot.png", "linkToSite": "https://www.cobotplanet.com/pl/" },
+                { "id": 17, "patreonCategory": 2, "description": "Autopart", "image": "../../assets/jpg/autopart.png", "linkToSite": "https://www.autopart.pl/" },
+                { "id": 17, "patreonCategory": 0, "description": "Urząd Marszałkowski", "image": "../../assets/jpg/podkarpackie.png", "linkToSite": "https://podkarpackie.eu/" },
+                { "id": 17, "patreonCategory": 6, "description": "TVP 3 Rzeszów", "image": "../../assets/jpg/tvp.jpg", "linkToSite": "https://rzeszow.tvp.pl/" },
+                { "id": 17, "patreonCategory": 2, "description": "Podkarpacka Izba Inżynierów Budownictwa", "image": "../../assets/jpg/izba.png", "linkToSite": "https://www.inzynier.rzeszow.pl/" },
+                { "id": 17, "patreonCategory": 4, "description": "Zespół Szkół Technicznych", "image": "../../assets/jpg/zst.png", "linkToSite": "http://www.zstrzeszow.pl/" },
+                { "id": 17, "patreonCategory": 2, "description": "Centrum usług dronowych", "image": "../../assets/jpg/cud.png", "linkToSite": "https://centrumdronowe.pl/" },
+                { "id": 17, "patreonCategory": 6, "description": "Radio Feniks", "image": "../../assets/jpg/feniks.png", "linkToSite": "http://feniks.fm/" },
+                { "id": 17, "patreonCategory": 2, "description": "{e-bi}", "image": "../../assets/jpg/ebi.png", "linkToSite": "https://e-bi.pl/" },
+                { "id": 17, "patreonCategory": 6, "description": "Radio Centrum 89.0 FM Rzeszów", "image": "../../assets/jpg/radio_centrum.png", "linkToSite": "https://www.facebook.com/radiocentrum/" }
+
+
+            ],
+            "tiers": [
+                "Partner Główny",
+                "Partner Złoty",
+                "Partner Srebrny",
+                "Partner Brązowy",
+                "Partner strategiczny",
+                "Patronat specjalny",
+                "Patronat medialny"
+            ]
+        },
+        "footer": {
+            "copyright": "Prawa autorskie",
+            "designed": "Zaprojektowane i opracowane przez",
+            "developer": "Rafała Nazarko"
+        }
+    },
+    "results": {
+        "info": "Wyniki będą się pojawiać w tym miejscu"
+    },
+    "timetable": {
+        "info": "Harmonogram może się zmienić. Prosimy obserwować tę stronę w celu uzyskania najnowszych informacji.\nWszystkie kategorie poza Freestyle odbywają się na głównej płycie hali, Roboty kategorii Freestyle można oglądać w korytarzu przy wejściu. Na płytę główną mogą wejść TYLKO i WYŁĄCZNIE osoby posiadające stosowne identyfikatory.",
+        "time": "Godzina",
+        "onion": "Cebula House",
+        "register": "Rejestracja zawodników",
+        "viewers": "Otworzenie trybun dla widowni",
+        "brief": "Odprawa dla wszystkich zawodników (Strefa Zawodnika)",
+        "open": "OFICJALNE ROZPOCZĘCIE VI MIĘDZYNARODOWYCH ZAWODÓW ROBOTÓW ROBO~motion 2021",
+        "draw-groups": "Losowanie grup",
+        "draw": "Losowanie",
+        "rides": "Przejazdy punktowane",
+        "fights": "Walki punktowane",
+        "exhibition": "Wystawa",
+        "eliminations": "Walki eliminacyjne",
+        "ride": "Przejazd",
+        "fight1": "Walki - I tura",
+        "fight2": "Walki - II tura",
+        "fight3": "Walki - III tura",
+        "fight4": "Walki - IV tura (FINAŁY)",
+        "break": "Przerwa",
+        "technical-break": "Przerwa techniczna",
+        "results": "Ogłoszenie wyników",
+        "comission": "Ocena komisji",
+        "finals": "Walki finałowe"
+    },
+    "building-plan": {
+        "floor": {
+            "name": "Wybierz piętro"
+        },
+        "floors": {
+            "P": "Parking",
+            "0": "Parter",
+            "1": "Pierwsze piętro",
+            "2": "Drugie piętro",
+            "3": "Trzecie piętro"
+        }
+    },
+    "competitor-zone": {
+        "info": "Strefa zawodnika będzie otwarta wkrótce!",
+        "confirmation-code": {
+            "name": "Potwierdzanie tożsamości",
+            "button": "Przejdź do logowania",
+            "incorrect": "Podano niepoprawne dane.",
+            "activated": "Uzytkownik ma już potwierdzony email.",
+            "success": "Konto zostało potwierdzone! Możesz się teraz zalogować."
+        },
+        "login": {
+            "title": "Logowanie",
+            "sign-in": "Zaloguj się",
+            "havent": "Nie posiadasz jeszcze konta?",
+            "register": "Zarejestruj się!",
+            "forgotten": "Zapomniałem hasła",
+            "errors": {
+                "not-found": "Taki użytkownik nie istnieje!",
+                "not-activated": "Użytkownik nie został aktywowany",
+                "failed": "Podano błędny e-mail lub hasło",
+                "logout": "Pomyślnie wylogowano"
+            }
+        },
+        "forgot-password": {
+            "title": "Zapomniałem hasła",
+            "sign-in": "Wyślij kod",
+            "info": "Wprowadź adres e-mail podany przy zakładaniu konta. Zostanie na niego wysłany link z kodem, potrzebnym do zresetowania hasła i ustawienia nowego.",
+            "sended": {
+                "1": "Na adres email ",
+                "2": " został wysłany link z kodem do zresetowania hasła. Sprawdź swoją skrzynkę pocztową i dokończ procedurę resetowania hasła."
+            },
+            "errors": {
+                "sended": "Pomyślnie wysłano prośbę o zresetowanie hasła"
+            }
+        },
+        "reset-password": {
+            "title": "Resetowanie hasła",
+            "sign-in": "Ustaw nowe hasło",
+            "info": "Wprowadź nowe hasło do swojego konta. Od momentu potwierdzenia hasła, zacznie ono obowiązywać jako dane logowania do Twojego konta.",
+            "errors": {
+                "no-params": "Brak parametrów",
+                "success": "Pomyślnie ustawione nowe hasło do konta. Możesz się teraz zalogować!"
+            }
+        },
+        "register": {
+            "title": "Rejestracja",
+            "accept": "Akceptuję regulamin i politykę prywatności",
+            "sign-in": "Zarejestruj się",
+            "have": "Posiadasz już konto?",
+            "login": "Zaloguj się!",
+            "errors": {
+                "duplicate": "Uzytkownik o takim e-mailu już istnieje!",
+                "success": "Pomyślnie zarejestrowano. Potwierdź swoje konto poprzez wiadomość wysłaną na podany adres e-mail."
+            }
+        },
+        "bar": {
+            "my-robots": "MOJE ROBOTY",
+            "settings": "USTAWIENIA",
+            "referee-zone": "STREFA SĘDZIEGO",
+            "competitors": "ZAWODNICY",
+            "robots": "ROBOTY",
+            "statistics": "STATYSTYKI",
+            "hello": {
+                "1": "Witaj w ",
+                "2": "Strefie Zawodnika!",
+                "3": " Wybierz jedną z aktywności dostępnych w panelu"
+            },
+            "help": "Pomoc",
+            "time-left": "Czas do końca edycji robotów",
+            "time-left-sb": "Czas do końca dodawania robotów w kategorii Smash Bots",
+            "time-up": "Czas na edycję robotów zakończył się!",
+            "time-up-sb": "Czas na dodawanie robotów w kategorii Smash Bots zakończył się!"
+        },
+        "my-robots": {
+            "title": "MOJE ROBOTY",
+            "add": "Dodaj robota",
+            "edit": "Edytuj",
+            "view": "Przeglądaj"
+        },
+        "new-robot": {
+            "category": {
+                "name": "Kategoria",
+                "validators": {
+                    "required": "To pole jest wymagane"
+                }
+            },
+            "add": "Dodaj",
+            "h1": {
+                "1": "Dodaj nowego ",
+                "2": "robota"
+            },
+            "p": {
+                "1": "*Rekomendujemy aby nie dodawać więcej niż ",
+                "2": "jednego",
+                "3": " robota w kategorii. Może to spowodować błędy logistyczne i uniemożliwić udział robota w rozgrywkach."
+            },
+            "success": "Pomyślnie dodano nowego robota"
+        },
+        "robot": {
+            "category": {
+                "name": "Nowa kategoria",
+                "validators": {
+                    "required": "To pole jest wymagane"
+                }
+            },
+            "uuid": "Identyfikator robota (UUID):",
+            "categories": "Kategorie",
+            "too-many-categories": "Zgodnie z regulaminem, każdy robot może być zgłoszony do maksymalnie czterech konkurencji, w ramach których moża wybrać maks. 2 kategorie (przykładowo jeden robot może wziąć udział w Drag Race, LF Standard, LF Standard Enhanced i Micro Mouse, jednakże nie może jednocześnie wystartować w Drag Race, LF Standard, LF Turbo i LF Standard Enhanced)",
+            "constructors": "Konstruktorzy",
+            "constructors-info": "* Można go znaleźć w rozwijanym menu po prawej stronie lub w ustawieniach",
+            "update-name": "Pomyślnie zaktualizowano nazwę robota",
+            "add-category": "Pomyślnie dodano kategorie",
+            "delete-category": "Pomyślnie usunięto kategorie",
+            "add-constructor": "Pomyślnie dodano konstruktora",
+            "add-constructor-self": "Zostałeś dodany jako konstruktor robota o identyfikatorze:",
+            "delete-constructor": "Pomyślnie usunięto konstruktora",
+            "delete-constructor-self": "Zostałeś usunięty z listy konstruktorów robota o identyfikatorze:",
+            "delete-robot": "Usunięto robota o identyfikatorze:",
+            "want-to-delete-category": "Usunięcie kategorii robota uniemożliwi jego start w tej kategorii",
+            "want-to-delete-constructor": "Usunięcie konstruktora uniemożliwi użytkownikowi edycję robota oraz dostęp do ewentualnych nagród",
+            "want-to-delete-robot": "Usunięcie robota wyklucza jego udział w zawodach. Uwaga! Tej decyzji nie można cofnąć!"
+        },
+        "settings": {
+            "user": "Dane użytkownika",
+            "user-info": "* Prosimy o podanie prawidłowych danych. Na ich podstawie będą przyznawane ewentualne nagrody i dyplomy.",
+            "phone": "Dane kontaktowe",
+            "phone-info": "* Prosimy o podanie prawidłowych danych. Na ich podstawie będą rozsyłane istotne komunikaty.",
+            "password": "Zmień hasło",
+            "rest-countries": "Reszta państw",
+            "errors": {
+                "succesfuly-added-phone": "Pomyślnie dodano numer telefonu. Wpisz kod z SMS wysłanego na podany numer",
+                "succesfuly-confirmed": "Pomyślnie potwierdzono numer telefonu",
+                "success": "Pomyślnie zmieniono hasło do konta",
+                "success-name": "Pomyślnie edytowano dane użytkownika",
+                "copied": "Skopiowano identyfikator do schowka"
+            }
+        },
+        "add-fight-result": {
+            "title": {
+                "1": {
+                    "1": "DODAWANIE WYNIKU ",
+                    "2": "WALKI"
+                }
+            },
+            "1": {
+                "1": "Zanim przejdziesz do walki, sprawdź konstruktorów robota.",
+                "2": "Wprowadź identyfikator konstruktora robota",
+                "3": "Wezwij konstruktorów robota"
+            },
+            "next": "Dalej",
+            "2": {
+                "1": "Teraz możesz przejść do przeprowadzenia walki. Po jej zakończeniu wpisz wynik.",
+                "2": "Wprowadź ilość wygranych rund przez"
+            },
+            "add": "Dodaj i zakończ"
+
+        },
+        "add-time-result": {
+            "title": {
+                "1": {
+                    "1": "DODAWANIE NOWEGO ",
+                    "2": "PRZEJAZDU",
+                    "3": "WYNIKU"
+                },
+                "2": {
+                    "1": "WYBIERZ ",
+                    "2": "ROBOTA",
+                    "3": " ZAWODNIKA"
+                },
+                "3": {
+                    "1": "DODAJ ",
+                    "2": "WYNIK CZASOWY",
+                    "3": "WYNIK"
+                }
+            },
+            "1": {
+                "1": "Zanim przejdziesz do ",
+                "2": "przejazdu",
+                "3": "dodawania wyniku",
+                "4": ", sprawdź konstruktora robota.",
+                "5": "Wprowadź identyfikator przybyłego konstruktora"
+            },
+            "next": "Dalej",
+            "choose": "Wybierz",
+            "2": {
+                "1": "Wprowadź czas przejazdu w milisekundach (ms)",
+                "2": "Wprowadź punkty uzyskane w rozgrywce"
+            },
+            "add": "Dodaj i zakończ"
+        },
+        "competitor": {
+            "name": "Imię i nazwisko: ",
+            "phone": "Numer telefonu: ",
+            "email": "Adres email: ",
+            "positions": "Stanowiska: ",
+            "postal": "Kod pocztowy: ",
+            "send": "Wyślij wiadomość",
+            "robots": "Roboty"
+        },
+        "competitors": {
+            "title": "ZAWODNICY",
+            "on-list": "Na liście: ",
+            "categories": "Kategorie: ",
+            "more": "Więcej",
+            "filters": {
+                "name": "Imię i nazwisko",
+                "user-uuid": "Użytkownik UUID",
+                "positions": "Stanowiska",
+                "robots-uuid": "Roboty UUID",
+                "phone": "Numer telefonu",
+                "email": "Email",
+                "categories": "Kategorie"
+            }
+        },
+        "referee-zone": {
+            "no-categories": "Brak kategorii",
+            "no-groups": "Brak grup",
+            "groups": "Grupy: ",
+            "no-positions": "Brak stanowisk",
+            "no-fights": "Brak walk",
+            "no-results": "Brak wyników",
+            "end-time": "Czas zakończenia: ",
+            "position-name": "Nazwa stanowiska: ",
+            "next-fight": "Następna walka ID: ",
+            "more": "Więcej",
+            "less": "Mniej",
+            "pts": "pkt",
+            "category-id": "Kategoria ID: ",
+            "robot-id": "Robot ID: ",
+            "result-id": "Wynik ID: ",
+            "add": "Dodaj wynik",
+            "added": "Ustalono wynik",
+            "add-time": "Dodaj przejazd",
+            "add-result": "Dodaj wynik"
+        },
+        "robots": {
+            "title": {
+                "1": "ROBOTY ",
+                "2": "ZAWODNIKÓW"
+            },
+            "confirm": "Potwierdź dotarcie robota",
+            "filters": {
+                "name": "Nazwa",
+                "uuid": "UUID",
+                "categories": "Kategorie",
+                "constructors": "Konstruktorzy"
+            }
+        },
+        "results": {
+            "title": "WYNIKI",
+            "filters": {
+                "position": "Stanowisko",
+                "uuid": "Robot UUID",
+                "name": "Robot nazwa"
+            }
+        }
+
+    },
+    "app-rules": {
+        "spis": {
+            "title": "SPIS TREŚCI",
+            "1": "POLITYKA COOKIES WITRYNY ROBOMOTION.COM.PL",
+            "2": "POLITYKA PRYWATNOŚCI SERWISU INTERNETOWEGO ROBO~MOTION",
+            "3": "REGULAMIN KORZYSTANIA Z APLIKACJI ROBO~MOTION",
+            "4": "REGULAMIN MIĘDZYNARODOWYCH ZAWODÓW ROBO~MOTION",
+            "5": "INFORMACJA ADMINISTRATORA W ZWIĄZKU Z PRZETWARZANIEM DANYCH OSOBOWYCH"
+        },
+        "rules": [{
+                "title": "POLITYKA COOKIES WITRYNY ROBOMOTION.COM.PL",
+                "description": "Poniższa Polityka Cookies określa zasady zapisywania i uzyskiwania dostępu do danych na Urządzeniach Użytkowników korzystających z Serwisu do celów świadczenia usług drogą elektroniczną przez Administratora Serwisu.",
+                "paragrphs": [{
+                        "title": "Definicje",
+                        "bodies": [
+                            "<b>Serwis</b> - serwis internetowy działający pod adresem https://robomotion.com.pl/",
+                            "<b>Serwis zewnętrzny</b> - serwis internetowe partnerów, usługodawców lub usługobiorców Administratora",
+                            "<b>Administrator </b> - Koło Naukowe Automatyków i Robotyków 'ROBO', prowadzące działalność na Politechnice Rzeszowskiej pod adresem: ul. Wincentego Pola 2, 35-021 Rzeszów, świadczący usługi drogą elektroniczną za pośrednictwem Serwisu oraz przechowujący i uzyskujący dostęp do informacji w urządzeniach Użytkownika",
+                            "<b>Użytkownik </b> - osoba fizyczna, dla której Administrator świadczy usługi drogą elektroniczna za pośrednictwem Serwisu",
+                            "<b>Urządzenie </b> - elektroniczne urządzenie wraz z oprogramowaniem, za pośrednictwem, którego Użytkownik uzyskuje dostęp do Serwisu",
+                            "<b>Cookies (ciasteczka)</b> - dane tekstowe gromadzone w formie plików zamieszczanych na Urządzeniu Użytkownika"
+                        ]
+                    },
+                    {
+                        "title": "Rodzaje Cookies",
+                        "bodies": [
+                            "<b>Cookies wewnętrzne</b> - pliki zamieszczane i odczytywane z Urządzenia Użytkownika przez system teleinformatyczny Serwisu",
+                            "<b>Cookies zewnętrzne</b> - pliki zamieszczane i odczytywane z Urządzenia Użytkownika przez systemy teleinformatyczne Serwisów zewnętrznych",
+                            "<b>Cookies sesyjne</b> - pliki zamieszczane i odczytywane z Urządzenia Użytkownika przez Serwis lub Serwisy zewnętrzne podczas jednej sesji danego Urządzenia. Po zakończeniu sesji pliki są usuwane z Urządzenia Użytkownika",
+                            "<b>Cookies trwałe</b> -  pliki zamieszczane i odczytywane z Urządzenia Użytkownika przez Serwis lub Serwisy zewnętrzne do momentu ich ręcznego usunięcia. Pliki nie są usuwane automatycznie po zakończeniu sesji Urządzenia chyba że konfiguracja Urządzenia Użytkownika jest ustawiona na tryb usuwanie plików Cookie po zakończeniu sesji Urządzenia"
+                        ]
+                    },
+                    {
+                        "title": "Bezpieczeństwo",
+                        "bodies": [
+                            "<b>Mechanizmy składowania i odczytu</b> - Mechanizmy składowania i odczytu Cookies nie pozwalają na pobierania jakichkolwiek danych osobowych ani żadnych informacji poufnych z Urządzenia Użytkownika. Przeniesienie na Urządzenie Użytkownika wirusów, koni trojańskich oraz innych robaków jest praktycznie niemożliwe",
+                            "<b>Cookie wewnętrzne</b> - zastosowane przez Administratora Cookie wewnętrzne są bezpieczne dla Urządzeń Użytkowników",
+                            "<b>Cookie zewnętrzne</b> - za bezpieczeństwo plików Cookie pochodzących od partnerów Serwisu Administrator nie ponosi odpowiedzialności. Lista partnerów zamieszczona jest w dalszej części Polityki Cookie"
+                        ]
+                    },
+                    {
+                        "title": "Cele do których wykorzystywane są pliki cookie",
+                        "bodies": [
+                            "<b>Dane statystyczne</b> - Administrator oraz Serwisy zewnętrzne wykorzystuje pliki Cookie do zbierania i przetwarzania danych statystycznych takich jak np. statystyki odwiedzin, statystyki Urządzeń Użytkowników czy statystyki zachowań użytkowników. Dane te zbierane są w celu analizy i ulepszania Serwisu. Pliki „cookies” używane są w celu dostosowania zawartości Serwisu do preferencji Użytkownika oraz optymalizacji korzystania z Serwisu. Używane są również w celu tworzenia anonimowych, zagregowanych statystyk, które pomagają zrozumieć w jaki sposób Użytkownik korzysta z Serwisu co umożliwia ulepszanie ich struktury i zawartości, z wyłączeniem personalnej identyfikacji Użytkownika."
+                        ]
+                    },
+                    {
+                        "title": "Serwisy zewnętrzne",
+                        "bodies": [
+                            "Administrator współpracuje z następującymi serwisami zewnętrznymi, które mogą zamieszczać pliki Cookie na Urządzeniach Użytkownika:",
+                            "<b>Google Analytics</b>"
+                        ]
+                    },
+                    {
+                        "title": "Możliwości określania warunków przechowywania i uzyskiwania dostępu na Urządzeniach Użytkownika przez serwis i serwisy zewnętrzne",
+                        "bodies": [
+                            "Użytkownik może w dowolnym momencie, samodzielnie zmienić ustawienia dotyczące zapisywania, usuwania oraz dostępu do danych zapisanych plików Cookies",
+                            "Informacje o sposobie wyłączenia plików Cookie w najpopularniejszych przeglądarkach komputerowych i urządzeń mobilnych dostępne są na stronie: https://jakwylaczyccookie.pl/",
+                            "Użytkownik może w dowolnym momencie usunąć wszelkie zapisane do tej pory pliki Cookie korzystając z narzędzi Urządzenia Użytkownika za pośrednictwem którego Użytkownik korzysta z usług Serwisu"
+                        ]
+                    },
+                    {
+                        "title": "Wymagania serwisu",
+                        "bodies": [
+                            "Ograniczenie zapisu i dostępu do plików Cookie na Urządzeniu Użytkownika może spowodować nieprawidłowe działanie niektórych funkcji Serwisu",
+                            "Administrator nie ponosi żadnej odpowiedzialności za nieprawidłowo działające funkcje Serwisu w przypadku gdy Użytkownik ograniczy w jakikolwiek sposób możliwość zapisywania i odczytu plików Cookie"
+                        ]
+                    },
+                    {
+                        "title": "Zmiany w polityce Cookie",
+                        "bodies": [
+                            "Administrator zastrzega sobie prawo do dowolnej zmiany niniejszej Polityki Cookie bez konieczności informowania o tym użytkowników",
+                            "Wprowadzone zmiany w Polityce Cookie zawsze będą publikowane na tej stronie",
+                            "Wprowadzone zmiany wchodzą w życie w dniu publikacji Polityki Cookie"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "POLITYKA PRYWATNOŚCI SERWISU INTERNETOWEGO ROBO~MOTION",
+                "description": "Polityka prywatności opisuje zasady przetwarzania przez nas informacji na Twój temat, w tym danych osobowych.",
+                "paragrphs": [{
+                        "title": "Informacje ogólne",
+                        "bodies": [
+                            "Niniejsza polityka dotyczy serwisu internetowego ROBO~motion (dalej: „Aplikacja”)",
+                            "Właścicielem aplikacji jest: Koło Naukowe Automatyków i Robotyków 'ROBO', prowadzące działalność na Politechnice Rzeszowskiej pod adresem: ul. Wincentego Pola 2, 35-021 Rzeszów",
+                            "Adres kontaktowy poczty elektronicznej operatora: kontakt@kneiti.prz.edu.pl",
+                            "Aplikacja wykorzystuje dane osobowe w następujących celach:",
+                            "- <b>Prezentacja profilu użytkownika innym użytkownikom</b>",
+                            "- <b>Obsługa zapytań przez formularz</b>",
+                            "- <b>Prezentacja oferty lub informacji</b>",
+                            "- <b>Przesyłanie wewnętrznej korespondencji</b>",
+                            "Aplikacja realizuje funkcje pozyskiwania informacji o użytkownikach i ich zachowaniu w następujący sposób: poprzez dobrowolnie wpisanie w formularzach danych, które zostają następnie wprowadzone do systemów Operatora oraz poprzez zapisywanie w urządzeniach końcowych plików cookie (tzw. „ciasteczka”)"
+                        ]
+                    },
+                    {
+                        "title": "Wybrane metody ochrony danych stosowane przez Operatora",
+                        "bodies": [
+                            "Miejsca logowania i wprowadzania danych osobowych są chronione w warstwie transmisji (certyfikat SSL). Dzięki temu dane osobowe i dane logowania, wprowadzone na stronie, zostają zaszyfrowane w komputerze użytkownika i mogą być odczytane jedynie na docelowym serwerze",
+                            "Hasła użytkowników są przechowywane w postaci hashowanej. Funkcja hashująca działa jednokierunkowo – nie jest możliwe odwrócenie jej działania, co stanowi obecnie współczesny standard w zakresie przechowywania haseł użytkowników.",
+                            "Operator okresowo zmienia swoje hasła administracyjne."
+                        ]
+                    },
+                    {
+                        "title": "Hosting",
+                        "bodies": [
+                            "Baza danych aplikacji jest hostowana (technicznie utrzymywana) na serwerze operatora: smarthost.pl"
+                        ]
+                    },
+                    {
+                        "title": "Twoje prawa i dodatkowe informacje o sposobie wykorzystania danych",
+                        "bodies": [
+                            "W niektórych sytuacjach Administrator ma prawo przekazywać Twoje dane osobowe innym odbiorcom, jeśli będzie to niezbędne do wykonania zawartej z Tobą umowy lub do zrealizowania obowiązków ciążących na Administratorze. Dotyczy to takich grup odbiorców:",
+                            "- <b>1. upoważnieni pracownicy i współpracownicy, którzy korzystają z danych w celu realizacji celu działania aplikacji</b>",
+                            "Twoje dane osobowe przetwarzane są przez Administratora nie dłużej, niż jest to konieczne do wykonania związanych z nimi czynności określonych osobnymi przepisami (np. o prowadzeniu rachunkowości). W odniesieniu do danych marketingowych gromadzone dane nie będą przetwarzane dłużej niż przez 3 lata",
+                            "Przysługuje Ci prawo żądania od Administratora",
+                            "- <b>1. dostępu do danych osobowych Ciebie dotyczących,</b>",
+                            "- <b>2. ich sprostowania,</b>",
+                            "- <b>3. usunięcia,</b>",
+                            "- <b>4. ograniczenia przetwarzania,</b>",
+                            "- <b>5. oraz przenoszenia danych.</b>",
+                            "Przysługuje Ci prawo do złożenia sprzeciwu wobec przetwarzania danych osobowych w celu wykonania prawnie uzasadnionych interesów realizowanych przez Administratora, w tym profilowania, przy czym prawo sprzeciwu nie będzie mogło być wykonane w przypadku istnienia ważnych prawnie uzasadnionych podstaw do przetwarzania, nadrzędnych wobec Twojego interesów, praw i wolności, w szczególności ustalenia, dochodzenia lub obrony roszczeń",
+                            "Na działania Administratora przysługuje skarga do Prezesa Urzędu Ochrony Danych Osobowych, ul. Stawki 2, 00-193 Warszawa",
+                            "Podanie danych osobowych jest dobrowolne, lecz niezbędne do obsługi Aplikacji",
+                            "W stosunku do Ciebie mogą być podejmowane czynności polegające na zautomatyzowanym podejmowaniu decyzji, w tym profilowaniu w celu świadczenia usług w ramach zawartej umowy oraz w celu prowadzenia przez Administratora marketingu bezpośredniego",
+                            "Dane osobowe nie są przekazywane do krajów trzecich w rozumieniu przepisów o ochronie danych osobowych. Oznacza to, że nie przesyłamy ich poza teren Unii Europejskiej"
+                        ]
+                    },
+                    {
+                        "title": "Informacje w formularzach",
+                        "bodies": [
+                            "Aplikacja zbiera informacje podane dobrowolnie przez Użytkownika, w tym dane osobowe, o ile zostaną one podane",
+                            "Aplikacja może zapisać informacje o parametrach połączenia (oznaczenie czasu, adres IP). Dane podane w formularzu są przetwarzane w celu wynikającym z funkcji konkretnego formularza, np. w celu aktualizacji danych. Każdorazowo kontekst i opis formularza w czytelny sposób informuje, do czego on służy"
+                        ]
+                    },
+                    {
+                        "title": "Logi Administratora",
+                        "bodies": [
+                            "Informacje o zachowaniu użytkowników w aplikacji mogą podlegać logowaniu. Dane te są wykorzystywane w celu administrowania Aplikacją i bazą danych"
+                        ]
+                    },
+                    {
+                        "title": "Istotne techniki marketingowe",
+                        "bodies": [
+                            "Operator stosuje rozwiązanie automatyzujące działanie Serwisu w odniesieniu do użytkowników, np. mogące przesłać maila do użytkownika po odwiedzeniu konkretnej podstrony, o ile wyraził on zgodę na otrzymywanie korespondencji handlowej od Operatora",
+                            "Operator stosuje analizę statystyczną ruchu na stronie, poprzez Google Analytics (Google Inc. z siedzibą w USA). Operator nie przekazuje do operatora tej usługi danych osobowych, a jedynie zanonimizowane informacje. Usługa bazuje na wykorzystaniu ciasteczek w urządzeniu końcowym Użytkownika. W zakresie informacji o preferencjach Użytkownika gromadzonych przez sieć reklamową Google Użytkownik może przeglądać i edytować informacje wynikające z plików cookies przy pomocy narzędzia: https://www.google.com/ads/preferences/"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "REGULAMIN KORZYSTANIA Z APLIKACJI ROBO~MOTION",
+                "description": "Założenie konta w aplikacji ROBO~motion oznacza akceptację poniższych warunków.",
+                "paragrphs": [{
+                        "title": "Informacje ogólne",
+                        "bodies": [
+                            "Właścicielem aplikacji oraz Administratorem danych osobowych jest: Koło Naukowe Automatyków i Robotyków 'ROBO', prowadzące działalność na Politechnice Rzeszowskiej pod adresem: ul. Wincentego Pola 2, 35-021 Rzeszów (zwany dalej “Właścicielem aplikacji”)",
+                            "Aplikacja powstała w celu prowadzenia procesu rekrutacji na Międzynarodowe Zawody Robotów ROBO~motion, komunikację z konstruktorami robotów, prezentację wyników oraz promocję sponsorów"
+                        ]
+                    },
+                    {
+                        "title": "Polityka prywatności",
+                        "bodies": [
+                            "Polityka prywatności Aplikacji została opisana w osobnym dokumencie: Polityka prywatności"
+                        ]
+                    },
+                    {
+                        "title": "Użytkownicy",
+                        "bodies": [
+                            "Aplikacja została stworzona dla osób zainteresowanych zawodami ROBO~motion, zarówno osób biorących udział w zawodach jak i publiczności"
+                        ]
+                    },
+                    {
+                        "title": "Treści w Aplikacjach",
+                        "bodies": [
+                            "Odpowiedzialność za treść obecną w Aplikacji ponosi Właściciel aplikacji. Użytkownik ma prawo zgłoszenia uwag na temat nieodpowiedniej treści obecnej w aplikacji. Może tego dokonać pisząc na adres: kontakt@kneiti.prz.edu.pl"
+                        ]
+                    },
+                    {
+                        "title": "Wyłączenie odpowiedzialności",
+                        "bodies": [
+                            "Właściciel i autorzy Aplikacji nie ponoszą odpowiedzialności za wykorzystywanie jej w jakikolwiek sposób (w szczególności nie ma wpływu na to czy podmiot podejmie lub nie jakąkolwiek czynność lub czynności)"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "REGULAMIN MIĘDZYNARODOWYCH ZAWODÓW ROBO~MOTION 2021",
+                "description": "Ostatnia aktualizacja: 13.11.2021",
+                "paragrphs": [{
+                        "title": "Definicje",
+                        "bodies": [
+                            "<b>Drużyna</b> – grupa osób składająca się z Uczestników i Zawodników, którzy samodzielnie stworzyli co najmniej jednego Robota lub jego algorytm, biorąca udział w Zawodach.",
+                            "<b>Konstruktor</b> – osoba bądź osoby biorące udział w zawodach, które stworzyły danego Robota.",
+                            "<b>Organizator</b> – osoba nadzorująca i wpływająca na przebieg Zawodów, posiadająca imienny identyfikator z napisem Organizator.",
+                            "<b>Robot</b> – urządzenie mechatroniczne zasilane energią elektryczną poruszające się autonomicznie i w pewnym, zauważalnym stopniu reagujące na otoczenie.",
+                            "<b>Roboty identyczne</b> – roboty, mające podobną konstrukcję oraz wykorzystujące podobne algorytmy. O ostatecznym stwierdzeniu identyczności robotów decyduje Sędzia Główny.",
+                            "<b>Sędzia</b> – osoba nadzorująca przebieg konkurencji w dniu Zawodów.",
+                            "<b>Uczestnik</b> – osoba, która bierze aktywny, lub bierny udział w zawodach. Może to być zawodnik, sędzia, organizator lub widz.",
+                            "<b>Zawodnik</b> – patrz Konstruktor."
+                        ]
+                    },
+                    {
+                        "title": "Informacje ogólne",
+                        "bodies": [
+                            "Niniejszy regulamin określa warunki uczestnictwa w VI Międzynarodowych Zawodach Robotów ROBO~motion 2021 (zwanych dalej Zawodami) oraz zasady postępowania w celu przeciwdziałania rozprzestrzenianiu się wirusa SARS-CoV-2 w Polsce.",
+                            "VI Międzynarodowe Zawody Robotów ROBO~motion 2021 są kolejną edycją Zawodów organizowanych przez Koło Naukowe Automatyków i Robotyków ROBO działające na Wydziale Elektrotechniki i Informatyki Politechniki Rzeszowskiej wraz z partnerami. Celem wydarzenia jest popularyzacja robotyki wśród młodzieży i studentów.",
+                            "Zawody odbędą się w niedzielę 28 listopada 2021 roku. Czas trwania jest zależny od ilości zgłoszonych robotów, w związku z tym ostateczny harmonogram zostanie udostępniony na stronie <a href=\"robomotion.com.pl\" target=\"_blank\" style=\"color:yellow;\">robomotion.com.pl</a> najpóźniej na 4 dni przed zawodami tj. w środę 24 listopada 2021 roku.",
+                            "Nad prawidłowym przebiegiem Zawodów czuwać będą Organizatorzy. Każdy z Organizatorów będzie posiadał imienny identyfikator.",
+                            "Warunkiem koniecznym przystąpienia do Zawodów  jest wyrażenie zgody na przetwarzanie danych osobowych, w tym wizerunku:",
+                            "&nbsp; o Osoby pełnoletnie zgodę na przetwarzanie danych osobowych i danych osobowych w postaci wizerunku podpisują na miejscu – będą gotowe wydruki – formularz zgody jest dostępny na stronie <a href=\"robomotion.com.pl\" target=\"_blank\" style=\"color:yellow;\">robomotion.com.pl</a>",
+                            "&nbsp; o Osoby niepełnoletnie proszone są o przyniesienie w dniu Turnieju wydrukowanego formularza zgody podpisanego przez Rodzica/Opiekuna prawnego – formularz zgody dla osoby niepełnoletniej jest dostępny na stronie robomotion.com.pl"
+                        ]
+                    },
+                    {
+                        "title": "Uczestnicy",
+                        "bodies": [
+                            "W Zawodach mogą brać udział osoby pełnoletnie, które wyrażą zgodę na przetwarzanie danych osobowych, w tym wizerunku, oraz zaakceptują regulamin. W przypadku osób niepełnoletnich wymagana jest pisemna zgoda rodzica bądź opiekuna prawnego na udział w Zawodach, wyrażenie zgody na przetwarzanie danych osobowych, w tym wizerunku, oraz akceptacja regulaminu – formularz jest dostępny na stronie <a href=\"robomotion.com.pl\" target=\"_blank\" style=\"color:blue;\">robomotion.com.pl</a>",
+                            "W Zawodach mogą rejestrować się drużyny złożone z 1-20 osób.",
+                            "Każda drużyna nieposiadająca osoby pełnoletniej musi przyjechać na zawody pod opieką osoby dorosłej – opiekuna",
+                            "Podczas rejestracji w dniu zawodów każdy członek drużyny musi posiadać dokument potwierdzający tożsamość i okazać go na prośbę Organizatora, Sędziego bądź Obsługi.",
+                            "Zarejestrowanie drużyny w Zawodach na stronie <a href=\"robomotion.com.pl\" target=\"_blank\" style=\"color:yellow;\">robomotion.com.pl</a> jest równoznaczne z akceptacją regulaminu Ogólnego Zawodów oraz regulaminów poszczególnych konkurencji.",
+                            "Każdy uczestnik bierny bądź aktywny, startujący lub nie startujący w Zawodach, biorący udział w wydarzeniu jest zobowiązany przestrzegać wszystkie Regulaminy Zawodów oraz Regulaminy obowiązujące w budynku Regionalnego Centrum Sportowo-Widowiskowego „Podpromie”. Wejście na teren wydarzenia jest równoznaczne z akceptacją regulaminów.",
+                            "Organizatorzy zobowiązują się do nieudostępniania telefonu podanego przy rejestracji osobom trzecim bez zgody właściciela numeru."
+                        ]
+                    },
+                    {
+                        "title": "Konkurencje",
+                        "bodies": [
+                            "Na Zawodach odbędzie się 17 oddzielnych konkurencji. Jedna drużyna może brać udział w kilku z nich, jednakże poszczególne etapy różnych konkurencji mogą odbywać się w tym samym czasie.",
+                            "Konkurencje które odbędą się na zawodach to:",
+                            "&nbsp;<b>Smash Bots by RoboLAB</b>",
+                            "&nbsp;<b>LEGO Sumo</b>",
+                            "&nbsp;<b>Nano Sumo</b>",
+                            "&nbsp;<b>Micro Sumo</b>",
+                            "&nbsp;<b>Mini Sumo</b>",
+                            "&nbsp;<b>Sumo</b>",
+                            "&nbsp;<b>LineFollower Standard</b>",
+                            "&nbsp;<b>LineFollower Standard LEGO</b>",
+                            "&nbsp;<b>LineFollower Turbo</b>",
+                            "&nbsp;<b>LineFollower Standard Enhanced</b>",
+                            "&nbsp;<b>LineFollower Turbo Enhanced</b>",
+                            "&nbsp;<b>Drag Race</b>",
+                            "&nbsp;<b>Cebula House</b>",
+                            "&nbsp;<b>Micromouse</b>",
+                            "&nbsp;<b>Robot Sprint</b>",
+                            "&nbsp;<b>LEGO Tug of War</b>",
+                            "&nbsp;<b>Freestyle</b>",
+                            "Dokładny regulamin każdej konkurencji znajduje się na stronie głównej <a href=\"robomotion.com.pl\" target=\"_blank\" style=\"color:yellow;\">robomotion.com.pl</a> – odnośnik do regulaminu dostępny jest po wybraniu odpowiedniej kategorii",
+                            "W przypadku małej liczby drużyn biorących udział w danej konkurencji organizator zastrzega sobie prawo do rozegrania wyłącznie fazy finałowej lub odwołania konkurencji."
+
+                        ]
+                    },
+                    {
+                        "title": "Sprawy organizacyjne",
+                        "bodies": [
+                            "Organizator zastrzega sobie prawo do zmian w niniejszym regulaminie",
+                            "Nagrody przyznawane są drużynowo.",
+                            "Robot oraz program biorący udział w danej konkurencji musi być autorstwa tylko i wyłącznie osób wchodzących w skład danej drużyny.",
+                            "Wszelkie pytania dotyczące regulaminu należy kierować na adres robo@kneiti.prz.edu.pl"
+                        ]
+                    },
+                    {
+                        "title": "Zasady postępowania w celu przeciwdziałania rozprzestrzenianiu się wirusa SARS-CoV-2 w Polsce",
+                        "bodies": [
+                            "Każdy uczestnik jest zobowiązany do zasłaniania ust i nosa wyłącznie za pomocą maseczki ochronnej na terenie wydarzenia, Uczestnik sam ma obowiązek posiadania odpowiedniej ilości maseczek ochronnych. Organizator zastrzega sobie prawo do wyproszenia bądź niewpuszczenia na teren wydarzenia osoby nieposiadającej maseczki ochronnej bądź stosownego zaświadczenia potwierdzającego niemożność noszenia maseczki ochronnej akceptowanego przez aktualnie obowiązujące przepisy prawne.",
+                            "Organizator zapewnia odpowiednią ilość płynów do dezynfekcji, które zostaną rozstawione w całym obiekcie.",
+                            "Ilość miejsc na widowni będzie ograniczona, zajęte mogą zostać tylko i wyłącznie rozłożone siedziska (z podniesionym oparciem), natomiast siedziska z opuszczonym oparciem (złożone) są wyłączone z użytkowania.",
+                            "Każdy uczestnik zobowiązuje się również do zachowania wymaganego dystansu społecznego.",
+                            "Organizator zastrzega sobie prawo do wpuszczania na teren wydarzenia tylko osoby w pełni zaszczepione przeciw SARS-CoV-2 w przypadku przebywania na hali maksymalnej liczby osób dopuszczonej na podstawie aktualnie obowiązujących obostrzeń.",
+                            "Organizatorzy wydarzenia mają obowiązek przekazania zbieranych danych osobowych Państwowemu Powiatowemu Inspektorowi Sanitarnemu pełniącemu nadzór epidemiologiczny na danym terenie i służbom porządkowym na ich żądanie."
+                        ]
+                    },
+                    {
+                        "title": "Kwestie sporne, odpowiedzialność",
+                        "bodies": [
+                            "Wszelkie kwestie sporne związane z kategorią opisaną w regulaminie kategorii rozstrzyga Sędzia danej kategorii.",
+                            "Wszelkie spory i sytuacje nie opisane w Regulaminach kategorii rozstrzyga Sędzia Główny.",
+                            "Wszelkie spory i sytuacje nie opisane w niniejszym regulaminie i nie dotyczące żadnej kategorii rozstrzyga Organizator zgodnie z obowiązującymi przepisami prawa i przepisami bezpieczeństwa.",
+                            "W przypadku zachowania Uczestnika, które narusza: normy moralne, dobre obyczaje, godność człowieka, uczucia religijne lub bezpieczeństwo Uczestników, Sędzia Główny bądź Organizatorzy mają prawo nałożyć na Uczestnika  karę w postaci zakazu przebywania na terenie imprezy, w takim wypadku ukarany Uczestnik jest zobowiązany opuścić teren imprezy w trybie natychmiastowym.",
+                            "Decyzja Sędziego Głównego i Organizatora jest ostateczna."
+                        ]
+                    },
+                    {
+                        "title": "Zgody",
+                        "bodies": [
+                            "Uczestnictwo w zawodach oznacza wyrażenie zgody na publikację wizerunku (zdjęcia z zawodów, nagrania z zawodów oraz materiały wideo transmitowane na żywo przy pomocy odpowiednich platform), podstawowych danych na temat robota oraz drużynyprzez Organizatorów i Partnerów Zawodów bez konieczności informowania o tym Uczestnika."
+                        ]
+                    },
+                    {
+                        "title": "Postanowienia końcowe",
+                        "bodies": [
+                            "Dane osobowe uczestników Zawodów będą przetwarzane wyłącznie w celachprzeprowadzenia Zawodów, wyłonienia laureatów oraz przyznania, wydania, odbioru irozliczenia warunków nagród i wyróżnień.",
+                            "Administratorem danych osobowych jest Politechnika Rzeszowska im. Ignacego Łukasiewicza z siedzibą na al. Powstańców Warszawy 12, 35-959 Rzeszów.",
+                            "Przetwarzanie danych osobowych w związku z udziałem w Zawodów obejmujepublikację wizerunku, imienia i nazwiska oraz wyniku uczestnika, który zdobył jednąz nagród Zawodów. Każdy z pozostałych uczestników Zawodów będzie miał możliwośćwyrażenia zgody na ujawnienie jego wyniku, nazwiska i adresu mailowego firmomorganizującym Zawody. Dane oraz szczegółowe wyniki uczestników Zawodów, którzynie wyrażą zgody, nie będą ujawniane.",
+                            "Przetwarzanie danych dotyczy wszystkich uczestników Zawodów. Uczestnicy mająprawo wglądu do swoich danych osobowych oraz do ich poprawiania. Podanie danychosobowych (imię, nazwisko, szkoła lub uczelnia, adres poczty elektronicznej) jestdobrowolne, lecz ich niepodanie uniemożliwia udział w Zawodach. Uczestnicy Zawodów przystępując do nich wyrażają zgodę na przetwarzanie swoich danych do celuokreślonego w niniejszym Regulaminie.",
+                            "Zawodysą zorganizowane w myśl zasady fair-play. W przypadku łamania zasad tejidei, np. poprzez celowe uszkodzenie robota innego uczestnika, organizatorzy Zawodów zastrzegają sobie prawo do wykluczenia całej drużyny uczestnika z tej orazkolejnych edycji Międzynarodowych Zawodów ROBO~motion.",
+                            "W sprawach nieuregulowanych Regulaminem zastosowanie mają przepisy Kodeksu Cywilnego."
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "INFORMACJA ADMINISTRATORA W ZWIĄZKU Z PRZETWARZANIEM DANYCH OSOBOWYCH",
+                "paragrphs": [{
+                    "title": "Informacje ogólne",
+                    "bodies": [
+                        "Administratorem danych osobowych jest <b>Politechnika Rzeszowska im. Ignacego Łukasiewicza</b>, al. Powstańców Warszawy 12, 35-959 Rzeszów, (zwana dalej Uczelnią), email: kancelaria@prz.edu.pl",
+                        "Inspektorem Ochrony Danych na Politechnice Rzeszowskiej można się skontaktować się pod numerem telefonu 17 865 1775 lub poprzez e-mail: iod@prz.edu.pl",
+                        "Administrator przetwarza Twoje dane osobowe zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (zwanego dalej RODO)",
+                        "Administrator pobiera i przetwarza następujące dane osoboweUczestnika podane za pośrednictwem formularza rejestracyjnego na stronie robomotion.com.pl: imię i nazwisko, adres e-mail oraz, numer telefonu.",
+                        "&nbsp; a) na podstawie zgody w celu rejestracji uczestników i organizacji konkursu (art. 6 ust. 1 lit. a RODO) - podanie powyższych danych jest dobrowolne, jednak jest niezbędne do rejestracji i uczestnictwa w VI Międzynarodowych Zawodach ROBO~motion 2021,",
+                        "&nbsp; b) na podstawie zgody w celach marketingowych i promocyjnych związanych z ofertą Partnerów oraz Organizatora (art. 6 ust. 1 lit. a RODO) – wyrażenie zgody jest dobrowolne, można ją w każdej chwili wycofać.",
+                        "W czasie trwania wydarzenia VI Międzynarodowe Zawody ROBO~motion 2021 przeprowadzone zostaną sesje fotograficzne i video, Administrator i Partnerzy Organizatora będą przetwarzać wizerunek Uczestnikana na podstawie jego zgody lub w przypadku osób niepełnoletnich na podstawie zgody wyrażonej przez ich opiekunów prawnych(art. 6 ust. 1 lit. a RODO). Udzielenie zgody na przetwarzanie wizerunku jest dobrowolne, ale niezbędne do uczestnictwa w VI Międzynarodowych Zawodach ROBO~motion 2021. Zgoda jest dostępna pod tym <a href=\"https://rzit.smarthost.pl/robomotion/rodo.pdf\" target=\"_blank\">linkiem</a>.",
+                        "Każdy Uczestnik ma prawo żądania:",
+                        "&nbsp; a) dostępu do danych i uzyskania informacji w zakresie ich przetwarzania",
+                        "&nbsp; b) sprostowania danych oraz żądania ich usunięcia lub ograniczenia przetwarzania",
+                        "&nbsp; c) wniesienia sprzeciwu wobec przetwarzania",
+                        "&nbsp; d) cofnięcia wyrażonej zgody na przetwarzanie danych w każdym momencie – cofnięcie to jednak nie ma wpływu na zgodność przetwarzania przed jego dokonaniem",
+                        "&nbsp; e) wniesienia skargi do organu nadzorczego w przedmiocie ochrony danych osobowych – w Polsce do Prezesa Urzędu Ochrony Danych Osobowych.",
+                        "W celu realizacji powyższych praw należy skontaktować się z Organizatorem."
+                    ]
+                }]
+            }
+        ]
+    },
+    "thank-you": {
+        "title": "Dziękujemy Ci!",
+        "title-top": "Podziękowania",
+        "signature": "Z wyrazami szacunku, Organizatorzy",
+        "description": "To właśnie dzięki takim osobom jak Ty jesteśmy w stanie tworzyć to wydarzenie. Wyrażamy ogromną wdzięczność za Twoje wsparcie i zaangażowanie. Mamy nadzieję, że szósta edycja Międzynarodowych Zawodów Robotów ROBO~motion była okazją do inspirującej wymiany myśli, informacji i doświadczeń związanych z robotyką oraz technologiami przyszłości. Dziękujemy, że dołączyłeś do licznego grona naszych odbiorców. Jest to dla nas zaszczyt i motywacja do dalszych działań. Chcielibyśmy gościć Cię podczas kolejnej edycji naszych Zawodów!"
+    },
+    "dialog-box": {
+        "yes": "Kontynuuj",
+        "no": "Anuluj",
+        "continue": "Czy chcesz kontynuować?"
+    },
+    "controls": {
+        "name": {
+            "name": "Imię",
+            "validators": {
+                "required": "To pole jest wymagane",
+                "minlength": "Imię musi być dłuższe niż 2 znaki",
+                "maxlength": "Imię musi być krótsze niż 40 znaków"
+            }
+        },
+        "surname": {
+            "name": "Nazwisko",
+            "validators": {
+                "required": "To pole jest wymagane",
+                "minlength": "Nazwisko musi być dłuższe niż 2 znaki",
+                "maxlength": "Nazwisko musi być krótsze niż 40 znaków"
+            }
+        },
+        "email": {
+            "name": "E-mail",
+            "validators": {
+                "required": "To pole jest wymagane",
+                "pattern": "Wprowadź poprawny adres e-mail",
+                "minlength": "E-mail musi być dłuższy niż 2 znaki",
+                "maxlength": "E-mail musi być krótszy niż 100 znaków"
+            }
+        },
+        "password": {
+            "name": "Hasło",
+            "validators": {
+                "required": "To pole jest wymagane",
+                "minlength": "Hasło musi być dłuższe niż 6 znaków",
+                "maxlength": "Hasło musi być krótsze niż 64 znaki"
+            }
+        },
+        "repeatPassword": {
+            "name": "Powtórz hasło",
+            "validators": {
+                "required": "To pole jest wymagane",
+                "confirmedValidator": "Hasła nie są takie same"
+            }
+        },
+        "actualPassword": {
+            "name": "Bieżące hasło",
+            "validators": {
+                "required": "To pole jest wymagane",
+                "minlength": "Hasło musi być dłuższe niż 6 znaków",
+                "maxlength": "Hasło musi być krótsze niż 64 znaki"
+            }
+        },
+        "newPassword": {
+            "name": "Nowe hasło",
+            "validators": {
+                "required": "To pole jest wymagane",
+                "minlength": "Hasło musi być dłuższe niż 6 znaków",
+                "maxlength": "Hasło musi być krótsze niż 64 znaki"
+            }
+        },
+        "repeatNewPassword": {
+            "name": "Powtórz nowe hasło",
+            "validators": {
+                "required": "To pole jest wymagane",
+                "confirmedValidator": "Hasła nie są takie same"
+            }
+        },
+        "category": {
+            "name": "Kategoria",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "robot_name": {
+            "name": "Nazwa robota",
+            "validators": {
+                "required": "To pole jest wymagane",
+                "minlength": "Nazwa musi być dłuższa niż 2 znaki",
+                "maxlength": "Nazwa musi być krótsza niż 40 znaków"
+            }
+        },
+        "phone": {
+            "name": "Numer telefonu",
+            "validators": {
+                "required": "To pole jest wymagane",
+                "minlength": "Numer telefonu musi być dłuższy niż 7 znaki",
+                "maxlength": "Numer telefonu musi być krótszy niż 15 znaków",
+                "pattern": "Wprowadź poprawny numer telefonu (bez numeru kierunkowego)"
+            }
+        },
+        "constructor_uuid": {
+            "name": "Identyfikator użytkownika (UUID)",
+            "validators": {
+                "required": "To pole jest wymagane",
+                "minlength": "Wprowadź poprawny identyfikator użytkownika",
+                "maxlength": "Wprowadź poprawny identyfikator użytkownika",
+                "alreadyExistValidator": "Użytkownik już jest konstruktorem tego robota"
+            }
+        },
+        "position": {
+            "name": "Stanowisko",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "time": {
+            "name": "Wynik",
+            "validators": {
+                "required": "To pole jest wymagane",
+                "maxlength": "Czas nie może być większy niż 999999ms"
+            }
+        },
+        "fight_result": {
+            "name": "Wynik walki",
+            "validators": {
+                "required": "To pole jest wymagane",
+                "maxlength": "Wynik musi być jednocyfrowy",
+                "minlength": "Wynik musi być jednocyfrowy"
+            }
+        },
+        "filter": {
+            "name": "Filtruj po",
+            "validators": {}
+        },
+        "filter_name": {
+            "name": "Wartość",
+            "validators": {}
+        },
+        "postal_code": {
+            "name": "Kod pocztowy",
+            "validators": {
+                "required": "To pole jest wymagane",
+                "maxlength": "Kod pocztowy musi być dłuższy niż 2 znaki",
+                "minlength": "Kod pocztowy musi być krótszy niż 8 znaków"
+            }
+        },
+        "message": {
+            "name": "Wiadomość do użytkownika",
+            "validators": {
+                "required": "To pole jest wymagane",
+                "maxlength": "Wiadomość powinna być dłuższa niż 2 znaki",
+                "minlength": "Wiadomość powinna być krótsza niż 500 znaków"
+            }
+        },
+        "code": {
+            "name": "Kod potwierdzający",
+            "validators": {
+                "required": "To pole jest wymagane",
+                "maxlength": "Kod ma długość 6 znaków",
+                "minlength": "Kod ma długość 6 znaków"
+            }
+        }
+    },
+    "errors": {
+        "names": {
+            "success": "Sukces",
+            "warning": "Uwaga!",
+            "error": "Błąd!",
+            "loading": "Informacja"
+        },
+        "details": {
+            "no-category": "Taka kategoria nie istnieje!",
+            "no-fighting-category": "To nie jest kategoria walki!",
+            "no-time-category": "To nie jest kategoria wyścigów na czas!",
+            "no-group": "Taka grupa nie istnieje!",
+            "no-robot": "Taki robot nie istnieje!",
+            "no-robot-1": "Taki robot 1 nie istnieje!",
+            "no-robot-2": "Taki robot 2 nie istnieje!",
+            "robot-not-arrived": "Robot nie przybył na zawody!",
+            "robot-not-arrived-1": "Robot 1 nie przybył na zawody!",
+            "robot-not-arrived-2": "Robot 2 nie przybył na zawody!",
+            "robot-self-fight": "Robot nie może walczyć przeciwko sobie!",
+            "robot-no-category": "Robot nie ma takiej kategorii!",
+            "robot-no-category-1": "Robot 1 nie ma takiej kategorii!",
+            "robot-no-category-2": "Robot 2 nie ma takiej kategorii!",
+            "no-position": "Takie stanowisko nie istnieje!",
+            "position-no-referee": "Stanowisko nie ma takiego sędziego!",
+            "position-no-category": "Stanowisko nie ma takiej kategorii!",
+            "no-user": "Taki użytkownik nie istnieje!",
+            "user-not-activated": "Użytkownik nie został aktywowany.",
+            "user-have-email": "Uzytkownik ma już potwierdzony email.",
+            "not-referee": "Użytkownik nie jest sędzią.",
+            "user-have-phone": "Uzytkownik ma już potwierdzony numer telefonu.",
+            "no-user-phone": "Użytkownik nie ma przypisanego numeru telefonu!",
+            "user-phone-exist": "Użytkownik ma już przypisany numer telefonu.",
+            "email-exist": "Uzytkownik o takim email już istnieje!",
+            "phone-number-exist": "Taki numer telefonu jest już przypisany do innego użytkownika.",
+            "no-constructor": "Taki konstruktor nie istnieje!",
+            "constructor-exist": "Taki konstruktor już istnieje.",
+            "invalid-email": "Wprowadź poprawną wartość skrzynki docelowej!",
+            "code-recently-generated": "Kod został niedawno wygenerowany. Spróbuj wygenerować nowy kod później.",
+            "no-code": "Kod potwierdzający nie został wygenerowany lub wygasł.",
+            "no-message": "Taka wiadomość nie istnieje!",
+            "no-fight": "Taka walka nie istnieje!",
+            "no-time": "Taki wynik nie istnieje!",
+            "invalid-code": "Kod potwierdzający nie zgadza się z podanym przez użytkownika.",
+            "invalid-password": "Niepoprawne hasło.",
+            "new-password": "Nowe hasło musi różnić się od poprzedniego.",
+            "fight-is-assigned": "Walki są już ustawione",
+            "fight-not-assigned": "Walka jeszcze nie została ustawiona!",
+            "fight-must-end": "Walka musi się rozstrzygnąć!",
+            "fight-played": "Wynik walki został już ustalony",
+            "fight-second-robot": "Przed dodaniem wyniku dodaj drugiego robota do walki!",
+            "fight-no-edit": "Nie można już edytować tej walki ponieważ następna się już się zakończyła",
+            "last-category": "Nie można usunąć jedynej kategorii robota",
+            "too-many-constructors": "Nie można dodać więcej niż 20 konstruktorów!",
+            "too-many-categories": "Nie można dodać więcej niż 4 kategorie!",
+            "too-many-lf-categories": "Nie można dodać więcej niż 2 kategorie w konkurencji Line Follower!",
+            "too-many-sumo-categories": "Nie można dodać więcej niż 2 kategorie w konkurencji Sumo!",
+            "time-to-modify-ended": "Czas na dodawanie i modyfikację robotów minął",
+            "time-to-modify-ended-smash": "Czas na dodawanie i modyfikację robotów w kategori SmashBots minął"
+        },
+        "statusCodes": {
+            "400": "Błędnie określone dane - błąd użytkownika",
+            "401": "Nieautoryzowany dostęp - wymagane uwierzytelnienie",
+            "402": "Wymagana opłata",
+            "403": "Zabroniony",
+            "404": "Nie znaleziono – serwer nie odnalazł zasobu",
+            "405": "Niedozwolona metoda – metoda zawarta w żądaniu nie jest dozwolona dla wskazanego zasobu",
+            "406": "Podane dane nie są właściwe",
+            "407": "Wymagane uwierzytelnienie do serwera pośredniczącego",
+            "408": "Koniec czasu oczekiwania na żądanie ",
+            "409": "Konflikt – żądanie nie może być zrealizowane",
+            "410": "Zniknął (usunięto) – zażądany zasób nie jest dłużej dostępny",
+            "411": "Wymagana długość – serwer odmawia zrealizowania zapytania ze względu na brak nagłówka",
+            "412": "Warunek wstępny nie może być spełniony – serwer nie może spełnić przynajmniej jednego z warunków zawartych w zapytaniu",
+            "413": "Encja zapytania zbyt długa",
+            "414": "Adres URI zapytania zbyt długi",
+            "415": "Nieznany sposób żądania",
+            "416": "Zakres bajtowy podany w zapytaniu nie do obsłużenia",
+            "417": "Oczekiwana wartość nie do zwrócenia",
+            "418": "Jestem czajnikiem",
+            "421": "Zapytanie zostało skierowane do serwera, który nie powinien go otrzymać lub który nie jest w stanie na nie odpowiedzieć",
+            "422": "Zapytanie było poprawnie sformułowane, ale było niemożliwe do kontynuowania",
+            "423": "Próba uzyskania dostępu do zasobu, który jest aktualnie zablokowany",
+            "424": "Brak powodzenia żądania, ponieważ jest ono zależne od innego żądania, które również nie powiodło się",
+            "425": "Serwer nie chce ryzykować przetwarzania żądania, które może zostać powtórzone",
+            "426": "Serwer odmawia wykonania żądania używając aktualnego protokołu",
+            "428": "Brak nagłówka wstępnego, który jest wymagany przez serwer",
+            "429": "Użytkownik wysłał za wiele żądań w danym czasie",
+            "431": "Serwer odmawia wykonania żądania ze względu na zbyt duże pole lub pola nagłówka",
+            "444": "Połączenie zostało zamknięte bez otrzymania odpowiedzi",
+            "451": "Zawartość niedostępna z powodów prawnych",
+            "499": "Klient zakończył połączenie",
+            "500": "Wewnętrzny błąd serwera – serwer napotkał niespodziewane trudności, które uniemożliwiły zrealizowanie żądania",
+            "501": "Nie zaimplementowano – serwer nie dysponuje funkcjonalnością wymaganą w zapytaniu",
+            "502": "Błąd bramy – serwer – spełniający rolę bramy lub pośrednika – otrzymał niepoprawną odpowiedź od serwera nadrzędnego",
+            "503": "Usługa niedostępna – serwer nie jest w stanie w danej chwili zrealizować zapytania",
+            "504": "Przekroczony czas bramy – serwer – spełniający rolę bramy lub pośrednika – nie otrzymał w ustalonym czasie odpowiedzi od wskazanego serwera",
+            "505": "Nieobsługiwana wersja HTTP",
+            "506": "Wariant również negocjuje",
+            "507": "Serwer nie jest w stanie zapisać danych związanych z wykonaniem zapytania",
+            "508": "Serwer wykrył nieskończoną pętlę w trakcie przetwarzania zapytania",
+            "510": "Brak rozszerzenia HTTP koniecznego do obsługi danego zapytania",
+            "511": "Wymagane uwierzytelnienie przed otrzymaniem dostępu do sieci",
+            "599": "Błąd limitu czasu połączenia sieciowego"
+        }
+    },
+    "cookies": {
+        "p": "Informacja: Serwis do prawidłowego działania wykorzystuje pliki <b>cookies</b>",
+        "button": "Zgoda"
+    }
+}

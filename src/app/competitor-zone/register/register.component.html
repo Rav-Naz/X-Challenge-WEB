@@ -1,0 +1,28 @@
+<div class="container">
+    <app-header [pageName]="'menu.competitor-zone'"></app-header>
+    <div class="register">
+        <h3 class="section-header">{{'competitor-zone.register.title' | translate}}</h3>
+        <div class="register-form" (keydown)="enterSubmit($event)">
+            <div class="register-form-row">
+                <app-input [group]="form" controlName="name"></app-input>
+                <app-input [group]="form" controlName="surname"></app-input>
+            </div>
+            <div style="width: 100%;">
+                <app-input [group]="form" controlName="email"></app-input>
+            </div>
+            <div class="register-form-row">
+                <app-input [group]="form" controlName="password"></app-input>
+                <app-input [group]="form" controlName="repeatPassword"></app-input>
+            </div>
+            <div class="register-form-checkbox">
+                <label class="checkbox-container">{{'competitor-zone.register.accept' | translate}}
+                    <input type="checkbox" (click)="onChangeCheckbox()" [checked]="isRulesChecked">
+                    <span class="checkmark"></span>
+                </label>
+                <i class="las la-external-link-alt" (click)="openUrl('https://robomotion.com.pl/app-rules')"></i>
+            </div>
+            <button class="submit-button" [disabled]="!isFormGroupValid" (click)="onSubmit()">{{'competitor-zone.register.sign-in' | translate}}</button>
+            <p>{{'competitor-zone.register.have' | translate}}</p><span [routerLink]="['/login']">{{'competitor-zone.register.login' | translate}}</span>
+        </div>
+    </div>
+</div>

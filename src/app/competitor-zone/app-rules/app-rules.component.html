@@ -1,0 +1,23 @@
+<div class="container">
+    <app-header [pageName]="'menu.app-rules'"></app-header>
+    <div class="competitor">
+        <div>
+            <div>
+                <h5>{{'app-rules.spis.title' | translate}}</h5>
+                <h3>- {{'app-rules.spis.1' | translate}}</h3>
+                <h3>- {{'app-rules.spis.2' | translate}}</h3>
+                <h3>- {{'app-rules.spis.3' | translate}}</h3>
+                <h3>- {{'app-rules.spis.4' | translate}}</h3>
+                <h3>- {{'app-rules.spis.5' | translate}}</h3>
+            </div>
+            <ng-container *ngFor="let section of getRules; let j = index">
+                <h5>{{section.title}}</h5>
+                <label>{{section.description}}</label>
+                <ng-container *ngFor="let paragraph of section.paragrphs; let i = index">
+                    <h2>§ {{i+1}} {{paragraph.title}}</h2>
+                    <p [innerHtml]="body" *ngFor="let body of paragraph.bodies"></p>
+                </ng-container>
+            </ng-container>
+        </div>
+    </div>
+</div>

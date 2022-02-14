@@ -1,0 +1,90 @@
+@import '../../../scss/colors';
+@import '../../../scss/variables';
+.view {
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    app-input {
+        width: 100%;
+        max-width: 50rem;
+    }
+    &>div>div>p {
+        text-align: center;
+        width: 100%;
+        // width: max-content;
+        padding: 2rem;
+        color: $color-grey-0
+    }
+    &>span {
+        padding: 1rem;
+        margin: 2rem 0;
+        font-size: 2rem;
+        line-height: 2rem;
+        color: $color-primary;
+        border-bottom: 1px solid $color-primary;
+    }
+}
+
+h5 {
+    font-size: 3rem;
+    letter-spacing: .2rem;
+    text-align: center;
+    span {
+        color: $color-primary;
+    }
+}
+
+.back {
+    font-size: 5rem;
+    color: $color-primary;
+    justify-self: flex-start;
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;
+    justify-content: center;
+    align-items: center;
+    &-button {
+        background: transparent;
+        border: 2px solid $color-primary;
+        color: $color-primary;
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+        line-height: 1.2rem;
+        box-shadow: none;
+    }
+    &>div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-self: center;
+        align-self: center;
+        p>label {
+            color: $color-white;
+            font-family: $title-font;
+            font-weight: bold;
+        }
+    }
+    &-2 {
+        grid-template-columns: 1fr min-content 1fr !important;
+        span {
+            font-size: 5rem;
+            font-family: $title-font;
+        }
+    }
+}
+
+.result {
+    max-width: min-content !important;
+}

@@ -1,0 +1,152 @@
+<div class="router-child">
+    <div class="main">
+        <div class="name-parent">
+            <div class="name">
+                <label *ngIf="(!authService.canModify && !userSerceice.isAdmin) || userSerceice.userType === 1">{{'controls.robot_name.name' | translate}}: <span>{{oldName}}</span></label>
+                <app-input [group]="formName" controlName="robot_name" *ngIf="(authService.canModify || userSerceice.isAdmin) && userSerceice.userType !== 1"></app-input>
+                <button *ngIf="(authService.canModify || userSerceice.isAdmin) && userSerceice.userType !== 1" [disabled]="!isChanged || !isFormGroupNameValid || isLoadingName || !authService.canModify || (userSerceice.isReferee && !userSerceice.isAdmin)" class="submit-button"
+                    (click)="onUpdateName()"><i class="las la-save"></i></button>
+                <button *ngIf="(authService.canModify || userSerceice.isAdmin) && userSerceice.userType !== 1" [disabled]="isLoadingName || !authService.canModify || (userSerceice.isReferee && !userSerceice.isAdmin)" class="submit-button" (click)="onDeleteRobot()"><i class="las la-trash-alt"></i></button>
+            </div>
+            <div class="name-uuid">
+                <span>{{'competitor-zone.robot.uuid' | translate}}</span>
+                <a (click)="copyUUID()">{{robotUUID}}</a>
+            </div>
+        </div>
+        <div class="infos" *ngIf="isEvent">
+            <section class="referee-categories inline">
+                <label>{{'competitor-zone.competitors.categories' | translate}}</label>
+                <button (click)="selectCategory(category)" *ngFor="let category of robotCategories" [ngClass]="{'referee-categories-active': category === selectedCategory}">{{getCategoryName(category)}}</button>
+            </section>
+            <section class="referee-results" *ngIf="!loadingResults">
+                <div class="referee-results-fights" *ngIf="getCategoryType === 1">
+                    <span *ngIf="!getCategoryFigths?.length ">{{'competitor-zone.referee-zone.no-fights' | translate}}</span>
+                    <div class="scroll">
+                        <div *ngFor="let fight of getCategoryFigths">
+                            <ng-container *ngIf="{open: false} as variable">
+                                <div class="referee-results-fights-element" (click)="variable.open = !variable.open">
+                                    <span class="referee-results-fights-element-id">{{fight.walka_id}}</span>
+                                    <div class="referee-results-fights-element-info referee-results-fights-element-info-1">
+                                        <p class="referee-results-fights-element-uuid">{{fight?.robot1_uuid}}</p>
+                                        <p class="referee-results-fights-element-name">{{fight.robot1_nazwa ? fight.robot1_nazwa : 'TBA'}}</p>
+                                    </div>
+                                    <div class="referee-results-fights-element-vs">
+                                        <span>vs</span>
+                                        <div>
+                                            <label [ngClass]="{'referee-results-fights-element-vs-win': fight.wygrane_rundy_robot1 !== null && fight.wygrane_rundy_robot2 !== null && fight.wygrane_rundy_robot1 > fight.wygrane_rundy_robot2, 'referee-results-fights-element-vs-lose': fight.wygrane_rundy_robot1 !== null  && fight.wygrane_rundy_robot2 !== null && fight.wygrane_rundy_robot1 < fight.wygrane_rundy_robot2}">{{fight.wygrane_rundy_robot1 !== null ? fight.wygrane_rundy_robot1 : '?'}}</label>
+                                            <label>&nbsp;:&nbsp;</label>
+                                            <label [ngClass]="{'referee-results-fights-element-vs-win': fight.wygrane_rundy_robot1 !== null && fight.wygrane_rundy_robot2 !== null && fight.wygrane_rundy_robot1 < fight.wygrane_rundy_robot2, 'referee-results-fights-element-vs-lose': fight.wygrane_rundy_robot1 !== null && fight.wygrane_rundy_robot2 !== null && fight.wygrane_rundy_robot1 > fight.wygrane_rundy_robot2}">{{fight.wygrane_rundy_robot2 !== null ? fight.wygrane_rundy_robot2 : '?'}}</label>
+                                        </div>
+                                    </div>
+                                    <div class="referee-results-fights-element-info referee-results-fights-element-info-2">
+                                        <p class="referee-results-fights-element-uuid">{{fight?.robot2_uuid}}</p>
+                                        <p class="referee-results-fights-element-name">{{fight.robot2_nazwa ? fight.robot2_nazwa : 'TBA'}}</p>
+                                    </div>
+                                    <div class="referee-results-fights-element-details">
+                                        <div class="referee-results-fights-element-details-flex" *ngIf="variable.open">
+                                            <div *ngIf="fight.czas_zakonczenia" class="referee-results-fights-element-details-flex-piece">
+                                                <label>{{'competitor-zone.referee-zone.end-time' | translate}}&nbsp;</label>
+                                                <label>{{fight.czas_zakonczenia | date: 'HH:mm:ss'}}</label>
+                                            </div>
+                                            <div *ngIf="fight.nazwa_stanowiska" class="referee-results-fights-element-details-flex-piece">
+                                                <label>{{'competitor-zone.referee-zone.position-name' | translate}}&nbsp;</label>
+                                                <label>{{fight.nazwa_stanowiska}}</label>
+                                            </div>
+                                            <div *ngIf="fight.nastepna_walka_id" class="referee-results-fights-element-details-flex-piece">
+                                                <label>{{'competitor-zone.referee-zone.next-fight' | translate}}&nbsp;</label>
+                                                <label>{{fight.nastepna_walka_id}}</label>
+                                            </div>
+                                        </div>
+                                        <span class="referee-results-fights-element-edit">{{(variable.open ? 'competitor-zone.referee-zone.less' : 'competitor-zone.referee-zone.more') | translate}}<i class="las la-angle-double-down" *ngIf="!variable.open"></i><i class="las la-angle-double-up" *ngIf="variable.open"></i></span>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="referee-results-times" *ngIf="getCategoryType === 0 || getCategoryType === 2">
+                    <span *ngIf="!getCategoryTimesResult?.length">{{'competitor-zone.referee-zone.no-results' | translate}}</span>
+                    <div class="scroll">
+                        <div *ngFor="let time of getCategoryTimesResult">
+                            <ng-container *ngIf="{open: false} as variable">
+                                <div class="referee-results-times-element" (click)="variable.open = !variable.open">
+                                    <span class="referee-results-times-element-id">{{time.wynik_id}}</span>
+                                    <div class="referee-results-times-element-info">
+                                        <p class="referee-results-times-element-uuid">{{time.robot_uuid}}</p>
+                                        <p class="referee-results-times-element-name">{{time.nazwa_robota}}</p>
+                                    </div>
+
+                                    <div class="referee-results-times-element-categories">
+                                        <p>{{getCategoryType !== 2 ? time.czas_przejazdu/1000 : time.czas_przejazdu}} {{(getCategoryType === 2 ? 'competitor-zone.referee-zone.pts' : 's') | translate}}</p>
+                                    </div>
+                                    <div class="referee-results-fights-element-details">
+                                        <div class="referee-results-fights-element-details-flex" *ngIf="variable.open">
+                                            <div *ngIf="time.czas_zakonczenia" class="referee-results-fights-element-details-flex-piece">
+                                                <label>{{'competitor-zone.referee-zone.end-time' | translate}}&nbsp;</label>
+                                                <label>{{time.czas_zakonczenia | date: 'HH:mm:ss'}}</label>
+                                            </div>
+                                            <div *ngIf="time.nazwa_stanowiska" class="referee-results-fights-element-details-flex-piece">
+                                                <label>{{'competitor-zone.referee-zone.position-name' | translate}}&nbsp;</label>
+                                                <label>{{time.nazwa_stanowiska}}</label>
+                                            </div>
+                                        </div>
+                                        <span class="referee-results-fights-element-edit">{{(variable.open ? 'competitor-zone.referee-zone.less' : 'competitor-zone.referee-zone.more') | translate}}<i class="las la-angle-double-down" *ngIf="!variable.open"></i><i class="las la-angle-double-up" *ngIf="variable.open"></i></span>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+        <div class="grid">
+            <div class="grid-categories">
+                <span>{{'competitor-zone.robot.categories' | translate}}</span>
+                <div class="grid-categories-new" *ngIf="((canAddCategory && authService.canModify) || userSerceice.isAdmin) && userSerceice.userType !== 1">
+                    <app-select *ngIf="categoriesOptions !== undefined && canAddCategory && !isLoadingCategories" [group]="formCategory" [collapsed]="true" controlName="category" translatePrefix="competitor-zone.robot" [options]="categoriesOptions"></app-select>
+                    <app-spinner *ngIf="categoriesOptions === undefined || isLoadingCategories"></app-spinner>
+                    <button [disabled]="!isFormGroupCategoryValid || isLoadingCategories || !authService.canModify" class="submit-button grid-button" (click)="onAddCategory()"><i class="las la-plus-circle"></i></button>
+                </div>
+                <div class="grid-categories-old-parent">
+                    <a *ngIf="!canAddCategory && !isLoadingCategories && categoriesOptions !== undefined && userSerceice.userType < 1">{{'competitor-zone.robot.too-many-categories' | translate}}</a>
+                    <div *ngFor="let cat of robotCategories" class="grid-categories-old">
+                        <div>
+                            <i class="las la-chevron-right"></i>
+                            <label>{{getCategoryName(cat)}}</label>
+                        </div>
+                        <button [disabled]="isLoadingCategories || !canDeleteCategory || !authService.canModify || (cat === 1 && !authService.canModifySmash)" *ngIf="(authService.canModify || userSerceice.isAdmin) && userSerceice.userType !== 1" class="submit-button grid-button"
+                            (click)="onRemoveCategory(cat)"><i class="las la-trash-alt"></i></button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-constructors">
+                <span>{{'competitor-zone.robot.constructors' | translate}}</span>
+                <div class="grid-categories-new" *ngIf="(authService.canModify || userSerceice.isAdmin) && userSerceice.userType !== 1">
+                    <div class="grid-constructors-div">
+                        <app-input *ngIf="!isLoadingConstructors" [group]="formConstructor" controlName="constructor_uuid" [collapsed]="true"></app-input>
+                        <a *ngIf="nameFormEmpty">{{'competitor-zone.robot.constructors-info' | translate}}</a>
+                    </div>
+                    <button [disabled]="!isFormGroupConstructorValid || isLoadingConstructors" class="submit-button grid-button" (click)="onAddConstructor()"><i class="las la-plus-circle"></i></button>
+                </div>
+                <app-spinner *ngIf="isLoadingConstructors"></app-spinner>
+                <div class="grid-categories-old-parent">
+                    <div *ngFor="let constructor of robotConstructors" class="grid-categories-old grid-constructors-user-parent" (click)="openUserDetails(constructor.uzytkownik_uuid)" [ngClass]="{'grid-constructors-user-parent-clickable': userSerceice.isReferee}">
+                        <div>
+                            <i class="las la-chevron-left"></i>
+                            <div class="grid-constructors-user">
+                                <label [ngClass]="{'grid-constructors-user-this': userUUID === constructor.uzytkownik_uuid}">{{constructor.imie}} {{constructor.nazwisko}}</label>
+                                <p>{{constructor.uzytkownik_uuid}}</p>
+                                <details *ngIf="userSerceice.isReferee && constructor.numer_telefonu">TEL: {{constructor.numer_telefonu}}</details>
+                            </div>
+                        </div>
+                        <button *ngIf="(authService.canModify || userSerceice.isAdmin) && userSerceice.userType !== 1" [disabled]="isLoadingConstructors || !canDeleteConstructor" class="submit-button grid-button" (click)="onDeleteConstructor(constructor.konstruktor_id)"><i class="las la-trash-alt"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

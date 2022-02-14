@@ -1,0 +1,15 @@
+<div class="container">
+    <app-header [pageName]="'menu.competitor-zone'"></app-header>
+    <div class="competitor">
+        <h3 class="section-header">{{'competitor-zone.login.title' | translate}}</h3>
+        <div class="competitor-form" (keydown)="enterSubmit($event)">
+            <app-input [group]="form" controlName="email"></app-input>
+            <!-- <app-select [group]="form" controlName="category" [options]="options" translatePrefix="controls"></app-select> -->
+            <app-input [group]="form" controlName="password"></app-input>
+            <span [routerLink]="['/forgot-password']" class="competitor-form-forgot">{{'competitor-zone.login.forgotten' | translate}}</span>
+            <button class="submit-button" [disabled]="!isFormGroupValid" (click)="onSubmit()">{{'competitor-zone.login.sign-in' | translate}}</button>
+            <p>{{'competitor-zone.login.havent' | translate}}</p>
+            <span [routerLink]="['/register']">{{'competitor-zone.login.register' | translate}}</span>
+        </div>
+    </div>
+</div>

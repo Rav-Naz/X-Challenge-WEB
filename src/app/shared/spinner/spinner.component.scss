@@ -1,0 +1,34 @@
+@import '../../scss/colors';
+#spinner-container {
+    width: var(--size);
+    height: var(--size);
+}
+
+.lds-dual-ring {
+    // background-color: green;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.lds-dual-ring::after {
+    content: " ";
+    display: block;
+    width: 80%;
+    height: 80%;
+    margin: 10%;
+    border-radius: 50%;
+    border: inherit;
+    border: var(--borderSize) solid $color-primary;
+    border-color: $color-primary transparent $color-primary transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

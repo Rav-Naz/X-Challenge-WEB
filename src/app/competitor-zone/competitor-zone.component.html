@@ -1,0 +1,110 @@
+<div class="container">
+    <app-header [pageName]="'menu.competitor-zone'"></app-header>
+    <div class="competitor">
+        <div class="competitor-zone">
+            <div class="competitor-zone-bar">
+                <div>
+                    <section class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['my-robots']}}]" routerLinkActive="competitor-zone-bar-segment-active" *ngIf="!userService.isReferee">
+                        <i class="las la-robot"></i>
+                        <p>{{'competitor-zone.bar.my-robots' | translate}}</p>
+                    </section>
+                    <section class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['referee-zone']}}]" *ngIf="userService.isReferee" routerLinkActive="competitor-zone-bar-segment-active">
+                        <i class="las la-gavel"></i>
+                        <p>{{'competitor-zone.bar.referee-zone' | translate}}</p>
+                    </section>
+                    <section class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['competitors']}}]" *ngIf="userService.isReferee" routerLinkActive="competitor-zone-bar-segment-active">
+                        <i class="las la-users"></i>
+                        <p>{{'competitor-zone.bar.competitors' | translate}}</p>
+                    </section>
+                    <section class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['robots']}}]" *ngIf="userService.isReferee" routerLinkActive="competitor-zone-bar-segment-active">
+                        <i class="las la-robot"></i>
+                        <p>{{'competitor-zone.bar.robots' | translate}}</p>
+                    </section>
+                    <section class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['settings']}}]" routerLinkActive="competitor-zone-bar-segment-active">
+                        <i class="las la-cog"></i>
+                        <p>{{'competitor-zone.bar.settings' | translate}}</p>
+                    </section>
+                    <section *ngIf="!isMobile" class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['statistics']}}]">
+                        <i class="las la-chart-pie"></i>
+                        <p>{{'competitor-zone.bar.statistics' | translate}}</p>
+                    </section>
+                    <section class="competitor-zone-bar-segment" (click)="openTutorial()">
+                        <i class="las la-question"></i>
+                        <p>{{'competitor-zone.bar.help' | translate}}</p>
+                    </section>
+                </div>
+                <ng-container *ngIf="switcher">
+                    <div class="competitor-zone-bar-time" *ngIf="timeLeft && !timeIsUp">
+                        <p>{{'competitor-zone.bar.time-left' | translate}}</p>
+                        <div [ngClass]="{'competitor-zone-bar-time-ending': isLessThanWeek}">
+                            <label>
+                                {{timeLeft | msTransform: 'd'}}<span>D</span>
+                            </label>
+                            <span>
+                                :
+                            </span>
+                            <label>
+                                {{timeLeft | msTransform: 'h'}}<span>H</span>
+                            </label>
+                            <span>
+                                :
+                            </span>
+                            <label>
+                                {{timeLeft | msTransform: 'm'}}<span>M</span>
+                            </label>
+                            <span>
+                                :
+                            </span>
+                            <label>
+                                {{timeLeft | msTransform: 's'}}<span>S</span>
+                            </label>
+                        </div>
+                    </div>
+                    <p *ngIf="timeIsUp">
+                        {{'competitor-zone.bar.time-up' | translate}}
+                    </p>
+                </ng-container>
+                <ng-container *ngIf="!switcher">
+                    <div class="competitor-zone-bar-time" *ngIf="timeLeftSmashBots && !timeIsUpSmashBots">
+                        <p>{{'competitor-zone.bar.time-left-sb' | translate}}</p>
+                        <div [ngClass]="{'competitor-zone-bar-time-ending': isLessThanWeekSmashBots}">
+                            <label>
+                                {{timeLeftSmashBots | msTransform: 'd'}}<span>D</span>
+                            </label>
+                            <span>
+                                :
+                            </span>
+                            <label>
+                                {{timeLeftSmashBots | msTransform: 'h'}}<span>H</span>
+                            </label>
+                            <span>
+                                :
+                            </span>
+                            <label>
+                                {{timeLeftSmashBots | msTransform: 'm'}}<span>M</span>
+                            </label>
+                            <span>
+                                :
+                            </span>
+                            <label>
+                                {{timeLeftSmashBots | msTransform: 's'}}<span>S</span>
+                            </label>
+                        </div>
+                    </div>
+                    <p *ngIf="timeIsUpSmashBots">
+                        {{'competitor-zone.bar.time-up-sb' | translate}}
+                    </p>
+                </ng-container>
+            </div>
+            <div class="competitor-zone-main">
+                <ng-container *ngIf="isFirstPage">
+                    <img src="../../assets/gifs/battlebot.gif">
+                    <p>{{'competitor-zone.bar.hello.1' | translate}}<span>{{'competitor-zone.bar.hello.2' | translate}}</span><br>{{'competitor-zone.bar.hello.3' | translate}}</p>
+                </ng-container>
+                <div fxFlex fxLayout="column" *ngIf="!isFirstPage">
+                    <router-outlet name="outlet"></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<app-confirm></app-confirm>
+<div class="cookies" *ngIf="isCookies">
+    <div>
+        <i class="las la-cookie-bite"></i>
+        <p [innerHtml]="translate.instant('cookies.p')"></p>
+        <button class="submit-button" (click)="acceptCookies()">{{'cookies.button' | translate}}</button>
+    </div>
+</div>
+<div class="navigator">
+    <label *ngIf="userName === null"> </label>
+    <div class="navigator-user" *ngIf="userName !== null">
+        <label>{{'menu.hello' | translate}} <span>{{userName}}!</span></label>
+        <span>{{'menu.uuid' | translate}}</span>
+        <p (click)="copyUUID()">{{userUUID}}</p>
+        <button (click)="onLogout()">{{'menu.logout' | translate}}</button>
+    </div>
+    <div class="navigator-links">
+        <a [routerLink]="['/login']" class="navigator-competitor-zone" (click)="switchMenu(false)">{{'menu.competitor-zone' | translate}}</a>
+        <a (click)="openTutorial()">{{'menu.tutorial' | translate}}</a>
+        <a [routerLink]="['/']" fragment="home" (click)="switchMenu(false)">{{'menu.home' | translate}}</a>
+        <a [routerLink]="['/']" fragment="programme" (click)="switchMenu(false)">{{'menu.program' | translate}}</a>
+        <a [routerLink]="['/']" fragment="competitions" (click)="switchMenu(false)">{{'menu.competitions' | translate}}</a>
+        <a [routerLink]="['/']" fragment="location" (click)="switchMenu(false)">{{'menu.location' | translate}}</a>
+        <a [routerLink]="['/']" fragment="patreons" (click)="switchMenu(false)">{{'menu.patreons' | translate}}</a>
+        <a [routerLink]="['/timetable']" (click)="switchMenu(false)">{{'menu.timetable' | translate}}</a>
+        <a [routerLink]="['/building-plan']" (click)="switchMenu(false)">{{'menu.plan' | translate}}</a>
+        <a *ngIf="isEventNow || userService.isReferee" [routerLink]="['/results']" (click)="switchMenu(false)"><b>{{'menu.results' | translate}}</b></a>
+    </div>
+    <div class="navigator-footer">
+        <img (click)="switchLang()" [src]="!isEnglish ? '../assets/svg/gb.svg' : '../assets/svg/pl.svg'">
+        <p [routerLink]="['/app-rules']" (click)="switchMenu(false)">{{'menu.app-rules' | translate}}</p>
+        <a target="_blank" href="https://www.facebook.com/rzeszowrobomotion"><i class="lab la-facebook-square"></i></a>
+    </div>
+</div>
+<button class="navigator-menu" (click)="switchMenu()">
+  <div class="navigator-menu-burger navigator-menu-burger-top"></div>
+  <div class="navigator-menu-burger navigator-menu-burger-middle"></div>
+  <div class="navigator-menu-burger navigator-menu-burger-bottom"></div>
+</button>
+<div class="navigator-outlet">
+    <router-outlet></router-outlet>
+</div>

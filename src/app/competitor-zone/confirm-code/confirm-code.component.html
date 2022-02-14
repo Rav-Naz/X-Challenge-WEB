@@ -1,0 +1,13 @@
+<div class="container">
+    <app-header [pageName]="'competitor-zone.confirmation-code.name'"></app-header>
+    <div class="competitor">
+        <app-spinner *ngIf="!text" [size]="100"></app-spinner>
+        <div class="success" *ngIf="text">
+            <div class="success-left">
+                <p>{{text | translate}}</p>
+                <button [routerLink]="['/login']">{{'competitor-zone.confirmation-code.button' | translate}}</button>
+            </div>
+            <img [src]="success ? '../../../assets/gifs/freestyle.gif' : '../../../assets/gifs/sumo.gif'" alt="Sukces">
+        </div>
+    </div>
+</div>

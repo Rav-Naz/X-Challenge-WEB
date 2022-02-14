@@ -1,0 +1,269 @@
+@import '../../../scss/colors';
+@import '../../../scss/variables';
+.my-robots {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
+    // height: max-content !important;
+    // max-height: max-content !important;
+    &-header {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr max-content 1fr;
+        // flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: min-content;
+        min-height: 8rem;
+        border-bottom: 5px dotted rgba($color-grey-0, 0.3);
+        color: $color-grey-0;
+        label {
+            font-size: 3rem;
+            font-family: $default-font;
+            // line-height: 4rem;
+        }
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-self: flex-end;
+            height: 3rem !important;
+            line-height: 0.1rem;
+            margin: 2rem;
+            width: max-content;
+            &:hover:not(:disabled) {
+                box-shadow: 0 0.2rem 2.4rem rgba($color-primary, 0.7);
+            }
+            i {
+                margin-left: 1rem;
+                line-height: 0.1rem;
+                font-size: 2.6rem;
+            }
+        }
+    }
+    &-element {
+        margin: 1rem 0;
+        border: 3px solid $color-grey-1;
+        height: min-content;
+        width: 100%;
+        border-radius: 2rem;
+        background: #252525c2;
+        transition: all .3s;
+        box-shadow: inset 5px 5px 10px #14141498, inset -5px -5px 10px #3f3f3fdf;
+        &:hover {
+            &>span:nth-child(3) {
+                color: $color-primary;
+                border-bottom: 1px dashed $color-primary;
+            }
+            border: 3px solid rgba($color-primary, 0.7);
+        }
+        display: grid;
+        grid-template-rows: max-content;
+        grid-template-columns: minmax(min-content, 35rem) 2fr max-content;
+        padding: 1.5rem 2rem;
+        cursor: pointer;
+        &-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            align-items: flex-start;
+            grid-row: 1;
+            grid-column: 1;
+        }
+        &-name {
+            text-align: left;
+            align-items: center;
+            line-height: 170%;
+            max-width: 33rem;
+            // transform: translateY(15%);
+            word-wrap: break-word;
+        }
+        &-uuid {
+            font-size: 1rem;
+            color: $color-primary;
+            align-items: center;
+            justify-self: left;
+            min-width: max-content;
+            // transform: translateY(-7%);
+        }
+        &-categories {
+            padding: 0 2rem;
+            align-self: center;
+            // width: mii-content;
+            // width: 80%;
+            font-weight: 100;
+            font-family: $default-font;
+            color: rgba($color-white, 0.8);
+            font-size: 1.6rem;
+            grid-column: 2;
+            grid-row: 1;
+            width: 100%;
+            details {
+                padding: 2rem;
+            }
+        }
+        &-edit {
+            transition: all .3s;
+            font-family: $title-font;
+            align-items: center;
+            line-height: normal;
+            color: rgba($color-grey-0, 0.5);
+            font-size: 2rem;
+            grid-column: 3;
+            grid-row: 1;
+            align-self: center;
+            border-bottom: 1px dashed rgba($color-grey-0, 0.5);
+            padding-bottom: .4rem;
+            i {
+                padding-left: .5rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $max-width-2) {
+    .my-robots {
+        &-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            // grid-template-columns: 1fr 1fr;
+            label {
+                font-size: 2.5rem;
+                font-family: $default-font;
+            }
+            p {
+                display: none;
+            }
+            button {
+                margin: 1.5rem;
+                width: max-content;
+                i {
+                    font-size: 2rem;
+                }
+            }
+        }
+        &-element {
+            grid-template-columns: minmax(min-content, 27rem) 2fr max-content;
+            &-info {
+                display: flex;
+                flex-direction: column;
+                justify-content: left;
+                align-items: flex-start;
+                grid-row: 1;
+                grid-column: 1;
+            }
+            &-name {
+                max-width: 25rem;
+                font-size: 2.3rem;
+            }
+            &-uuid {
+                font-size: 1.1rem;
+            }
+            &-categories {
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $max-width-3) {
+    .my-robots {
+        &-header {
+            min-height: 6rem;
+            label {
+                font-size: 2.2rem;
+                font-family: $default-font;
+            }
+            button {
+                margin: 1rem;
+                width: max-content;
+                i {
+                    font-size: 2rem;
+                }
+            }
+        }
+        &-element {
+            grid-template-columns: minmax(min-content, 25rem) 2fr max-content;
+            &-info {
+                display: flex;
+                flex-direction: column;
+                justify-content: left;
+                align-items: flex-start;
+                grid-row: 1;
+                grid-column: 1;
+            }
+            &-name {
+                max-width: 25rem;
+                font-size: 2rem;
+            }
+            &-uuid {
+                font-size: 1.1rem;
+            }
+            &-categories {
+                font-size: 1.4rem;
+            }
+            &-edit {
+                font-size: 1.5rem;
+                padding-bottom: .3rem;
+                i {
+                    padding-left: .4rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .my-robots {
+        // padding: 2rem;
+        &-header {
+            min-height: min-content;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 1rem;
+            label {
+                line-height: 3rem;
+                font-size: 3rem;
+            }
+        }
+        &-element {
+            display: flex;
+            flex-direction: column;
+            padding: 3rem;
+            // overflow: hidden;
+            &-info {
+                display: flex;
+                flex-direction: column;
+                justify-content: left;
+                align-items: flex-start;
+                grid-row: 1;
+                grid-column: 1;
+            }
+            &-name {
+                max-width: 100%;
+                font-size: 2.2rem;
+            }
+            &-uuid {
+                text-align: left;
+                min-width: auto;
+                max-width: 100%;
+                font-size: 1.5rem;
+            }
+            &-categories {
+                padding: 1rem 0;
+                font-size: 1.8rem;
+            }
+            &-edit {
+                font-size: 2rem;
+                padding-bottom: .4rem;
+                i {
+                    padding-left: .6rem;
+                }
+            }
+        }
+    }
+}

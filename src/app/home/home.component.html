@@ -1,0 +1,363 @@
+<div class="container">
+    <!-- INTRO -->
+    <section class="paralax paralax-background">
+        <div class="paralax-name-container paralax-name-container-top">
+            <h2 class="paralax-name paralax-name-top">
+                ROBO<br>
+                <h2 class="paralax-name-second">motion 2021</h2><br>
+                <img src="../../assets/svg/klocki.svg" class="paralax-name-img paralax-name-img-top">
+            </h2>
+        </div>
+        <div class="paralax-wave paralax-wave-yellow"></div>
+        <div class="paralax-wave"></div>
+    </section>
+    <!-- DESCRIPTION -->
+    <section class="event-info" id="home">
+        <h3 style="visibility: collapse;">Międzynarodowe zawody robotów ROBOmotion 2021</h3>
+        <h3 style="visibility: collapse;">już 28.11.2021 na Politechnice Rzeszowskiej</h3>
+        <h4 style="visibility: collapse;">Uczestnicy będą mogli zmierzyć się w aż 8 kategoriach czyli 15 konkurencjach. Organizatorzy przygotowali areny do zmagań na torach dla LineFollower’ów czy walk Sumo. Sam tor w kategorii LF przetestuje umiejętności programistyczne i konstrukcyjne
+            wielu robotyków. Oprócz standardowych konkurencji organizatorzy przygotowali wiele niespodzianek. Każdy konstruktor niezależnie czy dopiero zaczyna przygodę z elektroniką czy jest już doświadczony na pewno znajdzie coś dla siebie. Nie zabraknie
+            także konkurencji dedykowanych fanom marki LEGO.</h4>
+        <h4 style="visibility: collapse;">Participants will be able to compete in as many as 8 categories, i.e. 15 competitions. The organizers prepared the arenas for the struggle on the tracks for LineFollowers or Sumo fights. The track itself in the LF category will test the programming
+            and construction skills of many robotics. In addition to the standard competitions, the organizers have prepared many surprises. Every constructor, regardless of whether he is just starting his adventure with electronics or is already experienced,
+            will surely find something for himself. There will also be competition dedicated to LEGO fans.</h4>
+        <h3 class="section-header" *ngIf="timeToEvent">{{timeIsUp ? streamLink === undefined ? ('home.event-info.status.ended' | translate) : ('home.event-info.status.live' | translate) : ('home.event-info.status.coming' | translate)}}</h3>
+        <!-- <div class="iframe-container" *ngIf="timeIsUp && streamLink !== undefined"> -->
+        <!-- <iframe src="" width="500" height="500" style="border:none;overflow:hidden" scrolling="no"
+                frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe> -->
+        <!-- <iframe [src]="streamLink" target="_top" title="ROBOmotion Livestream" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+        <!-- </div> -->
+        <!-- <a class="stream" target="_blank" href="https://www.twitch.tv/robomotion2021">STREAM Z ROZGRYWKI</a> -->
+
+        <button [routerLink]="['/results']" *ngIf="timeIsUp">{{'home.event-info.results' | translate}}</button>
+        <div class="event-info-counter" *ngIf="!timeIsUp && timeToEvent">
+            <div class="event-info-counter-part">
+                <p class="event-info-counter-part--number">
+                    {{timeToEvent | msTransform: 'd'}}
+                </p>
+                <p class="event-info-counter-part--name">
+                    {{'home.event-info.time.days' | translate}}
+                </p>
+            </div>
+            <p class="event-info-counter-part--number event-info-counter-delimeter">
+                :
+            </p>
+            <div class="event-info-counter-part">
+                <p class="event-info-counter-part--number">
+                    {{timeToEvent | msTransform: 'h'}}
+                </p>
+                <p class="event-info-counter-part--name">
+                    {{'home.event-info.time.hours' | translate}}
+                </p>
+            </div>
+            <p class="event-info-counter-part--number event-info-counter-delimeter">
+                :
+            </p>
+            <div class="event-info-counter-part">
+                <p class="event-info-counter-part--number">
+                    {{timeToEvent | msTransform: 'm'}}
+                </p>
+                <p class="event-info-counter-part--name">
+                    {{'home.event-info.time.minutes' | translate}}
+                </p>
+            </div>
+            <p class="event-info-counter-part--number event-info-counter-delimeter">
+                :
+            </p>
+            <div class="event-info-counter-part">
+                <p class="event-info-counter-part--number">
+                    {{timeToEvent | msTransform: 's'}}
+                </p>
+                <p class="event-info-counter-part--name">
+                    {{'home.event-info.time.seconds' | translate}}
+                </p>
+            </div>
+        </div>
+        <div class="event-info-details">
+            <div class="event-info-details-name">
+                <h1 class="paralax-name">
+                    ROBO
+                    <h1 class="paralax-name-second event-info-details-name-a">motion 2021</h1>
+                </h1>
+                <h3 class="event-info-details-name-date">
+                    <span class="event-info-details-name-date-big">28.11.2021</span> - {{'home.event-info.university.hall' | translate}}
+                    <br> {{'home.event-info.university.name' | translate}}
+                </h3>
+            </div>
+            <div class="event-info-details-description">
+                <p>
+                    {{'home.event-info.details' | translate}}
+                </p>
+            </div>
+        </div>
+        <label class="event-info-details-main">
+            {{'home.event-info.covid.1' | translate}}
+            <a [routerLink]="['/app-rules']">{{'home.event-info.covid.2' | translate}}</a>
+            {{'home.event-info.covid.3' | translate}}
+        </label>
+        <!-- <ng-container *ngIf="!timeIsUp">
+            <a class="event-info-choose" href="https://forms.office.com/r/6aN4DYgAZ4" target="_blank">{{'home.event-info.important-choose' | translate}}<i class="las la-external-link-alt"></i></a>
+            <p *ngIf="!timeIsUp2 && timeLeft" [routerLink]="['/login']">{{'home.event-info.open' | translate}}</p>
+            <ng-container *ngIf="switcher">
+                <div class="event-info-counter-end" *ngIf="timeLeft && !timeIsUp2">
+                    <p>{{'competitor-zone.bar.time-left' | translate}}</p>
+                    <div [ngClass]="{'event-info-counter-end-ending': isLessThanWeek}">
+                        <label>
+                            {{timeLeft | msTransform: 'd'}}<span> {{'home.event-info.time.days' | translate}}</span>
+                        </label>
+                        <span>
+                            :
+                        </span>
+                        <label>
+                            {{timeLeft | msTransform: 'h'}}<span> {{'home.event-info.time.hours' | translate}}</span>
+                        </label>
+                        <span>
+                            :
+                        </span>
+                        <label>
+                            {{timeLeft | msTransform: 'm'}}<span> {{'home.event-info.time.minutes' | translate}}</span>
+                        </label>
+                        <span>
+                            :
+                        </span>
+                        <label>
+                            {{timeLeft | msTransform: 's'}}<span> {{'home.event-info.time.seconds' | translate}}</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="event-info-counter-end" *ngIf="timeIsUp2">
+                    <p>
+                        {{'competitor-zone.bar.time-up' | translate}}
+                    </p>
+                    <div>
+                        <label>
+                            &nbsp;
+                        </label>
+                    </div>
+                </div>
+
+            </ng-container>
+            <ng-container *ngIf="!switcher">
+                <div class="event-info-counter-end" *ngIf="timeLeftSmashBots && !timeIsUpSmashBots">
+                    <p>{{'competitor-zone.bar.time-left-sb' | translate}}</p>
+                    <div [ngClass]="{'event-info-counter-end-ending': isLessThanWeekSmashBots}">
+                        <label>
+                            {{timeLeftSmashBots | msTransform: 'd'}} <span>{{'home.event-info.time.days' | translate}}</span>
+                        </label>
+                        <span>
+                            :
+                        </span>
+                        <label>
+                            {{timeLeftSmashBots | msTransform: 'h'}} <span>{{'home.event-info.time.hours' | translate}}</span>
+                        </label>
+                        <span>
+                            :
+                        </span>
+                        <label>
+                            {{timeLeftSmashBots | msTransform: 'm'}} <span>{{'home.event-info.time.minutes' | translate}}</span>
+                        </label>
+                        <span>
+                            :
+                        </span>
+                        <label>
+                            {{timeLeftSmashBots | msTransform: 's'}} <span>{{'home.event-info.time.seconds' | translate}}</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="event-info-counter-end" *ngIf="timeIsUpSmashBots">
+                    <p>
+                        {{'competitor-zone.bar.time-up-sb' | translate}}
+                    </p>
+                    <div>
+                        <label>
+                            &nbsp;
+                        </label>
+                    </div>
+                </div>
+            </ng-container>
+        </ng-container> -->
+
+        <a [href]="isEnglish === 'pl' ? 'https://rzit.smarthost.pl/robomotion/info-28-10-2021.pdf' : 'https://rzit.smarthost.pl/robomotion/info-28-10-2021-ang.pdf'" target="_blank">{{'home.event-info.important' | translate}}<i class="las la-external-link-alt"></i></a>
+    </section>
+    <section class="event-program" id="programme">
+        <h3 style="visibility: collapse;">Po krótkiej przerwie jedne z najlepszych zawodów w Polsce powracają do Rzeszowa z wielkim przytupem! Tym razem oprócz klasycznych konkurencji typu Sumo, czy LineFollower, jako pierwsi w Polsce przygotowaliśmy dla Was wyjątkową kategorię - Smash
+            Bots by RoboLAB! Młodszym uczestnikom z pewnością spodobają się konkurencje związane z LEGO, natomiast jeżeli ktoś ma chęć jedynie przyjść i pooglądać - na pewno nie będzie się nudzić.</h3>
+        <h3 style="visibility: collapse;">After a short break, one of the best competitions in Poland return to Rzeszów with a bang! This time, in addition to the classic Sumo or LineFollower competitions, we were the first in Poland who prepare a unique category for you - Smash Bots
+            by RoboLAB! Younger participants will surely like the LEGO competitions, but if someone just wants to look and watch - they will definitely not be bored.</h3>
+        <div class="event-program-grid" *ngIf="!isMobile">
+            <div class="event-program-grid-names">
+                <div *ngFor="let event of eventsList" (click)="onSwitchEvent(event.id)" class="event-program-grid-names-arrow" [ngClass]="{'event-program-grid-names-arrow-disabled': selectedEventIndex != event.id}">
+                    {{event.name}}
+                </div>
+            </div>
+            <div class="event-program-grid-description" [@switch]="switchAnimationStateName">
+                <div class="event-program-grid-description-header">
+                    <i class="las" [ngClass]=iconOfSelectedEvent></i>
+                </div>
+                <p>
+                    {{descriptionOfSelectedEvent}}
+                </p>
+            </div>
+        </div>
+        <div class="event-program-grid event-program-grid-mobile" *ngIf="isMobile">
+            <div class="event-program-grid-mobile-names">
+                <button (click)="onSwitchEvent(selectedEventIndex - 1)"><</button>
+                <p>{{nameOfSelectedEvent}}</p>
+                <button (click)="onSwitchEvent(selectedEventIndex + 1)">></button>
+            </div>
+            <div class="event-program-grid-description" [@switch]="switchAnimationStateName">
+                <div class="event-program-grid-description-header">
+                    <i class="las" [ngClass]=iconOfSelectedEvent></i>
+                </div>
+                <p>{{descriptionOfSelectedEvent}}</p>
+            </div>
+        </div>
+    </section>
+    <!-- COMPETITIONS -->
+    <section class="competitions" id="competitions">
+        <h4 style="visibility: collapse;">KONKURENCJE: Smash Bots by RoboLAB, Freestyle, Robot Sprint, Line Follower, Micromouse, Cebula House, Sumo, LEGO Tug of War</h4>
+        <h3 class="section-header">{{'home.competitions.title' | translate}}</h3>
+        <div class="competitions-grid" id="competitions-scroll">
+            <div class="competitions-grid-card-container" *ngFor="let category of categories; index as i;" (mouseenter)="pauseScrolling(true)" (mouseleave)="pauseScrolling(false)" (scroll)="pauseScrolling(false)">
+                <div class="competitions-grid-card">
+                    <div class="competitions-grid-card-style competitions-grid-card--front">
+                        <img [src]="'../../assets/gifs/' + category.icon" [alt]="category.name" class="competitions-grid-card--front-img" [id]="'comp-'+i">
+                        <label>{{category.name}}</label>
+                        <button (click)="flipCard($event, 'back')">{{'home.competitions.learn' | translate}}</button>
+                    </div>
+                    <div class="competitions-grid-card-style competitions-grid-card--back">
+                        <button (click)="flipCard($event, 'front')">X</button>
+                        <p>{{category.description}}</p>
+                        <span (click)="openUrl(category.linkToRegulation)">
+                          {{'home.competitions.regulations' | translate}}
+                        <i class="las la-file-alt"></i>                      </span>
+                        <span *ngIf="category.id === 4" (click)="openUrl('https://bit.ly/robomotion21dr')">
+                          DRAG {{'home.competitions.regulations' | translate}}
+                        <i class="las la-file-alt"></i>                      </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- LOCATION -->
+    <section class="location paralax" id="location">
+        <h4 style="visibility: collapse;">Politechnika Rzeszowska</h4>
+        <div class="location-wave location-wave-yellow"></div>
+        <div class="location-wave"></div>
+        <div class="location-grid">
+            <img src="../../assets/svg/location.svg" alt="Budynek Ł na Politechnice Rzeszowskiej">
+            <div class="location-grid-right">
+                <h3 class="section-header">{{'home.location.title' | translate}}</h3>
+                <h2>
+                    {{'home.event-info.university.hall' | translate}} <br>
+                    <span>{{'home.event-info.university.name' | translate}}</span><br>Podpromie 10 <br> 35-045 Rzeszów
+                </h2>
+                <button (click)="openUrl('https://www.google.pl/maps/place/Hala+Podpromie+w+Rzeszowie/@50.0294717,22.0005205,186m/data=!3m1!1e3!4m5!3m4!1s0x473cfa5520c2e047:0x1ea389b078344688!8m2!3d50.0293553!4d22.0005825')">{{'home.location.showOnMap' | translate}}
+                  <i class="las la-map-marked-alt"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <h4 style="visibility: collapse;">Organizatorzy: Koło Naukowe Automatyków i Robotyków ROBO, Koło Naukowe Elektroniki i Technologii Informacyjnych, Fundacja Wspierania Edukacji przy Stowarzyszeniu Dolina Lotnicza, RoboLAB, Logo organizatora Polskie Towarzystwo Informatyczne Oddział
+        Podkarpacki Podkarpacki
+    </h4>
+    <!-- PATREONS -->
+    <section class="organizer" id="patreons">
+        <h3 class="section-header">{{'home.patreons.organizer.title' | translate}}</h3>
+        <div>
+            <span>{{'home.patreons.organizer.name' | translate}}</span>
+            <img src="../../assets/svg/robo_white.svg" alt="Logo organizatora ROBO">
+            <div class="organizer-social">
+                <p (click)="openUrl('https://www.facebook.com/rzeszowska.grupa.it')" class="organizer-social-item organizer-social-item--fb"><i class="lab la-facebook-f"></i></p>
+                <p (click)="openUrl('https://www.instagram.com/rzeszowskagrupait/')" class="organizer-social-item organizer-social-item--ig"><i class="lab la-instagram"></i></p>
+                <p (click)="openUrl('https://rzit.pl/robo/')" class="organizer-social-item organizer-social-item--web"><i class="las la-globe-europe"></i></p>
+            </div>
+        </div>
+        <div>
+            <span>{{'home.patreons.organizer6.name' | translate}}</span>
+            <img src="../../assets/jpg/kneiti.png" alt="Logo organizatora ROBO">
+            <div class="organizer-social">
+                <p (click)="openUrl('https://www.facebook.com/rzeszowska.grupa.it')" class="organizer-social-item organizer-social-item--fb"><i class="lab la-facebook-f"></i></p>
+                <p (click)="openUrl('https://www.instagram.com/rzeszowskagrupait/')" class="organizer-social-item organizer-social-item--ig"><i class="lab la-instagram"></i></p>
+                <p (click)="openUrl('https://www.rzit.pl/kneiti/')" class="organizer-social-item organizer-social-item--web"><i class="las la-globe-europe"></i></p>
+            </div>
+        </div>
+        <div>
+            <!-- <span>{{'home.patreons.organizer5.name' | translate}}</span> -->
+            <img src="../../assets/jpg/rzit.png" alt="Logo organizatora ROBO">
+            <div class="organizer-social">
+                <p (click)="openUrl('https://www.facebook.com/rzeszowska.grupa.it')" class="organizer-social-item organizer-social-item--fb"><i class="lab la-facebook-f"></i></p>
+                <p (click)="openUrl('https://www.instagram.com/rzeszowskagrupait/')" class="organizer-social-item organizer-social-item--ig"><i class="lab la-instagram"></i></p>
+                <p (click)="openUrl('https://rzit.pl/')" class="organizer-social-item organizer-social-item--web"><i class="las la-globe-europe"></i></p>
+            </div>
+        </div>
+        <div>
+            <!-- <h3 class="section-header">{{'home.patreons.organizer.title' | translate}}</h3> -->
+            <!-- <span>{{'home.patreons.organizer2.name' | translate}}</span> -->
+            <img [src]="'home.patreons.organizer2.src' | translate" alt="Logo organizatora Fundacja Wspierania Edukacji przy Stowarzyszeniu Dolina Lotnicza">
+            <div class="organizer-social">
+                <p (click)="openUrl('https://www.facebook.com/DolinaWiedzy')" class="organizer-social-item organizer-social-item--fb"><i class="lab la-facebook-f"></i></p>
+                <!-- <p (click)="openUrl('https://www.instagram.com/rzeszowskagrupait/')" class="organizer-social-item organizer-social-item--ig"><i class="lab la-instagram"></i></p> -->
+                <p (click)="openUrl('https://www.dolinawiedzy.pl')" class="organizer-social-item organizer-social-item--web"><i class="las la-globe-europe"></i></p>
+            </div>
+        </div>
+        <div>
+            <!-- <h3 class="section-header">{{'home.patreons.organizer.title' | translate}}</h3> -->
+            <!-- <span>{{'home.patreons.organizer4.name' | translate}}</span> -->
+            <img src="../../assets/svg/pti.png" alt="Logo organizatora Polskie Towarzystwo Informatyczne Oddział Podkarpacki">
+            <div class="organizer-social">
+                <p (click)="openUrl('https://www.facebook.com/ZGPTI/')" class="organizer-social-item organizer-social-item--fb"><i class="lab la-facebook-f"></i></p>
+                <p (click)="openUrl('https://www.linkedin.com/groups/23057?trk=prof-groups-membership-name')" class="organizer-social-item organizer-social-item--in"><i class="lab la-linkedin-in"></i></p>
+                <p (click)="openUrl('https://www.portal.pti.org.pl/')" class="organizer-social-item organizer-social-item--web"><i class="las la-globe-europe"></i></p>
+            </div>
+        </div>
+        <div>
+            <!-- <h3 class="section-header">{{'home.patreons.organizer.title' | translate}}</h3> -->
+            <!-- <span>{{'home.patreons.organizer4.name' | translate}}</span> -->
+            <img src="../../assets/jpg/prz_pl.png" alt="Logo organizatora Politechnika Rzeszowska">
+            <div class="organizer-social">
+                <p (click)="openUrl('https://www.facebook.com/oficjalnypolitechnikarzeszowska')" class="organizer-social-item organizer-social-item--fb"><i class="lab la-facebook-f"></i></p>
+                <p (click)="openUrl('https://www.instagram.com/politechnika_rzeszowska/')" class="organizer-social-item organizer-social-item--ig"><i class="lab la-linkedin-in"></i></p>
+                <p (click)="openUrl('https://w.prz.edu.pl/')" class="organizer-social-item organizer-social-item--web"><i class="las la-globe-europe"></i></p>
+            </div>
+        </div>
+        <div>
+            <!-- <h3 class="section-header">{{'home.patreons.organizer.title' | translate}}</h3> -->
+            <!-- <span>{{'home.patreons.organizer3.name' | translate}}</span> -->
+            <img src="../../assets/svg/RoboLAB-white.svg" alt="Logo organizatora RoboLAB">
+            <div class="organizer-social">
+                <p (click)="openUrl('https://www.facebook.com/RoboLAB.Polska')" class="organizer-social-item organizer-social-item--fb"><i class="lab la-facebook-f"></i></p>
+                <!-- <p (click)="openUrl('https://www.instagram.com/rzeszowskagrupait/')" class="organizer-social-item organizer-social-item--ig"><i class="lab la-instagram"></i></p> -->
+                <p (click)="openUrl('https://robolab.edu.pl')" class="organizer-social-item organizer-social-item--web"><i class="las la-globe-europe"></i></p>
+            </div>
+        </div>
+    </section>
+    <section class="patreons">
+        <h3 class="section-header">{{'home.patreons.title' | translate}}</h3>
+        <ng-container *ngFor="let name of patreonNames; let i = index">
+            <div class="patreons-class" [ngClass]="patreonClassPicker(i)" *ngIf="getAllPatreonsWithIndex(i).length > 0">
+                <p class="patreons-name">{{name}}</p>
+                <div class="patreons-class-container">
+                    <div class="patreons-one" *ngFor="let patreon of getAllPatreonsWithIndex(i)" (click)="openUrl(patreon.linkToSite)">
+                        <img [src]="patreon.image" alt="Logo partnera">
+                        <p>{{patreon.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <p>{{'home.patreons.question' | translate}}</p>
+        <img src="../../assets/jpg/unia.png">
+    </section>
+    <!-- FOOTER -->
+    <section class="footer">
+        <h2 class="paralax-name footer-name">
+            ROBO<br>
+            <h2 class="paralax-name-second footer-name-second">motion 2021</h2><br>
+            <img src="../../assets/svg/klocki.svg" class="paralax-name-img footer-name-img" alt="Logo ROBOmotion">
+        </h2>
+        <!-- <a></a> -->
+        <p>
+            {{'home.footer.copyright' | translate}} © {{eventDate?.getFullYear()}} - Rzeszowska Grupa IT | {{'home.footer.designed' | translate}} <span>{{'home.footer.developer' | translate}}</span>
+        </p>
+    </section>
+</div>

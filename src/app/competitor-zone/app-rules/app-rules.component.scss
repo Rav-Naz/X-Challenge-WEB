@@ -1,0 +1,75 @@
+    @import '../../../app/scss/colors';
+    @import '../../../app/scss/variables';
+    a {
+        color: hotpink;
+    }
+    
+    .competitor {
+        width: 100%;
+        height: 100vh;
+        padding-top: 9rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow-y: auto;
+        h3 {
+            color: $color-white;
+            font-size: 2.5rem;
+            font-weight: bold;
+            &:last-child {
+                margin-bottom: 5rem;
+            }
+        }
+        &>div {
+            // direction: ltr;
+            // overflow-y: auto;
+            width: 90%;
+            max-width: 100rem;
+            padding: 3rem;
+            text-align: left;
+            a {
+                color: green;
+                text-decoration: none;
+            }
+            h5 {
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 3rem;
+                font-family: $title-font;
+                color: $color-primary;
+                padding: 2rem;
+                &:not(:first-child):not(:nth-child(2)) {
+                    padding-top: 15rem;
+                }
+            }
+            h2 {
+                font-size: 2.6rem;
+                text-transform: uppercase;
+                font-family: $default-font;
+                color: $color-primary;
+                line-height: 3rem;
+                font-weight: 200;
+                padding: 1.5rem 0;
+            }
+            p {
+                padding: .5rem;
+                font-size: 2rem;
+                line-height: 2.3rem;
+                font-family: $default-font;
+                color: $color-white;
+            }
+            label {
+                font-size: 2.2rem;
+                font-family: $default-font;
+                line-height: 2.5rem;
+                color: $color-white;
+            }
+            &>div {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+    
+    @media only screen and (max-width: $max-width-4) {}

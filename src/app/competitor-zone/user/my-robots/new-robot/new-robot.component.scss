@@ -1,0 +1,40 @@
+@import '../../../../scss/colors';
+@import '../../../../scss/variables';
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    height: max-content;
+    padding: 2rem;
+}
+
+h5 {
+    font-size: 3rem;
+    letter-spacing: .2rem;
+    text-align: center;
+    span {
+        color: $color-primary;
+    }
+}
+
+p {
+    color: $color-grey-0;
+    font-size: 2rem;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: flex-end;
+    margin: 2rem;
+    width: max-content;
+    i {
+        margin-left: 1rem;
+        line-height: 0.1rem;
+        font-size: 2.6rem;
+    }
+}

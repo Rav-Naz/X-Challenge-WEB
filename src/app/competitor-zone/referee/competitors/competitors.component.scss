@@ -1,0 +1,41 @@
+@import '../../user/my-robots/my-robots.component.scss';
+@import '../../../scss/colors';
+h5 {
+    margin: 0 3rem;
+    font-size: 3rem;
+    letter-spacing: .2rem;
+    text-align: center;
+    width: max-content;
+    span {
+        color: $color-primary;
+    }
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    height: min-content;
+    app-input {
+        width: 80%;
+    }
+    &>div {
+        width: 60rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        label {
+            font-size: 1.5rem;
+            color: $color-grey-0;
+        }
+    }
+}
+
+@media only screen and (max-width: $max-width-2) {
+    .filter {
+        display: flex;
+        flex-direction: column;
+    }
+}

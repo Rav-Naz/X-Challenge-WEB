@@ -1,0 +1,70 @@
+@import '../../scss/variables';
+@import '../../scss/colors';
+.competitor {
+    width: 100%;
+    height: 100vh;
+    padding-top: 9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+        font-size: 2rem;
+    }
+}
+
+.success {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    img {
+        width: 30rem;
+        height: 30rem;
+    }
+    &-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        button {
+            &,
+            &:link,
+            &:visited {
+                margin-top: 5rem;
+                text-decoration: none;
+                background-color: transparent;
+                cursor: pointer;
+                color: $color-primary;
+                font-size: 2rem;
+                justify-self: right;
+                font-family: $title-font;
+                align-self: center;
+                border: 0.2rem solid $color-primary;
+                border-radius: 10rem;
+                transition: transform ease-out 0.1s;
+                padding: 2rem;
+                &:focus {
+                    outline: none;
+                    &:active {
+                        transform: translateY(3px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $max-width-4) {
+    .success {
+        max-width: 90%;
+        flex-direction: column;
+        *>p {
+            font-size: 2.5rem;
+        }
+        button {
+            font-size: 2.5rem
+        }
+    }
+}

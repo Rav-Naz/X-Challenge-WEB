@@ -1,0 +1,13 @@
+<div class="background" (click)="decide(false)" [style.visibility]="context ? 'visible' : 'hidden'" [ngClass]="{'start': context}">
+    <div class="dialog-container" [ngClass]="{'anim': context}" (click)="dummy($event)">
+        <div class="context-container">
+            <i class="las la-exclamation-triangle"></i>
+            <label>{{context}}</label>
+            <label>{{'dialog-box.continue' | translate}}</label>
+        </div>
+        <div class="navigation-container">
+            <button *ngIf="context" class="submit-button" (click)="decide(false)">{{'dialog-box.no' | translate}}</button>
+            <button *ngIf="context" class="submit-button" (click)="decide(true)">{{'dialog-box.yes' | translate}}</button>
+        </div>
+    </div>
+</div>
