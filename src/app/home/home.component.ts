@@ -16,6 +16,34 @@ import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 import { TranslateService } from '@ngx-translate/core';
 import { WindowSize } from '../models/window_size.model';
 import { fromEvent, Observable, Subscription } from "rxjs";
+// import Swiper core and required components
+import SwiperCore , {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Virtual,
+  Zoom,
+  Autoplay,
+  Thumbs,
+  Controller,
+  SwiperOptions,
+} from 'swiper';
+import { BehaviorSubject } from "rxjs";
+import Swiper from "swiper/types/swiper-class";
+
+// install Swiper components
+SwiperCore.use([
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Virtual,
+  Zoom,
+  Autoplay,
+  Thumbs,
+  Controller
+]);
 
 @Component({
   selector: 'app-home',
@@ -71,7 +99,7 @@ export class HomeComponent implements OnInit{
   public streamLink: SafeResourceUrl | undefined = undefined;
   public timeIsUp = false;
   public switchAnimationStateName: 'start' | 'void' | 'end' = 'void';
-  public eventDate: Date = new Date(2021, 10, 28, 9, 0, 0);
+  public eventDate: Date = new Date(2022, 10, 28, 9, 0, 0);
   public windowSize: WindowSize = { height: 1080, width: 1920};
 
   public timeLeft: number | undefined;
@@ -80,7 +108,18 @@ export class HomeComponent implements OnInit{
   public timeIsUpSmashBots: boolean = false;
   public switcher = false;
 
+  public config: SwiperOptions = {
+    loop: true,
+    autoHeight: true,
+    allowTouchMove: true,
+    autoplay: { delay: 1000, disableOnInteraction: false },
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    spaceBetween: 30,
+    pagination: { clickable: true },
+    navigation: true
 
+  }
 
   constructor(public translate: TranslateService, private httpService: HttpService, private authService: AuthService) {
     setInterval(() => {
@@ -88,7 +127,7 @@ export class HomeComponent implements OnInit{
     }, 5000)
     const sub1 = this.authService.info$.subscribe((data) => {
       if(data === undefined || data === null) return;
-      this.eventDate = new Date((data as any).eventDate);
+      // this.eventDate = new Date((data as any).eventDate);
       if((data as any).streamLink) {
         this.streamLink = (data as any).streamLink;
       }
@@ -122,6 +161,7 @@ export class HomeComponent implements OnInit{
   ngOnInit() {
     // this.enableCompetitionsScrolling()
   }
+
 
   async onSwitchEvent(eventIndex: number) {
     const switchTime = 200;
@@ -284,9 +324,25 @@ export class HomeComponent implements OnInit{
   get isEnglish() {
     return this.translate.currentLang
   }
+  
+  get getCurrnetYear() {
+    return new Date().getFullYear();
+  }
+
+  get getEventDate() {
+    return this.eventDate;
+  }
+
+  get getEventDateDay() {
+    return this.eventDate.getDate();
+  }
 
   timeout(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
-}
+  }
 
 }
+function ViewChild(arg0: string, arg1: { static: boolean; }) {
+  throw new Error('Function not implemented.');
+}
+

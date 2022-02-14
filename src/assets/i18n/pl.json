@@ -37,7 +37,7 @@
                 "2": "'Regulamin i polityka prywatności'",
                 "3": "oraz stosować się do restrykcji epidemiologicznych m.in. dezynfekcji rąk i noszenia maseczek."
             },
-            "details": "Po krótkiej przerwie jedne z najlepszych zawodów w Polsce powracają do Rzeszowa z wielkim przytupem! Tym razem oprócz klasycznych konkurencji typu Sumo, czy LineFollower, jako pierwsi w Polsce przygotowaliśmy dla Was wyjątkową kategorię - Smash Bots by RoboLAB! Młodszym uczestnikom  z pewnością spodobają się konkurencje związane z LEGO, natomiast jeżeli ktoś ma chęć jedynie przyjść i pooglądać - na pewno nie będzie się nudzić.",
+            "details": "X Challange dąży do realizacji wielu kategorii zawodów na szczeblu międzynarodowym, gdzie zawodnicy będą mogli sprawdzić swoje umiejętności manualne oraz programistyczne. Zawody kierowane będą dla uczniów szkół średnich oraz studentów, lecz nie zabraknie również konkurencji dla młodszych i starszych uczestników. Zawody oferują nie tylko nagrody materialne, lecz również doświadczenie w postaci tajników techniki od osób z całego świata i nowe kontakty.",
             "results": "Zobacz wyniki!",
             "open": "Rejestracja jest jeszcze otwarta!",
             "important": "Ważne informacje dla konstruktorów robotów kategorii Line Follower, Drag Race, Micromouse oraz SmashBots by RoboLAB (28.10.2021)",
@@ -64,6 +64,16 @@
                 { "id": 7, "name": "Sumo", "description": "Roboty niczym zawodnicy SUMO muszą wypchnąć przeciwnika poza specjalnie przygotowany ring. Wiele kategorii pozwoli z łatwością wybrać odpowiednią klasę robota dla swoich preferencji i możliwości.", "icon": "sumo.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/EgFJDKRkgFNMsfiUJ7UXLf4BTxsKUOtO2AborrY1uriUIA?e=3KVkGb" },
                 { "id": 8, "name": "LEGO® Tug of War", "description": "Ta konkurencja jest również zupełnie nowa! Dwa roboty ustawione naprzeciwko siebie, będą rywalizować w przeciąganiu liny. Wygrywa ten, któremu uda się przeciągnąć większą część liny na swoją stronę. Konkurencja ta jest przeznaczona jedynie dla robotów zbudowanych z klocków LEGO®", "icon": "tug_of_war.gif", "linkToRegulation": "https://bit.ly/robomotion21tow" }
             ]
+        },
+        "news": {
+            "title": "AKTUALNOŚCI",
+            "info": "W tym miejscu będziemy przekazywać Wam najbardziej istotne informacje dla zawodników oraz publiczności"
+        },
+        "categories": {
+            "learn-more": "Dowiedz się wiecej >>"
+        },
+        "gallery": {
+            "title": "Galeria"
         },
         "location": {
             "title": "LOKALIZACJA",
@@ -97,56 +107,8 @@
             },
             "title": "Partnerzy",
             "question": "Chcesz zostać patronem? Skontaktuj się z nami pod adresem kontakt@kneiti.prz.edu.pl",
-            "patreonList": [
-                { "id": 1, "patreonCategory": 1, "description": "WAGO", "image": "../../assets/svg/wago.png", "linkToSite": "https://www.wago.com/" },
-                { "id": 2, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/svg/forbot.svg", "linkToSite": "https://forbot.pl/" },
-                { "id": 3, "patreonCategory": 6, "description": "Botland", "image": "../../assets/jpg/botland.webp", "linkToSite": "https://botland.com.pl/" },
-                { "id": 5, "patreonCategory": 6, "description": "Kurier Rzeszowski", "image": "../../assets/jpg/kurier.jpg", "linkToSite": "https://kurierrzeszowski.pl/" },
-                { "id": 6, "patreonCategory": 6, "description": "Biznes i styl", "image": "../../assets/jpg/biznesistyl.jpg", "linkToSite": "https://www.biznesistyl.pl/" },
-                { "id": 8, "patreonCategory": 1, "description": "Europa Systems", "image": "../../assets/jpg/es.png", "linkToSite": "https://europasystems.pl/" },
-                { "id": 9, "patreonCategory": 1, "description": "Stowarzyszenie Elektryków Polskich Oddział Rzeszowski", "image": "../../assets/jpg/sep.gif", "linkToSite": "http://www.seprzeszow.pl/" },
-                { "id": 10, "patreonCategory": 1, "description": "EDOCS", "image": "../../assets/jpg/edocs.png", "linkToSite": "https://edocssystems.com/" },
-                { "id": 11, "patreonCategory": 0, "description": "BorgWarner", "image": "../../assets/jpg/borg.png", "linkToSite": "https://www.pracuj.pl/praca/borgwarner%20poland%20sp.%20z%20o.o.%20-%20morse%20systems;en" },
-                { "id": 17, "patreonCategory": 0, "description": "Pratt & Whitney", "image": "../../assets/jpg/pratt.png", "linkToSite": "https://pwrze.com/" },
-                { "id": 12, "patreonCategory": 0, "description": "Deloitte", "image": "../../assets/svg/deloitte.svg", "linkToSite": "https://www2.deloitte.com/pl/pl.html" },
-                { "id": 13, "patreonCategory": 4, "description": "Studenckie Koło Naukowe Informatyków KOD", "image": "../../assets/jpg/skni.png", "linkToSite": "https://kod.prz.edu.pl/" },
-                { "id": 14, "patreonCategory": 4, "description": "Koło fotograficzne Uniwersytetu Rzeszowskiego LENS", "image": "../../assets/jpg/lens.png", "linkToSite": "https://www.facebook.com/Lens.Uniwersytet.Rzeszowski/" },
-                { "id": 15, "patreonCategory": 0, "description": "MTU Aero Engines Polska", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/company/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
-                { "id": 4, "patreonCategory": 0, "description": "Sędziszów Małopolski", "image": "../../assets/jpg/sedziszow.png", "linkToSite": "https://sedziszow-mlp.pl/" },
-                { "id": 16, "patreonCategory": 2, "description": "Toltech", "image": "../../assets/jpg/toltech.png", "linkToSite": "http://www.toltech.pl/" },
-                { "id": 18, "patreonCategory": 4, "description": "Podkarpackie Centrum Ratownictwa Medycznego", "image": "../../assets/jpg/pcmr.png", "linkToSite": "https://pcrm.com.pl/" },
-                { "id": 19, "patreonCategory": 4, "description": "OSP Sietesz", "image": "../../assets/jpg/osp.png", "linkToSite": "https://www.facebook.com/Ochotnicza-Stra%C5%BC-Po%C5%BCarna-w-Sieteszy-159280490780836/" },
-                { "id": 21, "patreonCategory": 5, "description": "Rzeszów stolica innowacji", "image": "../../assets/jpg/rzeszow_stolica.png", "linkToSite": "https://www.erzeszow.pl/" },
-                { "id": 20, "patreonCategory": 4, "description": "OSP Łopuszka Mała", "image": "../../assets/jpg/osp2.png", "linkToSite": "https://www.facebook.com/OSP-%C5%81opuszka-Ma%C5%82a-105292021378333/" },
-                { "id": 17, "patreonCategory": 0, "description": "Prezydent Miasta Rzeszowa", "image": "../../assets/jpg/rzeszow.png", "linkToSite": "https://bip.erzeszow.pl/" },
-                { "id": 17, "patreonCategory": 5, "description": "Marszałek Województwa Podkarpackiego", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/index.php/zarzad-wojewodztwa/" },
-                { "id": 17, "patreonCategory": 5, "description": "Podkarpacki Kurator Oświaty", "image": "../../assets/jpg/kuratorium.png", "linkToSite": "https://www.ko.rzeszow.pl/" },
-                { "id": 17, "patreonCategory": 6, "description": "msalamon.pl", "image": "../../assets/jpg/salamon.png", "linkToSite": "https://msalamon.pl/" },
-                { "id": 17, "patreonCategory": 1, "description": "InfoSoftware", "image": "../../assets/jpg/infosoft.png", "linkToSite": "https://infosoftware.pl/" },
-                { "id": 17, "patreonCategory": 1, "description": "Kawasaki Robotics", "image": "../../assets/jpg/astor.png", "linkToSite": "https://www.kawasakirobotics.pl/" },
-                { "id": 17, "patreonCategory": 1, "description": "Solvera", "image": "../../assets/jpg/solvera.png", "linkToSite": "http://solvera.pl/" },
-                { "id": 17, "patreonCategory": 3, "description": "Cobot Planet", "image": "../../assets/jpg/cobot.png", "linkToSite": "https://www.cobotplanet.com/pl/" },
-                { "id": 17, "patreonCategory": 2, "description": "Autopart", "image": "../../assets/jpg/autopart.png", "linkToSite": "https://www.autopart.pl/" },
-                { "id": 17, "patreonCategory": 0, "description": "Urząd Marszałkowski", "image": "../../assets/jpg/podkarpackie.png", "linkToSite": "https://podkarpackie.eu/" },
-                { "id": 17, "patreonCategory": 6, "description": "TVP 3 Rzeszów", "image": "../../assets/jpg/tvp.jpg", "linkToSite": "https://rzeszow.tvp.pl/" },
-                { "id": 17, "patreonCategory": 2, "description": "Podkarpacka Izba Inżynierów Budownictwa", "image": "../../assets/jpg/izba.png", "linkToSite": "https://www.inzynier.rzeszow.pl/" },
-                { "id": 17, "patreonCategory": 4, "description": "Zespół Szkół Technicznych", "image": "../../assets/jpg/zst.png", "linkToSite": "http://www.zstrzeszow.pl/" },
-                { "id": 17, "patreonCategory": 2, "description": "Centrum usług dronowych", "image": "../../assets/jpg/cud.png", "linkToSite": "https://centrumdronowe.pl/" },
-                { "id": 17, "patreonCategory": 6, "description": "Radio Feniks", "image": "../../assets/jpg/feniks.png", "linkToSite": "http://feniks.fm/" },
-                { "id": 17, "patreonCategory": 2, "description": "{e-bi}", "image": "../../assets/jpg/ebi.png", "linkToSite": "https://e-bi.pl/" },
-                { "id": 17, "patreonCategory": 6, "description": "Radio Centrum 89.0 FM Rzeszów", "image": "../../assets/jpg/radio_centrum.png", "linkToSite": "https://www.facebook.com/radiocentrum/" }
-
-
-            ],
-            "tiers": [
-                "Partner Główny",
-                "Partner Złoty",
-                "Partner Srebrny",
-                "Partner Brązowy",
-                "Partner strategiczny",
-                "Patronat specjalny",
-                "Patronat medialny"
-            ]
+            "patreonList": [],
+            "tiers": []
         },
         "footer": {
             "copyright": "Prawa autorskie",

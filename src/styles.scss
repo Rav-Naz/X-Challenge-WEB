@@ -1,6 +1,9 @@
 @import '../src/app/scss/colors';
 @import '../src/app/scss/variables';
 @import '../src/app/scss/toastr';
+@import 'swiper/scss';
+@import '~swiper/scss/navigation';
+@import '~swiper/scss/pagination';
 *,
 *::after,
 *::before {
@@ -53,7 +56,7 @@ body {
     box-sizing: border-box;
     width: 100vw;
     height: auto;
-    font-family: 'Changa', sans-serif;
+    font-family: 'Jura', sans-serif;
     background-color: $color-grey-1;
     color: $color-white;
     overflow-x: hidden;
@@ -78,11 +81,12 @@ body {
     text-transform: uppercase;
     text-align: center;
     font-size: 4rem;
-    font-weight: 400;
+    font-weight: 300;
+    font-family: $title-font;
     letter-spacing: .5rem;
     z-index: 4;
     max-width: 80%;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 .submit-button {
@@ -125,12 +129,12 @@ body {
     }
 }
 
-.montserrat {
-    font-family: 'Montserrat Alternates', sans-serif;
+.goldman {
+    font-family: 'Goldman', cursive;
 }
 
-.changa {
-    font-family: 'Changa', sans-serif;
+.jura {
+    font-family: 'Jura', sans-serif;
 }
 
 .router-child {

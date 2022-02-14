@@ -51,6 +51,7 @@ import { RobotsComponent } from './competitor-zone/referee/robots/robots.compone
 import { CompetitorsComponent } from './competitor-zone/referee/competitors/competitors.component';
 import { CompetitorComponent } from './competitor-zone/referee/competitors/competitor/competitor.component';
 import { ThanksComponent } from './home/thanks/thanks.component';
+import { SwiperModule } from 'swiper/angular';
 
 
 @NgModule({
@@ -111,7 +112,8 @@ import { ThanksComponent } from './home/thanks/thanks.component';
         deps: [HttpClient]
       }
     }),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SwiperModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: "pl-PL" },

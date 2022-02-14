@@ -15,16 +15,16 @@
         <button (click)="onLogout()">{{'menu.logout' | translate}}</button>
     </div>
     <div class="navigator-links">
-        <a [routerLink]="['/login']" class="navigator-competitor-zone" (click)="switchMenu(false)">{{'menu.competitor-zone' | translate}}</a>
-        <a (click)="openTutorial()">{{'menu.tutorial' | translate}}</a>
+        <!-- <a [routerLink]="['/login']" class="navigator-competitor-zone" (click)="switchMenu(false)">{{'menu.competitor-zone' | translate}}</a> -->
+        <!-- <a (click)="openTutorial()">{{'menu.tutorial' | translate}}</a> -->
         <a [routerLink]="['/']" fragment="home" (click)="switchMenu(false)">{{'menu.home' | translate}}</a>
         <a [routerLink]="['/']" fragment="programme" (click)="switchMenu(false)">{{'menu.program' | translate}}</a>
         <a [routerLink]="['/']" fragment="competitions" (click)="switchMenu(false)">{{'menu.competitions' | translate}}</a>
         <a [routerLink]="['/']" fragment="location" (click)="switchMenu(false)">{{'menu.location' | translate}}</a>
         <a [routerLink]="['/']" fragment="patreons" (click)="switchMenu(false)">{{'menu.patreons' | translate}}</a>
-        <a [routerLink]="['/timetable']" (click)="switchMenu(false)">{{'menu.timetable' | translate}}</a>
-        <a [routerLink]="['/building-plan']" (click)="switchMenu(false)">{{'menu.plan' | translate}}</a>
-        <a *ngIf="isEventNow || userService.isReferee" [routerLink]="['/results']" (click)="switchMenu(false)"><b>{{'menu.results' | translate}}</b></a>
+        <!-- <a [routerLink]="['/timetable']" (click)="switchMenu(false)">{{'menu.timetable' | translate}}</a> -->
+        <!-- <a [routerLink]="['/building-plan']" (click)="switchMenu(false)">{{'menu.plan' | translate}}</a> -->
+        <!-- <a *ngIf="isEventNow || userService.isReferee" [routerLink]="['/results']" (click)="switchMenu(false)"><b>{{'menu.results' | translate}}</b></a> -->
     </div>
     <div class="navigator-footer">
         <img (click)="switchLang()" [src]="!isEnglish ? '../assets/svg/gb.svg' : '../assets/svg/pl.svg'">

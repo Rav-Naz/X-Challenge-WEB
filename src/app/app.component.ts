@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
   public isEnglish: boolean = true;
   public isCookies: boolean = false;
   private subs: Subscription = new Subscription;
-  public eventDate: Date = new Date(2021, 10, 28, 9, 0, 0);
+  public eventDate: Date = new Date(2022, 10, 28, 9, 0, 0);
 
   @ViewChild(ConfirmComponent) confirm: ConfirmComponent | null = null;
 
@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
 
     const sub1 = this.authService.info$.subscribe((data) => {
       if(data === undefined || data === null) return;
-      this.eventDate = new Date((data as any).eventDate);
+      // this.eventDate = new Date((data as any).eventDate);
     })
     this.subs?.add(sub1)
   }

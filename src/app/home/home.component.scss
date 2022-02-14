@@ -30,45 +30,42 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     &-name {
         color: $color-primary;
-        font-style: normal;
-        font-weight: 800;
-        font-size: 4rem;
-        line-height: 4rem;
+        font-weight: normal;
+        font-size: 12rem;
+        line-height: 12rem;
         font-family: $title-font;
-        &-top {
+        color: $color-white;
+        &-small {
             font-size: 6rem;
             line-height: 6rem;
         }
-        &-second {
-            font-size: 6rem;
-            margin-left: 2rem;
-            line-height: 6rem;
-            color: $color-white;
+        &-tiny {
+            font-size: 3rem;
+            line-height: 3rem;
         }
         &-container {
-            position: absolute;
-            z-index: 2;
-            margin: 4rem;
-            min-width: 30rem;
-            height: min-content;
-            width: max-content;
-            &-top {
-                margin: 8rem;
-                margin-top: 10rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            &-margin {
+                margin-bottom: 10rem;
             }
         }
         &-img {
-            width: 5rem;
-            // margin-top: 1rem;
-            transform: translateY(-4rem);
-            margin-left: 7.5rem;
-            &-top {
-                width: 7rem;
-                // margin-top: 1.5rem;
-                margin-left: 10rem;
+            width: 15rem;
+            &-small {
+                width: 7.5rem;
+            }
+            &-tiny {
+                width: 4rem;
             }
         }
     }
@@ -93,22 +90,8 @@
     .paralax {
         height: 60vh;
         &-name {
-            &-top {
-                font-size: 5rem;
-                line-height: 5rem;
-            }
-            &-container {
-                &-top {
-                    margin: 7rem;
-                    margin-top: 8rem;
-                }
-            }
             &-img {
-                &-top {
-                    width: 6rem;
-                    margin-top: 1.2rem;
-                    margin-left: 8rem;
-                }
+                width: 12rem;
             }
         }
         &-wave {
@@ -130,22 +113,8 @@
         }
         height: 45vh;
         &-name {
-            &-top {
-                font-size: 4rem;
-                line-height: 4rem;
-            }
-            &-container {
-                &-top {
-                    margin: 6rem;
-                    margin-top: 6rem;
-                }
-            }
             &-img {
-                &-top {
-                    width: 5rem;
-                    margin-top: 1.1rem;
-                    margin-left: 7rem;
-                }
+                width: 10rem;
             }
         }
         &-wave {
@@ -160,22 +129,8 @@
     .paralax {
         height: 35vh;
         &-name {
-            &-top {
-                font-size: 3rem;
-                line-height: 3rem;
-            }
-            &-container {
-                &-top {
-                    margin: 5rem;
-                    margin-top: 6rem;
-                }
-            }
             &-img {
-                &-top {
-                    width: 4.5rem;
-                    margin-top: 1rem;
-                    margin-left: 6rem;
-                }
+                width: 8rem;
             }
         }
         &-wave {
@@ -409,10 +364,11 @@
                 font-family: $default-font;
                 line-height: 2.5rem !important;
                 font-size: 2.5rem !important;
-                letter-spacing: normal !important;
+                // letter-spacing: normal !important;
+                letter-spacing: 0.2rem;
                 text-transform: none !important;
                 &-big {
-                    font-weight: 400 !important;
+                    font-weight: 900 !important;
                     line-height: 3rem;
                     font-size: 3rem;
                 }
@@ -1010,6 +966,142 @@
     }
 }
 
+.news {
+    background-color: $color-grey-3;
+    width: 100%;
+    padding: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &-one {
+        font-size: 2rem;
+        max-width: 80%;
+    }
+}
+
+.categories {
+    background-color: $color-grey-3;
+    width: 100%;
+    padding: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem 0;
+    &-container {
+        padding: 10rem 0;
+        background-color: $color-grey-5;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 110%;
+        height: 100%;
+        transform: rotateZ(-5deg);
+        &>* {
+            transform: rotateZ(5deg);
+        }
+        &>span {
+            position: relative;
+            content: "";
+            width: 2px;
+            min-height: 45rem;
+            background-color: $color-grey-1;
+            // transform: translateY(3rem);
+        }
+        &-day {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 5rem;
+            &-row {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                transform: rotateZ(-5deg);
+            }
+        }
+        box-shadow: 0 -1rem 3rem rgba($color-black,
+        0.3),
+        inset 0px -.5rem 5rem rgba($color-black,
+        0.5);
+    }
+    .category {
+        padding: 4rem;
+        transform: rotateZ(5deg);
+        width: 40rem;
+        height: 40rem;
+        // margin: 0 8rem;
+        box-shadow: 0 .5rem 5rem 2rem rgba($color-black, 0.5);
+        border-radius: 3rem;
+        background-size: 170% !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-self: flex-start;
+        color: $color-white;
+        h4 {
+            font-size: 5rem;
+            font-family: $title-font;
+            text-align: center;
+            font-weight: 100;
+        }
+        span {
+            width: 100%;
+            text-align: right;
+            font-family: $title-font;
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        &-day {
+            font-size: 4rem;
+            padding: 2rem;
+            padding-bottom: 8rem;
+            color: $color-grey-0;
+        }
+        &-tc {
+            background: linear-gradient(151.69deg, rgba($color-tc, 0.6) 15%, rgba($color-tc-dark, 0.6) 110%), url('../../assets/jpg/IMG_20210601_141312.jpg');
+            background-position: 0% 60%;
+        }
+        &-sb {
+            background: linear-gradient(151.69deg, rgba($color-sb, 0.5) 15%, rgba($color-sb-dark, 0.7) 110%), url('../../assets/jpg/K.Szydelko_144.jpg');
+            background-position: 20% 20%;
+            margin-right: 5rem;
+        }
+        &-rm {
+            background: linear-gradient(151.69deg, rgba($color-rm, 0.5) 15%, rgba($color-rm-dark, 0.7) 110%), url('../../assets/jpg/A.Szkulska_LENS\ UR_30.JPG');
+            background-position: 50% 60%;
+            margin-left: 5rem;
+            img {
+                align-self: center;
+                width: 70%;
+            }
+            color: $color-black;
+        }
+    }
+}
+
+.swiper {
+    width: 100%;
+    height: 50rem;
+    // color: red;
+}
+
+.gallery {
+    background-color: $color-grey-3;
+    width: 100%;
+    padding: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .location {
     position: relative;
     height: 50vh;
@@ -1217,6 +1309,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    margin-top: 10rem;
     h3 {
         // width: 100% !important;
         justify-self: center;
