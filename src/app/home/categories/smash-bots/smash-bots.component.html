@@ -1,0 +1,33 @@
+<div class="container category">
+    <section class="category-title" data-aos-duration="700" data-aos="fade">
+        <h2 data-aos-duration="1000" data-aos="slide-down" data-aos-delay="300">Smash Bots</h2>
+    </section>
+    <section class="description" data-aos-duration="700" data-aos="zoom-out" data-aos-delay="700">
+        <p>{{'home.categories.smash-bots.description' | translate}}</p>
+    </section>
+    <!-- TODO add visualzation and more description -->
+    <section class="competitions" id="competitions">
+        <h4 style="visibility: collapse;">KONKURENCJE: Smash Bots by RoboLAB, Freestyle, Robot Sprint, Line Follower, Micromouse, Cebula House, Sumo, LEGO Tug of War</h4>
+        <h3 class="section-header">{{'home.competitions.title' | translate}}</h3>
+        <div class="competitions-grid-card-container competitions-grid-card-container-one" *ngFor="let category of categories; index as i;" (mouseenter)="pauseScrolling(true)" (mouseleave)="pauseScrolling(false)" (scroll)="pauseScrolling(false)">
+            <div class="competitions-grid-card">
+                <div class="competitions-grid-card-style competitions-grid-card--front">
+                    <img [src]="'../../assets/gifs/' + category.icon" [alt]="category.name" class="competitions-grid-card--front-img" [id]="'comp-'+i">
+                    <label>{{category.name}}</label>
+                    <button (click)="flipCard($event, 'back')">{{'home.competitions.learn' | translate}}</button>
+                </div>
+                <div class="competitions-grid-card-style competitions-grid-card--back">
+                    <button (click)="flipCard($event, 'front')">X</button>
+                    <p>{{category.description}}</p>
+                    <span (click)="openUrl(category.linkToRegulation)">
+                      {{'home.competitions.regulations' | translate}}
+                    <i class="las la-file-alt"></i>                      </span>
+                    <span *ngIf="category.id === 4" (click)="openUrl('https://bit.ly/robomotion21dr')">
+                      DRAG {{'home.competitions.regulations' | translate}}
+                    <i class="las la-file-alt"></i>                      </span>
+                </div>
+            </div>
+        </div>
+        <!-- <a>{{'competitor-zone.categories.join' | translate}} >></a> -->
+    </section>
+</div>

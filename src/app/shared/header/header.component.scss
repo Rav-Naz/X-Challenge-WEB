@@ -1,5 +1,6 @@
 @import '../../scss/colors';
 @import '../../scss/variables';
+@import '../../home/home.component.scss';
 .header {
     height: 9rem;
     width: 100%;
@@ -35,6 +36,12 @@
         max-width: 50%;
         font-size: 3rem;
         font-family: $title-font;
+    }
+    div {
+        position: absolute;
+        top: 2.5rem;
+        left: 5rem;
+        cursor: pointer;
     }
 }
 

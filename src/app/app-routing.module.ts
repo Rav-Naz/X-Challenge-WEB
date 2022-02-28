@@ -25,12 +25,19 @@ import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RefereeGuard } from './services/referee-guard.service';
+import { TaskChallengeComponent } from './home/categories/task-challenge/task-challenge.component';
+import { SmashBotsComponent } from './home/categories/smash-bots/smash-bots.component';
+import { RobomotionComponent } from './home/categories/robomotion/robomotion.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  // {path: 'gallery', component: GalleryComponent},
+  {path: 'task-challenge', component: TaskChallengeComponent},
+  {path: 'smash-bots', component: SmashBotsComponent},
+  {path: 'robomotion', component: RobomotionComponent},
   // {path: 'results', component: ResultsComponent},
   // {path: 'timetable', component: TimetableComponent},
-  {path: 'building-plan', component: BuildingPlanComponent},
+  // {path: 'building-plan', component: BuildingPlanComponent},
   // {path: 'login', component: LoginComponent},
   // {path: 'register', component: RegisterComponent},
   {path: 'app-rules', component: AppRulesComponent},

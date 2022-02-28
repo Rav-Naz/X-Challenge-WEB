@@ -6,7 +6,7 @@
         <button class="submit-button" (click)="acceptCookies()">{{'cookies.button' | translate}}</button>
     </div>
 </div>
-<div class="navigator">
+<div class="navigator" id="navigator">
     <label *ngIf="userName === null"> </label>
     <div class="navigator-user" *ngIf="userName !== null">
         <label>{{'menu.hello' | translate}} <span>{{userName}}!</span></label>
@@ -18,8 +18,11 @@
         <!-- <a [routerLink]="['/login']" class="navigator-competitor-zone" (click)="switchMenu(false)">{{'menu.competitor-zone' | translate}}</a> -->
         <!-- <a (click)="openTutorial()">{{'menu.tutorial' | translate}}</a> -->
         <a [routerLink]="['/']" fragment="home" (click)="switchMenu(false)">{{'menu.home' | translate}}</a>
-        <a [routerLink]="['/']" fragment="programme" (click)="switchMenu(false)">{{'menu.program' | translate}}</a>
-        <a [routerLink]="['/']" fragment="competitions" (click)="switchMenu(false)">{{'menu.competitions' | translate}}</a>
+        <a [routerLink]="['/']" fragment="news" (click)="switchMenu(false)">{{'home.news.title' | translate}}</a>
+        <a [routerLink]="['/']" fragment="categories" (click)="switchMenu(false)">{{'home.categories.title' | translate}}</a>
+        <a [routerLink]="['/']" fragment="gallery" (click)="switchMenu(false)">{{'home.gallery.title' | translate}}</a>
+        <!-- <a [routerLink]="['/']" fragment="programme" (click)="switchMenu(false)">{{'menu.program' | translate}}</a> -->
+        <!-- <a [routerLink]="['/']" fragment="competitions" (click)="switchMenu(false)">{{'menu.competitions' | translate}}</a> -->
         <a [routerLink]="['/']" fragment="location" (click)="switchMenu(false)">{{'menu.location' | translate}}</a>
         <a [routerLink]="['/']" fragment="patreons" (click)="switchMenu(false)">{{'menu.patreons' | translate}}</a>
         <!-- <a [routerLink]="['/timetable']" (click)="switchMenu(false)">{{'menu.timetable' | translate}}</a> -->
@@ -32,7 +35,7 @@
         <a target="_blank" href="https://www.facebook.com/rzeszowrobomotion"><i class="lab la-facebook-square"></i></a>
     </div>
 </div>
-<button class="navigator-menu" (click)="switchMenu()">
+<button class="navigator-menu" (click)="switchMenu()" id="navigator-menu">
   <div class="navigator-menu-burger navigator-menu-burger-top"></div>
   <div class="navigator-menu-burger navigator-menu-burger-middle"></div>
   <div class="navigator-menu-burger navigator-menu-burger-bottom"></div>

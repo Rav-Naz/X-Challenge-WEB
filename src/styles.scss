@@ -1,8 +1,7 @@
 @import '../src/app/scss/colors';
 @import '../src/app/scss/variables';
 @import '../src/app/scss/toastr';
-@import 'swiper/scss';
-@import '~swiper/scss/navigation';
+@import '../src/app/scss/swiper';
 @import '~swiper/scss/pagination';
 *,
 *::after,
@@ -162,4 +161,31 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
     background: $color-primary-dark;
+}
+
+.tc-scrollbar {
+     ::-webkit-scrollbar-thumb {
+        background: $color-tc !important;
+    }
+     ::-webkit-scrollbar-thumb:hover {
+        background: $color-tc-dark !important;
+    }
+}
+
+.sb-scrollbar {
+     ::-webkit-scrollbar-thumb {
+        background: $color-sb !important;
+    }
+     ::-webkit-scrollbar-thumb:hover {
+        background: $color-sb-dark !important;
+    }
+}
+
+.rm-scrollbar {
+     ::-webkit-scrollbar-thumb {
+        background: $color-rm !important;
+    }
+     ::-webkit-scrollbar-thumb:hover {
+        background: $color-rm-dark !important;
+    }
 }

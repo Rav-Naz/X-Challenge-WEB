@@ -1,6 +1,26 @@
 @import '../app/scss/colors';
 @import '../app/scss/variables';
 .navigator {
+    &-tc {
+        background: linear-gradient(-90deg, $color-tc, $color-tc-dark) !important;
+    }
+    &-sb {
+        background: linear-gradient(-90deg, $color-sb, $color-sb-dark) !important;
+    }
+    &-rm {
+        background: linear-gradient(-90deg, $color-rm, $color-rm-dark) !important;
+        a {
+            color: $color-grey-1 !important
+        }
+        .navigator {
+            &-footer {
+                p {
+                    color: $color-grey-1 !important;
+                    border-bottom: 1px dashed $color-grey-1 !important;
+                }
+            }
+        }
+    }
     padding: 10rem 0 10rem 5rem;
     // padding-bottom: 10rem;
     position: fixed;
@@ -31,9 +51,9 @@
             font-size: 1.6rem;
             font-family: $title-font;
             text-align: left;
-            color: $color-grey-1;
+            color: $color-white;
             padding-bottom: .5rem;
-            border-bottom: 1px dashed $color-grey-5;
+            border-bottom: 1px dashed $color-white;
             cursor: pointer;
         }
         img {
@@ -56,7 +76,7 @@
         font-weight: 700 !important;
     }
     a {
-        color: $color-grey-5;
+        color: $color-white;
         width: 100%;
         text-align: left;
         margin: 1rem 0;
@@ -147,12 +167,12 @@
             top: 2rem;
             width: 5rem;
             height: 5rem;
-            background-color: transparent;
+            // background-color: transparent;
             line-height: 1rem;
             border-radius: 1rem;
             box-shadow: 0 0.2rem 2rem rgba($color-grey-5, 0.5);
             font-size: 3rem;
-            border: .2rem solid $color-white;
+            border: .2rem solid $color-primary;
             cursor: pointer;
             transition: all ease-out 0.5s;
             text-decoration: none;
@@ -161,6 +181,7 @@
             flex-direction: column;
             justify-content: space-evenly;
             align-items: center;
+            background-color: $color-grey-1;
             &:focus {
                 outline: none;
                 &:active {
@@ -170,15 +191,16 @@
                 }
             }
             &.open {
+                background-color: transparent;
                 transition: all ease-out 0.5s;
-                color: $color-grey-5;
-                border: .2rem solid $color-grey-5;
+                color: $color-white;
+                border: .3rem solid $color-white !important;
             }
             &.open .navigator-menu-burger {
                 transform: translateX(5rem);
-                color: $color-grey-5;
-                background-color: $color-grey-5;
-                border: .2rem solid $color-grey-5;
+                color: $color-white !important;
+                background-color: $color-white !important;
+                border: .3rem solid $color-white !important;
             }
             &.open .navigator-menu-burger-top {
                 transform: translateY(1rem) rotate(45deg)
@@ -193,8 +215,76 @@
         &-burger {
             width: 70%;
             height: .3rem;
-            background: $color-white;
+            background: $color-primary;
             transition: all .5s ease-in-out;
+        }
+        &-black {
+            &.open {
+                color: $color-grey-1 !important;
+                border: .2rem solid $color-grey-1 !important;
+            }
+            &.open .navigator-menu-burger {
+                color: $color-grey-1 !important;
+                background-color: $color-grey-1 !important;
+                border: .2rem solid $color-grey-1 !important;
+            }
+        }
+        &-tc {
+            &,
+            &:link,
+            &:visited {
+                background-color: $color-grey-1;
+                border: .3rem solid $color-tc !important;
+                &:focus {
+                    &:active {
+                        border: .3rem solid $color-tc !important;
+                    }
+                }
+                &.open {
+                    background-color: transparent;
+                }
+            }
+            .navigator-menu-burger {
+                background: $color-tc !important;
+            }
+        }
+        &-sb {
+            &,
+            &:link,
+            &:visited {
+                background-color: $color-grey-1;
+                border: .3rem solid $color-sb !important;
+                &:focus {
+                    &:active {
+                        border: .3rem solid $color-sb !important;
+                    }
+                }
+                &.open {
+                    background-color: transparent;
+                }
+            }
+            .navigator-menu-burger {
+                background: $color-sb !important;
+            }
+        }
+        &-rm {
+            &,
+            &:link,
+            &:visited {
+                background-color: $color-grey-1;
+                border: .3rem solid $color-rm !important;
+                &:focus {
+                    &:active {
+                        border: .3rem solid $color-rm !important;
+                    }
+                }
+                &.open {
+                    background-color: transparent;
+                }
+            }
+            .navigator-menu-burger {
+                background: $color-rm !important;
+            }
         }
     }
     &-outlet {
@@ -221,8 +311,8 @@
             align-self: center;
         }
         a {
-            font-size: 4rem;
-            line-height: 5rem;
+            font-size: 2.8rem;
+            line-height: 3.5rem;
             width: auto;
             text-align: center;
         }
@@ -237,6 +327,11 @@
         &-outlet {
             &.open {
                 transform: translateX(-100vw);
+            }
+        }
+        &-footer {
+            p {
+                font-size: 2rem;
             }
         }
         &-user {
@@ -261,7 +356,7 @@
             &,
             &:link,
             &:visited {
-                background-color: $color-grey-5;
+                background-color: $color-grey-1;
                 right: 3rem;
                 top: 3rem;
                 width: 8rem;
@@ -277,11 +372,11 @@
                     }
                 }
                 &.open {
-                    border: .3rem solid $color-grey-5;
+                    border: .3rem solid $color-white;
                     background: transparent;
                 }
                 &.open .navigator-menu-burger {
-                    border: .3rem solid $color-grey-5;
+                    border: .3rem solid $color-white;
                 }
                 &.open .navigator-menu-burger-top {
                     transform: translateY(1.7rem) rotate(45deg)
@@ -321,7 +416,7 @@
             &,
             &:link,
             &:visited {
-                background-color: $color-grey-5;
+                background-color: $color-grey-1;
                 right: 3rem;
                 top: 3rem;
                 width: 7rem;
@@ -336,10 +431,10 @@
                 }
                 &.open {
                     background: transparent;
-                    border: .3rem solid $color-grey-5;
+                    border: .3rem solid $color-white;
                 }
                 &.open .navigator-menu-burger {
-                    border: .2rem solid $color-grey-5;
+                    border: .2rem solid $color-white;
                 }
                 &.open .navigator-menu-burger-top {
                     transform: translateY(1.5rem) rotate(45deg)
@@ -369,10 +464,10 @@
                 font-size: 3rem;
                 border: .3rem solid $color-white;
                 &.open {
-                    border: .3rem solid $color-grey-5;
+                    border: .3rem solid $color-white;
                 }
                 &.open .navigator-menu-burger {
-                    border: .2rem solid $color-grey-5;
+                    border: .2rem solid $color-white;
                 }
                 &.open .navigator-menu-burger-top {
                     transform: translateY(1.2rem) rotate(45deg)

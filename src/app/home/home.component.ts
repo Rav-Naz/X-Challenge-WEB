@@ -3,7 +3,7 @@ import { UserService } from './../services/user.service';
 import { HttpService } from './../services/http.service';
 import { Patreon } from './../models/patreon';
 import { EventDescription } from './../models/event-description.model';
-import { Component, OnInit} from '@angular/core';
+import { AfterViewInit, Component, OnInit} from '@angular/core';
 import {
   trigger,
   state,
@@ -29,8 +29,6 @@ import SwiperCore , {
   Controller,
   SwiperOptions,
 } from 'swiper';
-import { BehaviorSubject } from "rxjs";
-import Swiper from "swiper/types/swiper-class";
 
 // install Swiper components
 SwiperCore.use([
@@ -82,7 +80,7 @@ SwiperCore.use([
     ])
   ],
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit, AfterViewInit{
 
   eventsList: Array<EventDescription> = [];
   categories: Array<Category> = [];
@@ -99,7 +97,7 @@ export class HomeComponent implements OnInit{
   public streamLink: SafeResourceUrl | undefined = undefined;
   public timeIsUp = false;
   public switchAnimationStateName: 'start' | 'void' | 'end' = 'void';
-  public eventDate: Date = new Date(2022, 10, 28, 9, 0, 0);
+  public eventDate: Date = new Date(2022, 10, 26, 9, 0, 0);
   public windowSize: WindowSize = { height: 1080, width: 1920};
 
   public timeLeft: number | undefined;
@@ -110,16 +108,64 @@ export class HomeComponent implements OnInit{
 
   public config: SwiperOptions = {
     loop: true,
-    autoHeight: true,
+    // autoHeight: true,
     allowTouchMove: true,
-    autoplay: { delay: 1000, disableOnInteraction: false },
+    // autoplay: { delay: 3000, disableOnInteraction: true },
     slidesPerView: 'auto',
     centeredSlides: true,
-    spaceBetween: 30,
+    // spaceBetween: 30,
     pagination: { clickable: true },
-    navigation: true
-
+    navigation: true,
+    // freeMode: true,
+    on: {
+      init: this.addColorInit,
+      slideChange: this.addColor
+    }
   }
+
+  public imageList = [
+    'A.Kotlarska (123).jpg',
+'A.Szkulska_LENS UR_3.jpg',
+'A.Szkulska_LENS UR_38.jpg',
+'J.Baran_SKNI_KOD (168).jpg',
+'J.Baran_SKNI_KOD (202).jpg',
+'J.Baran_SKNI_KOD (269).jpg',
+'J.Baran_SKNI_KOD (280).jpg',
+'J.Baran_SKNI_KOD (294).jpg',
+'J.Baran_SKNI_KOD (303).jpg',
+'J.Baran_SKNI_KOD (318).jpg',
+'J.Burlikowska_LENS UR_52.jpg',
+'J.Burlikowska_LENS UR_6.jpg',
+'J.Urban_LENS UR_21.jpg',
+'J.Urban_LENS UR_6.jpg',
+'Justyna Tropio_Lens Ur_12.jpg',
+'Justyna Tropio_Lens Ur_14.jpg',
+'Justyna Tropio_Lens Ur_19.jpg',
+'Justyna Tropio_Lens Ur_24.jpg',
+'Justyna Tropio_Lens Ur_36.jpg',
+'Justyna Tropio_Lens Ur_56.jpg',
+'Justyna Tropio_Lens Ur_57.jpg',
+'K.Cieleń_LENS UR_5.jpg',
+'K.Cieleń_LENS_UR_137.jpg',
+'K.Cieleń_LENS_UR_90.jpg',
+'K.Dudzińska_23.jpg',
+'K.Dudzińska_33.jpg',
+'K.Dudzińska_53.jpg',
+'K.Prokopik_LENSUR_41.jpg',
+'K.Szydelko_22.jpg',
+'K.Szydelko_32.jpg',
+'K.Szydelko_41.jpg',
+'KWronski-9355.jpg',
+'KWronski-9386.jpg',
+'KWronski-9452.jpg',
+'KWronski-9480.jpg',
+'KWro_DJI_0314.jpg',
+'KWro_DJI_0386.jpg',
+'KWR_9233.jpg',
+'KWR_9248.jpg',
+'KWR_9289.jpg',
+'M. Michas LENS UR_2.jpg'
+  ]
 
   constructor(public translate: TranslateService, private httpService: HttpService, private authService: AuthService) {
     setInterval(() => {
@@ -159,7 +205,52 @@ export class HomeComponent implements OnInit{
   }
 
   ngOnInit() {
-    // this.enableCompetitionsScrolling()
+    // this.enableCompetitionsScrolling()\
+    document.documentElement.style.setProperty('--swiper-theme-color', '#ffffff');
+  }
+
+  addColorInit() {
+   (document.getElementsByClassName('swiper-slide-active')[0] as HTMLElement).children[0].classList.add('gallery-color');
+  }
+  addColor(args:any) {
+    var img:HTMLElement;
+    if(args.previousIndex < args.activeIndex) {
+     img = (document.getElementsByClassName('swiper-slide-next')[0] as HTMLElement)
+    } else {
+      img = (document.getElementsByClassName('swiper-slide-prev')[0] as HTMLElement)
+    }
+    // console.log(img)
+    if(img && !img.children[0].classList.contains('gallery-color')) {
+      img.children[0].classList.add('gallery-color')
+    }
+    var img_old = (document.getElementsByClassName('swiper-slide-active')[0] as HTMLElement);
+    // console.log(img)
+    if(img_old && img_old.children[0].classList.contains('gallery-color')) {
+      img_old.children[0].classList.remove('gallery-color')
+    }
+  }
+
+  ngAfterViewInit(): void {
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+    var swiperRight = (document.getElementsByClassName('swiper-button-next')[0] as HTMLElement);
+    // swiperRight.style.padding = '6rem';
+    swiperRight.style.transform = "scale(0.5) translateY(-50%)";
+    swiperRight.style.backgroundColor = '#4BDA19';
+    swiperRight.style.borderRadius = '10rem';
+    swiperRight.style.boxShadow = '0 .2rem 2rem .5rem rgba(0, 0, 0, 0.5)';
+    // var swiperRightAfter = (document.getElementsByClassName('swiper-button-next::after')[0] as HTMLElement);
+    var swiperLeft = (document.getElementsByClassName('swiper-button-prev')[0]  as HTMLElement);
+    // swiperLeft.style.padding = '6rem';
+    swiperLeft.style.transform = "scale(0.5) translateY(-50%)";
+    swiperLeft.style.backgroundColor = '#4BDA19';
+    swiperLeft.style.borderRadius = '10rem';
+    swiperLeft.style.boxShadow = '0 .2rem 2rem .5rem rgba(0, 0, 0, 0.5)';
+    var slidersInGallery = document.getElementsByClassName('swiper-slide');
+    for (let index = 0; index < slidersInGallery.length; index++) {
+      const slide = slidersInGallery[index] as HTMLElement;
+      slide.style.width = 'auto';
+    }
   }
 
 

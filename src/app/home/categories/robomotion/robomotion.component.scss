@@ -1,0 +1,49 @@
+@import '../task-challenge/task-challenge.component.scss';
+// @import '../../../scss/colors';
+.category {
+    &-title {
+        background: radial-gradient(100% 100% at 50% 0%, rgba($color-rm, 0.5) 0%, transparent 100%);
+        div {
+            display: flex;
+            height: 100%;
+            width: 60%;
+            justify-content: center;
+            align-items: center;
+        }
+        img {
+            max-height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+.competitions {
+    &-grid {
+        &-card {
+            &--front {
+                button {
+                    &,
+                    &:link,
+                    &:visited {
+                        color: $color-black;
+                        box-shadow: 0 0.2rem 2rem rgba($color-rm, 0.5);
+                        background: linear-gradient($color-rm 60%, $color-rm-dark 100%);
+                    }
+                    &:hover {
+                        box-shadow: 0 0.2rem 3rem rgba($color-rm, 0.7);
+                    }
+                }
+            }
+            &--back {
+                button {
+                    &,
+                    &:link,
+                    &:visited {
+                        color: $color-rm;
+                        border: .2rem solid $color-rm;
+                    }
+                }
+            }
+        }
+    }
+}

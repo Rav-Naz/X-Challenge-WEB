@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "robomotion": {
+        "xchallenge": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -20,7 +20,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/robomotion",
+                        "outputPath": "dist/xchallenge",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -31,6 +31,7 @@
                             "src/assets"
                         ],
                         "styles": [
+                            "node_modules/aos/dist/aos.css",
                             "src/styles.scss"
                         ],
                         "scripts": []
@@ -69,10 +70,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "browserTarget": "robomotion:build:production"
+                            "browserTarget": "xchallenge:build:production"
                         },
                         "development": {
-                            "browserTarget": "robomotion:build:development"
+                            "browserTarget": "xchallenge:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -80,7 +81,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "robomotion:build"
+                        "browserTarget": "xchallenge:build"
                     }
                 },
                 "test": {
@@ -104,5 +105,5 @@
             }
         }
     },
-    "defaultProject": "robomotion"
+    "defaultProject": "xchallenge"
 }

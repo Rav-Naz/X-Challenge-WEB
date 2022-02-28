@@ -37,7 +37,7 @@
                 "2": "'Regulamin i polityka prywatności'",
                 "3": "oraz stosować się do restrykcji epidemiologicznych m.in. dezynfekcji rąk i noszenia maseczek."
             },
-            "details": "X Challange dąży do realizacji wielu kategorii zawodów na szczeblu międzynarodowym, gdzie zawodnicy będą mogli sprawdzić swoje umiejętności manualne oraz programistyczne. Zawody kierowane będą dla uczniów szkół średnich oraz studentów, lecz nie zabraknie również konkurencji dla młodszych i starszych uczestników. Zawody oferują nie tylko nagrody materialne, lecz również doświadczenie w postaci tajników techniki od osób z całego świata i nowe kontakty.",
+            "details": "X Challenge dąży do realizacji wielu kategorii zawodów na szczeblu międzynarodowym, gdzie zawodnicy będą mogli sprawdzić swoje umiejętności manualne oraz programistyczne. Zawody kierowane będą dla uczniów szkół średnich oraz studentów, lecz nie zabraknie również konkurencji dla młodszych i starszych uczestników. Zawody oferują nie tylko nagrody materialne, lecz również doświadczenie w postaci tajników techniki od osób z całego świata i nowe kontakty.",
             "results": "Zobacz wyniki!",
             "open": "Rejestracja jest jeszcze otwarta!",
             "important": "Ważne informacje dla konstruktorów robotów kategorii Line Follower, Drag Race, Micromouse oraz SmashBots by RoboLAB (28.10.2021)",
@@ -47,7 +47,7 @@
             "eventsList": [
                 { "id": 1, "name": "Ekscytujące konkurencje", "description": "Uczestnicy będą mogli zmierzyć się w aż 8 kategoriach czyli 15 konkurencjach. Organizatorzy przygotowali areny do zmagań na torach dla LineFollower’ów czy walk Sumo. Sam tor w kategorii LF przetestuje umiejętności programistyczne i konstrukcyjne wielu robotyków. Oprócz standardowych konkurencji organizatorzy przygotowali wiele niespodzianek. Każdy konstruktor niezależnie czy dopiero zaczyna przygodę z elektroniką czy jest już doświadczony na pewno znajdzie coś dla siebie. Nie zabraknie także konkurencji dedykowanych fanom marki LEGO®.", "icon": "la-trophy" },
                 { "id": 2, "name": "Po raz pierwszy w Polsce", "description": "Tegoroczna edycja powraca z dużym hukiem. W związku z tym organizatorzy pragną zaprosić wszystkich do wzięcia udziału w specjalnej konkurencji by RoboLab: Smash Bots! Potężne, zdalnie sterowane śmiercionośne maszyny staną do walki w dedykowanej zamkniętej arenie. Ze względu na pierwsze takie wydarzenie w Polsce organizatorzy zmniejszyli wymagania maszyn do rozmiarów 30x30 (wysokość max 2 metry). Zachęcamy wszystkich miłośników, studentów oraz uczniów aby spróbowali swoich sił i wzięli udział w tej niesamowitej walce. Do zgarnięcia za podium będą nagrody pieniężne.", "icon": "la-robot" },
-                { "id": 3, "name": "Najlepsi konstruktorzy", "description": "Każda edycja ROBO~motion skupia wielu profesjonalistów, entuzjastów i uczonych w dziedzinie robotyki. Jest to niesamowita okazja aby nawiązać nowe kontakty, zetknąć się ze specjalistami podczas pracy lub poznać najcenniejsze tajniki techniki od osób z całego świata. Przyjedź, pokaż się od jak najlepszej strony i zagwarantuj sobie świetlaną przyszłość!", "icon": "la-wrench" }
+                { "id": 3, "name": "Najlepsi konstruktorzy", "description": "Każda edycja X Challenge skupia wielu profesjonalistów, entuzjastów i uczonych w dziedzinie robotyki. Jest to niesamowita okazja aby nawiązać nowe kontakty, zetknąć się ze specjalistami podczas pracy lub poznać najcenniejsze tajniki techniki od osób z całego świata. Przyjedź, pokaż się od jak najlepszej strony i zagwarantuj sobie świetlaną przyszłość!", "icon": "la-wrench" }
             ]
         },
         "competitions": {
@@ -55,9 +55,9 @@
             "learn": "DOWIEDZ SIĘ WIĘCEJ",
             "regulations": "Regulamin",
             "categories": [
-                { "id": 1, "name": "Smash Bots by RoboLAB", "description": "Smash Botsy by RoboLAB to z pewnością najbardziej wymagająca konkurencja na naszych zawodach! W specjalnej arenie zdalnie sterowane roboty będą walczyć ze sobą do ostaniego tchu. Tutaj będzie się wiele działo!", "icon": "battlebot.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/ErCZ78rxSrpKs8EPimRWR0YBZNeY4CiKhoORwosxpt8iXQ?e=eyWCg8" },
-                { "id": 2, "name": "Freestyle", "description": "W tej konkurencji zawodnicy mogą wystawić całkowicie dowolny projekt, robota lub maszynę. Konstrukcje są oceniane prze sędziów oraz odwiedzających. Każdy głosujący wypełnia ankietę, w której przyznaje punkty każdemu projektowi, dlatego ważne jest, aby każdy zawodnik jak najlepiej zaprezentował swój projekt.", "icon": "freestyle.gif", "linkToRegulation": "https://bit.ly/robomotion21fs" },
-                { "id": 3, "name": "Robot Sprint", "description": "Robot sprint to konkurencja, w której liczy się nie tylko pomysłowość ale także szybkość poruszania się robota po planszy. W tej konkurencji udział mogą wziąć wszystkie roboty, których sposób poruszania przypomina chodzenie. Wygrana będzie należała do robota, który uzbiera największą ilość punktów podczas wszystkich rund.", "icon": "humanoid_sprint.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/EuHkMduHWcdGrRk0_ZHTSuYBZMeydZy-cCFBMRvDA-5iIA?e=7fscaM" },
+                { "id": 1, "name": "Smash Bots", "description": "Najbardziej wymagająca konkurencja na naszych zawodach! W specjalnej arenie, zdalnie sterowane roboty będą walczyć ze sobą do ostatniego tchu. Iskry i płomienie są tutaj gwarantowane.", "icon": "battlebot.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/ErCZ78rxSrpKs8EPimRWR0YBZNeY4CiKhoORwosxpt8iXQ?e=eyWCg8" },
+                { "id": 2, "name": "Task Hunters", "description": "Drużyna wraz ze swym robotem musi stawić czoła zadaniom i zdobyć jak największą ilość punktów na wcześniej przygotowanych arenach. Tutaj będzie się wiele działo!", "icon": "task_hunters.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/EuHkMduHWcdGrRk0_ZHTSuYBZMeydZy-cCFBMRvDA-5iIA?e=7fscaM" },
+                { "id": 3, "name": "Freestyle", "description": "W tej konkurencji zawodnicy mogą wystawić całkowicie dowolny projekt, robota lub maszynę. Konstrukcje są oceniane prze sędziów oraz odwiedzających. Każdy głosujący wypełnia ankietę, w której przyznaje punkty każdemu projektowi, dlatego ważne jest, aby każdy zawodnik jak najlepiej zaprezentował swój projekt.", "icon": "freestyle.gif", "linkToRegulation": "https://bit.ly/robomotion21fs" },
                 { "id": 4, "name": "Line Follower", "description": "Celem robota w tej konkurencji jest jak najszybsze pokonanie trasy wyznaczonej przez czarną linię narysowaną na planszy. Robot musi poruszać się po linii możliwie dokładnie, bez omijania czy ścinania zakrętów.", "icon": "line_follower.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/Erv3ruktMJtImHEgknuiI8EB5tQCTr3wcBGiN_7RSbGXSA?e=8Rcm8i" },
                 { "id": 5, "name": "Micromouse", "description": "Robot ma za zadanie odnaleźć najszybszą drogę od pola startu do obszaru składającego się z czterech pól ułożonych w kwadrat. Robot musi być bardzo dokładny, aby nie odbijał się od ścianek.", "icon": "micromouse.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/EvYRR3lUptJEpI-C4x7lImMBarbOxNHynINVX_kPnTS5Xw?e=ElSUyd" },
                 { "id": 6, "name": "Cebula House", "description": "Jest to zmodyfikowana wersja konkurencji znanej pod nazwą Ketchup House. My postawiliśmy na polskie produkty i smaki, dlatego na naszych zawodach przedmiotem do zbierania będzie cebula. Bo czemu nie? Na tą konkurencję można się stawić z samodzielnie wyselekcjonowaną cebulą.", "icon": "onion_house.gif", "linkToRegulation": "https://bit.ly/robomotion21oh" },
@@ -70,10 +70,32 @@
             "info": "W tym miejscu będziemy przekazywać Wam najbardziej istotne informacje dla zawodników oraz publiczności"
         },
         "categories": {
-            "learn-more": "Dowiedz się wiecej >>"
+            "title": "Kategorie",
+            "learn-more": "Dowiedz się wiecej >>",
+            "task-hunters": {
+                "description": "Task Hunters to konkurencja, gdzie drużyny projektują, konstruują i programują robota, który musi wykonać zadania na wcześniej przygotowanych arenach. Założeniem zawodów jest wykorzystanie tzw. kompetencji przyszłości w celu zbudowania zdalnie sterowanego robota wspólnie z członkami drużyny. Zawodnicy będą musieli wykazać się kreatywnością, aby stawić czoła zadaniom związanym z ogólnoświatowymi problemami. Konstrukcja robota może być wytworzona dowolnymi technikami, od konstrukcji wykonanych z drewna, druku 3D, aż po frezowane w metalu na obrabiarkach CNC. W założeniu zawodów nie ma ograniczeń wobec ilości oraz rodzaju wykorzystanych silników czy procesorów sterujących. Jedynymi ograniczeniami są wymiary robota oraz jego waga.",
+                "introduction": {
+                    "title": "Wprowadzenie",
+                    "description": "Cała opowieść o Chrupkowym mieście Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim optio vel recusandae ea sint unde excepturi voluptatem magni aperiam laborum. Maxime voluptate optio rerum reiciendis. Sequi veniam aliquam facere natus? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum eum corrupti quae natus amet debitis totam, voluptas explicabo saepe quibusdam blanditiis expedita dolores vel assumenda, ut, harum quas distinctio accusantium. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor vero, pariatur eveniet ipsum officia odit in hic laborum odio adipisci beatae voluptas tempore earum ullam deleniti est autem totam officiis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ad iusto inventore itaque assumenda modi quaerat sapiente autem, suscipit placeat quo voluptates exercitationem necessitatibus expedita praesentium minima nam ullam voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nulla adipisci nostrum repudiandae perferendis, tempore recusandae nam numquam accusamus, at facere. Veniam cupiditate natus praesentium distinctio neque voluptatem eos amet!",
+                    "stages": {
+                        "1": {
+                            "title": "Etap 1",
+                            "description": "Opis etapu 1 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim optio vel recusandae ea sint unde excepturi voluptatem magni aperiam laborum. Maxime voluptate optio rerum reiciendis. Sequi veniam aliquam facere natus? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum eum corrupti quae natus amet debitis totam, voluptas explicabo saepe quibusdam blanditiis expedita dolores vel assumenda, ut, harum quas distinctio accusantium. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor vero, pariatur eveniet ipsum officia odit in hic laborum odio adipisci beatae voluptas tempore earum ullam deleniti est autem totam officiis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ad iusto inventore itaque assumenda modi quaerat sapiente autem, suscipit placeat quo voluptates exercitationem necessitatibus expedita praesentium minima nam ullam voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nulla adipisci nostrum repudiandae perferendis, tempore recusandae nam numquam accusamus, at facere. Veniam cupiditate natus praesentium distinctio neque voluptatem eos amet!"
+                        },
+                        "2": {
+                            "title": "Etap 2",
+                            "description": "Opis etapu 2 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim optio vel recusandae ea sint unde excepturi voluptatem magni aperiam laborum. Maxime voluptate optio rerum reiciendis. Sequi veniam aliquam facere natus? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum eum corrupti quae natus amet debitis totam, voluptas explicabo saepe quibusdam blanditiis expedita dolores vel assumenda, ut, harum quas distinctio accusantium. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor vero, pariatur eveniet ipsum officia odit in hic laborum odio adipisci beatae voluptas tempore earum ullam deleniti est autem totam officiis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ad iusto inventore itaque assumenda modi quaerat sapiente autem, suscipit placeat quo voluptates exercitationem necessitatibus expedita praesentium minima nam ullam voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nulla adipisci nostrum repudiandae perferendis, tempore recusandae nam numquam accusamus, at facere. Veniam cupiditate natus praesentium distinctio neque voluptatem eos amet!"
+                        }
+                    }
+                }
+            },
+            "smash-bots": {
+                "description": "To jedne zbardziej widowiskowych konkurencji, wzorowanej na amerykańskich zawodach BattleBots. Zdalnie sterowane roboty walczą ze sobą na specjalnie przygotowanym ringu. Konkurencja ta nie ma litości i wygrywa robot, który przetrwa wszystkie walki. Konstrukcja robota nie ma ograniczeń pod względem zastosowanych materiałów i może posiadać młoty, piły czy ostrza. Jedynymi ograniczeniami nakładanymi na zawodników są normy wytyczone w regulaminie, takie jak waga i wymiar konstrukcji."
+            }
         },
         "gallery": {
-            "title": "Galeria"
+            "title": "Galeria",
+            "view-more": "Zobacz więcej >>"
         },
         "location": {
             "title": "LOKALIZACJA",
@@ -112,7 +134,7 @@
         },
         "footer": {
             "copyright": "Prawa autorskie",
-            "designed": "Zaprojektowane i opracowane przez",
+            "designed": "Opracowane przez",
             "developer": "Rafała Nazarko"
         }
     },
@@ -410,6 +432,9 @@
                 "uuid": "Robot UUID",
                 "name": "Robot nazwa"
             }
+        },
+        "categories": {
+            "join": "Dołącz teraz"
         }
 
     },
@@ -743,7 +768,7 @@
         "title": "Dziękujemy Ci!",
         "title-top": "Podziękowania",
         "signature": "Z wyrazami szacunku, Organizatorzy",
-        "description": "To właśnie dzięki takim osobom jak Ty jesteśmy w stanie tworzyć to wydarzenie. Wyrażamy ogromną wdzięczność za Twoje wsparcie i zaangażowanie. Mamy nadzieję, że szósta edycja Międzynarodowych Zawodów Robotów ROBO~motion była okazją do inspirującej wymiany myśli, informacji i doświadczeń związanych z robotyką oraz technologiami przyszłości. Dziękujemy, że dołączyłeś do licznego grona naszych odbiorców. Jest to dla nas zaszczyt i motywacja do dalszych działań. Chcielibyśmy gościć Cię podczas kolejnej edycji naszych Zawodów!"
+        "description": "To właśnie dzięki takim osobom jak Ty jesteśmy w stanie tworzyć to wydarzenie. Wyrażamy ogromną wdzięczność za Twoje wsparcie i zaangażowanie. Mamy nadzieję, że pierwsza edycja Międzynarodowych Zawodów X Challenge była okazją do inspirującej wymiany myśli, informacji i doświadczeń związanych z robotyką oraz technologiami przyszłości. Dziękujemy, że dołączyłeś do licznego grona naszych odbiorców. Jest to dla nas zaszczyt i motywacja do dalszych działań. Chcielibyśmy gościć Cię podczas kolejnej edycji naszych Zawodów!"
     },
     "dialog-box": {
         "yes": "Kontynuuj",

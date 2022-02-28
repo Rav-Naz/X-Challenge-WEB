@@ -6,6 +6,8 @@ import { AuthService } from './services/auth.service';
 import { Component, OnInit, Injector, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ConfirmComponent } from './shared/confirm/confirm.component';
+import * as AOS from 'aos';
+
 
 @Component({
   selector: 'app-root',
@@ -53,6 +55,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    AOS.init({
+      once: true
+    })
     const sub1 = this.injector.get(UserService).getUser$.subscribe((data) => {
       const user = data as any
       this.userName = user ? user.imie : null;

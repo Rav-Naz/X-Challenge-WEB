@@ -52,6 +52,9 @@ import { CompetitorsComponent } from './competitor-zone/referee/competitors/comp
 import { CompetitorComponent } from './competitor-zone/referee/competitors/competitor/competitor.component';
 import { ThanksComponent } from './home/thanks/thanks.component';
 import { SwiperModule } from 'swiper/angular';
+import { TaskChallengeComponent } from './home/categories/task-challenge/task-challenge.component';
+import { SmashBotsComponent } from './home/categories/smash-bots/smash-bots.component';
+import { RobomotionComponent } from './home/categories/robomotion/robomotion.component';
 
 
 @NgModule({
@@ -86,7 +89,9 @@ import { SwiperModule } from 'swiper/angular';
     RobotsComponent,
     CompetitorsComponent,
     CompetitorComponent,
-    ThanksComponent
+    ThanksComponent,    TaskChallengeComponent,
+    SmashBotsComponent,
+    RobomotionComponent
   ],
   imports: [
     BrowserModule,

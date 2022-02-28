@@ -37,7 +37,7 @@
                 "hall": "Regional Sports and Entertainment Center",
                 "name": "\"Podpromie\""
             },
-            "details": "X Challange aims to implement many categories of competitions at the international level, where competitors will be able to test their manual and programming skills. The competition will be directed to high school students and students, but there will also be competition for younger and older participants. The competition offers not only material prizes, but also experience in the form of technical secrets from people from all over the world and new contacts.",
+            "details": "X Challenge aims to implement many categories of competitions at the international level, where competitors will be able to test their manual and programming skills. The competition will be directed to high school students and students, but there will also be competition for younger and older participants. The competition offers not only material prizes, but also experience in the form of technical secrets from people from all over the world and new contacts.",
             "results": "See the results!",
             "open": "Registration is still open!",
             "important": "Important informations for the constructors of robots in the categories Line Follower, Drag Race, Micromouse and SmashBots by RoboLAB (28.10.2021)",
@@ -56,9 +56,9 @@
             "learn": "LEARN MORE",
             "regulations": "Rules",
             "categories": [
-                { "id": 1, "name": "Smash Bots by RoboLAB", "description": "Smash Bots by RoboLAB is certainly the most demanding competition at our competition! In a special arena, remote-controlled robots will fight each other until the end of their breath. There will be a lot going on here!", "icon": "battlebot.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/ErCZ78rxSrpKs8EPimRWR0YBZNeY4CiKhoORwosxpt8iXQ?e=eyWCg8" },
-                { "id": 2, "name": "Freestyle", "description": "In this competition, competitors can put on any project, robot or machine. The structures are assessed by referees and visitors. Each voter completes a questionnaire in which they award points for each project, so it is important that each competitor presents their project in the best possible way.", "icon": "freestyle.gif", "linkToRegulation": "https://bit.ly/robomotion21fs" },
-                { "id": 3, "name": "Robot Sprint", "description": "The sprint robot is a competition in which not only creativity counts, but also the speed of the robot's movement on the board. All robots whose movement resembles walking can take part in this competition. The robot that collects the most points in all rounds will be won.", "icon": "humanoid_sprint.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/EuHkMduHWcdGrRk0_ZHTSuYBZMeydZy-cCFBMRvDA-5iIA?e=7fscaM" },
+                { "id": 1, "name": "Smash Bots by RoboLAB", "description": "The most demanding competition at our competition! In a special arena, remote-controlled robots will fight each other until the last breath. Sparks and flames are guaranteed here.", "icon": "battlebot.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/ErCZ78rxSrpKs8EPimRWR0YBZNeY4CiKhoORwosxpt8iXQ?e=eyWCg8" },
+                { "id": 2, "name": "Task Hunters", "description": "The team and its robot must face the tasks and score as many points as possible in the previously prepared arenas. There will be a lot going on here!", "icon": "task_hunters.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/EuHkMduHWcdGrRk0_ZHTSuYBZMeydZy-cCFBMRvDA-5iIA?e=7fscaM" },
+                { "id": 3, "name": "Freestyle", "description": "In this competition, competitors can put on any project, robot or machine. The structures are assessed by referees and visitors. Each voter completes a questionnaire in which they award points for each project, so it is important that each competitor presents their project in the best possible way.", "icon": "freestyle.gif", "linkToRegulation": "https://bit.ly/robomotion21fs" },
                 { "id": 4, "name": "Line Follower", "description": "The goal of the robot in this competition is to follow the route marked by the black line drawn on the board as quickly as possible. The robot must follow the line as accurately as possible, without avoiding or cutting corners.", "icon": "line_follower.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/Erv3ruktMJtImHEgknuiI8EB5tQCTr3wcBGiN_7RSbGXSA?e=8Rcm8i" },
                 { "id": 5, "name": "Micromouse", "description": "The robot's task is to find the fastest path from the starting field to the area consisting of four fields arranged in a square. The robot must be very accurate so that it does not bounce off the walls.", "icon": "micromouse.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/EvYRR3lUptJEpI-C4x7lImMBarbOxNHynINVX_kPnTS5Xw?e=ElSUyd" },
                 { "id": 6, "name": "Onion House", "description": "It is a modified version of the competition known as Ketchup House. We focused on Polish products and flavors, so onions will be the subject of our competition. Because why not? You can come to this competition with independently selected onions.", "icon": "onion_house.gif", "linkToRegulation": "https://bit.ly/robomotion21oh" },
@@ -71,10 +71,32 @@
             "info": "At this place, we will provide you with the most important information for the competitors and the audience"
         },
         "categories": {
-            "learn-more": "Learn more >>"
+            "title": "Categories",
+            "learn-more": "Learn more >>",
+            "task-hunters": {
+                "description": "Task Hunters is a competition where teams design, construct and program a robot that must perform tasks in previously prepared arenas. The premise of the competition is to use the so-called future competences to build a remote-controlled robot together with teammates. Competitors will have to be creative in order to face tasks related to global problems. The construction of the robot can be produced with any techniques, from structures made of wood, 3D printing, to milled in metal on CNC machine tools. In the assumption of the competition, there are no limits to the number and type of engines or control processors used. The only limitations are the dimensions of the robot and its weight.",
+                "introduction": {
+                    "title": "Introduction",
+                    "description": "Cała opowieść o Chrupkowym mieście Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim optio vel recusandae ea sint unde excepturi voluptatem magni aperiam laborum. Maxime voluptate optio rerum reiciendis. Sequi veniam aliquam facere natus? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum eum corrupti quae natus amet debitis totam, voluptas explicabo saepe quibusdam blanditiis expedita dolores vel assumenda, ut, harum quas distinctio accusantium. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor vero, pariatur eveniet ipsum officia odit in hic laborum odio adipisci beatae voluptas tempore earum ullam deleniti est autem totam officiis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ad iusto inventore itaque assumenda modi quaerat sapiente autem, suscipit placeat quo voluptates exercitationem necessitatibus expedita praesentium minima nam ullam voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nulla adipisci nostrum repudiandae perferendis, tempore recusandae nam numquam accusamus, at facere. Veniam cupiditate natus praesentium distinctio neque voluptatem eos amet!",
+                    "stages": {
+                        "1": {
+                            "title": "Stage 1",
+                            "description": "Opis etapu 1 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim optio vel recusandae ea sint unde excepturi voluptatem magni aperiam laborum. Maxime voluptate optio rerum reiciendis. Sequi veniam aliquam facere natus? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum eum corrupti quae natus amet debitis totam, voluptas explicabo saepe quibusdam blanditiis expedita dolores vel assumenda, ut, harum quas distinctio accusantium. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor vero, pariatur eveniet ipsum officia odit in hic laborum odio adipisci beatae voluptas tempore earum ullam deleniti est autem totam officiis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ad iusto inventore itaque assumenda modi quaerat sapiente autem, suscipit placeat quo voluptates exercitationem necessitatibus expedita praesentium minima nam ullam voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nulla adipisci nostrum repudiandae perferendis, tempore recusandae nam numquam accusamus, at facere. Veniam cupiditate natus praesentium distinctio neque voluptatem eos amet!"
+                        },
+                        "2": {
+                            "title": "Stage 2",
+                            "description": "Opis etapu 2 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim optio vel recusandae ea sint unde excepturi voluptatem magni aperiam laborum. Maxime voluptate optio rerum reiciendis. Sequi veniam aliquam facere natus? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum eum corrupti quae natus amet debitis totam, voluptas explicabo saepe quibusdam blanditiis expedita dolores vel assumenda, ut, harum quas distinctio accusantium. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor vero, pariatur eveniet ipsum officia odit in hic laborum odio adipisci beatae voluptas tempore earum ullam deleniti est autem totam officiis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ad iusto inventore itaque assumenda modi quaerat sapiente autem, suscipit placeat quo voluptates exercitationem necessitatibus expedita praesentium minima nam ullam voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nulla adipisci nostrum repudiandae perferendis, tempore recusandae nam numquam accusamus, at facere. Veniam cupiditate natus praesentium distinctio neque voluptatem eos amet!"
+                        }
+                    }
+                }
+            },
+            "smash-bots": {
+                "description": "This is one of the most spectacular competition, modeled on the American BattleBots competition. Remote-controlled robots fight each other in a specially prepared ring. This competition has no mercy and the robot that survives all the fights wins. The construction of the robot has no restrictions in terms of the materials used and may have hammers, saws or blades. The only restrictions imposed on competitors are the standards set out in the regulations, such as weight and dimensions of the structure."
+            }
         },
         "gallery": {
-            "title": "Gallery"
+            "title": "Gallery",
+            "view-more": "View more >>"
         },
         "location": {
             "title": "LOCATION",
@@ -101,7 +123,7 @@
         },
         "footer": {
             "copyright": "Copyright",
-            "designed": "Designed & Developed",
+            "designed": "Developed by",
             "developer": "Rafał Nazarko"
         }
     },
@@ -132,6 +154,18 @@
         "results": "Announcement of results",
         "comission": "Evaluation of the commission",
         "finals": "Final fights"
+    },
+    "building-plan": {
+        "floor": {
+            "name": "Select floor"
+        },
+        "floors": {
+            "P": "Parking",
+            "0": "Ground floor",
+            "1": "First floor",
+            "2": "Second floor",
+            "3": "Third floor"
+        }
     },
     "competitor-zone": {
         "info": "Competitor zone will be open soon!",
@@ -388,6 +422,9 @@
                 "uuid": "Robot UUID",
                 "name": "Robot name"
             }
+        },
+        "categories": {
+            "join": "Join now"
         }
     },
     "app-rules": {
@@ -722,7 +759,7 @@
         "title": "Thank you!",
         "title-top": "Acknowledgments",
         "signature": "Yours faithfully, Organizers",
-        "description": "It is thanks to people like you that we are able to create this event. We express great gratitude for your support and commitment. We hope that the sixth edition of the International Robot Competition ROBO~motion was an opportunity for an inspiring exchange of ideas, information and experiences related to robotics and technologies of the future. Thank you for joining the large group of our recipients. It is an honor and motivation for us to continue. We would like to host you during the next edition of our Competition!"
+        "description": "It is thanks to people like you that we are able to create this event. We express great gratitude for your support and commitment. We hope that the first edition of the International Robot Competition X Challenge was an opportunity for an inspiring exchange of ideas, information and experiences related to robotics and technologies of the future. Thank you for joining the large group of our recipients. It is an honor and motivation for us to continue. We would like to host you during the next edition of our Competition!"
     },
     "dialog-box": {
         "yes": "Continue",

@@ -1,0 +1,37 @@
+@import '../task-challenge/task-challenge.component.scss';
+// @import '../../../scss/colors';
+.category {
+    &-title {
+        background: radial-gradient(100% 100% at 50% 0%, rgba($color-sb, 1) 0%, transparent 100%);
+    }
+}
+
+.competitions {
+    &-grid {
+        &-card {
+            &--front {
+                button {
+                    &,
+                    &:link,
+                    &:visited {
+                        box-shadow: 0 0.2rem 2rem rgba($color-sb, 0.5);
+                        background: linear-gradient($color-sb 60%, $color-sb-dark 100%);
+                    }
+                    &:hover {
+                        box-shadow: 0 0.2rem 3rem rgba($color-sb, 0.7);
+                    }
+                }
+            }
+            &--back {
+                button {
+                    &,
+                    &:link,
+                    &:visited {
+                        color: $color-sb;
+                        border: .2rem solid $color-sb;
+                    }
+                }
+            }
+        }
+    }
+}
