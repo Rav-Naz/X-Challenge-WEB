@@ -35,3 +35,38 @@
         }
     }
 }
+
+.swiper {
+    width: 100vw;
+    height: 50rem;
+    background-color: $color-sb;
+}
+
+.gallery {
+    // background-color: $color-grey-3;
+    width: 100%;
+    padding: 10rem 0rem !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+        height: 48rem !important;
+        padding: 1rem .5rem;
+        transition: .5s all;
+        filter: grayscale(1);
+    }
+    &-color {
+        filter: grayscale(0) !important;
+    }
+    span {
+        width: 100%;
+        text-align: right;
+        font-family: $title-font;
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 3rem 5%;
+        cursor: pointer;
+    }
+}

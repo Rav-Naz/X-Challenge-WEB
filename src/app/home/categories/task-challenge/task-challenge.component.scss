@@ -148,7 +148,19 @@ section {
     font-size: 2rem;
     font-weight: normal;
     font-family: $default-font;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
+}
+
+@media only screen and (min-width: $max-width-3) {
+    section {
+        &>p {
+            max-width: 80%;
+        }
+    }
 }
 
 .competitions {

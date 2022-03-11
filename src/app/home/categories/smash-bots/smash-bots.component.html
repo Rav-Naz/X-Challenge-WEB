@@ -5,7 +5,15 @@
     <section class="description" data-aos-duration="700" data-aos="zoom-out" data-aos-delay="700">
         <p>{{'home.categories.smash-bots.description' | translate}}</p>
     </section>
-    <!-- TODO add visualzation and more description -->
+    <section class="gallery" id="gallery">
+        <h3 class="section-header">{{'home.gallery.title' | translate}}</h3>
+        <swiper [config]="config">
+            <ng-template swiperSlide *ngFor="let image of imageList">
+                <img [src]="'../../assets/jpg/galerry/sb/' + image" [alt]="image" class="gallery-image" data-aos="fade-in" data-aos-duration="500" data-aos-anchor-placement="center-bottom">
+            </ng-template>
+        </swiper>
+        <!-- <span [routerLink]="['/gallery']">{{'home.gallery.view-more' | translate}}</span> -->
+    </section>
     <section class="competitions" id="competitions">
         <h4 style="visibility: collapse;">KONKURENCJE: Smash Bots by RoboLAB, Freestyle, Robot Sprint, Line Follower, Micromouse, Cebula House, Sumo, LEGO Tug of War</h4>
         <h3 class="section-header">{{'home.competitions.title' | translate}}</h3>
