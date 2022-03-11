@@ -7,6 +7,7 @@
         "location": "Lokalizacja",
         "patreons": "Patroni",
         "results": "Wyniki",
+        "contact": "Kontakt",
         "timetable": "Harmonogram",
         "plan": "Plan budynku",
         "competitor-zone": "Strefa Zawodnika",
@@ -37,7 +38,7 @@
                 "2": "'Regulamin i polityka prywatności'",
                 "3": "oraz stosować się do restrykcji epidemiologicznych m.in. dezynfekcji rąk i noszenia maseczek."
             },
-            "details": "X Challenge dąży do realizacji wielu kategorii zawodów na szczeblu międzynarodowym, gdzie zawodnicy będą mogli sprawdzić swoje umiejętności manualne oraz programistyczne. Zawody kierowane będą dla uczniów szkół średnich oraz studentów, lecz nie zabraknie również konkurencji dla młodszych i starszych uczestników. Zawody oferują nie tylko nagrody materialne, lecz również doświadczenie w postaci tajników techniki od osób z całego świata i nowe kontakty.",
+            "details": "XChallenge dąży do realizacji wielu kategorii zawodów na szczeblu międzynarodowym, gdzie zawodnicy będą mogli sprawdzić swoje umiejętności manualne oraz programistyczne. Zawody kierowane będą dla uczniów szkół średnich oraz studentów, lecz nie zabraknie również konkurencji dla młodszych i starszych uczestników. Zawody oferują nie tylko nagrody materialne, lecz również doświadczenie w postaci tajników techniki od osób z całego świata i nowe kontakty.",
             "results": "Zobacz wyniki!",
             "open": "Rejestracja jest jeszcze otwarta!",
             "important": "Ważne informacje dla konstruktorów robotów kategorii Line Follower, Drag Race, Micromouse oraz SmashBots by RoboLAB (28.10.2021)",
@@ -47,7 +48,7 @@
             "eventsList": [
                 { "id": 1, "name": "Ekscytujące konkurencje", "description": "Uczestnicy będą mogli zmierzyć się w aż 8 kategoriach czyli 15 konkurencjach. Organizatorzy przygotowali areny do zmagań na torach dla LineFollower’ów czy walk Sumo. Sam tor w kategorii LF przetestuje umiejętności programistyczne i konstrukcyjne wielu robotyków. Oprócz standardowych konkurencji organizatorzy przygotowali wiele niespodzianek. Każdy konstruktor niezależnie czy dopiero zaczyna przygodę z elektroniką czy jest już doświadczony na pewno znajdzie coś dla siebie. Nie zabraknie także konkurencji dedykowanych fanom marki LEGO®.", "icon": "la-trophy" },
                 { "id": 2, "name": "Po raz pierwszy w Polsce", "description": "Tegoroczna edycja powraca z dużym hukiem. W związku z tym organizatorzy pragną zaprosić wszystkich do wzięcia udziału w specjalnej konkurencji by RoboLab: Smash Bots! Potężne, zdalnie sterowane śmiercionośne maszyny staną do walki w dedykowanej zamkniętej arenie. Ze względu na pierwsze takie wydarzenie w Polsce organizatorzy zmniejszyli wymagania maszyn do rozmiarów 30x30 (wysokość max 2 metry). Zachęcamy wszystkich miłośników, studentów oraz uczniów aby spróbowali swoich sił i wzięli udział w tej niesamowitej walce. Do zgarnięcia za podium będą nagrody pieniężne.", "icon": "la-robot" },
-                { "id": 3, "name": "Najlepsi konstruktorzy", "description": "Każda edycja X Challenge skupia wielu profesjonalistów, entuzjastów i uczonych w dziedzinie robotyki. Jest to niesamowita okazja aby nawiązać nowe kontakty, zetknąć się ze specjalistami podczas pracy lub poznać najcenniejsze tajniki techniki od osób z całego świata. Przyjedź, pokaż się od jak najlepszej strony i zagwarantuj sobie świetlaną przyszłość!", "icon": "la-wrench" }
+                { "id": 3, "name": "Najlepsi konstruktorzy", "description": "Każda edycja XChallenge skupia wielu profesjonalistów, entuzjastów i uczonych w dziedzinie robotyki. Jest to niesamowita okazja aby nawiązać nowe kontakty, zetknąć się ze specjalistami podczas pracy lub poznać najcenniejsze tajniki techniki od osób z całego świata. Przyjedź, pokaż się od jak najlepszej strony i zagwarantuj sobie świetlaną przyszłość!", "icon": "la-wrench" }
             ]
         },
         "competitions": {
@@ -771,7 +772,7 @@
         "title": "Dziękujemy Ci!",
         "title-top": "Podziękowania",
         "signature": "Z wyrazami szacunku, Organizatorzy",
-        "description": "To właśnie dzięki takim osobom jak Ty jesteśmy w stanie tworzyć to wydarzenie. Wyrażamy ogromną wdzięczność za Twoje wsparcie i zaangażowanie. Mamy nadzieję, że pierwsza edycja Międzynarodowych Zawodów X Challenge była okazją do inspirującej wymiany myśli, informacji i doświadczeń związanych z robotyką oraz technologiami przyszłości. Dziękujemy, że dołączyłeś do licznego grona naszych odbiorców. Jest to dla nas zaszczyt i motywacja do dalszych działań. Chcielibyśmy gościć Cię podczas kolejnej edycji naszych Zawodów!"
+        "description": "To właśnie dzięki takim osobom jak Ty jesteśmy w stanie tworzyć to wydarzenie. Wyrażamy ogromną wdzięczność za Twoje wsparcie i zaangażowanie. Mamy nadzieję, że pierwsza edycja Międzynarodowych Zawodów XChallenge była okazją do inspirującej wymiany myśli, informacji i doświadczeń związanych z robotyką oraz technologiami przyszłości. Dziękujemy, że dołączyłeś do licznego grona naszych odbiorców. Jest to dla nas zaszczyt i motywacja do dalszych działań. Chcielibyśmy gościć Cię podczas kolejnej edycji naszych Zawodów!"
     },
     "dialog-box": {
         "yes": "Kontynuuj",

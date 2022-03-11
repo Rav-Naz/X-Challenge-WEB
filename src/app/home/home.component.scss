@@ -1553,41 +1553,89 @@
 }
 
 .footer {
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     background-color: $color-grey-5;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: min-content !important;
-    padding: 2rem 8%;
-    &-name {
-        font-size: 2rem;
-        max-height: 6rem;
-        line-height: 2rem;
-        &-second {
-            margin-left: 1rem;
-            font-size: 2rem !important;
-        }
-        min-width: max-content;
-        &-img {
-            width: 2.5rem;
-            margin-top: 2.5rem;
-            margin-left: 3.5rem;
+    &-contact {
+        color: $color-white;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        &-data {
+            min-width: 40rem;
+            max-width: 50%;
+            height: 100%;
+            h3 {
+                margin-left: 0;
+                text-align: start;
+                width: min-content;
+            }
+            a {
+                text-decoration: none !important;
+                color: white;
+                &:visited {
+                    color: inherit;
+                }
+            }
+            &-detail {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                text-decoration: none;
+                color: $color-white;
+                max-width: 80%;
+                padding: 2rem;
+                img {
+                    width: 4rem;
+                    height: 4rem;
+                }
+                p {
+                    font-family: $title-font;
+                    margin-left: 2rem;
+                    font-size: 2rem;
+                }
+            }
         }
     }
-    p {
-        max-width: 45%;
-        text-align: right;
-        font-size: 1.8rem;
-        color: $color-grey-0;
-        span {
+    &-description {
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: min-content !important;
+        padding: 2rem 8%;
+        &-name {
             font-size: 2rem;
-            color: $color-primary;
+            max-height: 6rem;
+            line-height: 2rem;
+            &-second {
+                margin-left: 1rem;
+                font-size: 2rem !important;
+            }
+            min-width: max-content;
+            &-img {
+                width: 2.5rem;
+                margin-top: 2.5rem;
+                margin-left: 3.5rem;
+            }
         }
-    }
-    h2 {
-        line-height: 2rem;
+        p {
+            max-width: 45%;
+            text-align: right;
+            font-size: 1.8rem;
+            color: $color-grey-0;
+            span {
+                font-size: 2rem;
+                color: $color-primary;
+            }
+        }
+        h2 {
+            line-height: 2rem;
+        }
     }
 }
 

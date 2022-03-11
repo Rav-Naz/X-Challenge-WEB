@@ -7,6 +7,7 @@
         "location": "Location",
         "patreons": "Patrons",
         "results": "Results",
+        "contact": "Contact",
         "timetable": "Timetable",
         "plan": "Building plan",
         "competitor-zone": "Competitor Zone",
@@ -37,7 +38,7 @@
                 "hall": "Regional Sports and Entertainment Center",
                 "name": "\"Podpromie\""
             },
-            "details": "X Challenge aims to implement many categories of competitions at the international level, where competitors will be able to test their manual and programming skills. The competition will be directed to high school students and students, but there will also be competition for younger and older participants. The competition offers not only material prizes, but also experience in the form of technical secrets from people from all over the world and new contacts.",
+            "details": "XChallenge aims to implement many categories of competitions at the international level, where competitors will be able to test their manual and programming skills. The competition will be directed to high school students and students, but there will also be competition for younger and older participants. The competition offers not only material prizes, but also experience in the form of technical secrets from people from all over the world and new contacts.",
             "results": "See the results!",
             "open": "Registration is still open!",
             "important": "Important informations for the constructors of robots in the categories Line Follower, Drag Race, Micromouse and SmashBots by RoboLAB (28.10.2021)",
@@ -762,7 +763,7 @@
         "title": "Thank you!",
         "title-top": "Acknowledgments",
         "signature": "Yours faithfully, Organizers",
-        "description": "It is thanks to people like you that we are able to create this event. We express great gratitude for your support and commitment. We hope that the first edition of the International Robot Competition X Challenge was an opportunity for an inspiring exchange of ideas, information and experiences related to robotics and technologies of the future. Thank you for joining the large group of our recipients. It is an honor and motivation for us to continue. We would like to host you during the next edition of our Competition!"
+        "description": "It is thanks to people like you that we are able to create this event. We express great gratitude for your support and commitment. We hope that the first edition of the International Robot Competition XChallenge was an opportunity for an inspiring exchange of ideas, information and experiences related to robotics and technologies of the future. Thank you for joining the large group of our recipients. It is an honor and motivation for us to continue. We would like to host you during the next edition of our Competition!"
     },
     "dialog-box": {
         "yes": "Continue",

@@ -2,7 +2,7 @@
     <!-- INTRO -->
     <section class="paralax paralax-background">
         <div class="paralax-name-container paralax-name-container-margin" data-aos-duration="1000" data-aos="zoom-in">
-            <img src="../../assets/svg/x-logo.svg" class="paralax-name-img" alt="logo X Challenge">
+            <img src="../../assets/svg/x-logo.svg" class="paralax-name-img" alt="logo XChallenge">
             <h2 class="paralax-name">
                 Challenge
             </h2>
@@ -12,7 +12,7 @@
     </section>
     <!-- DESCRIPTION -->
     <section class="event-info" id="home">
-        <h3 style="visibility: collapse;">Międzynarodowe zawody robotów X Challenge</h3>
+        <h3 style="visibility: collapse;">Międzynarodowe zawody robotów XChallenge</h3>
         <h3 style="visibility: collapse;">już 28.11.2022 na Hali Podpromie</h3>
         <!-- <h4 style="visibility: collapse;">Uczestnicy będą mogli zmierzyć się w aż 8 kategoriach czyli 15 konkurencjach. Organizatorzy przygotowali areny do zmagań na torach dla LineFollower’ów czy walk Sumo. Sam tor w kategorii LF przetestuje umiejętności programistyczne i konstrukcyjne
             wielu robotyków. Oprócz standardowych konkurencji organizatorzy przygotowali wiele niespodzianek. Każdy konstruktor niezależnie czy dopiero zaczyna przygodę z elektroniką czy jest już doświadczony na pewno znajdzie coś dla siebie. Nie zabraknie
@@ -75,7 +75,7 @@
         <div class="event-info-details" data-aos="fade-in" data-aos-duration="1000">
             <div class="event-info-details-name">
                 <div class="paralax-name-container" data-aos="zoom-out-right" data-aos-delay="500">
-                    <img src="../../assets/svg/x-logo.svg" class="paralax-name-img-small" alt="logo X Challenge">
+                    <img src="../../assets/svg/x-logo.svg" class="paralax-name-img-small" alt="logo XChallenge">
                     <h2 class="paralax-name paralax-name-small">
                         Challenge
                     </h2>
@@ -182,9 +182,9 @@
         <!-- <a [href]="isEnglish === 'pl' ? 'https://rzit.smarthost.pl/robomotion/info-28-10-2021.pdf' : 'https://rzit.smarthost.pl/robomotion/info-28-10-2021-ang.pdf'" target="_blank">{{'home.event-info.important' | translate}}<i class="las la-external-link-alt"></i></a> -->
     </section>
     <!-- <section class="event-program" id="programme">
-        <h3 style="visibility: collapse;">X Challange dąży do realizacji wielu kategorii zawodów na szczeblu międzynarodowym, gdzie zawodnicy będą mogli sprawdzić swoje umiejętności manualne oraz programistyczne. Zawody kierowane będą dla uczniów szkół średnich oraz studentów, lecz nie
+        <h3 style="visibility: collapse;">XChallange dąży do realizacji wielu kategorii zawodów na szczeblu międzynarodowym, gdzie zawodnicy będą mogli sprawdzić swoje umiejętności manualne oraz programistyczne. Zawody kierowane będą dla uczniów szkół średnich oraz studentów, lecz nie
             zabraknie również konkurencji dla młodszych i starszych uczestników. Zawody oferują nie tylko nagrody materialne, lecz również doświadczenie w postaci tajników techniki od osób z całego świata i nowe kontakty.</h3>
-        <h3 style="visibility: collapse;">X Challange aims to implement many categories of competitions at the international level, where competitors will be able to test their manual and programming skills. The competition will be directed to high school students and students, but there
+        <h3 style="visibility: collapse;">XChallange aims to implement many categories of competitions at the international level, where competitors will be able to test their manual and programming skills. The competition will be directed to high school students and students, but there
             will also be competition for younger and older participants. The competition offers not only material prizes, but also experience in the form of technical secrets from people from all over the world and new contacts.</h3>
         <div class="event-program-grid" *ngIf="!isMobile">
             <div class="event-program-grid-names">
@@ -389,16 +389,32 @@
         <!-- <img src="../../assets/jpg/unia.png"> -->
     </section>
     <!-- FOOTER -->
-    <section class="footer">
-        <div class="paralax-name-container">
-            <img src="../../assets/svg/x-logo.svg" class="paralax-name-img-tiny" alt="logo-xchallenge">
-            <h2 class="paralax-name paralax-name-tiny">
-                Challenge
-            </h2>
+    <section class="footer" id="contact">
+        <div class="footer-contact">
+            <a class="footer-contact-data-detail" href="tel:178886003">
+                <img src="../../assets/svg/phone_icon.svg">
+                <p>17 888 60 03</p>
+            </a>
+            <a class="footer-contact-data-detail" href="mailto:robo@kneiti.prz.edu.pl?subject=&body=" target="_blank">
+                <img src="../../assets/svg/email_icon.svg">
+                <p>robo@kneiti.prz.edu.pl</p>
+            </a>
+            <a class="footer-contact-data-detail" href="https://www.facebook.com/xchallenge.poland" target="_blank">
+                <img src="../../assets/svg/facebook_icon.svg">
+                <p>XChallenge</p>
+            </a>
         </div>
-        <!-- <a></a> -->
-        <p>
-            {{'home.footer.copyright' | translate}} © {{getCurrnetYear}} - Rzeszowska Grupa IT | {{'home.footer.designed' | translate}} <span>{{'home.footer.developer' | translate}}</span>
-        </p>
+        <div class="footer-description">
+            <div class="paralax-name-container">
+                <img src="../../assets/svg/x-logo.svg" class="paralax-name-img-tiny" alt="logo-xchallenge">
+                <h2 class="paralax-name paralax-name-tiny">
+                    Challenge
+                </h2>
+            </div>
+            <!-- <a></a> -->
+            <p>
+                {{'home.footer.copyright' | translate}} © {{getCurrnetYear}} - Rzeszowska Grupa IT | {{'home.footer.designed' | translate}} <span>{{'home.footer.developer' | translate}}</span>
+            </p>
+        </div>
     </section>
 </div>
