@@ -95,6 +95,24 @@
             },
             "smash-bots": {
                 "description": "Smash Bots jedne z bardziej widowiskowych konkurencji, gdzie zdalnie sterowane roboty walczą ze sobą na specjalnie przygotowanej arenie. Konkurencja ta nie ma litości i wygrywa robot, który przetrwa wszystkie walki. Konstrukcja robota nie ma ograniczeń pod względem zastosowanych materiałów przez co takie uzbrojenie jak młoty, piły czy ostrza są dozwolone. Jedynymi ograniczeniami nakładanymi na zawodników są normy wytyczone w regulaminie, takie jak waga i wymiar konstrukcji."
+            },
+            "robomotion": {
+                "description": "Uczestnicy będą mogli zmierzyć się w aż 6 konkurencjach podzielonych na kategorie. Każdy konstruktor niezależnie czy dopiero zaczyna przygodę z elektroniką czy jest już doświadczony na pewno znajdzie coś dla siebie. Nie zabraknie także konkurencji dedykowanych fanom marki LEGO®. Każda edycja ROBO~motion skupia wielu profesjonalistów, entuzjastów i uczonych w dziedzinie robotyki. Jest to niesamowita okazja aby nawiązać nowe kontakty, zetknąć się ze specjalistami podczas pracy lub poznać najcenniejsze tajniki techniki od osób z całego świata. Przyjedź, pokaż się od jak najlepszej strony i zagwarantuj sobie świetlaną przyszłość!",
+                "statistics": {
+                    "title": {
+                        "1": "VI edycja",
+                        "2": "w liczbach"
+                    },
+                    "subtitles": {
+                        "fights": "walk i przejazdów",
+                        "prizes": "w nagrodach",
+                        "time": "intensywnych zmagań",
+                        "robots": "robotów",
+                        "competitors": "zawodników",
+                        "positive": "pozytywnych ocen",
+                        "hours": "godzin"
+                    }
+                }
             }
         },
         "gallery": {

@@ -96,6 +96,24 @@
             },
             "smash-bots": {
                 "description": "Smash Bots is one of the most spectacular competitions, where remote-controlled robots fight each other in a specially prepared arena. This competition is based on a simple rule that only the robot that survives all the fights wins. The construction of the robot has no restrictions in terms of the materials used, which means that such equipment as hammers, saws or blades are allowed. The only restrictions imposed on competitors are the standards set out in the regulations, such as weight and dimensions of the structure."
+            },
+            "robomotion": {
+                "description": "Participants will be able to compete in as many as 6 competitions divided into categories. Each constructor, regardless of whether he is just starting his adventure with electronics or is already experienced, will surely find something for himself. There will also be competition dedicated to LEGO® fans. Each edition of ROBO ~ motion brings together many professionals, enthusiasts and scientists in the field of robotics. It is an amazing opportunity to establish new contacts, meet specialists at work or learn the most valuable secrets of technology from people from all over the world. Come, show your best side and guarantee yourself a bright future!",
+                "statistics": {
+                    "title": {
+                        "1": "VI edition",
+                        "2": "in numbers"
+                    },
+                    "subtitles": {
+                        "fights": "fights and runs",
+                        "prizes": "in prizes",
+                        "time": "intense struggle",
+                        "robots": "robots",
+                        "competitors": "competitors",
+                        "positive": "positive feedback",
+                        "hours": "hours"
+                    }
+                }
             }
         },
         "gallery": {

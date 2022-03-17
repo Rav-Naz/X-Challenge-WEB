@@ -1,51 +1,182 @@
-@import '../task-challenge/task-challenge.component.scss';
-// @import '../../../scss/colors';
-.category {
-    &-title {
-        height: 80vh;
-        background: radial-gradient(100% 100% at 50% 0%, rgba($color-rm, 0.5) 0%, transparent 30%), url('../../../../assets/jpg/rm_tlo.jpg') center 70% no-repeat;
-        background-size: cover;
-        div {
+    @import '../task-challenge/task-challenge.component.scss';
+    @import '../../../scss/colors';
+    .category {
+        background-color: $color-rm;
+        &-title {
+            text-align: justify;
+            box-shadow: 0 2rem 5rem rgba($color-white, 0.5);
+            background: radial-gradient(100% 100% at 50% 0%, rgba($color-rm, 0.5) 0%, transparent 40%), url('../../../../assets/jpg/rm_tlo.jpg') center 70% no-repeat;
+            border-bottom-right-radius: 20rem;
+            margin-bottom: 6rem !important;
+            height: 93vh;
+            &>p {
+                max-width: 80% !important;
+                margin-bottom: 4rem;
+            }
+            &>img {
+                min-width: 100%;
+                height: auto !important;
+                z-index: -1;
+                position: fixed;
+                top: 0;
+                left: 0;
+                border-bottom-right-radius: 15rem;
+            }
+            div {
+                display: flex;
+                height: 100%;
+                width: 60%;
+                justify-content: center;
+                align-items: center;
+            }
+            img {
+                max-height: 60%;
+                width: 100%;
+            }
+        }
+    }
+    
+    .description {
+        background: linear-gradient($color-rm, $color-rm-dark);
+        padding: 5rem 5% !important;
+        display: flex;
+        flex-direction: row;
+        &-title {
+            flex-direction: column;
             display: flex;
-            height: 100%;
-            width: 60%;
             justify-content: center;
-            align-items: center;
+            align-items: flex-end;
+            max-width: 80vw;
+            h5 {
+                font-size: 3rem;
+                font-weight: 400;
+                color: $color-black;
+                padding-bottom: 4rem;
+                text-align: right;
+            }
+            // min-width: 30rem;
+            max-width: 20%;
+            img {
+                max-width: 100%;
+                height: auto;
+            }
         }
-        img {
-            max-height: 60%;
+        &-grid {
             width: 100%;
-        }
-    }
-}
-
-.competitions {
-    &-grid {
-        &-card {
-            &--front {
-                button {
-                    &,
-                    &:link,
-                    &:visited {
-                        color: $color-black;
-                        box-shadow: 0 0.2rem 2rem rgba($color-rm, 0.5);
-                        background: linear-gradient($color-rm 60%, $color-rm-dark 100%);
-                    }
-                    &:hover {
-                        box-shadow: 0 0.2rem 3rem rgba($color-rm, 0.7);
-                    }
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(35rem, 1.5fr));
+            grid-template-rows: repeat(2, 1fr);
+            &-tile {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                // max-width: 80vw;
+                height: 100%;
+                justify-content: center;
+                align-items: center;
+                padding: 3rem;
+                color: $color-grey-1;
+                label {
+                    text-align: center;
+                    font-size: 5rem;
+                    font-family: $title-font;
+                    font-weight: bold;
                 }
-            }
-            &--back {
-                button {
-                    &,
-                    &:link,
-                    &:visited {
-                        color: $color-rm;
-                        border: .2rem solid $color-rm;
-                    }
+                p {
+                    font-family: $default-font;
+                    text-transform: uppercase;
+                    text-align: center;
+                    // font-weight: bold;
                 }
             }
         }
+        row-gap: 2rem;
+        column-gap: 2rem;
+        &-svg {
+            height: 100%;
+            width: 100%;
+            grid-column: 0;
+            grid-row: 2;
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
     }
-}
+    
+    .competitions {
+        border-top-left-radius: 15rem;
+        padding: 6rem 10%;
+        // text-align: center;
+        // font-size: 2rem;
+        // font-weight: normal;
+        // font-family: $default-font;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        // width: 100vw;
+        &-bg {
+            background-color: $color-rm-dark;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            padding-bottom: 0 !important;
+        }
+        &-grid {
+            &-card {
+                &--front {
+                    button {
+                        &,
+                        &:link,
+                        &:visited {
+                            color: $color-black;
+                            box-shadow: 0 0.2rem 2rem rgba($color-rm, 0.5);
+                            background: linear-gradient($color-rm 60%, $color-rm-dark 100%);
+                        }
+                        &:hover {
+                            box-shadow: 0 0.2rem 3rem rgba($color-rm, 0.7);
+                        }
+                    }
+                }
+                &--back {
+                    button {
+                        &,
+                        &:link,
+                        &:visited {
+                            color: $color-rm;
+                            border: .2rem solid $color-rm;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @media only screen and (min-width: $max-width-3) {
+        .competitions {
+            &>p {
+                max-width: 80%;
+            }
+        }
+    }
+    
+    @media only screen and (max-width: $max-width-4) {
+        .description {
+            flex-direction: column;
+            &-title {
+                max-width: 25%;
+                flex-direction: row-reverse;
+                margin-bottom: 5rem;
+                align-items: center;
+                h5 {
+                    text-align: left;
+                    margin-left: 5%;
+                    margin-top: 3rem;
+                    font-size: 3.5rem;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }

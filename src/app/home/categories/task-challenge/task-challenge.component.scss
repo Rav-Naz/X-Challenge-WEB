@@ -47,12 +47,17 @@
 .description {
     min-height: max-content;
     p {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
         line-height: 3rem;
         text-align: justify;
         border-radius: 2rem;
         // padding: 2rem;
         // background: rgba($color-black, .5);
+    }
+    img {
+        height: 30rem;
+        max-width: 80%;
+        margin-bottom: 3rem;
     }
 }
 
@@ -378,21 +383,21 @@ section {
         padding: 6rem 0;
         &-grid {
             padding: 3rem 0;
-            height: min-content;
-            display: flex;
-            flex-direction: row;
-            overflow-x: scroll;
-            overflow-y: hidden;
-            grid-template-columns: unset;
-            grid-template-rows: unset;
-            row-gap: unset;
-            column-gap: 0em;
-            column-gap: 3rem;
+            // height: min-content;
+            // display: flex;
+            // flex-direction: row;
+            // overflow-x: scroll;
+            // overflow-y: hidden;
+            // grid-template-columns: unset;
+            // grid-template-rows: unset;
+            // row-gap: unset;
+            // column-gap: 0em;
+            // column-gap: 3rem;
             &-card {
-                &-container {
-                    max-width: 45rem;
-                    min-width: 45rem;
-                }
+                // &-container {
+                //     max-width: 45rem;
+                //     min-width: 45rem;
+                // }
                 &--back {
                     button {
                         &,
@@ -422,7 +427,7 @@ section {
 
 @media only screen and (max-width: $max-width-5) {
     .competitions {
-        padding: 6rem 0;
+        padding: 6rem 0 !important;
         &-grid {
             padding: 2rem 0;
             &-card {
@@ -449,7 +454,7 @@ section {
 
 @media only screen and (max-width: $max-width-6) {
     .competitions {
-        padding: 6rem 0;
+        padding: 6rem 0 !important;
         &-grid {
             padding: 1.5rem 0;
             &-card {
