@@ -58,15 +58,15 @@ export class SmashBotsComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   public imageList = [
-    'J.Baran_SKNI_KOD (167).jpg',
+    'J.Baran_SKNI_KOD(167).jpg',
     'K.Szydelko_142.jpg',
     'K.Szydelko_146.jpg',
-    'T.Hućko_LENS UR_ (110).JPG',
-    'T.Hućko_LENS UR_ (156).JPG',
-    'T.Hućko_LENS UR_ (173).JPG',
-    'T.Hućko_LENS UR_ (178).JPG',
-    'T.Hućko_LENS UR_ (181).JPG',
-    'T.Hućko_LENS UR_ (183).JPG'
+    'T.Hucko_LENS_UR_(110).JPG',
+    'T.Hucko_LENS_UR_(156).JPG',
+    'T.Hucko_LENS_UR_(173).JPG',
+    'T.Hucko_LENS_UR_(178).JPG',
+    'T.Hucko_LENS_UR_(181).JPG',
+    'T.Hucko_LENS_UR_(183).JPG'
   ]
 
 
