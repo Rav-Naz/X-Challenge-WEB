@@ -97,7 +97,7 @@ export class HomeComponent implements OnInit, AfterViewInit{
   public streamLink: SafeResourceUrl | undefined = undefined;
   public timeIsUp = false;
   public switchAnimationStateName: 'start' | 'void' | 'end' = 'void';
-  public eventDate: Date = new Date(2022, 10, 26, 9, 0, 0);
+  public eventDate: Date = new Date(2022, 10, 25, 9, 0, 0);
   public windowSize: WindowSize = { height: 1080, width: 1920};
 
   public timeLeft: number | undefined;
@@ -114,7 +114,7 @@ export class HomeComponent implements OnInit, AfterViewInit{
     slidesPerView: 'auto',
     centeredSlides: true,
     lazy: true,
-    
+
     // spaceBetween: 30,
     pagination: { clickable: true },
     navigation: true,
@@ -212,7 +212,8 @@ export class HomeComponent implements OnInit, AfterViewInit{
   }
 
   ngAfterViewInit(): void {
-    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    setTimeout(() => {
+      //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
     //Add 'implements AfterViewInit' to the class.
     var swiperRight = (document.getElementsByClassName('swiper-button-next')[0] as HTMLElement);
     // swiperRight.style.padding = '6rem';
@@ -232,6 +233,7 @@ export class HomeComponent implements OnInit, AfterViewInit{
       const slide = slidersInGallery[index] as HTMLElement;
       slide.style.width = 'auto';
     }
+    }, 50)
   }
 
 
@@ -293,7 +295,7 @@ export class HomeComponent implements OnInit, AfterViewInit{
     }, 15000)
   }
 
-  
+
   enableCompetitionsScrolling(): void {
     let lastScroll = -1;
     let scrollingBack = false;
@@ -315,7 +317,7 @@ export class HomeComponent implements OnInit, AfterViewInit{
               behavior: 'smooth',
             });
             setTimeout(() => {
-              this.isScrollPaused = false; 
+              this.isScrollPaused = false;
               scrollingBack = false;
             }, 1000)
           }, 500)
@@ -396,7 +398,7 @@ export class HomeComponent implements OnInit, AfterViewInit{
   get isEnglish() {
     return this.translate.currentLang
   }
-  
+
   get getCurrnetYear() {
     return new Date().getFullYear();
   }

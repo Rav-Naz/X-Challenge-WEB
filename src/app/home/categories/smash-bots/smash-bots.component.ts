@@ -46,7 +46,7 @@ export class SmashBotsComponent implements OnInit, OnDestroy, AfterViewInit {
     slidesPerView: 'auto',
     centeredSlides: true,
     lazy: true,
-    
+
     // spaceBetween: 30,
     pagination: { clickable: true },
     navigation: true,
@@ -106,6 +106,7 @@ export class SmashBotsComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    setTimeout(() => {
     //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
     //Add 'implements AfterViewInit' to the class.
     var swiperRight = (document.getElementsByClassName('swiper-button-next')[0] as HTMLElement);
@@ -126,6 +127,8 @@ export class SmashBotsComponent implements OnInit, OnDestroy, AfterViewInit {
       const slide = slidersInGallery[index] as HTMLElement;
       slide.style.width = 'auto';
     }
+  }, 50)
+
   }
 
   ngOnDestroy(): void {
@@ -146,7 +149,7 @@ export class SmashBotsComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
-  
+
   openUrl(url: string): void {
     window.open(url);
   }

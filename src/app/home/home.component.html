@@ -13,13 +13,13 @@
     <!-- DESCRIPTION -->
     <section class="event-info" id="home">
         <h3 style="visibility: collapse;">Międzynarodowe zawody robotów XChallenge</h3>
-        <h3 style="visibility: collapse;">już 28.11.2022 na Hali Podpromie</h3>
-        <!-- <h4 style="visibility: collapse;">Uczestnicy będą mogli zmierzyć się w aż 8 kategoriach czyli 15 konkurencjach. Organizatorzy przygotowali areny do zmagań na torach dla LineFollower’ów czy walk Sumo. Sam tor w kategorii LF przetestuje umiejętności programistyczne i konstrukcyjne
-            wielu robotyków. Oprócz standardowych konkurencji organizatorzy przygotowali wiele niespodzianek. Każdy konstruktor niezależnie czy dopiero zaczyna przygodę z elektroniką czy jest już doświadczony na pewno znajdzie coś dla siebie. Nie zabraknie
-            także konkurencji dedykowanych fanom marki LEGO.</h4>
-        <h4 style="visibility: collapse;">Participants will be able to compete in as many as 8 categories, i.e. 15 competitions. The organizers prepared the arenas for the struggle on the tracks for LineFollowers or Sumo fights. The track itself in the LF category will test the programming
-            and construction skills of many robotics. In addition to the standard competitions, the organizers have prepared many surprises. Every constructor, regardless of whether he is just starting his adventure with electronics or is already experienced,
-            will surely find something for himself. There will also be competition dedicated to LEGO fans.</h4> -->
+        <h3 style="visibility: collapse;">już 25.11.2022 na Hali Podpromie</h3>
+        <h4 style="visibility: collapse;">Uczestnicy będą mogli zmierzyć się w aż 8 kategoriach. Organizatorzy przygotowali areny do zmagań na torach dla LineFollower’ów czy walk Sumo. Sam tor w kategorii LF przetestuje umiejętności programistyczne i konstrukcyjne wielu robotyków. Oprócz
+            standardowych konkurencji organizatorzy przygotowali wiele niespodzianek. Każdy konstruktor niezależnie czy dopiero zaczyna przygodę z elektroniką czy jest już doświadczony na pewno znajdzie coś dla siebie. Nie zabraknie także konkurencji
+            dedykowanych fanom marki LEGO.</h4>
+        <h4 style="visibility: collapse;">Participants will be able to compete in as many as 8 categories. The organizers prepared the arenas for the struggle on the tracks for LineFollowers or Sumo fights. The track itself in the LF category will test the programming and construction
+            skills of many robotics. In addition to the standard competitions, the organizers have prepared many surprises. Every constructor, regardless of whether he is just starting his adventure with electronics or is already experienced, will surely
+            find something for himself. There will also be competition dedicated to LEGO fans.</h4>
         <h3 class="section-header" *ngIf="timeToEvent">{{timeIsUp ? streamLink === undefined ? ('home.event-info.status.ended' | translate) : ('home.event-info.status.live' | translate) : ('home.event-info.status.coming' | translate)}}</h3>
         <!-- <div class="iframe-container" *ngIf="timeIsUp && streamLink !== undefined"> -->
         <!-- <iframe src="" width="500" height="500" style="border:none;overflow:hidden" scrolling="no"
@@ -181,11 +181,11 @@
 
         <!-- <a [href]="isEnglish === 'pl' ? 'https://rzit.smarthost.pl/robomotion/info-28-10-2021.pdf' : 'https://rzit.smarthost.pl/robomotion/info-28-10-2021-ang.pdf'" target="_blank">{{'home.event-info.important' | translate}}<i class="las la-external-link-alt"></i></a> -->
     </section>
+    <h3 style="visibility: collapse; height: 0px">XChallange dąży do realizacji wielu kategorii zawodów na szczeblu międzynarodowym, gdzie zawodnicy będą mogli sprawdzić swoje umiejętności manualne oraz programistyczne. Zawody kierowane będą dla uczniów szkół średnich oraz studentów, lecz nie zabraknie
+        również konkurencji dla młodszych i starszych uczestników. Zawody oferują nie tylko nagrody materialne, lecz również doświadczenie w postaci tajników techniki od osób z całego świata i nowe kontakty.</h3>
+    <h3 style="visibility: collapse; height: 0px">XChallange aims to implement many categories of competitions at the international level, where competitors will be able to test their manual and programming skills. The competition will be directed to high school students and students, but there will
+        also be competition for younger and older participants. The competition offers not only material prizes, but also experience in the form of technical secrets from people from all over the world and new contacts.</h3>
     <!-- <section class="event-program" id="programme">
-        <h3 style="visibility: collapse;">XChallange dąży do realizacji wielu kategorii zawodów na szczeblu międzynarodowym, gdzie zawodnicy będą mogli sprawdzić swoje umiejętności manualne oraz programistyczne. Zawody kierowane będą dla uczniów szkół średnich oraz studentów, lecz nie
-            zabraknie również konkurencji dla młodszych i starszych uczestników. Zawody oferują nie tylko nagrody materialne, lecz również doświadczenie w postaci tajników techniki od osób z całego świata i nowe kontakty.</h3>
-        <h3 style="visibility: collapse;">XChallange aims to implement many categories of competitions at the international level, where competitors will be able to test their manual and programming skills. The competition will be directed to high school students and students, but there
-            will also be competition for younger and older participants. The competition offers not only material prizes, but also experience in the form of technical secrets from people from all over the world and new contacts.</h3>
         <div class="event-program-grid" *ngIf="!isMobile">
             <div class="event-program-grid-names">
                 <div *ngFor="let event of eventsList" (click)="onSwitchEvent(event.id)" class="event-program-grid-names-arrow" [ngClass]="{'event-program-grid-names-arrow-disabled': selectedEventIndex != event.id}">
@@ -216,9 +216,9 @@
         </div>
     </section> -->
     <!-- COMPETITIONS -->
+    <h4 style="visibility: hidden;  height: 0px">KONKURENCJE: Smash Bots by RoboLAB, Freestyle, Robot Sprint, Line Follower, Micromouse, Cebula House, Sumo, LEGO Tug of War</h4>
     <!-- <section class="competitions" id="competitions">
-        <h4 style="visibility: collapse;">KONKURENCJE: Smash Bots by RoboLAB, Freestyle, Robot Sprint, Line Follower, Micromouse, Cebula House, Sumo, LEGO Tug of War</h4>
-        <h3 class="section-header">{{'home.competitions.title' | translate}}</h3>
+      <h3 class="section-header">{{'home.competitions.title' | translate}}</h3>
         <div class="competitions-grid" id="competitions-scroll">
             <div class="competitions-grid-card-container" *ngFor="let category of categories; index as i;" (mouseenter)="pauseScrolling(true)" (mouseleave)="pauseScrolling(false)" (scroll)="pauseScrolling(false)">
                 <div class="competitions-grid-card">
@@ -253,7 +253,7 @@
                 <p class="category-day">{{getEventDateDay}}.{{ getEventDate | date: 'MM.YYYY'}}</p>
                 <div class="categories-container-day-row">
                     <div class="category category-tc" [routerLink]="['/task-challenge']" data-aos="fade-in" data-aos-duration="500" data-aos-delay="0">
-                        <h4>Task<br>Challenge</h4>
+                        <h4>Task<br>Hunters</h4>
                         <span>{{'home.categories.learn-more' | translate}}</span>
                     </div>
 
@@ -348,15 +348,15 @@
                 <p (click)="openUrl('https://www.dolinawiedzy.pl')" class="organizer-social-item organizer-social-item--web"><i class="las la-globe-europe"></i></p>
             </div>
         </div>
-        <!-- <div>
+        <div data-aos="slide-right" data-aos-duration="1000">
             <img src="../../assets/svg/pti.png" alt="Logo organizatora Polskie Towarzystwo Informatyczne Oddział Podkarpacki">
             <div class="organizer-social">
                 <p (click)="openUrl('https://www.facebook.com/ZGPTI/')" class="organizer-social-item organizer-social-item--fb"><i class="lab la-facebook-f"></i></p>
                 <p (click)="openUrl('https://www.linkedin.com/groups/23057?trk=prof-groups-membership-name')" class="organizer-social-item organizer-social-item--in"><i class="lab la-linkedin-in"></i></p>
                 <p (click)="openUrl('https://www.portal.pti.org.pl/')" class="organizer-social-item organizer-social-item--web"><i class="las la-globe-europe"></i></p>
             </div>
-        </div> -->
-        <div data-aos="slide-right" data-aos-duration="1000">
+        </div>
+        <div data-aos="slide-left" data-aos-duration="1000">
             <img src="../../assets/jpg/prz_pl.png" alt="Logo organizatora Politechnika Rzeszowska">
             <div class="organizer-social">
                 <p (click)="openUrl('https://www.facebook.com/oficjalnypolitechnikarzeszowska')" class="organizer-social-item organizer-social-item--fb"><i class="lab la-facebook-f"></i></p>
@@ -364,7 +364,7 @@
                 <p (click)="openUrl('https://w.prz.edu.pl/')" class="organizer-social-item organizer-social-item--web"><i class="las la-globe-europe"></i></p>
             </div>
         </div>
-        <div data-aos="slide-left" data-aos-duration="1000">
+        <div data-aos="slide-right" data-aos-duration="1000">
             <img src="../../assets/svg/RoboLAB-white.svg" alt="Logo organizatora RoboLAB">
             <div class="organizer-social">
                 <p (click)="openUrl('https://www.facebook.com/RoboLAB.Polska')" class="organizer-social-item organizer-social-item--fb"><i class="lab la-facebook-f"></i></p>

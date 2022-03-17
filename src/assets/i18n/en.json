@@ -38,7 +38,7 @@
                 "hall": "Regional Sports and Entertainment Center",
                 "name": "\"Podpromie\""
             },
-            "details": "XChallenge aims to implement many categories of competitions at the international level, where competitors will be able to test their manual and programming skills. The competition will be directed to high school students and students, but there will also be competition for younger and older participants. The competition offers not only material prizes, but also experience in the form of technical secrets from people from all over the world and new contacts.",
+            "details": "XChallenge aims to implement many categories of competitions at the international level, where competitors will be able to test their manual and programming skills. The competition is intended for both high school students and university students, but there will also be some competition for younger and older participants. The competition offers not only material rewards, but also experience gained from people from all over the world and new contacts",
             "results": "See the results!",
             "open": "Registration is still open!",
             "important": "Important informations for the constructors of robots in the categories Line Follower, Drag Race, Micromouse and SmashBots by RoboLAB (28.10.2021)",
@@ -57,7 +57,7 @@
             "learn": "LEARN MORE",
             "regulations": "Rules",
             "categories": [
-                { "id": 1, "name": "Smash Bots by RoboLAB", "description": "The most demanding competition at our competition! In a special arena, remote-controlled robots will fight each other until the last breath. Sparks and flames are guaranteed here.", "icon": "battlebot.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/ErCZ78rxSrpKs8EPimRWR0YBZNeY4CiKhoORwosxpt8iXQ?e=eyWCg8" },
+                { "id": 1, "name": "Smash Bots", "description": "The team and its robot must face the tasks and score as many points as possible in the previously prepared arenas. Things will happen here!", "icon": "battlebot.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/ErCZ78rxSrpKs8EPimRWR0YBZNeY4CiKhoORwosxpt8iXQ?e=eyWCg8" },
                 { "id": 2, "name": "Task Hunters", "description": "The team and its robot must face the tasks and score as many points as possible in the previously prepared arenas. There will be a lot going on here!", "icon": "task_hunters.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/EuHkMduHWcdGrRk0_ZHTSuYBZMeydZy-cCFBMRvDA-5iIA?e=7fscaM" },
                 { "id": 3, "name": "Freestyle", "description": "In this competition, competitors can put on any project, robot or machine. The structures are assessed by referees and visitors. Each voter completes a questionnaire in which they award points for each project, so it is important that each competitor presents their project in the best possible way.", "icon": "freestyle.gif", "linkToRegulation": "https://bit.ly/robomotion21fs" },
                 { "id": 4, "name": "Line Follower", "description": "The goal of the robot in this competition is to follow the route marked by the black line drawn on the board as quickly as possible. The robot must follow the line as accurately as possible, without avoiding or cutting corners.", "icon": "line_follower.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/Erv3ruktMJtImHEgknuiI8EB5tQCTr3wcBGiN_7RSbGXSA?e=8Rcm8i" },
@@ -75,7 +75,7 @@
             "title": "Categories",
             "learn-more": "Learn more >>",
             "task-hunters": {
-                "description": "Task Hunters is a competition where teams design, construct and program a robot that must perform tasks in previously prepared arenas. The premise of the competition is to use the so-called future competences to build a remote-controlled robot together with teammates. Competitors will have to be creative in order to face tasks related to global problems. The construction of the robot can be produced with any techniques, from structures made of wood, 3D printing, to milled in metal on CNC machine tools. In the assumption of the competition, there are no limits to the number and type of engines or control processors used. The only limitations are the dimensions of the robot and its weight.",
+                "description": "Task Hunters is a competition where teams design, construct and program a robot that must perform specific tasks in previously prepared arenas. The main goal of the competition is to use the so-called competences of the future to build a remote-controlled robot together with teammates. Competitors will have to be creative in order to face tasks related to global problems. The robot can be built with any techniques, from structures made of wood, 3D printing, to milled in metal on CNC machine tools. The competition does not impose any limits to the number and type of engines or control processors used. The only limitations are the dimensions of the robot and its weight.",
                 "introduction": {
                     "title": "Introduction",
                     "description": {
@@ -95,7 +95,7 @@
                 }
             },
             "smash-bots": {
-                "description": "This is one of the most spectacular competition, modeled on the American BattleBots competition. Remote-controlled robots fight each other in a specially prepared ring. This competition has no mercy and the robot that survives all the fights wins. The construction of the robot has no restrictions in terms of the materials used and may have hammers, saws or blades. The only restrictions imposed on competitors are the standards set out in the regulations, such as weight and dimensions of the structure."
+                "description": "Smash Bots is one of the most spectacular competitions, where remote-controlled robots fight each other in a specially prepared arena. This competition is based on a simple rule that only the robot that survives all the fights wins. The construction of the robot has no restrictions in terms of the materials used, which means that such equipment as hammers, saws or blades are allowed. The only restrictions imposed on competitors are the standards set out in the regulations, such as weight and dimensions of the structure."
             }
         },
         "gallery": {
