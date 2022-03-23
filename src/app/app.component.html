@@ -32,8 +32,8 @@
     </div>
     <div class="navigator-footer">
         <img (click)="switchLang()" [src]="!isEnglish ? '../assets/svg/gb.svg' : '../assets/svg/pl.svg'">
-        <p [routerLink]="['/app-rules']" (click)="switchMenu(false)">{{'menu.app-rules' | translate}}</p>
-        <a target="_blank" href="https://www.facebook.com/rzeszowrobomotion"><i class="lab la-facebook-square"></i></a>
+        <br><br><a class="navigator-footer-rules" target="_blank" href="https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/EqKx4mHvtytAlsWma5vp-x4BTKe2h5ESdhWSw5pcakTBWg?e=N23Zmr">{{'menu.app-rules' | translate}}</a><br>
+        <a target="_blank" href="https://www.facebook.com/xchallenge.poland"><i class="lab la-facebook-square"></i></a>
     </div>
 </div>
 <button class="navigator-menu" (click)="switchMenu()" id="navigator-menu">

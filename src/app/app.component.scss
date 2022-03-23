@@ -45,16 +45,17 @@
     }
     &-footer {
         width: 100%;
-        p {
-            padding-top: 2rem;
+        &-rules {
+            padding-top: 2rem !important;
             width: max-content;
-            font-size: 1.6rem;
-            font-family: $title-font;
+            font-size: 1.6rem !important;
+            font-family: $title-font !important;
             text-align: left;
             color: $color-white;
-            padding-bottom: .5rem;
-            border-bottom: 1px dashed $color-white;
+            padding-bottom: .1rem !important;
+            border-bottom: 1px dashed $color-white !important;
             cursor: pointer;
+            line-height: 3rem !important;
         }
         img {
             // margin-top: 5rem;

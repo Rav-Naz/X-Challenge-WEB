@@ -56,14 +56,14 @@
             "learn": "DOWIEDZ SIĘ WIĘCEJ",
             "regulations": "Regulamin",
             "categories": [
-                { "id": 1, "name": "Smash Bots", "description": "To najbardziej wymagająca konkurencja na naszych zawodach! W specjalnej arenie, zdalnie sterowane roboty będą walczyć ze sobą do ostatniego tchu. Iskry i płomienie są tutaj gwarantowane.", "icon": "battlebot.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/ErCZ78rxSrpKs8EPimRWR0YBZNeY4CiKhoORwosxpt8iXQ?e=eyWCg8" },
-                { "id": 2, "name": "Task Hunters", "description": "Drużyna wraz ze swym robotem musi stawić czoła zadaniom i zdobyć jak największą ilość punktów na wcześniej przygotowanych arenach. Tutaj będzie się działo!", "icon": "task_hunters.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/EuHkMduHWcdGrRk0_ZHTSuYBZMeydZy-cCFBMRvDA-5iIA?e=7fscaM" },
-                { "id": 3, "name": "Freestyle", "description": "W tej konkurencji zawodnicy mogą wystawić całkowicie dowolny projekt, robota lub maszynę. Konstrukcje są oceniane prze sędziów oraz odwiedzających. Każdy głosujący wypełnia ankietę, w której przyznaje punkty każdemu projektowi, dlatego ważne jest, aby każdy zawodnik jak najlepiej zaprezentował swój projekt.", "icon": "freestyle.gif", "linkToRegulation": "https://bit.ly/robomotion21fs" },
-                { "id": 4, "name": "Line Follower", "description": "Celem robota w tej konkurencji jest jak najszybsze pokonanie trasy wyznaczonej przez czarną linię narysowaną na planszy. Robot musi poruszać się po linii możliwie dokładnie, bez omijania czy ścinania zakrętów.", "icon": "line_follower.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/Erv3ruktMJtImHEgknuiI8EB5tQCTr3wcBGiN_7RSbGXSA?e=8Rcm8i" },
-                { "id": 5, "name": "Micromouse", "description": "Robot ma za zadanie odnaleźć najszybszą drogę od pola startu do obszaru składającego się z czterech pól ułożonych w kwadrat. Robot musi być bardzo dokładny, aby nie odbijał się od ścianek.", "icon": "micromouse.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/EvYRR3lUptJEpI-C4x7lImMBarbOxNHynINVX_kPnTS5Xw?e=ElSUyd" },
-                { "id": 6, "name": "Cebula House", "description": "Jest to zmodyfikowana wersja konkurencji znanej pod nazwą Ketchup House. My postawiliśmy na polskie produkty i smaki, dlatego na naszych zawodach przedmiotem do zbierania będzie cebula. Bo czemu nie? Na tą konkurencję można się stawić z samodzielnie wyselekcjonowaną cebulą.", "icon": "onion_house.gif", "linkToRegulation": "https://bit.ly/robomotion21oh" },
-                { "id": 7, "name": "Sumo", "description": "Roboty niczym zawodnicy SUMO muszą wypchnąć przeciwnika poza specjalnie przygotowany ring. Wiele kategorii pozwoli z łatwością wybrać odpowiednią klasę robota dla swoich preferencji i możliwości.", "icon": "sumo.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/EgFJDKRkgFNMsfiUJ7UXLf4BTxsKUOtO2AborrY1uriUIA?e=3KVkGb" },
-                { "id": 8, "name": "LEGO® Tug of War", "description": "Ta konkurencja jest również zupełnie nowa! Dwa roboty ustawione naprzeciwko siebie, będą rywalizować w przeciąganiu liny. Wygrywa ten, któremu uda się przeciągnąć większą część liny na swoją stronę. Konkurencja ta jest przeznaczona jedynie dla robotów zbudowanych z klocków LEGO®", "icon": "tug_of_war.gif", "linkToRegulation": "https://bit.ly/robomotion21tow" }
+                { "id": 1, "name": "Smash Bots", "description": "To najbardziej wymagająca konkurencja na naszych zawodach! W specjalnej arenie, zdalnie sterowane roboty będą walczyć ze sobą do ostatniego tchu. Iskry i płomienie są tutaj gwarantowane.", "icon": "battlebot.gif", "linkToRegulation": "https://bit.ly/xchallengeSB22rules" },
+                { "id": 2, "name": "Task Hunters", "description": "Drużyna wraz ze swym robotem musi stawić czoła zadaniom i zdobyć jak największą ilość punktów na wcześniej przygotowanych arenach. Tutaj będzie się działo!", "icon": "task_hunters.gif", "linkToRegulation": "https://bit.ly/xchallengeTH22rules" },
+                { "id": 3, "name": "Freestyle", "description": "W tej konkurencji zawodnicy mogą wystawić całkowicie dowolny projekt, robota lub maszynę. Konstrukcje są oceniane prze sędziów oraz odwiedzających. Każdy głosujący wypełnia ankietę, w której przyznaje punkty każdemu projektowi, dlatego ważne jest, aby każdy zawodnik jak najlepiej zaprezentował swój projekt.", "icon": "freestyle.gif", "linkToRegulation": "https://bit.ly/xchallengeRM22FSrules" },
+                { "id": 4, "name": "Line Follower", "description": "Celem robota w tej konkurencji jest jak najszybsze pokonanie trasy wyznaczonej przez czarną linię narysowaną na planszy. Robot musi poruszać się po linii możliwie dokładnie, bez omijania czy ścinania zakrętów.", "icon": "line_follower.gif", "linkToRegulation": "https://bit.ly/xchallengeRM22LFrules" },
+                { "id": 5, "name": "Micromouse", "description": "Robot ma za zadanie odnaleźć najszybszą drogę od pola startu do obszaru składającego się z czterech pól ułożonych w kwadrat. Robot musi być bardzo dokładny, aby nie odbijał się od ścianek.", "icon": "micromouse.gif", "linkToRegulation": "https://bit.ly/xchallengeRM22MMrules" },
+                { "id": 6, "name": "Cebula House", "description": "Jest to zmodyfikowana wersja konkurencji znanej pod nazwą Ketchup House. My postawiliśmy na polskie produkty i smaki, dlatego na naszych zawodach przedmiotem do zbierania będzie cebula. Bo czemu nie? Na tą konkurencję można się stawić z samodzielnie wyselekcjonowaną cebulą.", "icon": "onion_house.gif", "linkToRegulation": "https://bit.ly/xchallengeRM22CHrules" },
+                { "id": 7, "name": "Sumo", "description": "Roboty niczym zawodnicy SUMO muszą wypchnąć przeciwnika poza specjalnie przygotowany ring. Wiele kategorii pozwoli z łatwością wybrać odpowiednią klasę robota dla swoich preferencji i możliwości.", "icon": "sumo.gif", "linkToRegulation": "https://bit.ly/xchallengeRM22SMrules" },
+                { "id": 8, "name": "LEGO® Tug of War", "description": "Ta konkurencja jest również zupełnie nowa! Dwa roboty ustawione naprzeciwko siebie, będą rywalizować w przeciąganiu liny. Wygrywa ten, któremu uda się przeciągnąć większą część liny na swoją stronę. Konkurencja ta jest przeznaczona jedynie dla robotów zbudowanych z klocków LEGO®", "icon": "tug_of_war.gif", "linkToRegulation": "https://bit.ly/xchallengeRM22TOWrules" }
             ]
         },
         "news": {
@@ -150,7 +150,7 @@
                 "name": "Koło Naukowe Elektroniki i Technologii Informacyjnych"
             },
             "title": "Partnerzy",
-            "question": "Chcesz zostać patronem? Skontaktuj się z nami pod adresem kontakt@kneiti.prz.edu.pl",
+            "question": "Chcesz zostać patronem? Skontaktuj się z nami pod adresem robo@kneiti.prz.edu.pl",
             "patreonList": [],
             "tiers": []
         },
@@ -170,7 +170,7 @@
         "register": "Rejestracja zawodników",
         "viewers": "Otworzenie trybun dla widowni",
         "brief": "Odprawa dla wszystkich zawodników (Strefa Zawodnika)",
-        "open": "OFICJALNE ROZPOCZĘCIE VI MIĘDZYNARODOWYCH ZAWODÓW ROBOTÓW ROBO~motion 2021",
+        "open": "OFICJALNE ROZPOCZĘCIE MIĘDZYNARODOWYCH ZAWODÓW ROBOTÓW XCHALLENGE",
         "draw-groups": "Losowanie grup",
         "draw": "Losowanie",
         "rides": "Przejazdy punktowane",
@@ -463,19 +463,19 @@
     "app-rules": {
         "spis": {
             "title": "SPIS TREŚCI",
-            "1": "POLITYKA COOKIES WITRYNY ROBOMOTION.COM.PL",
-            "2": "POLITYKA PRYWATNOŚCI SERWISU INTERNETOWEGO ROBO~MOTION",
-            "3": "REGULAMIN KORZYSTANIA Z APLIKACJI ROBO~MOTION",
-            "4": "REGULAMIN MIĘDZYNARODOWYCH ZAWODÓW ROBO~MOTION",
+            "1": "POLITYKA COOKIES WITRYNY xchallenge.pl",
+            "2": "POLITYKA PRYWATNOŚCI SERWISU INTERNETOWEGO XCHALLENGE",
+            "3": "REGULAMIN KORZYSTANIA Z APLIKACJI XCHALLENGE",
+            "4": "REGULAMIN MIĘDZYNARODOWYCH ZAWODÓW XCHALLENGE",
             "5": "INFORMACJA ADMINISTRATORA W ZWIĄZKU Z PRZETWARZANIEM DANYCH OSOBOWYCH"
         },
         "rules": [{
-                "title": "POLITYKA COOKIES WITRYNY ROBOMOTION.COM.PL",
+                "title": "POLITYKA COOKIES WITRYNY xchallenge.pl",
                 "description": "Poniższa Polityka Cookies określa zasady zapisywania i uzyskiwania dostępu do danych na Urządzeniach Użytkowników korzystających z Serwisu do celów świadczenia usług drogą elektroniczną przez Administratora Serwisu.",
                 "paragrphs": [{
                         "title": "Definicje",
                         "bodies": [
-                            "<b>Serwis</b> - serwis internetowy działający pod adresem https://robomotion.com.pl/",
+                            "<b>Serwis</b> - serwis internetowy działający pod adresem https://xchallenge.pl/",
                             "<b>Serwis zewnętrzny</b> - serwis internetowe partnerów, usługodawców lub usługobiorców Administratora",
                             "<b>Administrator </b> - Koło Naukowe Automatyków i Robotyków 'ROBO', prowadzące działalność na Politechnice Rzeszowskiej pod adresem: ul. Wincentego Pola 2, 35-021 Rzeszów, świadczący usługi drogą elektroniczną za pośrednictwem Serwisu oraz przechowujący i uzyskujący dostęp do informacji w urządzeniach Użytkownika",
                             "<b>Użytkownik </b> - osoba fizyczna, dla której Administrator świadczy usługi drogą elektroniczna za pośrednictwem Serwisu",
@@ -539,14 +539,14 @@
                 ]
             },
             {
-                "title": "POLITYKA PRYWATNOŚCI SERWISU INTERNETOWEGO ROBO~MOTION",
+                "title": "POLITYKA PRYWATNOŚCI SERWISU INTERNETOWEGO XCHALLENGE",
                 "description": "Polityka prywatności opisuje zasady przetwarzania przez nas informacji na Twój temat, w tym danych osobowych.",
                 "paragrphs": [{
                         "title": "Informacje ogólne",
                         "bodies": [
-                            "Niniejsza polityka dotyczy serwisu internetowego ROBO~motion (dalej: „Aplikacja”)",
+                            "Niniejsza polityka dotyczy serwisu internetowego XChallenge (dalej: „Aplikacja”)",
                             "Właścicielem aplikacji jest: Koło Naukowe Automatyków i Robotyków 'ROBO', prowadzące działalność na Politechnice Rzeszowskiej pod adresem: ul. Wincentego Pola 2, 35-021 Rzeszów",
-                            "Adres kontaktowy poczty elektronicznej operatora: kontakt@kneiti.prz.edu.pl",
+                            "Adres kontaktowy poczty elektronicznej operatora: robo@kneiti.prz.edu.pl",
                             "Aplikacja wykorzystuje dane osobowe w następujących celach:",
                             "- <b>Prezentacja profilu użytkownika innym użytkownikom</b>",
                             "- <b>Obsługa zapytań przez formularz</b>",
@@ -611,13 +611,13 @@
                 ]
             },
             {
-                "title": "REGULAMIN KORZYSTANIA Z APLIKACJI ROBO~MOTION",
-                "description": "Założenie konta w aplikacji ROBO~motion oznacza akceptację poniższych warunków.",
+                "title": "REGULAMIN KORZYSTANIA Z APLIKACJI XCHALLENGE",
+                "description": "Założenie konta w aplikacji XChallenge oznacza akceptację poniższych warunków.",
                 "paragrphs": [{
                         "title": "Informacje ogólne",
                         "bodies": [
                             "Właścicielem aplikacji oraz Administratorem danych osobowych jest: Koło Naukowe Automatyków i Robotyków 'ROBO', prowadzące działalność na Politechnice Rzeszowskiej pod adresem: ul. Wincentego Pola 2, 35-021 Rzeszów (zwany dalej “Właścicielem aplikacji”)",
-                            "Aplikacja powstała w celu prowadzenia procesu rekrutacji na Międzynarodowe Zawody Robotów ROBO~motion, komunikację z konstruktorami robotów, prezentację wyników oraz promocję sponsorów"
+                            "Aplikacja powstała w celu prowadzenia procesu rekrutacji na Międzynarodowe Zawody Robotów XChallenge, komunikację z konstruktorami robotów, prezentację wyników oraz promocję sponsorów"
                         ]
                     },
                     {
@@ -629,13 +629,13 @@
                     {
                         "title": "Użytkownicy",
                         "bodies": [
-                            "Aplikacja została stworzona dla osób zainteresowanych zawodami ROBO~motion, zarówno osób biorących udział w zawodach jak i publiczności"
+                            "Aplikacja została stworzona dla osób zainteresowanych zawodami XChallenge, zarówno osób biorących udział w zawodach jak i publiczności"
                         ]
                     },
                     {
                         "title": "Treści w Aplikacjach",
                         "bodies": [
-                            "Odpowiedzialność za treść obecną w Aplikacji ponosi Właściciel aplikacji. Użytkownik ma prawo zgłoszenia uwag na temat nieodpowiedniej treści obecnej w aplikacji. Może tego dokonać pisząc na adres: kontakt@kneiti.prz.edu.pl"
+                            "Odpowiedzialność za treść obecną w Aplikacji ponosi Właściciel aplikacji. Użytkownik ma prawo zgłoszenia uwag na temat nieodpowiedniej treści obecnej w aplikacji. Może tego dokonać pisząc na adres: robo@kneiti.prz.edu.pl"
                         ]
                     },
                     {
@@ -647,8 +647,8 @@
                 ]
             },
             {
-                "title": "REGULAMIN MIĘDZYNARODOWYCH ZAWODÓW ROBO~MOTION 2021",
-                "description": "Ostatnia aktualizacja: 13.11.2021",
+                "title": "REGULAMIN MIĘDZYNARODOWYCH ZAWODÓW XChallenge",
+                "description": "Ostatnia aktualizacja: 23.03.2022",
                 "paragrphs": [{
                         "title": "Definicje",
                         "bodies": [
@@ -665,23 +665,23 @@
                     {
                         "title": "Informacje ogólne",
                         "bodies": [
-                            "Niniejszy regulamin określa warunki uczestnictwa w VI Międzynarodowych Zawodach Robotów ROBO~motion 2021 (zwanych dalej Zawodami) oraz zasady postępowania w celu przeciwdziałania rozprzestrzenianiu się wirusa SARS-CoV-2 w Polsce.",
-                            "VI Międzynarodowe Zawody Robotów ROBO~motion 2021 są kolejną edycją Zawodów organizowanych przez Koło Naukowe Automatyków i Robotyków ROBO działające na Wydziale Elektrotechniki i Informatyki Politechniki Rzeszowskiej wraz z partnerami. Celem wydarzenia jest popularyzacja robotyki wśród młodzieży i studentów.",
-                            "Zawody odbędą się w niedzielę 28 listopada 2021 roku. Czas trwania jest zależny od ilości zgłoszonych robotów, w związku z tym ostateczny harmonogram zostanie udostępniony na stronie <a href=\"robomotion.com.pl\" target=\"_blank\" style=\"color:yellow;\">robomotion.com.pl</a> najpóźniej na 4 dni przed zawodami tj. w środę 24 listopada 2021 roku.",
+                            "Niniejszy regulamin określa warunki uczestnictwa w Międzynarodowych Zawodach Robotów XChallenge (zwanych dalej Zawodami) oraz zasady postępowania w celu przeciwdziałania rozprzestrzenianiu się wirusa SARS-CoV-2 w Polsce.",
+                            "Międzynarodowe Zawody Robotów XChallenge są kolejną edycją Zawodów organizowanych przez Koło Naukowe Automatyków i Robotyków ROBO działające na Wydziale Elektrotechniki i Informatyki Politechniki Rzeszowskiej wraz z partnerami. Celem wydarzenia jest popularyzacja robotyki wśród młodzieży i studentów.",
+                            "Zawody odbędą się w piątek i sobotę 25 oraz 26 listopada 2022 roku. Czas trwania jest zależny od ilości zgłoszonych robotów, w związku z tym ostateczny harmonogram zostanie udostępniony na stronie <a href=\"xchallenge.pl\" target=\"_blank\" style=\"color:yellow;\">xchallenge.pl</a> najpóźniej na 4 dni przed zawodami tj. w środę 21 listopada 2022 roku.",
                             "Nad prawidłowym przebiegiem Zawodów czuwać będą Organizatorzy. Każdy z Organizatorów będzie posiadał imienny identyfikator.",
                             "Warunkiem koniecznym przystąpienia do Zawodów  jest wyrażenie zgody na przetwarzanie danych osobowych, w tym wizerunku:",
-                            "&nbsp; o Osoby pełnoletnie zgodę na przetwarzanie danych osobowych i danych osobowych w postaci wizerunku podpisują na miejscu – będą gotowe wydruki – formularz zgody jest dostępny na stronie <a href=\"robomotion.com.pl\" target=\"_blank\" style=\"color:yellow;\">robomotion.com.pl</a>",
-                            "&nbsp; o Osoby niepełnoletnie proszone są o przyniesienie w dniu Turnieju wydrukowanego formularza zgody podpisanego przez Rodzica/Opiekuna prawnego – formularz zgody dla osoby niepełnoletniej jest dostępny na stronie robomotion.com.pl"
+                            "&nbsp; o Osoby pełnoletnie zgodę na przetwarzanie danych osobowych i danych osobowych w postaci wizerunku podpisują na miejscu – będą gotowe wydruki – formularz zgody jest dostępny na stronie <a href=\"xchallenge.pl\" target=\"_blank\" style=\"color:yellow;\">xchallenge.pl</a>",
+                            "&nbsp; o Osoby niepełnoletnie proszone są o przyniesienie w dniu Turnieju wydrukowanego formularza zgody podpisanego przez Rodzica/Opiekuna prawnego – formularz zgody dla osoby niepełnoletniej jest dostępny na stronie xchallenge.com.pl"
                         ]
                     },
                     {
                         "title": "Uczestnicy",
                         "bodies": [
-                            "W Zawodach mogą brać udział osoby pełnoletnie, które wyrażą zgodę na przetwarzanie danych osobowych, w tym wizerunku, oraz zaakceptują regulamin. W przypadku osób niepełnoletnich wymagana jest pisemna zgoda rodzica bądź opiekuna prawnego na udział w Zawodach, wyrażenie zgody na przetwarzanie danych osobowych, w tym wizerunku, oraz akceptacja regulaminu – formularz jest dostępny na stronie <a href=\"robomotion.com.pl\" target=\"_blank\" style=\"color:blue;\">robomotion.com.pl</a>",
+                            "W Zawodach mogą brać udział osoby pełnoletnie, które wyrażą zgodę na przetwarzanie danych osobowych, w tym wizerunku, oraz zaakceptują regulamin. W przypadku osób niepełnoletnich wymagana jest pisemna zgoda rodzica bądź opiekuna prawnego na udział w Zawodach, wyrażenie zgody na przetwarzanie danych osobowych, w tym wizerunku, oraz akceptacja regulaminu – formularz jest dostępny na stronie <a href=\"xchallenge.pl\" target=\"_blank\" style=\"color:blue;\">xchallenge.pl</a>",
                             "W Zawodach mogą rejestrować się drużyny złożone z 1-20 osób.",
                             "Każda drużyna nieposiadająca osoby pełnoletniej musi przyjechać na zawody pod opieką osoby dorosłej – opiekuna",
                             "Podczas rejestracji w dniu zawodów każdy członek drużyny musi posiadać dokument potwierdzający tożsamość i okazać go na prośbę Organizatora, Sędziego bądź Obsługi.",
-                            "Zarejestrowanie drużyny w Zawodach na stronie <a href=\"robomotion.com.pl\" target=\"_blank\" style=\"color:yellow;\">robomotion.com.pl</a> jest równoznaczne z akceptacją regulaminu Ogólnego Zawodów oraz regulaminów poszczególnych konkurencji.",
+                            "Zarejestrowanie drużyny w Zawodach na stronie <a href=\"xchallenge.pl\" target=\"_blank\" style=\"color:yellow;\">xchallenge.pl</a> jest równoznaczne z akceptacją regulaminu Ogólnego Zawodów oraz regulaminów poszczególnych konkurencji.",
                             "Każdy uczestnik bierny bądź aktywny, startujący lub nie startujący w Zawodach, biorący udział w wydarzeniu jest zobowiązany przestrzegać wszystkie Regulaminy Zawodów oraz Regulaminy obowiązujące w budynku Regionalnego Centrum Sportowo-Widowiskowego „Podpromie”. Wejście na teren wydarzenia jest równoznaczne z akceptacją regulaminów.",
                             "Organizatorzy zobowiązują się do nieudostępniania telefonu podanego przy rejestracji osobom trzecim bez zgody właściciela numeru."
                         ]
@@ -708,7 +708,7 @@
                             "&nbsp;<b>Robot Sprint</b>",
                             "&nbsp;<b>LEGO Tug of War</b>",
                             "&nbsp;<b>Freestyle</b>",
-                            "Dokładny regulamin każdej konkurencji znajduje się na stronie głównej <a href=\"robomotion.com.pl\" target=\"_blank\" style=\"color:yellow;\">robomotion.com.pl</a> – odnośnik do regulaminu dostępny jest po wybraniu odpowiedniej kategorii",
+                            "Dokładny regulamin każdej konkurencji znajduje się na stronie głównej <a href=\"xchallenge.pl\" target=\"_blank\" style=\"color:yellow;\">xchallenge.pl</a> – odnośnik do regulaminu dostępny jest po wybraniu odpowiedniej kategorii",
                             "W przypadku małej liczby drużyn biorących udział w danej konkurencji organizator zastrzega sobie prawo do rozegrania wyłącznie fazy finałowej lub odwołania konkurencji."
 
                         ]
@@ -770,10 +770,10 @@
                         "Administratorem danych osobowych jest <b>Politechnika Rzeszowska im. Ignacego Łukasiewicza</b>, al. Powstańców Warszawy 12, 35-959 Rzeszów, (zwana dalej Uczelnią), email: kancelaria@prz.edu.pl",
                         "Inspektorem Ochrony Danych na Politechnice Rzeszowskiej można się skontaktować się pod numerem telefonu 17 865 1775 lub poprzez e-mail: iod@prz.edu.pl",
                         "Administrator przetwarza Twoje dane osobowe zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (zwanego dalej RODO)",
-                        "Administrator pobiera i przetwarza następujące dane osoboweUczestnika podane za pośrednictwem formularza rejestracyjnego na stronie robomotion.com.pl: imię i nazwisko, adres e-mail oraz, numer telefonu.",
-                        "&nbsp; a) na podstawie zgody w celu rejestracji uczestników i organizacji konkursu (art. 6 ust. 1 lit. a RODO) - podanie powyższych danych jest dobrowolne, jednak jest niezbędne do rejestracji i uczestnictwa w VI Międzynarodowych Zawodach ROBO~motion 2021,",
+                        "Administrator pobiera i przetwarza następujące dane osoboweUczestnika podane za pośrednictwem formularza rejestracyjnego na stronie xchallenge.pl: imię i nazwisko, adres e-mail oraz, numer telefonu.",
+                        "&nbsp; a) na podstawie zgody w celu rejestracji uczestników i organizacji konkursu (art. 6 ust. 1 lit. a RODO) - podanie powyższych danych jest dobrowolne, jednak jest niezbędne do rejestracji i uczestnictwa w Międzynarodowych Zawodach Robotów XChallenge,",
                         "&nbsp; b) na podstawie zgody w celach marketingowych i promocyjnych związanych z ofertą Partnerów oraz Organizatora (art. 6 ust. 1 lit. a RODO) – wyrażenie zgody jest dobrowolne, można ją w każdej chwili wycofać.",
-                        "W czasie trwania wydarzenia VI Międzynarodowe Zawody ROBO~motion 2021 przeprowadzone zostaną sesje fotograficzne i video, Administrator i Partnerzy Organizatora będą przetwarzać wizerunek Uczestnikana na podstawie jego zgody lub w przypadku osób niepełnoletnich na podstawie zgody wyrażonej przez ich opiekunów prawnych(art. 6 ust. 1 lit. a RODO). Udzielenie zgody na przetwarzanie wizerunku jest dobrowolne, ale niezbędne do uczestnictwa w VI Międzynarodowych Zawodach ROBO~motion 2021. Zgoda jest dostępna pod tym <a href=\"https://rzit.smarthost.pl/robomotion/rodo.pdf\" target=\"_blank\">linkiem</a>.",
+                        "W czasie trwania wydarzenia Międzynarodowe Zawody XChallenge przeprowadzone zostaną sesje fotograficzne i video, Administrator i Partnerzy Organizatora będą przetwarzać wizerunek Uczestnikana na podstawie jego zgody lub w przypadku osób niepełnoletnich na podstawie zgody wyrażonej przez ich opiekunów prawnych(art. 6 ust. 1 lit. a RODO). Udzielenie zgody na przetwarzanie wizerunku jest dobrowolne, ale niezbędne do uczestnictwa w Międzynarodowych Zawodach Robotów XChallenge. Zgoda jest dostępna pod tym <a href=\"https://rzit.smarthost.pl/robomotion/rodo.pdf\" target=\"_blank\">linkiem</a>.",
                         "Każdy Uczestnik ma prawo żądania:",
                         "&nbsp; a) dostępu do danych i uzyskania informacji w zakresie ich przetwarzania",
                         "&nbsp; b) sprostowania danych oraz żądania ich usunięcia lub ograniczenia przetwarzania",

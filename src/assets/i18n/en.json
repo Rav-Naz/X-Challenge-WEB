@@ -49,7 +49,7 @@
             "eventsList": [
                 { "id": 1, "name": "Exciting competitions", "description": "Participants will be able to compete in as many as 8 categories, i.e. 15 competitions. The organizers prepared the arenas for the struggle on the tracks for LineFollowers or Sumo fights. The track itself in the LF category will test the programming and construction skills of many robotics. In addition to the standard competitions, the organizers have prepared many surprises. Every constructor, regardless of whether he is just starting his adventure with electronics or is already experienced, will surely find something for himself. There will also be competition dedicated to LEGO® fans.", "icon": "la-trophy" },
                 { "id": 2, "name": "For the first time in Poland", "description": "This year's edition is back with a bang. Therefore, the organizers would like to invite everyone to take part in a special competition by RoboLab: Smash Bots! Powerful, remotely controlled deadly machines will fight in a dedicated closed arena. Due to the first such event in Poland, the organizers reduced the requirements of the machines to 30x30 (maximum height 2 meters). We encourage all lovers, students and pupils to try their hand and take part in this amazing fight. There will be cash prizes up for the podium.", "icon": "la-robot" },
-                { "id": 3, "name": "The best constructors", "description": "Each edition of ROBO~motion brings together many professionals, enthusiasts and scientists in the field of robotics. It is an amazing opportunity to establish new contacts, meet specialists at work or learn the most valuable secrets of technology from people from all over world. Come, show your best side and guarantee yourself a bright future!", "icon": "la-wrench" }
+                { "id": 3, "name": "The best constructors", "description": "Each edition of XChallenge brings together many professionals, enthusiasts and scientists in the field of robotics. It is an amazing opportunity to establish new contacts, meet specialists at work or learn the most valuable secrets of technology from people from all over world. Come, show your best side and guarantee yourself a bright future!", "icon": "la-wrench" }
             ]
         },
         "competitions": {
@@ -57,14 +57,14 @@
             "learn": "LEARN MORE",
             "regulations": "Rules",
             "categories": [
-                { "id": 1, "name": "Smash Bots", "description": "The team and its robot must face the tasks and score as many points as possible in the previously prepared arenas. Things will happen here!", "icon": "battlebot.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/ErCZ78rxSrpKs8EPimRWR0YBZNeY4CiKhoORwosxpt8iXQ?e=eyWCg8" },
-                { "id": 2, "name": "Task Hunters", "description": "The team and its robot must face the tasks and score as many points as possible in the previously prepared arenas. There will be a lot going on here!", "icon": "task_hunters.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/EuHkMduHWcdGrRk0_ZHTSuYBZMeydZy-cCFBMRvDA-5iIA?e=7fscaM" },
-                { "id": 3, "name": "Freestyle", "description": "In this competition, competitors can put on any project, robot or machine. The structures are assessed by referees and visitors. Each voter completes a questionnaire in which they award points for each project, so it is important that each competitor presents their project in the best possible way.", "icon": "freestyle.gif", "linkToRegulation": "https://bit.ly/robomotion21fs" },
-                { "id": 4, "name": "Line Follower", "description": "The goal of the robot in this competition is to follow the route marked by the black line drawn on the board as quickly as possible. The robot must follow the line as accurately as possible, without avoiding or cutting corners.", "icon": "line_follower.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/Erv3ruktMJtImHEgknuiI8EB5tQCTr3wcBGiN_7RSbGXSA?e=8Rcm8i" },
-                { "id": 5, "name": "Micromouse", "description": "The robot's task is to find the fastest path from the starting field to the area consisting of four fields arranged in a square. The robot must be very accurate so that it does not bounce off the walls.", "icon": "micromouse.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/EvYRR3lUptJEpI-C4x7lImMBarbOxNHynINVX_kPnTS5Xw?e=ElSUyd" },
-                { "id": 6, "name": "Onion House", "description": "It is a modified version of the competition known as Ketchup House. We focused on Polish products and flavors, so onions will be the subject of our competition. Because why not? You can come to this competition with independently selected onions.", "icon": "onion_house.gif", "linkToRegulation": "https://bit.ly/robomotion21oh" },
-                { "id": 7, "name": "Sumo", "description": "Robots like SUMO wrestlers must push the opponent out of a specially prepared ring. Many categories will allow you to easily select the appropriate robot class for your preferences and capabilities.", "icon": "sumo.gif", "linkToRegulation": "https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/EgFJDKRkgFNMsfiUJ7UXLf4BTxsKUOtO2AborrY1uriUIA?e=3KVkGb" },
-                { "id": 8, "name": "LEGO® Tug of War", "description": "This competition is also brand new! Two robots facing each other will compete in tugging the rope. The winner is the one who manages to pull most of the rope to his side. This competition is only intended for robots made of LEGO® bricks.", "icon": "tug_of_war.gif", "linkToRegulation": "https://bit.ly/robomotion21tow" }
+                { "id": 1, "name": "Smash Bots", "description": "The team and its robot must face the tasks and score as many points as possible in the previously prepared arenas. Things will happen here!", "icon": "battlebot.gif", "linkToRegulation": "https://bit.ly/xchallengeSB22rules" },
+                { "id": 2, "name": "Task Hunters", "description": "The team and its robot must face the tasks and score as many points as possible in the previously prepared arenas. There will be a lot going on here!", "icon": "task_hunters.gif", "linkToRegulation": "https://bit.ly/xchallengeTH22rules" },
+                { "id": 3, "name": "Freestyle", "description": "In this competition, competitors can put on any project, robot or machine. The structures are assessed by referees and visitors. Each voter completes a questionnaire in which they award points for each project, so it is important that each competitor presents their project in the best possible way.", "icon": "freestyle.gif", "linkToRegulation": "https://bit.ly/xchallengeRM22FSrules" },
+                { "id": 4, "name": "Line Follower", "description": "The goal of the robot in this competition is to follow the route marked by the black line drawn on the board as quickly as possible. The robot must follow the line as accurately as possible, without avoiding or cutting corners.", "icon": "line_follower.gif", "linkToRegulation": "https://bit.ly/xchallengeRM22LFrules" },
+                { "id": 5, "name": "Micromouse", "description": "The robot's task is to find the fastest path from the starting field to the area consisting of four fields arranged in a square. The robot must be very accurate so that it does not bounce off the walls.", "icon": "micromouse.gif", "linkToRegulation": "https://bit.ly/xchallengeRM22MMrules" },
+                { "id": 6, "name": "Onion House", "description": "It is a modified version of the competition known as Ketchup House. We focused on Polish products and flavors, so onions will be the subject of our competition. Because why not? You can come to this competition with independently selected onions.", "icon": "onion_house.gif", "linkToRegulation": "https://bit.ly/xchallengeRM22CHrules" },
+                { "id": 7, "name": "Sumo", "description": "Robots like SUMO wrestlers must push the opponent out of a specially prepared ring. Many categories will allow you to easily select the appropriate robot class for your preferences and capabilities.", "icon": "sumo.gif", "linkToRegulation": "https://bit.ly/xchallengeRM22SMrules" },
+                { "id": 8, "name": "LEGO® Tug of War", "description": "This competition is also brand new! Two robots facing each other will compete in tugging the rope. The winner is the one who manages to pull most of the rope to his side. This competition is only intended for robots made of LEGO® bricks.", "icon": "tug_of_war.gif", "linkToRegulation": "https://bit.ly/xchallengeRM22TOWrules" }
             ]
         },
         "news": {
@@ -139,7 +139,7 @@
                 "name": "RoboLAB – Local STEM Incubator"
             },
             "title": "PATRONS",
-            "question": "Do you want to become a patron? Contact us at kontakt@kneiti.prz.edu.pl",
+            "question": "Do you want to become a patron? Contact us at robo@kneiti.prz.edu.pl",
             "patreonList": [],
             "tiers": []
         },
@@ -159,7 +159,7 @@
         "register": "Competitors registration",
         "viewers": "Opening the stands for the audience",
         "brief": "Briefing for all competitors (Competitor's Zone)",
-        "open": "OFFICIAL START OF THE VI INTERNATIONAL ROBOT COMPETITION ROBO~motion 2021",
+        "open": "OFFICIAL START OF THE INTERNATIONAL ROBOT COMPETITION XCHALLENGE",
         "draw-groups": "Draw groups",
         "draw": "Draw",
         "rides": "Scored runs",
@@ -452,19 +452,19 @@
     "app-rules": {
         "spis": {
             "title": "TABLE OF CONTENTS",
-            "1": "COOKIES POLICY OF THE ROBOMOTION.COM.PL SITE",
-            "2": "ROBOMOTION WEBSITE PRIVACY POLICY",
-            "3": "TERMS AND CONDITIONS FOR THE USE OF THE ROBO~MOTION APP",
-            "4": "TERMS AND CONDITIONS OF INTERNATIONAL COMPETITIONS ROBO~MOTION",
+            "1": "COOKIES POLICY OF THE XCHALLENGE.PL SITE",
+            "2": "XCHALLENGE WEBSITE PRIVACY POLICY",
+            "3": "TERMS AND CONDITIONS FOR THE USE OF THE XCHALLENGE APP",
+            "4": "TERMS AND CONDITIONS OF INTERNATIONAL COMPETITIONS XCHALLENGE",
             "5": "ADMINISTRATOR'S INFORMATION IN CONNECTION WITH THE PROCESSING OF PERSONAL DATA"
         },
         "rules": [{
-                "title": "COOKIES POLICY OF THE ROBOMOTION.COM.PL SITE",
+                "title": "COOKIES POLICY OF THE XCHALLENGE.PL SITE",
                 "description": "The following Cookies Policy sets out the rules for saving and accessing data on Users' Devices using the Website for the purpose of providing electronic services by the Website Administrator.",
                 "paragrphs": [{
                         "title": "Definitions",
                         "bodies": [
-                            "<b> Website </b> - a website operating at https://robomotion.com.pl/",
+                            "<b> Website </b> - a website operating at https://xchallenge.pl/",
                             "<b> External website </b> - website of the Administrator's partners, service providers or recipients",
                             "<b> Administrator </b> - Scientific Club of Automation and Robotics 'ROBO', operating at the Rzeszów University of Technology at the address: ul. Wincentego Pola 2, 35-021 Rzeszów, providing electronic services via the Website and storing and gaining access to information in the User's devices",
                             "<b> User </b> - a natural person for whom the Administrator provides services electronically via the Website",
@@ -528,14 +528,14 @@
                 ]
             },
             {
-                "title": "ROBO~MOTION WEBSITE PRIVACY POLICY",
+                "title": "XCHALLENGE WEBSITE PRIVACY POLICY",
                 "description": "The privacy policy describes the rules for the processing of information about you, including personal data.",
                 "paragrphs": [{
                         "title": "General information",
                         "bodies": [
-                            "This policy applies to the ROBO~motion website (hereinafter: „Application”)",
+                            "This policy applies to the XCHALLENGE website (hereinafter: „Application”)",
                             "The owner of the application is: the Scientific Circle of Automation and Robotics 'ROBO', operating at the Rzeszów University of Technology at the address: ul. Wincentego Pola 2, 35-021 Rzeszów",
-                            "Operator's e-mail contact address: kontakt@kneiti.prz.edu.pl",
+                            "Operator's e-mail contact address: robo@kneiti.prz.edu.pl",
                             "The application uses personal data for the following purposes:",
                             "- <b> Presenting the user's profile to other users </b>",
                             "- <b> Handling inquiries via the form </b>",
@@ -600,13 +600,13 @@
                 ]
             },
             {
-                "title": "TERMS AND CONDITIONS FOR THE USE OF THE ROBO~MOTION APP",
-                "description": "By creating an account in the ROBO~motion application, you accept the following conditions.",
+                "title": "TERMS AND CONDITIONS FOR THE USE OF THE XCHALLENGE APP",
+                "description": "By creating an account in the XChallenge application, you accept the following conditions.",
                 "paragrphs": [{
                         "title": "General information",
                         "bodies": [
                             "The owner of the application and the administrator of personal data is: the Scientific Circle of Automation and Robotics 'ROBO', operating at the Rzeszów University of Technology at the following address: ul. Wincentego Pola 2, 35-021 Rzeszów (hereinafter referred to as the „Application Owner” )",
-                            "The application was created to conduct the recruitment process for the International Robot Competition ROBO ~ motion, communication with robot builders, presentation of results and promotion of sponsors"
+                            "The application was created to conduct the recruitment process for the International Robot Competition XChallenge, communication with robot builders, presentation of results and promotion of sponsors"
                         ]
                     },
                     {
@@ -618,13 +618,13 @@
                     {
                         "title": "Users",
                         "bodies": [
-                            "The application was created for people interested in the ROBO~motion competition, both those taking part in the competition and the audience"
+                            "The application was created for people interested in the XChallenge competition, both those taking part in the competition and the audience"
                         ]
                     },
                     {
                         "title": "Content in Apps",
                         "bodies": [
-                            "The owner of the application is responsible for the content of the Application. The user has the right to comment on inappropriate content in the application. This can be done by writing to the following address: kontakt@kneiti.prz.edu.pl"
+                            "The owner of the application is responsible for the content of the Application. The user has the right to comment on inappropriate content in the application. This can be done by writing to the following address: robo@kneiti.prz.edu.pl"
                         ]
                     },
                     {
@@ -636,7 +636,7 @@
                 ]
             },
             {
-                "title": "TERMS AND CONDITIONS OF INTERNATIONAL COMPETITIONS ROBO~MOTION 2021",
+                "title": "TERMS AND CONDITIONS OF INTERNATIONAL COMPETITIONS XCHALLENGE",
                 "description": "Last update: 13.11.2021",
                 "paragrphs": [{
                         "title": "Definition",
@@ -654,24 +654,24 @@
                     {
                         "title": "General informations",
                         "bodies": [
-                            "These regulations define the conditions for participation in the VI International Robot Competition ROBO~motion 2021 (hereinafter called Competition) and the rules of conduct to prevent the spread of the SARS-CoV-2 virus in Poland",
-                            "VI International Robot Competition ROBO~motion 2021 is the next edition of the Competition organized by „Koło Naukowe Automatyków i Robotyków ROBO” operating at the Faculty of Electrical Engineering and Computer Science of the Rzeszow University of Technology together with its partners. The aim of the event is to popularize robotics among young people and students.",
-                            "The competition will take place on Sunday, November 28, 2021. The duration depends on the number of submitted robots, therefore the final schedule will be made available on the robomotion.com.pl website no later than 4 days before the competition, i.e. on Wednesday, November 24, 2021",
+                            "These regulations define the conditions for participation in the International Robot Competition XChallenge (hereinafter called Competition) and the rules of conduct to prevent the spread of the SARS-CoV-2 virus in Poland",
+                            "International Robot Competition XChallenge 2021 is the next edition of the Competition organized by „Koło Naukowe Automatyków i Robotyków ROBO” operating at the Faculty of Electrical Engineering and Computer Science of the Rzeszow University of Technology together with its partners. The aim of the event is to popularize robotics among young people and students.",
+                            "The competition will take place on Sunday, November 28, 2021. The duration depends on the number of submitted robots, therefore the final schedule will be made available on the xchallenge.pl website no later than 4 days before the competition, i.e. on Wednesday, November 24, 2021",
                             "The competition will be held in the building of the Regional Sports and Entertainment Center \"Podpromie\" located at 10 Podpromie Street, 35-010 Rzeszow",
                             "The Organizers will supervise the proper course of the Competition. Each of the Organizers will have a personal identifier.",
                             "A necessary condition for joining the Competition is consent to the processing of personal data, including image:",
-                            "&nbsp; o Persons of age consent to the processing of personal data and personal data in the form of an image sign on the spot - printouts will be ready - the consent form is available at <a href=\"robomotion.com.pl\" target=\"_blank\" style=\"color:yellow;\">robomotion.com.pl</a>",
-                            "&nbsp; o Minors are asked to bring a printed consent form signed by the Parent / Legal Guardian on the day of the Tournament - the consent form for a minor is available at <a href=\"robomotion.com.pl\" target=\"_blank\" style=\"color:yellow;\">robomotion.com.pl</a>"
+                            "&nbsp; o Persons of age consent to the processing of personal data and personal data in the form of an image sign on the spot - printouts will be ready - the consent form is available at <a href=\"xchallenge.pl\" target=\"_blank\" style=\"color:yellow;\">xchallenge.pl</a>",
+                            "&nbsp; o Minors are asked to bring a printed consent form signed by the Parent / Legal Guardian on the day of the Tournament - the consent form for a minor is available at <a href=\"xchallenge.pl\" target=\"_blank\" style=\"color:yellow;\">xchallenge.pl</a>"
                         ]
                     },
                     {
                         "title": "Participants",
                         "bodies": [
-                            "Adults may take part in the Competition, who consent to the processing of personal data, including their images, and accept the regulations. In the case of minors, written consent of the parent or legal guardian to participate in the Competition is required, consent to the processing of personal data, including image, and acceptance of the regulations - the form is available at <a href=\"robomotion.com.pl\" target=\"_blank\" style=\"color:blue;\">robomotion.com.pl</a>",
+                            "Adults may take part in the Competition, who consent to the processing of personal data, including their images, and accept the regulations. In the case of minors, written consent of the parent or legal guardian to participate in the Competition is required, consent to the processing of personal data, including image, and acceptance of the regulations - the form is available at <a href=\"xchallenge.pl\" target=\"_blank\" style=\"color:blue;\">xchallenge.pl</a>",
                             "Teams of 1-20 people may register for the Competition",
                             "Each team without an adult must come to the competition under the supervision of an adult - a guardian",
                             "During registration on the day of the competition, each team member must have an identity document and present it at the request of the Organizer, Referee or Staff.",
-                            "Registering a team in the Competition on the website <a href=\"robomotion.com.pl\" target=\"_blank\" style=\"color:yellow;\">robomotion.com.pl</a> is tantamount to accepting the General Regulations of the Competition and the regulations of individual competitions.",
+                            "Registering a team in the Competition on the website <a href=\"xchallenge.pl\" target=\"_blank\" style=\"color:yellow;\">xchallenge.pl</a> is tantamount to accepting the General Regulations of the Competition and the regulations of individual competitions.",
                             "Each passive or active participant, starting or not taking part in the Competition, participating in the event, is obliged to comply with all the Competition Regulations and the Regulations in force in the building of the Regional Sports and Entertainment Center \"Podpromie\". Entering the event area is tantamount to accepting the regulations",
                             "Ignorance of any of the Regulations does not exempt the participant from the necessity to comply with them",
                             "The organizers undertake not to disclose the telephone number provided during registration to third parties without the consent of the number owner"
@@ -699,7 +699,7 @@
                             "&nbsp;<b>Robot Sprint</b>",
                             "&nbsp;<b>LEGO Tug of War</b>",
                             "&nbsp;<b>Freestyle</b>",
-                            "The exact regulations of each competition can be found on the home page of <a href=\"robomotion.com.pl\" target=\"_blank\" style=\"color:yellow;\">robomotion.com.pl</a> the link to the regulations is available after selecting the appropriate category",
+                            "The exact regulations of each competition can be found on the home page of <a href=\"xchallenge.pl\" target=\"_blank\" style=\"color:yellow;\">xchallenge.pl</a> the link to the regulations is available after selecting the appropriate category",
                             "In the case of a small number of teams participating in a given competition, the organizer reserves the right to play only the final phase or to cancel the competition."
 
                         ]
@@ -761,10 +761,10 @@
                         "The administrator of personal data is the Ignacy Łukasiewicz University of Technology in Rzeszów al. Powstańców Warszawy 12, 35-959 Rzeszow, (hereinafter referred to as the University), email address: kancelaria@prz.edu.pl",
                         "The Data Protection Supervisor at the Rzeszow University of Technology can be contacted by calling 17 865 1775 or by e-mail: iod@prz.edu.pl",
                         "The administrator processes your personal data in accordance with the Regulation pursuant to Article 13 (1) (2) of Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of individuals with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46 / EC (hereinafter referred to as GDPR).",
-                        "The Administrator collects and processes the following personal data of the Participant provided via the registration form on the website robomotion.com.pl: name and surname, e-mail address and telephone number.",
-                        "&nbsp; a) based onconsent to register participants and organize the competition (Article 6 (1) (a) of the GDPR)-providing the above data is voluntary, however, it is necessary for registration and participation in the 6th International ROBO ~ motion 2021 Competition,",
+                        "The Administrator collects and processes the following personal data of the Participant provided via the registration form on the website xchallenge.pl: name and surname, e-mail address and telephone number.",
+                        "&nbsp; a) based onconsent to register participants and organize the competition (Article 6 (1) (a) of the GDPR)-providing the above data is voluntary, however, it is necessary for registration and participation in the 6th International XChallenge Competition,",
                         "&nbsp; b) based on consent consent for marketing and promotional purposes related to the offer of the Partners and the Organizer (Article 6 (1) (a) of the GDPR) - consent is voluntary, it can be withdrawn at any time.",
-                        "During the VI International ROBO ~ motion 2021 Competition, photo and video sessions will be held, the Administrator and the Organizer's Partners will process the Participant's imagebased on his consentor in the case of minors, on the basis of consent expressed by their legal guardians (Article 6 (1) (a) of the GDPR). Granting consent for image processing is voluntary, but necessary to participate in the VI International ROBO ~ motion 2021 Competition. Consent is available under this <a href=\"https://rzit.smarthost.pl/robomotion/rodo.pdf\" target=\"_blank\">link</a>.",
+                        "During the International XChallenge Competition, photo and video sessions will be held, the Administrator and the Organizer's Partners will process the Participant's imagebased on his consentor in the case of minors, on the basis of consent expressed by their legal guardians (Article 6 (1) (a) of the GDPR). Granting consent for image processing is voluntary, but necessary to participate in the International XChallenge Competition. Consent is available under this <a href=\"https://rzit.smarthost.pl/robomotion/rodo.pdf\" target=\"_blank\">link</a>.",
                         "Each Participant is entitled to:",
                         "&nbsp; a) request access to data and obtain information on their processing",
                         "&nbsp; b) rectify data and demand their removal or limitation of processing",

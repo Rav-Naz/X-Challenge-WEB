@@ -32,7 +32,7 @@ import { RobomotionComponent } from './home/categories/robomotion/robomotion.com
 const routes: Routes = [
   {path: '', component: HomeComponent},
   // {path: 'gallery', component: GalleryComponent},
-  {path: 'task-challenge', component: TaskChallengeComponent},
+  {path: 'task-hunters', component: TaskChallengeComponent},
   {path: 'smash-bots', component: SmashBotsComponent},
   {path: 'robomotion', component: RobomotionComponent},
   // {path: 'results', component: ResultsComponent},
@@ -40,7 +40,7 @@ const routes: Routes = [
   // {path: 'building-plan', component: BuildingPlanComponent},
   // {path: 'login', component: LoginComponent},
   // {path: 'register', component: RegisterComponent},
-  {path: 'app-rules', component: AppRulesComponent},
+  // {path: 'app-rules', component: AppRulesComponent},
   {path: 'thank-you', component: ThanksComponent},
   // {path: 'forgot-password', component: ForgotPasswordComponent},
   // {path: 'reset-password/:uzytkownik_uuid/:kod', component: ResetPasswordComponent},

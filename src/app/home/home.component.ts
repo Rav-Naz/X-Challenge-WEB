@@ -138,8 +138,6 @@ export class HomeComponent implements OnInit, AfterViewInit{
     'Justyna_Tropio_Lens_Ur_24.jpg',
     'Justyna_Tropio_Lens_Ur_57.jpg',
     'K.Dudzinska_23.jpg',
-    'K.Dudzinska_53.jpg',
-    'K.Prokopik_LENSUR_41.jpg',
     'K.Szydelko_32.jpg',
     'K.Szydelko_41.jpg',
     'KWronski_9480.jpg',
