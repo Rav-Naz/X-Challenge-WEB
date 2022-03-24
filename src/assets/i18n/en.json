@@ -140,8 +140,17 @@
             },
             "title": "PATRONS",
             "question": "Do you want to become a patron? Contact us at robo@kneiti.prz.edu.pl",
-            "patreonList": [],
-            "tiers": []
+            "patreonList": [
+                { "id": 1, "patreonCategory": 4, "description": "Rzeszow University of Technology im. Ignacego Łukasiewicza", "image": "../../assets/jpg/prz_pl.png", "linkToSite": "https://w.prz.edu.pl/" }
+            ],
+            "tiers": [
+                "Main partner",
+                "Gold partner",
+                "Silver partner",
+                "Bronze partner",
+                "Strategic partner",
+                "Media patronage"
+            ]
         },
         "footer": {
             "copyright": "Copyright",

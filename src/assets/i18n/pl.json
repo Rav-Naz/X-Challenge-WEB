@@ -151,8 +151,18 @@
             },
             "title": "Partnerzy",
             "question": "Chcesz zostać patronem? Skontaktuj się z nami pod adresem robo@kneiti.prz.edu.pl",
-            "patreonList": [],
-            "tiers": []
+            "patreonList": [
+                { "id": 1, "patreonCategory": 4, "description": "Politechnika Rzeszowska im. Ignacego Łukasiewicza", "image": "../../assets/jpg/prz_pl.png", "linkToSite": "https://w.prz.edu.pl/" }
+            ],
+            "tiers": [
+                "Partner Główny",
+                "Partner Złoty",
+                "Partner Srebrny",
+                "Partner Brązowy",
+                "Partner strategiczny",
+                "Patronat specjalny",
+                "Patronat medialny"
+            ]
         },
         "footer": {
             "copyright": "Prawa autorskie",
