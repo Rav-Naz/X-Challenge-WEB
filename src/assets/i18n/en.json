@@ -69,7 +69,8 @@
         },
         "news": {
             "title": "NEWS",
-            "info": "At this place, we will provide you with the most important information for the competitors and the audience"
+            "info": "At this place, we will provide you with the most important information for the competitors and the audience",
+            "register": "Registration is not currently possible. The opening date will be announced shortly."
         },
         "categories": {
             "title": "Categories",
@@ -79,7 +80,7 @@
                 "introduction": {
                     "title": "Introduction",
                     "description": {
-                        "1": "Time flows very quietly in Starlight City. The city is known for its industry and great logistics network. Starlight City is self-sufficient thanks to the nearby river and power plant, whose reactor generates clean energy from special energy cubes. A long time ago, residents have discovered an infinite source of inexhaustible energy, energy cubes created as a result of the reaction of many elements generating enormous energy resources. Years of research and work have resulted in the construction of a power plant capable of converting the energy of cubes into electricity, providing power to industrial, commercial and residential areas while protecting the environment by generating clean energy. ",
+                        "1": "Time flows very quietly in Starlight City. The city is known for its industry and great logistics network. Starlight City is self-sufficient thanks to the nearby river and power plant, the reactor of which generates clean energy from special energy cubes. have developed an infinite source of energy, energy cubes created as a result of the reaction of many elements containing enormous layers of power. Years of research and work have resulted in the construction of a power plant capable of converting the energy of cubes into electricity, providing power to industrial, commercial and residential areas while protecting the environment by generating clean energy. ",
                         "2": "Unfortunately, one time an event occurred that significantly affected the functioning of individual parts of the city. The power plant stopped working. Electricity stopped flowing through the power grid, which paralyzed the entire city. To find out what happened and avert the disaster, the city set up a team of volunteers solve the riddle who immediately rushed to the power plant. "
                     },
                     "stages": {
