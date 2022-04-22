@@ -130,20 +130,23 @@ export class HomeComponent implements OnInit, AfterViewInit{
     'A.Szkulska_LENS_UR_38.jpg',
     'J.Baran_SKNI_KOD(168).jpg',
     'J.Baran_SKNI_KOD(280).jpg',
+    'sb/K.Szydelko_142.jpg',
     'J.Burlikowska_LENS_UR_6.jpg',
     'J.Urban_LENS_UR_21.jpg',
     'Justyna_Tropio_Lens_Ur_12.jpg',
+    'sb/T.Hucko_LENS_UR_(110).JPG',
     'Justyna_Tropio_Lens_Ur_14.jpg',
     'Justyna_Tropio_Lens_Ur_19.jpg',
+    'sb/T.Hucko_LENS_UR_(173).JPG',
     'Justyna_Tropio_Lens_Ur_24.jpg',
-    'Justyna_Tropio_Lens_Ur_57.jpg',
     'K.Dudzinska_23.jpg',
+    'Justyna_Tropio_Lens_Ur_57.jpg',
     'K.Szydelko_32.jpg',
-    'K.Szydelko_41.jpg',
+    'sb/T.Hucko_LENS_UR_(183).JPG',
     'KWronski_9480.jpg',
     'KWro_DJI_0314.jpg',
     'KWR_9233.jpg',
-    'KWR_9289.jpg'
+    'sb/T.Hucko_LENS_UR_(178).JPG'
   ]
 
   constructor(public translate: TranslateService, private httpService: HttpService, private authService: AuthService) {

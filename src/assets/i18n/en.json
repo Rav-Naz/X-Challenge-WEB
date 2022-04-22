@@ -5,7 +5,7 @@
         "program": "Schedule",
         "competitions": "Competitions",
         "location": "Location",
-        "patreons": "Patrons",
+        "patreons": "Partners",
         "results": "Results",
         "contact": "Contact",
         "timetable": "Timetable",
@@ -57,7 +57,7 @@
             "learn": "LEARN MORE",
             "regulations": "Rules",
             "categories": [
-                { "id": 1, "name": "Smash Bots", "description": "The team and its robot must face the tasks and score as many points as possible in the previously prepared arenas. Things will happen here!", "icon": "battlebot.gif", "linkToRegulation": "https://bit.ly/xchallengeSB22rules" },
+                { "id": 1, "name": "Smash Bots", "description": "This is the toughest competition in XChallenge! In a special arena, remote-controlled robots will fight each other until the last breath. Sparks and flames are guaranteed here.", "icon": "battlebot.gif", "linkToRegulation": "https://bit.ly/xchallengeSB22rules" },
                 { "id": 2, "name": "Task Hunters", "description": "The team and its robot must face the tasks and score as many points as possible in the previously prepared arenas. There will be a lot going on here!", "icon": "task_hunters.gif", "linkToRegulation": "https://bit.ly/xchallengeTH22rules" },
                 { "id": 3, "name": "Freestyle", "description": "In this competition, competitors can put on any project, robot or machine. The structures are assessed by referees and visitors. Each voter completes a questionnaire in which they award points for each project, so it is important that each competitor presents their project in the best possible way.", "icon": "freestyle.gif", "linkToRegulation": "https://bit.ly/xchallengeRM22FSrules" },
                 { "id": 4, "name": "Line Follower", "description": "The goal of the robot in this competition is to follow the route marked by the black line drawn on the board as quickly as possible. The robot must follow the line as accurately as possible, without avoiding or cutting corners.", "icon": "line_follower.gif", "linkToRegulation": "https://bit.ly/xchallengeRM22LFrules" },
@@ -68,7 +68,7 @@
             ]
         },
         "news": {
-            "title": "NEWS",
+            "title": "IMPORTANT INFORMATIONS",
             "info": "At this place, we will provide you with the most important information for the competitors and the audience",
             "register": "Registration is not currently possible. The opening date will be announced shortly."
         },
@@ -80,17 +80,17 @@
                 "introduction": {
                     "title": "Introduction",
                     "description": {
-                        "1": "Time flows very quietly in Starlight City. The city is known for its industry and great logistics network. Starlight City is self-sufficient thanks to the nearby river and power plant, the reactor of which generates clean energy from special energy cubes. have developed an infinite source of energy, energy cubes created as a result of the reaction of many elements containing enormous layers of power. Years of research and work have resulted in the construction of a power plant capable of converting the energy of cubes into electricity, providing power to industrial, commercial and residential areas while protecting the environment by generating clean energy. ",
-                        "2": "Unfortunately, one time an event occurred that significantly affected the functioning of individual parts of the city. The power plant stopped working. Electricity stopped flowing through the power grid, which paralyzed the entire city. To find out what happened and avert the disaster, the city set up a team of volunteers solve the riddle who immediately rushed to the power plant. "
+                        "1": "Time flies very slowly in Starlight City. The city is known for its industry and great logistics network. Starlight City is self-sufficient thanks to the nearby river and a power plant, the reactor of which generates clean energy from special energy cubes. A long time ago, the inhabitants developed an endless source of energy, energy cubes created by the reactions of many elements containing enormous layers of power. Years of research and work have resulted in the construction of a power plant capable of converting the energy of cubes into electricity, providing power to industrial, commercial and residential areas, while protecting the environment by generating clean energy.",
+                        "2": "Unfortunately, one day there was an event that significantly influenced the functioning of individual parts of the city. The power plant stopped working. Electricity stopped flowing through the power grid, paralyzing the entire city. To find out what happened and avert the disaster, the city set up a team of volunteers to solve the mystery, who immediately went to the power plant."
                     },
                     "stages": {
                         "1": {
                             "title": "Stage 1",
-                            "description": "On reaching the site, Task Hunters analyzes the situation. The first task is to overcome the security of a power plant that can only be reached by mobile robots. To be able to get close to it, volunteers await a complicated maze that must be overcome in the shortest possible time. The team faces dangerous opponents who attack the vehicle with special balls, making it difficult to drive. Reaching the side of the power plant, the team discovers the source of the disaster - the wall explodes! The power plant must be brought back into operation quickly! The robot must break through to the energy cubes, paying attention to obstacles in the area, and then take them and put them in the reactor warehouse by matching the size and color of the energy cubes to the appropriate places in the warehouse. Both the color and size define the power cubes, not m this is confusing. "
+                            "description": "Upon reaching the site, the Task Hunters team analyzes the situation. The first task is to overcome the security of a power plant that can only be reached by mobile robots. In order to be able to get close to it, a complicated maze awaits the volunteers, which must be overcome in the shortest possible time. Dangerous opponents await the team, who attack the vehicle with special balls, making it difficult to ride. Having reached the side of the power plant, the team discovers the source of the disaster - a wall explosion! As a result of the explosion, energy cubes jumped out of the reactor's warehouse and landed in different places on the premises of the facility and the wall itself lies in pieces on the premises of the facility. The power plant must be brought back into operation quickly! The robot has to get to the energy cubes, paying attention to obstacles in the area, and then take them and put them in the reactor warehouse by matching the size and color of energy cubes to the appropriate places in the warehouse. Both the color and size define the power of the cube, make no mistake about that."
                         },
                         "2": {
                             "title": "Stage 2",
-                            "description": "However, the arrangement of energy cubes alone will not activate the reactor - it must be activated using the power plant's built-in starter modules. In the event of a failure, two neutral activation systems are used to initiate the reactor activator and it is up to a team of volunteers to decide which path to choose. The mobile robot must properly set the energy paths using logic gates to power the activator module. In the second option, the mobile robot must cross the platform with a precipice to reach the button that activates the power supply of the activator module. To be able to cross the platform, the robot must find the platform element and place it in the appropriate By completing these tasks, the team has access to special power orbs required to accelerate the reactor. the reactor base and the impact of the power balls generates energy that allows the reactor to accelerate and start. The more power orbs, the more energy the power plant generates. How much power will the reactor reach and how much energy will the power plant start to generate? What really happened at the power plant that made it stop working? When looking for clues, a team of volunteers must uncover the mystery so that the situation will never happen again. "
+                            "description": "However, proper arrangement of energy cubes itself will not activate the reactor - it must be excited using the power plant's built-in starter modules. In the event of an accident, two neutral systems to initiate the reactor activator were used, and it is up to a team of volunteers to decide which path they will go. In the first option, the mobile robot must properly set the energy paths using logic gates to power the activator module. In the second option, the mobile robot must cross the platform with a precipice to reach the button that activates the power supply of the activator module. To be able to cross the platform, the robot must find the platform element and place it in the right place to make a bridge. By completing these tasks, the team gets access to special power balls required to speed up the reactor. After a preset time, the gates to the inside of the reactor open and the mobile robot can drive through them. There are power balls on the spot that need to be fired towards the base of the reactor. The impact force of the power balls generates energy that allows the reactor to accelerate and start. The more power balls, the more energy the power plant generates. How much power will the reactor reach and how much energy will the power plant start to generate? What really happened at the power plant that made it stop working? When looking for clues, a team of volunteers must uncover the mystery so that the situation will never happen again."
                         }
                     }
                 }
@@ -142,7 +142,9 @@
             "title": "PATRONS",
             "question": "Do you want to become a patron? Contact us at robo@kneiti.prz.edu.pl",
             "patreonList": [
-                { "id": 1, "patreonCategory": 4, "description": "Rzeszow University of Technology im. Ignacego Łukasiewicza", "image": "../../assets/jpg/prz_pl.png", "linkToSite": "https://w.prz.edu.pl/" }
+                { "id": 1, "patreonCategory": 0, "description": "Rzeszow University of Technology im. Ignacego Łukasiewicza", "image": "../../assets/jpg/prz_pl.png", "linkToSite": "https://w.prz.edu.pl/" },
+                { "id": 2, "patreonCategory": 0, "description": "Pratt & Whitney", "image": "../../assets/jpg/pratt.png", "linkToSite": "https://pwrze.com/" },
+                { "id": 3, "patreonCategory": 0, "description": "Podkarpackie voivodeship", "image": "../../assets/jpg/podkarpackie.png", "linkToSite": "https://podkarpackie.eu/" }
             ],
             "tiers": [
                 "Main partner",
