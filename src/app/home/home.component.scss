@@ -1384,11 +1384,11 @@
                 color: #b9f2ff;
             }
             .patreons-one {
-                max-width: 70rem;
+                max-width: 75rem;
                 img {
                     max-width: 100%;
-                    min-height: 10rem;
-                    max-height: 27rem;
+                    min-height: 25rem;
+                    // max-height: 25rem;
                 }
                 p {
                     font-size: 3rem;
@@ -1401,11 +1401,11 @@
                 color: goldenrod;
             }
             .patreons-one {
-                max-width: 55rem;
+                max-width: 60rem;
                 img {
                     max-width: 100%;
-                    min-height: 10rem;
-                    max-height: 15rem;
+                    // min-height: 15rem;
+                    max-height: 13rem;
                 }
                 p {
                     max-width: 30rem;
@@ -1419,11 +1419,11 @@
                 color: silver;
             }
             .patreons-one {
-                max-width: 30rem;
+                max-width: 40rem;
                 img {
                     max-width: 100%;
-                    min-height: 10rem;
-                    max-height: 15rem;
+                    // min-height: 10rem;
+                    max-height: 12rem;
                 }
                 p {
                     max-width: 30rem;
@@ -1440,6 +1440,7 @@
                 max-width: 33rem;
                 img {
                     max-width: 100%;
+                    // min-height: 10rem;
                     max-height: 15rem;
                 }
             }
@@ -1491,12 +1492,13 @@
         cursor: pointer;
         transition: all .2s;
         img {
-            // max-width: 20rem;
-            max-width: 100%;
+            max-width: 20rem;
+            // max-width: 100%;
             padding: 1rem;
-            max-height: 15rem;
-            background-repeat: no-repeat;
-            background-size: contain !important;
+            // max-height: 15rem;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+            background-position: 50% 50%;
         }
         p {
             font-size: 2rem;
@@ -1521,11 +1523,11 @@
         }
         &-one {
             max-width: 25rem;
-            img {
-                max-width: 17rem;
-                padding: 1rem;
-                max-height: 13rem;
-            }
+            // img {
+            //     max-width: 17rem;
+            //     padding: 1rem;
+            //     max-height: 13rem;
+            // }
             p {
                 font-size: 1.8rem;
             }
@@ -1540,11 +1542,11 @@
         }
         &-one {
             max-width: 22rem;
-            img {
-                max-width: 15rem;
-                padding: 1rem;
-                max-height: 11rem;
-            }
+            // img {
+            //     max-width: 15rem;
+            //     padding: 1rem;
+            //     max-height: 11rem;
+            // }
             p {
                 font-size: 1.7rem;
             }

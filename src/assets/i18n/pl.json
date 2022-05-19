@@ -155,7 +155,8 @@
             "patreonList": [
                 { "id": 1, "patreonCategory": 0, "description": "Politechnika Rzeszowska im. Ignacego Łukasiewicza", "image": "../../assets/jpg/prz_pl.png", "linkToSite": "https://w.prz.edu.pl/" },
                 { "id": 2, "patreonCategory": 0, "description": "Pratt & Whitney", "image": "../../assets/jpg/pratt.png", "linkToSite": "https://pwrze.com/" },
-                { "id": 3, "patreonCategory": 0, "description": "Województwo Podkarpackie", "image": "../../assets/jpg/podkarpackie.png", "linkToSite": "https://podkarpackie.eu/" }
+                { "id": 3, "patreonCategory": 0, "description": "Województwo Podkarpackie", "image": "../../assets/jpg/podkarpackie.png", "linkToSite": "https://podkarpackie.eu/" },
+                { "id": 4, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/jpg/kronospan.png", "linkToSite": "https://kronosfera.pl/" }
             ],
             "tiers": [
                 "Partner Główny",
