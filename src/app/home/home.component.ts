@@ -11,6 +11,7 @@ import {
   animate,
   transition
 } from '@angular/animations';
+import { DatePipe } from '@angular/common'
 import { Category } from '../models/category';
 import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 import { TranslateService } from '@ngx-translate/core';
@@ -98,6 +99,7 @@ export class HomeComponent implements OnInit, AfterViewInit{
   public timeIsUp = false;
   public switchAnimationStateName: 'start' | 'void' | 'end' = 'void';
   public eventDate: Date = new Date(2022, 10, 25, 9, 0, 0);
+  public eventEndDate: Date = new Date(2022, 10, 26, 18, 0, 0);
   public windowSize: WindowSize = { height: 1080, width: 1920};
 
   public timeLeft: number | undefined;
@@ -149,7 +151,21 @@ export class HomeComponent implements OnInit, AfterViewInit{
     'sb/T.Hucko_LENS_UR_(178).JPG'
   ]
 
-  constructor(public translate: TranslateService, private httpService: HttpService, private authService: AuthService) {
+  public dateList = [
+    {date: new Date(2022,8,30), title: "home.news.points.register-end.title",content: "home.news.points.register-end.content", printedDate: "30.09.2022", id: ""},
+    {date: new Date(2022,8,1), title: "home.news.points.register-start.title",content: "home.news.points.register-start.content", printedDate: "01.09.2022", id: ""},
+    {date: new Date(2022,10,25), title: "home.news.points.event-start.title",content: "home.news.points.event-start.content", printedDate: "25-26.11.2022", id: ""},
+  ]
+
+  constructor(public translate: TranslateService, private httpService: HttpService, private authService: AuthService,public datepipe: DatePipe) {
+    let teraz = new Date()
+    this.dateList.push({date: teraz, title: "home.news.points.now.title",content: "home.news.points.now.content", printedDate: this.datepipe.transform(teraz, 'dd.MM.YYYY')!.toString(), id: ""})
+    this.dateList.sort((a, b) => { return a.date.getTime() - b.date.getTime(); });
+    let iter = 0;
+    this.dateList.forEach(element => {
+      element.id = iter.toString();
+      iter++;
+    });
     setInterval(() => {
       this.switcher = !this.switcher;
     }, 5000)
@@ -235,6 +251,11 @@ export class HomeComponent implements OnInit, AfterViewInit{
       slide.style.width = 'auto';
     }
     }, 50)
+    let iter = 0;
+    this.dateList.forEach(element => {
+      document.getElementById("card" + iter)?.setAttribute('data-aos-delay', ((iter+1)*250).toString());
+      iter++;
+    });
   }
 
 
@@ -369,6 +390,9 @@ export class HomeComponent implements OnInit, AfterViewInit{
 
   patreonClassPicker(index: number) {
     return {[`patreons-class-${index}`]: true};
+  }
+  isDateBefore(data: Date) {
+    return data.getTime() > new Date().getTime()
   }
 
   get descriptionOfSelectedEvent(): string | undefined {

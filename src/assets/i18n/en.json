@@ -69,8 +69,32 @@
         },
         "news": {
             "title": "IMPORTANT INFORMATIONS",
-            "info": "At this place, we will provide you with the most important information for the competitors and the audience",
-            "register": "Registration is not currently possible. The opening date will be announced shortly."
+            "info": "At this place, we will provide you with the most important information for the players and the audience.",
+            "register": "Registration is not currently possible. The opening date will be announced shortly.",
+            "points": {
+                "register-start": {
+                    "title": "Start of registration",
+                    "content": "From now on, you can start registering in the Competitor Zone. Remember to add all your robots along with their documentation and videos (for selected competitions)."
+                },
+                "register-end": {
+                    "title": "End of registration",
+                    "content": "Until then, modifications can be made to the notified robots and their constructors. Please check carefully that all the entered data is correct. AFTER THE REGISTRATION IS FINISHED, IT IS IMPOSSIBLE TO CHANGE YOUR DATA!"
+                },
+                "event-start": {
+                    "title": "XChallenge competition",
+                    "content": "We are all waiting for it! We guarantee unforgettable emotions during fights and races that will last for the entire 2 days! We cordially invite everyone interested to watch the games live and on streaming platforms."
+                },
+                "now": {
+                    "title": "Now",
+                    "content": {
+                        "0": "We are still before the registration opens. Now is a great time to plan and build robots, think strategies and gather a team.",
+                        "1": "Registration is now underway. Do not wait any longer to let us know about your arrival in Rzeszów at XChallenge! Read carefully the rules of yours competitions and finish everything. Remember that EVERY ROBOT CONSTRUCTOR MUST REGISTER IN OUR SYSTEM. ",
+                        "2": "This is the last straight before the competition. Now, all that remains is to wait ... I'll see you there soon! PS. Remember that you need to gather your team before setting off;)",
+                        "3": "The XChallenge competition is now underway! We encourage everyone to come to the Regional Sports and Entertainment Center \"Podpromie\" in Rzeszów to watch the competitors' struggles in the categories we have prepared.",
+                        "4": "The XChallenge is over. It was a great time! We invite you to share your views on our social media and in the polls. Congratulations to all the winners and thank you for your participation. See you next year!"
+                    }
+                }
+            }
         },
         "categories": {
             "title": "Categories",
@@ -146,7 +170,7 @@
                 { "id": 2, "patreonCategory": 0, "description": "Pratt & Whitney", "image": "../../assets/jpg/pratt.png", "linkToSite": "https://pwrze.com/" },
                 { "id": 3, "patreonCategory": 0, "description": "Podkarpackie voivodeship", "image": "../../assets/jpg/podkarpackie.png", "linkToSite": "https://podkarpackie.eu/" },
                 { "id": 4, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/jpg/kronospan.png", "linkToSite": "https://kronosfera.pl/" },
-                { "id": 5, "patreonCategory": 2, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/jpg/ale-primary-logo-white.png", "linkToSite": "https://www.al-enterprise.com/" }
+                { "id": 5, "patreonCategory": 1, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/jpg/ale-primary-logo-white.png", "linkToSite": "https://www.al-enterprise.com/" }
             ],
             "tiers": [
                 "Main partner",

@@ -69,7 +69,31 @@
         "news": {
             "title": "WAŻNE INFORMACJE",
             "info": "W tym miejscu będziemy przekazywać Wam najbardziej istotne informacje dla zawodników oraz publiczności",
-            "register": "Rejestracja nie jest aktualnie możliwa. Data jej otwarcia zostanie wkrótce podana."
+            "register": "Rejestracja nie jest aktualnie możliwa. Data jej otwarcia zostanie wkrótce podana.",
+            "points": {
+                "register-start": {
+                    "title": "Początek rejestracji",
+                    "content": "Od tego momentu możecie zacząć się rejestrować w Strefie Zawodnika. Pamiętajcie aby dodać wszystkie Wasze roboty wraz z ich dokumentacją oraz filmikami (dla wybranych konkurencji). "
+                },
+                "register-end": {
+                    "title": "Koniec rejestracji",
+                    "content": "Do tego czasu można wprowadzać modyfikacje w obrębie zgłoszonych robotów oraz ich konstruktorów. Prosimy aby dokładnie sprawdzić czy wszystkie wprowadzone dane są poprawne. PO ZAKOŃCZENIU REJESTRACJI WPROWADZANIE ZMIAN JEST NIEMOŻLIWE!"
+                },
+                "event-start": {
+                    "title": "Zawody XChallenge",
+                    "content": "Na to wszyscy czekamy! Gwarantujemy niezapomniane emocje podczas walk i wyścigów, które będą trwały przez całe 2 dni! Serdecznie zapraszamy wszystkich zainteresowanych do oglądania rozgrywek na żywo i na platformach streamingowych."
+                },
+                "now": {
+                    "title": "Teraz",
+                    "content": {
+                        "0": "Jesteśmy jeszcze przed otworzeniem rejestracji. Teraz jest świetny czas aby planować i konstruować roboty, przemyśleć strategie oraz zebrać drużynę.",
+                        "1": "Właśnie trwa rejestracja. Nie czekajcie ani chwili dłużej aby dać nam znać o swoim przyjeździe do Rzeszowa na XChallenge! Dokładnie zapoznajcie się z regulaminami rozgrywek i dopnijcie wszystko na ostatni guzik. Pamiętajcie, że KAŻDY KONSTRUKTOR ROBOTA MUSI SIĘ ZAREJESTROWAĆ W NASZYM SYSTEMIE.",
+                        "2": "To już ostatnia prosta przed zawodami. Teraz pozostaje tylko czekać... Widzimy się na miejscu już za niedługo! PS. Pamiętajcie, że przed wyruszeniem w drogę należy zebrać drużynę ;)",
+                        "3": "Zawody XChallenge właśnie trwają! Zachęcamy wszystkich do przybycia do Regionalnego Centrum Sportowo-Widowiskowego \"Podpromie\" w Rzeszowie aby oglądać zmagania zawodników w przygotowanych przez nas kategoriach.",
+                        "4": "Zawody XChallenge są już za nami. To był świetny czas! Zapraszamy do podzielenia się Waszymi opiniami na naszych mediach społecznościowych i w ankietach. Serdecznie gratulujemy wszystkim zwycięzcom i dziękujemy za Wasz udział. Do zobaczenia w przyszłym roku!"
+                    }
+                }
+            }
         },
         "categories": {
             "title": "Kategorie",
@@ -157,7 +181,7 @@
                 { "id": 2, "patreonCategory": 0, "description": "Pratt & Whitney", "image": "../../assets/jpg/pratt.png", "linkToSite": "https://pwrze.com/" },
                 { "id": 3, "patreonCategory": 0, "description": "Województwo Podkarpackie", "image": "../../assets/jpg/podkarpackie.png", "linkToSite": "https://podkarpackie.eu/" },
                 { "id": 4, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/jpg/kronospan.png", "linkToSite": "https://kronosfera.pl/" },
-                { "id": 5, "patreonCategory": 2, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/jpg/ale-primary-logo-white.png", "linkToSite": "https://www.al-enterprise.com/" }
+                { "id": 5, "patreonCategory": 1, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/jpg/ale-primary-logo-white.png", "linkToSite": "https://www.al-enterprise.com/" }
             ],
             "tiers": [
                 "Partner Główny",

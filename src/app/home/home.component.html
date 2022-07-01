@@ -242,10 +242,27 @@
         </div>
     </section> -->
     <!-- NEWS -->
-    <!-- <section class="news" id="news">
+    <section class="news" id="news">
         <h3 class="section-header">{{'home.news.title' | translate}}</h3>
-        <p class="news-one" data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="center-center">{{'home.news.register' | translate}}</p>
-    </section> -->
+        <!-- <p class="news-one" data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="center-center">{{'home.news.register' | translate}}</p> -->
+        <div class="timeline">
+            <div class="timeline-outer">
+                <div class="timeline-card" *ngFor="let point of dateList; let i = index" [id]="'border'+i">
+                    <div data-aos-duration="1000" data-aos="zoom-in" [id]="'card'+point.id">
+                        <div class="timeline-info" data-aos-duration="1000" data-aos="zoom-in">
+                            <h3 *ngIf="i%2==1" class="timeline-title" [ngClass]="{'timeline-title-before': isDateBefore(point.date)}">{{point.printedDate}}<br><span>{{point.title | translate}}</span></h3>
+                            <h3 *ngIf="i%2==0" class="timeline-title" [ngClass]="{'timeline-title-before': isDateBefore(point.date)}"><span>{{point.title | translate}}</span><br>{{point.printedDate}}</h3>
+                            <div [ngClass]="{'timeline-info-before': isDateBefore(point.date)}">
+                                <p *ngIf="point.title != 'home.news.points.now.title'">{{point.content | translate}}</p>
+                                <p *ngIf="point.title == 'home.news.points.now.title' && point.date.getTime() < eventEndDate.getTime()">{{point.content+'.'+i | translate}}</p>
+                                <p *ngIf="point.title == 'home.news.points.now.title' && point.date.getTime() > eventEndDate.getTime()">{{"home.news.points.now.content.4" | translate}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- CATEGORIES -->
     <section class="categories" id="categories">
         <div class="categories-container">

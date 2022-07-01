@@ -55,6 +55,7 @@ import { SwiperModule } from 'swiper/angular';
 import { TaskChallengeComponent } from './home/categories/task-challenge/task-challenge.component';
 import { SmashBotsComponent } from './home/categories/smash-bots/smash-bots.component';
 import { RobomotionComponent } from './home/categories/robomotion/robomotion.component';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -127,7 +128,8 @@ import { RobomotionComponent } from './home/categories/robomotion/robomotion.com
     WebsocketService,
     RobotsService,
     ConstructorsService,
-    PositionsService
+    PositionsService,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })
