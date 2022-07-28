@@ -111,10 +111,10 @@ export class HomeComponent implements OnInit, AfterViewInit{
   public config: SwiperOptions = {
     loop: true,
     // autoHeight: true,
-    allowTouchMove: true,
     autoplay: { delay: 3000, disableOnInteraction: true },
     slidesPerView: 'auto',
     centeredSlides: true,
+    allowTouchMove: true,
     lazy: true,
 
     // spaceBetween: 30,
