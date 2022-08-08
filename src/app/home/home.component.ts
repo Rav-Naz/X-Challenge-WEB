@@ -358,14 +358,10 @@ export class HomeComponent implements OnInit, AfterViewInit{
     if(Math.floor(this.timeToEvent/1000) < 0) {
       this.timeIsUp = true;
     }
-    if(!this.authService.accessToModifyExpirationDate || !this.authService.accessToModifySmashBotsExpirationDate) return;
+    if(!this.authService.accessToModifyExpirationDate) return;
     this.timeLeft = this.authService.accessToModifyExpirationDate.getTime() - new Date().getTime();
-    this.timeLeftSmashBots = this.authService.accessToModifySmashBotsExpirationDate.getTime() - new Date().getTime();
     if(Math.floor(this.timeLeft/1000) < 0) {
       this.timeIsUp2 = true;
-    }
-    if(Math.floor(this.timeLeftSmashBots/1000) < 0) {
-      this.timeIsUpSmashBots = true;
     }
   }
 
@@ -386,6 +382,11 @@ export class HomeComponent implements OnInit, AfterViewInit{
 
   openUrl(url: string): void {
     window.open(url);
+  }
+
+  async testLocalhost() {
+    var response = this.httpService.getTest.toPromise();
+    response.then(val => {console.log(val);})
   }
 
   patreonClassPicker(index: number) {

@@ -69,10 +69,12 @@
         // position: absolute;
         top: 0;
         left: 0;
+        min-width: 25rem;
+        max-width: 100%;
         width: 25rem;
         height: 100%;
         max-height: 5.5rem;
-        border: 2px solid $color-grey-0;
+        border: 2px solid $color-white;
         border-radius: 2rem;
         font-family: $title-font;
         font-size: 2rem;
@@ -189,8 +191,12 @@ select:-webkit-autofill {
             // align-items: center;
             // height: min-content;
         }
+        min-height: 18rem;
     }
     .form {
-        margin-top: 2rem;
+        margin-top: 4rem;
+        &__select {
+            width: 100%;
+        }
     }
 }

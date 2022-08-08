@@ -49,17 +49,13 @@ export class CompetitorZoneComponent implements OnDestroy{
   }
 
   refreshCounter() :void {
-    if(!this.authService.accessToModifyExpirationDate || !this.authService.accessToModifySmashBotsExpirationDate) return;
+    if(!this.authService.accessToModifyExpirationDate) return;
     this.timeLeft = this.authService.accessToModifyExpirationDate.getTime() - new Date().getTime();
-    this.timeLeftSmashBots = this.authService.accessToModifySmashBotsExpirationDate.getTime() - new Date().getTime();
     if(Math.floor(this.timeLeft/1000) < 0) {
       this.timeIsUp = true;
     }
-    if(Math.floor(this.timeLeftSmashBots/1000) < 0) {
-      this.timeIsUpSmashBots = true;
-    }
   }
-  
+
   openTutorial() {
     if (this.translate.currentLang == "pl") {
       window.open('https://rzit.smarthost.pl/robomotion/tutorial.pdf');

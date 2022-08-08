@@ -286,12 +286,18 @@
         "register": {
             "title": "Rejestracja",
             "accept": "Akceptuję regulamin i politykę prywatności",
+            "carer": "Jestem opiekunem zawodnika",
             "sign-in": "Zarejestruj się",
             "have": "Posiadasz już konto?",
             "login": "Zaloguj się!",
             "errors": {
                 "duplicate": "Uzytkownik o takim e-mailu już istnieje!",
                 "success": "Pomyślnie zarejestrowano. Potwierdź swoje konto poprzez wiadomość wysłaną na podany adres e-mail."
+            },
+            "food": {
+                "Mięsne": "Mięsne",
+                "Wegańskie": "Wegańskie",
+                "Wegetariańskie": "Wegetariańskie"
             }
         },
         "bar": {
@@ -916,7 +922,7 @@
             }
         },
         "phone": {
-            "name": "Numer telefonu",
+            "name": "Numer telefonu (opcjonalnie)",
             "validators": {
                 "required": "To pole jest wymagane",
                 "minlength": "Numer telefonu musi być dłuższy niż 7 znaki",
@@ -963,7 +969,7 @@
             "validators": {}
         },
         "postal_code": {
-            "name": "Kod pocztowy",
+            "name": "Kod pocztowy (opcjonalnie)",
             "validators": {
                 "required": "To pole jest wymagane",
                 "maxlength": "Kod pocztowy musi być dłuższy niż 2 znaki",
@@ -984,6 +990,18 @@
                 "required": "To pole jest wymagane",
                 "maxlength": "Kod ma długość 6 znaków",
                 "minlength": "Kod ma długość 6 znaków"
+            }
+        },
+        "preferedFood": {
+            "name": "Preferowane jedzenie",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "tshirtSize": {
+            "name": "Rozmiar koszulki",
+            "validators": {
+                "required": "To pole jest wymagane"
             }
         }
     },

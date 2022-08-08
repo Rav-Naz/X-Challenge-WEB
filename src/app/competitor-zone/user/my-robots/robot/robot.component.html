@@ -116,8 +116,7 @@
                             <i class="las la-chevron-right"></i>
                             <label>{{getCategoryName(cat)}}</label>
                         </div>
-                        <button [disabled]="isLoadingCategories || !canDeleteCategory || !authService.canModify || (cat === 1 && !authService.canModifySmash)" *ngIf="(authService.canModify || userSerceice.isAdmin) && userSerceice.userType !== 1" class="submit-button grid-button"
-                            (click)="onRemoveCategory(cat)"><i class="las la-trash-alt"></i></button>
+                        <button [disabled]="isLoadingCategories || !canDeleteCategory || !authService.canModify" *ngIf="(authService.canModify || userSerceice.isAdmin) && userSerceice.userType !== 1" class="submit-button grid-button" (click)="onRemoveCategory(cat)"><i class="las la-trash-alt"></i></button>
 
                     </div>
                 </div>

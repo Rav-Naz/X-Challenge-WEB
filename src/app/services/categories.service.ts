@@ -31,7 +31,7 @@ export class CategoriesService {
         this.categories.next(value.body);
       }
       resolve(value);
-    }); 
+    });
   }
 
   public addRobotCategory(kategoria_id: number, robot_uuid: string) {
@@ -48,7 +48,7 @@ export class CategoriesService {
         // this.categories.next(value.body);
       }
       resolve(value);
-    }); 
+    });
   }
 
   public deleteRobotCategory(kategoria_id: number, robot_uuid: string) {
@@ -65,7 +65,7 @@ export class CategoriesService {
         // this.categories.next(value.body);
       }
       resolve(value);
-    }); 
+    });
   }
 
   getCategoryType(kategoria_id: number): null | number | void {
@@ -74,11 +74,11 @@ export class CategoriesService {
     } else {
       return null
     }
-    
+
   }
 
   get categories$() {
     return this.categories.asObservable();
   }
-  
+
 }

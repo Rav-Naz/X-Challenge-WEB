@@ -10,6 +10,7 @@ import { sha256 } from 'js-sha256'
 import { TranslateService } from '@ngx-translate/core';
 import jwt_decode from 'jwt-decode';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { APIResponse } from '../models/response';
 
 
 @Injectable({
@@ -20,18 +21,20 @@ export class AuthService {
   public JWT: string | null= null;
   public eventDate: Date | null = null;
   public accessToModifyExpirationDate: Date | null = null;
-  public accessToModifySmashBotsExpirationDate: Date | null = null;
+  public registrationStart: Date | null = null;
   public streamLink: SafeResourceUrl | undefined = undefined;
   private info = new BehaviorSubject<object | null>(null);
+  public foodList: Array<string> | null = null;
+  public tshirtSizes: Array<string> | null = null;
 
   constructor(private http: HttpService, private router: Router, private errorService: ErrorsService, private ui: UiService,
      private translate: TranslateService, private webSocket: WebsocketService, private userService: UserService,private sanitizer: DomSanitizer) {
-    const details = localStorage.getItem('details');
-    this.http.getHomePageInfo.subscribe((data) => {
+       const details = localStorage.getItem('details');
+       this.http.getHomePageInfo.subscribe((data) => {
       if(data === undefined || data === null) return;
-      this.accessToModifyExpirationDate = new Date(data.body.accessToModifyExpirationDate);
-      this.accessToModifySmashBotsExpirationDate = new Date(data.body.accessToSmashRobots);
-      this.eventDate = new Date(data.body.eventDate);
+      this.accessToModifyExpirationDate = new Date(data.body.accessToModifyExpirationDate.data_zakonczenia);
+      this.registrationStart = new Date(data.body.accessToModifyExpirationDate.data_rozpoczecia);
+      this.eventDate = new Date(data.body.eventDate.data_rozpoczecia);
       if(data.body.streamLink) {
         this.streamLink = this.sanitizer.bypassSecurityTrustResourceUrl(data.body.streamLink);
       }
@@ -39,7 +42,7 @@ export class AuthService {
         // eventDate: new Date(),
         eventDate: this.eventDate,
         accessToModifyExpirationDate: this.accessToModifyExpirationDate,
-        accessToModifySmashBotsExpirationDate: this.accessToModifySmashBotsExpirationDate,
+        registerStart: this.registrationStart,
         streamLink: this.streamLink
       })
     })
@@ -61,7 +64,7 @@ export class AuthService {
 
   SetDetails(userDetails: string | null) {
     return new Promise<void>((resolve) => {
-      
+
       if(userDetails !== null) {
         const detailsParsed = JSON.parse(userDetails);
         this.userService.userDetails = detailsParsed;
@@ -110,9 +113,14 @@ export class AuthService {
     });
   }
 
-  async register(imie: string, nazwisko: string, email: string, haslo: string) {
+  async register(imie: string, nazwisko: string, email: string, kodPocztowy: string | null, numerTelefonu: string | null, rozmiarKoszulki: number | null, preferowaneJedzenie: number | null, czyOpiekun: boolean, haslo: string) {
     return new Promise<string>(async (resolve) => {
-      const value = await this.http.register(imie,nazwisko,email,this.hashPassword(haslo).toString()).catch(err => {
+      var kod_pocztowy = kodPocztowy != null && kodPocztowy.length > 0 ? kodPocztowy : null;
+      var numer_telefonu = numerTelefonu != null && numerTelefonu.length > 0 ? numerTelefonu : null;
+      var czy_opiekun = czyOpiekun ? 1 : 0;
+      var jedzenie = !czyOpiekun && preferowaneJedzenie != null ? preferowaneJedzenie : null;
+      var rozmiar_koszulki = !czyOpiekun && rozmiarKoszulki != null ? rozmiarKoszulki : null;
+      const value = await this.http.register(imie,nazwisko,email,kod_pocztowy,numer_telefonu,rozmiar_koszulki,jedzenie,czy_opiekun,this.hashPassword(haslo).toString()).catch(err => {
         if(err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
@@ -203,6 +211,16 @@ export class AuthService {
     });
   }
 
+  async getRegisterAddons()
+  {
+    if(this.foodList == null || this.tshirtSizes == null) {
+      this.http.getRegisterAddons.toPromise().then((value) => {
+          this.foodList = value.body.jedzenie;
+          this.tshirtSizes = value.body.rozmiaryKoszulek;
+      });
+    }
+  }
+
   hashPassword(haslo: string): string {
     return sha256(haslo);
   }
@@ -224,9 +242,8 @@ export class AuthService {
     return (this.accessToModifyExpirationDate !== null && this.accessToModifyExpirationDate > new Date()) || this.userService.isReferee;
   }
 
-  get canModifySmash() {
+  get isRegistationOpen() {
     // return false
-    return (this.accessToModifySmashBotsExpirationDate !== null && this.accessToModifySmashBotsExpirationDate > new Date()) || this.userService.isReferee;
+    return (this.registrationStart !== null && this.registrationStart > new Date());
   }
-
 }

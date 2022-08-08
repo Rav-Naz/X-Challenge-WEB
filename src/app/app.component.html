@@ -15,7 +15,7 @@
         <button (click)="onLogout()">{{'menu.logout' | translate}}</button>
     </div>
     <div class="navigator-links">
-        <!-- <a [routerLink]="['/login']" class="navigator-competitor-zone" (click)="switchMenu(false)">{{'menu.competitor-zone' | translate}}</a> -->
+        <a *ngIf="isRegistrationStarted" [routerLink]="['/login']" class="navigator-competitor-zone" (click)="switchMenu(false)">{{'menu.competitor-zone' | translate}}</a>
         <!-- <a (click)="openTutorial()">{{'menu.tutorial' | translate}}</a> -->
         <a [routerLink]="['/']" fragment="home" (click)="switchMenu(false)">{{'menu.home' | translate}}</a>
         <a [routerLink]="['/']" fragment="news" (click)="switchMenu(false)">{{'home.news.title' | translate}}</a>
@@ -28,7 +28,7 @@
         <a [routerLink]="['/']" fragment="contact" (click)="switchMenu(false)">{{'menu.contact' | translate}}</a>
         <!-- <a [routerLink]="['/timetable']" (click)="switchMenu(false)">{{'menu.timetable' | translate}}</a> -->
         <!-- <a [routerLink]="['/building-plan']" (click)="switchMenu(false)">{{'menu.plan' | translate}}</a> -->
-        <!-- <a *ngIf="isEventNow || userService.isReferee" [routerLink]="['/results']" (click)="switchMenu(false)"><b>{{'menu.results' | translate}}</b></a> -->
+        <a *ngIf="isEventNow || userService.isReferee" [routerLink]="['/results']" (click)="switchMenu(false)"><b>{{'menu.results' | translate}}</b></a>
     </div>
     <div class="navigator-footer">
         <img (click)="switchLang()" [src]="!isEnglish ? '../assets/svg/gb.svg' : '../assets/svg/pl.svg'">

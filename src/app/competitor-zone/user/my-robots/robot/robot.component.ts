@@ -52,7 +52,7 @@ export class RobotComponent {
     private categoriesService: CategoriesService, private constructorsService: ConstructorsService, public userSerceice: UserService, private router: Router,
     private ui: UiService, private translate: TranslateService, private fightsService: FightsService, private timesService: TimesService) {
     const robot_uuid = this.route.snapshot.paramMap.get('robot_uuid');
-    
+
     const sub1 = combineLatest(this.categoriesService.categories$, userSerceice.isReferee ? this.robotsService.allRobots$ : this.robotsService.userRobots$, this.constructorsService.getNewConstructors$).subscribe(async (val) => {
 
       if (val[0] !== null && val[1] !== null) {
@@ -263,9 +263,6 @@ export class RobotComponent {
       }
       if (akt_sumo && akt_sumo.length >= 2) {
         cats = cats.filter(element => kategorie_sumo.findIndex(rC => rC === element.kategoria_id)! < 0);
-      }
-      if (this.authService.accessToModifySmashBotsExpirationDate && this.authService.accessToModifySmashBotsExpirationDate < new Date) {
-        cats = cats.filter(element => element.kategoria_id !== 1);
       }
       this.aviableCategories = cats.filter(element => this.robotCategories?.findIndex(rC => rC === element.kategoria_id)! < 0);
     }

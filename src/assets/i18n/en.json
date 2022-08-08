@@ -273,12 +273,18 @@
         "register": {
             "title": "Register",
             "accept": "I accept the terms and privacy policy",
+            "carer": "I am the player's carer",
             "sign-in": "Sign up",
             "have": "Already have an account?",
             "login": "Sign in!",
             "errors": {
                 "duplicate": "User with this e-mail already exists!",
                 "success": "Successfully registered. Confirm your account via a message sent to the e-mail address provided."
+            },
+            "food": {
+                "Mięsne": "Meat",
+                "Wegańskie": "Vegan",
+                "Wegetariańskie": "Vegetarian"
             }
         },
         "bar": {
@@ -906,7 +912,7 @@
             }
         },
         "phone": {
-            "name": "Phone number",
+            "name": "Phone number (optional)",
             "validators": {
                 "required": "This field is required",
                 "minlength": "Phone number must be longer than 7 characters",
@@ -954,7 +960,7 @@
             "validators": {}
         },
         "postal_code": {
-            "name": "Postal code",
+            "name": "Postal code (optional)",
             "validators": {
                 "required": "This field is required",
                 "maxlength": "The postal code must be longer than 2 characters",
@@ -975,6 +981,18 @@
                 "required": "This field is required",
                 "maxlength": "The code is 6 characters long",
                 "minlength": "The code is 6 characters long"
+            }
+        },
+        "preferedFood": {
+            "name": "Prefered food",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "tshirtSize": {
+            "name": "T-Shirt size",
+            "validators": {
+                "required": "This field is required"
             }
         }
     },

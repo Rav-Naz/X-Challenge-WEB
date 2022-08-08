@@ -24,9 +24,25 @@ export class HttpService {
 
   // ------------- PUBLIC
 
+  get getTest(): Observable<any> {
+    return this.http.get<APIResponse>(`http://bramki.xchallenge.pl:5000/companies`, { headers: this.headers });
+  }
+
   get getHomePageInfo(): Observable<APIResponse> {
     return this.http.get<APIResponse>(`${this.url}site/info`, { headers: this.headers });
   }
+
+  get getRegisterAddons(): Observable<APIResponse> {
+    return this.http.get<APIResponse>(`${this.url}site/registerAddons`, { headers: this.headers });
+  }
+
+  getSiteInfo(): Promise<APIResponse> {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.get<APIResponse>(`${this.url}site/info`).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })  }
 
   checkIfRobotCanInThisPosition(robot_uuid: string, kategoria_id: number, stanowisko_id: number): Promise<APIResponse> {
     return new Promise<APIResponse>((resolve, rejects) => {
@@ -136,13 +152,20 @@ export class HttpService {
     })
   }
 
-  public register(imie: string, nazwisko: string, email: string, hasloHashed: string) {
+  public register(imie: string, nazwisko: string, email: string, kodPocztowy: string | null, numerTelefonu: string | null, rozmiarKoszulki: number | null, preferowaneJedzenie: number | null, czyOpiekun: number, hasloHashed: string) {
     return new Promise<any>((resolve, rejects) => {
+      console.log(rozmiarKoszulki);
+      console.log(preferowaneJedzenie);
       this.http.post<APIResponse>(`${this.url}public/registerUser`, {
         imie: imie,
         nazwisko: nazwisko,
         email: email,
         haslo: hasloHashed,
+        numer_telefonu: numerTelefonu,
+        kod_pocztowy: kodPocztowy,
+        preferowane_jedzenie: preferowaneJedzenie,
+        rozmiar_koszulki: rozmiarKoszulki,
+        czy_opiekun: czyOpiekun,
         lang: this.translate.currentLang
       }).toPromise().then(
         (value) => { resolve(value) },
@@ -452,12 +475,12 @@ export class HttpService {
       );
     })
   }
-  
+
   public addPostalCode(uzytkownik_uuid: string, kod_pocztowy: string) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}admin/addPostalCode`, {
         uzytkownik_uuid: uzytkownik_uuid,
-        kod_pocztowy: kod_pocztowy 
+        kod_pocztowy: kod_pocztowy
        },{ headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
@@ -469,7 +492,7 @@ export class HttpService {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}admin/sendPrivateMessage`, {
         uzytkownik_uuid: uzytkownik_uuid,
-        tresc: tresc  
+        tresc: tresc
        },{ headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }

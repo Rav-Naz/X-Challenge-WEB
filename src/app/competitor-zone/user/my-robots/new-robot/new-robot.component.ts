@@ -70,9 +70,6 @@ export class NewRobotComponent implements OnInit{
 
   get categoriesOptions(): string | undefined {
     let categories = this.categories ? Object.assign(this.categories): undefined;
-    if (categories && this.authService.accessToModifySmashBotsExpirationDate && this.authService.accessToModifySmashBotsExpirationDate < new Date) {
-      categories = categories.filter((element: any) => element.kategoria_id !== 1);
-    }
     return categories ? JSON.stringify(categories.map((category: CategoryMain) => {
       return {value: category.nazwa, id: category.kategoria_id}
     })) : undefined;
