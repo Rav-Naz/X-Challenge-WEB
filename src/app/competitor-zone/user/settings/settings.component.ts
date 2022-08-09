@@ -18,17 +18,19 @@ export class SettingsComponent {
 
   formName: FormGroup;
   formPhone: FormGroup;
-  formCode: FormGroup;
+  formPostal: FormGroup;
+  formPreferences: FormGroup;
   formPassword: FormGroup;
   private loadingName: boolean = false;
   private loadingPhone: boolean = false;
-  private loadingCode: boolean = false;
+  private loadingPostal: boolean = false;
   private loadingPassword: boolean = false;
   public confirmingPhone: boolean = false;
-  
+
   constructor(public translate: TranslateService, private formBuilder: FormBuilder,
     public authService: AuthService, public userService: UserService, private ui: UiService) {
-    this.formName = this.formBuilder.group({
+
+      this.formName = this.formBuilder.group({
       name: [(userService.userDetails as any)?.imie, [Validators.required, Validators.minLength(2), Validators.maxLength(40)]],
       surname: [(userService.userDetails as any)?.nazwisko, [Validators.required, Validators.minLength(2), Validators.maxLength(40)]]
     });
@@ -37,15 +39,24 @@ export class SettingsComponent {
       phone: [phoneNumber[1], [Validators.required, Validators.pattern('^[0-9]{3}[-\s\.]?[0-9, ]{4,8}$')]],
       country_code: [Number(phoneNumber[0]), [Validators.required]]
     });
-    this.formCode = this.formBuilder.group({
-      code: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(6)]]
+    this.formPostal = this.formBuilder.group({
+      postal_code: [(userService.userDetails as any)?.kod_pocztowy, [Validators.minLength(2), Validators.maxLength(8)]],
+    });
+    this.formPreferences = this.formBuilder.group({
+      preferedFood: [null, [Validators.required]],
+      tshirtSize: [null, [Validators.required]]
     });
     this.formPassword = this.formBuilder.group({
       actualPassword: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(64)]],
       newPassword: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(64)]],
       repeatNewPassword: [null, [Validators.required]],
-    }, { 
+    }, {
       validator: ConfirmedValidator('newPassword', 'repeatNewPassword')
+    });
+    this.formPreferences.disable();
+    this.authService.getRegisterAddons().then(() => {
+      this.formPreferences.controls['preferedFood'].setValue(this.foodOption);
+      this.formPreferences.controls['tshirtSize'].setValue(this.tshirtSize);
     });
   }
 
@@ -63,7 +74,7 @@ export class SettingsComponent {
       })
     }
   }
-  
+
   onSubmitNameForm() {
     if (this.isFormGroupNameValid) {
       this.loadingName = true;
@@ -82,20 +93,20 @@ export class SettingsComponent {
       this.userService.addUserPhoneNumber(this.createPhoneNumber!).then(res => {
         if(res) {
           this.loadingPhone = false;
-          this.confirmingPhone = true;
+          this.confirmingPhone = false;
+          this.authService.setUserPhoneLocaly(this.createPhoneNumber);
         }
       })
     }
   }
 
-  onConfirmCode() {
-    if (this.isFormGroupCodeValid) {
-      this.loadingCode = true;
-      this.userService.confirmUserPhone(this.formCode.get('code')?.value).then(res => {
-        this.loadingCode = false;
-        this.confirmingPhone = false;
-        this.formCode.reset();
-        this.authService.setUserPhoneLocaly(this.createPhoneNumber);
+  onSubmitPostalForm() {
+    if (this.isFormGroupPostalValid) {
+      this.loadingPostal = true;
+      this.userService.addPostalCode(this.formPostal.get('postal_code')?.value)
+      .catch(err => {})
+      .finally(() => {
+        this.loadingPostal = false;
       })
     }
   }
@@ -107,6 +118,17 @@ export class SettingsComponent {
       return null
     }
   }
+
+  get foodOption(): string | undefined {
+    let foodOptions = this.authService.foodList ? Object.assign(this.authService.foodList) : undefined;
+    return foodOptions ? this.translate.instant("competitor-zone.register.food."+(foodOptions as Array<string>)[(this.userService.userDetails as any)?.preferowane_jedzenie-1]): undefined;
+  }
+
+  get tshirtSize(): string | undefined {
+    let tshirtSizes = this.authService.tshirtSizes ? Object.assign(this.authService.tshirtSizes): undefined;
+    return tshirtSizes ? (tshirtSizes as Array<string>)[(this.userService.userDetails as any)?.rozmiar_koszulki-1] : undefined;
+  }
+
 
   copyUUID(){
     let selBox = document.createElement('textarea');
@@ -130,8 +152,8 @@ export class SettingsComponent {
   public get isFormGroupPhoneValid() {
     return this.formPhone.valid && !this.loadingPhone;
   }
-  public get isFormGroupCodeValid() {
-    return this.formCode.valid && !this.loadingCode;
+  public get isFormGroupPostalValid() {
+    return this.formPostal.valid && !this.loadingPostal;
   }
   public get isFormGroupPasswordValid() {
     return this.formPassword.valid && !this.loadingPassword;
@@ -146,9 +168,16 @@ export class SettingsComponent {
   }
 
   public get isPhoneChanged() {
-    // console.log('asd')
     if (this.userService.userDetails && this.formPhone) {
       return (this.userService.userDetails as any)?.numer_telefonu !== this.createPhoneNumber;
+    } else {
+      return false;
+    }
+  }
+
+  public get isPostalChanged() {
+    if (this.userService.userDetails && this.formPostal) {
+      return (this.userService.userDetails as any)?.kod_pocztowy !== this.formPostal.get('postal_code')?.value;
     } else {
       return false;
     }

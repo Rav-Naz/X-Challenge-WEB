@@ -152,7 +152,7 @@ export class HttpService {
     })
   }
 
-  public register(imie: string, nazwisko: string, email: string, kodPocztowy: string | null, numerTelefonu: string | null, rozmiarKoszulki: number | null, preferowaneJedzenie: number | null, czyOpiekun: number, hasloHashed: string) {
+  public register(imie: string, nazwisko: string, email: string, kodPocztowy: string | null, numerTelefonu: string | null, rozmiarKoszulki: number, preferowaneJedzenie: number, czyOpiekun: number, hasloHashed: string) {
     return new Promise<any>((resolve, rejects) => {
       console.log(rozmiarKoszulki);
       console.log(preferowaneJedzenie);
@@ -476,10 +476,9 @@ export class HttpService {
     })
   }
 
-  public addPostalCode(uzytkownik_uuid: string, kod_pocztowy: string) {
+  public addPostalCode(kod_pocztowy: string) {
     return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.post<APIResponse>(`${this.url}admin/addPostalCode`, {
-        uzytkownik_uuid: uzytkownik_uuid,
+      this.http.post<APIResponse>(`${this.url}user/addPostalCode`, {
         kod_pocztowy: kod_pocztowy
        },{ headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },

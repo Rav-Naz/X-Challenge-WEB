@@ -192,6 +192,7 @@ export class RobotComponent {
       this.loadingConstructors = true;
       this.constructorsService.addConstructor(this.formConstructor.get('constructor_uuid')?.value, this.robot!.robot_uuid).catch(err => {
         this.backToMyRobots();
+        this.loadingConstructors = false;
       }).then(() => {
         this.ui.showFeedback("succes", this.translate.instant('competitor-zone.robot.add-constructor'), 2);
       }).finally(() => {
@@ -287,7 +288,7 @@ export class RobotComponent {
     return this.formCategory.valid && !this.isLoadingCategories && this.authService.canModify && this.canAddCategory;
   }
   public get isFormGroupConstructorValid() {
-    return this.formConstructor.valid && !this.isLoadingConstructors && this.authService.canModify;
+    return this.formConstructor.valid && !this.isLoadingConstructors && this.authService.canModify && this.canAddConstructor;
   }
 
   public get isLoadingName() {
@@ -310,6 +311,10 @@ export class RobotComponent {
 
   public get canDeleteConstructor() {
     return this.constructors ? (this.constructors.length > 1) : false;
+  }
+
+  public get canAddConstructor() {
+    return this.constructors ? (this.constructors.find((el) => el.uzytkownik_uuid == this.userSerceice.userUUID) == undefined) : true;
   }
 
   public get nameFormEmpty() {

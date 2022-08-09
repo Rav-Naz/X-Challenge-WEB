@@ -113,14 +113,12 @@ export class AuthService {
     });
   }
 
-  async register(imie: string, nazwisko: string, email: string, kodPocztowy: string | null, numerTelefonu: string | null, rozmiarKoszulki: number | null, preferowaneJedzenie: number | null, czyOpiekun: boolean, haslo: string) {
+  async register(imie: string, nazwisko: string, email: string, kodPocztowy: string | null, numerTelefonu: string | null, rozmiarKoszulki: number, preferowaneJedzenie: number, czyOpiekun: boolean, haslo: string) {
     return new Promise<string>(async (resolve) => {
       var kod_pocztowy = kodPocztowy != null && kodPocztowy.length > 0 ? kodPocztowy : null;
       var numer_telefonu = numerTelefonu != null && numerTelefonu.length > 0 ? numerTelefonu : null;
       var czy_opiekun = czyOpiekun ? 1 : 0;
-      var jedzenie = !czyOpiekun && preferowaneJedzenie != null ? preferowaneJedzenie : null;
-      var rozmiar_koszulki = !czyOpiekun && rozmiarKoszulki != null ? rozmiarKoszulki : null;
-      const value = await this.http.register(imie,nazwisko,email,kod_pocztowy,numer_telefonu,rozmiar_koszulki,jedzenie,czy_opiekun,this.hashPassword(haslo).toString()).catch(err => {
+      const value = await this.http.register(imie,nazwisko,email,kod_pocztowy,numer_telefonu,rozmiarKoszulki,preferowaneJedzenie,czy_opiekun,this.hashPassword(haslo).toString()).catch(err => {
         if(err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
@@ -213,12 +211,18 @@ export class AuthService {
 
   async getRegisterAddons()
   {
-    if(this.foodList == null || this.tshirtSizes == null) {
-      this.http.getRegisterAddons.toPromise().then((value) => {
-          this.foodList = value.body.jedzenie;
-          this.tshirtSizes = value.body.rozmiaryKoszulek;
-      });
-    }
+    return new Promise<any>(async (resolve) => {
+      if(this.foodList == null || this.tshirtSizes == null) {
+        this.http.getRegisterAddons.toPromise().then((value) => {
+            this.foodList = value.body.jedzenie;
+            this.tshirtSizes = value.body.rozmiaryKoszulek;
+            resolve(value);
+        }).catch((err) => {
+          resolve(null)
+        });
+      } else { resolve(null)}
+    });
+
   }
 
   hashPassword(haslo: string): string {

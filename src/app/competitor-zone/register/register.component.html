@@ -25,9 +25,9 @@
                     <span class="checkmark"></span>
                 </label>
             </div>
-            <div class="register-form-row" *ngIf="!isCarer">
-                <app-select [group]="formAddons" controlName="preferedFood" translatePrefix="controls" [options]="foodOptions"></app-select>
-                <app-select [group]="formAddons" controlName="tshirtSize" translatePrefix="controls" [options]="tshirtSizes"></app-select>
+            <div class="register-form-row">
+                <app-select [group]="form" controlName="preferedFood" translatePrefix="controls" [options]="foodOptions"></app-select>
+                <app-select [group]="form" controlName="tshirtSize" translatePrefix="controls" [options]="tshirtSizes"></app-select>
             </div>
             <div class="register-form-row">
                 <app-input [group]="form" controlName="password"></app-input>

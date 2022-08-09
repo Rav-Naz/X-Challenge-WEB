@@ -29,7 +29,7 @@ export class CompetitorComponent {
     private categoriesService: CategoriesService, public userSerceice: UserService, private router: Router,
     private ui: UiService, private translate: TranslateService, private refereeService: RefereeService) {
     const uzytkownik_uuid = this.route.snapshot.paramMap.get('uzytkownik_uuid');
-    
+
     this.formPostal = this.formBuilder.group({
       postal_code: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(8)]]
     });
@@ -50,17 +50,17 @@ export class CompetitorComponent {
       }
     });
   }
-  
+
 
   savePostalCode() {
     if(this.isFormPostalCodeValid) {
       this.loading = true;
-      this.refereeService.addPostalCode(this.user.uzytkownik_uuid, this.formPostal.get('postal_code')?.value).catch(err => {
-      }).then(() => {
-        this.ui.showFeedback("succes", "Dodano kod pocztowy", 2)
-      }).finally(() => {
-        this.loading = false;
-      });
+      // this.refereeService.addPostalCode(this.user.uzytkownik_uuid, this.formPostal.get('postal_code')?.value).catch(err => {
+      // }).then(() => {
+      //   this.ui.showFeedback("succes", "Dodano kod pocztowy", 2)
+      // }).finally(() => {
+      //   this.loading = false;
+      // });
     }
   }
 

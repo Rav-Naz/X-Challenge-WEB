@@ -72,19 +72,6 @@ export class RefereeService {
       resolve(value);
     });
   }
-  
-  public addPostalCode(uzytkownik_uuid: string, kod_pocztowy: string) {
-    return new Promise<any>(async (resolve) => {
-      const value = await this.http.addPostalCode(uzytkownik_uuid, kod_pocztowy).catch(err => {
-        if(err.status === 400) {
-          this.errorService.showError(err.status, this.translate.instant(err.error.body));
-        } else {
-          this.errorService.showError(err.status);
-        }
-      })
-      resolve(value);
-    });
-  }
 
   public sendPrivateMessage(uzytkownik_uuid: string, tresc : string) {
     return new Promise<any>(async (resolve) => {

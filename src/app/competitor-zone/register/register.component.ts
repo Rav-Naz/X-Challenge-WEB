@@ -12,7 +12,6 @@ import { ConfirmedValidator } from 'src/app/shared/utils/matching';
 export class RegisterComponent{
 
   form: FormGroup;
-  formAddons: FormGroup;
   formPhone: FormGroup;
   private loading: boolean = false;
   public isRulesChecked: boolean = false;
@@ -25,14 +24,12 @@ export class RegisterComponent{
       surname: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(40)]],
       email: [null, [Validators.required,Validators.minLength(2), Validators.maxLength(100), Validators.pattern(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)]],
       postal_code: [null, [Validators.minLength(2), Validators.maxLength(8)]],
+      tshirtSize: [null, [Validators.required]],
+      preferedFood: [null, [Validators.required]],
       password: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(64)]],
       repeatPassword: [null, [Validators.required]]
     }, {
       validator: ConfirmedValidator('password', 'repeatPassword')
-    });
-    this.formAddons = this.formBuilder.group({
-      tshirtSize: [null, [Validators.required]],
-      preferedFood: [null, [Validators.required]]
     });
     this.formPhone = this.formBuilder.group({
       phone: [null, [Validators.pattern('^[0-9]{3}[-\s\.]?[0-9, ]{4,8}$')]],
@@ -49,8 +46,8 @@ export class RegisterComponent{
         this.form.get('email')?.value,
         this.form.get('postal_code')?.value,
         this.createPhoneNumber,
-        this.isCarer ? null : this.formAddons.get('tshirtSize')?.value,
-        this.isCarer ? null : this.formAddons.get('preferedFood')?.value,
+       this.form.get('tshirtSize')?.value,
+        this.form.get('preferedFood')?.value,
         this.isCarer,
         this.form.get('password')?.value
         ).catch(err => console.log(err))
@@ -99,11 +96,7 @@ export class RegisterComponent{
   }
 
   get isFormGroupValid() {
-    return this.form.valid && !this.isLoading && this.isRulesChecked && this.isFormGroupAddonsValid;
-  }
-
-  get isFormGroupAddonsValid() {
-    return this.isCarer ? true : this.formAddons.valid;
+    return this.form.valid && !this.isLoading && this.isRulesChecked;
   }
 
   get isLoading() {

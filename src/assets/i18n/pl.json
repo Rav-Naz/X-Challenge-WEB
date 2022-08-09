@@ -371,12 +371,15 @@
             "user": "Dane użytkownika",
             "user-info": "* Prosimy o podanie prawidłowych danych. Na ich podstawie będą przyznawane ewentualne nagrody i dyplomy.",
             "phone": "Dane kontaktowe",
+            "postal": "Dane statystyczne",
+            "preferences": "Preferencje",
             "phone-info": "* Prosimy o podanie prawidłowych danych. Na ich podstawie będą rozsyłane istotne komunikaty.",
             "password": "Zmień hasło",
             "rest-countries": "Reszta państw",
+            "change": "* Preferencji nie da się samodzielnie zmienić po rejestracji. Aby dokonać zmian, prosimy skontaktować się z administratorem.",
             "errors": {
-                "succesfuly-added-phone": "Pomyślnie dodano numer telefonu. Wpisz kod z SMS wysłanego na podany numer",
-                "succesfuly-confirmed": "Pomyślnie potwierdzono numer telefonu",
+                "succesfuly-added-phone": "Pomyślnie zaktualizowano numer telefonu",
+                "succesfuly-confirmed": "Pomyślnie zaktualizowano dane",
                 "success": "Pomyślnie zmieniono hasło do konta",
                 "success-name": "Pomyślnie edytowano dane użytkownika",
                 "copied": "Skopiowano identyfikator do schowka"

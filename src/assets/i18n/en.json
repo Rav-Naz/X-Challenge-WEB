@@ -359,12 +359,15 @@
             "user": "User details",
             "user-info": "* Please provide correct data. On their basis, possible prizes and diplomas will be awarded.",
             "phone": "Contact details",
+            "postal": "Statistic data",
+            "preferences": "Preferences",
             "phone-info": "* Please provide correct data. On their basis, important messages will be sent.",
             "password": "Change Password",
             "rest-countries": "Rest countries",
+            "change": "* Preferences cannot be changed independently after registration. Please contact the administrator to make changes.",
             "errors": {
-                "succesfuly-added-phone": "Phone number added successfully. Enter the code from the SMS sent to the given number",
-                "succesfuly-confirmed": "Phone number successfully confirmed",
+                "succesfuly-added-phone": "Phone number changed successfully",
+                "succesfuly-confirmed": "Data successfully updated",
                 "success": "Account password changed successfully",
                 "success-name": "User data was successfully edited",
                 "copied": "UUID copied to clipboard"

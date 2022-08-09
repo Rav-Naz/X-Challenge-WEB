@@ -20,9 +20,7 @@ import { fromEvent, Observable, Subscription } from 'rxjs';
 export class CompetitorZoneComponent implements OnDestroy{
 
   public timeLeft: number | undefined;
-  public timeLeftSmashBots: number | undefined;
   public timeIsUp: boolean = false;
-  public timeIsUpSmashBots: boolean = false;
   public switcher = false;
   public windowSize: WindowSize = { height: 1080, width: 1920};
   private subs: Subscription = new Subscription;
@@ -31,10 +29,6 @@ export class CompetitorZoneComponent implements OnDestroy{
 
   constructor(public translate: TranslateService, public userService: UserService, private router: Router,
     public constructorService: ConstructorsService, public authService: AuthService, public positionsService: PositionsService) {
-      setInterval(() => {
-        this.switcher = !this.switcher;
-      }, 5000)
-      this.refreshCounter();
     setInterval(() => {
       this.refreshCounter();
     }, 1000);
@@ -66,10 +60,6 @@ export class CompetitorZoneComponent implements OnDestroy{
 
   get isLessThanWeek() {
     return this.timeLeft && Math.floor(this.timeLeft/1000) < 604800;
-  }
-
-  get isLessThanWeekSmashBots() {
-    return this.timeLeftSmashBots && Math.floor(this.timeLeftSmashBots/1000) < 604800;
   }
 
   get isFirstPage() {

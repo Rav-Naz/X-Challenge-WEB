@@ -20,19 +20,26 @@
         </section>
         <section>
             <a>{{'competitor-zone.settings.phone'  | translate}}</a>
-            <ng-container *ngIf="!confirmingPhone">
-                <div class="row">
-                    <app-phone [group]="formPhone" controlName="phone" phoneCodeControlName="country_code"></app-phone>
-                    <button class="submit-button" [disabled]="!isFormGroupPhoneValid || !isPhoneChanged" (click)="onSubmitPhone()"><i class="las la-save"></i></button>
-                </div>
-                <label>{{'competitor-zone.settings.phone-info'  | translate}}</label>
-            </ng-container>
-            <ng-container *ngIf="confirmingPhone">
-                <div class="row">
-                    <app-input [group]="formCode" controlName="code"></app-input>
-                    <button class="submit-button" [disabled]="!isFormGroupCodeValid" (click)="onConfirmCode()"><i class="las la-save"></i></button>
-                </div>
-            </ng-container>
+            <div class="row">
+                <app-phone [group]="formPhone" controlName="phone" phoneCodeControlName="country_code" [collapsed]="true"></app-phone>
+                <button class="submit-button" [disabled]="!isFormGroupPhoneValid || !isPhoneChanged" (click)="onSubmitPhone()"><i class="las la-save"></i></button>
+            </div>
+            <label>{{'competitor-zone.settings.phone-info'  | translate}}</label>
+        </section>
+        <section>
+            <a>{{'competitor-zone.settings.postal'  | translate}}</a>
+            <div class="row">
+                <app-input [group]="formPostal" controlName="postal_code"></app-input>
+                <button class="submit-button" [disabled]="!isFormGroupPostalValid || !isPostalChanged" (click)="onSubmitPostalForm()"><i class="las la-save"></i></button>
+            </div>
+        </section>
+        <section>
+            <a>{{'competitor-zone.settings.preferences'  | translate}}</a>
+            <div class="row">
+                <app-input [group]="formPreferences" controlName="preferedFood"></app-input>
+                <app-input [group]="formPreferences" controlName="tshirtSize"></app-input>
+            </div>
+            <label>{{'competitor-zone.settings.change'  | translate}}</label>
         </section>
         <section>
             <a>{{'competitor-zone.settings.password'  | translate}}</a>

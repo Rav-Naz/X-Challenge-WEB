@@ -10,8 +10,8 @@ export class WebsocketService{
   public socket = new BehaviorSubject<Socket | null>(null);
   private lastSocket: Socket | null = null;
 
-  constructor() { 
-    
+  constructor() {
+
     this.getWebSocket$.subscribe((socket) => {
       if(socket !== null && socket !== undefined) {
         if(this.lastSocket !== null) {
@@ -24,7 +24,7 @@ export class WebsocketService{
 
   createSocket(jwt?: string) {
     if (jwt) {
-      const socket = io('https://api.robomotion.com.pl/', {
+      const socket = io('http://127.0.0.1:8080/', {
         auth: {
           token: jwt
         }
@@ -32,7 +32,7 @@ export class WebsocketService{
       // console.log("socket", socket)
       this.socket.next(socket);
     } else {
-      const socket = io('https://api.robomotion.com.pl/');
+      const socket = io('http://127.0.0.1:8080/');
       // console.log("socket", socket)
       this.socket.next(socket);
     }

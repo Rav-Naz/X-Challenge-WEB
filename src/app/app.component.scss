@@ -35,6 +35,7 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    overflow-y: auto;
     &-links {
         display: flex;
         justify-content: center;
@@ -104,16 +105,16 @@
         flex-direction: column;
         justify-content: left;
         align-items: flex-start;
-        span {
+        margin-bottom: 3rem span {
             // color: $color-grey-5 !important;
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             color: $color-white;
             letter-spacing: .2rem;
         }
         p {
             // color: $color-grey-5 !important;
             font-family: $title-font;
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             color: $color-white;
             font-weight: bold;
             margin-bottom: 1rem;
@@ -138,12 +139,13 @@
                 color: $color-white;
                 background-color: transparent;
                 text-transform: uppercase;
+                font-family: 'Goldman';
                 line-height: 1.75rem;
                 border-radius: 1rem;
                 // box-shadow: 0 0.2rem 2rem rgba($color-grey-5, 0.5);
                 font-size: 1.75rem;
                 font-weight: 600;
-                border: .3rem solid $color-white;
+                border: .4rem solid $color-white;
                 cursor: pointer;
                 transition: all ease-out 0.2s;
                 text-decoration: none;

@@ -216,9 +216,14 @@
         margin-bottom: 1rem;
     }
     &-categories {
-        height: 100%;
-        max-height: 45rem;
-        box-shadow: 1.5rem 1.5rem 2rem $color-grey-4, -1.5rem -1.5rem 2rem rgba($color-grey-0, 0.1), inset 1.5rem 1.5rem 2rem $color-grey-4, inset -1.5rem -1.5rem 2rem rgba($color-grey-0, 0.1);
+        span {
+            padding: 1rem;
+        }
+        height: max-content;
+        box-shadow: 1.5rem 1.5rem 2rem $color-grey-4,
+        -1.5rem -1.5rem 2rem rgba($color-grey-0, 0.1),
+        inset 1.5rem 1.5rem 2rem $color-grey-4,
+        inset -1.5rem -1.5rem 2rem rgba($color-grey-0, 0.1);
         border-radius: 3rem;
         grid-column: 1;
         grid-row: 1;
@@ -324,9 +329,15 @@
         }
     }
     &-constructors {
+        span {
+            padding: 1rem;
+        }
         height: 100%;
         max-height: 45rem;
-        box-shadow: 1.5rem 1.5rem 2rem $color-grey-4, -1.5rem -1.5rem 2rem rgba($color-grey-0, 0.1), inset 1.5rem 1.5rem 2rem $color-grey-4, inset -1.5rem -1.5rem 2rem rgba($color-grey-0, 0.1);
+        box-shadow: 1.5rem 1.5rem 2rem $color-grey-4,
+        -1.5rem -1.5rem 2rem rgba($color-grey-0, 0.1),
+        inset 1.5rem 1.5rem 2rem $color-grey-4,
+        inset -1.5rem -1.5rem 2rem rgba($color-grey-0, 0.1);
         border-radius: 3rem;
         grid-column: 2;
         grid-row: 1;
