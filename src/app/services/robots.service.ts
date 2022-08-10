@@ -25,6 +25,12 @@ export class RobotsService{
       socket?.on('robots/addRobotCategory', (data) => {
         this.WS_addCategory(data)
       })
+      socket?.on('robots/uploadDocumentation', (data) => {
+        this.WS_uploadDocumentation(data)
+      })
+      socket?.on('robots/addFilm', (data) => {
+        this.WS_addFilm(data)
+      })
       socket?.on('robots/deleteRobotCategory', (data) => {
         this.WS_deleteCategory(data)
       })
@@ -108,7 +114,7 @@ export class RobotsService{
 
       if(value !== undefined) {
 
-      } 
+      }
       resolve(value);
     });
   }
@@ -126,6 +132,42 @@ export class RobotsService{
       if(value !== undefined) {
         // this.userRobots.next(Object.assign(value.body));
       }
+      resolve(value);
+    });
+  }
+
+  public addRobotDocumentation(robot_uuid: string, plik: File) {
+    return new Promise<any>(async (resolve) => {
+      const value = await this.http.addRobotDocumentation(robot_uuid,plik).catch(err => {
+        if(err.status === 400) {
+          this.errorService.showError(err.status, this.translate.instant(err.error.body));
+        } else {
+          this.errorService.showError(err.status);
+        }
+      })
+      resolve(value);
+    });
+  }
+
+  public downloadDocumentation(robot_uuid: string) {
+    this.http.downloadDocumentation(robot_uuid).catch(err => {
+      if(err.status === 400) {
+        this.errorService.showError(err.status, this.translate.instant(err.error.body));
+      } else {
+        this.errorService.showError(err.status);
+      }
+    })
+  }
+
+  public addRobotMovie(robot_uuid: string, link: string) {
+    return new Promise<any>(async (resolve) => {
+      const value = await this.http.addRobotMovie(robot_uuid,link).catch(err => {
+        if(err.status === 400) {
+          this.errorService.showError(err.status, this.translate.instant(err.error.body));
+        } else {
+          this.errorService.showError(err.status);
+        }
+      })
       resolve(value);
     });
   }
@@ -178,6 +220,21 @@ export class RobotsService{
       this.userRobots.value.splice(robotIndex, 1);
       this.userRobots.next(this.userRobots.value)
       this.ui.showFeedback("succes", `${this.translate.instant('competitor-zone.robot.delete-robot')} ${data?.robot_uuid}`,2)
+    }
+  }
+  public WS_uploadDocumentation(data: any) {
+    const robotIndex = this.userRobots.value?.findIndex(robot => robot.robot_uuid === data?.robot_uuid)
+    if(robotIndex !== undefined && robotIndex !== null && robotIndex >= 0 && this.userRobots.value) {
+      this.userRobots.value![robotIndex].link_do_dokumentacji = data?.path;
+      this.userRobots.next(this.userRobots.value)
+    }
+  }
+
+  public WS_addFilm(data: any) {
+    const robotIndex = this.userRobots.value?.findIndex(robot => robot.robot_uuid === data?.robot_uuid)
+    if(robotIndex !== undefined && robotIndex !== null && robotIndex >= 0 && this.userRobots.value) {
+      this.userRobots.value![robotIndex].link_do_filmiku = data?.link_do_filmiku;
+      this.userRobots.next(this.userRobots.value)
     }
   }
 

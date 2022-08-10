@@ -29,12 +29,16 @@ export class RobotComponent {
 
   public oldName: string = "";
   public formName: FormGroup;
+  public formDocumentation: FormGroup;
+  public formMovie: FormGroup;
   public formCategory: FormGroup;
   public formConstructor: FormGroup;
   private loadingName: boolean = true;
   private loadingCategories: boolean = true;
   private loadingConstructors: boolean = true;
   public loadingResults: boolean = true;
+  public loadingDocumenation: boolean = true;
+  public loadingMovie: boolean = true;
   private subs: Subscription = new Subscription;
   public robot: Robot | null = null;
   public categories: Array<CategoryMain> | null = null;
@@ -47,6 +51,9 @@ export class RobotComponent {
   public isEvent: boolean = false;
   public robotFights: Array<any> | null = null;
   public robotTimes: Array<any> | null = null;
+  private documentationFile: File | null = null;
+  public isEditingDocumentation = false;
+  public isEditingMovie = false;
 
   constructor(private route: ActivatedRoute, private formBuilder: FormBuilder, public authService: AuthService, private robotsService: RobotsService,
     private categoriesService: CategoriesService, private constructorsService: ConstructorsService, public userSerceice: UserService, private router: Router,
@@ -61,6 +68,7 @@ export class RobotComponent {
         if (categories !== JSON.stringify(this.categories) || JSON.stringify(this.robots) !== robots) {
           this.loadingCategories = true;
           this.loadingName = true;
+          this.loadingDocumenation = true;
           this.categories = JSON.parse(categories);
           this.robots = JSON.parse(robots) as Array<Robot>;
           const thisRobot = this.robots.find((rob: any) => rob.robot_uuid == robot_uuid);
@@ -69,11 +77,18 @@ export class RobotComponent {
             return;
           }
           this.robot = thisRobot ? thisRobot : null;
+          console.log(this.robot)
           this.oldName = this.robot!.nazwa_robota;
           this.filterAvaibleCategories();
           if (this.formCategory) {
             this.formCategory.reset();
           }
+          if(this.robotFilm) {
+            this.formMovie = this.formBuilder.group({
+              movie: [this.robotFilm, [Validators.required, Validators.maxLength(500)]]
+            });
+          }
+
           this.formName = this.formBuilder.group({
             robot_name: [this.oldName, [Validators.required, Validators.minLength(2), Validators.maxLength(40)]]
           });
@@ -85,10 +100,15 @@ export class RobotComponent {
           setTimeout(() => {
             this.loadingName = false;
             this.loadingCategories = false;
+            this.loadingDocumenation = false;
+            this.loadingMovie = false;
           }, 100);
           this.formConstructor = this.formBuilder.group({
             constructor_uuid: [null, [Validators.required, Validators.minLength(36), Validators.maxLength(36)]]
           });
+          if (this.formDocumentation) {
+            this.formDocumentation.reset();
+          }
         }
         if (val[2] !== this.lastConstructorMessage) {
           const newData = val[2] as any;
@@ -113,22 +133,22 @@ export class RobotComponent {
           }
         }
         this.authService.info$.subscribe((val) => {
-          if(val && (val as any).eventDate < new Date() && robot_uuid) {
-              this.isEvent = true;
-              this.fightsService.getAllFightsOfRobots(robot_uuid);
-              this.timesService.getAllTimesOfRobots(robot_uuid);
-              const sub1 = combineLatest(this.fightsService.figthsForRobot$, this.timesService.timesForRobot$).subscribe(val => {
-                if(val[0] !== null) {
-                  this.robotFights = val[0];
-                  this.loadingResults = false;
-                }
-                if(val[1] !== null) {
-                  this.robotTimes = val[1].sort((a,b) => a.czas_przejazdu - b.czas_przejazdu);
-                  this.loadingResults = false;
-                }
-              })
-            }
-      })
+          if (val && (val as any).eventDate < new Date() && robot_uuid) {
+            this.isEvent = true;
+            this.fightsService.getAllFightsOfRobots(robot_uuid);
+            this.timesService.getAllTimesOfRobots(robot_uuid);
+            const sub1 = combineLatest(this.fightsService.figthsForRobot$, this.timesService.timesForRobot$).subscribe(val => {
+              if (val[0] !== null) {
+                this.robotFights = val[0];
+                this.loadingResults = false;
+              }
+              if (val[1] !== null) {
+                this.robotTimes = val[1].sort((a, b) => a.czas_przejazdu - b.czas_przejazdu);
+                this.loadingResults = false;
+              }
+            })
+          }
+        })
       } else if (!val[1]) {
         this.robotsService.getAllRobots();
       }
@@ -143,6 +163,12 @@ export class RobotComponent {
     });
     this.formConstructor = this.formBuilder.group({
       constructor_uuid: [null, [Validators.required, Validators.minLength(36), Validators.maxLength(36)]]
+    });
+    this.formDocumentation = this.formBuilder.group({
+      documentation: [null, [Validators.required]]
+    });
+    this.formMovie = this.formBuilder.group({
+      movie: [null, [Validators.required, Validators.maxLength(500)]]
     });
   }
 
@@ -235,6 +261,7 @@ export class RobotComponent {
       this.loadingConstructors = true;
       this.loadingCategories = true;
       this.loadingName = true;
+      this.loadingDocumenation = true;
       this.robotsService.deleteRobot(this.robot!.robot_uuid).catch(err => {
         this.backToMyRobots();
       }).finally(() => {
@@ -243,12 +270,54 @@ export class RobotComponent {
     }
   }
 
+  setDocumentationFile(file: any) {
+    this.documentationFile = file;
+  }
+
+  async onSendDocumentation() {
+    if (this.isFormGroupDocumentationValid) {
+      this.loadingDocumenation = true;
+      this.robotsService.addRobotDocumentation(this.robot!.robot_uuid, this.documentationFile!).catch((err) => {
+        this.backToMyRobots();
+      }).then(() => {
+        this.loadingDocumenation = false;
+        this.isEditingDocumentation = false;
+        this.ui.showFeedback("succes", this.translate.instant('competitor-zone.robot.update-documentation'), 2);
+      });
+    }
+  }
+
+  async onAddRobotMovie() {
+    if (this.isFormGroupMovieValid) {
+      this.loadingMovie = true;
+      this.robotsService.addRobotMovie(this.robot!.robot_uuid, this.formMovie.get('movie')?.value).catch((err) => {
+        this.backToMyRobots();
+      }).then(() => {
+        this.loadingMovie = false;
+        this.isEditingMovie = false;
+        this.ui.showFeedback("succes", this.translate.instant('competitor-zone.robot.update-film'), 2);
+      });
+    }
+  }
+
+  async onDownloadDocumentation() {
+    if (this.robotDocumentation != null) {
+      this.robotsService.downloadDocumentation(this.robot!.robot_uuid);
+    }
+  }
+
+  async onOpenMovie() {
+    if (this.robotFilm != null) {
+      window.open(this.robotFilm, '_blank')
+    }
+  }
+
   backToMyRobots() {
     this.router.navigateByUrl(`/competitor-zone/(outlet:my-robots)`);
   }
 
   openUserDetails(uzytkownik_uuid: any) {
-    if(this.userSerceice.isReferee) this.router.navigateByUrl(`/competitor-zone/(outlet:competitor/${uzytkownik_uuid})`)
+    if (this.userSerceice.isReferee) this.router.navigateByUrl(`/competitor-zone/(outlet:competitor/${uzytkownik_uuid})`)
   }
 
 
@@ -290,6 +359,13 @@ export class RobotComponent {
   public get isFormGroupConstructorValid() {
     return this.formConstructor.valid && !this.isLoadingConstructors && this.authService.canModify && this.canAddConstructor;
   }
+  public get isFormGroupDocumentationValid() {
+    return this.formDocumentation.valid && !this.isLoadingDocumentation && this.authService.canSendDocumetation && this.documentationFile != null && this.isSuitableFileFormat;
+  }
+
+  public get isFormGroupMovieValid() {
+    return this.formMovie.valid && !this.isLoadingMovie && this.authService.canSendDocumetation;
+  }
 
   public get isLoadingName() {
     return this.loadingName;
@@ -299,6 +375,12 @@ export class RobotComponent {
   }
   public get isLoadingConstructors() {
     return this.loadingConstructors;
+  }
+  public get isLoadingDocumentation() {
+    return this.loadingDocumenation;
+  }
+  public get isLoadingMovie() {
+    return this.loadingMovie;
   }
 
   public get userUUID() {
@@ -314,7 +396,8 @@ export class RobotComponent {
   }
 
   public get canAddConstructor() {
-    return this.constructors ? (this.constructors.find((el) => el.uzytkownik_uuid == this.userSerceice.userUUID) == undefined) : true;
+    let finded = this.formConstructor.get('constructor_uuid')?.value;
+    return this.constructors  && finded != null? (this.constructors.find((el) => el.uzytkownik_uuid == finded) == undefined) : true;
   }
 
   public get nameFormEmpty() {
@@ -332,12 +415,29 @@ export class RobotComponent {
     }
   }
 
+  public get isSuitableFileFormat() {
+    if (this.documentationFile != null) {
+      let format = this.documentationFile.name.split(".").reverse()[0];
+      return (format.includes("docx") || format.includes("doc") || format.includes("pdf")) && this.documentationFile.size < (5 * 1024 * 1024) // 1MB
+    } else {
+      return false;
+    }
+  }
+
   public get robotCategories() {
     return this.robot ? this.robot.kategorie.split(', ').map(el => Number(el)) : null;
   }
 
   public get robotConstructors() {
     return this.constructors ? this.constructors : null;
+  }
+
+  public get robotDocumentation() {
+    return this.robot?.link_do_dokumentacji ? this.robot.link_do_dokumentacji : null;
+  }
+
+  public get robotFilm() {
+    return this.robot?.link_do_filmiku ? this.robot.link_do_filmiku : null;
   }
 
   public get canAddCategory() {
@@ -348,20 +448,24 @@ export class RobotComponent {
     return this.robotCategories ? this.robotCategories?.length > 1 : false;
   }
 
+  get isSmashBot() {
+    return this.robotCategories ? this.robotCategories?.find(el => el === 1) != undefined : false;
+  }
+
   get getCategoryType() {
     return this.categories?.find(el => el.kategoria_id === this.selectedCategory)?.rodzaj
   }
 
   get getCategoryFigths() {
-    return this.robotFights?.filter(el => el.kategoria_id === this.selectedCategory).sort((a,b) => b.walka_id - a.walka_id).sort((a,b) => a.czas_zakonczenia - b.czas_zakonczenia);
+    return this.robotFights?.filter(el => el.kategoria_id === this.selectedCategory).sort((a, b) => b.walka_id - a.walka_id).sort((a, b) => a.czas_zakonczenia - b.czas_zakonczenia);
   }
 
   get getGroupFigths() {
-    return this.robotFights?.filter(el => el.kategoria_id === this.selectedCategory && el.grupa_id === this.selectedGroup).sort((a,b) => b.walka_id - a.walka_id).sort((a,b) => a.czas_zakonczenia - b.czas_zakonczenia);
+    return this.robotFights?.filter(el => el.kategoria_id === this.selectedCategory && el.grupa_id === this.selectedGroup).sort((a, b) => b.walka_id - a.walka_id).sort((a, b) => a.czas_zakonczenia - b.czas_zakonczenia);
   }
 
   get getCategoryTimesResult() {
-    return this.robotTimes?.filter(el => el.kategoria_id === this.selectedCategory).sort((a,b) => b.wynik_id - a.wynik_id);
+    return this.robotTimes?.filter(el => el.kategoria_id === this.selectedCategory).sort((a, b) => b.wynik_id - a.wynik_id);
   }
 
   public getCategoryName(kategoria_id: string | number) {
@@ -370,21 +474,21 @@ export class RobotComponent {
     return category ? category.nazwa : "???";
   }
 
-  copyUUID(){
+  copyUUID() {
     let selBox = document.createElement('textarea');
-      selBox.style.position = 'fixed';
-      selBox.style.left = '0';
-      selBox.style.top = '0';
-      selBox.style.opacity = '0';
-      selBox.value = this.robot!.robot_uuid;
-      document.body.appendChild(selBox);
-      selBox.focus();
-      selBox.select();
-      document.execCommand('copy');
-      document.body.removeChild(selBox);
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = this.robot!.robot_uuid;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
 
-      this.ui.showFeedback('loading', this.translate.instant('competitor-zone.settings.errors.copied'), 3);
-    }
+    this.ui.showFeedback('loading', this.translate.instant('competitor-zone.settings.errors.copied'), 3);
+  }
 
   ngOnDestroy(): void {
     this.subs?.unsubscribe();

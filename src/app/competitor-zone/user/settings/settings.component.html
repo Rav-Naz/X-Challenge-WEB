@@ -5,7 +5,7 @@
             <div class="row">
                 <app-input [group]="formName" controlName="name"></app-input>
                 <app-input [group]="formName" controlName="surname"></app-input>
-                <button *ngIf="authService.canModify" class="submit-button" [disabled]="!isFormGroupNameValid" (click)="onSubmitNameForm()"><i class="las la-save"></i></button>
+                <button class="submit-button" [disabled]="!isFormGroupNameValid" (click)="onSubmitNameForm()"><i class="las la-save"></i></button>
             </div>
             <div class="row">
                 <div class="uuid">

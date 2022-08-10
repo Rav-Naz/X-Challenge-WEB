@@ -13,6 +13,7 @@ export class HttpService {
 
   private url: string;
   private headers: HttpHeaders;
+  private token: string | null = null;
 
   constructor(private http: HttpClient, private translate: TranslateService) {
     this.url = environment.apiUrl;
@@ -312,6 +313,52 @@ export class HttpService {
     })
   }
 
+  public addRobotDocumentation(robot_uuid: string, file: File) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      const formData = new FormData();
+      formData.append("documentation", file);
+      formData.append("robot_uuid", robot_uuid);
+      let headers = new HttpHeaders({
+        'token': this.token!
+      })
+      this.http.post<APIResponse>(`${this.url}user/uploadDocumentation`, formData, {headers: headers}).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public downloadDocumentation(robot_uuid: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      const headers = new HttpHeaders().set('token',this.token!);
+      this.http.get(`${this.url}user/downloadDocumentation/${robot_uuid}`, {headers, responseType: 'blob' as 'json'}).subscribe(
+        (response: any) =>{
+          let dataType = response.type;
+          let binaryData = [];
+          binaryData.push(response);
+          let downloadLink = document.createElement('a');
+          downloadLink.href = window.URL.createObjectURL(new Blob(binaryData, {type: dataType}));
+          downloadLink.target = "_blank";
+          downloadLink.setAttribute('download', "doc-"+robot_uuid);
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+      }
+      )
+    })
+  }
+
+  public addRobotMovie(robot_uuid: string, link_do_filmiku: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`${this.url}user/addFilm`, {
+        link_do_filmiku: link_do_filmiku,
+        robot_uuid: robot_uuid
+      }, { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
   public addRobotCategory(kategoria_id: number, robot_uuid: string) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}user/addRobotCategory`, {
@@ -503,6 +550,7 @@ export class HttpService {
 
   public setNewToken(jwt: string | null) {
     if (jwt !== null) {
+      this.token = jwt;
       this.headers = new HttpHeaders({
         'Content-Type': 'application/json',
         'Accept': 'application/json',

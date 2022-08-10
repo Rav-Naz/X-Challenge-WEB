@@ -56,6 +56,7 @@ import { TaskChallengeComponent } from './home/categories/task-challenge/task-ch
 import { SmashBotsComponent } from './home/categories/smash-bots/smash-bots.component';
 import { RobomotionComponent } from './home/categories/robomotion/robomotion.component';
 import { DatePipe } from '@angular/common';
+import { InputFileComponent } from './shared/input-file/input-file.component';
 
 
 @NgModule({
@@ -92,7 +93,8 @@ import { DatePipe } from '@angular/common';
     CompetitorComponent,
     ThanksComponent,    TaskChallengeComponent,
     SmashBotsComponent,
-    RobomotionComponent
+    RobomotionComponent,
+    InputFileComponent
   ],
   imports: [
     BrowserModule,

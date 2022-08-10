@@ -187,7 +187,7 @@
         min-height: 90vh;
         // justify-content: flex-start;
         align-items: flex-start;
-        padding: 5rem;
+        padding: 2.5rem;
         &-zone {
             padding: 2rem;
             grid-template-rows: min-content 1fr;
@@ -252,6 +252,18 @@
                 }
             }
         }
+    }
+}
+
+@media only screen and (max-width: $max-width-5) {
+    .competitor {
+        padding: 1rem;
+    }
+}
+
+@media only screen and (max-width: $max-width-6) {
+    .competitor {
+        padding: 0rem;
     }
 }
 

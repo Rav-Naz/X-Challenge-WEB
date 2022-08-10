@@ -21,6 +21,7 @@ export class AuthService {
   public JWT: string | null= null;
   public eventDate: Date | null = null;
   public accessToModifyExpirationDate: Date | null = null;
+  public accesToSendDocumentation: Date | null = null;
   public registrationStart: Date | null = null;
   public streamLink: SafeResourceUrl | undefined = undefined;
   private info = new BehaviorSubject<object | null>(null);
@@ -35,6 +36,7 @@ export class AuthService {
       this.accessToModifyExpirationDate = new Date(data.body.accessToModifyExpirationDate.data_zakonczenia);
       this.registrationStart = new Date(data.body.accessToModifyExpirationDate.data_rozpoczecia);
       this.eventDate = new Date(data.body.eventDate.data_rozpoczecia);
+      this.accesToSendDocumentation = new Date(data.body.accesToSendDocumentation.data_zakonczenia);
       if(data.body.streamLink) {
         this.streamLink = this.sanitizer.bypassSecurityTrustResourceUrl(data.body.streamLink);
       }
@@ -42,6 +44,7 @@ export class AuthService {
         // eventDate: new Date(),
         eventDate: this.eventDate,
         accessToModifyExpirationDate: this.accessToModifyExpirationDate,
+        accesToSendDocumentation: this.accesToSendDocumentation,
         registerStart: this.registrationStart,
         streamLink: this.streamLink
       })
@@ -244,6 +247,11 @@ export class AuthService {
   get canModify() {
     // return false
     return (this.accessToModifyExpirationDate !== null && this.accessToModifyExpirationDate > new Date()) || this.userService.isReferee;
+  }
+
+  get canSendDocumetation() {
+    // return false
+    return (this.accesToSendDocumentation !== null && this.accesToSendDocumentation > new Date()) || this.userService.isAdmin;
   }
 
   get isRegistationOpen() {

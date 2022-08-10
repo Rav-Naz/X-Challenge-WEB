@@ -182,7 +182,9 @@
                 { "id": 3, "patreonCategory": 0, "description": "Województwo Podkarpackie", "image": "../../assets/jpg/podkarpackie.png", "linkToSite": "https://podkarpackie.eu/" },
                 { "id": 4, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/jpg/kronospan.png", "linkToSite": "https://kronosfera.pl/" },
                 { "id": 5, "patreonCategory": 1, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/jpg/ale-primary-logo-white.png", "linkToSite": "https://www.al-enterprise.com/" },
-                { "id": 6, "patreonCategory": 0, "description": "Rzeszów Stolica Innowacji", "image": "../../assets/jpg/rzeszow_stolica.png", "linkToSite": "https://www.erzeszow.pl/" }
+                { "id": 6, "patreonCategory": 0, "description": "Rzeszów Stolica Innowacji", "image": "../../assets/jpg/rzeszow_stolica.png", "linkToSite": "https://www.erzeszow.pl/" },
+                { "id": 7, "patreonCategory": 5, "description": "Marszałek Województwa Podkarpackiego", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/index.php/zarzad-wojewodztwa/" },
+                { "id": 8, "patreonCategory": 5, "description": "Podkarpacki Kurator Oświaty", "image": "../../assets/jpg/kuratorium.png", "linkToSite": "https://www.ko.rzeszow.pl/" }
             ],
             "tiers": [
                 "Partner Główny",
@@ -365,7 +367,16 @@
             "delete-robot": "Usunięto robota o identyfikatorze:",
             "want-to-delete-category": "Usunięcie kategorii robota uniemożliwi jego start w tej kategorii",
             "want-to-delete-constructor": "Usunięcie konstruktora uniemożliwi użytkownikowi edycję robota oraz dostęp do ewentualnych nagród",
-            "want-to-delete-robot": "Usunięcie robota wyklucza jego udział w zawodach. Uwaga! Tej decyzji nie można cofnąć!"
+            "want-to-delete-robot": "Usunięcie robota wyklucza jego udział w zawodach. Uwaga! Tej decyzji nie można cofnąć!",
+            "update-documentation": "Pomyślnie przesłano dokumentację",
+            "documentation-uploaded": "Dokumentacja została już przesłana",
+            "documentation-not-uploaded": "Dokumentacja nie została jeszcze przesłana",
+            "documentation-find-info": "* Wzór można znaleźć w regulaminie kategorii",
+            "documentation-format-info": "* Możliwe formaty plików to: PDF, DOC oraz DOCX a maksymalny rozmiar pliku to 5 MB",
+            "update-film": "Pomyślnie przesłano link do filmu",
+            "film-uploaded": "Link do filmu został już przesłany",
+            "film-not-uploaded": "Link do filmu nie został jeszcze przesłany",
+            "film-format-info": "* Link powinien prowadzić do filmu na platformie YouTube"
         },
         "settings": {
             "user": "Dane użytkownika",
@@ -1003,6 +1014,18 @@
         },
         "tshirtSize": {
             "name": "Rozmiar koszulki",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "documentation": {
+            "name": "Plik dokumentacji",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "movie": {
+            "name": "Link do filmiku",
             "validators": {
                 "required": "To pole jest wymagane"
             }

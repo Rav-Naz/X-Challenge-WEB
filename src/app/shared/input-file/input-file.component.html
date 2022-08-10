@@ -1,0 +1,9 @@
+<div class="top" [formGroup]="group" [ngClass]="{'collapsed': collapsed}">
+    <div class="form">
+        <input type="file" [id]="controlName" class="form__input" [ngClass]="{'form__input-invalid': isFormInvalid && !isDisabled, 'form__input-disabled': isDisabled}" [formControlName]="controlName" [name]="controlName" (change)="onFileSelected($event)">
+        <label [for]="controlName" class="form__label" [ngClass]="{'form__label-invalid': isFormInvalid && !isDisabled}">{{('controls.'+controlName+'.name') | translate}}</label>
+    </div>
+    <div class="errors" *ngIf="isFormInvalid">
+        <span *ngFor="let error of getErrors">{{('controls.'+controlName+'.validators.'+error) | translate}}</span>
+    </div>
+</div>

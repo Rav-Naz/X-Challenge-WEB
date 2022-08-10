@@ -147,5 +147,44 @@
                 </div>
             </div>
         </div>
+        <section class="documentation">
+            <div>
+                <div class="row" *ngIf="!isLoadingDocumentation && !isEditingDocumentation">
+                    <label *ngIf="robotDocumentation">{{'competitor-zone.robot.documentation-uploaded' | translate}}</label>
+                    <div class="column" *ngIf="!robotDocumentation">
+                        <label>{{'competitor-zone.robot.documentation-not-uploaded' | translate}}</label>
+                        <a>{{'competitor-zone.robot.documentation-find-info' | translate}}</a>
+                    </div>
+                    <button *ngIf="(authService.canSendDocumetation || userSerceice.isAdmin)" [disabled]="!authService.canSendDocumetation" class="submit-button" (click)="isEditingDocumentation=true"><i class="las la-edit"></i></button>
+                    <button *ngIf="robotDocumentation" [disabled]="!robotDocumentation" class="submit-button" (click)="onDownloadDocumentation()"><i class="las la-file-download"></i></button>
+                </div>
+                <div class="row" *ngIf="!isLoadingDocumentation && isEditingDocumentation">
+                    <div class="column">
+                        <app-input-file accept=".pdf,.docx,.doc" [group]="formDocumentation" controlName="documentation" (file)="setDocumentationFile($event)"></app-input-file>
+                        <a>{{'competitor-zone.robot.documentation-format-info' | translate}}</a>
+                    </div>
+                    <button *ngIf="(authService.canSendDocumetation || userSerceice.isAdmin) && userSerceice.userType !== 1" [disabled]="!isFormGroupDocumentationValid || isLoadingDocumentation" class="submit-button" (click)="onSendDocumentation()"><i class="las la-save"></i></button>
+                </div>
+            </div>
+            <app-spinner *ngIf="isLoadingDocumentation"></app-spinner>
+        </section>
+        <section class="documentation" *ngIf="isSmashBot">
+            <div>
+                <div class="row" *ngIf="!loadingMovie && !isEditingMovie">
+                    <label *ngIf="robotFilm">{{'competitor-zone.robot.film-uploaded' | translate}}</label>
+                    <label *ngIf="!robotFilm">{{'competitor-zone.robot.film-not-uploaded' | translate}}</label>
+                    <button *ngIf="(authService.canSendDocumetation || userSerceice.isAdmin)" [disabled]="!authService.canSendDocumetation" class="submit-button" (click)="isEditingMovie=true"><i class="las la-edit"></i></button>
+                    <button *ngIf="robotFilm" [disabled]="!robotFilm" class="submit-button" (click)="onOpenMovie()"><i class="las la-external-link-alt"></i></button>
+                </div>
+                <div class="row" *ngIf="!loadingMovie && isEditingMovie">
+                    <div class="column">
+                        <app-input [group]="formMovie" controlName="movie"></app-input>
+                        <a>{{'competitor-zone.robot.film-format-info' | translate}}</a>
+                    </div>
+                    <button *ngIf="(authService.canSendDocumetation || userSerceice.isAdmin) && userSerceice.userType !== 1" [disabled]="!isFormGroupMovieValid || loadingMovie" class="submit-button" (click)="onAddRobotMovie()"><i class="las la-save"></i></button>
+                </div>
+            </div>
+            <app-spinner *ngIf="loadingMovie"></app-spinner>
+        </section>
     </div>
 </div>

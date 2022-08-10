@@ -147,7 +147,7 @@ export class SettingsComponent {
     }
 
   public get isFormGroupNameValid() {
-    return this.formName.valid && !this.loadingName && this.authService.canModify && this.isFormNameChanged;
+    return this.formName.valid && !this.loadingName && this.isFormNameChanged;
   }
   public get isFormGroupPhoneValid() {
     return this.formPhone.valid && !this.loadingPhone;

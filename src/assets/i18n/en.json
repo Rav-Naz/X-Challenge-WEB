@@ -170,7 +170,10 @@
                 { "id": 2, "patreonCategory": 0, "description": "Pratt & Whitney", "image": "../../assets/jpg/pratt.png", "linkToSite": "https://pwrze.com/" },
                 { "id": 3, "patreonCategory": 0, "description": "Podkarpackie voivodeship", "image": "../../assets/jpg/podkarpackie.png", "linkToSite": "https://podkarpackie.eu/" },
                 { "id": 4, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/jpg/kronospan.png", "linkToSite": "https://kronosfera.pl/" },
-                { "id": 5, "patreonCategory": 1, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/jpg/ale-primary-logo-white.png", "linkToSite": "https://www.al-enterprise.com/" }
+                { "id": 5, "patreonCategory": 1, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/jpg/ale-primary-logo-white.png", "linkToSite": "https://www.al-enterprise.com/" },
+                { "id": 6, "patreonCategory": 0, "description": "Rzeszów Stolica Innowacji", "image": "../../assets/jpg/rzeszow_stolica.png", "linkToSite": "https://www.erzeszow.pl/" },
+                { "id": 7, "patreonCategory": 5, "description": "Marszałek Województwa Podkarpackiego", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/index.php/zarzad-wojewodztwa/" },
+                { "id": 8, "patreonCategory": 5, "description": "Podkarpacki Kurator Oświaty", "image": "../../assets/jpg/kuratorium.png", "linkToSite": "https://www.ko.rzeszow.pl/" }
             ],
             "tiers": [
                 "Main partner",
@@ -353,7 +356,15 @@
             "delete-robot": "Deleted robot with id:",
             "want-to-delete-category": "Delete the category robot makes it impossible to start in this category",
             "want-to-delete-constructor": "Removing the constructor makes user impossible to editing the robot and accessing any rewards",
-            "want-to-delete-robot": "Removing the robot excludes its participation in the competition. Attention! This decision cannot be undone!"
+            "want-to-delete-robot": "Removing the robot excludes its participation in the competition. Attention! This decision cannot be undone!",
+            "update-documentation": "Documentation successfully uploaded",
+            "documentation-uploaded": "Documentation has already been uploaded",
+            "documentation-not-uploaded": "Documentation has not yet been uploaded",
+            "documentation-format-info": "* Possible file formats are: PDF, DOC and DOCX and the maximum file size is 5 MB",
+            "update-film": "Successfully sent link to the movie",
+            "film-uploaded": "The link to the movie has already been uploaded",
+            "film-not-uploaded": "The link to the movie has not been uploaded yet",
+            "film-format-info": "* The link should lead to the video on YouTube platform"
         },
         "settings": {
             "user": "User details",
@@ -994,6 +1005,18 @@
         },
         "tshirtSize": {
             "name": "T-Shirt size",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "documentation": {
+            "name": "Documentation file",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "movie": {
+            "name": "Link to the movie",
             "validators": {
                 "required": "This field is required"
             }
