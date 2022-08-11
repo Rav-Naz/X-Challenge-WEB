@@ -6,19 +6,19 @@
                 margin-top: 2rem;
             }
         }
-
+        
         @media only screen and (max-width: $max-width-5) {
             .section-header {
                 font-size: 3rem;
             }
         }
-
+        
         @media only screen and (max-width: $max-width-6) {
             .section-header {
                 font-size: 2.7rem;
             }
         }
-
+        
         .paralax {
             overflow: hidden;
             position: relative;
@@ -85,7 +85,7 @@
                 $color-grey-3 100%);
             }
         }
-
+        
         @media only screen and (max-width: $max-width-3) {
             .paralax {
                 height: 60vh;
@@ -101,7 +101,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-4) {
             .paralax {
                 &-background {
@@ -128,7 +128,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-5) {
             .paralax {
                 height: 35vh;
@@ -145,7 +145,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-6) {
             .paralax {
                 height: 30vh;
@@ -157,7 +157,7 @@
                 }
             }
         }
-
+        
         @keyframes pulse {
             0% {
                 transform: scale(1);
@@ -171,7 +171,7 @@
                 transform: scale(1);
             }
         }
-
+        
         @keyframes pulse2 {
             0% {
                 color: $color-white;
@@ -186,7 +186,7 @@
                 border-color: $color-white;
             }
         }
-
+        
         .event-info {
             background-color: $color-grey-3;
             // background: linear-gradient(180deg,rgba($color-grey-3, 1) 95%, rgba($color-grey-5, 0.88) 99%, rgba($color-grey-5, 1) 100%);
@@ -409,7 +409,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-2) {
             .event-info {
                 padding: 5rem 0;
@@ -418,7 +418,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-3) {
             .event-info {
                 padding: 3rem 0;
@@ -427,7 +427,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-4) {
             .event-info {
                 padding: 1rem 0;
@@ -456,7 +456,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-5) {
             .event-info {
                 padding: 1rem 0;
@@ -481,7 +481,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-6) {
             .event-info {
                 padding: 1rem 0;
@@ -505,7 +505,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-7) {
             .event-info {
                 padding: 1rem 0;
@@ -528,7 +528,7 @@
                 }
             }
         }
-
+        
         .event-program {
             width: 100%;
             height: min-content;
@@ -654,7 +654,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-2) {
             .event-program {
                 &-grid {
@@ -662,7 +662,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-3) {
             .event-program {
                 &-grid {
@@ -670,7 +670,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-5) {
             .event-program {
                 &-grid {
@@ -682,7 +682,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-6) {
             .event-program {
                 &-grid {
@@ -694,7 +694,7 @@
                 }
             }
         }
-
+        
         .news {
             background-color: $color-grey-3;
             width: 100%;
@@ -709,7 +709,7 @@
                 max-width: 80%;
             }
         }
-
+        
         .categories {
             background-color: $color-grey-3;
             width: 100%;
@@ -827,7 +827,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-2) {
             .categories {
                 .category {
@@ -839,7 +839,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-3) {
             .categories {
                 .category {
@@ -857,7 +857,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-4) {
             .categories {
                 &-container {
@@ -898,7 +898,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-5) {
             .categories {
                 .category {
@@ -907,13 +907,13 @@
                 }
             }
         }
-
+        
         .swiper {
             width: 100vw;
             height: 50rem;
             background-color: $color-primary-dark;
         }
-
+        
         .timeline {
             // margin: 0 !important;
             // padding: 0 !important;
@@ -1051,7 +1051,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-2) {
             .timeline {
                 &-info {
@@ -1067,7 +1067,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-3) {
             .timeline {
                 &-info {
@@ -1083,7 +1083,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-4) {
             .timeline {
                 width: 70%;
@@ -1196,7 +1196,7 @@
                 }
             }
         }
-
+        
         .gallery {
             background-color: $color-grey-3;
             width: 100%;
@@ -1225,7 +1225,7 @@
                 cursor: pointer;
             }
         }
-
+        
         .location {
             position: relative;
             min-height: 50vh;
@@ -1324,7 +1324,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-2) {
             .location {
                 &-grid {
@@ -1348,7 +1348,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-3) {
             .location {
                 &-wave {
@@ -1370,7 +1370,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-4) {
             .location {
                 height: 40vh;
@@ -1382,7 +1382,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-5) {
             .location {
                 height: 40vh !important;
@@ -1407,7 +1407,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-6) {
             .location {
                 height: 35vh !important;
@@ -1419,7 +1419,7 @@
                 }
             }
         }
-
+        
         .organizer {
             width: 100%;
             padding: 2rem;
@@ -1578,7 +1578,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-3) {
             .organizer {
                 display: flex;
@@ -1594,7 +1594,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-4) {
             .organizer {
                 &-social {
@@ -1616,7 +1616,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-6) {
             .organizer {
                 div {
@@ -1632,7 +1632,7 @@
                 }
             }
         }
-
+        
         .patreons {
             margin-top: 5rem;
             box-shadow: 0 -1rem 2rem rgba($color-grey-5, 0.5);
@@ -1667,10 +1667,12 @@
                         color: #b9f2ff;
                     }
                     .patreons-one {
-                        max-width: 75rem;
+                        max-width: 60rem;
                         img {
                             max-width: 100%;
-                            min-height: 25rem;
+                            height: 30rem;
+                            object-fit: contain;
+                            // min-height: 25rem;
                             // max-height: 25rem;
                         }
                         p {
@@ -1684,11 +1686,11 @@
                         color: goldenrod;
                     }
                     .patreons-one {
-                        max-width: 60rem;
+                        max-width: 50rem;
                         img {
-                            max-width: 100%;
-                            // min-height: 15rem;
-                            max-height: 13rem;
+                            max-width: 90%;
+                            height: 22rem;
+                            object-fit: contain;
                         }
                         p {
                             max-width: 30rem;
@@ -1704,9 +1706,9 @@
                     .patreons-one {
                         max-width: 40rem;
                         img {
-                            max-width: 100%;
-                            // min-height: 10rem;
-                            max-height: 12rem;
+                            max-width: 85%;
+                            height: 18rem;
+                            object-fit: contain;
                         }
                         p {
                             max-width: 30rem;
@@ -1722,9 +1724,9 @@
                     .patreons-one {
                         max-width: 33rem;
                         img {
-                            max-width: 100%;
-                            // min-height: 10rem;
-                            max-height: 15rem;
+                            max-width: 80%;
+                            height: 16rem;
+                            object-fit: contain;
                         }
                     }
                 }
@@ -1735,8 +1737,9 @@
                     .patreons-one {
                         max-width: 40rem;
                         img {
-                            max-width: 100%;
-                            max-height: 17rem;
+                            max-width: 70%;
+                            height: 15rem;
+                            object-fit: contain;
                         }
                     }
                 }
@@ -1747,8 +1750,9 @@
                     .patreons-one {
                         max-width: 35rem;
                         img {
-                            max-width: 100%;
-                            max-height: 16rem;
+                            max-width: 70%;
+                            height: 13rem;
+                            object-fit: contain;
                         }
                     }
                 }
@@ -1759,8 +1763,9 @@
                     .patreons-one {
                         max-width: 25rem;
                         img {
-                            max-width: 100%;
-                            max-height: 13rem;
+                            max-width: 70%;
+                            height: 13rem;
+                            object-fit: contain;
                         }
                     }
                 }
@@ -1798,7 +1803,7 @@
                 margin-bottom: 5rem;
             }
         }
-
+        
         @media only screen and (max-width: $max-width-3) {
             .patreons {
                 &-name {
@@ -1817,7 +1822,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-4) {
             .patreons {
                 &-name {
@@ -1836,7 +1841,7 @@
                 }
             }
         }
-
+        
         .footer {
             padding-top: 5rem;
             display: flex;
@@ -1923,12 +1928,12 @@
                 }
             }
         }
-
+        
         .stream {
             font-size: 5rem;
             color: white;
         }
-
+        
         @media only screen and (max-width: $max-width-3) {
             .footer {
                 p {
@@ -1939,7 +1944,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-4) {
             .footer {
                 p {

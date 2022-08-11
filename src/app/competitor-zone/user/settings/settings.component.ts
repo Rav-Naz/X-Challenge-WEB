@@ -92,10 +92,12 @@ export class SettingsComponent {
       this.authService.setUserPhoneLocaly(null);
       this.userService.addUserPhoneNumber(this.createPhoneNumber!).then(res => {
         if(res) {
-          this.loadingPhone = false;
-          this.confirmingPhone = false;
+
           this.authService.setUserPhoneLocaly(this.createPhoneNumber);
         }
+      }).finally(() => {
+        this.loadingPhone = false;
+        this.confirmingPhone = false;
       })
     }
   }

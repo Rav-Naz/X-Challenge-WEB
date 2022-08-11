@@ -132,6 +132,9 @@
                 font-size: 4rem;
             }
         }
+        &>span {
+            font-size: 1.5rem;
+        }
         button {
             &,
             &:link,
@@ -345,6 +348,9 @@
                     font-size: 4.5rem;
                 }
             }
+            &>span {
+                font-size: 2rem !important;
+            }
             button {
                 &,
                 &:link,
@@ -415,6 +421,11 @@
                 transform: translateX(-50rem);
             }
         }
+        &-user {
+            &>span {
+                font-size: 1.8rem !important;
+            }
+        }
         &-menu {
             padding: .5rem;
             &,
@@ -456,6 +467,11 @@
 
 @media only screen and (min-width: $max-width-4) and (max-width: $max-width-1) {
     .navigator {
+        &-user {
+            &>span {
+                font-size: 1.8rem !important;
+            }
+        }
         &-menu {
             padding: .5rem;
             &,

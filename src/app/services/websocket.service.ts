@@ -24,7 +24,7 @@ export class WebsocketService{
 
   createSocket(jwt?: string) {
     if (jwt) {
-      const socket = io('http://127.0.0.1:8080/', {
+      const socket = io('https://api.xchallenge.pl/', {
         auth: {
           token: jwt
         }
@@ -32,7 +32,7 @@ export class WebsocketService{
       // console.log("socket", socket)
       this.socket.next(socket);
     } else {
-      const socket = io('http://127.0.0.1:8080/');
+      const socket = io('https://api.xchallenge.pl/');
       // console.log("socket", socket)
       this.socket.next(socket);
     }

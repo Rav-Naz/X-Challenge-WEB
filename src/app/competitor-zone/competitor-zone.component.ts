@@ -52,9 +52,9 @@ export class CompetitorZoneComponent implements OnDestroy{
 
   openTutorial() {
     if (this.translate.currentLang == "pl") {
-      window.open('https://rzit.smarthost.pl/robomotion/tutorial.pdf');
+      window.open('https://fwe.smarthost.pl/xchallenge.pl/tutorial.pdf');
     } else {
-      window.open('https://rzit.smarthost.pl/robomotion/tutorial-ang.pdf');
+      window.open('https://fwe.smarthost.pl/xchallenge.pl/tutorial-ang.pdf');
     }
   }
 

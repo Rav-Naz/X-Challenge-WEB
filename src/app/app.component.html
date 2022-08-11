@@ -16,7 +16,7 @@
     </div>
     <div class="navigator-links">
         <a *ngIf="isRegistrationStarted" [routerLink]="['/login']" class="navigator-competitor-zone" (click)="switchMenu(false)">{{'menu.competitor-zone' | translate}}</a>
-        <!-- <a (click)="openTutorial()">{{'menu.tutorial' | translate}}</a> -->
+        <a (click)="openTutorial()">{{'menu.tutorial' | translate}}</a>
         <a [routerLink]="['/']" fragment="home" (click)="switchMenu(false)">{{'menu.home' | translate}}</a>
         <a [routerLink]="['/']" fragment="news" (click)="switchMenu(false)">{{'home.news.title' | translate}}</a>
         <a [routerLink]="['/']" fragment="categories" (click)="switchMenu(false)">{{'home.categories.title' | translate}}</a>

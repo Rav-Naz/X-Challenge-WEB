@@ -176,11 +176,12 @@
                 { "id": 8, "patreonCategory": 5, "description": "Podkarpacki Kurator Oświaty", "image": "../../assets/jpg/kuratorium.png", "linkToSite": "https://www.ko.rzeszow.pl/" }
             ],
             "tiers": [
-                "Main partner",
-                "Gold partner",
-                "Silver partner",
-                "Bronze partner",
+                "Main Partner",
+                "Gold Partner",
+                "Silver Partner",
+                "Bronze Partner",
                 "Strategic partner",
+                "Special patronage",
                 "Media patronage"
             ]
         },

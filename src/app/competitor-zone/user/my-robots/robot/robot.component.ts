@@ -168,7 +168,7 @@ export class RobotComponent {
       documentation: [null, [Validators.required]]
     });
     this.formMovie = this.formBuilder.group({
-      movie: [null, [Validators.required, Validators.maxLength(500)]]
+      movie: [this.robotFilm, [Validators.required, Validators.maxLength(500)]]
     });
   }
 
