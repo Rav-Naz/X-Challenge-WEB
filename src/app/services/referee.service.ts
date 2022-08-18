@@ -19,6 +19,11 @@ export class RefereeService {
         this.WS_addPostalCode(data);
       })
     })
+    this.websocket.getWebSocket$.subscribe((socket) => {
+      socket?.on('user/giveStarterpack', (data) => {
+        this.WS_givenStarterpack(data);
+      })
+    })
   }
 
   public getRobotsOfUserInCategory(uzytkownik_uuid: string, kategoria_id: number) {
@@ -99,6 +104,19 @@ export class RefereeService {
     });
   }
 
+  public confirmGivenStarterPack(uzytkownik_uuid : string) {
+    return new Promise<any>(async (resolve) => {
+      const value = await this.http.confirmGivenStarterpack(uzytkownik_uuid).catch(err => {
+        if(err.status === 400) {
+          this.errorService.showError(err.status, this.translate.instant(err.error.body));
+        } else {
+          this.errorService.showError(err.status);
+        }
+      })
+      resolve(value);
+    });
+  }
+
   public getUsers() {
     return new Promise<any>(async (resolve) => {
       const value = await this.http.getUsers.catch(err => {
@@ -115,10 +133,49 @@ export class RefereeService {
     });
   }
 
+  public readRFIDTag() {
+    return new Promise<any>(async (resolve,reject) => {
+      const value = await this.http.readRFIDTag().catch(err => {
+        if(err.status === 400) {
+          this.errorService.showError(err.status, this.translate.instant(err.error.body));
+          reject(err);
+        } else {
+          this.errorService.showError(err.status);
+          reject(err);
+        }
+      })
+      resolve(value);
+    });
+  }
+
+  public readLapTime() {
+    return new Promise<any>(async (resolve,reject) => {
+      const value = await this.http.readLapTime().catch(err => {
+        if(err.status === 400) {
+          this.errorService.showError(err.status, this.translate.instant(err.error.body));
+          reject(err);
+        } else {
+          this.errorService.showError(err.status);
+          reject(err);
+        }
+      })
+      resolve(value);
+    });
+  }
+
   async WS_addPostalCode(data: any) {
     const userIndex = this.allUsers.value?.findIndex(user => user.uzytkownik_id === data?.uzytkownik_id)
     if(userIndex !== undefined && userIndex !== null && userIndex >= 0 && this.allUsers.value) {
       this.allUsers.value![userIndex].kod_pocztowy = data.kod_pocztowy;
+      this.allUsers.next(this.allUsers.value);
+    }
+  }
+
+  async WS_givenStarterpack(data: any) {
+    console.log(data)
+    const userIndex = this.allUsers.value?.findIndex(user => user.uzytkownik_uuid === data?.uzytkownik_uuid)
+    if(userIndex !== undefined && userIndex !== null && userIndex >= 0 && this.allUsers.value) {
+      this.allUsers.value![userIndex].czy_odebral_starterpack = data.czy_odebral_starterpack;
       this.allUsers.next(this.allUsers.value);
     }
   }

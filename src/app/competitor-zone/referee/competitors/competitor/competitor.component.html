@@ -8,25 +8,42 @@
                 <p class="competitor-detail" *ngIf="user?.email">{{'competitor-zone.competitor.email' | translate}}<span>{{user?.email}}</span></p>
                 <p class="competitor-detail" *ngIf="user?.stanowiska">{{'competitor-zone.competitor.positions' | translate}}<span>{{user?.stanowiska}}</span></p>
                 <p class="competitor-detail" *ngIf="user?.kod_pocztowy">{{'competitor-zone.competitor.postal' | translate}}<span>{{user?.kod_pocztowy}}</span></p>
-                <div *ngIf="userSerceice.isAdmin && user && !user.kod_pocztowy" class="postal">
+                <!-- <div *ngIf="userSerceice.isAdmin && user && !user.kod_pocztowy" class="postal">
                     <app-input [group]="formPostal" controlName="postal_code" [collapsed]="true"></app-input>
                     <button [disabled]="!isFormPostalCodeValid" class="submit-button" (click)="savePostalCode()"><i class="las la-save"></i></button>
-                </div>
+                </div> -->
                 <div class="uuid">
-                    <span>{{'menu.uuid' | translate}}</span>
+                    <span class="competitor-name">{{'menu.uuid' | translate}}</span>
                     <div (click)="copyUUID()" class="competitor-uuid">
                         <a>{{user?.uzytkownik_uuid}}</a>
                         <i class="las la-copy"></i>
                     </div>
                 </div>
             </div>
-            <div [formGroup]="formMessage" *ngIf="userSerceice.isAdmin">
+            <div [formGroup]="formMessage" *ngIf="userSerceice.isReferee && user && user.numer_telefonu">
                 <textarea formControlName="message" placeholder="Wiadomość do użytkownika"></textarea>
                 <button [disabled]="!isFormMessageValid" class="submit-button" (click)="sendMessage()">{{'competitor-zone.competitor.send' | translate}}</button>
             </div>
         </section>
+        <section class="starterpack" *ngIf="user">
+            <div class="row">
+                <div [ngClass]="{'starterpack-given-true': user.czy_odebral_starterpack}">
+                    <a>Starterpack</a>
+                    <div>
+                        <p class="competitor-detail" *ngIf="user?.rozmiar_koszulki">{{'controls.tshirtSize.name' | translate}}:<span>{{tshirtSize}}</span></p>
+                        <p class="competitor-detail" *ngIf="user?.preferowane_jedzenie">{{'controls.preferedFood.name' | translate}}:<span>{{foodOption}}</span></p>
+                        <p class="competitor-detail">{{'competitor-zone.competitor.carer' | translate}}:<span><i *ngIf="user.czy_opiekun" class="las la-check"></i><i *ngIf="!user.czy_opiekun" class="las la-times"></i></span></p>
+                    </div>
+                </div>
+                <button style="width: 100% !important;" *ngIf="!user.czy_odebral_starterpack" [disabled]="isLoadingStarterpack" class="submit-button" (click)="giveStarterpack()"><i class="las la-shopping-bag"></i></button>
+                <div class="starterpack-given" *ngIf="user.czy_odebral_starterpack">
+                    <i class="las la-shopping-bag"></i>
+                    <label>{{'competitor-zone.competitor.starterpack-given' | translate}}</label>
+                </div>
+            </div>
+        </section>
         <div class="grid">
-            <div class="grid-categories competitor-container">
+            <!-- <div class="grid-categories competitor-container">
                 <span>{{'competitor-zone.robot.categories' | translate}}</span>
                 <div class="grid-categories-old-parent">
                     <div *ngFor="let cat of userCategories" class="grid-categories-old">
@@ -36,7 +53,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
             <div class="grid-constructors competitor-container">

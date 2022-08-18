@@ -24,11 +24,13 @@ export class CompetitorComponent {
   private subs: Subscription = new Subscription;
   public user: any = null;
   private loading = false;
+  private loadingStarerpack = false;
 
   constructor(private route: ActivatedRoute, private formBuilder: FormBuilder, public authService: AuthService,
     private categoriesService: CategoriesService, public userSerceice: UserService, private router: Router,
     private ui: UiService, private translate: TranslateService, private refereeService: RefereeService) {
     const uzytkownik_uuid = this.route.snapshot.paramMap.get('uzytkownik_uuid');
+    this.authService.getRegisterAddons();
 
     this.formPostal = this.formBuilder.group({
       postal_code: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(8)]]
@@ -42,25 +44,20 @@ export class CompetitorComponent {
         const categories = val[0];
         const users: Array<any> = JSON.parse(JSON.stringify(val[1]));
         const user = users.find(user => user.uzytkownik_uuid === uzytkownik_uuid)
-        if(user.kategorie) {
-          const a = user.kategorie.split(", ").map((cat: string) => categories.find(obj => obj.kategoria_id.toString() === cat)?.nazwa).join(", ");
-          user.kategorie = a;
-        }
+        // if(user.kategorie) {
+        //   const a = user.kategorie.split(", ").map((cat: string) => categories.find(obj => obj.kategoria_id.toString() === cat)?.nazwa).join(", ");
+        //   user.kategorie = a;
+        // }
         if (user) this.user = Object.assign(user);
       }
     });
   }
 
 
-  savePostalCode() {
-    if(this.isFormPostalCodeValid) {
-      this.loading = true;
-      // this.refereeService.addPostalCode(this.user.uzytkownik_uuid, this.formPostal.get('postal_code')?.value).catch(err => {
-      // }).then(() => {
-      //   this.ui.showFeedback("succes", "Dodano kod pocztowy", 2)
-      // }).finally(() => {
-      //   this.loading = false;
-      // });
+  giveStarterpack() {
+    if (this.user) {
+      this.loadingStarerpack = true;
+      this.refereeService.confirmGivenStarterPack(this.user.uzytkownik_uuid);
     }
   }
 
@@ -92,6 +89,10 @@ export class CompetitorComponent {
     return this.loading;
   }
 
+  get isLoadingStarterpack() {
+    return this.loadingStarerpack;
+  }
+
   openRobotDetails(robot_uuid: any) {
     if(this.userSerceice.isReferee) this.router.navigateByUrl(`/competitor-zone/(outlet:robot/${robot_uuid})`)
   }
@@ -103,6 +104,17 @@ export class CompetitorComponent {
   public get userRobots() {
     return this.user && this.user.roboty_uuid ? this.user.roboty_uuid.split(', ') : null;
   }
+
+  get foodOption(): string | undefined {
+    let foodOptions = this.authService.foodList ? Object.assign(this.authService.foodList) : undefined;
+    return foodOptions && this.user ? this.translate.instant("competitor-zone.register.food."+(foodOptions as Array<string>)[this.user?.preferowane_jedzenie-1]): undefined;
+  }
+
+  get tshirtSize(): string | undefined {
+    let tshirtSizes = this.authService.tshirtSizes ? Object.assign(this.authService.tshirtSizes): undefined;
+    return tshirtSizes && this.user ? (tshirtSizes as Array<string>)[this.user?.rozmiar_koszulki-1] : undefined;
+  }
+
 
   copyUUID(){
     let selBox = document.createElement('textarea');

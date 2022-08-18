@@ -72,9 +72,9 @@ export class RobotsComponent implements OnInit, OnDestroy {
 
   get robotsFiltered() {
     let roboty = this.allRobots ? [...this.allRobots] : undefined;
-    if(!this.userService.isAdmin) {
-      roboty = roboty?.filter(robot => robot.czy_dotarl === 1);
-    }
+    // if(!this.userService.isAdmin) {
+    //   roboty = roboty?.filter(robot => robot.czy_dotarl === 1);
+    // }
     if (this.filter !== '' && roboty) {
       switch (this.selectedFilter) {
         case 1:
@@ -89,7 +89,7 @@ export class RobotsComponent implements OnInit, OnDestroy {
         case 4:
           roboty = roboty.filter(robot => String(robot.konstruktorzy).toLowerCase().includes(this.filter));
           break;
-      
+
         default:
           break;
       }

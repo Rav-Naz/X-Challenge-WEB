@@ -192,7 +192,7 @@
                 "Partner Srebrny",
                 "Partner Brązowy",
                 "Partner strategiczny",
-                "Patronat specjalny",
+                "Patronat honorowy",
                 "Patronat medialny"
             ]
         },
@@ -387,13 +387,17 @@
             "phone-info": "* Prosimy o podanie prawidłowych danych. Na ich podstawie będą rozsyłane istotne komunikaty.",
             "password": "Zmień hasło",
             "rest-countries": "Reszta państw",
+            "test": "Testowe",
+            "get-rfid": "Odczytaj RFID",
+            "get-lap-time": "Odczytaj czas przejazdu",
             "change": "* Preferencji nie da się samodzielnie zmienić po rejestracji. Aby dokonać zmian, prosimy skontaktować się z administratorem.",
             "errors": {
                 "succesfuly-added-phone": "Pomyślnie zaktualizowano numer telefonu",
                 "succesfuly-confirmed": "Pomyślnie zaktualizowano dane",
                 "success": "Pomyślnie zmieniono hasło do konta",
                 "success-name": "Pomyślnie edytowano dane użytkownika",
-                "copied": "Skopiowano identyfikator do schowka"
+                "copied": "Skopiowano identyfikator do schowka",
+                "copied-lap-time": "Skopiowano czas przejazdu do schowka"
             }
         },
         "add-fight-result": {
@@ -456,7 +460,9 @@
             "positions": "Stanowiska: ",
             "postal": "Kod pocztowy: ",
             "send": "Wyślij wiadomość",
-            "robots": "Roboty"
+            "robots": "Roboty",
+            "carer": "Opiekun",
+            "starterpack-given": "Wydano pakiet startowy"
         },
         "competitors": {
             "title": "ZAWODNICY",

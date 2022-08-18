@@ -181,7 +181,7 @@
                 "Silver Partner",
                 "Bronze Partner",
                 "Strategic partner",
-                "Special patronage",
+                "Honorary patronage",
                 "Media patronage"
             ]
         },
@@ -376,13 +376,18 @@
             "phone-info": "* Please provide correct data. On their basis, important messages will be sent.",
             "password": "Change Password",
             "rest-countries": "Rest countries",
+            "test": "Test",
+            "get-rfid": "Read RFID",
+            "get-lap-time": "Read lap time",
             "change": "* Preferences cannot be changed independently after registration. Please contact the administrator to make changes.",
             "errors": {
                 "succesfuly-added-phone": "Phone number changed successfully",
                 "succesfuly-confirmed": "Data successfully updated",
                 "success": "Account password changed successfully",
                 "success-name": "User data was successfully edited",
-                "copied": "UUID copied to clipboard"
+                "copied": "UUID copied to clipboard",
+                "copied-lap-time": "Lap time copied to clipboard"
+
             }
         },
         "add-fight-result": {
@@ -445,7 +450,9 @@
             "positions": "Positions: ",
             "postal": "Postal code: ",
             "send": "Send message",
-            "robots": "Robots"
+            "robots": "Robots",
+            "carer": "Carer",
+            "starterpack-given": "Starterpack given"
         },
         "competitors": {
             "title": "COMPETITORS",

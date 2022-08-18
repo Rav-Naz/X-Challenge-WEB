@@ -128,11 +128,19 @@ export class UserService {
     return this.userDetails ? (this.userDetails as any).uzytkownik_uuid : null;
   }
 
-  get isReferee() {
+  get isUser() {
+    return this.userType == 0;
+  }
+
+  get isWolo() {
     return this.userType > 0;
   }
 
-  get isAdmin() {
+  get isReferee() {
     return this.userType > 1;
+  }
+
+  get isAdmin() {
+    return this.userType > 2;
   }
 }

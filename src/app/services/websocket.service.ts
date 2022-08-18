@@ -1,6 +1,7 @@
 import { BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Socket, io } from 'socket.io-client';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +25,7 @@ export class WebsocketService{
 
   createSocket(jwt?: string) {
     if (jwt) {
-      const socket = io('https://api.xchallenge.pl/', {
+      const socket = io(environment.apiUrl, {
         auth: {
           token: jwt
         }
@@ -32,7 +33,7 @@ export class WebsocketService{
       // console.log("socket", socket)
       this.socket.next(socket);
     } else {
-      const socket = io('https://api.xchallenge.pl/');
+      const socket = io(environment.apiUrl);
       // console.log("socket", socket)
       this.socket.next(socket);
     }

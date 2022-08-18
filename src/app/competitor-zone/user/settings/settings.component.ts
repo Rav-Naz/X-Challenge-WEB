@@ -1,10 +1,11 @@
 import { UiService } from './../../../services/ui.service';
 import { UserService } from './../../../services/user.service';
-import { Component } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { ConfirmedValidator } from 'src/app/shared/utils/matching';
+import { RefereeService } from '../../../services/referee.service';
 
 @Component({
   selector: 'app-settings',
@@ -28,7 +29,7 @@ export class SettingsComponent {
   public confirmingPhone: boolean = false;
 
   constructor(public translate: TranslateService, private formBuilder: FormBuilder,
-    public authService: AuthService, public userService: UserService, private ui: UiService) {
+    public authService: AuthService, public userService: UserService, private ui: UiService, private injector: Injector) {
 
       this.formName = this.formBuilder.group({
       name: [(userService.userDetails as any)?.imie, [Validators.required, Validators.minLength(2), Validators.maxLength(40)]],
@@ -109,6 +110,54 @@ export class SettingsComponent {
       .catch(err => {})
       .finally(() => {
         this.loadingPostal = false;
+      })
+    }
+  }
+
+  onReadRFIDTag() {
+    if (this.userService.isReferee) {
+      this.injector.get(RefereeService).readRFIDTag()
+      .then((value) => {
+        console.log(value);
+        let selBox = document.createElement('textarea');
+        selBox.style.position = 'fixed';
+        selBox.style.left = '0';
+        selBox.style.top = '0';
+        selBox.style.opacity = '0';
+        selBox.value = value;
+        document.body.appendChild(selBox);
+        selBox.focus();
+        selBox.select();
+        document.execCommand('copy');
+        document.body.removeChild(selBox);
+
+        this.ui.showFeedback('loading', this.translate.instant('competitor-zone.settings.errors.copied'), 3);
+      },  err => {
+        console.error(err);
+      })
+    }
+  }
+
+  onReadLapTime() {
+    if (this.userService.isReferee) {
+      this.injector.get(RefereeService).readLapTime()
+    .then((value) => {
+        console.log(value);
+        let selBox = document.createElement('textarea');
+        selBox.style.position = 'fixed';
+        selBox.style.left = '0';
+        selBox.style.top = '0';
+        selBox.style.opacity = '0';
+        selBox.value = value;
+        document.body.appendChild(selBox);
+        selBox.focus();
+        selBox.select();
+        document.execCommand('copy');
+        document.body.removeChild(selBox);
+
+        this.ui.showFeedback('loading', this.translate.instant('competitor-zone.settings.errors.copied-lap-time'), 3);
+      },  err => {
+        console.error(err);
       })
     }
   }

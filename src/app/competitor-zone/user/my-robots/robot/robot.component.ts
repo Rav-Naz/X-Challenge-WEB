@@ -77,7 +77,6 @@ export class RobotComponent {
             return;
           }
           this.robot = thisRobot ? thisRobot : null;
-          console.log(this.robot)
           this.oldName = this.robot!.nazwa_robota;
           this.filterAvaibleCategories();
           if (this.formCategory) {

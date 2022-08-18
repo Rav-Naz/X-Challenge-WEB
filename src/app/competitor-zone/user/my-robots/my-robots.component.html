@@ -2,7 +2,7 @@
     <div class="my-robots-header">
         <p></p>
         <label>{{'competitor-zone.my-robots.title'  | translate}}</label>
-        <button class="submit-button" *ngIf="authService.canModify" [disabled]="!authService.canModify" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['add-robot']}}]">{{'competitor-zone.my-robots.add'  | translate}}<i class="las la-plus-circle"></i></button>
+        <button class="submit-button" *ngIf="authService.canModify && (!userService.isWolo || userService.isReferee) " [disabled]="!authService.canModify" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['add-robot']}}]">{{'competitor-zone.my-robots.add'  | translate}}<i class="las la-plus-circle"></i></button>
     </div>
     <div class="my-robots">
         <div class="my-robots-element" *ngFor="let robot of userRobots" (click)="editRobot(robot.robot_uuid)">
