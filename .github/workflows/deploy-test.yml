@@ -1,14 +1,12 @@
- name: deploy  Xchallenge production 
+ name: deploy  Xchallenge test 
  on:
   push:
-    paths-ignore:
-      - '.github/**'  
     branches:
-      - master
+      - develop
   workflow_dispatch:
   
  jobs:
-   deploy-prod:
+   deploy-test:
      runs-on: ubuntu-latest
      steps:
       - name: Checkout repository
@@ -23,12 +21,13 @@
         run: | 
           npm install
           npm run build  
+
       - name: Ftp deploy over FTP 
-        if: contains(github.ref, 'master')
+        if: contains(github.ref, 'develop')
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_USER_PASS }}
           local-dir: ./dist/xchallenge/
-          server-dir: ./public_html/xchallenge.pl/
+          server-dir: ./public_html/test_xchallenge/
