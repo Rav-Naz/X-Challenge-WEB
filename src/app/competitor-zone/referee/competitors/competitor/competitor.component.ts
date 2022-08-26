@@ -52,9 +52,13 @@ export class CompetitorComponent {
         const users: Array<any> = JSON.parse(JSON.stringify(val[1]));
         const user = users.find(user => user.uzytkownik_uuid === uzytkownik_uuid)
         if (user) this.user = Object.assign(user);
-        if (this.user) this.user_roboty = JSON.parse(this.user.roboty_json);
-        this.formUserType.controls['user_type'].setValue(this.user.uzytkownik_typ);
-        this.titleService.setTitle(`🧑 ${this.user.imie} ${this.user.nazwisko}`);
+        if (this.user) {
+          this.user_roboty = JSON.parse(this.user.roboty_json);
+          setTimeout(() => {
+            this.formUserType.controls['user_type'].setValue(this.user.uzytkownik_typ);
+          }, 300)
+          this.titleService.setTitle(`🧑 ${this.user.imie} ${this.user.nazwisko}`);
+        }
       }
     });
   }
