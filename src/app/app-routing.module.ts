@@ -28,6 +28,7 @@ import { RefereeGuard } from './services/referee-guard.service';
 import { TaskChallengeComponent } from './home/categories/task-challenge/task-challenge.component';
 import { SmashBotsComponent } from './home/categories/smash-bots/smash-bots.component';
 import { RobomotionComponent } from './home/categories/robomotion/robomotion.component';
+import { RegisterGuard } from './services/register-guard.service';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -39,7 +40,7 @@ const routes: Routes = [
   {path: 'timetable', component: TimetableComponent},
   {path: 'building-plan', component: BuildingPlanComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
+  {path: 'register', canActivate: [RegisterGuard], component: RegisterComponent},
   {path: 'app-rules', component: AppRulesComponent},
   {path: 'thank-you', component: ThanksComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},

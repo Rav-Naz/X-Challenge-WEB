@@ -22,7 +22,10 @@ export class AuthService {
   public eventDate: Date | null = null;
   public accessToModifyExpirationDate: Date | null = null;
   public accesToSendDocumentation: Date | null = null;
+  public registerInfo: any = null;
   public registrationStart: Date | null = null;
+  public registrationEnd: Date | null = null;
+  public robotAcceptTime: Date | null = null;
   public streamLink: SafeResourceUrl | undefined = undefined;
   private info = new BehaviorSubject<object | null>(null);
   public foodList: Array<string> | null = null;
@@ -35,8 +38,11 @@ export class AuthService {
       if(data === undefined || data === null) return;
       this.accessToModifyExpirationDate = new Date(data.body.accessToModifyExpirationDate.data_zakonczenia);
       this.registrationStart = new Date(data.body.accessToModifyExpirationDate.data_rozpoczecia);
+      this.registrationEnd = new Date(data.body.accessToModifyExpirationDate.data_zakonczenia);
       this.eventDate = new Date(data.body.eventDate.data_rozpoczecia);
       this.accesToSendDocumentation = new Date(data.body.accesToSendDocumentation.data_zakonczenia);
+      this.robotAcceptTime = new Date(data.body.robotAcceptTime.data_zakonczenia);
+      this.registerInfo = data.body.registerInfo;
       if(data.body.streamLink) {
         this.streamLink = this.sanitizer.bypassSecurityTrustResourceUrl(data.body.streamLink);
       }
@@ -46,7 +52,8 @@ export class AuthService {
         accessToModifyExpirationDate: this.accessToModifyExpirationDate,
         accesToSendDocumentation: this.accesToSendDocumentation,
         registerStart: this.registrationStart,
-        streamLink: this.streamLink
+        streamLink: this.streamLink,
+        registerInfo: this.registerInfo
       })
     })
     if (details) {
@@ -256,6 +263,25 @@ export class AuthService {
 
   get isRegistationOpen() {
     // return false
-    return (this.registrationStart !== null && this.registrationStart > new Date());
+    return (this.registrationStart != null && this.registrationStart < new Date() && this.registrationEnd != null && this.registrationEnd > new Date()) && this.registerPercentageCompletion < 100;
+  }
+
+  get isAfterRegistration() {
+    // return false
+    return (this.registrationEnd != null && this.registrationEnd < new Date());
+  }
+
+  get isWaitingForRobotAcceptation() {
+    // return false
+    return (this.robotAcceptTime != null && this.robotAcceptTime > new Date() && this.isAfterRegistration);
+  }
+
+  get isEvent() {
+    // return false
+    return (this.eventDate != null && this.eventDate < new Date());
+  }
+
+  get registerPercentageCompletion() {
+    return this.registerInfo != null ? Math.round((this.registerInfo.aktualnie / this.registerInfo.limitOsob)*100) : 100
   }
 }

@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit{
   // options = [{value: 'controls.category.name', id: 0}, {value: 'controls.password.name', id: 1}];
   private loading: boolean = false;
 
-  constructor(public translate: TranslateService, private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
+  constructor(public translate: TranslateService, private formBuilder: FormBuilder, public authService: AuthService, private router: Router) {
     this.form = this.formBuilder.group({
       email: [null, [Validators.required,Validators.minLength(2), Validators.maxLength(100), Validators.pattern(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)]],
       password: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(64)]],

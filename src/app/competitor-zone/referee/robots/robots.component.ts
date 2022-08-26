@@ -8,6 +8,7 @@ import { CategoryMain } from 'src/app/models/category-main';
 import { CategoriesService } from 'src/app/services/categories.service';
 import { combineLatest, Subscription } from 'rxjs';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-robots',
@@ -27,14 +28,13 @@ export class RobotsComponent implements OnInit, OnDestroy {
   public filterOptions: string = JSON.stringify([
     { value: "competitor-zone.robots.filters.name", id: 1 },
     { value: "competitor-zone.robots.filters.uuid", id: 2 },
-    { value: "competitor-zone.robots.filters.categories", id: 3 },
-    { value: "competitor-zone.robots.filters.constructors", id: 4 }
-  ]);
+    { value: "competitor-zone.robots.filters.categories", id: 3 }
+    ]);
   private selectedFilter: number | null = 1;
   private filter: string = '';
 
   constructor(private robotsService: RobotsService, private categoriesService: CategoriesService, private formBuilder: FormBuilder, private router: Router,
-    public userService: UserService, private ui: UiService, private refereeService: RefereeService) {
+    public userService: UserService, private ui: UiService, private refereeService: RefereeService, public authService: AuthService) {
     this.formOption = this.formBuilder.group({
       filter: [this.selectedFilter]
     });
@@ -48,6 +48,7 @@ export class RobotsComponent implements OnInit, OnDestroy {
       if (val[0] !== null && val[1]) {
         this.allRobots = JSON.parse(JSON.stringify(val[1]!));
         this.categories = JSON.parse(JSON.stringify(val[0]!));
+        console.log(this.allRobots)
         // this.allRobots = this.allRobots!.concat(this.allRobots).concat(this.allRobots)
         this.allRobots?.forEach((robot) => {
           const a = [...[...robot.kategorie.split(", ")].map((cat) => this.categories!.find(obj => obj.kategoria_id.toString() === cat)?.nazwa)].join(", ");
@@ -86,9 +87,6 @@ export class RobotsComponent implements OnInit, OnDestroy {
         case 3:
           roboty = roboty.filter(robot => String(robot.kategorie).toLowerCase().includes(this.filter));
           break;
-        case 4:
-          roboty = roboty.filter(robot => String(robot.konstruktorzy).toLowerCase().includes(this.filter));
-          break;
 
         default:
           break;
@@ -101,7 +99,7 @@ export class RobotsComponent implements OnInit, OnDestroy {
     event.stopPropagation();
     const decision = await this.ui.wantToContinue(`Potwierdzasz dotarcie robota ${robot.nazwa_robota}`)
     if (decision) {
-      const response = await this.refereeService.confirmArrival(robot.robot_uuid).catch(err => {
+      const response = await this.refereeService.confirmArrival(robot.robot_uuid, true).catch(err => {
         return null
       });
       // console.log(response);
@@ -117,7 +115,7 @@ export class RobotsComponent implements OnInit, OnDestroy {
   }
 
   public editRobot(robot_uuid: any) {
-    this.router.navigateByUrl(`/competitor-zone/(outlet:robot/${robot_uuid})`)
+    window.open(`/competitor-zone/(outlet:robot/${robot_uuid})`)
   }
 
   ngOnDestroy(): void {

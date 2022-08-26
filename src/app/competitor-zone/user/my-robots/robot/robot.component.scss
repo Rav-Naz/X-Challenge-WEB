@@ -72,6 +72,42 @@
     }
 }
 
+.acceptation {
+    p {
+        max-width: max-content;
+        text-align: start;
+    }
+    &-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        app-input {
+            width: 100%;
+        }
+    }
+}
+
+.arrival {
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+            width: 100% !important;
+            max-width: none;
+        }
+    }
+    &-button {
+        background: linear-gradient(#e02727, #cf1616) !important;
+        color: white;
+        box-shadow: 0 0.2rem 2.3rem rgb(207 22 22 / 70%);
+        &:hover {
+            box-shadow: 0 0.2rem 3rem red;
+        }
+    }
+}
+
 .infos {
     // margin-top: 1rem;
     height: 100%;

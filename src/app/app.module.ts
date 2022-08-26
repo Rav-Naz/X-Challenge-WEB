@@ -57,6 +57,7 @@ import { SmashBotsComponent } from './home/categories/smash-bots/smash-bots.comp
 import { RobomotionComponent } from './home/categories/robomotion/robomotion.component';
 import { DatePipe } from '@angular/common';
 import { InputFileComponent } from './shared/input-file/input-file.component';
+import { RegisterGuard } from './services/register-guard.service';
 
 
 @NgModule({
@@ -127,6 +128,7 @@ import { InputFileComponent } from './shared/input-file/input-file.component';
     { provide: LOCALE_ID, useValue: "pl-PL" },
     AuthGuard,
     RefereeGuard,
+    RegisterGuard,
     WebsocketService,
     RobotsService,
     ConstructorsService,

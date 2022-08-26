@@ -165,6 +165,7 @@ export class HttpService {
         preferowane_jedzenie: preferowaneJedzenie,
         rozmiar_koszulki: rozmiarKoszulki,
         czy_opiekun: czyOpiekun,
+        referencerToken: this.token ?? null,
         lang: this.translate.currentLang
       }).toPromise().then(
         (value) => { resolve(value) },
@@ -518,6 +519,19 @@ export class HttpService {
     })
   }
 
+  public confirmArrival(robot_uuid: string, value: boolean) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.put<APIResponse>(`${this.url}referee/confirmArrival`, {
+        robot_uuid: robot_uuid,
+        value: value
+       },{ headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+
   public readRFIDTag() {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.get<APIResponse>(`http://bramki.xchallenge.pl:5000/referee/readRFIDTag`,
@@ -538,19 +552,8 @@ export class HttpService {
     })
   }
 
-
   // ------------- ADMIN
 
-  public confirmArrival(robot_uuid: string) {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.put<APIResponse>(`${this.url}admin/confirmArrival`, {
-        robot_uuid: robot_uuid
-       },{ headers: this.headers }).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
-    })
-  }
 
   public addPostalCode(kod_pocztowy: string) {
     return new Promise<APIResponse>((resolve, rejects) => {
@@ -568,6 +571,30 @@ export class HttpService {
       this.http.post<APIResponse>(`${this.url}admin/sendPrivateMessage`, {
         uzytkownik_uuid: uzytkownik_uuid,
         tresc: tresc
+       },{ headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public addRobotRejection(robot_uuid: string, powod_odrzucenia: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.put<APIResponse>(`${this.url}admin/addRobotRejection`, {
+        robot_uuid: robot_uuid,
+        powod_odrzucenia: powod_odrzucenia
+       },{ headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public changeUserType(uzytkownik_uuid: string, uzytkownik_typ : number) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.put<APIResponse>(`${this.url}admin/changeUserType`, {
+        uzytkownik_uuid: uzytkownik_uuid,
+        uzytkownik_typ: uzytkownik_typ
        },{ headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }

@@ -70,6 +70,11 @@
             "title": "WAŻNE INFORMACJE",
             "info": "W tym miejscu będziemy przekazywać Wam najbardziej istotne informacje dla zawodników oraz publiczności",
             "register": "Rejestracja nie jest aktualnie możliwa. Data jej otwarcia zostanie wkrótce podana.",
+            "register-limit": {
+                "title": "REJESTRACJA DOBIEGA KOŃCA",
+                "body1": "Zbliża się przewidziany przez organizatorów limit osób zarejestrowanych na zawody. Aktualnie zapełnione jest {{registerPercentageCompletion}}% miejsc.",
+                "body2": "Do końca procesu rejestracji robotów pozostało {{days}} dni."
+            },
             "points": {
                 "register-start": {
                     "title": "Początek rejestracji",
@@ -309,6 +314,7 @@
             "competitors": "ZAWODNICY",
             "robots": "ROBOTY",
             "statistics": "STATYSTYKI",
+            "register": "REJESTRACJA",
             "hello": {
                 "1": "Witaj w ",
                 "2": "Strefie Zawodnika!",
@@ -370,13 +376,18 @@
             "want-to-delete-robot": "Usunięcie robota wyklucza jego udział w zawodach. Uwaga! Tej decyzji nie można cofnąć!",
             "update-documentation": "Pomyślnie przesłano dokumentację",
             "documentation-uploaded": "Dokumentacja została już przesłana",
-            "documentation-not-uploaded": "Dokumentacja nie została jeszcze przesłana",
+            "documentation-not-uploaded": "Dokumentacja nie została przesłana",
             "documentation-find-info": "* Wzór można znaleźć w regulaminie kategorii",
             "documentation-format-info": "* Możliwe formaty plików to: PDF, DOC oraz DOCX a maksymalny rozmiar pliku to 5 MB",
             "update-film": "Pomyślnie przesłano link do filmu",
             "film-uploaded": "Link do filmu został już przesłany",
             "film-not-uploaded": "Link do filmu nie został jeszcze przesłany",
-            "film-format-info": "* Link powinien prowadzić do filmu na platformie YouTube"
+            "film-format-info": "* Link powinien prowadzić do filmu na platformie YouTube",
+            "update-reason": "Pomyślnie zaktualizowano powód odrzucenia",
+            "acceptation-status": "Status akceptacji robota",
+            "acceptation-true": "ZAAKCEPTOWANY",
+            "acceptation-false": "ODRZUCONY",
+            "acceptation-waiting": "OCZEKIWANIE"
         },
         "settings": {
             "user": "Dane użytkownika",
@@ -1035,6 +1046,19 @@
             "validators": {
                 "required": "To pole jest wymagane"
             }
+        },
+        "reason": {
+            "name": "Powód odrzucenia",
+            "validators": {
+                "required": "To pole jest wymagane",
+                "maxlength": "Maksymalna długość wpisu to 1000 znaków"
+            }
+        },
+        "user_type": {
+            "name": "Typ użytkownika",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
         }
     },
     "errors": {
@@ -1094,7 +1118,8 @@
             "too-many-lf-categories": "Nie można dodać więcej niż 2 kategorie w konkurencji Line Follower!",
             "too-many-sumo-categories": "Nie można dodać więcej niż 2 kategorie w konkurencji Sumo!",
             "time-to-modify-ended": "Czas na dodawanie i modyfikację robotów minął",
-            "time-to-modify-ended-smash": "Czas na dodawanie i modyfikację robotów w kategori SmashBots minął"
+            "time-to-modify-ended-smash": "Czas na dodawanie i modyfikację robotów w kategori SmashBots minął",
+            "register-ends": "Rejestracja na zawody zakończyła się"
         },
         "statusCodes": {
             "400": "Błędnie określone dane - błąd użytkownika",
@@ -1114,7 +1139,7 @@
             "414": "Adres URI zapytania zbyt długi",
             "415": "Nieznany sposób żądania",
             "416": "Zakres bajtowy podany w zapytaniu nie do obsłużenia",
-            "417": "Oczekiwana wartość nie do zwrócenia",
+            "417": "Nie można wykonać żądania",
             "418": "Jestem czajnikiem",
             "421": "Zapytanie zostało skierowane do serwera, który nie powinien go otrzymać lub który nie jest w stanie na nie odpowiedzieć",
             "422": "Zapytanie było poprawnie sformułowane, ale było niemożliwe do kontynuowania",
