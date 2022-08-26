@@ -22,11 +22,14 @@ export class SettingsComponent {
   formPostal: FormGroup;
   formPreferences: FormGroup;
   formPassword: FormGroup;
+  formRFID: FormGroup;
   private loadingName: boolean = false;
   private loadingPhone: boolean = false;
   private loadingPostal: boolean = false;
   private loadingPassword: boolean = false;
+  private loadingRFID: boolean = false;
   public confirmingPhone: boolean = false;
+  public returnedPayload: any;
 
   constructor(public translate: TranslateService, private formBuilder: FormBuilder,
     public authService: AuthService, public userService: UserService, private ui: UiService, private injector: Injector) {
@@ -46,6 +49,9 @@ export class SettingsComponent {
     this.formPreferences = this.formBuilder.group({
       preferedFood: [null, [Validators.required]],
       tshirtSize: [null, [Validators.required]]
+    });
+    this.formRFID = this.formBuilder.group({
+      payload: [null, [Validators.required]]
     });
     this.formPassword = this.formBuilder.group({
       actualPassword: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(64)]],
@@ -130,7 +136,7 @@ export class SettingsComponent {
         selBox.select();
         document.execCommand('copy');
         document.body.removeChild(selBox);
-
+        this.returnedPayload = JSON.stringify(value);
         this.ui.showFeedback('loading', this.translate.instant('competitor-zone.settings.errors.copied'), 3);
       },  err => {
         console.error(err);
@@ -154,10 +160,25 @@ export class SettingsComponent {
         selBox.select();
         document.execCommand('copy');
         document.body.removeChild(selBox);
-
+        this.returnedPayload = JSON.stringify(value);
         this.ui.showFeedback('loading', this.translate.instant('competitor-zone.settings.errors.copied-lap-time'), 3);
       },  err => {
         console.error(err);
+      })
+    }
+  }
+
+  onWriteRFIDTag() {
+    if (this.userService.isReferee && this.isFormGroupRFIDValid) {
+      this.loadingRFID = true;
+      this.injector.get(RefereeService).writeRFIDTag(this.formPostal.get('payload')?.value)
+    .then((value) => {
+        this.returnedPayload = JSON.stringify(value);
+        console.log(value);
+      },  err => {
+        console.error(err);
+      }).finally(() => {
+        this.loadingRFID = false;
       })
     }
   }
@@ -208,6 +229,9 @@ export class SettingsComponent {
   }
   public get isFormGroupPasswordValid() {
     return this.formPassword.valid && !this.loadingPassword;
+  }
+  public get isFormGroupRFIDValid() {
+    return this.formRFID.valid && !this.loadingRFID;
   }
 
   public get isFormNameChanged() {

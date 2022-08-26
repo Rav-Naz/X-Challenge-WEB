@@ -1,0 +1,11 @@
+<div class="router-child">
+    <section class="counting">
+        <p>{{'competitor-zone.visitors-counter.actual' | translate}}</p>
+        <span>{{currentVisitors}}</span>
+        <div>
+            <button class="submit-button" (click)="addOne()"><i class="las la-plus"></i></button>
+            <button class="submit-button" (click)="removeOne()"><i class="las la-minus"></i></button>
+        </div>
+
+    </section>
+</div>

@@ -67,7 +67,8 @@
                         <div (click)="openRobotDetails(robot.robot_uuid)">
                             <i class="las la-chevron-left"></i>
                             <div class="grid-constructors-user">
-                                <label class="competitor-uuid-small" [ngClass]="{'banned': robot.powod_odrzucenia != null}">{{robot.nazwa_robota}}<i class="las la-ban" *ngIf="robot.powod_odrzucenia" [ngClass]="{'banned': robot.powod_odrzucenia != null}"></i></label>
+                                <label class="competitor-uuid-small" [ngClass]="{'banned': robot.powod_odrzucenia != null}">{{robot.nazwa_robota}}<i class="las la-ban" [ngClass]="{'banned': robot.powod_odrzucenia != null}" *ngIf="robot.powod_odrzucenia"></i></label>
+
                                 <a>{{robot.robot_uuid}}</a>
                             </div>
                         </div>

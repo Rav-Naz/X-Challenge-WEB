@@ -58,6 +58,7 @@ import { RobomotionComponent } from './home/categories/robomotion/robomotion.com
 import { DatePipe } from '@angular/common';
 import { InputFileComponent } from './shared/input-file/input-file.component';
 import { RegisterGuard } from './services/register-guard.service';
+import { CountingVisitorsComponent } from './competitor-zone/referee/counting-visitors/counting-visitors.component';
 
 
 @NgModule({
@@ -95,7 +96,8 @@ import { RegisterGuard } from './services/register-guard.service';
     ThanksComponent,    TaskChallengeComponent,
     SmashBotsComponent,
     RobomotionComponent,
-    InputFileComponent
+    InputFileComponent,
+    CountingVisitorsComponent
   ],
   imports: [
     BrowserModule,

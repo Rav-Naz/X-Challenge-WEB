@@ -54,9 +54,17 @@
         <section *ngIf="userService.isReferee">
             <a>asdasdjashd</a>
             <a>{{'competitor-zone.settings.test'  | translate}}</a>
+            <a *ngIf="returnedPayload">payload: {{returnedPayload}}</a>
             <div class="row">
                 <button class="submit-button button-large" (click)="onReadRFIDTag()"><span>{{'competitor-zone.settings.get-rfid'  | translate}}</span><i class="las la-id-card-alt"></i></button>
                 <button class="submit-button button-large" (click)="onReadLapTime()"><span>{{'competitor-zone.settings.get-lap-time'  | translate}}</span><i class="las la-stopwatch"></i></button>
+            </div>
+            <div class="row" style="padding-top: 5rem;">
+                <div>
+                    <label>{{'competitor-zone.settings.set-rfid'  | translate}}</label>
+                    <app-input [group]="formRFID" controlName="payload"></app-input>
+                </div>
+                <button class="submit-button" [disabled]="!isFormGroupRFIDValid" (click)="onWriteRFIDTag()"><i class="las la-save"></i></button>
             </div>
             <label><br></label>
         </section>

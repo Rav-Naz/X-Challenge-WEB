@@ -1,0 +1,40 @@
+@import '../../../scss/colors';
+.counting {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    div {
+        height: min-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        button {
+            font-size: 5rem;
+            width: 25vw;
+            height: 25vw;
+            max-width: 40%;
+            &:last-child {
+                background: linear-gradient(#e02727, #cf1616) !important;
+                color: white;
+                box-shadow: 0 0.2rem 2.3rem rgb(207 22 22 / 70%);
+                &:hover {
+                    box-shadow: 0 0.2rem 3rem red;
+                }
+            }
+        }
+    }
+    p {
+        min-width: max-content;
+    }
+    span {
+        font-family: 'Goldman';
+        color: $color-primary;
+        font-size: 10rem;
+        font-weight: bold;
+    }
+}
