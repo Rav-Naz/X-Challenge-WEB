@@ -44,6 +44,8 @@
     line-height: 2.5rem;
     color: $color-grey-0;
     font-family: $default-font;
+    min-width: max-content;
+    max-width: max-content;
     text-align: start;
     // -right: 1rem;
     span {
@@ -87,6 +89,11 @@
             }
         }
         &-user {
+            display: flex;
+            flex-direction: column;
+            a {
+                color: $color-primary;
+            }
             p {
                 min-width: min-content;
                 max-width: max-content;
@@ -120,9 +127,10 @@
     grid-template-rows: 1fr;
     border-bottom: none !important;
     &>div {
+        padding: 0 !important;
         grid-column: 1;
         width: 100% !important;
-        max-width: 100% !important;
+        max-width: none;
         display: flex;
         flex-direction: column;
         align-items: flex-start !important;
@@ -240,4 +248,8 @@
             flex-direction: column !important;
         }
     }
+}
+
+.banned {
+    color: red !important;
 }

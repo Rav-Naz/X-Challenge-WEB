@@ -5,7 +5,7 @@
         <div class="competitor-zone">
             <div class="competitor-zone-bar">
                 <div>
-                    <section class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['my-robots']}}]" routerLinkActive="competitor-zone-bar-segment-active" *ngIf="!userService.isReferee">
+                    <section class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['my-robots']}}]" routerLinkActive="competitor-zone-bar-segment-active" *ngIf="!userService.isWolo">
                         <i class="las la-robot"></i>
                         <p>{{'competitor-zone.bar.my-robots' | translate}}</p>
                     </section>
@@ -29,14 +29,18 @@
                         <i class="las la-chart-pie"></i>
                         <p>{{'competitor-zone.bar.statistics' | translate}}</p>
                     </section>
+                    <section *ngIf="userService.isAdmin" class="competitor-zone-bar-segment" [routerLink]="['/register']">
+                        <i class="las la-user-plus"></i>
+                        <p>{{'competitor-zone.bar.register' | translate}}</p>
+                    </section>
                     <section class="competitor-zone-bar-segment" (click)="openTutorial()">
                         <i class="las la-question"></i>
                         <p>{{'competitor-zone.bar.help' | translate}}</p>
                     </section>
                 </div>
-                <div class="competitor-zone-bar-time">
+                <div class="competitor-zone-bar-time" *ngIf="timeLeft && !timeIsUp">
                     <p>{{'competitor-zone.bar.time-left' | translate}}</p>
-                    <div [ngClass]="{'competitor-zone-bar-time-ending': isLessThanWeek}" *ngIf="timeLeft && !timeIsUp">
+                    <div [ngClass]="{'competitor-zone-bar-time-ending': isLessThanWeek}">
                         <label>
                                 {{timeLeft | msTransform: 'd'}}<span>D</span>
                             </label>

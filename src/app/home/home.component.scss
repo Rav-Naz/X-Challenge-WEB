@@ -708,6 +708,19 @@
                 font-size: 2rem;
                 max-width: 80%;
             }
+            &-register {
+                padding: 0 5rem;
+                margin-top: 5rem;
+                color: rgb(238, 205, 17);
+                p {
+                    font-size: 4rem;
+                    font-family: 'Goldman';
+                }
+                article {
+                    font-family: 'Jura';
+                    font-size: 3rem;
+                }
+            }
         }
         
         .categories {
@@ -919,6 +932,7 @@
             // padding: 0 !important;
             width: 100%;
             margin-top: 3rem;
+            margin-bottom: 3rem;
             &-outer {
                 width: 100%;
                 display: flex;

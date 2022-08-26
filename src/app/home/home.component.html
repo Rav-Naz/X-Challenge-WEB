@@ -263,6 +263,11 @@
                 </div>
             </div>
         </div>
+        <div class="news-register" *ngIf="((isLessThanWeek) || (registerPercentageCompletion && registerPercentageCompletion > 80)) && ((timeLeft && timeLeft>0) && (registerPercentageCompletion && registerPercentageCompletion < 100))">
+            <p>{{'home.news.register-limit.title' | translate}}</p>
+            <article *ngIf="registerPercentageCompletion && registerPercentageCompletion > 80">{{'home.news.register-limit.body1' | translate : {registerPercentageCompletion: registerPercentageCompletion} }}</article>
+            <article *ngIf="isLessThanWeek">{{'home.news.register-limit.body2' | translate : {days: getDaysToEndRegistration} }}</article>
+        </div>
     </section>
     <!-- CATEGORIES -->
     <section class="categories" id="categories">

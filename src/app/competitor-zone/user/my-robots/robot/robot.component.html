@@ -4,9 +4,10 @@
             <div class="name">
                 <label *ngIf="(!authService.canModify && !userSerceice.isAdmin) || userSerceice.userType === 1">{{'controls.robot_name.name' | translate}}: <span>{{oldName}}</span></label>
                 <app-input [group]="formName" controlName="robot_name" *ngIf="(authService.canModify || userSerceice.isAdmin) && userSerceice.userType !== 1"></app-input>
-                <button *ngIf="(authService.canModify || userSerceice.isAdmin) && userSerceice.userType !== 1" [disabled]="!isChanged || !isFormGroupNameValid || isLoadingName || !authService.canModify || (userSerceice.isReferee && !userSerceice.isAdmin)" class="submit-button"
-                    (click)="onUpdateName()"><i class="las la-save"></i></button>
-                <button *ngIf="(authService.canModify || userSerceice.isAdmin) && userSerceice.userType !== 1" [disabled]="isLoadingName || !authService.canModify || (userSerceice.isReferee && !userSerceice.isAdmin)" class="submit-button" (click)="onDeleteRobot()"><i class="las la-trash-alt"></i></button>
+                <button *ngIf="(authService.canModify || userSerceice.isAdmin) && userSerceice.userType !== 1 && userSerceice.userType !== 2" [disabled]="!isChanged || !isFormGroupNameValid || isLoadingName || !authService.canModify || (userSerceice.isReferee && !userSerceice.isAdmin)"
+                    class="submit-button" (click)="onUpdateName()"><i class="las la-save"></i></button>
+                <button *ngIf="(authService.canModify || userSerceice.isAdmin) && userSerceice.userType !== 1 && userSerceice.userType !== 2" [disabled]="isLoadingName || !authService.canModify || (userSerceice.isReferee && !userSerceice.isAdmin)" class="submit-button"
+                    (click)="onDeleteRobot()"><i class="las la-trash-alt"></i></button>
             </div>
             <div class="name-uuid">
                 <span>{{'competitor-zone.robot.uuid' | translate}}</span>
@@ -147,13 +148,37 @@
                 </div>
             </div>
         </div>
+        <section class="acceptation" *ngIf="authService.isAfterRegistration">
+            <p>{{"competitor-zone.robot.acceptation-status" | translate}}:
+                <span class="acceptation-true" *ngIf="!authService.isWaitingForRobotAcceptation && (!robot?.powod_odrzucenia ?? false)">{{"competitor-zone.robot.acceptation-true" | translate}}</span>
+                <span class="acceptation-false" style="color: red;" *ngIf="robot?.powod_odrzucenia ?? false">{{"competitor-zone.robot.acceptation-false" | translate}}</span>
+                <span class="acceptation-waiting" *ngIf="authService.isWaitingForRobotAcceptation && (!robot?.powod_odrzucenia ?? false)">{{"competitor-zone.robot.acceptation-waiting" | translate}}</span>
+            </p>
+            <p *ngIf="robot?.powod_odrzucenia">{{"controls.reason.name" | translate}}:
+                <span>{{robot?.powod_odrzucenia}}</span>
+            </p>
+            <div class="row acceptation-row" *ngIf="userSerceice.isAdmin">
+                <app-input [group]="formAcceptation" controlName="reason"></app-input>
+                <button class="submit-button" [disabled]="!isFormGroupAcceptationValid" (click)="onSaveReason()"><i class="las la-save"></i></button>
+            </div>
+        </section>
+        <section class="acceptation arrival" *ngIf="userSerceice.isWolo && robot && isEvent">
+            <div class="row acceptation-row">
+                <p>Czy dotarł:
+                    <span class="arrival-true" *ngIf="robot?.czy_dotarl == 1">DOTARŁ</span>
+                    <span class="arrival-false" style="color: red;" *ngIf="robot?.czy_dotarl == 0">NIE DOTARŁ</span>
+                </p>
+                <button class="submit-button" [disabled]="robot?.czy_dotarl == 1" (click)="confirmArrival(true, $event)"><i class="las la-plane-arrival"></i></button>
+                <button class="submit-button arrival-button" [disabled]="robot?.czy_dotarl == 0" (click)="confirmArrival(false, $event)"><i class="las la-plane-departure"></i></button>
+            </div>
+        </section>
         <section class="documentation">
             <div>
                 <div class="row" *ngIf="!isLoadingDocumentation && !isEditingDocumentation">
                     <label *ngIf="robotDocumentation">{{'competitor-zone.robot.documentation-uploaded' | translate}}</label>
                     <div class="column" *ngIf="!robotDocumentation">
                         <label>{{'competitor-zone.robot.documentation-not-uploaded' | translate}}</label>
-                        <a>{{'competitor-zone.robot.documentation-find-info' | translate}}</a>
+                        <a *ngIf="authService.canSendDocumetation">{{'competitor-zone.robot.documentation-find-info' | translate}}</a>
                     </div>
                     <button *ngIf="((authService.canSendDocumetation && userSerceice.isUser) || userSerceice.isAdmin)" [disabled]="!authService.canSendDocumetation && !userSerceice.isAdmin" class="submit-button" (click)="isEditingDocumentation=true"><i class="las la-edit"></i></button>
                     <button *ngIf="robotDocumentation" [disabled]="!robotDocumentation" class="submit-button" (click)="onDownloadDocumentation()"><i class="las la-file-download"></i></button>

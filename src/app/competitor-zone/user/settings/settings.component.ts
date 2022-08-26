@@ -35,7 +35,7 @@ export class SettingsComponent {
       name: [(userService.userDetails as any)?.imie, [Validators.required, Validators.minLength(2), Validators.maxLength(40)]],
       surname: [(userService.userDetails as any)?.nazwisko, [Validators.required, Validators.minLength(2), Validators.maxLength(40)]]
     });
-    const phoneNumber = (userService.userDetails as any)?.numer_telefonu ? (userService.userDetails as any)?.numer_telefonu.toString().substring(2).split(')') : [48,null]
+    const phoneNumber = (userService.userDetails as any)?.numer_telefonu ? [Number((userService.userDetails as any)?.numer_telefonu.toString().substring(0,2)),(userService.userDetails as any)?.numer_telefonu.toString().substring(2)] : [48,null]
     this.formPhone = this.formBuilder.group({
       phone: [phoneNumber[1], [Validators.required, Validators.pattern('^[0-9]{3}[-\s\.]?[0-9, ]{4,8}$')]],
       country_code: [Number(phoneNumber[0]), [Validators.required]]
@@ -164,7 +164,7 @@ export class SettingsComponent {
 
   get createPhoneNumber() {
     if (this.formPhone.get('country_code')?.value && this.formPhone.get('phone')?.value) {
-      return `(+${this.formPhone.get('country_code')?.value})${this.formPhone.get('phone')?.value.toString().replace(/\s+/g, '')}`;
+      return `${this.formPhone.get('country_code')?.value}${this.formPhone.get('phone')?.value.toString().replace(/\s+/g, '')}`;
     } else {
       return null
     }

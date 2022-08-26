@@ -89,7 +89,7 @@ export class RegisterComponent{
 
   get createPhoneNumber() {
     if (this.formPhone.get('country_code')?.value && this.formPhone.get('phone')?.value) {
-      return `(+${this.formPhone.get('country_code')?.value})${this.formPhone.get('phone')?.value.toString().replace(/\s+/g, '')}`;
+      return `${this.formPhone.get('country_code')?.value}${this.formPhone.get('phone')?.value.toString().replace(/\s+/g, '')}`;
     } else {
       return null
     }

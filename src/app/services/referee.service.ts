@@ -4,6 +4,7 @@ import { ErrorsService } from './errors.service';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { WebsocketService } from './websocket.service';
+import { UiService } from './ui.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class RefereeService {
 
   private allUsers = new BehaviorSubject<Array<any> | null>(null);
 
-  constructor (private errorService: ErrorsService, private http: HttpService, private translate: TranslateService, private websocket: WebsocketService) {
+  constructor (private errorService: ErrorsService, private http: HttpService, private translate: TranslateService, private websocket: WebsocketService, private ui: UiService) {
     this.getUsers();
     this.websocket.getWebSocket$.subscribe((socket) => {
       socket?.on('user/addPostalCode', (data) => {
@@ -91,16 +92,16 @@ export class RefereeService {
     });
   }
 
-  public confirmArrival(robot_uuid : string) {
+  public confirmArrival(robot_uuid : string, value: boolean) {
     return new Promise<any>(async (resolve) => {
-      const value = await this.http.confirmArrival(robot_uuid).catch(err => {
+      const resp = await this.http.confirmArrival(robot_uuid, value).catch(err => {
         if(err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
           this.errorService.showError(err.status);
         }
       })
-      resolve(value);
+      resolve(resp);
     });
   }
 
@@ -113,6 +114,33 @@ export class RefereeService {
           this.errorService.showError(err.status);
         }
       })
+      resolve(value);
+    });
+  }
+
+  public addRobotRejection(robot_uuid : string, powod_odrzucenia: string) {
+    return new Promise<any>(async (resolve) => {
+      const value = await this.http.addRobotRejection(robot_uuid, powod_odrzucenia).catch(err => {
+        if(err.status === 400) {
+          this.errorService.showError(err.status, this.translate.instant(err.error.body));
+        } else {
+          this.errorService.showError(err.status);
+        }
+      })
+      resolve(value);
+    });
+  }
+
+  public changeUserType(uzytkownik_uuid: string, uzytkownik_typ : number) {
+    return new Promise<any>(async (resolve) => {
+      const value = await this.http.changeUserType(uzytkownik_uuid, uzytkownik_typ).catch(err => {
+        if(err.status === 400) {
+          this.errorService.showError(err.status, this.translate.instant(err.error.body));
+        } else {
+          this.errorService.showError(err.status);
+        }
+      })
+      this.ui.showFeedback('succes','Zmieniono typ użytkownika', 2)
       resolve(value);
     });
   }

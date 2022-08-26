@@ -7,7 +7,7 @@ import { Constructor } from './../../../../models/constructor';
 import { CategoriesService } from './../../../../services/categories.service';
 import { RobotsService } from './../../../../services/robots.service';
 import { AuthService } from './../../../../services/auth.service';
-import { Component } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription, combineLatest } from 'rxjs';
@@ -15,6 +15,8 @@ import { Robot } from 'src/app/models/robot';
 import { CategoryMain } from 'src/app/models/category-main';
 import { ConstructorsService } from 'src/app/services/constructors.service';
 import { AlreadyExist } from 'src/app/shared/utils/exist';
+import { RefereeService } from '../../../../services/referee.service';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -33,9 +35,11 @@ export class RobotComponent {
   public formMovie: FormGroup;
   public formCategory: FormGroup;
   public formConstructor: FormGroup;
+  public formAcceptation: FormGroup;
   private loadingName: boolean = true;
   private loadingCategories: boolean = true;
   private loadingConstructors: boolean = true;
+  private loadingAcceptation: boolean = true;
   public loadingResults: boolean = true;
   public loadingDocumenation: boolean = true;
   public loadingMovie: boolean = true;
@@ -57,7 +61,7 @@ export class RobotComponent {
 
   constructor(private route: ActivatedRoute, private formBuilder: FormBuilder, public authService: AuthService, private robotsService: RobotsService,
     private categoriesService: CategoriesService, private constructorsService: ConstructorsService, public userSerceice: UserService, private router: Router,
-    private ui: UiService, private translate: TranslateService, private fightsService: FightsService, private timesService: TimesService) {
+    private ui: UiService, private translate: TranslateService, private fightsService: FightsService, private timesService: TimesService, private injector: Injector,  private titleService: Title) {
     const robot_uuid = this.route.snapshot.paramMap.get('robot_uuid');
 
     const sub1 = combineLatest(this.categoriesService.categories$, userSerceice.isReferee ? this.robotsService.allRobots$ : this.robotsService.userRobots$, this.constructorsService.getNewConstructors$).subscribe(async (val) => {
@@ -82,6 +86,9 @@ export class RobotComponent {
           if (this.formCategory) {
             this.formCategory.reset();
           }
+          if (this.robot) {
+            this.titleService.setTitle(`🤖 ${this.robot.nazwa_robota}`);
+          }
           if(this.robotFilm) {
             this.formMovie = this.formBuilder.group({
               movie: [this.robotFilm, [Validators.required, Validators.maxLength(500)]]
@@ -101,6 +108,7 @@ export class RobotComponent {
             this.loadingCategories = false;
             this.loadingDocumenation = false;
             this.loadingMovie = false;
+            this.loadingAcceptation = false;
           }, 100);
           this.formConstructor = this.formBuilder.group({
             constructor_uuid: [null, [Validators.required, Validators.minLength(36), Validators.maxLength(36)]]
@@ -168,6 +176,9 @@ export class RobotComponent {
     });
     this.formMovie = this.formBuilder.group({
       movie: [this.robotFilm, [Validators.required, Validators.maxLength(500)]]
+    });
+    this.formAcceptation = this.formBuilder.group({
+      reason: [null, [Validators.required, Validators.maxLength(1000)]]
     });
   }
 
@@ -299,6 +310,35 @@ export class RobotComponent {
     }
   }
 
+  async onSaveReason() {
+    console.log(this.isFormGroupAcceptationValid)
+    if (this.isFormGroupAcceptationValid) {
+      this.loadingAcceptation = true;
+      this.injector.get(RefereeService).addRobotRejection(this.robot!.robot_uuid,this.formAcceptation.get('reason')?.value).then(() => {
+          this.loadingAcceptation = false;
+          this.ui.showFeedback("succes", this.translate.instant('competitor-zone.robot.update-reason'), 2);
+        });
+    }
+  }
+
+  async confirmArrival( value: boolean, event: Event) {
+    if (!this.robot) return;
+    event.stopPropagation();
+    const decision = await this.ui.wantToContinue(`Potwierdzasz ${value ? "" : "nie"} dotarcie robota ${this.robot.nazwa_robota}`)
+    if (decision) {
+      const response = await this.injector.get(RefereeService).confirmArrival(this.robot.robot_uuid, value).catch(err => {
+        return null
+      });
+      if (response !== undefined && response !== null && response.message === "INFO: OK") {
+        this.ui.showFeedback("succes", `Pomyślnie potwierdzono ${value ? "" : "nie"} dotarcie robota ${this.robot.nazwa_robota}`, 3);
+
+      } else {
+        this.ui.showFeedback("error", `Nie udało się potwierdzić dotarcia!`, 3);
+      }
+
+    }
+  }
+
   async onDownloadDocumentation() {
     if (this.robotDocumentation != null) {
       this.robotsService.downloadDocumentation(this.robot!.robot_uuid);
@@ -361,9 +401,11 @@ export class RobotComponent {
   public get isFormGroupDocumentationValid() {
     return this.formDocumentation.valid && !this.isLoadingDocumentation && this.authService.canSendDocumetation && this.documentationFile != null && this.isSuitableFileFormat;
   }
-
   public get isFormGroupMovieValid() {
     return this.formMovie.valid && !this.isLoadingMovie && this.authService.canSendDocumetation;
+  }
+  public get isFormGroupAcceptationValid() {
+    return this.formAcceptation.valid && !this.isLoadingAcceptation && this.userSerceice.isAdmin;
   }
 
   public get isLoadingName() {
@@ -380,6 +422,9 @@ export class RobotComponent {
   }
   public get isLoadingMovie() {
     return this.loadingMovie;
+  }
+  public get isLoadingAcceptation() {
+    return this.loadingAcceptation;
   }
 
   public get userUUID() {
@@ -490,7 +535,7 @@ export class RobotComponent {
   }
 
   ngOnDestroy(): void {
-    this.subs?.unsubscribe();
+    this.titleService.setTitle(`XChallenge`);
   }
 
 }

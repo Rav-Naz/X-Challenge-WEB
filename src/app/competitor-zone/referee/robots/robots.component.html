@@ -11,11 +11,11 @@
         <div class="my-robots-element" *ngFor="let robot of robotsFiltered" (click)="editRobot(robot.robot_uuid)">
             <div class="my-robots-element-info">
                 <p class="my-robots-element-uuid">{{robot.robot_uuid}}</p>
-                <p class="my-robots-element-name">{{robot.nazwa_robota}}</p>
+                <p class="my-robots-element-name" [ngClass]="{'banned': robot.powod_odrzucenia != null}">{{robot.nazwa_robota}}<i class="las la-ban" *ngIf="robot.powod_odrzucenia"></i></p>
             </div>
             <span class="my-robots-element-categories">{{robot.kategorie}}</span>
             <span class="my-robots-element-edit">{{'competitor-zone.competitors.more' | translate}}<i class="las la-angle-double-right"></i></span>
-            <button *ngIf="robot.czy_dotarl === 0 && userService.isAdmin" class="submit-button confirm" (click)="confirmArrival(robot, $event)">{{'competitor-zone.robots.confirm' | translate}}</button>
+            <button *ngIf="robot.czy_dotarl === 0 && userService.isReferee && robot.powod_odrzucenia == null && authService.isEvent" class="submit-button confirm" (click)="confirmArrival(robot, $event)">{{'competitor-zone.robots.confirm' | translate}}</button>
         </div>
         <app-spinner *ngIf="!allRobots"></app-spinner>
     </div>

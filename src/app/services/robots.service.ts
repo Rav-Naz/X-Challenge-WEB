@@ -40,6 +40,9 @@ export class RobotsService{
       socket?.on('robots/newArrival', (data) => {
         this.WS_confirmArrival(data);
       })
+      socket?.on('robots/addRobotRejection', (data) => {
+        this.WS_addRobotRejection(data);
+      })
     })
   }
 
@@ -175,18 +178,24 @@ export class RobotsService{
   public WS_confirmArrival(data: any) {
     const robotIndex = this.allRobots.value?.findIndex(robot => robot.robot_uuid === data.robot_uuid);
     if(robotIndex !== undefined && robotIndex !== null && robotIndex >= 0 && this.allRobots.value) {
-      this.allRobots.value![robotIndex].czy_dotarl = 1;
+      this.allRobots.value![robotIndex].czy_dotarl = data?.czy_dotarl;
       this.allRobots.next(this.allRobots.value)
     }
 
     const userRobotIndex = this.userRobots.value?.findIndex(robot => robot.robot_uuid === data.robot_uuid);
     if(userRobotIndex !== undefined && userRobotIndex !== null && userRobotIndex >= 0 && this.userRobots.value) {
-      this.userRobots.value![userRobotIndex].czy_dotarl = 1;
+      this.userRobots.value![userRobotIndex].czy_dotarl = data?.czy_dotarl;
       this.userRobots.next(this.userRobots.value)
     }
   }
 
   public WS_updateRobot(data: any) {
+    const allRobotIndex = this.allRobots.value?.findIndex(robot => robot.robot_id === data.robot_id);
+    if(allRobotIndex !== undefined && allRobotIndex !== null && allRobotIndex >= 0 && this.allRobots.value) {
+      this.allRobots.value![allRobotIndex].nazwa_robota = data?.nazwa;
+      this.allRobots.next(this.allRobots.value)
+    }
+
     const robotIndex = this.userRobots.value?.findIndex(robot => robot.robot_id === data?.robot_id)
     if(robotIndex !== undefined && robotIndex !== null && robotIndex >= 0 && this.userRobots.value) {
       this.userRobots.value![robotIndex].nazwa_robota = data?.nazwa;
@@ -215,6 +224,12 @@ export class RobotsService{
   }
 
   public WS_deleteRobot(data: any) {
+    const allRobotIndex = this.allRobots.value?.findIndex(robot => robot.robot_id === data.robot_id);
+    if(allRobotIndex !== undefined && allRobotIndex !== null && allRobotIndex >= 0 && this.allRobots.value) {
+      this.allRobots.value.splice(allRobotIndex, 1);
+      this.allRobots.next(this.allRobots.value)
+    }
+
     const robotIndex = this.userRobots.value?.findIndex(robot => robot.robot_id === data?.robot_id)
     if(robotIndex !== undefined && robotIndex !== null && robotIndex >= 0 && this.userRobots.value) {
       this.userRobots.value.splice(robotIndex, 1);
@@ -223,6 +238,12 @@ export class RobotsService{
     }
   }
   public WS_uploadDocumentation(data: any) {
+    const allRobotIndex = this.allRobots.value?.findIndex(robot => robot.robot_uuid === data.robot_uuid);
+    if(allRobotIndex !== undefined && allRobotIndex !== null && allRobotIndex >= 0 && this.allRobots.value) {
+      this.allRobots.value![allRobotIndex].link_do_dokumentacji = data?.path;
+      this.allRobots.next(this.allRobots.value)
+    }
+
     const robotIndex = this.userRobots.value?.findIndex(robot => robot.robot_uuid === data?.robot_uuid)
     if(robotIndex !== undefined && robotIndex !== null && robotIndex >= 0 && this.userRobots.value) {
       this.userRobots.value![robotIndex].link_do_dokumentacji = data?.path;
@@ -231,10 +252,23 @@ export class RobotsService{
   }
 
   public WS_addFilm(data: any) {
+    const allRobotIndex = this.allRobots.value?.findIndex(robot => robot.robot_uuid === data.robot_uuid);
+    if(allRobotIndex !== undefined && allRobotIndex !== null && allRobotIndex >= 0 && this.allRobots.value) {
+      this.allRobots.value![allRobotIndex].link_do_filmiku = data?.link_do_filmiku;
+      this.allRobots.next(this.allRobots.value)
+    }
+
     const robotIndex = this.userRobots.value?.findIndex(robot => robot.robot_uuid === data?.robot_uuid)
     if(robotIndex !== undefined && robotIndex !== null && robotIndex >= 0 && this.userRobots.value) {
       this.userRobots.value![robotIndex].link_do_filmiku = data?.link_do_filmiku;
       this.userRobots.next(this.userRobots.value)
+    }
+  }
+  public WS_addRobotRejection(data: any) {
+    const robotIndex = this.allRobots.value?.findIndex(robot => robot.robot_id == data?.robot_id)
+    if(robotIndex !== undefined && robotIndex !== null && robotIndex >= 0 && this.allRobots.value) {
+      this.allRobots.value![robotIndex].powod_odrzucenia = data?.powod_odrzucenia;
+      this.allRobots.next(this.allRobots.value)
     }
   }
 

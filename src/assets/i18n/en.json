@@ -71,6 +71,11 @@
             "title": "IMPORTANT INFORMATIONS",
             "info": "At this place, we will provide you with the most important information for the players and the audience.",
             "register": "Registration is not currently possible. The opening date will be announced shortly.",
+            "register-limit": {
+                "title": "REGISTRATION IS COMPLETE",
+                "body1": "The limit of people registered for the event is approaching. Currently {{registerPercentageCompletion}}% places are full.",
+                "body2": "There are {{days}} days remaining to register robots."
+            },
             "points": {
                 "register-start": {
                     "title": "Start of registration",
@@ -298,6 +303,7 @@
             "competitors": "COMPETITORS",
             "robots": "ROBOTS",
             "statistics": "STATISTICS",
+            "register": "REGISTER",
             "hello": {
                 "1": "Welcome to the ",
                 "2": "Competitor Zone!",
@@ -360,12 +366,17 @@
             "want-to-delete-robot": "Removing the robot excludes its participation in the competition. Attention! This decision cannot be undone!",
             "update-documentation": "Documentation successfully uploaded",
             "documentation-uploaded": "Documentation has already been uploaded",
-            "documentation-not-uploaded": "Documentation has not yet been uploaded",
+            "documentation-not-uploaded": "Documentation has not been uploaded",
             "documentation-format-info": "* Possible file formats are: PDF, DOC and DOCX and the maximum file size is 5 MB",
             "update-film": "Successfully sent link to the movie",
             "film-uploaded": "The link to the movie has already been uploaded",
             "film-not-uploaded": "The link to the movie has not been uploaded yet",
-            "film-format-info": "* The link should lead to the video on YouTube platform"
+            "film-format-info": "* The link should lead to the video on YouTube platform",
+            "update-reason": "Successfully updated rejection reason",
+            "acceptation-status": "Robot's acceptance status",
+            "acceptation-true": "ACCEPTED",
+            "acceptation-false": "REJECTED",
+            "acceptation-waiting": "WAITING"
         },
         "settings": {
             "user": "User details",
@@ -1028,6 +1039,19 @@
             "validators": {
                 "required": "This field is required"
             }
+        },
+        "reason": {
+            "name": "Reason for rejection",
+            "validators": {
+                "required": "This field is required",
+                "maxlength": "The maximum length of an entry is 1000 characters"
+            }
+        },
+        "user_type": {
+            "name": "User type",
+            "validators": {
+                "required": "This field is required"
+            }
         }
     },
     "errors": {
@@ -1087,7 +1111,8 @@
             "too-many-lf-categories": "You cannot add more than 2 categories in the Line Follower competition!",
             "too-many-sumo-categories": "You cannot add more than 2 categories in the Sumo competition!",
             "time-to-modify-ended": "The time to add and modify robots is over",
-            "time-to-modify-ended-smash": "The time to add and modify robots in the SmashBots category is over"
+            "time-to-modify-ended-smash": "The time to add and modify robots in the SmashBots category is over",
+            "register-ends": "Registration has ended"
         },
         "statusCodes": {
             "400": "Incorrectly specified data - user error",
