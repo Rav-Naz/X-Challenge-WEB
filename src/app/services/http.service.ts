@@ -211,6 +211,15 @@ export class HttpService {
     })
   }
 
+  public getCurrentVisitors() {
+    return new Promise<any>((resolve, rejects) => {
+      this.http.get<APIResponse>(`${this.url}public/currentVisitors`, { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
   // ------------- USER
 
   public checkIfUserIsConstructorOfRobot(uzytkownik_uuid: string, robot_uuid: string) {
@@ -419,6 +428,26 @@ export class HttpService {
     })
   }
 
+  // ------------- VOLOUNTEER
+
+  public addCurrentVisitors() {
+    return new Promise<any>((resolve, rejects) => {
+      this.http.get<APIResponse>(`${this.url}volunteer/addOnePerson`, { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public removeCurrentVisitors() {
+    return new Promise<any>((resolve, rejects) => {
+      this.http.get<APIResponse>(`${this.url}volunteer/removeOnePerson`, { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
   // ------------- REFEREE
 
   public getRefereePositions(uzytkownik_uuid: string) {
@@ -545,6 +574,18 @@ export class HttpService {
   public readLapTime() {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.get<APIResponse>(`http://bramki.xchallenge.pl:5000/referee/readLapTime`,
+      { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public writeRFIDTag(uzytkownik_uuid: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`http://bramki.xchallenge.pl:5000/referee/writeRFIDTag`,{
+        uzytkownik_uuid: uzytkownik_uuid
+      },
       { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }

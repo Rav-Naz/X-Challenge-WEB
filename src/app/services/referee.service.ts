@@ -191,6 +191,22 @@ export class RefereeService {
     });
   }
 
+  public writeRFIDTag(uzytkownik_uuid: string) {
+    return new Promise<any>(async (resolve,reject) => {
+      const value = await this.http.writeRFIDTag(uzytkownik_uuid).catch(err => {
+        if(err.status === 400) {
+          this.errorService.showError(err.status, this.translate.instant(err.error.body));
+          reject(err);
+        } else {
+          this.errorService.showError(err.status);
+          reject(err);
+        }
+      })
+      resolve(value);
+    });
+  }
+
+
   async WS_addPostalCode(data: any) {
     const userIndex = this.allUsers.value?.findIndex(user => user.uzytkownik_id === data?.uzytkownik_id)
     if(userIndex !== undefined && userIndex !== null && userIndex >= 0 && this.allUsers.value) {

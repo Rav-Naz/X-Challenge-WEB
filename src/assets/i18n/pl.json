@@ -188,8 +188,11 @@
                 { "id": 4, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/jpg/kronospan.png", "linkToSite": "https://kronosfera.pl/" },
                 { "id": 5, "patreonCategory": 1, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/jpg/ale-primary-logo-white.png", "linkToSite": "https://www.al-enterprise.com/" },
                 { "id": 6, "patreonCategory": 0, "description": "Rzeszów Stolica Innowacji", "image": "../../assets/jpg/rzeszow_stolica.png", "linkToSite": "https://www.erzeszow.pl/" },
-                { "id": 7, "patreonCategory": 5, "description": "Marszałek Województwa Podkarpackiego", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/index.php/zarzad-wojewodztwa/" },
-                { "id": 8, "patreonCategory": 5, "description": "Podkarpacki Kurator Oświaty", "image": "../../assets/jpg/kuratorium.png", "linkToSite": "https://www.ko.rzeszow.pl/" }
+                { "id": 7, "patreonCategory": 5, "description": "Marszałek Województwa Podkarpackiego", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/" },
+                { "id": 8, "patreonCategory": 5, "description": "Podkarpacki Kurator Oświaty", "image": "../../assets/jpg/kuratorium.png", "linkToSite": "https://www.ko.rzeszow.pl/" },
+                { "id": 9, "patreonCategory": 3, "description": "Deloitte", "image": "../../assets/svg/deloitte.svg", "linkToSite": "https://www2.deloitte.com/pl/pl.html" },
+                { "id": 10, "patreonCategory": 2, "description": "Wago", "image": "../../assets/svg/wago.png", "linkToSite": "https://www.wago.com/pl/" },
+                { "id": 11, "patreonCategory": 5, "description": "Prezydent Miasta Rzeszowa", "image": "../../assets/jpg/rzeszow.png", "linkToSite": "https://bip.erzeszow.pl/" }
             ],
             "tiers": [
                 "Partner Główny",
@@ -290,6 +293,9 @@
                 "success": "Pomyślnie ustawione nowe hasło do konta. Możesz się teraz zalogować!"
             }
         },
+        "visitors-counter": {
+            "actual": "AKTUALNIE ODWIEDZAJĄCYCH:"
+        },
         "register": {
             "title": "Rejestracja",
             "accept": "Akceptuję regulamin i politykę prywatności",
@@ -315,6 +321,7 @@
             "robots": "ROBOTY",
             "statistics": "STATYSTYKI",
             "register": "REJESTRACJA",
+            "counting": "ODWIEDZAJĄCY",
             "hello": {
                 "1": "Witaj w ",
                 "2": "Strefie Zawodnika!",
@@ -401,6 +408,7 @@
             "test": "Testowe",
             "get-rfid": "Odczytaj RFID",
             "get-lap-time": "Odczytaj czas przejazdu",
+            "set-rfid": "Zapisz dane na karcie RFID",
             "change": "* Preferencji nie da się samodzielnie zmienić po rejestracji. Aby dokonać zmian, prosimy skontaktować się z administratorem.",
             "errors": {
                 "succesfuly-added-phone": "Pomyślnie zaktualizowano numer telefonu",
@@ -1056,6 +1064,12 @@
         },
         "user_type": {
             "name": "Typ użytkownika",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "payload": {
+            "name": "Dane do zapisu",
             "validators": {
                 "required": "To pole jest wymagane"
             }

@@ -29,6 +29,7 @@ import { TaskChallengeComponent } from './home/categories/task-challenge/task-ch
 import { SmashBotsComponent } from './home/categories/smash-bots/smash-bots.component';
 import { RobomotionComponent } from './home/categories/robomotion/robomotion.component';
 import { RegisterGuard } from './services/register-guard.service';
+import { CountingVisitorsComponent } from './competitor-zone/referee/counting-visitors/counting-visitors.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -51,6 +52,7 @@ const routes: Routes = [
     {path: 'robot/:robot_uuid', component: RobotComponent, outlet: 'outlet'},
     {path: 'add-robot', component: NewRobotComponent,  outlet: 'outlet'},
     {path: 'statistics', component: ChartsComponent,  outlet: 'outlet'},
+    {path: 'counting-visitors', component: CountingVisitorsComponent,  outlet: 'outlet'},
 
     {path: 'referee-zone/:stanowisko_id/:kategoria_id/:grupa_id', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
     {path: 'referee-zone/:stanowisko_id/:kategoria_id', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
