@@ -31,6 +31,7 @@ import { RobomotionComponent } from './home/categories/robomotion/robomotion.com
 import { RegisterGuard } from './services/register-guard.service';
 import { CountingVisitorsComponent } from './competitor-zone/referee/counting-visitors/counting-visitors.component';
 
+
 const routes: Routes = [
   {path: '', component: HomeComponent},
   // {path: 'gallery', component: GalleryComponent},
