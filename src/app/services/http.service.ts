@@ -560,6 +560,17 @@ export class HttpService {
     })
   }
 
+  public sendPrivateMessage(uzytkownik_uuid: string, tresc : string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`${this.url}referee/sendPrivateMessage`, {
+        uzytkownik_uuid: uzytkownik_uuid,
+        tresc: tresc
+       },{ headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
 
   public readRFIDTag() {
     return new Promise<APIResponse>((resolve, rejects) => {
@@ -600,18 +611,6 @@ export class HttpService {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}user/addPostalCode`, {
         kod_pocztowy: kod_pocztowy
-       },{ headers: this.headers }).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
-    })
-  }
-
-  public sendPrivateMessage(uzytkownik_uuid: string, tresc : string) {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.post<APIResponse>(`${this.url}admin/sendPrivateMessage`, {
-        uzytkownik_uuid: uzytkownik_uuid,
-        tresc: tresc
        },{ headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }

@@ -60,7 +60,7 @@
             </div> -->
 
 
-            <div class="grid-constructors competitor-container">
+            <div class="grid-constructors competitor-container" *ngIf="userSerceice.isUser">
                 <span>{{'competitor-zone.competitor.robots' | translate}}</span>
                 <div class="grid-categories-old-parent">
                     <div *ngFor="let robot of userRobots" class="grid-categories-old grid-constructors-user-parent" [ngClass]="{'grid-constructors-user-parent-clickable': userSerceice.isReferee}">
