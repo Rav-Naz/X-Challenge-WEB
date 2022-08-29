@@ -59,6 +59,8 @@ import { DatePipe } from '@angular/common';
 import { InputFileComponent } from './shared/input-file/input-file.component';
 import { RegisterGuard } from './services/register-guard.service';
 import { CountingVisitorsComponent } from './competitor-zone/referee/counting-visitors/counting-visitors.component';
+import { ManageFightsComponent } from './competitor-zone/referee/manage-fights/manage-fights.component';
+import { AdminGuard } from './services/admin-guard.service';
 
 
 @NgModule({
@@ -97,7 +99,8 @@ import { CountingVisitorsComponent } from './competitor-zone/referee/counting-vi
     SmashBotsComponent,
     RobomotionComponent,
     InputFileComponent,
-    CountingVisitorsComponent
+    CountingVisitorsComponent,
+    ManageFightsComponent
   ],
   imports: [
     BrowserModule,
@@ -130,6 +133,7 @@ import { CountingVisitorsComponent } from './competitor-zone/referee/counting-vi
     { provide: LOCALE_ID, useValue: "pl-PL" },
     AuthGuard,
     RefereeGuard,
+    AdminGuard,
     RegisterGuard,
     WebsocketService,
     RobotsService,

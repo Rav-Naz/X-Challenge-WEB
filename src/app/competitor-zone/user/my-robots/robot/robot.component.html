@@ -162,14 +162,16 @@
                 <button class="submit-button" [disabled]="!isFormGroupAcceptationValid" (click)="onSaveReason()"><i class="las la-save"></i></button>
             </div>
         </section>
-        <section class="acceptation arrival" *ngIf="userSerceice.isWolo && robot && isEvent">
+        <section class="acceptation arrival" *ngIf="robot && isEvent">
             <div class="row acceptation-row">
-                <p>Czy dotarł:
-                    <span class="arrival-true" *ngIf="robot?.czy_dotarl == 1">DOTARŁ</span>
-                    <span class="arrival-false" style="color: red;" *ngIf="robot?.czy_dotarl == 0">NIE DOTARŁ</span>
+                <p>{{"competitor-zone.robot.is-arrived" | translate}}
+                    <span class="arrival-true" *ngIf="robot?.czy_dotarl == 1">{{"competitor-zone.robot.is-arrived-true" | translate}}</span>
+                    <span class="arrival-false" style="color: red;" *ngIf="robot?.czy_dotarl == 0">{{"competitor-zone.robot.is-arrived-false" | translate}}</span>
                 </p>
-                <button class="submit-button" [disabled]="robot?.czy_dotarl == 1" (click)="confirmArrival(true, $event)"><i class="las la-plane-arrival"></i></button>
-                <button class="submit-button arrival-button" [disabled]="robot?.czy_dotarl == 0" (click)="confirmArrival(false, $event)"><i class="las la-plane-departure"></i></button>
+                <ng-container *ngIf="userSerceice.isReferee">
+                    <button class="submit-button" [disabled]="robot?.czy_dotarl == 1" (click)="confirmArrival(true, $event)"><i class="las la-plane-arrival"></i></button>
+                    <button class="submit-button arrival-button" [disabled]="robot?.czy_dotarl == 0" (click)="confirmArrival(false, $event)"><i class="las la-plane-departure"></i></button>
+                </ng-container>
             </div>
         </section>
         <section class="documentation">

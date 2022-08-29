@@ -1,3 +1,4 @@
+import { ManageFightsComponent } from './competitor-zone/referee/manage-fights/manage-fights.component';
 import { ThanksComponent } from './home/thanks/thanks.component';
 import { CompetitorComponent } from './competitor-zone/referee/competitors/competitor/competitor.component';
 import { RobotsComponent } from './competitor-zone/referee/robots/robots.component';
@@ -30,6 +31,7 @@ import { SmashBotsComponent } from './home/categories/smash-bots/smash-bots.comp
 import { RobomotionComponent } from './home/categories/robomotion/robomotion.component';
 import { RegisterGuard } from './services/register-guard.service';
 import { CountingVisitorsComponent } from './competitor-zone/referee/counting-visitors/counting-visitors.component';
+import { AdminGuard } from './services/admin-guard.service';
 
 
 const routes: Routes = [
@@ -59,6 +61,7 @@ const routes: Routes = [
     {path: 'referee-zone/:stanowisko_id/:kategoria_id', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
     {path: 'referee-zone/:stanowisko_id', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
     {path: 'referee-zone', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
+    {path: 'manage-fights', component: ManageFightsComponent, canActivate: [AdminGuard], outlet: 'outlet'},
     {path: 'add-time-result/:stanowisko_id/:kategoria_id', component: AddTimeResultComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
     {path: 'add-fight-result/:stanowisko_id/:kategoria_id', component: AddFightResultComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
     {path: 'competitors', component: CompetitorsComponent, canActivate: [RefereeGuard], outlet: 'outlet'},

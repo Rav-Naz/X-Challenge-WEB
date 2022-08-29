@@ -135,6 +135,15 @@ export class HttpService {
     })
   }
 
+  get getAllGroups(): Promise<APIResponse> {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.get<APIResponse>(`${this.url}public/getAllGroups`).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
   get getAllRobots(): Promise<APIResponse> {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.get<APIResponse>(`${this.url}public/getAllRobots`).toPromise().then(
@@ -635,6 +644,20 @@ export class HttpService {
       this.http.put<APIResponse>(`${this.url}admin/changeUserType`, {
         uzytkownik_uuid: uzytkownik_uuid,
         uzytkownik_typ: uzytkownik_typ
+       },{ headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public createGroupsFromCategory(stanowiskaLista: Array<number>, kategoria_id: number, iloscDoFinalu: number, opcjaTworzenia: number | null) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`${this.url}admin/createGroupsFromCategory`, {
+        stanowiskaLista: stanowiskaLista,
+        kategoria_id: kategoria_id,
+        iloscDoFinalu: iloscDoFinalu,
+        opcjaTworzenia: opcjaTworzenia
        },{ headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }

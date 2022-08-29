@@ -180,7 +180,7 @@
                 { "id": 7, "patreonCategory": 5, "description": "Marszałek Województwa Podkarpackiego", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/" },
                 { "id": 8, "patreonCategory": 5, "description": "Podkarpacki Kurator Oświaty", "image": "../../assets/jpg/kuratorium.png", "linkToSite": "https://www.ko.rzeszow.pl/" },
                 { "id": 9, "patreonCategory": 3, "description": "Deloitte", "image": "../../assets/svg/deloitte.svg", "linkToSite": "https://www2.deloitte.com/pl/pl.html" },
-                { "id": 10, "patreonCategory": 2, "description": "Wago", "image": "../../assets/svg/wago.png", "linkToSite": "https://www.wago.com/pl/" },
+                { "id": 10, "patreonCategory": 1, "description": "Wago", "image": "../../assets/svg/wago.png", "linkToSite": "https://www.wago.com/pl/" },
                 { "id": 11, "patreonCategory": 5, "description": "Mayor of the City of Rzeszów", "image": "../../assets/png/rzeszow.png", "linkToSite": "https://bip.erzeszow.pl/" }
 
             ],
@@ -312,6 +312,7 @@
             "statistics": "STATISTICS",
             "register": "REGISTER",
             "counting": "VISITORS",
+            "fights": "WALK PLANNER",
             "hello": {
                 "1": "Welcome to the ",
                 "2": "Competitor Zone!",
@@ -384,7 +385,10 @@
             "acceptation-status": "Robot's acceptance status",
             "acceptation-true": "ACCEPTED",
             "acceptation-false": "REJECTED",
-            "acceptation-waiting": "WAITING"
+            "acceptation-waiting": "WAITING",
+            "is-arrived": "Has arrived:",
+            "is-arrived-true": "ARRIVED",
+            "is-arrived-false": "DIDN'T ARRIVED"
         },
         "settings": {
             "user": "User details",
@@ -1068,6 +1072,18 @@
                 "required": "This field is required"
             }
 
+        },
+        "option": {
+            "name": "Create option",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "count": {
+            "name": "Number to final",
+            "validators": {
+                "required": "This field is required"
+            }
         }
     },
     "errors": {

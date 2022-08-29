@@ -1,0 +1,28 @@
+<div class="router-child">
+    <ng-container *ngIf="getCategories != undefined">
+        <!-- <div class="scroll"> -->
+        <section>
+            <app-select [group]="formCategories" controlName="category" translatePrefix="controls" [options]="getCategories" [collapsed]="true"></app-select>
+        </section>
+        <section class="referee-categories" *ngIf="selectedCategory">
+            <label>{{'competitor-zone.referee-zone.groups' | translate}}</label>
+            <span *ngIf="groups && groups.length === 0">{{'competitor-zone.referee-zone.no-groups' | translate}}</span>
+            <button (click)="selectGroup(group.grupa_id!)" *ngFor="let group of filteredGroups" [ngClass]="{'referee-categories-active': group.grupa_id! === selectedGroup}">{{group.nazwa}}</button>
+            <button (click)="selectGroup(-1)"><i class="las la-plus"></i></button>
+        </section>
+        <section class="new-group" *ngIf="selectedGroup == -1">
+            <p>Ilość robotów: <b>{{getRobotsInCategory.length}}</b></p>
+            <app-select [group]="formNewGroup" controlName="option" translatePrefix="controls" [options]="getOptions" [collapsed]="true"></app-select>
+            <app-select [group]="formNewGroup" controlName="count" translatePrefix="controls" [options]="getNumberToFinal" [collapsed]="true"></app-select>
+            <div class="row">
+                <app-select [group]="formNewGroup" controlName="position" translatePrefix="controls" [options]="getPositionsForCategory" [collapsed]="true"></app-select>
+                <button class="submit-button" [disabled]="!isPositionFormValid || !isLessThanFinalValueButton" (click)="addPosition()"><i class="las la-plus"></i></button>
+            </div>
+            <label *ngFor="let selPos of getSelectedPositions"><i class="las la-trash-alt" (click)="removePosition(selPos)"></i> {{selPos}}</label>
+            <a>Ilość wybranych stanowisk jest jednocześnie ilością grup (2,4,8 lub 16) i nie może być mniejsza niż "Ilość do finału"</a>
+            <p>Wiadomość zwrotna:</p>
+            <p *ngIf="resp">{{resp}}</p>
+            <button class="submit-button" [disabled]="!isNewGroupFormValid || !isLessThanFinalValue" (click)="createGroup()">UTWÓRZ GRUPY DLA KATEGORII</button>
+        </section>
+    </ng-container>
+</div>

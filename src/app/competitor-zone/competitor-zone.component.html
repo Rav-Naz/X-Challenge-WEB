@@ -21,6 +21,10 @@
                         <i class="las la-robot"></i>
                         <p>{{'competitor-zone.bar.robots' | translate}}</p>
                     </section>
+                    <section class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['manage-fights']}}]" *ngIf="userService.isAdmin" routerLinkActive="competitor-zone-bar-segment-active">
+                        <i class="las la-sitemap"></i>
+                        <p>{{'competitor-zone.bar.fights' | translate}}</p>
+                    </section>
                     <section class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['counting-visitors']}}]" *ngIf="userService.isWolo" routerLinkActive="competitor-zone-bar-segment-active">
                         <i class="las la-clone"></i>
                         <p>{{'competitor-zone.bar.counting' | translate}}</p>
@@ -68,7 +72,7 @@
                             </label>
                     </div>
                 </div>
-                <p *ngIf="timeIsUp">
+                <p *ngIf="timeIsUp && userService.isUser">
                     {{'competitor-zone.bar.time-up' | translate}}
                 </p>
             </div>

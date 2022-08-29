@@ -1,0 +1,62 @@
+@import '../../../scss/colors';
+@import '../referee-zone/referee-zone.component.scss';
+section {
+    width: 100%;
+    height: max-content;
+    border-bottom: 0.2rem dashed rgba($color-grey-0, $alpha: 0.5) !important;
+}
+
+.referee-categories {
+    button {
+        &:last-child {
+            color: $color-primary;
+            border-color: $color-primary;
+        }
+    }
+}
+
+.new-group {
+    display: flex;
+    flex-direction: column;
+    p {
+        margin: 0;
+        text-align: start;
+        padding: 1rem 0;
+    }
+    b {
+        color: $color-primary;
+    }
+    a {
+        width: 100%;
+        text-align: center;
+        font-size: 1.5rem;
+        color: rgba($color-grey-0, 0.7);
+        margin: 1rem 0;
+    }
+    label {
+        margin-left: 2rem;
+        font-size: 2rem;
+        i {
+            color: red;
+            cursor: pointer;
+        }
+    }
+    .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-right: 2rem;
+        app-select {
+            width: 100%;
+        }
+        button {
+            transform: translateY(-.5rem);
+            height: 6rem;
+            width: 6rem;
+            margin: 0;
+            border-radius: 2rem;
+            font-size: 2.2rem;
+        }
+    }
+}
