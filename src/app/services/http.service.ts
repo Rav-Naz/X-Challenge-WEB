@@ -13,6 +13,7 @@ export class HttpService {
 
   private url: string;
   private headers: HttpHeaders;
+  private token: string | null = null;
 
   constructor(private http: HttpClient, private translate: TranslateService) {
     this.url = environment.apiUrl;
@@ -24,9 +25,25 @@ export class HttpService {
 
   // ------------- PUBLIC
 
+  get getTest(): Observable<any> {
+    return this.http.get<APIResponse>(`http://bramki.xchallenge.pl:5000/companies`, { headers: this.headers });
+  }
+
   get getHomePageInfo(): Observable<APIResponse> {
     return this.http.get<APIResponse>(`${this.url}site/info`, { headers: this.headers });
   }
+
+  get getRegisterAddons(): Observable<APIResponse> {
+    return this.http.get<APIResponse>(`${this.url}site/registerAddons`, { headers: this.headers });
+  }
+
+  getSiteInfo(): Promise<APIResponse> {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.get<APIResponse>(`${this.url}site/info`).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })  }
 
   checkIfRobotCanInThisPosition(robot_uuid: string, kategoria_id: number, stanowisko_id: number): Promise<APIResponse> {
     return new Promise<APIResponse>((resolve, rejects) => {
@@ -136,13 +153,19 @@ export class HttpService {
     })
   }
 
-  public register(imie: string, nazwisko: string, email: string, hasloHashed: string) {
+  public register(imie: string, nazwisko: string, email: string, kodPocztowy: string | null, numerTelefonu: string | null, rozmiarKoszulki: number, preferowaneJedzenie: number, czyOpiekun: number, hasloHashed: string) {
     return new Promise<any>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}public/registerUser`, {
         imie: imie,
         nazwisko: nazwisko,
         email: email,
         haslo: hasloHashed,
+        numer_telefonu: numerTelefonu,
+        kod_pocztowy: kodPocztowy,
+        preferowane_jedzenie: preferowaneJedzenie,
+        rozmiar_koszulki: rozmiarKoszulki,
+        czy_opiekun: czyOpiekun,
+        referencerToken: this.token ?? null,
         lang: this.translate.currentLang
       }).toPromise().then(
         (value) => { resolve(value) },
@@ -182,6 +205,15 @@ export class HttpService {
         kod: kod,
         haslo: hasloHashed,
       }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public getCurrentVisitors() {
+    return new Promise<any>((resolve, rejects) => {
+      this.http.get<APIResponse>(`${this.url}public/currentVisitors`, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -289,6 +321,52 @@ export class HttpService {
     })
   }
 
+  public addRobotDocumentation(robot_uuid: string, file: File) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      const formData = new FormData();
+      formData.append("documentation", file);
+      formData.append("robot_uuid", robot_uuid);
+      let headers = new HttpHeaders({
+        'token': this.token!
+      })
+      this.http.post<APIResponse>(`${this.url}user/uploadDocumentation`, formData, {headers: headers}).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public downloadDocumentation(robot_uuid: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      const headers = new HttpHeaders().set('token',this.token!);
+      this.http.get(`${this.url}user/downloadDocumentation/${robot_uuid}`, {headers, responseType: 'blob' as 'json'}).subscribe(
+        (response: any) =>{
+          let dataType = response.type;
+          let binaryData = [];
+          binaryData.push(response);
+          let downloadLink = document.createElement('a');
+          downloadLink.href = window.URL.createObjectURL(new Blob(binaryData, {type: dataType}));
+          downloadLink.target = "_blank";
+          downloadLink.setAttribute('download', "doc-"+robot_uuid);
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+      }
+      )
+    })
+  }
+
+  public addRobotMovie(robot_uuid: string, link_do_filmiku: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`${this.url}user/addFilm`, {
+        link_do_filmiku: link_do_filmiku,
+        robot_uuid: robot_uuid
+      }, { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
   public addRobotCategory(kategoria_id: number, robot_uuid: string) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}user/addRobotCategory`, {
@@ -350,6 +428,26 @@ export class HttpService {
     })
   }
 
+  // ------------- VOLOUNTEER
+
+  public addCurrentVisitors() {
+    return new Promise<any>((resolve, rejects) => {
+      this.http.get<APIResponse>(`${this.url}volunteer/addOnePerson`, { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public removeCurrentVisitors() {
+    return new Promise<any>((resolve, rejects) => {
+      this.http.get<APIResponse>(`${this.url}volunteer/removeOnePerson`, { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
   // ------------- REFEREE
 
   public getRefereePositions(uzytkownik_uuid: string) {
@@ -400,6 +498,17 @@ export class HttpService {
     })
   }
 
+  public confirmGivenStarterpack(uzytkownik_uuid: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.put<APIResponse>(`${this.url}referee/confirmStarterpackGiven`, {
+        uzytkownik_uuid: uzytkownik_uuid
+       },{ headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
   public checkIfRobotHasCategory(robot_uuid: string, kategoria_id: number) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.get<APIResponse>(`${this.url}referee/checkIfRobotHasCategory/${robot_uuid}/${kategoria_id}`, { headers: this.headers }).toPromise().then(
@@ -439,25 +548,11 @@ export class HttpService {
     })
   }
 
-
-  // ------------- ADMIN
-
-  public confirmArrival(robot_uuid: string) {
+  public confirmArrival(robot_uuid: string, value: boolean) {
     return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.put<APIResponse>(`${this.url}admin/confirmArrival`, {
-        robot_uuid: robot_uuid
-       },{ headers: this.headers }).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
-    })
-  }
-  
-  public addPostalCode(uzytkownik_uuid: string, kod_pocztowy: string) {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.post<APIResponse>(`${this.url}admin/addPostalCode`, {
-        uzytkownik_uuid: uzytkownik_uuid,
-        kod_pocztowy: kod_pocztowy 
+      this.http.put<APIResponse>(`${this.url}referee/confirmArrival`, {
+        robot_uuid: robot_uuid,
+        value: value
        },{ headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
@@ -467,9 +562,79 @@ export class HttpService {
 
   public sendPrivateMessage(uzytkownik_uuid: string, tresc : string) {
     return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.post<APIResponse>(`${this.url}admin/sendPrivateMessage`, {
+      this.http.post<APIResponse>(`${this.url}referee/sendPrivateMessage`, {
         uzytkownik_uuid: uzytkownik_uuid,
-        tresc: tresc  
+        tresc: tresc
+       },{ headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public readRFIDTag() {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.get<APIResponse>(`http://bramki.xchallenge.pl:5000/referee/readRFIDTag`,
+      { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public readLapTime() {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.get<APIResponse>(`http://bramki.xchallenge.pl:5000/referee/readLapTime`,
+      { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public writeRFIDTag(uzytkownik_uuid: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`http://bramki.xchallenge.pl:5000/referee/writeRFIDTag`,{
+        uzytkownik_uuid: uzytkownik_uuid
+      },
+      { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  // ------------- ADMIN
+
+
+  public addPostalCode(kod_pocztowy: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`${this.url}user/addPostalCode`, {
+        kod_pocztowy: kod_pocztowy
+       },{ headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public addRobotRejection(robot_uuid: string, powod_odrzucenia: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.put<APIResponse>(`${this.url}admin/addRobotRejection`, {
+        robot_uuid: robot_uuid,
+        powod_odrzucenia: powod_odrzucenia
+       },{ headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public changeUserType(uzytkownik_uuid: string, uzytkownik_typ : number) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.put<APIResponse>(`${this.url}admin/changeUserType`, {
+        uzytkownik_uuid: uzytkownik_uuid,
+        uzytkownik_typ: uzytkownik_typ
        },{ headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
@@ -481,6 +646,7 @@ export class HttpService {
 
   public setNewToken(jwt: string | null) {
     if (jwt !== null) {
+      this.token = jwt;
       this.headers = new HttpHeaders({
         'Content-Type': 'application/json',
         'Accept': 'application/json',

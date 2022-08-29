@@ -70,6 +70,11 @@
             "title": "WAŻNE INFORMACJE",
             "info": "W tym miejscu będziemy przekazywać Wam najbardziej istotne informacje dla zawodników oraz publiczności",
             "register": "Rejestracja nie jest aktualnie możliwa. Data jej otwarcia zostanie wkrótce podana.",
+            "register-limit": {
+                "title": "REJESTRACJA DOBIEGA KOŃCA",
+                "body1": "Zbliża się przewidziany przez organizatorów limit osób zarejestrowanych na zawody. Aktualnie zapełnione jest {{registerPercentageCompletion}}% miejsc.",
+                "body2": "Do końca procesu rejestracji robotów pozostało {{days}} dni."
+            },
             "points": {
                 "register-start": {
                     "title": "Początek rejestracji",
@@ -182,7 +187,12 @@
                 { "id": 3, "patreonCategory": 0, "description": "Województwo Podkarpackie", "image": "../../assets/jpg/podkarpackie.png", "linkToSite": "https://podkarpackie.eu/" },
                 { "id": 4, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/jpg/kronospan.png", "linkToSite": "https://kronosfera.pl/" },
                 { "id": 5, "patreonCategory": 1, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/jpg/ale-primary-logo-white.png", "linkToSite": "https://www.al-enterprise.com/" },
-                { "id": 6, "patreonCategory": 0, "description": "Rzeszów Stolica Innowacji", "image": "../../assets/jpg/rzeszow_stolica.png", "linkToSite": "https://www.erzeszow.pl/" }
+                { "id": 6, "patreonCategory": 0, "description": "Rzeszów Stolica Innowacji", "image": "../../assets/jpg/rzeszow_stolica.png", "linkToSite": "https://www.erzeszow.pl/" },
+                { "id": 7, "patreonCategory": 5, "description": "Marszałek Województwa Podkarpackiego", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/" },
+                { "id": 8, "patreonCategory": 5, "description": "Podkarpacki Kurator Oświaty", "image": "../../assets/jpg/kuratorium.png", "linkToSite": "https://www.ko.rzeszow.pl/" },
+                { "id": 9, "patreonCategory": 3, "description": "Deloitte", "image": "../../assets/svg/deloitte.svg", "linkToSite": "https://www2.deloitte.com/pl/pl.html" },
+                { "id": 10, "patreonCategory": 2, "description": "Wago", "image": "../../assets/svg/wago.png", "linkToSite": "https://www.wago.com/pl/" },
+                { "id": 11, "patreonCategory": 5, "description": "Prezydent Miasta Rzeszowa", "image": "../../assets/jpg/rzeszow.png", "linkToSite": "https://bip.erzeszow.pl/" }
             ],
             "tiers": [
                 "Partner Główny",
@@ -190,7 +200,7 @@
                 "Partner Srebrny",
                 "Partner Brązowy",
                 "Partner strategiczny",
-                "Patronat specjalny",
+                "Patronat honorowy",
                 "Patronat medialny"
             ]
         },
@@ -283,15 +293,24 @@
                 "success": "Pomyślnie ustawione nowe hasło do konta. Możesz się teraz zalogować!"
             }
         },
+        "visitors-counter": {
+            "actual": "AKTUALNIE ODWIEDZAJĄCYCH:"
+        },
         "register": {
             "title": "Rejestracja",
             "accept": "Akceptuję regulamin i politykę prywatności",
+            "carer": "Jestem opiekunem zawodnika",
             "sign-in": "Zarejestruj się",
             "have": "Posiadasz już konto?",
             "login": "Zaloguj się!",
             "errors": {
                 "duplicate": "Uzytkownik o takim e-mailu już istnieje!",
                 "success": "Pomyślnie zarejestrowano. Potwierdź swoje konto poprzez wiadomość wysłaną na podany adres e-mail."
+            },
+            "food": {
+                "Mięsne": "Mięsne",
+                "Wegańskie": "Wegańskie",
+                "Wegetariańskie": "Wegetariańskie"
             }
         },
         "bar": {
@@ -301,6 +320,9 @@
             "competitors": "ZAWODNICY",
             "robots": "ROBOTY",
             "statistics": "STATYSTYKI",
+            "register": "REJESTRACJA",
+            "counting": "ODWIEDZAJĄCY",
+
             "hello": {
                 "1": "Witaj w ",
                 "2": "Strefie Zawodnika!",
@@ -359,21 +381,43 @@
             "delete-robot": "Usunięto robota o identyfikatorze:",
             "want-to-delete-category": "Usunięcie kategorii robota uniemożliwi jego start w tej kategorii",
             "want-to-delete-constructor": "Usunięcie konstruktora uniemożliwi użytkownikowi edycję robota oraz dostęp do ewentualnych nagród",
-            "want-to-delete-robot": "Usunięcie robota wyklucza jego udział w zawodach. Uwaga! Tej decyzji nie można cofnąć!"
+            "want-to-delete-robot": "Usunięcie robota wyklucza jego udział w zawodach. Uwaga! Tej decyzji nie można cofnąć!",
+            "update-documentation": "Pomyślnie przesłano dokumentację",
+            "documentation-uploaded": "Dokumentacja została już przesłana",
+            "documentation-not-uploaded": "Dokumentacja nie została przesłana",
+            "documentation-find-info": "* Wzór można znaleźć w regulaminie kategorii",
+            "documentation-format-info": "* Możliwe formaty plików to: PDF, DOC oraz DOCX a maksymalny rozmiar pliku to 5 MB",
+            "update-film": "Pomyślnie przesłano link do filmu",
+            "film-uploaded": "Link do filmu został już przesłany",
+            "film-not-uploaded": "Link do filmu nie został jeszcze przesłany",
+            "film-format-info": "* Link powinien prowadzić do filmu na platformie YouTube",
+            "update-reason": "Pomyślnie zaktualizowano powód odrzucenia",
+            "acceptation-status": "Status akceptacji robota",
+            "acceptation-true": "ZAAKCEPTOWANY",
+            "acceptation-false": "ODRZUCONY",
+            "acceptation-waiting": "OCZEKIWANIE"
         },
         "settings": {
             "user": "Dane użytkownika",
             "user-info": "* Prosimy o podanie prawidłowych danych. Na ich podstawie będą przyznawane ewentualne nagrody i dyplomy.",
             "phone": "Dane kontaktowe",
+            "postal": "Dane statystyczne",
+            "preferences": "Preferencje",
             "phone-info": "* Prosimy o podanie prawidłowych danych. Na ich podstawie będą rozsyłane istotne komunikaty.",
             "password": "Zmień hasło",
             "rest-countries": "Reszta państw",
+            "test": "Testowe",
+            "get-rfid": "Odczytaj RFID",
+            "get-lap-time": "Odczytaj czas przejazdu",
+            "set-rfid": "Zapisz dane na karcie RFID",
+            "change": "* Preferencji nie da się samodzielnie zmienić po rejestracji. Aby dokonać zmian, prosimy skontaktować się z administratorem.",
             "errors": {
-                "succesfuly-added-phone": "Pomyślnie dodano numer telefonu. Wpisz kod z SMS wysłanego na podany numer",
-                "succesfuly-confirmed": "Pomyślnie potwierdzono numer telefonu",
+                "succesfuly-added-phone": "Pomyślnie zaktualizowano numer telefonu",
+                "succesfuly-confirmed": "Pomyślnie zaktualizowano dane",
                 "success": "Pomyślnie zmieniono hasło do konta",
                 "success-name": "Pomyślnie edytowano dane użytkownika",
-                "copied": "Skopiowano identyfikator do schowka"
+                "copied": "Skopiowano identyfikator do schowka",
+                "copied-lap-time": "Skopiowano czas przejazdu do schowka"
             }
         },
         "add-fight-result": {
@@ -436,7 +480,9 @@
             "positions": "Stanowiska: ",
             "postal": "Kod pocztowy: ",
             "send": "Wyślij wiadomość",
-            "robots": "Roboty"
+            "robots": "Roboty",
+            "carer": "Opiekun",
+            "starterpack-given": "Wydano pakiet startowy"
         },
         "competitors": {
             "title": "ZAWODNICY",
@@ -916,7 +962,7 @@
             }
         },
         "phone": {
-            "name": "Numer telefonu",
+            "name": "Numer telefonu (opcjonalnie)",
             "validators": {
                 "required": "To pole jest wymagane",
                 "minlength": "Numer telefonu musi być dłuższy niż 7 znaki",
@@ -963,7 +1009,7 @@
             "validators": {}
         },
         "postal_code": {
-            "name": "Kod pocztowy",
+            "name": "Kod pocztowy (opcjonalnie)",
             "validators": {
                 "required": "To pole jest wymagane",
                 "maxlength": "Kod pocztowy musi być dłuższy niż 2 znaki",
@@ -984,6 +1030,49 @@
                 "required": "To pole jest wymagane",
                 "maxlength": "Kod ma długość 6 znaków",
                 "minlength": "Kod ma długość 6 znaków"
+            }
+        },
+        "preferedFood": {
+            "name": "Preferowane jedzenie",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "tshirtSize": {
+            "name": "Rozmiar koszulki",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "documentation": {
+            "name": "Plik dokumentacji",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "movie": {
+            "name": "Link do filmiku",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "reason": {
+            "name": "Powód odrzucenia",
+            "validators": {
+                "required": "To pole jest wymagane",
+                "maxlength": "Maksymalna długość wpisu to 1000 znaków"
+            }
+        },
+        "user_type": {
+            "name": "Typ użytkownika",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "payload": {
+            "name": "Dane do zapisu",
+            "validators": {
+                "required": "To pole jest wymagane"
             }
         }
     },
@@ -1044,7 +1133,8 @@
             "too-many-lf-categories": "Nie można dodać więcej niż 2 kategorie w konkurencji Line Follower!",
             "too-many-sumo-categories": "Nie można dodać więcej niż 2 kategorie w konkurencji Sumo!",
             "time-to-modify-ended": "Czas na dodawanie i modyfikację robotów minął",
-            "time-to-modify-ended-smash": "Czas na dodawanie i modyfikację robotów w kategori SmashBots minął"
+            "time-to-modify-ended-smash": "Czas na dodawanie i modyfikację robotów w kategori SmashBots minął",
+            "register-ends": "Rejestracja na zawody zakończyła się"
         },
         "statusCodes": {
             "400": "Błędnie określone dane - błąd użytkownika",
@@ -1064,7 +1154,7 @@
             "414": "Adres URI zapytania zbyt długi",
             "415": "Nieznany sposób żądania",
             "416": "Zakres bajtowy podany w zapytaniu nie do obsłużenia",
-            "417": "Oczekiwana wartość nie do zwrócenia",
+            "417": "Nie można wykonać żądania",
             "418": "Jestem czajnikiem",
             "421": "Zapytanie zostało skierowane do serwera, który nie powinien go otrzymać lub który nie jest w stanie na nie odpowiedzieć",
             "422": "Zapytanie było poprawnie sformułowane, ale było niemożliwe do kontynuowania",

@@ -8,6 +8,7 @@ import { RobotsService } from './../../../services/robots.service';
 import { AuthService } from './../../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Subscription, combineLatest } from 'rxjs';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-my-robots',
@@ -24,7 +25,7 @@ export class MyRobotsComponent implements OnInit {
   public categories: Array<CategoryMain> | null = null;
 
   constructor(public authService: AuthService, private robotsService: RobotsService, private categoriesService: CategoriesService,
-     public translate: TranslateService, public router: Router) { }
+     public translate: TranslateService, public router: Router, public userService: UserService) { }
 
   ngOnInit(): void {
     /// START DEBUG

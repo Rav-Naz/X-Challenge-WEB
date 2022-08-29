@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://api.robomotion.com.pl/'
+  apiUrl: 'https://api.xchallenge.pl/'
 };
 
 /*

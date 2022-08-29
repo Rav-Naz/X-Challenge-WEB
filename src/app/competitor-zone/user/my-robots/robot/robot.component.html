@@ -4,9 +4,10 @@
             <div class="name">
                 <label *ngIf="(!authService.canModify && !userSerceice.isAdmin) || userSerceice.userType === 1">{{'controls.robot_name.name' | translate}}: <span>{{oldName}}</span></label>
                 <app-input [group]="formName" controlName="robot_name" *ngIf="(authService.canModify || userSerceice.isAdmin) && userSerceice.userType !== 1"></app-input>
-                <button *ngIf="(authService.canModify || userSerceice.isAdmin) && userSerceice.userType !== 1" [disabled]="!isChanged || !isFormGroupNameValid || isLoadingName || !authService.canModify || (userSerceice.isReferee && !userSerceice.isAdmin)" class="submit-button"
-                    (click)="onUpdateName()"><i class="las la-save"></i></button>
-                <button *ngIf="(authService.canModify || userSerceice.isAdmin) && userSerceice.userType !== 1" [disabled]="isLoadingName || !authService.canModify || (userSerceice.isReferee && !userSerceice.isAdmin)" class="submit-button" (click)="onDeleteRobot()"><i class="las la-trash-alt"></i></button>
+                <button *ngIf="(authService.canModify || userSerceice.isAdmin) && userSerceice.userType !== 1 && userSerceice.userType !== 2" [disabled]="!isChanged || !isFormGroupNameValid || isLoadingName || !authService.canModify || (userSerceice.isReferee && !userSerceice.isAdmin)"
+                    class="submit-button" (click)="onUpdateName()"><i class="las la-save"></i></button>
+                <button *ngIf="(authService.canModify || userSerceice.isAdmin) && userSerceice.userType !== 1 && userSerceice.userType !== 2" [disabled]="isLoadingName || !authService.canModify || (userSerceice.isReferee && !userSerceice.isAdmin)" class="submit-button"
+                    (click)="onDeleteRobot()"><i class="las la-trash-alt"></i></button>
             </div>
             <div class="name-uuid">
                 <span>{{'competitor-zone.robot.uuid' | translate}}</span>
@@ -14,11 +15,11 @@
             </div>
         </div>
         <div class="infos" *ngIf="isEvent">
-            <section class="referee-categories inline">
+            <section class="referee-categories inline referee-categories-header">
                 <label>{{'competitor-zone.competitors.categories' | translate}}</label>
                 <button (click)="selectCategory(category)" *ngFor="let category of robotCategories" [ngClass]="{'referee-categories-active': category === selectedCategory}">{{getCategoryName(category)}}</button>
             </section>
-            <section class="referee-results" *ngIf="!loadingResults">
+            <section class="referee-results" *ngIf="!loadingResults && selectedCategory">
                 <div class="referee-results-fights" *ngIf="getCategoryType === 1">
                     <span *ngIf="!getCategoryFigths?.length ">{{'competitor-zone.referee-zone.no-fights' | translate}}</span>
                     <div class="scroll">
@@ -104,7 +105,7 @@
         <div class="grid">
             <div class="grid-categories">
                 <span>{{'competitor-zone.robot.categories' | translate}}</span>
-                <div class="grid-categories-new" *ngIf="((canAddCategory && authService.canModify) || userSerceice.isAdmin) && userSerceice.userType !== 1">
+                <div class="grid-categories-new" *ngIf="((canAddCategory && authService.canModify && userSerceice.isUser) || userSerceice.isAdmin) && userSerceice.userType !== 1">
                     <app-select *ngIf="categoriesOptions !== undefined && canAddCategory && !isLoadingCategories" [group]="formCategory" [collapsed]="true" controlName="category" translatePrefix="competitor-zone.robot" [options]="categoriesOptions"></app-select>
                     <app-spinner *ngIf="categoriesOptions === undefined || isLoadingCategories"></app-spinner>
                     <button [disabled]="!isFormGroupCategoryValid || isLoadingCategories || !authService.canModify" class="submit-button grid-button" (click)="onAddCategory()"><i class="las la-plus-circle"></i></button>
@@ -116,8 +117,7 @@
                             <i class="las la-chevron-right"></i>
                             <label>{{getCategoryName(cat)}}</label>
                         </div>
-                        <button [disabled]="isLoadingCategories || !canDeleteCategory || !authService.canModify || (cat === 1 && !authService.canModifySmash)" *ngIf="(authService.canModify || userSerceice.isAdmin) && userSerceice.userType !== 1" class="submit-button grid-button"
-                            (click)="onRemoveCategory(cat)"><i class="las la-trash-alt"></i></button>
+                        <button [disabled]="isLoadingCategories || !canDeleteCategory || !authService.canModify" *ngIf="((authService.canModify && userSerceice.isUser) || userSerceice.isAdmin) && userSerceice.userType !== 1" class="submit-button grid-button" (click)="onRemoveCategory(cat)"><i class="las la-trash-alt"></i></button>
 
                     </div>
                 </div>
@@ -125,7 +125,7 @@
 
             <div class="grid-constructors">
                 <span>{{'competitor-zone.robot.constructors' | translate}}</span>
-                <div class="grid-categories-new" *ngIf="(authService.canModify || userSerceice.isAdmin) && userSerceice.userType !== 1">
+                <div class="grid-categories-new" *ngIf="((authService.canModify && userSerceice.isUser) || userSerceice.isAdmin) && userSerceice.userType !== 1">
                     <div class="grid-constructors-div">
                         <app-input *ngIf="!isLoadingConstructors" [group]="formConstructor" controlName="constructor_uuid" [collapsed]="true"></app-input>
                         <a *ngIf="nameFormEmpty">{{'competitor-zone.robot.constructors-info' | translate}}</a>
@@ -143,10 +143,73 @@
                                 <details *ngIf="userSerceice.isReferee && constructor.numer_telefonu">TEL: {{constructor.numer_telefonu}}</details>
                             </div>
                         </div>
-                        <button *ngIf="(authService.canModify || userSerceice.isAdmin) && userSerceice.userType !== 1" [disabled]="isLoadingConstructors || !canDeleteConstructor" class="submit-button grid-button" (click)="onDeleteConstructor(constructor.konstruktor_id)"><i class="las la-trash-alt"></i></button>
+                        <button *ngIf="((authService.canModify && userSerceice.isUser) || userSerceice.isAdmin) && userSerceice.userType !== 1" [disabled]="isLoadingConstructors || !canDeleteConstructor" class="submit-button grid-button" (click)="onDeleteConstructor(constructor.konstruktor_id)"><i class="las la-trash-alt"></i></button>
                     </div>
                 </div>
             </div>
         </div>
+        <section class="acceptation" *ngIf="authService.isAfterRegistration">
+            <p>{{"competitor-zone.robot.acceptation-status" | translate}}:
+                <span class="acceptation-true" *ngIf="!authService.isWaitingForRobotAcceptation && (!robot?.powod_odrzucenia ?? false)">{{"competitor-zone.robot.acceptation-true" | translate}}</span>
+                <span class="acceptation-false" style="color: red;" *ngIf="robot?.powod_odrzucenia ?? false">{{"competitor-zone.robot.acceptation-false" | translate}}</span>
+                <span class="acceptation-waiting" *ngIf="authService.isWaitingForRobotAcceptation && (!robot?.powod_odrzucenia ?? false)">{{"competitor-zone.robot.acceptation-waiting" | translate}}</span>
+            </p>
+            <p *ngIf="robot?.powod_odrzucenia">{{"controls.reason.name" | translate}}:
+                <span>{{robot?.powod_odrzucenia}}</span>
+            </p>
+            <div class="row acceptation-row" *ngIf="userSerceice.isAdmin">
+                <app-input [group]="formAcceptation" controlName="reason"></app-input>
+                <button class="submit-button" [disabled]="!isFormGroupAcceptationValid" (click)="onSaveReason()"><i class="las la-save"></i></button>
+            </div>
+        </section>
+        <section class="acceptation arrival" *ngIf="userSerceice.isWolo && robot && isEvent">
+            <div class="row acceptation-row">
+                <p>Czy dotarł:
+                    <span class="arrival-true" *ngIf="robot?.czy_dotarl == 1">DOTARŁ</span>
+                    <span class="arrival-false" style="color: red;" *ngIf="robot?.czy_dotarl == 0">NIE DOTARŁ</span>
+                </p>
+                <button class="submit-button" [disabled]="robot?.czy_dotarl == 1" (click)="confirmArrival(true, $event)"><i class="las la-plane-arrival"></i></button>
+                <button class="submit-button arrival-button" [disabled]="robot?.czy_dotarl == 0" (click)="confirmArrival(false, $event)"><i class="las la-plane-departure"></i></button>
+            </div>
+        </section>
+        <section class="documentation">
+            <div>
+                <div class="row" *ngIf="!isLoadingDocumentation && !isEditingDocumentation">
+                    <label *ngIf="robotDocumentation">{{'competitor-zone.robot.documentation-uploaded' | translate}}</label>
+                    <div class="column" *ngIf="!robotDocumentation">
+                        <label>{{'competitor-zone.robot.documentation-not-uploaded' | translate}}</label>
+                        <a *ngIf="authService.canSendDocumetation">{{'competitor-zone.robot.documentation-find-info' | translate}}</a>
+                    </div>
+                    <button *ngIf="((authService.canSendDocumetation && userSerceice.isUser) || userSerceice.isAdmin)" [disabled]="!authService.canSendDocumetation && !userSerceice.isAdmin" class="submit-button" (click)="isEditingDocumentation=true"><i class="las la-edit"></i></button>
+                    <button *ngIf="robotDocumentation" [disabled]="!robotDocumentation" class="submit-button" (click)="onDownloadDocumentation()"><i class="las la-file-download"></i></button>
+                </div>
+                <div class="row" *ngIf="!isLoadingDocumentation && isEditingDocumentation">
+                    <div class="column">
+                        <app-input-file accept=".pdf,.docx,.doc" [group]="formDocumentation" controlName="documentation" (file)="setDocumentationFile($event)"></app-input-file>
+                        <a>{{'competitor-zone.robot.documentation-format-info' | translate}}</a>
+                    </div>
+                    <button *ngIf="((authService.canSendDocumetation && userSerceice.isUser) || userSerceice.isAdmin) && userSerceice.userType !== 1" [disabled]="!isFormGroupDocumentationValid || isLoadingDocumentation" class="submit-button" (click)="onSendDocumentation()"><i class="las la-save"></i></button>
+                </div>
+            </div>
+            <app-spinner *ngIf="isLoadingDocumentation"></app-spinner>
+        </section>
+        <section class="documentation" *ngIf="isSmashBot">
+            <div>
+                <div class="row" *ngIf="!loadingMovie && !isEditingMovie">
+                    <label *ngIf="robotFilm">{{'competitor-zone.robot.film-uploaded' | translate}}</label>
+                    <label *ngIf="!robotFilm">{{'competitor-zone.robot.film-not-uploaded' | translate}}</label>
+                    <button *ngIf="((authService.canSendDocumetation && userSerceice.isUser) || userSerceice.isAdmin)" [disabled]="!authService.canSendDocumetation && !userSerceice.isAdmin" class="submit-button" (click)="isEditingMovie=true"><i class="las la-edit"></i></button>
+                    <button *ngIf="robotFilm" [disabled]="!robotFilm" class="submit-button" (click)="onOpenMovie()"><i class="las la-external-link-alt"></i></button>
+                </div>
+                <div class="row" *ngIf="!loadingMovie && isEditingMovie">
+                    <div class="column">
+                        <app-input [group]="formMovie" controlName="movie"></app-input>
+                        <a>{{'competitor-zone.robot.film-format-info' | translate}}</a>
+                    </div>
+                    <button *ngIf="((authService.canSendDocumetation && userSerceice.isUser) || userSerceice.isAdmin) && userSerceice.userType !== 1" [disabled]="!isFormGroupMovieValid || loadingMovie" class="submit-button" (click)="onAddRobotMovie()"><i class="las la-save"></i></button>
+                </div>
+            </div>
+            <app-spinner *ngIf="loadingMovie"></app-spinner>
+        </section>
     </div>
 </div>

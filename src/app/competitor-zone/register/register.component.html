@@ -1,5 +1,6 @@
 <div class="container">
     <app-header [pageName]="'menu.competitor-zone'"></app-header>
+    <div style="height: 9rem;"></div>
     <div class="register">
         <h3 class="section-header">{{'competitor-zone.register.title' | translate}}</h3>
         <div class="register-form" (keydown)="enterSubmit($event)">
@@ -9,6 +10,24 @@
             </div>
             <div style="width: 100%;">
                 <app-input [group]="form" controlName="email"></app-input>
+            </div>
+
+            <div style="width: 100%;">
+                <app-phone [group]="formPhone" controlName="phone" phoneCodeControlName="country_code"></app-phone>
+
+            </div>
+            <div style="width: 100%;">
+                <app-input [group]="form" controlName="postal_code"></app-input>
+            </div>
+            <div class="register-form-checkbox" style="margin-bottom: 2rem;">
+                <label class="checkbox-container">{{'competitor-zone.register.carer' | translate}}
+                    <input type="checkbox" (click)="onChangeCarer()" [checked]="isCarer">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="register-form-row">
+                <app-select [group]="form" controlName="preferedFood" translatePrefix="controls" [options]="foodOptions"></app-select>
+                <app-select [group]="form" controlName="tshirtSize" translatePrefix="controls" [options]="tshirtSizes"></app-select>
             </div>
             <div class="register-form-row">
                 <app-input [group]="form" controlName="password"></app-input>

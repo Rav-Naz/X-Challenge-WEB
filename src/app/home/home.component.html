@@ -12,6 +12,7 @@
     </section>
     <!-- DESCRIPTION -->
     <section class="event-info" id="home">
+        <!-- <button (click)="testLocalhost()">ASD</button> -->
         <h3 style="visibility: collapse;">Międzynarodowe zawody robotów XChallenge</h3>
         <h3 style="visibility: collapse;">już 25.11.2022 na Hali Podpromie</h3>
         <h4 style="visibility: collapse;">Uczestnicy będą mogli zmierzyć się w aż 8 kategoriach. Organizatorzy przygotowali areny do zmagań na torach dla LineFollower’ów czy walk Sumo. Sam tor w kategorii LF przetestuje umiejętności programistyczne i konstrukcyjne wielu robotyków. Oprócz
@@ -262,6 +263,11 @@
                 </div>
             </div>
         </div>
+        <div class="news-register" *ngIf="((isLessThanWeek) || (registerPercentageCompletion && registerPercentageCompletion > 80)) && ((timeLeft && timeLeft>0) && (registerPercentageCompletion && registerPercentageCompletion < 100))">
+            <p>{{'home.news.register-limit.title' | translate}}</p>
+            <article *ngIf="registerPercentageCompletion && registerPercentageCompletion > 80">{{'home.news.register-limit.body1' | translate : {registerPercentageCompletion: registerPercentageCompletion} }}</article>
+            <article *ngIf="isLessThanWeek">{{'home.news.register-limit.body2' | translate : {days: getDaysToEndRegistration} }}</article>
+        </div>
     </section>
     <!-- CATEGORIES -->
     <section class="categories" id="categories">
@@ -410,7 +416,7 @@
         <div class="footer-contact">
             <a class="footer-contact-data-detail" href="tel:178886003">
                 <img src="../../assets/svg/phone_icon.svg">
-                <p>17 888 60 03</p>
+                <p>17 865 3004</p>
             </a>
             <a class="footer-contact-data-detail" href="mailto:robo@kneiti.prz.edu.pl?subject=&body=" target="_blank">
                 <img src="../../assets/svg/email_icon.svg">

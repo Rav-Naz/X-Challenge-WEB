@@ -71,6 +71,11 @@
             "title": "IMPORTANT INFORMATIONS",
             "info": "At this place, we will provide you with the most important information for the players and the audience.",
             "register": "Registration is not currently possible. The opening date will be announced shortly.",
+            "register-limit": {
+                "title": "REGISTRATION IS COMPLETE",
+                "body1": "The limit of people registered for the event is approaching. Currently {{registerPercentageCompletion}}% places are full.",
+                "body2": "There are {{days}} days remaining to register robots."
+            },
             "points": {
                 "register-start": {
                     "title": "Start of registration",
@@ -170,14 +175,22 @@
                 { "id": 2, "patreonCategory": 0, "description": "Pratt & Whitney", "image": "../../assets/jpg/pratt.png", "linkToSite": "https://pwrze.com/" },
                 { "id": 3, "patreonCategory": 0, "description": "Podkarpackie voivodeship", "image": "../../assets/jpg/podkarpackie.png", "linkToSite": "https://podkarpackie.eu/" },
                 { "id": 4, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/jpg/kronospan.png", "linkToSite": "https://kronosfera.pl/" },
-                { "id": 5, "patreonCategory": 1, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/jpg/ale-primary-logo-white.png", "linkToSite": "https://www.al-enterprise.com/" }
+                { "id": 5, "patreonCategory": 1, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/jpg/ale-primary-logo-white.png", "linkToSite": "https://www.al-enterprise.com/" },
+                { "id": 6, "patreonCategory": 0, "description": "Rzeszów Stolica Innowacji", "image": "../../assets/jpg/rzeszow_stolica.png", "linkToSite": "https://www.erzeszow.pl/" },
+                { "id": 7, "patreonCategory": 5, "description": "Marszałek Województwa Podkarpackiego", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/" },
+                { "id": 8, "patreonCategory": 5, "description": "Podkarpacki Kurator Oświaty", "image": "../../assets/jpg/kuratorium.png", "linkToSite": "https://www.ko.rzeszow.pl/" },
+                { "id": 9, "patreonCategory": 3, "description": "Deloitte", "image": "../../assets/svg/deloitte.svg", "linkToSite": "https://www2.deloitte.com/pl/pl.html" },
+                { "id": 10, "patreonCategory": 2, "description": "Wago", "image": "../../assets/svg/wago.png", "linkToSite": "https://www.wago.com/pl/" },
+                { "id": 11, "patreonCategory": 5, "description": "Mayor of the City of Rzeszów", "image": "../../assets/png/rzeszow.png", "linkToSite": "https://bip.erzeszow.pl/" }
+
             ],
             "tiers": [
-                "Main partner",
-                "Gold partner",
-                "Silver partner",
-                "Bronze partner",
+                "Main Partner",
+                "Gold Partner",
+                "Silver Partner",
+                "Bronze Partner",
                 "Strategic partner",
+                "Honorary patronage",
                 "Media patronage"
             ]
         },
@@ -270,15 +283,24 @@
                 "success": "Successfully set a new password for the account. You can login now!"
             }
         },
+        "visitors-counter": {
+            "actual": "CURRENT VISITORS:"
+        },
         "register": {
             "title": "Register",
             "accept": "I accept the terms and privacy policy",
+            "carer": "I am the player's carer",
             "sign-in": "Sign up",
             "have": "Already have an account?",
             "login": "Sign in!",
             "errors": {
                 "duplicate": "User with this e-mail already exists!",
                 "success": "Successfully registered. Confirm your account via a message sent to the e-mail address provided."
+            },
+            "food": {
+                "Mięsne": "Meat",
+                "Wegańskie": "Vegan",
+                "Wegetariańskie": "Vegetarian"
             }
         },
         "bar": {
@@ -288,6 +310,8 @@
             "competitors": "COMPETITORS",
             "robots": "ROBOTS",
             "statistics": "STATISTICS",
+            "register": "REGISTER",
+            "counting": "VISITORS",
             "hello": {
                 "1": "Welcome to the ",
                 "2": "Competitor Zone!",
@@ -347,21 +371,43 @@
             "delete-robot": "Deleted robot with id:",
             "want-to-delete-category": "Delete the category robot makes it impossible to start in this category",
             "want-to-delete-constructor": "Removing the constructor makes user impossible to editing the robot and accessing any rewards",
-            "want-to-delete-robot": "Removing the robot excludes its participation in the competition. Attention! This decision cannot be undone!"
+            "want-to-delete-robot": "Removing the robot excludes its participation in the competition. Attention! This decision cannot be undone!",
+            "update-documentation": "Documentation successfully uploaded",
+            "documentation-uploaded": "Documentation has already been uploaded",
+            "documentation-not-uploaded": "Documentation has not been uploaded",
+            "documentation-format-info": "* Possible file formats are: PDF, DOC and DOCX and the maximum file size is 5 MB",
+            "update-film": "Successfully sent link to the movie",
+            "film-uploaded": "The link to the movie has already been uploaded",
+            "film-not-uploaded": "The link to the movie has not been uploaded yet",
+            "film-format-info": "* The link should lead to the video on YouTube platform",
+            "update-reason": "Successfully updated rejection reason",
+            "acceptation-status": "Robot's acceptance status",
+            "acceptation-true": "ACCEPTED",
+            "acceptation-false": "REJECTED",
+            "acceptation-waiting": "WAITING"
         },
         "settings": {
             "user": "User details",
             "user-info": "* Please provide correct data. On their basis, possible prizes and diplomas will be awarded.",
             "phone": "Contact details",
+            "postal": "Statistic data",
+            "preferences": "Preferences",
             "phone-info": "* Please provide correct data. On their basis, important messages will be sent.",
             "password": "Change Password",
             "rest-countries": "Rest countries",
+            "test": "Test",
+            "get-rfid": "Read RFID",
+            "get-lap-time": "Read lap time",
+            "set-rfid": "Save data to RFID",
+            "change": "* Preferences cannot be changed independently after registration. Please contact the administrator to make changes.",
             "errors": {
-                "succesfuly-added-phone": "Phone number added successfully. Enter the code from the SMS sent to the given number",
-                "succesfuly-confirmed": "Phone number successfully confirmed",
+                "succesfuly-added-phone": "Phone number changed successfully",
+                "succesfuly-confirmed": "Data successfully updated",
                 "success": "Account password changed successfully",
                 "success-name": "User data was successfully edited",
-                "copied": "UUID copied to clipboard"
+                "copied": "UUID copied to clipboard",
+                "copied-lap-time": "Lap time copied to clipboard"
+
             }
         },
         "add-fight-result": {
@@ -424,7 +470,9 @@
             "positions": "Positions: ",
             "postal": "Postal code: ",
             "send": "Send message",
-            "robots": "Robots"
+            "robots": "Robots",
+            "carer": "Carer",
+            "starterpack-given": "Starterpack given"
         },
         "competitors": {
             "title": "COMPETITORS",
@@ -906,7 +954,7 @@
             }
         },
         "phone": {
-            "name": "Phone number",
+            "name": "Phone number (optional)",
             "validators": {
                 "required": "This field is required",
                 "minlength": "Phone number must be longer than 7 characters",
@@ -954,7 +1002,7 @@
             "validators": {}
         },
         "postal_code": {
-            "name": "Postal code",
+            "name": "Postal code (optional)",
             "validators": {
                 "required": "This field is required",
                 "maxlength": "The postal code must be longer than 2 characters",
@@ -976,6 +1024,50 @@
                 "maxlength": "The code is 6 characters long",
                 "minlength": "The code is 6 characters long"
             }
+        },
+        "preferedFood": {
+            "name": "Prefered food",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "tshirtSize": {
+            "name": "T-Shirt size",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "documentation": {
+            "name": "Documentation file",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "movie": {
+            "name": "Link to the movie",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "reason": {
+            "name": "Reason for rejection",
+            "validators": {
+                "required": "This field is required",
+                "maxlength": "The maximum length of an entry is 1000 characters"
+            }
+        },
+        "user_type": {
+            "name": "User type",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "payload": {
+            "name": "Payload",
+            "validators": {
+                "required": "This field is required"
+            }
+
         }
     },
     "errors": {
@@ -1035,7 +1127,8 @@
             "too-many-lf-categories": "You cannot add more than 2 categories in the Line Follower competition!",
             "too-many-sumo-categories": "You cannot add more than 2 categories in the Sumo competition!",
             "time-to-modify-ended": "The time to add and modify robots is over",
-            "time-to-modify-ended-smash": "The time to add and modify robots in the SmashBots category is over"
+            "time-to-modify-ended-smash": "The time to add and modify robots in the SmashBots category is over",
+            "register-ends": "Registration has ended"
         },
         "statusCodes": {
             "400": "Incorrectly specified data - user error",

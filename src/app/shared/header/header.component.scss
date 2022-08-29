@@ -12,25 +12,6 @@
     box-shadow: 0 .5rem 2rem rgba($color-grey-5, 0.5);
     margin-bottom: 1rem;
     z-index: 5;
-    &-logo {
-        cursor: pointer;
-        height: 100%;
-        padding: 1rem;
-        position: absolute;
-        font-size: 1.7rem;
-        left: 1rem;
-        // top: 1%;
-        font-family: $title-font;
-        color: $color-primary;
-        span {
-            color: $color-white;
-            margin-left: 1rem;
-        }
-        img {
-            height: 1.5rem;
-            margin-left: 4rem;
-        }
-    }
     &-name {
         text-align: center;
         max-width: 50%;
@@ -45,33 +26,16 @@
     }
 }
 
+.paralax-name-container {
+    transform: scale(0.8) translateX(-5rem);
+}
+
 @media only screen and (max-width: $max-width-5) {
     .header {
-        &-logo {
-            padding: 1rem;
-            left: 1rem;
-            font-size: 1.8rem;
-            span {
-                color: $color-white;
-                margin-left: 1rem;
-            }
-            img {
-                height: 1.5rem;
-                margin-left: 4rem;
-            }
-        }
         &-name {
             max-width: 30%;
             font-size: 2rem;
             font-family: $title-font;
-        }
-    }
-}
-
-@media only screen and (max-width: $max-width-7) {
-    .header {
-        &-logo {
-            font-size: 1.4rem;
         }
     }
 }

@@ -28,6 +28,9 @@ import { RefereeGuard } from './services/referee-guard.service';
 import { TaskChallengeComponent } from './home/categories/task-challenge/task-challenge.component';
 import { SmashBotsComponent } from './home/categories/smash-bots/smash-bots.component';
 import { RobomotionComponent } from './home/categories/robomotion/robomotion.component';
+import { RegisterGuard } from './services/register-guard.service';
+import { CountingVisitorsComponent } from './competitor-zone/referee/counting-visitors/counting-visitors.component';
+
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -35,33 +38,34 @@ const routes: Routes = [
   {path: 'task-hunters', component: TaskChallengeComponent},
   {path: 'smash-bots', component: SmashBotsComponent},
   {path: 'robomotion', component: RobomotionComponent},
-  // {path: 'results', component: ResultsComponent},
-  // {path: 'timetable', component: TimetableComponent},
-  // {path: 'building-plan', component: BuildingPlanComponent},
-  // {path: 'login', component: LoginComponent},
-  // {path: 'register', component: RegisterComponent},
-  // {path: 'app-rules', component: AppRulesComponent},
+  {path: 'results', component: ResultsComponent},
+  {path: 'timetable', component: TimetableComponent},
+  {path: 'building-plan', component: BuildingPlanComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', canActivate: [RegisterGuard], component: RegisterComponent},
+  {path: 'app-rules', component: AppRulesComponent},
   {path: 'thank-you', component: ThanksComponent},
-  // {path: 'forgot-password', component: ForgotPasswordComponent},
-  // {path: 'reset-password/:uzytkownik_uuid/:kod', component: ResetPasswordComponent},
-  // {path: 'competitor-zone', canActivate: [AuthGuard], component: CompetitorZoneComponent, children: [
-  //   {path: 'my-robots', component: MyRobotsComponent, outlet: 'outlet'},
-  //   {path: 'settings', component: SettingsComponent, outlet: 'outlet'},
-  //   {path: 'robot/:robot_uuid', component: RobotComponent, outlet: 'outlet'},
-  //   {path: 'add-robot', component: NewRobotComponent,  outlet: 'outlet'},
-  //   {path: 'statistics', component: ChartsComponent,  outlet: 'outlet'},
+  {path: 'forgot-password', component: ForgotPasswordComponent},
+  {path: 'reset-password/:uzytkownik_uuid/:kod', component: ResetPasswordComponent},
+  {path: 'competitor-zone', canActivate: [AuthGuard], component: CompetitorZoneComponent, children: [
+    {path: 'my-robots', component: MyRobotsComponent, outlet: 'outlet'},
+    {path: 'settings', component: SettingsComponent, outlet: 'outlet'},
+    {path: 'robot/:robot_uuid', component: RobotComponent, outlet: 'outlet'},
+    {path: 'add-robot', component: NewRobotComponent,  outlet: 'outlet'},
+    {path: 'statistics', component: ChartsComponent,  outlet: 'outlet'},
+    {path: 'counting-visitors', component: CountingVisitorsComponent,  outlet: 'outlet'},
 
-  //   {path: 'referee-zone/:stanowisko_id/:kategoria_id/:grupa_id', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
-  //   {path: 'referee-zone/:stanowisko_id/:kategoria_id', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
-  //   {path: 'referee-zone/:stanowisko_id', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
-  //   {path: 'referee-zone', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
-  //   {path: 'add-time-result/:stanowisko_id/:kategoria_id', component: AddTimeResultComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
-  //   {path: 'add-fight-result/:stanowisko_id/:kategoria_id', component: AddFightResultComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
-  //   {path: 'competitors', component: CompetitorsComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
-  //   {path: 'competitor/:uzytkownik_uuid', component: CompetitorComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
-  //   {path: 'robots', component: RobotsComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
-  // ]},
-  // {path: 'confirm-code/:uzytkownik_uuid/:kod/:czy_na_telefon', component: ConfirmCodeComponent},
+    {path: 'referee-zone/:stanowisko_id/:kategoria_id/:grupa_id', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
+    {path: 'referee-zone/:stanowisko_id/:kategoria_id', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
+    {path: 'referee-zone/:stanowisko_id', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
+    {path: 'referee-zone', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
+    {path: 'add-time-result/:stanowisko_id/:kategoria_id', component: AddTimeResultComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
+    {path: 'add-fight-result/:stanowisko_id/:kategoria_id', component: AddFightResultComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
+    {path: 'competitors', component: CompetitorsComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
+    {path: 'competitor/:uzytkownik_uuid', component: CompetitorComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
+    {path: 'robots', component: RobotsComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
+  ]},
+  {path: 'confirm-code/:uzytkownik_uuid/:kod/:czy_na_telefon', component: ConfirmCodeComponent},
   {path: '**', redirectTo: ''},
 ];
 

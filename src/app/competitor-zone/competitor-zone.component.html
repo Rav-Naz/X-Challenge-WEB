@@ -1,10 +1,11 @@
 <div class="container">
     <app-header [pageName]="'menu.competitor-zone'"></app-header>
+    <div style="height: 9rem;"></div>
     <div class="competitor">
         <div class="competitor-zone">
             <div class="competitor-zone-bar">
                 <div>
-                    <section class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['my-robots']}}]" routerLinkActive="competitor-zone-bar-segment-active" *ngIf="!userService.isReferee">
+                    <section class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['my-robots']}}]" routerLinkActive="competitor-zone-bar-segment-active" *ngIf="!userService.isWolo">
                         <i class="las la-robot"></i>
                         <p>{{'competitor-zone.bar.my-robots' | translate}}</p>
                     </section>
@@ -20,6 +21,10 @@
                         <i class="las la-robot"></i>
                         <p>{{'competitor-zone.bar.robots' | translate}}</p>
                     </section>
+                    <section class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['counting-visitors']}}]" *ngIf="userService.isWolo" routerLinkActive="competitor-zone-bar-segment-active">
+                        <i class="las la-clone"></i>
+                        <p>{{'competitor-zone.bar.counting' | translate}}</p>
+                    </section>
                     <section class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['settings']}}]" routerLinkActive="competitor-zone-bar-segment-active">
                         <i class="las la-cog"></i>
                         <p>{{'competitor-zone.bar.settings' | translate}}</p>
@@ -28,73 +33,44 @@
                         <i class="las la-chart-pie"></i>
                         <p>{{'competitor-zone.bar.statistics' | translate}}</p>
                     </section>
+                    <section *ngIf="userService.isAdmin" class="competitor-zone-bar-segment" [routerLink]="['/register']">
+                        <i class="las la-user-plus"></i>
+                        <p>{{'competitor-zone.bar.register' | translate}}</p>
+                    </section>
                     <section class="competitor-zone-bar-segment" (click)="openTutorial()">
                         <i class="las la-question"></i>
                         <p>{{'competitor-zone.bar.help' | translate}}</p>
                     </section>
                 </div>
-                <ng-container *ngIf="switcher">
-                    <div class="competitor-zone-bar-time" *ngIf="timeLeft && !timeIsUp">
-                        <p>{{'competitor-zone.bar.time-left' | translate}}</p>
-                        <div [ngClass]="{'competitor-zone-bar-time-ending': isLessThanWeek}">
-                            <label>
+                <div class="competitor-zone-bar-time" *ngIf="timeLeft && !timeIsUp">
+                    <p>{{'competitor-zone.bar.time-left' | translate}}</p>
+                    <div [ngClass]="{'competitor-zone-bar-time-ending': isLessThanWeek}">
+                        <label>
                                 {{timeLeft | msTransform: 'd'}}<span>D</span>
                             </label>
-                            <span>
+                        <span>
                                 :
                             </span>
-                            <label>
+                        <label>
                                 {{timeLeft | msTransform: 'h'}}<span>H</span>
                             </label>
-                            <span>
+                        <span>
                                 :
                             </span>
-                            <label>
+                        <label>
                                 {{timeLeft | msTransform: 'm'}}<span>M</span>
                             </label>
-                            <span>
+                        <span>
                                 :
                             </span>
-                            <label>
+                        <label>
                                 {{timeLeft | msTransform: 's'}}<span>S</span>
                             </label>
-                        </div>
                     </div>
-                    <p *ngIf="timeIsUp">
-                        {{'competitor-zone.bar.time-up' | translate}}
-                    </p>
-                </ng-container>
-                <ng-container *ngIf="!switcher">
-                    <div class="competitor-zone-bar-time" *ngIf="timeLeftSmashBots && !timeIsUpSmashBots">
-                        <p>{{'competitor-zone.bar.time-left-sb' | translate}}</p>
-                        <div [ngClass]="{'competitor-zone-bar-time-ending': isLessThanWeekSmashBots}">
-                            <label>
-                                {{timeLeftSmashBots | msTransform: 'd'}}<span>D</span>
-                            </label>
-                            <span>
-                                :
-                            </span>
-                            <label>
-                                {{timeLeftSmashBots | msTransform: 'h'}}<span>H</span>
-                            </label>
-                            <span>
-                                :
-                            </span>
-                            <label>
-                                {{timeLeftSmashBots | msTransform: 'm'}}<span>M</span>
-                            </label>
-                            <span>
-                                :
-                            </span>
-                            <label>
-                                {{timeLeftSmashBots | msTransform: 's'}}<span>S</span>
-                            </label>
-                        </div>
-                    </div>
-                    <p *ngIf="timeIsUpSmashBots">
-                        {{'competitor-zone.bar.time-up-sb' | translate}}
-                    </p>
-                </ng-container>
+                </div>
+                <p *ngIf="timeIsUp">
+                    {{'competitor-zone.bar.time-up' | translate}}
+                </p>
             </div>
             <div class="competitor-zone-main">
                 <ng-container *ngIf="isFirstPage">

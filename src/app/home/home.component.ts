@@ -101,6 +101,7 @@ export class HomeComponent implements OnInit, AfterViewInit{
   public eventDate: Date = new Date(2022, 10, 25, 9, 0, 0);
   public eventEndDate: Date = new Date(2022, 10, 26, 18, 0, 0);
   public windowSize: WindowSize = { height: 1080, width: 1920};
+  public registerInfo: any = null;
 
   public timeLeft: number | undefined;
   public timeLeftSmashBots: number | undefined;
@@ -174,6 +175,7 @@ export class HomeComponent implements OnInit, AfterViewInit{
       // this.eventDate = new Date((data as any).eventDate);
       if((data as any).streamLink) {
         this.streamLink = (data as any).streamLink;
+        this.registerInfo = (data as any).registerInfo;
       }
     })
     this.windowSize = {height: window.innerHeight, width: window.innerWidth };
@@ -358,14 +360,10 @@ export class HomeComponent implements OnInit, AfterViewInit{
     if(Math.floor(this.timeToEvent/1000) < 0) {
       this.timeIsUp = true;
     }
-    if(!this.authService.accessToModifyExpirationDate || !this.authService.accessToModifySmashBotsExpirationDate) return;
+    if(!this.authService.accessToModifyExpirationDate) return;
     this.timeLeft = this.authService.accessToModifyExpirationDate.getTime() - new Date().getTime();
-    this.timeLeftSmashBots = this.authService.accessToModifySmashBotsExpirationDate.getTime() - new Date().getTime();
     if(Math.floor(this.timeLeft/1000) < 0) {
       this.timeIsUp2 = true;
-    }
-    if(Math.floor(this.timeLeftSmashBots/1000) < 0) {
-      this.timeIsUpSmashBots = true;
     }
   }
 
@@ -386,6 +384,11 @@ export class HomeComponent implements OnInit, AfterViewInit{
 
   openUrl(url: string): void {
     window.open(url);
+  }
+
+  async testLocalhost() {
+    var response = this.httpService.getTest.toPromise();
+    response.then(val => {console.log(val);})
   }
 
   patreonClassPicker(index: number) {
@@ -434,6 +437,14 @@ export class HomeComponent implements OnInit, AfterViewInit{
 
   get getEventDateDay() {
     return this.eventDate.getDate();
+  }
+
+  get getDaysToEndRegistration() {
+    return this.timeLeft ? Math.ceil(this.timeLeft/86400000) : 100000;
+  }
+
+  get registerPercentageCompletion() {
+    return this.registerInfo != null ? Math.ceil((this.registerInfo.aktualnie / this.registerInfo.limitOsob)*100) : null
   }
 
   timeout(ms: number) {

@@ -2,13 +2,13 @@
     <div class="my-robots-header">
         <p></p>
         <label>{{'competitor-zone.my-robots.title'  | translate}}</label>
-        <button class="submit-button" *ngIf="authService.canModify" [disabled]="!authService.canModify" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['add-robot']}}]">{{'competitor-zone.my-robots.add'  | translate}}<i class="las la-plus-circle"></i></button>
+        <button class="submit-button" *ngIf="authService.canModify && (!userService.isWolo || userService.isReferee) " [disabled]="!authService.canModify" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['add-robot']}}]">{{'competitor-zone.my-robots.add'  | translate}}<i class="las la-plus-circle"></i></button>
     </div>
     <div class="my-robots">
         <div class="my-robots-element" *ngFor="let robot of userRobots" (click)="editRobot(robot.robot_uuid)">
             <div class="my-robots-element-info">
                 <p class="my-robots-element-uuid">{{robot.robot_uuid}}</p>
-                <p class="my-robots-element-name">{{robot.nazwa_robota}}</p>
+                <p class="my-robots-element-name" [ngClass]="{'banned': robot.powod_odrzucenia != null}">{{robot.nazwa_robota}}<i class="las la-ban" *ngIf="robot.powod_odrzucenia"></i></p>
             </div>
             <span class="my-robots-element-categories">{{robot.kategorie}}</span>
             <span class="my-robots-element-edit">{{ (authService.canModify ? 'competitor-zone.my-robots.edit' : 'competitor-zone.my-robots.view') | translate}}<i class="las la-edit"></i></span>

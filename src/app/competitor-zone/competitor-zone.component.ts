@@ -20,9 +20,7 @@ import { fromEvent, Observable, Subscription } from 'rxjs';
 export class CompetitorZoneComponent implements OnDestroy{
 
   public timeLeft: number | undefined;
-  public timeLeftSmashBots: number | undefined;
   public timeIsUp: boolean = false;
-  public timeIsUpSmashBots: boolean = false;
   public switcher = false;
   public windowSize: WindowSize = { height: 1080, width: 1920};
   private subs: Subscription = new Subscription;
@@ -31,10 +29,6 @@ export class CompetitorZoneComponent implements OnDestroy{
 
   constructor(public translate: TranslateService, public userService: UserService, private router: Router,
     public constructorService: ConstructorsService, public authService: AuthService, public positionsService: PositionsService) {
-      setInterval(() => {
-        this.switcher = !this.switcher;
-      }, 5000)
-      this.refreshCounter();
     setInterval(() => {
       this.refreshCounter();
     }, 1000);
@@ -49,31 +43,23 @@ export class CompetitorZoneComponent implements OnDestroy{
   }
 
   refreshCounter() :void {
-    if(!this.authService.accessToModifyExpirationDate || !this.authService.accessToModifySmashBotsExpirationDate) return;
+    if(!this.authService.accessToModifyExpirationDate) return;
     this.timeLeft = this.authService.accessToModifyExpirationDate.getTime() - new Date().getTime();
-    this.timeLeftSmashBots = this.authService.accessToModifySmashBotsExpirationDate.getTime() - new Date().getTime();
     if(Math.floor(this.timeLeft/1000) < 0) {
       this.timeIsUp = true;
     }
-    if(Math.floor(this.timeLeftSmashBots/1000) < 0) {
-      this.timeIsUpSmashBots = true;
-    }
   }
-  
+
   openTutorial() {
     if (this.translate.currentLang == "pl") {
-      window.open('https://rzit.smarthost.pl/robomotion/tutorial.pdf');
+      window.open('https://fwe.smarthost.pl/xchallenge.pl/tutorial.pdf');
     } else {
-      window.open('https://rzit.smarthost.pl/robomotion/tutorial-ang.pdf');
+      window.open('https://fwe.smarthost.pl/xchallenge.pl/tutorial-ang.pdf');
     }
   }
 
   get isLessThanWeek() {
     return this.timeLeft && Math.floor(this.timeLeft/1000) < 604800;
-  }
-
-  get isLessThanWeekSmashBots() {
-    return this.timeLeftSmashBots && Math.floor(this.timeLeftSmashBots/1000) < 604800;
   }
 
   get isFirstPage() {

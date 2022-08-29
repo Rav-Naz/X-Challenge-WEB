@@ -23,7 +23,8 @@ export class AppComponent implements OnInit {
   public isEnglish: boolean = true;
   public isCookies: boolean = false;
   private subs: Subscription = new Subscription;
-  public eventDate: Date = new Date(2022, 10, 28, 9, 0, 0);
+  public eventDate: Date = new Date(2022, 10, 25, 9, 0, 0);
+  public registerStart: Date = new Date(2050, 10, 25, 9, 0, 0);
 
   @ViewChild(ConfirmComponent) confirm: ConfirmComponent | null = null;
 
@@ -47,9 +48,10 @@ export class AppComponent implements OnInit {
       translate.setDefaultLang(prefLanguage);
     }
 
-    const sub1 = this.authService.info$.subscribe((data) => {
+    const sub1 = this.authService.info$.subscribe((data: any) => {
       if(data === undefined || data === null) return;
-      // this.eventDate = new Date((data as any).eventDate);
+      this.eventDate = data.eventDate;
+      this.registerStart = data.registerStart;
     })
     this.subs?.add(sub1)
   }
@@ -122,9 +124,9 @@ export class AppComponent implements OnInit {
 
   openTutorial() {
     if (this.translate.currentLang == "pl") {
-      window.open('https://rzit.smarthost.pl/robomotion/tutorial.pdf');
+      window.open('https://fwe.smarthost.pl/xchallenge.pl/tutorial.pdf');
     } else {
-      window.open('https://rzit.smarthost.pl/robomotion/tutorial-ang.pdf');
+      window.open('https://fwe.smarthost.pl/xchallenge.pl/tutorial-ang.pdf');
     }
   }
 
@@ -137,6 +139,10 @@ export class AppComponent implements OnInit {
 
   get isEventNow() {
     return new Date() > this.eventDate;
+  }
+
+  get isRegistrationStarted() {
+    return new Date() > this.registerStart;
   }
 
   ngOnDestroy(): void {

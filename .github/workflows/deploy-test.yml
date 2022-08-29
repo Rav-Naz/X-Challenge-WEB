@@ -1,14 +1,13 @@
  name: deploy  Xchallenge test 
  on:
   push:
-    paths-ignore:
-      - '.github/**'
     branches:
-    - develop
+      - develop
   workflow_dispatch:
   
  jobs:
-   deploy-prod:
+   deploy-test:
+
      runs-on: ubuntu-latest
      steps:
       - name: Checkout repository

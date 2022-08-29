@@ -90,6 +90,30 @@ export class UserService {
     });
   }
 
+  setPostalLocaly(kod_pocztowy: string | null) {
+    (this.userDetails as any).kod_pocztowy = kod_pocztowy;
+    this.user.next(this.userDetails);
+    localStorage.setItem('details', JSON.stringify(this.userDetails));
+  }
+
+  public addPostalCode(kod_pocztowy: string) {
+    return new Promise<any>(async (resolve) => {
+      const value = await this.http.addPostalCode(kod_pocztowy).catch(err => {
+        if(err.status === 400) {
+          this.errorService.showError(err.status, this.translate.instant(err.error.body));
+        } else {
+          this.errorService.showError(err.status);
+        }
+      })
+      if (value) {
+        this.setPostalLocaly(kod_pocztowy);
+        this.ui.showFeedback("succes", this.translate.instant('competitor-zone.settings.errors.succesfuly-confirmed'), 3)
+      }
+      resolve(value);
+    });
+  }
+
+
   get getUser$() {
     return this.user.asObservable();
   }
@@ -104,11 +128,19 @@ export class UserService {
     return this.userDetails ? (this.userDetails as any).uzytkownik_uuid : null;
   }
 
-  get isReferee() {
+  get isUser() {
+    return this.userType == 0;
+  }
+
+  get isWolo() {
     return this.userType > 0;
   }
 
-  get isAdmin() {
+  get isReferee() {
     return this.userType > 1;
+  }
+
+  get isAdmin() {
+    return this.userType > 2;
   }
 }

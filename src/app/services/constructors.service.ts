@@ -55,13 +55,14 @@ export class ConstructorsService {
   }
 
   addConstructor(uzytkownik_uuid: string, robot_uuid: string) {
-    return new Promise<any>(async (resolve) => {
+    return new Promise<any>(async (resolve, reject) => {
       const value = await this.http.addConstructor(uzytkownik_uuid,robot_uuid).catch(err => {
         if(err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
           this.errorService.showError(err.status);
         }
+        reject(null)
       }) as APIResponse
       resolve(value);
     });
@@ -83,5 +84,5 @@ export class ConstructorsService {
   get getNewConstructors$ () {
     return this.getNewConstructors.asObservable();
   }
-  
+
 }
