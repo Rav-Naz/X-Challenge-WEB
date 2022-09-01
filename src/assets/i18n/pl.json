@@ -195,6 +195,7 @@
                 { "id": 11, "patreonCategory": 5, "description": "Prezydent Miasta Rzeszowa", "image": "../../assets/jpg/rzeszow.png", "linkToSite": "https://bip.erzeszow.pl/" },
                 { "id": 12, "patreonCategory": 6, "description": "zrobotyzowany.pl", "image": "../../assets/jpg/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl/" },
                 { "id": 13, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" }
+
             ],
             "tiers": [
                 "Partner Główny",

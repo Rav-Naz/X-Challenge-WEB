@@ -495,9 +495,11 @@ export class RobotComponent {
   get isSmashBot() {
     return this.robotCategories ? this.robotCategories?.find(el => el === 1) != undefined : false;
   }
+
   get isFreestyle() {
     return this.robotCategories ? this.robotCategories?.find(el => el === 2) != undefined : false;
   }
+
 
   get getCategoryType() {
     return this.categories?.find(el => el.kategoria_id === this.selectedCategory)?.rodzaj
