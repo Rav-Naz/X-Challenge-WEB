@@ -24,5 +24,60 @@
             <p *ngIf="resp">{{resp}}</p>
             <button class="submit-button" [disabled]="!isNewGroupFormValid || !isLessThanFinalValue" (click)="createGroup()">UTWÓRZ GRUPY DLA KATEGORII</button>
         </section>
+        <section class="tree" *ngIf="!isLoadingDeletingGroup && selectedGroup && selectedGroup != -1">
+            <button class="submit-button tree-button" (click)="deleteGroup()">USUŃ GRUPE</button>
+            <div class="tree-diagram" *ngIf="getSelectedGroupType == 1">
+                <div class="tree-third">
+                    <a>Walka o 3 miejsce</a>
+                    <p class="tree-fight" [ngClass]="{'tree-fight-tba': getFightsInGroup[0].robot1_nazwa == null || getFightsInGroup[0].robot2_nazwa == null}">
+                        <a class="tree-fight-id">{{getFightsInGroup[0].walka_id}}</a>
+                        <label class="tree-fight-body">
+                <a class="tree-fight-body-name" [ngClass]="{'tree-fight-body-score-win': getFightsInGroup[0] ? getFightsInGroup[0].wygrane_rundy_robot1! > getFightsInGroup[0].wygrane_rundy_robot2! : false, 'tree-fight-body-score-lose': getFightsInGroup[0] ? getFightsInGroup[0].wygrane_rundy_robot1! < getFightsInGroup[0].wygrane_rundy_robot2! : false}">{{getFightsInGroup[0].robot1_nazwa?? "TBA"}}</a>
+                <a class="tree-fight-body-score tree-fight-body-score-1">{{getFightsInGroup[0].wygrane_rundy_robot1 != null ? getFightsInGroup[0].wygrane_rundy_robot1 : "?"}}</a>
+                :
+                <a class="tree-fight-body-score tree-fight-body-score-2">{{getFightsInGroup[0].wygrane_rundy_robot2 != null ? getFightsInGroup[0].wygrane_rundy_robot2 : "?"}}</a>
+                <a class="tree-fight-body-name" [ngClass]="{'tree-fight-body-score-win': getFightsInGroup[0] ? getFightsInGroup[0].wygrane_rundy_robot1! < getFightsInGroup[0].wygrane_rundy_robot2! : false, 'tree-fight-body-score-lose': getFightsInGroup[0] ? getFightsInGroup[0].wygrane_rundy_robot1! > getFightsInGroup[0].wygrane_rundy_robot2! : false}">{{getFightsInGroup[0].robot2_nazwa ?? "TBA"}}</a>
+              </label>
+                        <a *ngIf="getFightsInGroup[0].robot1_nazwa != null && getFightsInGroup[0].robot2_nazwa != null" class="tree-fight-pos">{{getFightsInGroup[0].nazwa_stanowiska}}</a>
+                    </p>
+                </div>
+                <ul class="tree-diagram-no-dash">
+                    <li>
+                        <p class="tree-fight" [ngClass]="{'tree-fight-tba': filteredFightsInGroup?.fight?.robot1_nazwa == null || filteredFightsInGroup?.fight?.robot2_nazwa == null}">
+                            <a class="tree-fight-id">{{filteredFightsInGroup?.fight?.walka_id}}</a>
+                            <label class="tree-fight-body">
+                          <a class="tree-fight-body-name" [ngClass]="{'tree-fight-body-score-win': filteredFightsInGroup?.fight ? filteredFightsInGroup!.fight!.wygrane_rundy_robot1! > filteredFightsInGroup!.fight!.wygrane_rundy_robot2! : false, 'tree-fight-body-score-lose': filteredFightsInGroup?.fight ? filteredFightsInGroup!.fight!.wygrane_rundy_robot1! < filteredFightsInGroup!.fight!.wygrane_rundy_robot2! : false}">{{filteredFightsInGroup?.fight?.robot1_nazwa?? "TBA"}}</a>
+                          <a class="tree-fight-body-score tree-fight-body-score-1">{{filteredFightsInGroup?.fight?.wygrane_rundy_robot1 != null ? filteredFightsInGroup?.fight?.wygrane_rundy_robot1 : "?"}}</a>
+                          :
+                          <a class="tree-fight-body-score tree-fight-body-score-2">{{filteredFightsInGroup?.fight?.wygrane_rundy_robot2 != null ? filteredFightsInGroup?.fight?.wygrane_rundy_robot2 : "?"}}</a>
+                          <a class="tree-fight-body-name" [ngClass]="{'tree-fight-body-score-win': filteredFightsInGroup?.fight ? filteredFightsInGroup!.fight!.wygrane_rundy_robot1! < filteredFightsInGroup!.fight!.wygrane_rundy_robot2! : false, 'tree-fight-body-score-lose': filteredFightsInGroup?.fight ? filteredFightsInGroup!.fight!.wygrane_rundy_robot1! > filteredFightsInGroup!.fight!.wygrane_rundy_robot2! : false}">{{filteredFightsInGroup?.fight?.robot2_nazwa ?? "TBA"}}</a>
+                        </label>
+                            <a *ngIf="filteredFightsInGroup?.fight?.robot1_nazwa != null && filteredFightsInGroup?.fight?.robot2_nazwa != null" class="tree-fight-pos">{{filteredFightsInGroup?.fight?.nazwa_stanowiska}}</a>
+                        </p>
+                        <ng-container *ngTemplateOutlet="recursiveListTmpl; context:{ tree: filteredFightsInGroup }"></ng-container>
+
+                    </li>
+                </ul>
+            </div>
+        </section>
     </ng-container>
+    <ng-template #recursiveListTmpl let-tree="tree">
+        <ul *ngIf="tree" [ngClass]="{'tree-diagram-no-dash-bottom': tree.children == null}">
+            <li *ngFor="let child of tree.children">
+                <p class="tree-fight" [ngClass]="{'tree-fight-tba': child.fight.robot1_nazwa == null || child.fight.robot2_nazwa == null}">
+                    <a class="tree-fight-id">{{child.fight.walka_id}}</a>
+                    <label class="tree-fight-body">
+                      <a class="tree-fight-body-name" [ngClass]="{'tree-fight-body-score-win': child.fight.wygrane_rundy_robot1 > child.fight.wygrane_rundy_robot2, 'tree-fight-body-score-lose': child.fight.wygrane_rundy_robot1 < child.fight.wygrane_rundy_robot2}">{{child.fight.robot1_nazwa?? "TBA"}}</a>
+                      <a class="tree-fight-body-score tree-fight-body-score-1">{{child.fight.wygrane_rundy_robot1 != null ? child.fight.wygrane_rundy_robot1 : "?"}}</a>
+                      :
+                      <a class="tree-fight-body-score tree-fight-body-score-2">{{child.fight.wygrane_rundy_robot2 != null ? child.fight.wygrane_rundy_robot2 : "?"}}</a>
+                      <a class="tree-fight-body-name" [ngClass]="{'tree-fight-body-score-win': child.fight.wygrane_rundy_robot1 < child.fight.wygrane_rundy_robot2, 'tree-fight-body-score-lose': child.fight.wygrane_rundy_robot1 > child.fight.wygrane_rundy_robot2}">{{child.fight.robot2_nazwa ?? "TBA"}}</a>
+                    </label>
+                    <a *ngIf="child.fight.robot1_nazwa != null && child.fight.robot2_nazwa != null" class="tree-fight-pos">{{child.fight.nazwa_stanowiska}}</a>
+                </p>
+                <!-- <p class="tree-fight"></p> -->
+                <ng-container *ngTemplateOutlet="recursiveListTmpl; context:{ tree: child }"></ng-container>
+            </li>
+        </ul>
+    </ng-template>
 </div>

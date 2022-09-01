@@ -665,6 +665,17 @@ export class HttpService {
     })
   }
 
+  public removeGroup(grupa_id: number) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`${this.url}admin/deleteGroup`, {
+        grupa_id: grupa_id
+       },{ headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
   // ------------- OTHER
 
   public setNewToken(jwt: string | null) {

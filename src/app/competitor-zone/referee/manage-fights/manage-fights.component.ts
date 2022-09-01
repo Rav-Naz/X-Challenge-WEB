@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, Subscription } from 'rxjs';
 import { CategoryMain } from 'src/app/models/category-main';
+import { Fight } from 'src/app/models/fight.model';
 import { CategoriesService } from 'src/app/services/categories.service';
 import { FightsService } from 'src/app/services/fights.service';
 import { PositionsService } from 'src/app/services/positions.service';
@@ -12,6 +13,7 @@ import { UiService } from 'src/app/services/ui.service';
 import { UserService } from 'src/app/services/user.service';
 import { GroupsService } from '../../../services/groups.service';
 import { RobotsService } from '../../../services/robots.service';
+import { TreeFight } from '../../../models/tree-fight.model';
 
 
 @Component({
@@ -27,10 +29,13 @@ export class ManageFightsComponent {
   public categories: Array<CategoryMain> | null = null;
   public groups: Array<any> | null = null;
   public positions: Array<any> | null = null;
-  public selectedPositions: Array<number> = [];
+  public fights: Array<Fight> | null = null;
   public robots: Array<any> | null = null;
   public selectedGroup: number | null = null;
+  public selectedPositions: Array<number> = [];
+  public filteredFightsInGroup: TreeFight | null = null;
   public isLoadingNewGroup = false;
+  public isLoadingDeletingGroup = false;
   public resp: string | null = null;
   private subs: Subscription = new Subscription;
 
@@ -48,14 +53,23 @@ export class ManageFightsComponent {
     });
     this.positionsService.getAllPositions();
     this.robotsService.getAllRobots();
-    const sub1 = combineLatest(this.categoriesService.categories$,this.groupsService.groups$, this.positionsService.allPositions$,this.robotsService.allRobots$).subscribe((val) => {
+    this.figthsService.getAllFights();
+    const sub1 = combineLatest(this.categoriesService.categories$,this.groupsService.groups$, this.positionsService.allPositions$,this.robotsService.allRobots$, this.figthsService.allFights$).subscribe((val) => {
       if (val[0] !== null && val[1] !== null && val[2] !== null) {
         this.categories = JSON.parse(JSON.stringify(val[0]));
         this.groups = JSON.parse(JSON.stringify(val[1]));
         this.positions = JSON.parse(JSON.stringify(val[2]));
         this.robots = JSON.parse(JSON.stringify(val[3]));
+        this.fights = JSON.parse(JSON.stringify(val[4]));
+        if(this.selectedGroup != null && this.selectedGroup != -1) {
+          this.fightsInGroup().then(val => {
+            console.log(val)
+            this.filteredFightsInGroup = val;
+          })
+        }
         this.formCategories.get('category')?.valueChanges.subscribe(data => {
           this.selectedGroup = null
+          this.filteredFightsInGroup = null;
         })
       }
     })
@@ -82,13 +96,29 @@ export class ManageFightsComponent {
       }, err => {console.log(err),this.resp=err.error.body}).finally(() => {this.isLoadingNewGroup = false;})
     }
   }
+
+  async deleteGroup() {
+    const decision = await this.ui.wantToContinue(`Czy na pewno chcesz usunąć grupę ${this.getSelectedGroupName}`)
+    if(decision && this.selectedGroup) {
+      this.isLoadingDeletingGroup = true;
+      this.refereeService.deleteGroup(this.selectedGroup).then(resp => {
+        this.ui.showFeedback("loading", "Usunięto", 2)
+      }, err => {console.log(err)}).finally(() => {this.isLoadingDeletingGroup = false;       this.selectedGroup = null;      })
+    }
+  }
+
   selectGroup(grupa_id: number) {
+    this.filteredFightsInGroup = null;
     if(grupa_id == -1 ){
       this.formNewGroup.reset();
       this.selectedPositions = [];
       this.resp = null;
     }
     this.selectedGroup = Number(grupa_id);
+    this.fightsInGroup().then(val => {
+      console.log(val)
+      this.filteredFightsInGroup = val;
+    })
   }
 
   get getCategories() {
@@ -131,6 +161,22 @@ export class ManageFightsComponent {
     return JSON.stringify(lista)
   }
 
+  get getSelectedGroupType() {
+    let group = this.groups?.find(g => g.grupa_id == this.selectedGroup)
+    if (!group) return null;
+    if (group.nazwa.toString().slice(0,1).toLowerCase() == "f") {
+      return 1
+    } else {
+      return 0
+    }
+  }
+
+  get getSelectedGroupName() {
+    let group = this.groups?.find(g => g.grupa_id == this.selectedGroup)
+    if (!group) return null;
+    return group.nazwa.toString();
+  }
+
   get selectedCategory() {
     return Number(this.formCategories.get('category')?.value);
   }
@@ -163,6 +209,33 @@ export class ManageFightsComponent {
   get isProperPositionCount() {
     let l = this.selectedPositions?.length;
     return (l == 1 || l == 2 || l == 4 || l == 8 || l == 16);
+  }
+
+   async fightsInGroup() {
+    let walki = this.getFightsInGroup.slice(1)
+    let first = walki.find(wal => wal.nastepna_walka_id == null)!;
+    let treeFights: TreeFight = {fight: first, children: null}
+    await this.searchForFightChildren(treeFights, walki)
+    return treeFights
+  }
+
+  get getFightsInGroup() {
+    return [...this.fights!].filter(w => w.grupa_id == this.selectedGroup).sort((a,b) => a.walka_id - b.walka_id);
+  }
+
+  async searchForFightChildren(fight: TreeFight, fights: Array<Fight>) {
+    let filtered = fights.filter(f => f.nastepna_walka_id == fight.fight.walka_id)
+    if (filtered) {
+      for (const element of filtered) {
+        let newTreeFight: TreeFight = {fight: element, children: null}
+        if (fight.children == null) {
+          fight.children = [newTreeFight]
+        } else {
+          fight.children.push(newTreeFight)
+        }
+        await this.searchForFightChildren(newTreeFight, fights)
+      }
+    }
   }
 
 }

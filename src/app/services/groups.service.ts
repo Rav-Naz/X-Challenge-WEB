@@ -46,9 +46,10 @@ export class GroupsService {
     this.groups.value?.push(data)
     this.groups.next(this.groups.value);
   }
+
   public WS_deleteGroup(data: any) {
-    const index = this.groups.value?.find(el => el.grupa_id == data.grupa_id)
-    if (index >= 0) {
+    const index = this.groups.value?.findIndex(el => el.grupa_id == data.grupa_id)
+    if (index && index >= 0) {
       this.groups.value?.splice(index,1)
       this.groups.next(this.groups.value);
     }
