@@ -1085,8 +1085,20 @@
                 "required": "To pole jest wymagane"
             }
         },
+        "robot1": {
+            "name": "Robot 1"
+        },
+        "robot2": {
+            "name": "Robot 2"
+        },
         "count": {
             "name": "Ilość do finału",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "next_fight": {
+            "name": "Następna walka",
             "validators": {
                 "required": "To pole jest wymagane"
             }

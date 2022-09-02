@@ -25,6 +25,8 @@ export class ManageFightsComponent {
 
   formCategories: FormGroup;
   formNewGroup: FormGroup;
+  formNewFight: FormGroup;
+  formEditFight: FormGroup;
 
   public categories: Array<CategoryMain> | null = null;
   public groups: Array<any> | null = null;
@@ -34,6 +36,7 @@ export class ManageFightsComponent {
   public selectedGroup: number | null = null;
   public selectedPositions: Array<number> = [];
   public filteredFightsInGroup: TreeFight | null = null;
+  public bestRobots: Array<any> | null = null;
   public isLoadingNewGroup = false;
   public isLoadingDeletingGroup = false;
   public resp: string | null = null;
@@ -44,12 +47,20 @@ export class ManageFightsComponent {
     private categoriesService: CategoriesService, private translateService: TranslateService, private groupsService: GroupsService, private robotsService: RobotsService,
      private ui: UiService, private figthsService: FightsService, private route: ActivatedRoute, private router: Router, public userService: UserService) {
     this.formCategories = this.formBuilder.group({
-      category: [1, [Validators.required]]
+      category: [null, [Validators.required]]
     });
     this.formNewGroup = this.formBuilder.group({
       option: [null, [Validators.required]],
       count: [null, [Validators.required]],
       position: [null, [Validators.required]],
+    });
+    this.formEditFight = this.formBuilder.group({
+      robot1: [null],
+      robot2: [null]
+    });
+    this.formNewFight = this.formBuilder.group({
+      position: [null, [Validators.required]],
+      next_fight: [null]
     });
     this.positionsService.getAllPositions();
     this.robotsService.getAllRobots();
@@ -62,18 +73,17 @@ export class ManageFightsComponent {
         this.robots = JSON.parse(JSON.stringify(val[3]));
         this.fights = JSON.parse(JSON.stringify(val[4]));
         if(this.selectedGroup != null && this.selectedGroup != -1) {
-          this.fightsInGroup().then(val => {
-            console.log(val)
+          this.treeFightsInGroup().then(val => {
             this.filteredFightsInGroup = val;
           })
         }
         this.formCategories.get('category')?.valueChanges.subscribe(data => {
           this.selectedGroup = null
           this.filteredFightsInGroup = null;
+          this.bestRobots = null;
         })
       }
     })
-
     this.subs.add(sub1);
 
   }
@@ -109,16 +119,57 @@ export class ManageFightsComponent {
 
   selectGroup(grupa_id: number) {
     this.filteredFightsInGroup = null;
+    this.bestRobots = null;
     if(grupa_id == -1 ){
       this.formNewGroup.reset();
       this.selectedPositions = [];
       this.resp = null;
     }
     this.selectedGroup = Number(grupa_id);
-    this.fightsInGroup().then(val => {
-      console.log(val)
-      this.filteredFightsInGroup = val;
-    })
+    this.formEditFight.reset();
+
+    if (this.getSelectedGroupType == 1) {
+      this.treeFightsInGroup().then(val => {
+        this.filteredFightsInGroup = val;
+      })
+    } else {
+
+      this.getBestRobotsInGroup().then(val => {
+        this.bestRobots = val;
+      })
+    }
+  }
+
+  editFight(walka_id: number) {
+    let robot1 = this.formEditFight.get('robot1')?.value;
+    let robot2 = this.formEditFight.get('robot2')?.value;
+
+    if (robot1) {
+      this.figthsService.editFight(robot1, walka_id, 0).then(resp => {
+        this.ui.showFeedback("loading", "Edytowano robota 1", 2)
+      }, err => {console.log(err)}).finally(() => {this.formEditFight.reset();})
+    }
+    if (robot2) {
+      this.figthsService.editFight(robot2, walka_id, 1).then(resp => {
+        this.ui.showFeedback("loading", "Edytowano robota 2", 2)
+      }, err => {console.log(err)}).finally(() => {this.formEditFight.reset();})
+    }
+  }
+  async deleteFight(walka_id: number) {
+    const decision = await this.ui.wantToContinue(`Czy na pewno chcesz usunąć walkę ${walka_id}`)
+    if(decision) {
+      this.figthsService.deleteFight(walka_id).then(resp => {
+        this.ui.showFeedback("loading", "Usunięto walkę", 2)
+      }, err => {console.log(err)}).finally(() => {})
+    }
+
+  }
+  async addFight() {
+    if (this.selectedGroup && this.formNewFight.get('position')?.value) {
+      this.figthsService.addFight(Number(this.formNewFight.get('position')?.value), this.formNewFight.get('next_fight')?.value != 0 ? Number(this.formNewFight.get('next_fight')?.value) : null, this.selectedGroup).then(resp => {
+        this.ui.showFeedback("loading", "Dodano walkę", 2)
+      }, err => {console.log(err)}).finally(() => {})
+    }
   }
 
   get getCategories() {
@@ -147,6 +198,21 @@ export class ManageFightsComponent {
     return JSON.stringify([{value: "Eliminacje + finał", id: 0},{value: "Tylko eliminacje", id: 1},{value: "Tylko finał", id: 2}])
   }
 
+  get robotOptions(): string | undefined {
+    let robots = this.getRobotsInCategory;
+    return robots ? JSON.stringify(robots.map((robot: any) => {
+      return {value: robot.nazwa_robota, id: robot.robot_uuid}
+    })) : undefined;
+  }
+
+  get fightsOptions(): string | undefined {
+    let fights = this.getFightsInGroup;
+    let list =  fights ? fights.map((fight: any) => {
+      return {value: fight.walka_id.toString(), id: fight.walka_id}
+    }) : undefined;
+    if (list) list.push({value: "null", id: 0})
+    return JSON.stringify(list)
+  }
 
   get getNumberToFinal() {
     let lista = []
@@ -197,6 +263,9 @@ export class ManageFightsComponent {
   get isNewGroupFormValid() {
     return this.formNewGroup.valid && this.isProperPositionCount;
   }
+  get isNewFightFormValid() {
+    return this.formNewFight.valid;
+  }
 
   get isLessThanFinalValue() {
     let count =  Number(this.formNewGroup.get('count')?.value);
@@ -211,7 +280,7 @@ export class ManageFightsComponent {
     return (l == 1 || l == 2 || l == 4 || l == 8 || l == 16);
   }
 
-   async fightsInGroup() {
+   async treeFightsInGroup() {
     let walki = this.getFightsInGroup.slice(1)
     let first = walki.find(wal => wal.nastepna_walka_id == null)!;
     let treeFights: TreeFight = {fight: first, children: null}
@@ -220,7 +289,22 @@ export class ManageFightsComponent {
   }
 
   get getFightsInGroup() {
-    return [...this.fights!].filter(w => w.grupa_id == this.selectedGroup).sort((a,b) => a.walka_id - b.walka_id);
+    return this.fights ? [...this.fights!].filter(w => w.grupa_id == this.selectedGroup).sort((a,b) => a.walka_id - b.walka_id) : [];
+  }
+
+  async getBestRobotsInGroup() {
+    let robots = this.getRobotsInCategory.map(r => { return {robot: r, punkty: 0}});
+    this.getFightsInGroup.forEach(fight => {
+      if(fight.wygrane_rundy_robot1 != null && fight.wygrane_rundy_robot2 != null && fight.wygrane_rundy_robot1 > fight.wygrane_rundy_robot2) {
+        let robot = robots.find(r => r.robot.robot_id == fight.robot1_id);
+        if (robot) robot.punkty += 1;
+      }
+      if(fight.wygrane_rundy_robot1 != null && fight.wygrane_rundy_robot2 != null && fight.wygrane_rundy_robot1 < fight.wygrane_rundy_robot2) {
+        let robot = robots.find(r => r.robot.robot_id == fight.robot2_id);
+        if (robot) robot.punkty += 1;
+      }
+    })
+    return robots;
   }
 
   async searchForFightChildren(fight: TreeFight, fights: Array<Fight>) {
