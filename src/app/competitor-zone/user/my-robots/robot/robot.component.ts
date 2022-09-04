@@ -311,7 +311,6 @@ export class RobotComponent {
   }
 
   async onSaveReason() {
-    console.log(this.isFormGroupAcceptationValid)
     if (this.isFormGroupAcceptationValid) {
       this.loadingAcceptation = true;
       this.injector.get(RefereeService).addRobotRejection(this.robot!.robot_uuid,this.formAcceptation.get('reason')?.value).then(() => {
@@ -498,6 +497,10 @@ export class RobotComponent {
 
   get isFreestyle() {
     return this.robotCategories ? this.robotCategories?.find(el => el === 2) != undefined : false;
+  }
+
+  get isTaskHunters() {
+    return this.robotCategories ? this.robotCategories?.find(el => el === 3) != undefined : false;
   }
 
 
