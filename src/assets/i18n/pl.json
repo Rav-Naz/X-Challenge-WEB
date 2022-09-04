@@ -191,11 +191,10 @@
                 { "id": 7, "patreonCategory": 5, "description": "Marszałek Województwa Podkarpackiego", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/" },
                 { "id": 8, "patreonCategory": 5, "description": "Podkarpacki Kurator Oświaty", "image": "../../assets/jpg/kuratorium.png", "linkToSite": "https://www.ko.rzeszow.pl/" },
                 { "id": 9, "patreonCategory": 3, "description": "Deloitte", "image": "../../assets/svg/deloitte.svg", "linkToSite": "https://www2.deloitte.com/pl/pl.html" },
-                { "id": 10, "patreonCategory": 2, "description": "Wago", "image": "../../assets/svg/wago.png", "linkToSite": "https://www.wago.com/pl/" },
+                { "id": 10, "patreonCategory": 1, "description": "Wago", "image": "../../assets/svg/wago.png", "linkToSite": "https://www.wago.com/pl/" },
                 { "id": 11, "patreonCategory": 5, "description": "Prezydent Miasta Rzeszowa", "image": "../../assets/jpg/rzeszow.png", "linkToSite": "https://bip.erzeszow.pl/" },
                 { "id": 12, "patreonCategory": 6, "description": "zrobotyzowany.pl", "image": "../../assets/jpg/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl/" },
                 { "id": 13, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" }
-
             ],
             "tiers": [
                 "Partner Główny",
@@ -325,6 +324,7 @@
             "statistics": "STATYSTYKI",
             "register": "REJESTRACJA",
             "counting": "ODWIEDZAJĄCY",
+            "fights": "PLANER WALK",
 
             "hello": {
                 "1": "Witaj w ",
@@ -398,7 +398,10 @@
             "acceptation-status": "Status akceptacji robota",
             "acceptation-true": "ZAAKCEPTOWANY",
             "acceptation-false": "ODRZUCONY",
-            "acceptation-waiting": "OCZEKIWANIE"
+            "acceptation-waiting": "OCZEKIWANIE",
+            "is-arrived": "Czy dotarł:",
+            "is-arrived-true": "DOTARŁ",
+            "is-arrived-false": "NIE DOTARŁ"
         },
         "settings": {
             "user": "Dane użytkownika",
@@ -1074,6 +1077,30 @@
         },
         "payload": {
             "name": "Dane do zapisu",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "option": {
+            "name": "Opcja tworzenia",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "robot1": {
+            "name": "Robot 1"
+        },
+        "robot2": {
+            "name": "Robot 2"
+        },
+        "count": {
+            "name": "Ilość do finału",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "next_fight": {
+            "name": "Następna walka",
             "validators": {
                 "required": "To pole jest wymagane"
             }
