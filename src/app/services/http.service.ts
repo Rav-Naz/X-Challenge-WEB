@@ -135,6 +135,15 @@ export class HttpService {
     })
   }
 
+  get getAllGroups(): Promise<APIResponse> {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.get<APIResponse>(`${this.url}public/getAllGroups`).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
   get getAllRobots(): Promise<APIResponse> {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.get<APIResponse>(`${this.url}public/getAllRobots`).toPromise().then(
@@ -636,6 +645,68 @@ export class HttpService {
         uzytkownik_uuid: uzytkownik_uuid,
         uzytkownik_typ: uzytkownik_typ
        },{ headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public createGroupsFromCategory(stanowiskaLista: Array<number>, kategoria_id: number, iloscDoFinalu: number, opcjaTworzenia: number | null) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`${this.url}admin/createGroupsFromCategory`, {
+        stanowiskaLista: stanowiskaLista,
+        kategoria_id: kategoria_id,
+        iloscDoFinalu: iloscDoFinalu,
+        opcjaTworzenia: opcjaTworzenia
+       },{ headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public removeGroup(grupa_id: number) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`${this.url}admin/deleteGroup`, {
+        grupa_id: grupa_id
+       },{ headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public addFight(stanowisko_id: number, nastepna_walka_id: number | null, grupa_id: number) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`${this.url}admin/addFight`, {
+        stanowisko_id: stanowisko_id,
+        nastepna_walka_id: nastepna_walka_id,
+        grupa_id: grupa_id
+       },{ headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public editFight(robot_uuid: string, walka_id: number, robot1czy2: number) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`${this.url}admin/editFight`, {
+        robot_uuid: robot_uuid,
+        walka_id: walka_id,
+        robot1czy2: robot1czy2
+       },{ headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public deleteFight(walka_id: number) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.delete<APIResponse>(`${this.url}admin/removeFight`, { headers: this.headers, body: {
+        walka_id: walka_id
+      }}).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );

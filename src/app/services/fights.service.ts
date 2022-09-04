@@ -126,6 +126,44 @@ export class FightsService {
     });
   }
 
+  public addFight(stanowisko_id: number, nastepna_walka_id: number | null, grupa_id: number) {
+    return new Promise<APIResponse | void>(async (resolve, reject) => {
+      const value = await this.http.addFight(stanowisko_id, nastepna_walka_id, grupa_id).catch(err => {
+        if (err.status === 400) {
+          this.errorService.showError(err.status, this.translate.instant(err.error.body));
+        } else {
+          this.errorService.showError(err.status);
+        }
+      });
+      resolve(value);
+    });
+  }
+  public editFight(robot_uuid: string, walka_id: number, robot1czy2: number) {
+    return new Promise<APIResponse | void>(async (resolve, reject) => {
+      const value = await this.http.editFight(robot_uuid, walka_id, robot1czy2).catch(err => {
+        if (err.status === 400) {
+          this.errorService.showError(err.status, this.translate.instant(err.error.body));
+        } else {
+          this.errorService.showError(err.status);
+        }
+      });
+      resolve(value);
+    });
+  }
+
+  public deleteFight(walka_id: number) {
+    return new Promise<APIResponse | void>(async (resolve, reject) => {
+      const value = await this.http.deleteFight(walka_id).catch(err => {
+        if (err.status === 400) {
+          this.errorService.showError(err.status, this.translate.instant(err.error.body));
+        } else {
+          this.errorService.showError(err.status);
+        }
+      });
+      resolve(value);
+    });
+  }
+
   public pushNewFigthsForPosition(fight: Array<any> | null) {
     this.fightsForPosition.next(fight);
   }
