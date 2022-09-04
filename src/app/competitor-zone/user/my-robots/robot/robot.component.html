@@ -195,7 +195,8 @@
             </div>
             <app-spinner *ngIf="isLoadingDocumentation"></app-spinner>
         </section>
-        <section class="documentation" *ngIf="isSmashBot">
+        <section class="documentation" *ngIf="isSmashBot || isFreestyle">
+
             <div>
                 <div class="row" *ngIf="!loadingMovie && !isEditingMovie">
                     <label *ngIf="robotFilm">{{'competitor-zone.robot.film-uploaded' | translate}}</label>
