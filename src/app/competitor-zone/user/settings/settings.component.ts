@@ -30,10 +30,11 @@ export class SettingsComponent {
   private loadingRFID: boolean = false;
   public confirmingPhone: boolean = false;
   public returnedPayload: any;
+  public isDisplayDevice: boolean = false;
 
   constructor(public translate: TranslateService, private formBuilder: FormBuilder,
     public authService: AuthService, public userService: UserService, private ui: UiService, private injector: Injector) {
-
+      this.isDisplayDevice = localStorage.getItem('isDisplayDevice') == 'true';
       this.formName = this.formBuilder.group({
       name: [(userService.userDetails as any)?.imie, [Validators.required, Validators.minLength(2), Validators.maxLength(40)]],
       surname: [(userService.userDetails as any)?.nazwisko, [Validators.required, Validators.minLength(2), Validators.maxLength(40)]]
@@ -181,6 +182,11 @@ export class SettingsComponent {
         this.loadingRFID = false;
       })
     }
+  }
+
+  onChangeDisplayDevice() {
+    this.isDisplayDevice = !this.isDisplayDevice;
+    localStorage.setItem('isDisplayDevice', this.isDisplayDevice.toString());
   }
 
   get createPhoneNumber() {

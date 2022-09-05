@@ -61,6 +61,7 @@ import { RegisterGuard } from './services/register-guard.service';
 import { CountingVisitorsComponent } from './competitor-zone/referee/counting-visitors/counting-visitors.component';
 import { ManageFightsComponent } from './competitor-zone/referee/manage-fights/manage-fights.component';
 import { AdminGuard } from './services/admin-guard.service';
+import { FightsViewComponent } from './shared/fights-view/fights-view.component';
 
 
 @NgModule({
@@ -100,7 +101,8 @@ import { AdminGuard } from './services/admin-guard.service';
     RobomotionComponent,
     InputFileComponent,
     CountingVisitorsComponent,
-    ManageFightsComponent
+    ManageFightsComponent,
+    FightsViewComponent
   ],
   imports: [
     BrowserModule,

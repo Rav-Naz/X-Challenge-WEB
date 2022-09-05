@@ -52,7 +52,14 @@
             <label><br></label>
         </section>
         <section *ngIf="userService.isReferee">
-            <a>asdasdjashd</a>
+            <a>{{'competitor-zone.settings.referee-settings'  | translate}}</a>
+            <label class="checkbox-container">
+              <a [ngClass]="{'checkbox-checked': isDisplayDevice}">{{'competitor-zone.settings.is-sliding' | translate}}</a>
+              <input type="checkbox" (click)="onChangeDisplayDevice()" [checked]="isDisplayDevice">
+              <span class="checkmark"></span>
+          </label>
+        </section>
+        <section *ngIf="userService.isReferee">
             <a>{{'competitor-zone.settings.test'  | translate}}</a>
             <a *ngIf="returnedPayload">payload: {{returnedPayload}}</a>
             <div class="row">
