@@ -11,6 +11,7 @@ import { FightsService } from 'src/app/services/fights.service';
 import { UserService } from 'src/app/services/user.service';
 import { onlyUnique } from 'src/app/shared/utils/unique';
 import { Position } from './../../models/position';
+import { GroupsService } from 'src/app/services/groups.service';
 
 
 @Component({
@@ -34,6 +35,14 @@ export class ResultsComponent implements OnInit, OnDestroy {
   ]);
 
   private loading: boolean = false;
+  public groups: Array<any> | null = null;
+  public actualShowingGroup: any = null;
+  public scrollTimer: any;
+  public scrollTimer2: any;
+  public lastScrollPos = 0;
+  public isDisplayDevice = false;
+  private isScrolling = false;
+
   private subs: Subscription = new Subscription;
   public selectedCategory: number | null = null;
   public selectedGroup: number | null = null;
@@ -45,7 +54,7 @@ export class ResultsComponent implements OnInit, OnDestroy {
 
   constructor(private positionsService: PositionsService, private formBuilder: FormBuilder,
      private categoriesService: CategoriesService, public translateService: TranslateService, private timesService: TimesService,
-     private figthsService: FightsService, public userService: UserService, public authService: AuthService) {
+     private figthsService: FightsService, public userService: UserService, public authService: AuthService, private groupsService: GroupsService) {
 
     this.formOption = this.formBuilder.group({
       filter: [this.selectedFilter]
@@ -53,16 +62,19 @@ export class ResultsComponent implements OnInit, OnDestroy {
     this.formFilter = this.formBuilder.group({
       filter_name: [this.filter]
     });
+    this.isDisplayDevice = localStorage.getItem('isDisplayDevice') == 'true';
 
     positionsService.getAllPositions();
     timesService.getAllTimes();
     figthsService.getAllFights();
-    const sub1 = combineLatest(this.categoriesService.categories$,this.positionsService.allPositions$, this.figthsService.allFights$,this.timesService.allTimes$).subscribe((val) => {
+    groupsService.getAllGroups();
+    const sub1 = combineLatest(this.categoriesService.categories$,this.positionsService.allPositions$, this.figthsService.allFights$,this.timesService.allTimes$, this.groupsService.groups$).subscribe((val) => {
       if (val[0] && val[1] && val[2] && val[3]) {
         this.categories = JSON.parse(JSON.stringify(val[0]));
         this.positions = JSON.parse(JSON.stringify(val[1]));
         this.allFights = JSON.parse(JSON.stringify(val[2]));
         this.allTimes = JSON.parse(JSON.stringify(val[3]));
+        this.groups = JSON.parse(JSON.stringify(val[4]));
         this.loading = false;
         this.showCategories = this.categoriesInPosition!;
 
@@ -89,7 +101,64 @@ export class ResultsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    if(this.isDisplayDevice) {
+      this.scrollTimer = setInterval(() => {
+        if(window.scrollY < document.body.scrollHeight) {
+          window.scrollTo(0, window.scrollY + (this.getCategoryType == 1 ? 1 : 3));
+          this.isScrolling = this.lastScrollPos != window.scrollY;
+          this.lastScrollPos = window.scrollY;
+        }
+      }, 50)
+      this.scrollTimer2 = setInterval(() => {
+        if (this.categories && !this.isScrolling) {
+          let acutal = this.categories.find(cat => cat.kategoria_id == this.selectedCategory)
+          if(acutal) {
+            let indexCategory = this.categories.indexOf(acutal);
+            if (this.filteredGroups) {
+              let group = this.filteredGroups?.find(gr => gr.grupa_id == this.actualShowingGroup)
+              let groupIndex = this.filteredGroups?.indexOf(group)
+              if(groupIndex >= 0 && (this.filteredGroups.length-1) > groupIndex) {
+                this.actualShowingGroup = this.filteredGroups[groupIndex+1].grupa_id;
+                return;
+              } else if (this.filteredGroups.length > 0 && groupIndex != this.filteredGroups.length-1){
+                this.actualShowingGroup = this.filteredGroups[0].grupa_id;
+                return;
+              }
+            }
+            this.selectCategory(indexCategory != this.categories.length-1 ? this.categories[indexCategory+1].kategoria_id : this.categories[0].kategoria_id)
+            this.actualShowingGroup = null;
+            window.scrollTo(0,0)
+            if (this.filteredGroups) {
+              let group = this.filteredGroups?.find(gr => gr.grupa_id == this.actualShowingGroup)
+              let groupIndex = this.filteredGroups?.indexOf(group)
+              if(groupIndex >= 0 && (this.filteredGroups.length-1) > groupIndex) {
+                this.actualShowingGroup = this.filteredGroups[groupIndex+1].grupa_id;
+                return;
+              } else if (this.filteredGroups.length > 0 && groupIndex != this.filteredGroups.length-1){
+                this.actualShowingGroup = this.filteredGroups[0].grupa_id;
+                return;
+              }
+            }
+          } else {
+            this.selectCategory(this.categories[0].kategoria_id);
+            this.actualShowingGroup = null;
+            window.scrollTo(0,0)
 
+            if (this.filteredGroups) {
+              let group = this.filteredGroups?.find(gr => gr.grupa_id == this.actualShowingGroup)
+              let groupIndex = this.filteredGroups?.indexOf(group)
+              if(groupIndex >= 0 && (this.filteredGroups.length-1) > groupIndex) {
+                this.actualShowingGroup = this.filteredGroups[groupIndex+1].grupa_id;
+                return;
+              } else if (this.filteredGroups.length > 0 && groupIndex != this.filteredGroups.length-1){
+                this.actualShowingGroup = this.filteredGroups[0].grupa_id;
+                return;
+              }
+            }
+          }
+        }
+      }, 5000)
+    }
   }
 
   selectCategory(kategoria_id: number) {
@@ -160,6 +229,10 @@ export class ResultsComponent implements OnInit, OnDestroy {
     return wyniki;
   }
 
+  get filteredGroups(){
+    return this.groups?.filter(gr => gr.kategoria_id == this.selectedCategory)
+  }
+
   get getCategoryType() {
     return this.categories?.find(el => el.kategoria_id === this.selectedCategory)?.rodzaj
   }
@@ -183,6 +256,8 @@ export class ResultsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subs.unsubscribe();
+    clearInterval(this.scrollTimer)
+    clearInterval(this.scrollTimer2)
   }
 
 }

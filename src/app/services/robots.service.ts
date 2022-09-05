@@ -64,7 +64,8 @@ export class RobotsService{
   }
 
   public getAllRobots() {
-    return new Promise<any>(async (resolve) => {
+    return new Promise<any>(async (resolve, reject) => {
+      if (this.allRobots.value === null && this.allRobots.value === undefined) { reject(); return; }
       const value = await this.http.getAllRobots.catch(err => {
         if(err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));

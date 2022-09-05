@@ -417,6 +417,8 @@
             "get-rfid": "Odczytaj RFID",
             "get-lap-time": "Odczytaj czas przejazdu",
             "set-rfid": "Zapisz dane na karcie RFID",
+            "referee-settings": "Ustawienia urządzenia",
+            "is-sliding": "Automatyczne przewijanie strony z walkami",
             "change": "* Preferencji nie da się samodzielnie zmienić po rejestracji. Aby dokonać zmian, prosimy skontaktować się z administratorem.",
             "errors": {
                 "succesfuly-added-phone": "Pomyślnie zaktualizowano numer telefonu",
@@ -550,6 +552,10 @@
         },
         "categories": {
             "join": "Dołącz teraz"
+        },
+        "fights-view": {
+            "3rd-fight": "Walka o trzecie miejsce",
+            "no-groups": "Brak grup"
         }
 
     },

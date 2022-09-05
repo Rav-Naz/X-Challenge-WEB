@@ -315,7 +315,7 @@
             "statistics": "STATISTICS",
             "register": "REGISTER",
             "counting": "VISITORS",
-            "fights": "WALK PLANNER",
+            "fights": "FIGHT PLANNER",
             "hello": {
                 "1": "Welcome to the ",
                 "2": "Competitor Zone!",
@@ -406,6 +406,8 @@
             "get-rfid": "Read RFID",
             "get-lap-time": "Read lap time",
             "set-rfid": "Save data to RFID",
+            "referee-settings": "Device settings",
+            "is-sliding": "Auto sliding results view",
             "change": "* Preferences cannot be changed independently after registration. Please contact the administrator to make changes.",
             "errors": {
                 "succesfuly-added-phone": "Phone number changed successfully",
@@ -540,6 +542,10 @@
         },
         "categories": {
             "join": "Join now"
+        },
+        "fights-view": {
+            "3rd-fight": "Fight for 3rd place",
+            "no-groups": "No groups"
         }
     },
     "app-rules": {
