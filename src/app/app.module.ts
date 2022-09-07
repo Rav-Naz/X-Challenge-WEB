@@ -62,6 +62,7 @@ import { CountingVisitorsComponent } from './competitor-zone/referee/counting-vi
 import { ManageFightsComponent } from './competitor-zone/referee/manage-fights/manage-fights.component';
 import { AdminGuard } from './services/admin-guard.service';
 import { FightsViewComponent } from './shared/fights-view/fights-view.component';
+import { PositionsComponent } from './competitor-zone/referee/positions/positions.component';
 
 
 @NgModule({
@@ -102,7 +103,8 @@ import { FightsViewComponent } from './shared/fights-view/fights-view.component'
     InputFileComponent,
     CountingVisitorsComponent,
     ManageFightsComponent,
-    FightsViewComponent
+    FightsViewComponent,
+    PositionsComponent
   ],
   imports: [
     BrowserModule,

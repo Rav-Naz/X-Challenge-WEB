@@ -29,6 +29,10 @@
                         <i class="las la-clone"></i>
                         <p>{{'competitor-zone.bar.counting' | translate}}</p>
                     </section>
+                    <section class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['positions']}}]" *ngIf="userService.isAdmin" routerLinkActive="competitor-zone-bar-segment-active">
+                        <i class="las la-map-marker"></i>
+                        <p>{{'competitor-zone.bar.positions' | translate}}</p>
+                    </section>
                     <section class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['settings']}}]" routerLinkActive="competitor-zone-bar-segment-active">
                         <i class="las la-cog"></i>
                         <p>{{'competitor-zone.bar.settings' | translate}}</p>

@@ -326,6 +326,7 @@
             "register": "REJESTRACJA",
             "counting": "ODWIEDZAJĄCY",
             "fights": "PLANER WALK",
+            "positions": "STANOWISKA",
 
             "hello": {
                 "1": "Witaj w ",
@@ -1108,6 +1109,12 @@
         },
         "next_fight": {
             "name": "Następna walka",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "referee": {
+            "name": "Sędzia",
             "validators": {
                 "required": "To pole jest wymagane"
             }

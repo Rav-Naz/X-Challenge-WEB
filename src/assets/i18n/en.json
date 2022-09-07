@@ -316,6 +316,7 @@
             "register": "REGISTER",
             "counting": "VISITORS",
             "fights": "FIGHT PLANNER",
+            "positions": "POSITIONS",
             "hello": {
                 "1": "Welcome to the ",
                 "2": "Competitor Zone!",
@@ -1090,6 +1091,18 @@
         },
         "count": {
             "name": "Number to final",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "next_fight": {
+            "name": "Next fight",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "referee": {
+            "name": "Referee",
             "validators": {
                 "required": "This field is required"
             }

@@ -712,6 +712,84 @@ export class HttpService {
       );
     })
   }
+  public addPosition(nazwa: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`${this.url}admin/addPosition`, {
+        nazwa: nazwa
+      }, { headers: this.headers}).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+  public editPosition(stanowisko_id: number,nazwa: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.put<APIResponse>(`${this.url}admin/editPosition`,{
+        stanowisko_id: stanowisko_id,
+        nazwa: nazwa
+      }, { headers: this.headers}).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public removePosition(stanowisko_id: number) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.delete<APIResponse>(`${this.url}admin/removePosition`, { headers: this.headers, body: {
+        stanowisko_id: stanowisko_id
+      }}).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public addCategoryToPosition(stanowisko_id: number, kategoria_id: number) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`${this.url}admin/addCategoryToPosition`, {
+        stanowisko_id: stanowisko_id,
+        kategoria_id: kategoria_id
+      }, { headers: this.headers}).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+  public removeCategoryFromPosition(stanowisko_id: number, kategoria_id: number) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.delete<APIResponse>(`${this.url}admin/removeCategoryFromPosition`, { headers: this.headers, body: {
+        stanowisko_id: stanowisko_id,
+        kategoria_id: kategoria_id
+      }}).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public addRefereeToPosition(stanowisko_id: number, uzytkownik_uuid: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`${this.url}admin/addRefereeToPosition`, {
+        stanowisko_id: stanowisko_id,
+        uzytkownik_uuid: uzytkownik_uuid
+      },{ headers: this.headers}).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+  public removeRefereeToPosition(stanowisko_id: number, uzytkownik_uuid: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.delete<APIResponse>(`${this.url}admin/removeRefereeFromPosition`, { headers: this.headers, body: {
+        stanowisko_id: stanowisko_id,
+        uzytkownik_uuid: uzytkownik_uuid
+      }}).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
 
   // ------------- OTHER
 
