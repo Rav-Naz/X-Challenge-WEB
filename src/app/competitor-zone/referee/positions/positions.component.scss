@@ -1,7 +1,7 @@
 @import '../../user/my-robots/robot/robot.component.scss';
 @import '../../../scss/colors';
 .position {
-    border-bottom: .2rem dashed $color-grey-0;
+    border-bottom: .2rem dashed rgba($color-grey-0, 0.5);
     padding: 2rem;
     width: 100%;
     h1 {
@@ -27,6 +27,10 @@
 
 .grid-categories-old {
     width: 100%;
+    label {
+        margin: 0;
+        color: $color-white;
+    }
 }
 
 .name {

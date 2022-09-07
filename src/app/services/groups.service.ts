@@ -42,6 +42,19 @@ export class GroupsService {
     });
   }
 
+  public addGroup(kategoria_id: number, nazwa: string) {
+    return new Promise<APIResponse | void>(async (resolve) => {
+      const value = await this.http.addGroup(kategoria_id, nazwa).catch(err => {
+        if(err.status === 400) {
+          this.errorService.showError(err.status, this.translate.instant(err.error.body));
+        } else {
+          this.errorService.showError(err.status);
+        }
+      })
+      resolve(value);
+    });
+  }
+
   public WS_addGroup(data: any) {
     this.groups.value?.push(data)
     this.groups.next(this.groups.value);

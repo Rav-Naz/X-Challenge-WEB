@@ -665,6 +665,18 @@ export class HttpService {
     })
   }
 
+  public addGroup(kategoria_id: number, nazwa: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`${this.url}admin/addGroup`, {
+        nazwa: nazwa,
+        kategoria_id: kategoria_id
+       },{ headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
   public removeGroup(grupa_id: number) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}admin/deleteGroup`, {

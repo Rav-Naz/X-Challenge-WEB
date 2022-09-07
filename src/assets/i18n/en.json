@@ -1106,6 +1106,12 @@
             "validators": {
                 "required": "This field is required"
             }
+        },
+        "group_name": {
+            "name": "Group name",
+            "validators": {
+                "required": "This field is required"
+            }
         }
     },
     "errors": {

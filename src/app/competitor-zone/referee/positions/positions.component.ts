@@ -84,7 +84,7 @@ export class PositionsComponent {
 
   async onRemoveReferee(uzytkownik_uuid: string) {
     if(this.editingPosition) {
-      const decision = await this.ui.wantToContinue(`Czy na pewno chcesz usunąć kategorię ${this.getUserName(uzytkownik_uuid)}`)
+      const decision = await this.ui.wantToContinue(`Czy na pewno chcesz usunąć sędziego ${this.getUserName(uzytkownik_uuid)} z tego stanowiska?`)
       if(!decision) return;
       this.loadingReferee = true;
       this.positionsService.removeRefereeFromPosition(this.editingPosition,uzytkownik_uuid).then(succes => {

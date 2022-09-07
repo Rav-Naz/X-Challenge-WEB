@@ -29,6 +29,7 @@ export class FightsViewComponent implements OnChanges {
   formNewGroup: FormGroup;
   formNewFight: FormGroup;
   formEditFight: FormGroup;
+  formManualNewGroup: FormGroup;
 
   public categories: Array<CategoryMain> | null = null;
   public groups: Array<any> | null = null;
@@ -52,6 +53,9 @@ export class FightsViewComponent implements OnChanges {
       option: [null, [Validators.required]],
       count: [null, [Validators.required]],
       position: [null, [Validators.required]],
+    });
+    this.formManualNewGroup = this.formBuilder.group({
+      group_name: [null, [Validators.required]],
     });
     this.formEditFight = this.formBuilder.group({
       robot1: [null],
@@ -109,6 +113,16 @@ export class FightsViewComponent implements OnChanges {
         this.resp=resp.body;
         this.ui.showFeedback("loading", resp.body, 5)
       }, err => {console.log(err),this.resp=err.error.body}).finally(() => {this.isLoadingNewGroup = false;})
+    }
+  }
+  createManualGroup() {
+    if(this.isManualNewGroupFormValid && this.getSelectedCategory) {
+      this.isLoadingNewGroup = true;
+      const nazwa = this.formManualNewGroup.get('group_name')?.value;
+      this.groupsService.addGroup(this.getSelectedCategory, nazwa).then(resp => {
+        this.ui.showFeedback("succes", "Utworzono grupę", 2)
+        this.formManualNewGroup.reset()
+      }, err => {console.log(err)}).finally(() => {this.isLoadingNewGroup = false;})
     }
   }
 
@@ -261,6 +275,9 @@ export class FightsViewComponent implements OnChanges {
 
   get isNewGroupFormValid() {
     return this.formNewGroup.valid && this.isProperPositionCount;
+  }
+  get isManualNewGroupFormValid() {
+    return this.formManualNewGroup.valid;
   }
   get isNewFightFormValid() {
     return this.formNewFight.valid;

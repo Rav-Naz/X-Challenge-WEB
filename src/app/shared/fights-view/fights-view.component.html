@@ -9,17 +9,27 @@
     </section>
     <section class="new-group" *ngIf="selectedGroup == -1 && canModify">
         <p>Ilość robotów: <b>{{getRobotsInCategory.length}}</b></p>
-        <app-select [group]="formNewGroup" controlName="option" translatePrefix="controls" [options]="getOptions" [collapsed]="true"></app-select>
-        <app-select [group]="formNewGroup" controlName="count" translatePrefix="controls" [options]="getNumberToFinal" [collapsed]="true"></app-select>
-        <div class="row">
-            <app-select [group]="formNewGroup" controlName="position" translatePrefix="controls" [options]="getPositionsForCategory" [collapsed]="true"></app-select>
-            <button class="submit-button" [disabled]="!isPositionFormValid || !isLessThanFinalValueButton" (click)="addPosition()"><i class="las la-plus"></i></button>
-        </div>
-        <label *ngFor="let selPos of getSelectedPositions"><i class="las la-trash-alt" (click)="removePosition(selPos)"></i> {{selPos}}</label>
-        <a>Ilość wybranych stanowisk jest jednocześnie ilością grup (2,4,8 lub 16) i nie może być mniejsza niż "Ilość do finału"</a>
-        <p>Wiadomość zwrotna:</p>
-        <p *ngIf="resp">{{resp}}</p>
-        <button class="submit-button" [disabled]="!isNewGroupFormValid || !isLessThanFinalValue" (click)="createGroup()">UTWÓRZ GRUPY DLA KATEGORII</button>
+        <ng-container *ngIf="{auto: false} as variable">
+            <button class="submit-button" (click)="variable.auto = !variable.auto">{{variable.auto ? "RĘCZNE TWORZENIE" : "AUTOMATYCZNE TWORZENIE"}}</button>
+            <ng-container *ngIf="!variable.auto">
+                <app-input [group]="formManualNewGroup" controlName="group_name" translatePrefix="controls" [collapsed]="true"></app-input>
+                <button class="submit-button" [disabled]="!isManualNewGroupFormValid" (click)="createManualGroup()">UTWÓRZ GRUPĘ</button>
+            </ng-container>
+            <ng-container *ngIf="variable.auto">
+                <app-select [group]="formNewGroup" controlName="option" translatePrefix="controls" [options]="getOptions" [collapsed]="true"></app-select>
+                <app-select [group]="formNewGroup" controlName="count" translatePrefix="controls" [options]="getNumberToFinal" [collapsed]="true"></app-select>
+                <div class="row">
+                    <app-select [group]="formManualNewGroup" controlName="position" translatePrefix="controls" [options]="getPositionsForCategory" [collapsed]="true"></app-select>
+                    <button class="submit-button" [disabled]="!isPositionFormValid || !isLessThanFinalValueButton" (click)="addPosition()"><i class="las la-plus"></i></button>
+                </div>
+                <label *ngFor="let selPos of getSelectedPositions"><i class="las la-trash-alt" (click)="removePosition(selPos)"></i> {{selPos}}</label>
+                <a>Ilość wybranych stanowisk jest jednocześnie ilością grup (2,4,8 lub 16) i nie może być mniejsza niż "Ilość do finału"</a>
+                <p>Wiadomość zwrotna:</p>
+                <p *ngIf="resp">{{resp}}</p>
+                <button class="submit-button" [disabled]="!isNewGroupFormValid || !isLessThanFinalValue" (click)="createGroup()">UTWÓRZ GRUPY DLA KATEGORII</button>
+            </ng-container>
+        </ng-container>
+
     </section>
     <section class="tree" *ngIf="!isLoadingDeletingGroup && selectedGroup && selectedGroup != -1">
         <div class="tree-fight-row tree-fight-row-height" *ngIf="canModify">

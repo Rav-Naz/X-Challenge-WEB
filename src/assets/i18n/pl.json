@@ -1118,6 +1118,12 @@
             "validators": {
                 "required": "To pole jest wymagane"
             }
+        },
+        "group_name": {
+            "name": "Nazwa grupy",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
         }
     },
     "errors": {
