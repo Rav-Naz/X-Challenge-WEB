@@ -64,3 +64,11 @@
         }
     }
 }
+
+.group-active {
+    // color: red !important;
+    border: 2px dashed !important;
+    font-weight: bold;
+    font-size: 2rem;
+    animation: pulse 1s infinite;
+}

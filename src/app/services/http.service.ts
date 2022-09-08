@@ -459,6 +459,28 @@ export class HttpService {
 
   // ------------- REFEREE
 
+  public activateGroup(grupa_id: number) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.put<APIResponse>(`${this.url}referee/activateGroup`, {
+        grupa_id: grupa_id
+      } ,{ headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public deactivateGroup(grupa_id: number) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.put<APIResponse>(`${this.url}referee/deactivateGroup`, {
+        grupa_id: grupa_id
+      } ,{ headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
   public getRefereePositions(uzytkownik_uuid: string) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.get<APIResponse>(`${this.url}referee/getRefereePositions/${uzytkownik_uuid}`, { headers: this.headers }).toPromise().then(

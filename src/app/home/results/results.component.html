@@ -19,7 +19,7 @@
                     <label>{{'competitor-zone.referee-zone.groups' | translate}}</label>
                     <span *ngIf="groups && groups.length === 0">{{'competitor-zone.referee-zone.no-groups' | translate}}</span>
                     <span *ngIf="filteredGroups?.length == 0">{{"competitor-zone.fights-view.no-groups" | translate}}</span>
-                    <button (click)="selectGroup(group.grupa_id!)" *ngFor="let group of filteredGroups" [ngClass]="{'referee-categories-active': group.grupa_id! === actualShowingGroup}">{{group.nazwa}}</button>
+                    <button (click)="selectGroup(group.grupa_id!)" *ngFor="let group of filteredGroups" [ngClass]="{'referee-categories-active': group.grupa_id! === actualShowingGroup, 'group-active':group.czy_aktywna}">{{group.nazwa}}</button>
                 </section>
 
                 <section class="referee-results" *ngIf="!isLoading">

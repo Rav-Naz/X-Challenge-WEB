@@ -3,7 +3,7 @@
     <section class="referee-categories" *ngIf="!selectedGroupFromParent">
         <label>{{'competitor-zone.referee-zone.groups' | translate}}</label>
         <span *ngIf="filteredGroups?.length == 0 || (groups && groups.length === 0)">{{"competitor-zone.fights-view.no-groups" | translate}}</span>
-        <button (click)="selectGroup(group.grupa_id!)" *ngFor="let group of filteredGroups" [ngClass]="{'referee-categories-active': group.grupa_id! === selectedGroup}">{{group.nazwa}}</button>
+        <button (click)="selectGroup(group.grupa_id!)" (dblclick)="changeGroupActive(group)" *ngFor="let group of filteredGroups" [ngClass]="{'referee-categories-active': group.grupa_id! === selectedGroup, 'group-active':group.czy_aktywna } ">{{group.nazwa}}</button>
         <button class="referee-categories-add" (click)="selectGroup(-1)" *ngIf="canModify"><i class="las la-plus"></i></button>
     </section>
     <section class="new-group" *ngIf="selectedGroup == -1 && canModify">

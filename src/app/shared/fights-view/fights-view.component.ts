@@ -115,6 +115,16 @@ export class FightsViewComponent implements OnChanges {
     }
   }
 
+  changeGroupActive(grupa: any) {
+    if (this.refereePositionId != null) {
+      if (grupa.czy_aktywna) {
+        this.groupsService.deactivateGroup(grupa.grupa_id)
+      } else {
+        this.groupsService.activateGroup(grupa.grupa_id)
+      }
+    }
+    }
+
   removePosition(positionId: number) {
     let index = this.selectedPositions?.indexOf(positionId)!
     this.selectedPositions?.splice(index,1)
