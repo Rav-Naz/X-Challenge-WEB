@@ -160,6 +160,16 @@ section {
         border-right: none;
     }
     &-fight {
+        &-referee {
+            &>* {
+                cursor: pointer;
+            }
+            &:hover {
+                border: 2px solid $color-primary-dark;
+                cursor: pointer;
+                background-color: $color-grey-5;
+            }
+        }
         font-family: 'Goldman';
         text-align: center;
         display: flex;

@@ -104,12 +104,6 @@ export class RefereeZoneComponent implements OnInit, OnDestroy {
     window.open(`/competitor-zone/(outlet:add-time-result/${this.selectedPosition}/${this.selectedCategory}`)
   }
 
-  addFightResult(walka: any) {
-    if (!walka.wygrane_rundy_robot1 && !walka.wygrane_rundy_robot2 && walka.robot1_id && walka.robot2_id || this.userService.isAdmin) {
-      this.router.navigateByUrl(`/competitor-zone/(outlet:add-fight-result/${this.selectedPosition}/${this.selectedCategory}`, { state: {data: walka}});
-    }
-  }
-
   selectCategory(kategoria_id: number) {
     this.selectedCategory = Number(kategoria_id);
     this.selectedGroup = null;

@@ -18,7 +18,7 @@
                 <app-select [group]="formNewGroup" controlName="option" translatePrefix="controls" [options]="getOptions" [collapsed]="true"></app-select>
                 <app-select [group]="formNewGroup" controlName="count" translatePrefix="controls" [options]="getNumberToFinal" [collapsed]="true"></app-select>
                 <div class="row">
-                    <app-select [group]="formManualNewGroup" controlName="position" translatePrefix="controls" [options]="getPositionsForCategory" [collapsed]="true"></app-select>
+                    <app-select [group]="formNewGroup" controlName="position" translatePrefix="controls" [options]="getPositionsForCategory" [collapsed]="true"></app-select>
                     <button class="submit-button" [disabled]="!isPositionFormValid || !isLessThanFinalValueButton" (click)="addPosition()"><i class="las la-plus"></i></button>
                 </div>
                 <label *ngFor="let selPos of getSelectedPositions"><i class="las la-trash-alt" (click)="removePosition(selPos)"></i> {{selPos}}</label>
@@ -47,7 +47,7 @@
         <div class="tree-diagram" *ngIf="getSelectedGroupType == 1">
             <div class="tree-third">
                 <a>{{"competitor-zone.fights-view.3rd-fight" | translate}}</a>
-                <p class="tree-fight" [ngClass]="{'tree-fight-tba': getFightsInGroup[0].robot1_nazwa == null || getFightsInGroup[0].robot2_nazwa == null}">
+                <p class="tree-fight" (click)="addFightResult(getFightsInGroup[0])" [ngClass]="{'tree-fight-tba': getFightsInGroup[0].robot1_nazwa == null || getFightsInGroup[0].robot2_nazwa == null, 'tree-fight-referee': refereePositionId && refereePositionId == getFightsInGroup[0].stanowisko_id && !(getFightsInGroup[0].robot1_nazwa == null || getFightsInGroup[0].robot2_nazwa == null)}">
                     <ng-container *ngIf="{edit: false} as variable">
                         <ng-container *ngIf="!variable.edit">
                             <div class="tree-fight-row">
@@ -78,7 +78,7 @@
             </div>
             <ul class="tree-diagram-no-dash">
                 <li>
-                    <p class="tree-fight" [ngClass]="{'tree-fight-tba': filteredFightsInGroup?.fight?.robot1_nazwa == null || filteredFightsInGroup?.fight?.robot2_nazwa == null}">
+                    <p class="tree-fight" (click)="addFightResult(filteredFightsInGroup?.fight)" [ngClass]="{'tree-fight-tba': filteredFightsInGroup?.fight?.robot1_nazwa == null || filteredFightsInGroup?.fight?.robot2_nazwa == null, 'tree-fight-referee': refereePositionId && refereePositionId == filteredFightsInGroup?.fight?.stanowisko_id && !(filteredFightsInGroup?.fight?.robot1_nazwa == null || filteredFightsInGroup?.fight?.robot2_nazwa == null)}">
                         <ng-container *ngIf="{edit: false} as variable">
                             <div class="tree-fight-row">
                                 <a class="tree-fight-id">{{filteredFightsInGroup?.fight?.walka_id}}</a>
@@ -114,7 +114,7 @@
             </ul>
         </div>
         <div class="eliminations" *ngIf="getSelectedGroupType == 0">
-            <p class="tree-fight" *ngFor="let fight of getFightsInGroup" [ngClass]="{'tree-fight-tba': fight.robot1_nazwa == null || fight.robot2_nazwa == null}">
+            <p class="tree-fight" *ngFor="let fight of getFightsInGroup" (click)="addFightResult(fight)" [ngClass]="{'tree-fight-tba': fight.robot1_nazwa == null || fight.robot2_nazwa == null, 'tree-fight-referee': refereePositionId && refereePositionId == fight.stanowisko_id && !(fight.robot1_nazwa == null || fight.robot2_nazwa == null)}">
                 <!-- <ng-container > -->
                 <ng-container *ngIf="{edit: false} as variable">
                     <div class="tree-fight-row">
@@ -164,7 +164,7 @@
 <ng-template #recursiveListTmpl let-tree="tree">
     <ul *ngIf="tree" [ngClass]="{'tree-diagram-no-dash-bottom': tree.children == null}">
         <li *ngFor="let child of tree.children">
-            <p class="tree-fight" [ngClass]="{'tree-fight-tba': child.fight.robot1_nazwa == null || child.fight.robot2_nazwa == null}">
+            <p class="tree-fight" (click)="addFightResult(child.fight)" [ngClass]="{'tree-fight-tba': child.fight.robot1_nazwa == null || child.fight.robot2_nazwa == null, 'tree-fight-referee': refereePositionId && refereePositionId == child.fight.stanowisko_id && !(child.fight.robot1_nazwa == null || child.fight.robot2_nazwa == null)}">
                 <ng-container *ngIf="{edit: false} as variable">
                     <div class="tree-fight-row">
                         <a class="tree-fight-id">{{child.fight.walka_id}}</a>

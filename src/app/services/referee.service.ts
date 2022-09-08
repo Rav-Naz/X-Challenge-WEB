@@ -1,10 +1,11 @@
 import { TranslateService } from '@ngx-translate/core';
 import { HttpService } from 'src/app/services/http.service';
 import { ErrorsService } from './errors.service';
-import { Injectable } from '@angular/core';
+import { Injectable, Injector } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { WebsocketService } from './websocket.service';
 import { UiService } from './ui.service';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,10 @@ export class RefereeService {
 
   private allUsers = new BehaviorSubject<Array<any> | null>(null);
 
-  constructor (private errorService: ErrorsService, private http: HttpService, private translate: TranslateService, private websocket: WebsocketService, private ui: UiService) {
-    this.getUsers();
+  constructor (private errorService: ErrorsService, private http: HttpService, private translate: TranslateService, private websocket: WebsocketService, private ui: UiService, private injector: Injector) {
+    if(injector.get(UserService).isReferee) {
+      this.getUsers();
+    }
     this.websocket.getWebSocket$.subscribe((socket) => {
       socket?.on('user/addPostalCode', (data) => {
         this.WS_addPostalCode(data);

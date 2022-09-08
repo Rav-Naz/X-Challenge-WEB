@@ -442,7 +442,8 @@
                 "2": "Wprowadź identyfikator konstruktora robota",
                 "3": "Wezwij konstruktorów robota"
             },
-            "next": "Dalej",
+            "next": "Sprawdź",
+            "skip": "Pomiń",
             "2": {
                 "1": "Teraz możesz przejść do przeprowadzenia walki. Po jej zakończeniu wpisz wynik.",
                 "2": "Wprowadź ilość wygranych rund przez"

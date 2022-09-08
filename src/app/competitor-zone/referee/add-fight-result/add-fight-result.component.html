@@ -17,7 +17,8 @@
 
                 </div>
             </div>
-            <button class="submit-button" [disabled]="!isFormUserUUIDValid && !userService.isAdmin" (click)="goToSetFight()">{{'competitor-zone.add-fight-result.next' | translate}}<i class="las la-forward"></i></button>
+            <button class="submit-button" [disabled]="!isFormUserUUIDValid" (click)="goToSetFight()">{{'competitor-zone.add-fight-result.next' | translate}}<i class="las la-forward"></i></button>
+            <button class="submit-button" (click)="skip()">{{'competitor-zone.add-fight-result.skip' | translate}}<i class="las la-forward"></i></button>
         </div>
         <div *ngIf="viewCounter === 1" class="robots view">
             <h5>{{'competitor-zone.add-fight-result.title.1.1' | translate}}<span>{{'competitor-zone.add-fight-result.title.1.2' | translate}}</span></h5>

@@ -25,6 +25,7 @@ export class FightsViewComponent implements OnChanges {
   @Input() selectedCategory!: number | null;
   @Input() selectedGroupFromParent!: number | null;
   @Input() canModify!: boolean;
+  @Input() refereePositionId: number | null = null;
 
   formNewGroup: FormGroup;
   formNewFight: FormGroup;
@@ -76,9 +77,15 @@ export class FightsViewComponent implements OnChanges {
         this.robots = JSON.parse(JSON.stringify(val[3]));
         this.fights = JSON.parse(JSON.stringify(val[4]));
         if(this.selectedGroup != null && this.selectedGroup != -1) {
-          this.treeFightsInGroup().then(val => {
-            this.filteredFightsInGroup = val;
-          })
+          if (this.getSelectedGroupType == 1) {
+            this.treeFightsInGroup().then(val => {
+              this.filteredFightsInGroup = val;
+            })
+          } else {
+            this.getBestRobotsInGroup().then(val => {
+              this.bestRobots = val;
+            })
+          }
         }
       }
     })
@@ -98,6 +105,14 @@ export class FightsViewComponent implements OnChanges {
   }
   addPosition() {
     if(this.isPositionFormValid) this.selectedPositions?.push(Number(this.formNewGroup.get('position')?.value))
+  }
+
+  addFightResult(walka: any) {
+    if(!walka.robot1_id || !walka.robot2_id) return;
+    if (this.refereePositionId && this.refereePositionId == walka.stanowisko_id) {
+      let newWindow = window.open(`/competitor-zone/(outlet:add-fight-result/${this.refereePositionId}/${this.selectedCategory}`);
+      (newWindow! as any).walka = JSON.stringify(walka)
+    }
   }
 
   removePosition(positionId: number) {
@@ -152,7 +167,6 @@ export class FightsViewComponent implements OnChanges {
         this.filteredFightsInGroup = val;
       })
     } else {
-
       this.getBestRobotsInGroup().then(val => {
         this.bestRobots = val;
       })

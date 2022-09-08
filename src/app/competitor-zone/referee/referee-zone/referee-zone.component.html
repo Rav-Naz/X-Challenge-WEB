@@ -10,14 +10,15 @@
                 <span *ngIf="!categoriesInPosition">{{'competitor-zone.referee-zone.no-categories' | translate}}</span>
                 <button (click)="selectCategory(category.kategoria_id!)" *ngFor="let category of showCategories" [ngClass]="{'referee-categories-active': category.kategoria_id! === selectedCategory}">{{category.nazwa}}</button>
             </section>
-            <section class="referee-categories" *ngIf="getCategoryType === 1">
+            <!-- <section class="referee-categories" *ngIf="getCategoryType === 1">
                 <label>{{'competitor-zone.referee-zone.groups' | translate}}</label>
                 <span *ngIf="getFightGroupsFromCategory.length === 0">{{'competitor-zone.referee-zone.no-groups' | translate}}</span>
                 <button (click)="selectGroup(group.grupa_id!)" *ngFor="let group of showGroups" [ngClass]="{'referee-categories-active': group.grupa_id! === selectedGroup}">{{group.nazwa_grupy}}</button>
-            </section>
+            </section> -->
             <section class="referee-results" *ngIf="selectedPosition && !isLoading">
+                <app-fights-view [selectedCategory]="selectedCategory" [canModify]="false" [refereePositionId]="selectedPosition"></app-fights-view>
 
-                <div class="referee-results-fights" *ngIf="getCategoryType === 1">
+                <!-- <div class="referee-results-fights" *ngIf="getCategoryType === 1">
                     <span *ngIf="!getGroupFigths?.length && selectedGroup">{{'competitor-zone.referee-zone.no-fights' | translate}}</span>
                     <div class="scroll">
                         <div *ngFor="let fight of getGroupFigths">
@@ -63,7 +64,7 @@
                             </ng-container>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="referee-results-times" *ngIf="getCategoryType === 0 || getCategoryType === 2">
                     <button class="submit-button" (click)="addTimeResult()">{{(getCategoryType === 2 ? 'competitor-zone.referee-zone.add-result' : 'competitor-zone.referee-zone.add-time') | translate}}<i class="las la-plus-circle"></i></button>

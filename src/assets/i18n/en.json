@@ -433,6 +433,8 @@
                 "3": "Call the robot constructors"
             },
             "next": "Next",
+            "skip": "Skip",
+
             "2": {
                 "1": "Now you can start the fight. When finished, enter the result.",
                 "2": "Enter the number of rounds won by"
