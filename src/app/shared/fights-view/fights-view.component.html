@@ -2,8 +2,7 @@
     <!-- <div class="scroll"> -->
     <section class="referee-categories" *ngIf="!selectedGroupFromParent">
         <label>{{'competitor-zone.referee-zone.groups' | translate}}</label>
-        <span *ngIf="groups && groups.length === 0">{{'competitor-zone.referee-zone.no-groups' | translate}}</span>
-        <span *ngIf="filteredGroups?.length == 0">{{"competitor-zone.fights-view.no-groups" | translate}}</span>
+        <span *ngIf="filteredGroups?.length == 0 || (groups && groups.length === 0)">{{"competitor-zone.fights-view.no-groups" | translate}}</span>
         <button (click)="selectGroup(group.grupa_id!)" *ngFor="let group of filteredGroups" [ngClass]="{'referee-categories-active': group.grupa_id! === selectedGroup}">{{group.nazwa}}</button>
         <button class="referee-categories-add" (click)="selectGroup(-1)" *ngIf="canModify"><i class="las la-plus"></i></button>
     </section>

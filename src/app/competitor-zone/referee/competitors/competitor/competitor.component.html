@@ -46,7 +46,7 @@
                 </div>
             </div>
         </section>
-        <section class="position" *ngIf="user.uzytkownik_typ >= 2">
+        <section class="position" *ngIf="user && user.uzytkownik_typ >= 2">
             <p style="margin: 0;">Obsługiwane stanowiska</p>
             <div class="grid-categories-new" *ngIf="userSerceice.isAdmin">
                 <app-select *ngIf="positionsOptions !== undefined && !isLoadingReferee" [group]="formReferee" [collapsed]="true" controlName="position" translatePrefix="controls" [options]="positionsOptions"></app-select>

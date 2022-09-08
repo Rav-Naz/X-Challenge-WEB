@@ -2,6 +2,12 @@
 @import '../../scss/variables';
 @import '../../competitor-zone/referee/competitors/competitors.component.scss';
 @import '../../competitor-zone/referee/referee-zone/referee-zone.component.scss';
+.scroll {
+    &>div {
+        padding: .5rem;
+    }
+}
+
 .results {
     width: 100%;
     min-height: 95vh;
@@ -46,6 +52,15 @@
         &:link,
         &:visited {
             min-width: max-content !important;
+        }
+    }
+}
+
+@media only screen and (max-width: $max-width-5) {
+    .scroll {
+        &>div {
+            padding: .2;
+            width: 100%;
         }
     }
 }

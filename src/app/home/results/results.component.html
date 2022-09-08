@@ -28,6 +28,8 @@
 
                     <div class="referee-results-times" *ngIf="getCategoryType === 0 || getCategoryType === 2">
                         <span *ngIf="!resultsFiltered?.length">{{'competitor-zone.referee-zone.no-results' | translate}}</span>
+                        <p class="referee-results-times-best" *ngFor="let robot of threeBestRobots; let i = index"><b>{{i+1}}:</b> {{robot.nazwa_robota}} - <span>{{robot.wynik}}</span> {{(getCategoryType === 2 ? 'competitor-zone.referee-zone.pts' : 'ms') | translate}}</p>
+
                         <div class="scroll">
                             <div *ngFor="let time of resultsFiltered">
                                 <ng-container *ngIf="{open: false} as variable">

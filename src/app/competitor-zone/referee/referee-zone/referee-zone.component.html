@@ -78,13 +78,14 @@
                                         <p class="referee-results-times-element-name">{{time.nazwa_robota}}</p>
                                     </div>
 
-                                    <div class="referee-results-times-element-categories">
+                                    <div class="referee-results-times-element-categories" *ngIf="time.wynik_id !== editingTimes">
                                         <p>{{time.czas_przejazdu}} {{(getCategoryType === 2 ? 'competitor-zone.referee-zone.pts' : 'ms') | translate}}</p>
                                     </div>
                                     <span class="referee-results-times-element-edit" (click)="editTime(time.wynik_id)" *ngIf="time.wynik_id !== editingTimes">{{ 'competitor-zone.my-robots.edit' | translate}}<i class="las la-edit"></i></span>
                                     <div class="referee-results-times-element-edit-form" *ngIf="time.wynik_id === editingTimes">
                                         <app-input [group]="editingTimesForm" controlName="time" [collapsed]="true"></app-input>
                                         <button [disabled]="!isFormEditTimeValid" class="submit-button" (click)="saveEditedTime()"><i class="las la-save"></i></button>
+                                        <button class="submit-button referee-results-times-element-edit-form-button-red" (click)="deleteTime()"><i class="las la-trash"></i></button>
                                     </div>
                                     <div class="referee-results-fights-element-details">
                                         <div class="referee-results-fights-element-details-flex" *ngIf="variable.open">
@@ -100,10 +101,10 @@
                                                 <label>{{'competitor-zone.referee-zone.robot-id' | translate}}&nbsp;</label>
                                                 <label>{{time.robot_id}}</label>
                                             </div>
-                                            <div class="referee-results-fights-element-details-flex-piece">
+                                            <!-- <div class="referee-results-fights-element-details-flex-piece">
                                                 <label>{{'competitor-zone.referee-zone.result-id' | translate}}&nbsp;</label>
                                                 <label>{{time.wynik_id}}</label>
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <span (click)="dummy($event); variable.open = !variable.open" class="referee-results-fights-element-edit">{{(variable.open ? 'competitor-zone.referee-zone.less' : 'competitor-zone.referee-zone.more') | translate}}<i class="las la-angle-double-down" *ngIf="!variable.open"></i><i class="las la-angle-double-up" *ngIf="variable.open"></i></span>
                                     </div>

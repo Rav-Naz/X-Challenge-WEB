@@ -101,7 +101,7 @@ export class RefereeZoneComponent implements OnInit, OnDestroy {
   }
 
   addTimeResult() {
-    this.router.navigateByUrl(`/competitor-zone/(outlet:add-time-result/${this.selectedPosition}/${this.selectedCategory}`);
+    window.open(`/competitor-zone/(outlet:add-time-result/${this.selectedPosition}/${this.selectedCategory}`)
   }
 
   addFightResult(walka: any) {
@@ -140,6 +140,16 @@ export class RefereeZoneComponent implements OnInit, OnDestroy {
         this.editingTimes = null;
       })
     }
+  }
+
+  async deleteTime() {
+    const decision = await this.ui.wantToContinue(`Czy na pewno chcesz usunąć czas przejazdu ${this.editingTimes}?`)
+    if (!decision || !this.editingTimes) return;
+    this.isLoading = true;
+    this.timesService.deleteTimeResult(this.editingTimes).then(() => {
+      this.isLoading = false;
+      this.editingTimes = null;
+    })
   }
 
   get getFightGroupsFromCategory() {

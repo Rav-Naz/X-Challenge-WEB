@@ -506,6 +506,17 @@ export class HttpService {
       );
     })
   }
+  public deleteTimeResult(wynik_id: number) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.delete<APIResponse>(`${this.url}referee/deleteTimeResult`,
+      { headers: this.headers, body: {
+        wynik_id: wynik_id
+      }}).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
 
   public confirmGivenStarterpack(uzytkownik_uuid: string) {
     return new Promise<APIResponse>((resolve, rejects) => {

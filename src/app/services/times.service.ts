@@ -133,6 +133,22 @@ export class TimesService {
     });
   }
 
+  public deleteTimeResult(wynik_id: number) {
+    return new Promise<APIResponse | void>(async (resolve) => {
+      const value = await this.http.deleteTimeResult(wynik_id).catch(err => {
+        if (err.status === 400) {
+          this.errorService.showError(err.status, this.translate.instant(err.error.body));
+        } else {
+          this.errorService.showError(err.status);
+        }
+      })
+      if(value) {
+        this.ui.showFeedback('loading', `Usunięto wynik ${value.body.wynik_id}`, 3)
+      }
+      resolve(value);
+    });
+  }
+
   public pushNewTimesForPosition(times: Array<any> | null) {
     const sorted = times ? times.sort((a, b) => b.wynik_id - a.wynik_id) : times;
     this.timesForPosition.next(sorted);
@@ -190,7 +206,6 @@ export class TimesService {
       if (timeIndex >= 0) {
         this.timesForPosition.value.splice(timeIndex, 1);
         this.timesForPosition.next(this.timesForPosition.value)
-        this.ui.showFeedback('loading', `Usunięto wynik ${data.wynik_id}`, 3)
       }
     }
     if (this.timesForRobot.value && this.timesForRobot.value.length > 0) {
