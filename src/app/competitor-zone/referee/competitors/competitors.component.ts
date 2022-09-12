@@ -26,11 +26,11 @@ export class CompetitorsComponent implements OnInit {
   public filterOptions: string = JSON.stringify([
     { value: "competitor-zone.competitors.filters.name", id: 1 },
     { value: "competitor-zone.competitors.filters.user-uuid", id: 2 },
-    { value: "competitor-zone.competitors.filters.positions", id: 3 },
-    { value: "competitor-zone.competitors.filters.robots-uuid", id: 4 },
+    // { value: "competitor-zone.competitors.filters.positions", id: 3 },
+    // { value: "competitor-zone.competitors.filters.robots-uuid", id: 4 },
     { value: "competitor-zone.competitors.filters.phone", id: 5 },
     { value: "competitor-zone.competitors.filters.email", id: 6 },
-    { value: "competitor-zone.competitors.filters.categories", id: 7 }
+    // { value: "competitor-zone.competitors.filters.categories", id: 7 }
   ]);
   private selectedFilter: number | null = 1;
   private filter: string = '';
@@ -96,7 +96,7 @@ export class CompetitorsComponent implements OnInit {
         case 7:
           userzy = userzy.filter(user => String(user.kategorie).toLowerCase().includes(this.filter));
           break;
-      
+
         default:
           break;
       }

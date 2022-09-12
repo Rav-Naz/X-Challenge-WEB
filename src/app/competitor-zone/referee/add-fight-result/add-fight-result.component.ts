@@ -102,9 +102,11 @@ export class AddFightResultComponent implements OnInit, OnDestroy {
     const decision = await this.ui.wantToContinue(`Jeśli potwierdzisz wykonanie procedury, do wszystkich konstruktorów robota ${robot_nazwa} zostanie wysłana wiadomość wzywająca ich do walki na ringu`)
     if (decision) {
       const response = await this.refereeService.callForConstructors(robot_uuid, this.stanowisko_id!, robot_nazwa);
-      if (response !== undefined && response !== null && response.body.pIsSucces === 1) {
-        this.ui.showFeedback("succes", `Użytkownicy robota ${robot_nazwa} zostali wezwani`, 3);
-      } else {
+      if (response !== undefined && response !== null && response.body.sendedCount > 0) {
+        this.ui.showFeedback("succes", `Konstruktorzy robota ${robot_nazwa} zostali wezwani`, 3);
+      } else if (response !== undefined && response !== null && response.body.sendedCount == 0) {
+        this.ui.showFeedback("loading", `Żaden z konstruktorów robota ${robot_nazwa} nie ma przypisanego numeru telefonu`, 5);
+      }else {
         this.ui.showFeedback("error", `Błąd!`, 3);
       }
     }

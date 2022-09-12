@@ -317,6 +317,7 @@
             "counting": "VISITORS",
             "fights": "FIGHT PLANNER",
             "positions": "POSITIONS",
+            "announcements": "ANNOUNCEMENTS",
             "hello": {
                 "1": "Welcome to the ",
                 "2": "Competitor Zone!",

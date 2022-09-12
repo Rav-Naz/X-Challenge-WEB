@@ -90,6 +90,15 @@ export class HttpService {
     })
   }
 
+  get getAnnouncements() {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.get<APIResponse>(`${this.url}public/getAnnouncements`).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
   getAllFightsForPosiotion(stanowisko_id: number) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.get<APIResponse>(`${this.url}public/getAllFightsForPosiotion/${stanowisko_id}`).toPromise().then(
@@ -830,6 +839,17 @@ export class HttpService {
         stanowisko_id: stanowisko_id,
         uzytkownik_uuid: uzytkownik_uuid
       }}).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public sendMessageToAllUsers(tresc: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`${this.url}admin/sendMessageToAllUsers`, {
+        tresc: tresc
+      },{ headers: this.headers}).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
