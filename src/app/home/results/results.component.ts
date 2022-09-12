@@ -43,6 +43,8 @@ export class ResultsComponent implements OnInit, OnDestroy {
   public isDisplayDevice = false;
   private isScrolling = false;
 
+  public threeBestRobots: Array<any> | null = null;
+
   private subs: Subscription = new Subscription;
   public selectedCategory: number | null = null;
   public selectedGroup: number | null = null;
@@ -77,7 +79,15 @@ export class ResultsComponent implements OnInit, OnDestroy {
         this.groups = JSON.parse(JSON.stringify(val[4]));
         this.loading = false;
         this.showCategories = this.categoriesInPosition!;
-
+        if(this.getCategoryType == 2 ) {
+          this.threeBestRobotsInPoints().then(val => {
+            this.threeBestRobots = val;
+          })
+        } else if (this.getCategoryType == 0) {
+          this.threeBestRobotsInTimes().then(val => {
+            this.threeBestRobots = val;
+          })
+        }
       }
     })
 
@@ -87,6 +97,7 @@ export class ResultsComponent implements OnInit, OnDestroy {
         if(this.selectedFilter === 1) {
           this.selectedCategory = null;
           this.selectedGroup = null;
+          this.threeBestRobots = null;
         }
       }
     });
@@ -164,11 +175,56 @@ export class ResultsComponent implements OnInit, OnDestroy {
   selectCategory(kategoria_id: number) {
     this.selectedCategory = Number(kategoria_id);
     this.selectedGroup = null;
+    this.threeBestRobots = null;
     this.showGroups = this.getFightGroupsFromCategory;
+    if(this.getCategoryType == 2 ) {
+      this.threeBestRobotsInPoints().then(val => {
+        this.threeBestRobots = val;
+      })
+    } else if (this.getCategoryType == 0) {
+      this.threeBestRobotsInTimes().then(val => {
+        this.threeBestRobots = val;
+      })
+    }
   }
 
   selectGroup(grupa_id: number) {
     this.selectedGroup = Number(grupa_id);
+  }
+
+  async threeBestRobotsInTimes() {
+    let results = this.getCategoryTimesResult;
+    if (results == undefined || results == null) return null;
+    results.sort((a,b) => a.czas_przejazdu - b.czas_przejazdu);
+    let robotsAndPoints: any[] = []
+    results.forEach(result => {
+      let current = robotsAndPoints.find(r => r.robot_uuid == result.robot_uuid)
+      if (current) {
+        if (current.wynik > result.czas_przejazdu) {
+          current.wynik = result.czas_przejazdu
+        }
+      } else {
+        robotsAndPoints.push({robot_uuid: result.robot_uuid, nazwa_robota: result.nazwa_robota, wynik: result.czas_przejazdu})
+      }
+    })
+    robotsAndPoints = robotsAndPoints.sort((a,b) => a.wynik - b.wynik)
+    return robotsAndPoints
+  }
+  async threeBestRobotsInPoints() {
+    let results = this.getCategoryTimesResult;
+    if (results == undefined || results == null) return null;
+    results.sort((a,b) => b.czas_przejazdu - a.czas_przejazdu);
+    let robotsAndPoints: any[] = []
+    results.forEach(result => {
+      let current = robotsAndPoints.find(r => r.robot_uuid == result.robot_uuid)
+      if (current) {
+        current.wynik += result.czas_przejazdu;
+      } else {
+        robotsAndPoints.push({robot_uuid: result.robot_uuid, nazwa_robota: result.nazwa_robota, wynik: result.czas_przejazdu})
+      }
+    })
+    robotsAndPoints = robotsAndPoints.sort((a,b) => b.wynik - a.wynik)
+    return robotsAndPoints
   }
 
 

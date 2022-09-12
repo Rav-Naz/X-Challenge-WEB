@@ -11,6 +11,14 @@ section {
     border-color: $color-primary !important;
 }
 
+.group-active {
+    // color: red !important;
+    border: 2px dashed !important;
+    font-weight: bold;
+    font-size: 2rem;
+    animation: pulse 1s infinite;
+}
+
 .new-group {
     display: flex;
     flex-direction: column;
@@ -67,7 +75,7 @@ section {
         display: flex;
         justify-content: center;
         align-items: center;
-        min-width: max-content;
+        min-width: 100rem;
     }
     &-button {
         // margin: 0;
@@ -160,6 +168,16 @@ section {
         border-right: none;
     }
     &-fight {
+        &-referee {
+            &>* {
+                cursor: pointer;
+            }
+            &:hover {
+                border: 2px solid $color-primary-dark;
+                cursor: pointer;
+                background-color: $color-grey-5;
+            }
+        }
         font-family: 'Goldman';
         text-align: center;
         display: flex;
@@ -323,5 +341,19 @@ section {
             font-size: 15px;
             text-align: left;
         }
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+        color: red;
+        border-color: red;
+    }
+    100% {
+        transform: scale(1);
     }
 }

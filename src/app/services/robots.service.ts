@@ -6,6 +6,7 @@ import { ErrorsService } from './errors.service';
 import { HttpService } from './http.service';
 import { Injectable, Injector } from '@angular/core';
 import { AuthService } from './auth.service';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,9 @@ export class RobotsService{
 
   constructor(private http: HttpService, private errorService: ErrorsService, private ui: UiService, private translate: TranslateService,
      private websocket: WebsocketService, private injector: Injector) {
-    this.getAllRobotsOfUser();
+      if(injector.get(UserService).isReferee) {
+        this.getAllRobotsOfUser();
+      }
     this.websocket.getWebSocket$.subscribe((socket) => {
       socket?.on('robots/updateRobot', (data) => {
         this.WS_updateRobot(data)

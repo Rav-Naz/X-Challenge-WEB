@@ -95,11 +95,9 @@ export class PositionsService {
         }
       })
       if(value !== undefined && this.allPostions.value) {
-        console.log(value.body)
         const index = this.allPostions.value.findIndex(el => el.stanowisko_id == value.body.stanowisko_id)
         if(index >= 0) {
           (this.allPostions.value[index] as any).nazwa_stanowiska = value.body.nazwa_stanowiska;
-          console.log(this.allPostions.value)
           this.allPostions.next(this.allPostions.value);
         }
       }

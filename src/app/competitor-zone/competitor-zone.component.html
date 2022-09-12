@@ -37,6 +37,10 @@
                         <i class="las la-cog"></i>
                         <p>{{'competitor-zone.bar.settings' | translate}}</p>
                     </section>
+                    <section class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['announcements']}}]" routerLinkActive="competitor-zone-bar-segment-active" [ngClass]="{'new-message': isNewMessage}">
+                        <i class="las la-bullhorn"></i>
+                        <p>{{'competitor-zone.bar.announcements' | translate}}</p>
+                    </section>
                     <section *ngIf="!isMobile" class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['statistics']}}]">
                         <i class="las la-chart-pie"></i>
                         <p>{{'competitor-zone.bar.statistics' | translate}}</p>

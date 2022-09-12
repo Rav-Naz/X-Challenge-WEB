@@ -90,6 +90,15 @@ export class HttpService {
     })
   }
 
+  get getAnnouncements() {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.get<APIResponse>(`${this.url}public/getAnnouncements`).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
   getAllFightsForPosiotion(stanowisko_id: number) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.get<APIResponse>(`${this.url}public/getAllFightsForPosiotion/${stanowisko_id}`).toPromise().then(
@@ -459,6 +468,28 @@ export class HttpService {
 
   // ------------- REFEREE
 
+  public activateGroup(grupa_id: number) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.put<APIResponse>(`${this.url}referee/activateGroup`, {
+        grupa_id: grupa_id
+      } ,{ headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public deactivateGroup(grupa_id: number) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.put<APIResponse>(`${this.url}referee/deactivateGroup`, {
+        grupa_id: grupa_id
+      } ,{ headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
   public getRefereePositions(uzytkownik_uuid: string) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.get<APIResponse>(`${this.url}referee/getRefereePositions/${uzytkownik_uuid}`, { headers: this.headers }).toPromise().then(
@@ -501,6 +532,17 @@ export class HttpService {
         wynik_id: wynik_id,
         czas_przejazdu: czas_przejazdu
        },{ headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+  public deleteTimeResult(wynik_id: number) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.delete<APIResponse>(`${this.url}referee/deleteTimeResult`,
+      { headers: this.headers, body: {
+        wynik_id: wynik_id
+      }}).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -549,7 +591,7 @@ export class HttpService {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}referee/sendMessageToAllConstructorsOfRobot`, {
         robot_uuid: robot_uuid,
-        tresc: `/PL/ Twoja walka właśnie się rozpoczyna! Przyjdź z robotem ${robot_nazwa} na Stanowisko ${stanowisko_id} w trybie natychmiastowym. Nie pojawienie się w przeciągu 3 minut oznaczać będzie walkower! /EN/ Your fight is about to begin! Come with the robot ${robot_nazwa} to Position ${stanowisko_id} immediately. Not showing up within 3 minutes will mean a forfeit!`
+        tresc: `/PL/ Twoja walka wlasnie sie rozpoczyna! Przyjdz z robotem ${robot_nazwa} na Stanowisko ${stanowisko_id} w trybie natychmiastowym. Nie pojawienie sie w przeciagu 3 minut oznaczac bedzie walkower! /EN/ Your fight is about to begin! Come with the robot ${robot_nazwa} to Position ${stanowisko_id} immediately. Not showing up within 3 minutes will mean a forfeit!`
       },{ headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
@@ -797,6 +839,17 @@ export class HttpService {
         stanowisko_id: stanowisko_id,
         uzytkownik_uuid: uzytkownik_uuid
       }}).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public sendMessageToAllUsers(tresc: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`${this.url}admin/sendMessageToAllUsers`, {
+        tresc: tresc
+      },{ headers: this.headers}).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );

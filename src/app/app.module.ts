@@ -63,6 +63,7 @@ import { ManageFightsComponent } from './competitor-zone/referee/manage-fights/m
 import { AdminGuard } from './services/admin-guard.service';
 import { FightsViewComponent } from './shared/fights-view/fights-view.component';
 import { PositionsComponent } from './competitor-zone/referee/positions/positions.component';
+import { AnnouncementsComponent } from './competitor-zone/referee/announcements/announcements.component';
 
 
 @NgModule({
@@ -104,7 +105,8 @@ import { PositionsComponent } from './competitor-zone/referee/positions/position
     CountingVisitorsComponent,
     ManageFightsComponent,
     FightsViewComponent,
-    PositionsComponent
+    PositionsComponent,
+    AnnouncementsComponent
   ],
   imports: [
     BrowserModule,
