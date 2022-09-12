@@ -2,6 +2,7 @@
 @import '../../../../scss/variables';
 @import '../../../competitor-zone.component.scss';
 @import '../../../referee/referee-zone/referee-zone.component.scss';
+@import '../../../../shared/fights-view/fights-view.component.scss';
 .main {
     display: flex;
     justify-content: flex-start;
@@ -112,7 +113,7 @@
     // margin-top: 1rem;
     height: 100%;
     height: min-content;
-    border-bottom: .2rem dashed rgba($color-grey-0, 0.5);
+    // border-bottom: .2rem dashed rgba($color-grey-0, 0.5);
 }
 
 .referee-results-times-element-categories {
@@ -477,6 +478,34 @@
             }
         }
     }
+}
+
+.tree-fight {
+    margin: 1rem;
+    &-body {
+        color: $color-white;
+        &-name {
+            color: $color-white !important;
+            min-width: 10rem;
+            font-size: 1.7rem !important;
+        }
+        &-score {
+            color: $color-white !important;
+            font-size: 1.5rem !important;
+        }
+    }
+    &-pos {
+        color: rgba($color-white, 0.8) !important;
+    }
+    &-win {
+        border-color: $color-primary !important;
+        opacity: 1;
+    }
+    &-lose {
+        border-color: red !important;
+        opacity: 1;
+    }
+    border-color: $color-grey-0;
 }
 
 @media only screen and (max-width: $max-width-2) {

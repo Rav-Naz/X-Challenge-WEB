@@ -509,7 +509,9 @@ export class RobotComponent {
   }
 
   get getCategoryFigths() {
-    return this.robotFights?.filter(el => el.kategoria_id === this.selectedCategory).sort((a, b) => b.walka_id - a.walka_id).sort((a, b) => a.czas_zakonczenia - b.czas_zakonczenia);
+    const fights =  this.robotFights?.filter(el => el.kategoria_id === this.selectedCategory).sort((a, b) => new Date(a.czas_zakonczenia).getTime() - new Date(b.czas_zakonczenia).getTime());
+    console.log(fights)
+    return fights
   }
 
   get getGroupFigths() {
