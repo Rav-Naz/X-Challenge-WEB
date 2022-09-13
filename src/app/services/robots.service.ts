@@ -18,7 +18,7 @@ export class RobotsService{
 
   constructor(private http: HttpService, private errorService: ErrorsService, private ui: UiService, private translate: TranslateService,
      private websocket: WebsocketService, private injector: Injector) {
-      if(injector.get(UserService).isReferee) {
+      if(injector.get(UserService).isUser) {
         this.getAllRobotsOfUser();
       }
     this.websocket.getWebSocket$.subscribe((socket) => {

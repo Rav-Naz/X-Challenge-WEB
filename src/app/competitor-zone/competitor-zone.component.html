@@ -80,7 +80,7 @@
                             </label>
                     </div>
                 </div>
-                <p *ngIf="timeIsUp && userService.isUser">
+                <p *ngIf="timeIsUp && userService.isUser && !authService.isEvent">
                     {{'competitor-zone.bar.time-up' | translate}}
                 </p>
             </div>

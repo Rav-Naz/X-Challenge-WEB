@@ -13,8 +13,8 @@
                 <p class="my-robots-element-uuid">{{user.uzytkownik_uuid}}</p>
                 <p class="my-robots-element-name">{{user.imie}} {{user.nazwisko}}</p>
             </div>
-            <details class="my-robots-element-categories" (click)="dummy($event)">{{'competitor-zone.competitor.positions' | translate}}<b>{{user.stanowiska}}</b><br>{{'competitor-zone.competitors.categories' | translate}}<b>{{user.kategorie}}</b><br>
-                <ng-container *ngIf="user.numer_telefonu">{{'competitor-zone.competitor.phone' | translate}}<b>{{user.numer_telefonu}}</b></ng-container>
+            <details class="my-robots-element-categories" (click)="dummy($event)" *ngIf="user.numer_telefonu">
+                <ng-container>{{'competitor-zone.competitor.phone' | translate}}<b>{{user.numer_telefonu}}</b></ng-container>
             </details>
             <span class="my-robots-element-edit">{{'competitor-zone.competitors.more' | translate}}<i class="las la-angle-double-right"></i></span>
         </div>
