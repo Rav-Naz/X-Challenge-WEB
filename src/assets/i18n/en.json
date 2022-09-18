@@ -156,8 +156,8 @@
         },
         "patreons": {
             "organizer": {
-                "title": "ORGANIZERS",
-                "name": "Scientific Club of Automation and Robotics “ROBO”"
+                "title": "ORGANIZATORZY",
+                "name": "Scientific Circle of Automatics and Robotics \"ROBO\", Rzeszów University of Technology"
             },
             "organizer2": {
                 "title": "ORGANIZER",
@@ -167,6 +167,10 @@
             "organizer3": {
                 "title": "ORGANIZER",
                 "name": "RoboLAB – Local STEM Incubator"
+            },
+            "organizer6": {
+                "title": "ORGANIZER",
+                "name": "Scientific Circle of Electronics and Information Technology of the Rzeszów University of Technology"
             },
             "title": "PATRONS",
             "question": "Do you want to become a patron? Contact us at robo@kneiti.prz.edu.pl",
@@ -183,7 +187,9 @@
                 { "id": 10, "patreonCategory": 1, "description": "Wago", "image": "../../assets/svg/wago.png", "linkToSite": "https://www.wago.com/pl/" },
                 { "id": 11, "patreonCategory": 5, "description": "Mayor of the City of Rzeszów", "image": "../../assets/jpg/rzeszow.png", "linkToSite": "https://bip.erzeszow.pl/" },
                 { "id": 12, "patreonCategory": 6, "description": "zrobotyzowany.pl", "image": "../../assets/jpg/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl/" },
-                { "id": 13, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" }
+                { "id": 13, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
+                { "id": 14, "patreonCategory": 3, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
+                { "id": 15, "patreonCategory": 3, "description": "Matlab", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" }
 
 
             ],
