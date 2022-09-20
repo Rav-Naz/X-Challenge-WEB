@@ -156,7 +156,7 @@
         },
         "patreons": {
             "organizer": {
-                "title": "ORGANIZATORZY",
+                "title": "ORGANIZERS",
                 "name": "Scientific Circle of Automatics and Robotics \"ROBO\", Rzeszów University of Technology"
             },
             "organizer2": {
@@ -189,7 +189,8 @@
                 { "id": 12, "patreonCategory": 6, "description": "zrobotyzowany.pl", "image": "../../assets/jpg/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl/" },
                 { "id": 13, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
                 { "id": 14, "patreonCategory": 3, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
-                { "id": 15, "patreonCategory": 3, "description": "Matlab", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" }
+                { "id": 15, "patreonCategory": 3, "description": "Matlab", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
+                { "id": 16, "patreonCategory": 3, "description": "Zespół Szkół Technicznych", "image": "../../assets/jpg/zst.png", "linkToSite": "http://www.zstrzeszow.pl/" }
 
 
             ],
