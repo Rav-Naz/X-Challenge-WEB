@@ -510,7 +510,6 @@ export class RobotComponent {
 
   get getCategoryFigths() {
     const fights =  this.robotFights?.filter(el => el.kategoria_id === this.selectedCategory).sort((a, b) => new Date(a.czas_zakonczenia).getTime() - new Date(b.czas_zakonczenia).getTime());
-    console.log(fights)
     return fights
   }
 

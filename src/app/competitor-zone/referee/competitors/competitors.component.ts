@@ -27,10 +27,10 @@ export class CompetitorsComponent implements OnInit {
     { value: "competitor-zone.competitors.filters.name", id: 1 },
     { value: "competitor-zone.competitors.filters.user-uuid", id: 2 },
     // { value: "competitor-zone.competitors.filters.positions", id: 3 },
-    // { value: "competitor-zone.competitors.filters.robots-uuid", id: 4 },
+    { value: "competitor-zone.competitors.filters.robots-name", id: 4 },
     { value: "competitor-zone.competitors.filters.phone", id: 5 },
     { value: "competitor-zone.competitors.filters.email", id: 6 },
-    // { value: "competitor-zone.competitors.filters.categories", id: 7 }
+    { value: "competitor-zone.competitors.filters.categories", id: 7 }
   ]);
   private selectedFilter: number | null = 1;
   private filter: string = '';
@@ -51,9 +51,25 @@ export class CompetitorsComponent implements OnInit {
         this.allCompetitors = JSON.parse(JSON.stringify(val[1]!));
         this.categories = JSON.parse(JSON.stringify(val[0]!));
         this.allCompetitors?.forEach((user) => {
-          if(user.kategorie) {
-            const a = [...[...user.kategorie.split(", ")].map((cat) => this.categories!.find(obj => obj.kategoria_id.toString() === cat)?.nazwa)].join(", ");
-            user.kategorie = a;
+          if(user.roboty_json) {
+            user.roboty = JSON.parse(user.roboty_json);
+            if (user.roboty) {
+              let user_kategorie: Array<number> = []
+              for (let element of user.roboty) {
+                let cat = element.kategorie.split(', ').map((e: string) => Number(e))
+                cat.forEach((el: number) =>{
+                  if(!user_kategorie.includes(el)) {user_kategorie.push(el)}
+                })
+              }
+              let nazwy_kategorii: Array<string> = []
+              user_kategorie.forEach((kategoria: number) => {
+                let finded = this.categories?.find(cat => cat.kategoria_id == kategoria)?.nazwa
+                if (finded) {
+                  nazwy_kategorii.push(finded)
+                }
+              })
+              user.kategorie = nazwy_kategorii
+            }
           }
         })
       }
@@ -85,7 +101,7 @@ export class CompetitorsComponent implements OnInit {
           userzy = userzy.filter(user => String(user.stanowiska).toLowerCase().includes(this.filter));
           break;
         case 4:
-          userzy = userzy.filter(user => String(user.roboty_uuid).toLowerCase().includes(this.filter));
+          userzy = userzy.filter(user => String(user.roboty_json).toLowerCase().includes(this.filter));
           break;
         case 5:
           userzy = userzy.filter(user => String(user.numer_telefonu).toLowerCase().includes(this.filter));

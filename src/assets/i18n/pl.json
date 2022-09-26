@@ -501,12 +501,14 @@
             "title": "ZAWODNICY",
             "on-list": "Na liście: ",
             "categories": "Kategorie: ",
+            "roboty": "Roboty: ",
             "more": "Więcej",
             "filters": {
                 "name": "Imię i nazwisko",
                 "user-uuid": "Użytkownik UUID",
                 "positions": "Stanowiska",
-                "robots-uuid": "Roboty UUID",
+                "robots-uuid": "Robot UUID",
+                "robots-name": "Roboty",
                 "phone": "Numer telefonu",
                 "email": "Email",
                 "categories": "Kategorie"

@@ -497,7 +497,8 @@
                 "name": "First and last name",
                 "user-uuid": "User UUID",
                 "positions": "Positions",
-                "robots-uuid": "Robots UUID",
+                "robots-uuid": "Robot UUID",
+                "robots-name": "Robot name",
                 "phone": "Phone number",
                 "email": "Email",
                 "categories": "Categories"
