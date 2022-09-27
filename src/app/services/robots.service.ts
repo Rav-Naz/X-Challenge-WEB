@@ -6,6 +6,7 @@ import { ErrorsService } from './errors.service';
 import { HttpService } from './http.service';
 import { Injectable, Injector } from '@angular/core';
 import { AuthService } from './auth.service';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,9 @@ export class RobotsService{
 
   constructor(private http: HttpService, private errorService: ErrorsService, private ui: UiService, private translate: TranslateService,
      private websocket: WebsocketService, private injector: Injector) {
-    this.getAllRobotsOfUser();
+      if(injector.get(UserService).isUser) {
+        this.getAllRobotsOfUser();
+      }
     this.websocket.getWebSocket$.subscribe((socket) => {
       socket?.on('robots/updateRobot', (data) => {
         this.WS_updateRobot(data)
@@ -64,7 +67,8 @@ export class RobotsService{
   }
 
   public getAllRobots() {
-    return new Promise<any>(async (resolve) => {
+    return new Promise<any>(async (resolve, reject) => {
+      if (this.allRobots.value === null && this.allRobots.value === undefined) { reject(); return; }
       const value = await this.http.getAllRobots.catch(err => {
         if(err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));

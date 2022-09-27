@@ -1,0 +1,65 @@
+@import '../../user/my-robots/robot/robot.component.scss';
+@import '../../../scss/colors';
+.position {
+    border-bottom: .2rem dashed rgba($color-grey-0, 0.5);
+    padding: 2rem;
+    width: 100%;
+    h1 {
+        font-size: 3rem;
+        i {
+            cursor: pointer;
+            color: $color-primary;
+        }
+    }
+    p {
+        margin-top: 3rem;
+        font-size: 2rem;
+        min-width: min-content;
+        text-align: left;
+    }
+}
+
+.grid-categories-new {
+    margin: 0;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.grid-categories-old {
+    width: 100%;
+    label {
+        margin: 0;
+        color: $color-white;
+    }
+}
+
+.name {
+    padding: 0;
+}
+
+.new-position {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 2rem;
+    app-input {
+        width: 100%;
+    }
+    button {
+        &,
+        &:link,
+        &:visited {
+            height: 5.5rem;
+            width: min-content !important;
+            margin: 1rem;
+            padding: 1.8rem;
+            line-height: .2rem !important;
+            border-radius: 1rem !important;
+            // box-shadow: 0 0.2rem 2rem rgba($color-primary, 0.5);
+            font-size: 2.3rem !important;
+        }
+        &:hover:not(:disabled):not(:last-child) {
+            box-shadow: 0 0.2rem 2.3rem rgba($color-primary, 0.7);
+        }
+    }
+}

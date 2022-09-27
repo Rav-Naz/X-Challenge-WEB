@@ -117,8 +117,8 @@
             height: 100%;
             min-height: max-content;
             // max-height: 80vh;
-            padding: 2rem;
-            padding-left: 5rem;
+            padding: 3rem;
+            // padding-left: 5rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -286,3 +286,21 @@
     flex-direction: column;
     overflow-y: auto;
 }
+
+.new-message {
+    animation: 2s infinite pulse2;
+}
+
+@keyframes pulse2 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+        color: red;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+

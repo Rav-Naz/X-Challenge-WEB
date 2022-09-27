@@ -7,6 +7,7 @@ import { Component, OnInit, Injector, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ConfirmComponent } from './shared/confirm/confirm.component';
 import * as AOS from 'aos';
+import { Esp32Service } from './services/esp32.service';
 
 
 @Component({
@@ -28,7 +29,7 @@ export class AppComponent implements OnInit {
 
   @ViewChild(ConfirmComponent) confirm: ConfirmComponent | null = null;
 
-  constructor(public translate: TranslateService, private injector: Injector, private ui: UiService, private authService: AuthService, public userService: UserService) {
+  constructor(public translate: TranslateService, private injector: Injector, private ui: UiService, private authService: AuthService, public userService: UserService, public esp32Service: Esp32Service) {
     const cookies = localStorage.getItem('cookies');
     if(cookies) {
       this.isCookies = false;

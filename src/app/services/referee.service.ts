@@ -1,10 +1,11 @@
 import { TranslateService } from '@ngx-translate/core';
 import { HttpService } from 'src/app/services/http.service';
 import { ErrorsService } from './errors.service';
-import { Injectable } from '@angular/core';
+import { Injectable, Injector } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { WebsocketService } from './websocket.service';
 import { UiService } from './ui.service';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,10 @@ export class RefereeService {
 
   private allUsers = new BehaviorSubject<Array<any> | null>(null);
 
-  constructor (private errorService: ErrorsService, private http: HttpService, private translate: TranslateService, private websocket: WebsocketService, private ui: UiService) {
-    this.getUsers();
+  constructor (private errorService: ErrorsService, private http: HttpService, private translate: TranslateService, private websocket: WebsocketService, private ui: UiService, private injector: Injector) {
+    if(injector.get(UserService).isReferee) {
+      this.getUsers();
+    }
     this.websocket.getWebSocket$.subscribe((socket) => {
       socket?.on('user/addPostalCode', (data) => {
         this.WS_addPostalCode(data);
@@ -161,51 +164,6 @@ export class RefereeService {
     });
   }
 
-  public readRFIDTag() {
-    return new Promise<any>(async (resolve,reject) => {
-      const value = await this.http.readRFIDTag().catch(err => {
-        if(err.status === 400) {
-          this.errorService.showError(err.status, this.translate.instant(err.error.body));
-          reject(err);
-        } else {
-          this.errorService.showError(err.status);
-          reject(err);
-        }
-      })
-      resolve(value);
-    });
-  }
-
-  public readLapTime() {
-    return new Promise<any>(async (resolve,reject) => {
-      const value = await this.http.readLapTime().catch(err => {
-        if(err.status === 400) {
-          this.errorService.showError(err.status, this.translate.instant(err.error.body));
-          reject(err);
-        } else {
-          this.errorService.showError(err.status);
-          reject(err);
-        }
-      })
-      resolve(value);
-    });
-  }
-
-  public writeRFIDTag(uzytkownik_uuid: string) {
-    return new Promise<any>(async (resolve,reject) => {
-      const value = await this.http.writeRFIDTag(uzytkownik_uuid).catch(err => {
-        if(err.status === 400) {
-          this.errorService.showError(err.status, this.translate.instant(err.error.body));
-          reject(err);
-        } else {
-          this.errorService.showError(err.status);
-          reject(err);
-        }
-      })
-      resolve(value);
-    });
-  }
-
   public createGroupForCategory(stanowiskaLista: Array<number>, kategoria_id: number, iloscDoFinalu: number, opcjaTworzenia: number | null) {
     return new Promise<any>(async (resolve,reject) => {
       const value = await this.http.createGroupsFromCategory(stanowiskaLista, kategoria_id, iloscDoFinalu, opcjaTworzenia).catch(err => {
@@ -236,7 +194,6 @@ export class RefereeService {
     });
   }
 
-
   async WS_addPostalCode(data: any) {
     const userIndex = this.allUsers.value?.findIndex(user => user.uzytkownik_id === data?.uzytkownik_id)
     if(userIndex !== undefined && userIndex !== null && userIndex >= 0 && this.allUsers.value) {
@@ -246,7 +203,6 @@ export class RefereeService {
   }
 
   async WS_givenStarterpack(data: any) {
-    console.log(data)
     const userIndex = this.allUsers.value?.findIndex(user => user.uzytkownik_uuid === data?.uzytkownik_uuid)
     if(userIndex !== undefined && userIndex !== null && userIndex >= 0 && this.allUsers.value) {
       this.allUsers.value![userIndex].czy_odebral_starterpack = data.czy_odebral_starterpack;
