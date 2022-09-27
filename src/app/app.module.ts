@@ -66,6 +66,7 @@ import { PositionsComponent } from './competitor-zone/referee/positions/position
 import { AnnouncementsComponent } from './competitor-zone/referee/announcements/announcements.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -107,6 +108,7 @@ import { AnnouncementsComponent } from './competitor-zone/referee/announcements/
     FightsViewComponent,
     PositionsComponent,
     AnnouncementsComponent
+
   ],
   imports: [
     BrowserModule,

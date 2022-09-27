@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CategoryMain } from 'src/app/models/category-main';
 import { CategoriesService } from 'src/app/services/categories.service';
 
+
 @Component({
   selector: 'app-manage-fights',
   templateUrl: './manage-fights.component.html',
@@ -27,6 +28,7 @@ export class ManageFightsComponent {
   get selectedCategory() {
     let val = this.formCategories.get('category')?.value
     return val ? Number(val) : null;
+
   }
 
   get getCategories() {
@@ -35,4 +37,5 @@ export class ManageFightsComponent {
       return {value: (categoriesOption.nazwa), id: categoriesOption.kategoria_id}
     })) : undefined;
   }
+
 }

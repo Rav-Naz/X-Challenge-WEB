@@ -25,6 +25,7 @@ export class GroupsService {
       socket?.on('activateGroup', (data) => {
         this.WS_activateGroup(data)}
       )
+
       })
   }
 
@@ -83,6 +84,7 @@ export class GroupsService {
       resolve(value);
     });
   }
+
 
   public WS_addGroup(data: any) {
     this.groups.value?.push(data)

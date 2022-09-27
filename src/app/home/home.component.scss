@@ -1577,11 +1577,12 @@
                 align-items: center;
                 justify-content: center;
                 span {
-                    font-size: 3rem;
+                    font-size: 2.5rem;
                     font-family: $default-font;
                     text-align: center;
                     letter-spacing: .15rem;
                     color: $color-white;
+                    max-width: 80%;
                 }
                 img {
                     margin-top: 2rem;

@@ -755,6 +755,7 @@ export class HttpService {
     })
   }
 
+
   public removeGroup(grupa_id: number) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}admin/deleteGroup`, {
@@ -891,6 +892,7 @@ export class HttpService {
       );
     })
   }
+
 
   // ------------- OTHER
 

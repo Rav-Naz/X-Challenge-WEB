@@ -194,6 +194,36 @@ export class RefereeService {
     });
   }
 
+  public createGroupForCategory(stanowiskaLista: Array<number>, kategoria_id: number, iloscDoFinalu: number, opcjaTworzenia: number | null) {
+    return new Promise<any>(async (resolve,reject) => {
+      const value = await this.http.createGroupsFromCategory(stanowiskaLista, kategoria_id, iloscDoFinalu, opcjaTworzenia).catch(err => {
+        if(err.status === 400) {
+          this.errorService.showError(err.status, this.translate.instant(err.error.body));
+          reject(err);
+        } else {
+          this.errorService.showError(err.status);
+          reject(err);
+        }
+      })
+      resolve(value);
+    });
+  }
+
+  public deleteGroup(grupa_id: number) {
+    return new Promise<any>(async (resolve,reject) => {
+      const value = await this.http.removeGroup(grupa_id).catch(err => {
+        if(err.status === 400) {
+          this.errorService.showError(err.status, this.translate.instant(err.error.body));
+          reject(err);
+        } else {
+          this.errorService.showError(err.status);
+          reject(err);
+        }
+      })
+      resolve(value);
+    });
+  }
+
 
   async WS_addPostalCode(data: any) {
     const userIndex = this.allUsers.value?.findIndex(user => user.uzytkownik_id === data?.uzytkownik_id)

@@ -182,6 +182,7 @@
             </div>
         </section>
         <section class="acceptation arrival" *ngIf="robot && isEvent && !robot.powod_odrzucenia">
+
             <div class="row acceptation-row">
                 <p>{{"competitor-zone.robot.is-arrived" | translate}}
                     <span class="arrival-true" *ngIf="robot?.czy_dotarl == 1">{{"competitor-zone.robot.is-arrived-true" | translate}}</span>

@@ -156,7 +156,7 @@
         "patreons": {
             "organizer": {
                 "title": "ORGANIZATORZY",
-                "name": "Koło Naukowe Automatyków i Robotyków “ROBO”"
+                "name": "Koło Naukowe Automatyków i Robotyków “ROBO” Politechniki Rzeszowskiej"
             },
             "organizer2": {
                 "title": "ORGANIZER",
@@ -177,7 +177,7 @@
             },
             "organizer6": {
                 "title": "ORGANIZER",
-                "name": "Koło Naukowe Elektroniki i Technologii Informacyjnych"
+                "name": "Koło Naukowe Elektroniki i Technologii Informacyjnych Politechniki Rzeszowskiej"
             },
             "title": "Partnerzy",
             "question": "Chcesz zostać patronem? Skontaktuj się z nami pod adresem robo@kneiti.prz.edu.pl",
@@ -196,6 +196,12 @@
                 { "id": 12, "patreonCategory": 6, "description": "zrobotyzowany.pl", "image": "../../assets/jpg/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl/" },
                 { "id": 13, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
                 { "id": 14, "patreonCategory": 3, "description": "FANUC", "image": "../../assets/jpg/fanuc.png", "linkToSite": "https://www.fanuc.eu/pl/pl" }
+                { "id": 15, "patreonCategory": 3, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
+                { "id": 16, "patreonCategory": 3, "description": "Matlab", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
+                { "id": 17, "patreonCategory": 3, "description": "Zespół Szkół Technicznych", "image": "../../assets/jpg/zst.png", "linkToSite": "http://www.zstrzeszow.pl/" },
+                { "id": 18, "patreonCategory": 6, "description": "Botland", "image": "../../assets/jpg/botland.webp", "linkToSite": "https://botland.com.pl/" },
+                { "id": 19, "patreonCategory": 5, "description": "Wojewoda Podkarpacki", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" }
+
 
             ],
             "tiers": [
@@ -329,6 +335,7 @@
             "fights": "PLANER WALK",
             "positions": "STANOWISKA",
             "announcements": "OGŁOSZENIA",
+
 
             "hello": {
                 "1": "Witaj w ",
@@ -1130,6 +1137,7 @@
             "validators": {
                 "required": "To pole jest wymagane"
             }
+
         }
     },
     "errors": {

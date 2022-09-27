@@ -36,6 +36,7 @@ import { PositionsComponent } from './competitor-zone/referee/positions/position
 import { AnnouncementsComponent } from './competitor-zone/referee/announcements/announcements.component';
 
 
+
 const routes: Routes = [
   {path: '', component: HomeComponent},
   // {path: 'gallery', component: GalleryComponent},
