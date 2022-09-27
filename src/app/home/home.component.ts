@@ -386,6 +386,11 @@ export class HomeComponent implements OnInit, AfterViewInit{
     window.open(url);
   }
 
+  async testLocalhost() {
+    var response = this.httpService.getTest.toPromise();
+    response.then(val => {console.log(val);})
+  }
+
   patreonClassPicker(index: number) {
     return {[`patreons-class-${index}`]: true};
   }

@@ -61,10 +61,6 @@ import { RegisterGuard } from './services/register-guard.service';
 import { CountingVisitorsComponent } from './competitor-zone/referee/counting-visitors/counting-visitors.component';
 import { ManageFightsComponent } from './competitor-zone/referee/manage-fights/manage-fights.component';
 import { AdminGuard } from './services/admin-guard.service';
-import { FightsViewComponent } from './shared/fights-view/fights-view.component';
-import { PositionsComponent } from './competitor-zone/referee/positions/positions.component';
-import { AnnouncementsComponent } from './competitor-zone/referee/announcements/announcements.component';
-
 
 
 @NgModule({
@@ -104,11 +100,7 @@ import { AnnouncementsComponent } from './competitor-zone/referee/announcements/
     RobomotionComponent,
     InputFileComponent,
     CountingVisitorsComponent,
-    ManageFightsComponent,
-    FightsViewComponent,
-    PositionsComponent,
-    AnnouncementsComponent
-
+    ManageFightsComponent
   ],
   imports: [
     BrowserModule,

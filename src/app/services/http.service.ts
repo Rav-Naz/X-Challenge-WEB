@@ -25,6 +25,10 @@ export class HttpService {
 
   // ------------- PUBLIC
 
+  get getTest(): Observable<any> {
+    return this.http.get<APIResponse>(`http://bramki.xchallenge.pl:5000/companies`, { headers: this.headers });
+  }
+
   get getHomePageInfo(): Observable<APIResponse> {
     return this.http.get<APIResponse>(`${this.url}site/info`, { headers: this.headers });
   }
@@ -80,15 +84,6 @@ export class HttpService {
   get getAllFights() {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.get<APIResponse>(`${this.url}public/getAllFights`).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
-    })
-  }
-
-  get getAnnouncements() {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.get<APIResponse>(`${this.url}public/getAnnouncements`).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -464,28 +459,6 @@ export class HttpService {
 
   // ------------- REFEREE
 
-  public activateGroup(grupa_id: number) {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.put<APIResponse>(`${this.url}referee/activateGroup`, {
-        grupa_id: grupa_id
-      } ,{ headers: this.headers }).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
-    })
-  }
-
-  public deactivateGroup(grupa_id: number) {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.put<APIResponse>(`${this.url}referee/deactivateGroup`, {
-        grupa_id: grupa_id
-      } ,{ headers: this.headers }).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
-    })
-  }
-
   public getRefereePositions(uzytkownik_uuid: string) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.get<APIResponse>(`${this.url}referee/getRefereePositions/${uzytkownik_uuid}`, { headers: this.headers }).toPromise().then(
@@ -528,17 +501,6 @@ export class HttpService {
         wynik_id: wynik_id,
         czas_przejazdu: czas_przejazdu
        },{ headers: this.headers }).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
-    })
-  }
-  public deleteTimeResult(wynik_id: number) {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.delete<APIResponse>(`${this.url}referee/deleteTimeResult`,
-      { headers: this.headers, body: {
-        wynik_id: wynik_id
-      }}).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -587,7 +549,7 @@ export class HttpService {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}referee/sendMessageToAllConstructorsOfRobot`, {
         robot_uuid: robot_uuid,
-        tresc: `/PL/ Twoja walka wlasnie sie rozpoczyna! Przyjdz z robotem ${robot_nazwa} na Stanowisko ${stanowisko_id} w trybie natychmiastowym. Nie pojawienie sie w przeciagu 3 minut oznaczac bedzie walkower! /EN/ Your fight is about to begin! Come with the robot ${robot_nazwa} to Position ${stanowisko_id} immediately. Not showing up within 3 minutes will mean a forfeit!`
+        tresc: `/PL/ Twoja walka właśnie się rozpoczyna! Przyjdź z robotem ${robot_nazwa} na Stanowisko ${stanowisko_id} w trybie natychmiastowym. Nie pojawienie się w przeciągu 3 minut oznaczać będzie walkower! /EN/ Your fight is about to begin! Come with the robot ${robot_nazwa} to Position ${stanowisko_id} immediately. Not showing up within 3 minutes will mean a forfeit!`
       },{ headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
@@ -619,29 +581,9 @@ export class HttpService {
     })
   }
 
-  public testLED_OFF() {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.get<APIResponse>(`http://bramki.xchallenge.pl:5000/testLED_OFF`,
-      { headers: this.headers }).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
-    })
-  }
-
-  public testLED_ON() {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.get<APIResponse>(`http://bramki.xchallenge.pl:5000/testLED_ON`,
-      { headers: this.headers }).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
-    })
-  }
-
   public readRFIDTag() {
-    return new Promise<any>((resolve, rejects) => {
-      this.http.get<any>(`http://bramki.xchallenge.pl:5000/referee/readRFIDTag`,
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.get<APIResponse>(`http://bramki.xchallenge.pl:5000/referee/readRFIDTag`,
       { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
@@ -649,9 +591,9 @@ export class HttpService {
     })
   }
 
-  public eraseRFIDTag() {
-    return new Promise<any>((resolve, rejects) => {
-      this.http.get<any>(`http://bramki.xchallenge.pl:5000/referee/eraseRFIDTag`,
+  public readLapTime() {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.get<APIResponse>(`http://bramki.xchallenge.pl:5000/referee/readLapTime`,
       { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
@@ -659,30 +601,10 @@ export class HttpService {
     })
   }
 
-  public readOneGate() {
-    return new Promise<any>((resolve, rejects) => {
-      this.http.get<any>(`http://bramki.xchallenge.pl:5000/referee/readOneGate`,
-      { headers: this.headers }).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
-    })
-  }
-
-  public readTwoGates() {
-    return new Promise<any>((resolve, rejects) => {
-      this.http.get<any>(`http://bramki.xchallenge.pl:5000/referee/readTwoGates`,
-      { headers: this.headers }).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
-    })
-  }
-
-  public writeRFIDTag(uzytkownik_id: number) {
-    return new Promise<any>((resolve, rejects) => {
-      this.http.post<any>(`http://bramki.xchallenge.pl:5000/referee/writeRFIDTag`,{
-        uzytkownik_id: uzytkownik_id
+  public writeRFIDTag(uzytkownik_uuid: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`http://bramki.xchallenge.pl:5000/referee/writeRFIDTag`,{
+        uzytkownik_uuid: uzytkownik_uuid
       },
       { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
@@ -743,19 +665,6 @@ export class HttpService {
     })
   }
 
-  public addGroup(kategoria_id: number, nazwa: string) {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.post<APIResponse>(`${this.url}admin/addGroup`, {
-        nazwa: nazwa,
-        kategoria_id: kategoria_id
-       },{ headers: this.headers }).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
-    })
-  }
-
-
   public removeGroup(grupa_id: number) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}admin/deleteGroup`, {
@@ -803,96 +712,6 @@ export class HttpService {
       );
     })
   }
-  public addPosition(nazwa: string) {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.post<APIResponse>(`${this.url}admin/addPosition`, {
-        nazwa: nazwa
-      }, { headers: this.headers}).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
-    })
-  }
-  public editPosition(stanowisko_id: number,nazwa: string) {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.put<APIResponse>(`${this.url}admin/editPosition`,{
-        stanowisko_id: stanowisko_id,
-        nazwa: nazwa
-      }, { headers: this.headers}).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
-    })
-  }
-
-  public removePosition(stanowisko_id: number) {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.delete<APIResponse>(`${this.url}admin/removePosition`, { headers: this.headers, body: {
-        stanowisko_id: stanowisko_id
-      }}).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
-    })
-  }
-
-  public addCategoryToPosition(stanowisko_id: number, kategoria_id: number) {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.post<APIResponse>(`${this.url}admin/addCategoryToPosition`, {
-        stanowisko_id: stanowisko_id,
-        kategoria_id: kategoria_id
-      }, { headers: this.headers}).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
-    })
-  }
-  public removeCategoryFromPosition(stanowisko_id: number, kategoria_id: number) {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.delete<APIResponse>(`${this.url}admin/removeCategoryFromPosition`, { headers: this.headers, body: {
-        stanowisko_id: stanowisko_id,
-        kategoria_id: kategoria_id
-      }}).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
-    })
-  }
-
-  public addRefereeToPosition(stanowisko_id: number, uzytkownik_uuid: string) {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.post<APIResponse>(`${this.url}admin/addRefereeToPosition`, {
-        stanowisko_id: stanowisko_id,
-        uzytkownik_uuid: uzytkownik_uuid
-      },{ headers: this.headers}).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
-    })
-  }
-  public removeRefereeToPosition(stanowisko_id: number, uzytkownik_uuid: string) {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.delete<APIResponse>(`${this.url}admin/removeRefereeFromPosition`, { headers: this.headers, body: {
-        stanowisko_id: stanowisko_id,
-        uzytkownik_uuid: uzytkownik_uuid
-      }}).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
-    })
-  }
-
-  public sendMessageToAllUsers(tresc: string) {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.post<APIResponse>(`${this.url}admin/sendMessageToAllUsers`, {
-        tresc: tresc
-      },{ headers: this.headers}).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
-    })
-  }
-
 
   // ------------- OTHER
 

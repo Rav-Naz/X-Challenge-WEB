@@ -11,7 +11,6 @@ import { FightsService } from 'src/app/services/fights.service';
 import { UserService } from 'src/app/services/user.service';
 import { onlyUnique } from 'src/app/shared/utils/unique';
 import { Position } from './../../models/position';
-import { GroupsService } from 'src/app/services/groups.service';
 
 
 @Component({
@@ -35,16 +34,6 @@ export class ResultsComponent implements OnInit, OnDestroy {
   ]);
 
   private loading: boolean = false;
-  public groups: Array<any> | null = null;
-  public actualShowingGroup: any = null;
-  public scrollTimer: any;
-  public scrollTimer2: any;
-  public lastScrollPos = 0;
-  public isDisplayDevice = false;
-  private isScrolling = false;
-
-  public threeBestRobots: Array<any> | null = null;
-
   private subs: Subscription = new Subscription;
   public selectedCategory: number | null = null;
   public selectedGroup: number | null = null;
@@ -56,7 +45,7 @@ export class ResultsComponent implements OnInit, OnDestroy {
 
   constructor(private positionsService: PositionsService, private formBuilder: FormBuilder,
      private categoriesService: CategoriesService, public translateService: TranslateService, private timesService: TimesService,
-     private figthsService: FightsService, public userService: UserService, public authService: AuthService, private groupsService: GroupsService) {
+     private figthsService: FightsService, public userService: UserService, public authService: AuthService) {
 
     this.formOption = this.formBuilder.group({
       filter: [this.selectedFilter]
@@ -64,30 +53,19 @@ export class ResultsComponent implements OnInit, OnDestroy {
     this.formFilter = this.formBuilder.group({
       filter_name: [this.filter]
     });
-    this.isDisplayDevice = localStorage.getItem('isDisplayDevice') == 'true';
 
     positionsService.getAllPositions();
     timesService.getAllTimes();
     figthsService.getAllFights();
-    groupsService.getAllGroups();
-    const sub1 = combineLatest(this.categoriesService.categories$,this.positionsService.allPositions$, this.figthsService.allFights$,this.timesService.allTimes$, this.groupsService.groups$).subscribe((val) => {
+    const sub1 = combineLatest(this.categoriesService.categories$,this.positionsService.allPositions$, this.figthsService.allFights$,this.timesService.allTimes$).subscribe((val) => {
       if (val[0] && val[1] && val[2] && val[3]) {
         this.categories = JSON.parse(JSON.stringify(val[0]));
         this.positions = JSON.parse(JSON.stringify(val[1]));
         this.allFights = JSON.parse(JSON.stringify(val[2]));
         this.allTimes = JSON.parse(JSON.stringify(val[3]));
-        this.groups = JSON.parse(JSON.stringify(val[4]));
         this.loading = false;
         this.showCategories = this.categoriesInPosition!;
-        if(this.getCategoryType == 2 ) {
-          this.threeBestRobotsInPoints().then(val => {
-            this.threeBestRobots = val;
-          })
-        } else if (this.getCategoryType == 0) {
-          this.threeBestRobotsInTimes().then(val => {
-            this.threeBestRobots = val;
-          })
-        }
+
       }
     })
 
@@ -97,7 +75,6 @@ export class ResultsComponent implements OnInit, OnDestroy {
         if(this.selectedFilter === 1) {
           this.selectedCategory = null;
           this.selectedGroup = null;
-          this.threeBestRobots = null;
         }
       }
     });
@@ -112,119 +89,17 @@ export class ResultsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    if(this.isDisplayDevice) {
-      this.scrollTimer = setInterval(() => {
-        if(window.scrollY < document.body.scrollHeight) {
-          window.scrollTo(0, window.scrollY + (this.getCategoryType == 1 ? 1 : 3));
-          this.isScrolling = this.lastScrollPos != window.scrollY;
-          this.lastScrollPos = window.scrollY;
-        }
-      }, 50)
-      this.scrollTimer2 = setInterval(() => {
-        if (this.categories && !this.isScrolling) {
-          let acutal = this.categories.find(cat => cat.kategoria_id == this.selectedCategory)
-          if(acutal) {
-            let indexCategory = this.categories.indexOf(acutal);
-            if (this.filteredGroups) {
-              let group = this.filteredGroups?.find(gr => gr.grupa_id == this.actualShowingGroup)
-              let groupIndex = this.filteredGroups?.indexOf(group)
-              if(groupIndex >= 0 && (this.filteredGroups.length-1) > groupIndex) {
-                this.actualShowingGroup = this.filteredGroups[groupIndex+1].grupa_id;
-                return;
-              } else if (this.filteredGroups.length > 0 && groupIndex != this.filteredGroups.length-1){
-                this.actualShowingGroup = this.filteredGroups[0].grupa_id;
-                return;
-              }
-            }
-            this.selectCategory(indexCategory != this.categories.length-1 ? this.categories[indexCategory+1].kategoria_id : this.categories[0].kategoria_id)
-            this.actualShowingGroup = null;
-            window.scrollTo(0,0)
-            if (this.filteredGroups) {
-              let group = this.filteredGroups?.find(gr => gr.grupa_id == this.actualShowingGroup)
-              let groupIndex = this.filteredGroups?.indexOf(group)
-              if(groupIndex >= 0 && (this.filteredGroups.length-1) > groupIndex) {
-                this.actualShowingGroup = this.filteredGroups[groupIndex+1].grupa_id;
-                return;
-              } else if (this.filteredGroups.length > 0 && groupIndex != this.filteredGroups.length-1){
-                this.actualShowingGroup = this.filteredGroups[0].grupa_id;
-                return;
-              }
-            }
-          } else {
-            this.selectCategory(this.categories[0].kategoria_id);
-            this.actualShowingGroup = null;
-            window.scrollTo(0,0)
 
-            if (this.filteredGroups) {
-              let group = this.filteredGroups?.find(gr => gr.grupa_id == this.actualShowingGroup)
-              let groupIndex = this.filteredGroups?.indexOf(group)
-              if(groupIndex >= 0 && (this.filteredGroups.length-1) > groupIndex) {
-                this.actualShowingGroup = this.filteredGroups[groupIndex+1].grupa_id;
-                return;
-              } else if (this.filteredGroups.length > 0 && groupIndex != this.filteredGroups.length-1){
-                this.actualShowingGroup = this.filteredGroups[0].grupa_id;
-                return;
-              }
-            }
-          }
-        }
-      }, 5000)
-    }
   }
 
   selectCategory(kategoria_id: number) {
     this.selectedCategory = Number(kategoria_id);
     this.selectedGroup = null;
-    this.threeBestRobots = null;
     this.showGroups = this.getFightGroupsFromCategory;
-    if(this.getCategoryType == 2 ) {
-      this.threeBestRobotsInPoints().then(val => {
-        this.threeBestRobots = val;
-      })
-    } else if (this.getCategoryType == 0) {
-      this.threeBestRobotsInTimes().then(val => {
-        this.threeBestRobots = val;
-      })
-    }
   }
 
   selectGroup(grupa_id: number) {
     this.selectedGroup = Number(grupa_id);
-  }
-
-  async threeBestRobotsInTimes() {
-    let results = this.getCategoryTimesResult;
-    if (results == undefined || results == null) return null;
-    results.sort((a,b) => a.czas_przejazdu - b.czas_przejazdu);
-    let robotsAndPoints: any[] = []
-    results.forEach(result => {
-      let current = robotsAndPoints.find(r => r.robot_uuid == result.robot_uuid)
-      if (current) {
-        if (current.wynik > result.czas_przejazdu) {
-          current.wynik = result.czas_przejazdu
-        }
-      } else {
-        robotsAndPoints.push({robot_uuid: result.robot_uuid, nazwa_robota: result.nazwa_robota, wynik: result.czas_przejazdu})
-      }
-    })
-    robotsAndPoints = robotsAndPoints.sort((a,b) => a.wynik - b.wynik)
-    return robotsAndPoints
-  }
-  async threeBestRobotsInPoints() {
-    let results = this.getCategoryTimesResult;
-    if (results == undefined || results == null) return null;
-    results.sort((a,b) => b.czas_przejazdu - a.czas_przejazdu);
-    let robotsAndPoints: any[] = []
-    results.forEach(result => {
-      let current = robotsAndPoints.find(r => r.robot_uuid == result.robot_uuid)
-      if (current) {
-        current.wynik += result.czas_przejazdu;
-      } else {
-        robotsAndPoints.push({robot_uuid: result.robot_uuid, nazwa_robota: result.nazwa_robota, wynik: result.czas_przejazdu})
-      }
-    })
-    robotsAndPoints = robotsAndPoints.sort((a,b) => b.wynik - a.wynik)
-    return robotsAndPoints
   }
 
 
@@ -285,10 +160,6 @@ export class ResultsComponent implements OnInit, OnDestroy {
     return wyniki;
   }
 
-  get filteredGroups(){
-    return this.groups?.filter(gr => gr.kategoria_id == this.selectedCategory)
-  }
-
   get getCategoryType() {
     return this.categories?.find(el => el.kategoria_id === this.selectedCategory)?.rodzaj
   }
@@ -312,8 +183,6 @@ export class ResultsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subs.unsubscribe();
-    clearInterval(this.scrollTimer)
-    clearInterval(this.scrollTimer2)
   }
 
 }

@@ -23,7 +23,7 @@
                 <div class="referee-results-fights" *ngIf="getCategoryType === 1">
                     <span *ngIf="!getCategoryFigths?.length ">{{'competitor-zone.referee-zone.no-fights' | translate}}</span>
                     <div class="scroll">
-                        <!-- <div *ngFor="let fight of getCategoryFigths">
+                        <div *ngFor="let fight of getCategoryFigths">
                             <ng-container *ngIf="{open: false} as variable">
                                 <div class="referee-results-fights-element" (click)="variable.open = !variable.open">
                                     <span class="referee-results-fights-element-id">{{fight.walka_id}}</span>
@@ -62,26 +62,7 @@
                                     </div>
                                 </div>
                             </ng-container>
-                        </div> -->
-                        <p class="tree-fight" *ngFor="let fight of getCategoryFigths" [ngClass]="{'tree-fight-tba': fight.robot1_nazwa == null || fight.robot2_nazwa == null, 'tree-fight-win': (fight.robot1_uuid == robotUUID && fight.wygrane_rundy_robot1 != null && fight.wygrane_rundy_robot2 != null && fight.wygrane_rundy_robot1 > fight.wygrane_rundy_robot2) || (fight.robot2_uuid == robotUUID && fight.wygrane_rundy_robot1 != null && fight.wygrane_rundy_robot2 != null && fight.wygrane_rundy_robot1 < fight.wygrane_rundy_robot2), 'tree-fight-lose': (fight.robot1_uuid == robotUUID && fight.wygrane_rundy_robot1 != null && fight.wygrane_rundy_robot2 != null && fight.wygrane_rundy_robot1 < fight.wygrane_rundy_robot2) || (fight.robot2_uuid == robotUUID && fight.wygrane_rundy_robot1 != null && fight.wygrane_rundy_robot2 != null && fight.wygrane_rundy_robot1 > fight.wygrane_rundy_robot2)}">
-                            <!-- <ng-container > -->
-                            <ng-container>
-                                <div class="tree-fight-row">
-                                    <a class="tree-fight-id">{{fight.walka_id}}</a>
-                                </div>
-                                <ng-container>
-                                    <!-- && fight.wygrane_rundy_robot1 != null && fight.wygrane_rundy_robot2 != null && fight.wygrane_rundy_robot1 > fight.wygrane_rundy_robot2 -->
-                                    <label class="tree-fight-body">
-                                      <a class="tree-fight-body-name" [ngClass]="{'tree-fight-body-score-win': fight ? fight.wygrane_rundy_robot1! > fight.wygrane_rundy_robot2! : false, 'tree-fight-body-score-lose': fight ? fight.wygrane_rundy_robot1! < fight.wygrane_rundy_robot2! : false}">{{fight.robot1_nazwa?? "TBA"}}</a>
-                                      <a class="tree-fight-body-score tree-fight-body-score-1">{{fight.wygrane_rundy_robot1 != null ? fight.wygrane_rundy_robot1 : "?"}}</a>
-                                      :
-                                      <a class="tree-fight-body-score tree-fight-body-score-2">{{fight.wygrane_rundy_robot2 != null ? fight.wygrane_rundy_robot2 : "?"}}</a>
-                                      <a class="tree-fight-body-name" [ngClass]="{'tree-fight-body-score-win': fight ? fight.wygrane_rundy_robot1! < fight.wygrane_rundy_robot2! : false, 'tree-fight-body-score-lose': fight ? fight.wygrane_rundy_robot1! > fight.wygrane_rundy_robot2! : false}">{{fight.robot2_nazwa ?? "TBA"}}</a>
-                                    </label>
-                                    <a *ngIf="fight.robot1_nazwa != null && fight.robot2_nazwa != null" class="tree-fight-pos">{{fight.nazwa_stanowiska}}</a>
-                                </ng-container>
-                            </ng-container>
-                        </p>
+                        </div>
                     </div>
                 </div>
 
@@ -181,8 +162,7 @@
                 <button class="submit-button" [disabled]="!isFormGroupAcceptationValid" (click)="onSaveReason()"><i class="las la-save"></i></button>
             </div>
         </section>
-        <section class="acceptation arrival" *ngIf="robot && isEvent && !robot.powod_odrzucenia">
-
+        <section class="acceptation arrival" *ngIf="robot && isEvent">
             <div class="row acceptation-row">
                 <p>{{"competitor-zone.robot.is-arrived" | translate}}
                     <span class="arrival-true" *ngIf="robot?.czy_dotarl == 1">{{"competitor-zone.robot.is-arrived-true" | translate}}</span>

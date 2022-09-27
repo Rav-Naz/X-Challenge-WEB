@@ -29,17 +29,9 @@
                         <i class="las la-clone"></i>
                         <p>{{'competitor-zone.bar.counting' | translate}}</p>
                     </section>
-                    <section class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['positions']}}]" *ngIf="userService.isAdmin" routerLinkActive="competitor-zone-bar-segment-active">
-                        <i class="las la-map-marker"></i>
-                        <p>{{'competitor-zone.bar.positions' | translate}}</p>
-                    </section>
                     <section class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['settings']}}]" routerLinkActive="competitor-zone-bar-segment-active">
                         <i class="las la-cog"></i>
                         <p>{{'competitor-zone.bar.settings' | translate}}</p>
-                    </section>
-                    <section class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['announcements']}}]" routerLinkActive="competitor-zone-bar-segment-active" [ngClass]="{'new-message': isNewMessage}">
-                        <i class="las la-bullhorn"></i>
-                        <p>{{'competitor-zone.bar.announcements' | translate}}</p>
                     </section>
                     <section *ngIf="!isMobile" class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['statistics']}}]">
                         <i class="las la-chart-pie"></i>
@@ -80,8 +72,7 @@
                             </label>
                     </div>
                 </div>
-                <p *ngIf="timeIsUp && userService.isUser && !authService.isEvent">
-
+                <p *ngIf="timeIsUp && userService.isUser">
                     {{'competitor-zone.bar.time-up' | translate}}
                 </p>
             </div>

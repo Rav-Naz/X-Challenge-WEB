@@ -22,10 +22,6 @@ export class GroupsService {
       socket?.on('deleteGroup', (data) => {
         this.WS_deleteGroup(data)}
       )
-      socket?.on('activateGroup', (data) => {
-        this.WS_activateGroup(data)}
-      )
-
       })
   }
 
@@ -46,46 +42,6 @@ export class GroupsService {
     });
   }
 
-  public addGroup(kategoria_id: number, nazwa: string) {
-    return new Promise<APIResponse | void>(async (resolve) => {
-      const value = await this.http.addGroup(kategoria_id, nazwa).catch(err => {
-        if(err.status === 400) {
-          this.errorService.showError(err.status, this.translate.instant(err.error.body));
-        } else {
-          this.errorService.showError(err.status);
-        }
-      })
-      resolve(value);
-    });
-  }
-
-  public activateGroup(grupa_id: number) {
-    return new Promise<APIResponse | void>(async (resolve) => {
-      const value = await this.http.activateGroup(grupa_id).catch(err => {
-        if(err.status === 400) {
-          this.errorService.showError(err.status, this.translate.instant(err.error.body));
-        } else {
-          this.errorService.showError(err.status);
-        }
-      })
-      resolve(value);
-    });
-  }
-
-  public deactivateGroup(grupa_id: number) {
-    return new Promise<APIResponse | void>(async (resolve) => {
-      const value = await this.http.deactivateGroup(grupa_id).catch(err => {
-        if(err.status === 400) {
-          this.errorService.showError(err.status, this.translate.instant(err.error.body));
-        } else {
-          this.errorService.showError(err.status);
-        }
-      })
-      resolve(value);
-    });
-  }
-
-
   public WS_addGroup(data: any) {
     this.groups.value?.push(data)
     this.groups.next(this.groups.value);
@@ -95,14 +51,6 @@ export class GroupsService {
     const index = this.groups.value?.findIndex(el => el.grupa_id == data.grupa_id)
     if (index && index >= 0) {
       this.groups.value?.splice(index,1)
-      this.groups.next(this.groups.value);
-    }
-  }
-
-  public WS_activateGroup(data: any) {
-    const index = this.groups.value?.findIndex(el => el.grupa_id == data.grupa_id)
-    if (index && index >= 0) {
-      this.groups.value![index].czy_aktywna = data.czy_aktywna;
       this.groups.next(this.groups.value);
     }
   }

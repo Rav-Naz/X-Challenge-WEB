@@ -1,7 +1,7 @@
 <div class="top" [formGroup]="group" [ngClass]="{'collapsed': collapsed}">
     <div class="form">
         <input type="text" [id]="controlName" class="form__input" [autocomplete]="controlName" placeholder=" " [ngClass]="{'form__input-invalid': isFormInvalid && !isDisabled, 'form__input-disabled': isDisabled}" [formControlName]="controlName" [type]="type ? type : isControlPassword ? 'password' : 'text'"
-            [name]="controlName" (focus)="updateActiveInput()">
+            [name]="controlName">
         <label [for]="controlName" class="form__label" [ngClass]="{'form__label-invalid': isFormInvalid && !isDisabled}">{{('controls.'+controlName+'.name') | translate}}</label>
     </div>
     <div class="errors" *ngIf="isFormInvalid">

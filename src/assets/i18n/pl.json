@@ -195,13 +195,11 @@
                 { "id": 11, "patreonCategory": 5, "description": "Prezydent Miasta Rzeszowa", "image": "../../assets/jpg/rzeszow.png", "linkToSite": "https://bip.erzeszow.pl/" },
                 { "id": 12, "patreonCategory": 6, "description": "zrobotyzowany.pl", "image": "../../assets/jpg/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl/" },
                 { "id": 13, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
-                { "id": 14, "patreonCategory": 3, "description": "FANUC", "image": "../../assets/jpg/fanuc.png", "linkToSite": "https://www.fanuc.eu/pl/pl" }
-                { "id": 15, "patreonCategory": 3, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
-                { "id": 16, "patreonCategory": 3, "description": "Matlab", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
-                { "id": 17, "patreonCategory": 3, "description": "Zespół Szkół Technicznych", "image": "../../assets/jpg/zst.png", "linkToSite": "http://www.zstrzeszow.pl/" },
-                { "id": 18, "patreonCategory": 6, "description": "Botland", "image": "../../assets/jpg/botland.webp", "linkToSite": "https://botland.com.pl/" },
-                { "id": 19, "patreonCategory": 5, "description": "Wojewoda Podkarpacki", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" }
-
+                { "id": 14, "patreonCategory": 3, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
+                { "id": 15, "patreonCategory": 3, "description": "Matlab", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
+                { "id": 16, "patreonCategory": 3, "description": "Zespół Szkół Technicznych", "image": "../../assets/jpg/zst.png", "linkToSite": "http://www.zstrzeszow.pl/" },
+                { "id": 17, "patreonCategory": 6, "description": "Botland", "image": "../../assets/jpg/botland.webp", "linkToSite": "https://botland.com.pl/" },
+                { "id": 18, "patreonCategory": 5, "description": "Wojewoda Podkarpacki", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" }
 
             ],
             "tiers": [
@@ -333,9 +331,6 @@
             "register": "REJESTRACJA",
             "counting": "ODWIEDZAJĄCY",
             "fights": "PLANER WALK",
-            "positions": "STANOWISKA",
-            "announcements": "OGŁOSZENIA",
-
 
             "hello": {
                 "1": "Witaj w ",
@@ -427,9 +422,6 @@
             "get-rfid": "Odczytaj RFID",
             "get-lap-time": "Odczytaj czas przejazdu",
             "set-rfid": "Zapisz dane na karcie RFID",
-            "referee-settings": "Ustawienia urządzenia",
-            "is-sliding": "Automatyczne przewijanie strony z walkami",
-            "is-esp32": "Wyświetlaj panel obsługi RFID i bramek (tylko komputer)",
             "change": "* Preferencji nie da się samodzielnie zmienić po rejestracji. Aby dokonać zmian, prosimy skontaktować się z administratorem.",
             "errors": {
                 "succesfuly-added-phone": "Pomyślnie zaktualizowano numer telefonu",
@@ -452,8 +444,7 @@
                 "2": "Wprowadź identyfikator konstruktora robota",
                 "3": "Wezwij konstruktorów robota"
             },
-            "next": "Sprawdź",
-            "skip": "Pomiń",
+            "next": "Dalej",
             "2": {
                 "1": "Teraz możesz przejść do przeprowadzenia walki. Po jej zakończeniu wpisz wynik.",
                 "2": "Wprowadź ilość wygranych rund przez"
@@ -509,14 +500,12 @@
             "title": "ZAWODNICY",
             "on-list": "Na liście: ",
             "categories": "Kategorie: ",
-            "roboty": "Roboty: ",
             "more": "Więcej",
             "filters": {
                 "name": "Imię i nazwisko",
                 "user-uuid": "Użytkownik UUID",
                 "positions": "Stanowiska",
-                "robots-uuid": "Robot UUID",
-                "robots-name": "Roboty",
+                "robots-uuid": "Roboty UUID",
                 "phone": "Numer telefonu",
                 "email": "Email",
                 "categories": "Kategorie"
@@ -566,10 +555,6 @@
         },
         "categories": {
             "join": "Dołącz teraz"
-        },
-        "fights-view": {
-            "3rd-fight": "Walka o trzecie miejsce",
-            "no-groups": "Brak grup"
         }
 
     },
@@ -1125,19 +1110,6 @@
             "validators": {
                 "required": "To pole jest wymagane"
             }
-        },
-        "referee": {
-            "name": "Sędzia",
-            "validators": {
-                "required": "To pole jest wymagane"
-            }
-        },
-        "group_name": {
-            "name": "Nazwa grupy",
-            "validators": {
-                "required": "To pole jest wymagane"
-            }
-
         }
     },
     "errors": {

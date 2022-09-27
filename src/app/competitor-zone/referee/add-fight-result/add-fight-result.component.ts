@@ -1,12 +1,11 @@
 import { UserService } from 'src/app/services/user.service';
 import { FightsService } from './../../../services/fights.service';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { RefereeService } from 'src/app/services/referee.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UiService } from 'src/app/services/ui.service';
-import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-add-fight-result',
@@ -16,12 +15,12 @@ import { Title } from '@angular/platform-browser';
     'class': 'router-flex'
   }
 })
-export class AddFightResultComponent implements OnInit, OnDestroy {
+export class AddFightResultComponent implements OnInit {
 
   formUUID1: FormGroup;
-  formUUID2: FormGroup;
-  formResult1: FormGroup;
-  formResult2: FormGroup;
+  formUUID2: FormGroup; 
+  formResult1: FormGroup; 
+  formResult2: FormGroup; 
    // formTime: FormGroup;
   private loading: boolean = false;
   private subs: Subscription = new Subscription;
@@ -31,7 +30,7 @@ export class AddFightResultComponent implements OnInit, OnDestroy {
   public walka: any = null;
 
   constructor(private formBuilder: FormBuilder, private refereeService: RefereeService, private route: ActivatedRoute,
-    private router: Router, private ui: UiService,private fightService: FightsService, public userService: UserService, private titleService: Title) {
+    private router: Router, private ui: UiService,private fightService: FightsService, public userService: UserService) {
     this.formUUID1 = this.formBuilder.group({
       constructor_uuid: [null, [Validators.required, Validators.minLength(36), Validators.maxLength(36)]]
     });
@@ -50,17 +49,12 @@ export class AddFightResultComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.stanowisko_id = Number(this.route.snapshot.paramMap.get('stanowisko_id'));
     this.kategoria_id = Number(this.route.snapshot.paramMap.get('kategoria_id'));
-    try {
-      this.walka = JSON.parse((window as any).walka);
-    } catch(err) {
-      this.backToPositions();
-    }
-    if(!this.isCredentials || !this.walka) this.backToPositions();
-    this.titleService.setTitle(`⚔️ ${this.walka.robot1_nazwa} vs ${this.walka.robot2_nazwa}`);
+    this.walka = history.state.data;
+    if(!this.isCredentials) this.backToPositions();
   }
 
   backToPositions() {
-    window.close()
+    this.router.navigateByUrl(`competitor-zone/(outlet:referee-zone/${this.stanowisko_id}/${this.kategoria_id}/${this.walka.grupa_id})`);
   }
 
   async goToSetFight() {
@@ -76,6 +70,8 @@ export class AddFightResultComponent implements OnInit, OnDestroy {
         this.loading = false;
         this.ui.showFeedback("error", `Użytkownik nie jest konstruktorem robota ${response1.body.pCzyJest === 1 ? this.walka.robot2_nazwa : this.walka.robot1_nazwa}!`, 3);
       }
+    } else if (this.userService.isAdmin) {
+      this.nextPage();
     }
   }
 
@@ -83,8 +79,8 @@ export class AddFightResultComponent implements OnInit, OnDestroy {
     if(this.isFormResultValid) {
       const wygrane_rundy1 = this.formResult1.get('fight_result')?.value;
       const wygrane_rundy2 = this.formResult2.get('fight_result')?.value;
-      const decision = await this.ui.wantToContinue(`Czy potwierdzasz, że robot ${this.walka.robot1_nazwa} wygrał ${wygrane_rundy1} rund/y a robot ${this.walka.robot2_nazwa} wygrał ${wygrane_rundy2} rund/y?`)
-      if (decision) {
+      const decision = await this.ui.wantToContinue(`Czy potwierdzasz, że robot ${this.walka.robot1_nazwa} wygrał ${wygrane_rundy1} rund/y a robot ${this.walka.robot2_nazwa} wygrał ${wygrane_rundy2} rund/y? Jeśli się pomylisz, wynik może poprawić TYLKO administrator (ale nie rób mi tego specjalnie ;) ) `)
+      if (decision) {        
         this.loading = true;
         const response = await this.fightService.setFightResult(this.walka.walka_id, wygrane_rundy1, wygrane_rundy2).catch(err => {return null});
         // const response2 = await this.refereeService.checkIfUserIsConstructorOfRobot(uzytkownik_uuid2, this.walka.robot2_uuid).catch(err => {return null});
@@ -102,11 +98,9 @@ export class AddFightResultComponent implements OnInit, OnDestroy {
     const decision = await this.ui.wantToContinue(`Jeśli potwierdzisz wykonanie procedury, do wszystkich konstruktorów robota ${robot_nazwa} zostanie wysłana wiadomość wzywająca ich do walki na ringu`)
     if (decision) {
       const response = await this.refereeService.callForConstructors(robot_uuid, this.stanowisko_id!, robot_nazwa);
-      if (response !== undefined && response !== null && response.body.sendedCount > 0) {
-        this.ui.showFeedback("succes", `Konstruktorzy robota ${robot_nazwa} zostali wezwani`, 3);
-      } else if (response !== undefined && response !== null && response.body.sendedCount == 0) {
-        this.ui.showFeedback("loading", `Żaden z konstruktorów robota ${robot_nazwa} nie ma przypisanego numeru telefonu`, 5);
-      }else {
+      if (response !== undefined && response !== null && response.body.pIsSucces === 1) {
+        this.ui.showFeedback("succes", `Użytkownicy robota ${robot_nazwa} zostali wezwani`, 3);
+      } else {
         this.ui.showFeedback("error", `Błąd!`, 3);
       }
     }
@@ -120,21 +114,13 @@ export class AddFightResultComponent implements OnInit, OnDestroy {
     }
   }
 
-  async skip() {
-    const decision = await this.ui.wantToContinue(`Uwaga! Pominięcie etapu sprawdzania konstruktorów może skutkować przyznaniem punktów nieodpowieniemu robotowi`)
-    if(!decision) return;
-    this.nextPage()
-  }
-
   nextPage() {
     this.viewCounter++;
     this.loading = false;
   }
 
   get isFormResultValid() {
-    const wygrane_rundy1 = this.formResult1.get('fight_result')?.value;
-    const wygrane_rundy2 = this.formResult2.get('fight_result')?.value;
-    return this.formResult1.valid && this.formResult2.valid && !this.isLoading && this.isCredentials && wygrane_rundy1 != wygrane_rundy2;
+    return this.formResult1.valid && this.formResult2.valid && !this.isLoading && this.isCredentials;
   }
 
   get isFormUserUUIDValid() {
@@ -147,10 +133,6 @@ export class AddFightResultComponent implements OnInit, OnDestroy {
 
   get isLoading() {
     return this.loading;
-  }
-
-  ngOnDestroy(): void {
-    this.titleService.setTitle(`XChallenge`);
   }
 
 }

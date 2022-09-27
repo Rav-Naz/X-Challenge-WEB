@@ -10,15 +10,14 @@
                 <span *ngIf="!categoriesInPosition">{{'competitor-zone.referee-zone.no-categories' | translate}}</span>
                 <button (click)="selectCategory(category.kategoria_id!)" *ngFor="let category of showCategories" [ngClass]="{'referee-categories-active': category.kategoria_id! === selectedCategory}">{{category.nazwa}}</button>
             </section>
-            <!-- <section class="referee-categories" *ngIf="getCategoryType === 1">
+            <section class="referee-categories" *ngIf="getCategoryType === 1">
                 <label>{{'competitor-zone.referee-zone.groups' | translate}}</label>
                 <span *ngIf="getFightGroupsFromCategory.length === 0">{{'competitor-zone.referee-zone.no-groups' | translate}}</span>
                 <button (click)="selectGroup(group.grupa_id!)" *ngFor="let group of showGroups" [ngClass]="{'referee-categories-active': group.grupa_id! === selectedGroup}">{{group.nazwa_grupy}}</button>
-            </section> -->
+            </section>
             <section class="referee-results" *ngIf="selectedPosition && !isLoading">
-                <app-fights-view [selectedCategory]="selectedCategory" [canModify]="false" [refereePositionId]="selectedPosition"></app-fights-view>
 
-                <!-- <div class="referee-results-fights" *ngIf="getCategoryType === 1">
+                <div class="referee-results-fights" *ngIf="getCategoryType === 1">
                     <span *ngIf="!getGroupFigths?.length && selectedGroup">{{'competitor-zone.referee-zone.no-fights' | translate}}</span>
                     <div class="scroll">
                         <div *ngFor="let fight of getGroupFigths">
@@ -64,7 +63,7 @@
                             </ng-container>
                         </div>
                     </div>
-                </div> -->
+                </div>
 
                 <div class="referee-results-times" *ngIf="getCategoryType === 0 || getCategoryType === 2">
                     <button class="submit-button" (click)="addTimeResult()">{{(getCategoryType === 2 ? 'competitor-zone.referee-zone.add-result' : 'competitor-zone.referee-zone.add-time') | translate}}<i class="las la-plus-circle"></i></button>
@@ -79,14 +78,13 @@
                                         <p class="referee-results-times-element-name">{{time.nazwa_robota}}</p>
                                     </div>
 
-                                    <div class="referee-results-times-element-categories" *ngIf="time.wynik_id !== editingTimes">
+                                    <div class="referee-results-times-element-categories">
                                         <p>{{time.czas_przejazdu}} {{(getCategoryType === 2 ? 'competitor-zone.referee-zone.pts' : 'ms') | translate}}</p>
                                     </div>
                                     <span class="referee-results-times-element-edit" (click)="editTime(time.wynik_id)" *ngIf="time.wynik_id !== editingTimes">{{ 'competitor-zone.my-robots.edit' | translate}}<i class="las la-edit"></i></span>
                                     <div class="referee-results-times-element-edit-form" *ngIf="time.wynik_id === editingTimes">
                                         <app-input [group]="editingTimesForm" controlName="time" [collapsed]="true"></app-input>
                                         <button [disabled]="!isFormEditTimeValid" class="submit-button" (click)="saveEditedTime()"><i class="las la-save"></i></button>
-                                        <button class="submit-button referee-results-times-element-edit-form-button-red" (click)="deleteTime()"><i class="las la-trash"></i></button>
                                     </div>
                                     <div class="referee-results-fights-element-details">
                                         <div class="referee-results-fights-element-details-flex" *ngIf="variable.open">
@@ -102,10 +100,10 @@
                                                 <label>{{'competitor-zone.referee-zone.robot-id' | translate}}&nbsp;</label>
                                                 <label>{{time.robot_id}}</label>
                                             </div>
-                                            <!-- <div class="referee-results-fights-element-details-flex-piece">
+                                            <div class="referee-results-fights-element-details-flex-piece">
                                                 <label>{{'competitor-zone.referee-zone.result-id' | translate}}&nbsp;</label>
                                                 <label>{{time.wynik_id}}</label>
-                                            </div> -->
+                                            </div>
                                         </div>
                                         <span (click)="dummy($event); variable.open = !variable.open" class="referee-results-fights-element-edit">{{(variable.open ? 'competitor-zone.referee-zone.less' : 'competitor-zone.referee-zone.more') | translate}}<i class="las la-angle-double-down" *ngIf="!variable.open"></i><i class="las la-angle-double-up" *ngIf="variable.open"></i></span>
                                     </div>
