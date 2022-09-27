@@ -10,6 +10,7 @@ import { UiService } from 'src/app/services/ui.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Title } from '@angular/platform-browser';
 import { PositionsService } from 'src/app/services/positions.service';
+import { Esp32Service } from '../../../../services/esp32.service';
 
 
 @Component({
@@ -39,7 +40,7 @@ export class CompetitorComponent {
 
 
   constructor(private route: ActivatedRoute, private formBuilder: FormBuilder, public authService: AuthService,
-    private categoriesService: CategoriesService, public userSerceice: UserService, private router: Router,
+    private categoriesService: CategoriesService, public userSerceice: UserService, private router: Router, public esp32Service: Esp32Service,
     private ui: UiService, private translate: TranslateService, private refereeService: RefereeService, private titleService: Title, private positionsService: PositionsService) {
     const uzytkownik_uuid = this.route.snapshot.paramMap.get('uzytkownik_uuid');
     this.authService.getRegisterAddons();

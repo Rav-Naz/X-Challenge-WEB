@@ -422,6 +422,7 @@
             "set-rfid": "Zapisz dane na karcie RFID",
             "referee-settings": "Ustawienia urządzenia",
             "is-sliding": "Automatyczne przewijanie strony z walkami",
+            "is-esp32": "Wyświetlaj panel obsługi RFID i bramek (tylko komputer)",
             "change": "* Preferencji nie da się samodzielnie zmienić po rejestracji. Aby dokonać zmian, prosimy skontaktować się z administratorem.",
             "errors": {
                 "succesfuly-added-phone": "Pomyślnie zaktualizowano numer telefonu",

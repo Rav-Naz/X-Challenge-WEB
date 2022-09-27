@@ -25,10 +25,6 @@ export class HttpService {
 
   // ------------- PUBLIC
 
-  get getTest(): Observable<any> {
-    return this.http.get<APIResponse>(`http://bramki.xchallenge.pl:5000/companies`, { headers: this.headers });
-  }
-
   get getHomePageInfo(): Observable<APIResponse> {
     return this.http.get<APIResponse>(`${this.url}site/info`, { headers: this.headers });
   }
@@ -623,9 +619,29 @@ export class HttpService {
     })
   }
 
+  public testLED_OFF() {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.get<APIResponse>(`http://bramki.xchallenge.pl:5000/testLED_OFF`,
+      { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public testLED_ON() {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.get<APIResponse>(`http://bramki.xchallenge.pl:5000/testLED_ON`,
+      { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
   public readRFIDTag() {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.get<APIResponse>(`http://bramki.xchallenge.pl:5000/referee/readRFIDTag`,
+    return new Promise<any>((resolve, rejects) => {
+      this.http.get<any>(`http://bramki.xchallenge.pl:5000/referee/readRFIDTag`,
       { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
@@ -633,9 +649,9 @@ export class HttpService {
     })
   }
 
-  public readLapTime() {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.get<APIResponse>(`http://bramki.xchallenge.pl:5000/referee/readLapTime`,
+  public eraseRFIDTag() {
+    return new Promise<any>((resolve, rejects) => {
+      this.http.get<any>(`http://bramki.xchallenge.pl:5000/referee/eraseRFIDTag`,
       { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
@@ -643,10 +659,30 @@ export class HttpService {
     })
   }
 
-  public writeRFIDTag(uzytkownik_uuid: string) {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.post<APIResponse>(`http://bramki.xchallenge.pl:5000/referee/writeRFIDTag`,{
-        uzytkownik_uuid: uzytkownik_uuid
+  public readOneGate() {
+    return new Promise<any>((resolve, rejects) => {
+      this.http.get<any>(`http://bramki.xchallenge.pl:5000/referee/readOneGate`,
+      { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public readTwoGates() {
+    return new Promise<any>((resolve, rejects) => {
+      this.http.get<any>(`http://bramki.xchallenge.pl:5000/referee/readTwoGates`,
+      { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public writeRFIDTag(uzytkownik_id: number) {
+    return new Promise<any>((resolve, rejects) => {
+      this.http.post<any>(`http://bramki.xchallenge.pl:5000/referee/writeRFIDTag`,{
+        uzytkownik_id: uzytkownik_id
       },
       { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
