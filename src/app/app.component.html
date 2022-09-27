@@ -15,6 +15,11 @@
                 <i class="las la-stopwatch" (click)="esp32Service.readOneGate()"></i>
                 <i class="las la-road" (click)="esp32Service.readTwoGates()"></i>
             </div>
+            <label class="checkbox-container">
+              <a [ngClass]="{'checkbox-checked': esp32Service.isAutocomplete}">Autouzupełnianie</a>
+              <input type="checkbox" (click)="esp32Service.onChangeAutocomplete()" [checked]="esp32Service.isAutocomplete">
+              <span class="checkmark"></span>
+          </label>
             <ng-container *ngIf="esp32Service.lastResponse">
                 <p>Odpowiedź:</p>
                 <a (click)="esp32Service.copyLastResponse()">{{esp32Service.lastResponse}} <i class="las la-copy"></i></a>

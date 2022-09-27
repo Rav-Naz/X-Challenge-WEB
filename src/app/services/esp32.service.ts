@@ -13,6 +13,7 @@ export class Esp32Service {
 
   public isRFIDDevice: boolean = false;
   public isLoading: boolean = false;
+  public isAutocomplete: boolean = false;
   public lastResponse: any = null;
   public allUsers: Array<any> | null = null;
   public lastActivedElement: InputComponent | null = null;
@@ -27,6 +28,9 @@ export class Esp32Service {
   onChangeRFIDDevice() {
     this.isRFIDDevice = !this.isRFIDDevice;
     localStorage.setItem('isRFIDDevice', this.isRFIDDevice.toString());
+  }
+  onChangeAutocomplete() {
+    this.isAutocomplete = !this.isAutocomplete;
   }
 
   errorHandler(error: any) {
@@ -166,7 +170,7 @@ export class Esp32Service {
   }
 
   copyToClipboard(value: string){
-    if(this.lastActivedElement) {
+    if(this.lastActivedElement && this.isAutocomplete) {
       this.lastActivedElement.updateValueFromOutside(value);
     }
     let selBox = document.createElement('textarea');

@@ -1,5 +1,6 @@
 @import '../app/scss/colors';
 @import '../app/scss/variables';
+@import '../app/competitor-zone/user/settings/settings.component.scss';
 .navigator {
     &-tc {
         background: linear-gradient(-90deg, $color-tc, $color-tc-dark) !important;
@@ -583,6 +584,17 @@
         }
         font-size: 2.3rem;
     }
+}
+
+.checkbox-container {
+    a {
+        margin-left: 1rem;
+        margin-top: .5rem;
+        &:hover {
+            color: inherit;
+        }
+    }
+    padding-bottom: .5rem;
 }
 
 @keyframes pulse-yellow {
