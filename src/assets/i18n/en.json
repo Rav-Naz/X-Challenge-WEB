@@ -193,7 +193,9 @@
                 { "id": 16, "patreonCategory": 3, "description": "Matlab", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
                 { "id": 17, "patreonCategory": 3, "description": "Zespół Szkół Technicznych", "image": "../../assets/jpg/zst.png", "linkToSite": "http://www.zstrzeszow.pl/" },
                 { "id": 18, "patreonCategory": 6, "description": "Botland", "image": "../../assets/jpg/botland.webp", "linkToSite": "https://botland.com.pl/" },
-                { "id": 19, "patreonCategory": 5, "description": "Voivode of Podkarpacie", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" }
+                { "id": 19, "patreonCategory": 5, "description": "Voivode of Podkarpacie", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" },
+                { "id": 20, "patreonCategory": 6, "description": "Huawei", "image": "../../assets/jpg/huawei.png", "linkToSite": "https://seedsforthefuture.pl/" },
+                { "id": 21, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" }
 
 
             ],
