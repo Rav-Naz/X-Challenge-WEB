@@ -1,6 +1,5 @@
 import { Component, Input, ChangeDetectorRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Esp32Service } from '../../services/esp32.service';
 
 @Component({
   selector: 'app-input',
@@ -14,9 +13,7 @@ export class InputComponent {
   @Input() nameKey!: string;
   @Input() collapsed: undefined | boolean;
   @Input() type: undefined | string;
-
-  constructor (public esp32Service: Esp32Service) {}
-
+  
   get isFormInvalid() {
     return !this.group.get(this.controlName)?.valid && this.group.get(this.controlName)?.touched;
   }
@@ -26,21 +23,13 @@ export class InputComponent {
     var keys = control?.errors ? Object.keys(control?.errors) : [];
     return keys;
   }
-
+  
   get isControlPassword() {
     return this.controlName.toLowerCase().indexOf('assword') > 0;
   }
 
   get isDisabled() {
     return this.group.disabled;
-  }
-
-  updateActiveInput() {
-    this.esp32Service.setActiveInput(this);
-  }
-
-  updateValueFromOutside(value: string) {
-    this.group.get(this.controlName)?.setValue(value)
   }
 
 }

@@ -55,7 +55,7 @@ export class ChartsComponent implements OnDestroy {
             show: true,
             fontSize: '15',
             fontWeight: 'bold',
-            fontFamily: 'Goldman',
+            fontFamily: 'Montserrat Alternates',
             formatter:'{b}:\n\n{c}'
           }
         },
@@ -129,8 +129,8 @@ export class ChartsComponent implements OnDestroy {
             label: {
               show: true,
               fontSize: '15',
-              fontWeight: 'normal',
-              fontFamily: 'Goldman',
+              fontWeight: 'bold',
+              fontFamily: 'Montserrat Alternates',
               formatter:'{b}:\n\n{c}'
             }
           },

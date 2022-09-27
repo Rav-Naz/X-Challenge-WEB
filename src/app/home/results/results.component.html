@@ -3,7 +3,7 @@
     <div class="results">
         <ng-container *ngIf="positions">
             <div class="results-main">
-                <div class="filter" *ngIf="!isDisplayDevice">
+                <div class="filter">
                     <div>
                         <h5><span>{{'competitor-zone.results.title' | translate}}</span></h5>
                     </div>
@@ -15,21 +15,63 @@
                     <span *ngIf="!showCategories">{{'competitor-zone.referee-zone.no-categories' | translate}}</span>
                     <button (click)="selectCategory(category.kategoria_id!)" *ngFor="let category of showCategories" [ngClass]="{'referee-categories-active': category.kategoria_id! === selectedCategory}">{{category.nazwa}}</button>
                 </section>
-                <section class="referee-categories" *ngIf="actualShowingGroup && getCategoryType === 1">
+                <section class="referee-categories" *ngIf="getCategoryType === 1">
                     <label>{{'competitor-zone.referee-zone.groups' | translate}}</label>
-                    <span *ngIf="groups && groups.length === 0">{{'competitor-zone.referee-zone.no-groups' | translate}}</span>
-                    <span *ngIf="filteredGroups?.length == 0">{{"competitor-zone.fights-view.no-groups" | translate}}</span>
-                    <button (click)="selectGroup(group.grupa_id!)" *ngFor="let group of filteredGroups" [ngClass]="{'referee-categories-active': group.grupa_id! === actualShowingGroup, 'group-active':group.czy_aktywna}">{{group.nazwa}}</button>
+                    <span *ngIf="showGroups && showGroups.length === 0">{{'competitor-zone.referee-zone.no-groups' | translate}}</span>
+                    <button (click)="selectGroup(group.grupa_id!)" *ngFor="let group of showGroups" [ngClass]="{'referee-categories-active': group.grupa_id! === selectedGroup}">{{group.nazwa_grupy}}</button>
                 </section>
-
                 <section class="referee-results" *ngIf="!isLoading">
 
-                    <app-fights-view [selectedCategory]="selectedCategory" [canModify]="false" [selectedGroupFromParent]="actualShowingGroup"></app-fights-view>
+                    <div class="referee-results-fights" *ngIf="getCategoryType === 1">
+                        <span *ngIf="!resultsFiltered?.length && selectedGroup">{{'competitor-zone.referee-zone.no-fights' | translate}}</span>
+
+                        <!-- <span *ngIf="!getGroupFigths?.length ">Brak walk</span> -->
+                        <div class="scroll">
+                            <div *ngFor="let fight of resultsFiltered">
+                                <ng-container *ngIf="{open: false} as variable">
+                                    <div class="referee-results-fights-element" (click)="variable.open = !variable.open">
+                                        <span class="referee-results-fights-element-id">{{fight.walka_id}}</span>
+                                        <div class="referee-results-fights-element-info referee-results-fights-element-info-1">
+                                            <p class="referee-results-fights-element-uuid">{{fight?.robot1_uuid}}</p>
+                                            <p class="referee-results-fights-element-name">{{fight.robot1_nazwa ? fight.robot1_nazwa : 'TBA'}}</p>
+                                        </div>
+                                        <div class="referee-results-fights-element-vs">
+                                            <span>vs</span>
+                                            <div>
+                                                <label [ngClass]="{'referee-results-fights-element-vs-win': fight.wygrane_rundy_robot1 !== null && fight.wygrane_rundy_robot2 !== null && fight.wygrane_rundy_robot1 > fight.wygrane_rundy_robot2, 'referee-results-fights-element-vs-lose': fight.wygrane_rundy_robot1 !== null  && fight.wygrane_rundy_robot2 !== null && fight.wygrane_rundy_robot1 < fight.wygrane_rundy_robot2}">{{fight.wygrane_rundy_robot1 !== null ? fight.wygrane_rundy_robot1 : '?'}}</label>
+                                                <label>&nbsp;:&nbsp;</label>
+                                                <label [ngClass]="{'referee-results-fights-element-vs-win': fight.wygrane_rundy_robot1 !== null && fight.wygrane_rundy_robot2 !== null && fight.wygrane_rundy_robot1 < fight.wygrane_rundy_robot2, 'referee-results-fights-element-vs-lose': fight.wygrane_rundy_robot1 !== null && fight.wygrane_rundy_robot2 !== null && fight.wygrane_rundy_robot1 > fight.wygrane_rundy_robot2}">{{fight.wygrane_rundy_robot2 !== null ? fight.wygrane_rundy_robot2 : '?'}}</label>
+                                            </div>
+                                        </div>
+                                        <div class="referee-results-fights-element-info referee-results-fights-element-info-2">
+                                            <p class="referee-results-fights-element-uuid">{{fight?.robot2_uuid}}</p>
+                                            <p class="referee-results-fights-element-name">{{fight.robot2_nazwa ? fight.robot2_nazwa : 'TBA'}}</p>
+                                        </div>
+                                        <div class="referee-results-fights-element-details">
+                                            <div class="referee-results-fights-element-details-flex" *ngIf="variable.open">
+                                                <div *ngIf="fight.czas_zakonczenia" class="referee-results-fights-element-details-flex-piece">
+                                                    <label>{{'competitor-zone.referee-zone.end-time' | translate}}&nbsp;</label>
+                                                    <label>{{fight.czas_zakonczenia | date: 'HH:mm:ss'}}</label>
+                                                </div>
+                                                <div *ngIf="fight.nazwa_stanowiska" class="referee-results-fights-element-details-flex-piece">
+                                                    <label>{{'competitor-zone.referee-zone.position-name' | translate}}&nbsp;</label>
+                                                    <label>{{fight.nazwa_stanowiska}}</label>
+                                                </div>
+                                                <div *ngIf="fight.nastepna_walka_id" class="referee-results-fights-element-details-flex-piece">
+                                                    <label>{{'competitor-zone.referee-zone.next-fight' | translate}}&nbsp;</label>
+                                                    <label>{{fight.nastepna_walka_id}}</label>
+                                                </div>
+                                            </div>
+                                            <span class="referee-results-fights-element-edit">{{(variable.open ? 'competitor-zone.referee-zone.less' : 'competitor-zone.referee-zone.more') | translate}}<i class="las la-angle-double-down" *ngIf="!variable.open"></i><i class="las la-angle-double-up" *ngIf="variable.open"></i></span>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="referee-results-times" *ngIf="getCategoryType === 0 || getCategoryType === 2">
                         <span *ngIf="!resultsFiltered?.length">{{'competitor-zone.referee-zone.no-results' | translate}}</span>
-                        <p class="referee-results-times-best" *ngFor="let robot of threeBestRobots; let i = index"><b>{{i+1}}:</b> {{robot.nazwa_robota}} - <span>{{robot.wynik}}</span> {{(getCategoryType === 2 ? 'competitor-zone.referee-zone.pts' : 'ms') | translate}}</p>
-
                         <div class="scroll">
                             <div *ngFor="let time of resultsFiltered">
                                 <ng-container *ngIf="{open: false} as variable">

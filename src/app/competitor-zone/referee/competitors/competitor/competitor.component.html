@@ -18,7 +18,6 @@
                         <a>{{user?.uzytkownik_uuid}}</a>
                         <i class="las la-copy"></i>
                     </div>
-                    <button (click)="esp32Service.writeRFIDTag(user.uzytkownik_id)" class="submit-button" style="color: white; display: flex; flex-direction:row; min-height: auto; line-height: auto !important; justify-content:center; align-items:center;">RFID<i class="las la-share-square" style="color: white;"></i><i class="las la-id-card" style="color: white;"></i></button>
                 </div>
                 <div class="row" *ngIf="userSerceice.isAdmin" style="margin-top: 2rem;">
                     <app-select [group]="formUserType" [collapsed]="true" controlName="user_type" translatePrefix="controls" [options]="userTypes"></app-select>
@@ -47,24 +46,6 @@
                 </div>
             </div>
         </section>
-        <section class="position" *ngIf="user && user.uzytkownik_typ >= 2">
-            <p style="margin: 0;">Obsługiwane stanowiska</p>
-            <div class="grid-categories-new" *ngIf="userSerceice.isAdmin">
-                <app-select *ngIf="positionsOptions !== undefined && !isLoadingReferee" [group]="formReferee" [collapsed]="true" controlName="position" translatePrefix="controls" [options]="positionsOptions"></app-select>
-                <app-spinner *ngIf="positionsOptions === undefined || isLoadingReferee"></app-spinner>
-                <button [disabled]="!isFormRefereeValid || isLoadingReferee" class="submit-button grid-button" (click)="onAddReferee()"><i class="las la-plus-circle"></i></button>
-            </div>
-            <div class="grid-categories-old-parent">
-                <div *ngFor="let position of allReferePositions" class="grid-categories-old">
-                    <div>
-                        <i class="las la-chevron-right"></i>
-                        <label>{{position.nazwa_stanowiska}}</label>
-                    </div>
-                    <button class="submit-button grid-button" *ngIf="userSerceice.isAdmin" (click)="onRemoveReferee(position)"><i class="las la-trash-alt" ></i></button>
-
-                </div>
-            </div>
-        </section>
         <div class="grid">
             <!-- <div class="grid-categories competitor-container">
                 <span>{{'competitor-zone.robot.categories' | translate}}</span>
@@ -79,7 +60,7 @@
             </div> -->
 
 
-            <div class="grid-constructors competitor-container" *ngIf="user && user.uzytkownik_typ == 0">
+            <div class="grid-constructors competitor-container" *ngIf="user.uzytkownik_typ == 0">
                 <span>{{'competitor-zone.competitor.robots' | translate}}</span>
                 <div class="grid-categories-old-parent">
                     <div *ngFor="let robot of userRobots" class="grid-categories-old grid-constructors-user-parent" [ngClass]="{'grid-constructors-user-parent-clickable': userSerceice.isReferee}">

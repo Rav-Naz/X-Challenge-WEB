@@ -2,14 +2,13 @@ import { RefereeService } from 'src/app/services/referee.service';
 import { AuthService } from './../services/auth.service';
 import { Router } from '@angular/router';
 import { UserService } from './../services/user.service';
-import { Component, ViewEncapsulation, OnDestroy, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnDestroy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { RobotsService } from '../services/robots.service';
 import { ConstructorsService } from '../services/constructors.service';
 import { PositionsService } from '../services/positions.service';
 import { WindowSize } from '../models/window_size.model';
 import { fromEvent, Observable, Subscription } from 'rxjs';
-import { MessagesService } from '../services/messages.service';
 
 @Component({
   selector: 'app-competitor-zone',
@@ -18,19 +17,18 @@ import { MessagesService } from '../services/messages.service';
   encapsulation: ViewEncapsulation.None,
   providers: [RobotsService, ConstructorsService, PositionsService, RefereeService]
 })
-export class CompetitorZoneComponent implements OnInit, OnDestroy{
+export class CompetitorZoneComponent implements OnDestroy{
 
   public timeLeft: number | undefined;
   public timeIsUp: boolean = false;
   public switcher = false;
-  public isNewMessage = false;
   public windowSize: WindowSize = { height: 1080, width: 1920};
   private subs: Subscription = new Subscription;
 
 
 
   constructor(public translate: TranslateService, public userService: UserService, private router: Router,
-    public constructorService: ConstructorsService, public authService: AuthService, public positionsService: PositionsService, public messageService: MessagesService) {
+    public constructorService: ConstructorsService, public authService: AuthService, public positionsService: PositionsService) {
     setInterval(() => {
       this.refreshCounter();
     }, 1000);
@@ -42,11 +40,6 @@ export class CompetitorZoneComponent implements OnInit, OnDestroy{
     })
     this.subs?.add(sub1);
 
-  }
-  ngOnInit(): void {
-    setInterval(() => {
-      this.isNewMessage = this.messageService.isNewAnnouncement;
-    },500)
   }
 
   refreshCounter() :void {

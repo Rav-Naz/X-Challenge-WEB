@@ -33,17 +33,6 @@ h5 {
     }
 }
 
-.my-robots-element-categories {
-    a {
-        margin-top: 1rem;
-        display: flex;
-        flex-direction: column;
-        b {
-            font-size: 1.7rem;
-        }
-    }
-}
-
 @media only screen and (max-width: $max-width-2) {
     .filter {
         display: flex;

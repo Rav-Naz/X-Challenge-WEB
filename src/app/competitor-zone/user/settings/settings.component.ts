@@ -6,7 +6,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { ConfirmedValidator } from 'src/app/shared/utils/matching';
 import { RefereeService } from '../../../services/referee.service';
-import { Esp32Service } from '../../../services/esp32.service';
 
 @Component({
   selector: 'app-settings',
@@ -31,11 +30,10 @@ export class SettingsComponent {
   private loadingRFID: boolean = false;
   public confirmingPhone: boolean = false;
   public returnedPayload: any;
-  public isDisplayDevice: boolean = false;
 
   constructor(public translate: TranslateService, private formBuilder: FormBuilder,
-    public authService: AuthService, public userService: UserService, private ui: UiService, private injector: Injector, public esp32Service: Esp32Service) {
-      this.isDisplayDevice = localStorage.getItem('isDisplayDevice') == 'true';
+    public authService: AuthService, public userService: UserService, private ui: UiService, private injector: Injector) {
+
       this.formName = this.formBuilder.group({
       name: [(userService.userDetails as any)?.imie, [Validators.required, Validators.minLength(2), Validators.maxLength(40)]],
       surname: [(userService.userDetails as any)?.nazwisko, [Validators.required, Validators.minLength(2), Validators.maxLength(40)]]
@@ -124,7 +122,7 @@ export class SettingsComponent {
 
   onReadRFIDTag() {
     if (this.userService.isReferee) {
-      this.injector.get(Esp32Service).readRFIDTag()
+      this.injector.get(RefereeService).readRFIDTag()
       .then((value) => {
         console.log(value);
         let selBox = document.createElement('textarea');
@@ -148,7 +146,7 @@ export class SettingsComponent {
 
   onReadLapTime() {
     if (this.userService.isReferee) {
-      this.injector.get(Esp32Service).readOneGate()
+      this.injector.get(RefereeService).readLapTime()
     .then((value) => {
         console.log(value);
         let selBox = document.createElement('textarea');
@@ -173,7 +171,7 @@ export class SettingsComponent {
   onWriteRFIDTag() {
     if (this.userService.isReferee && this.isFormGroupRFIDValid) {
       this.loadingRFID = true;
-      this.injector.get(Esp32Service).writeRFIDTag(this.formPostal.get('payload')?.value)
+      this.injector.get(RefereeService).writeRFIDTag(this.formPostal.get('payload')?.value)
     .then((value) => {
         this.returnedPayload = JSON.stringify(value);
         console.log(value);
@@ -183,11 +181,6 @@ export class SettingsComponent {
         this.loadingRFID = false;
       })
     }
-  }
-
-  onChangeDisplayDevice() {
-    this.isDisplayDevice = !this.isDisplayDevice;
-    localStorage.setItem('isDisplayDevice', this.isDisplayDevice.toString());
   }
 
   get createPhoneNumber() {

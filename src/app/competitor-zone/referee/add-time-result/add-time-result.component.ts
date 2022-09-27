@@ -3,12 +3,11 @@ import { PositionsService } from './../../../services/positions.service';
 import { TimesService } from './../../../services/times.service';
 import { UiService } from './../../../services/ui.service';
 import { RefereeService } from './../../../services/referee.service';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Robot } from 'src/app/models/robot';
-import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-add-time-result',
@@ -18,7 +17,7 @@ import { Title } from '@angular/platform-browser';
     'class': 'router-flex'
   },
 })
-export class AddTimeResultComponent implements OnInit, OnDestroy {
+export class AddTimeResultComponent implements OnInit {
 
   formUUID: FormGroup;
   formTime: FormGroup;
@@ -31,7 +30,7 @@ export class AddTimeResultComponent implements OnInit, OnDestroy {
   public selectedRobot: Robot | null = null;
 
   constructor(private formBuilder: FormBuilder, private refereeService: RefereeService, private route: ActivatedRoute,
-    private router: Router, private ui: UiService, private timesService: TimesService, private positionService: PositionsService, public categoryService: CategoriesService, private titleService: Title) {
+    private router: Router, private ui: UiService, private timesService: TimesService, private positionService: PositionsService, public categoryService: CategoriesService) {
     this.formUUID = this.formBuilder.group({
       constructor_uuid: [null, [Validators.required, Validators.minLength(36), Validators.maxLength(36)]]
     });
@@ -69,7 +68,6 @@ export class AddTimeResultComponent implements OnInit, OnDestroy {
     });
     if (response !== undefined && response !== null && response.body !== undefined && response.body !== null && response.body.pCzyMoze === 1) {
       this.selectedRobot = robot;
-      this.titleService.setTitle(`⏱️ ${this.selectedRobot.nazwa_robota}`);
       this.nextPage();
     } else {
       this.loading = false;
@@ -94,7 +92,7 @@ export class AddTimeResultComponent implements OnInit, OnDestroy {
   }
 
   backToPositions() {
-    window.close();
+    this.router.navigateByUrl(`competitor-zone/(outlet:referee-zone/${this.stanowisko_id}/${this.kategoria_id})`);
   }
 
   previousPage() {
@@ -102,7 +100,6 @@ export class AddTimeResultComponent implements OnInit, OnDestroy {
       this.backToPositions();
     } else {
       this.viewCounter--;
-      this.titleService.setTitle(`XChallenge`);
     }
   }
 
@@ -133,9 +130,5 @@ export class AddTimeResultComponent implements OnInit, OnDestroy {
 
   get isLoading() {
     return this.loading;
-  }
-
-  ngOnDestroy(): void {
-    this.titleService.setTitle(`XChallenge`);
   }
 }

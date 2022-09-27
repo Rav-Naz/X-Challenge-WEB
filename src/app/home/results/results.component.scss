@@ -2,32 +2,24 @@
 @import '../../scss/variables';
 @import '../../competitor-zone/referee/competitors/competitors.component.scss';
 @import '../../competitor-zone/referee/referee-zone/referee-zone.component.scss';
-.scroll {
-    &>div {
-        padding: .5rem;
-    }
-}
-
 .results {
     width: 100%;
-    min-height: 95vh;
-    height: min-content;
-    padding-top: 12rem;
+    height: 100vh;
+    padding-top: 9rem;
     display: flex;
     flex-direction: column;
-    // justify-content: center;
+    justify-content: center;
     align-items: center;
-    // p {
-    //     font-size: 2rem;
-    // }
+    p {
+        font-size: 2rem;
+    }
     &-main {
         // overflow: scroll;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 95%;
-        min-height: 80vh;
-        // height: 90%;
+        width: 90%;
+        height: 90%;
         padding: 3rem;
         box-shadow: 2rem 2rem 4rem $color-grey-4, -2rem -2rem 4rem rgba($color-grey-0, 0.1), inset 2rem 2rem 4rem $color-grey-4, inset -2rem -2rem 4rem rgba($color-grey-0, 0.1);
         border-radius: 4rem;
@@ -36,15 +28,14 @@
 
 .inline {
     min-height: 8rem;
-    // overflow-y: hidden;
+    overflow-y: hidden;
     height: max-content !important;
     width: 100% !important;
     max-width: 100%;
-    flex-wrap: wrap;
-    // overflow-x: auto !important;
+    flex-wrap: nowrap;
+    overflow-x: auto !important;
     display: flex;
-    justify-content: center;
-    border-bottom: .2rem dashed rgba($color-grey-0, 0.5);
+    justify-content: flex-start;
     // align-items: flex-start;
     // overflow-y: hidden !important;
     button {
@@ -54,21 +45,4 @@
             min-width: max-content !important;
         }
     }
-}
-
-@media only screen and (max-width: $max-width-5) {
-    .scroll {
-        &>div {
-            padding: .2;
-            width: 100%;
-        }
-    }
-}
-
-.group-active {
-    // color: red !important;
-    border: 2px dashed !important;
-    font-weight: bold;
-    font-size: 2rem;
-    animation: pulse 1s infinite;
 }

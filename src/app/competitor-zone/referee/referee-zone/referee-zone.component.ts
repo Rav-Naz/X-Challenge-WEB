@@ -101,7 +101,13 @@ export class RefereeZoneComponent implements OnInit, OnDestroy {
   }
 
   addTimeResult() {
-    window.open(`/competitor-zone/(outlet:add-time-result/${this.selectedPosition}/${this.selectedCategory}`)
+    this.router.navigateByUrl(`/competitor-zone/(outlet:add-time-result/${this.selectedPosition}/${this.selectedCategory}`);
+  }
+
+  addFightResult(walka: any) {
+    if (!walka.wygrane_rundy_robot1 && !walka.wygrane_rundy_robot2 && walka.robot1_id && walka.robot2_id || this.userService.isAdmin) {
+      this.router.navigateByUrl(`/competitor-zone/(outlet:add-fight-result/${this.selectedPosition}/${this.selectedCategory}`, { state: {data: walka}});
+    }
   }
 
   selectCategory(kategoria_id: number) {
@@ -134,16 +140,6 @@ export class RefereeZoneComponent implements OnInit, OnDestroy {
         this.editingTimes = null;
       })
     }
-  }
-
-  async deleteTime() {
-    const decision = await this.ui.wantToContinue(`Czy na pewno chcesz usunąć czas przejazdu ${this.editingTimes}?`)
-    if (!decision || !this.editingTimes) return;
-    this.isLoading = true;
-    this.timesService.deleteTimeResult(this.editingTimes).then(() => {
-      this.isLoading = false;
-      this.editingTimes = null;
-    })
   }
 
   get getFightGroupsFromCategory() {
