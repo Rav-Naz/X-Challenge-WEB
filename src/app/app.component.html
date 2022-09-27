@@ -6,6 +6,23 @@
         <button class="submit-button" (click)="acceptCookies()">{{'cookies.button' | translate}}</button>
     </div>
 </div>
+<div class="rfid-panel" *ngIf="esp32Service.isRFIDDevice">
+    <div>
+        <ng-container *ngIf="!esp32Service.isLoading">
+            <div class="buttons-row">
+                <i class="las la-id-card" (click)="esp32Service.readRFIDTag()"></i>
+                <i class="las la-eraser" (click)="esp32Service.eraseRFIDTag()"></i>
+                <i class="las la-stopwatch" (click)="esp32Service.readOneGate()"></i>
+                <i class="las la-road" (click)="esp32Service.readTwoGates()"></i>
+            </div>
+            <ng-container *ngIf="esp32Service.lastResponse">
+                <p>Odpowiedź:</p>
+                <a (click)="esp32Service.copyLastResponse()">{{esp32Service.lastResponse}} <i class="las la-copy"></i></a>
+            </ng-container>
+        </ng-container>
+        <app-spinner *ngIf="esp32Service.isLoading"></app-spinner>
+    </div>
+</div>
 <div class="navigator" id="navigator">
     <label *ngIf="userName === null"> </label>
     <div class="navigator-user" *ngIf="userName !== null">

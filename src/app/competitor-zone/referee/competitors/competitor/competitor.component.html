@@ -18,6 +18,7 @@
                         <a>{{user?.uzytkownik_uuid}}</a>
                         <i class="las la-copy"></i>
                     </div>
+                    <button (click)="esp32Service.writeRFIDTag(user.uzytkownik_id)" class="submit-button" style="color: white; display: flex; flex-direction:row; min-height: auto; line-height: auto !important; justify-content:center; align-items:center;">RFID<i class="las la-share-square" style="color: white;"></i><i class="las la-id-card" style="color: white;"></i></button>
                 </div>
                 <div class="row" *ngIf="userSerceice.isAdmin" style="margin-top: 2rem;">
                     <app-select [group]="formUserType" [collapsed]="true" controlName="user_type" translatePrefix="controls" [options]="userTypes"></app-select>

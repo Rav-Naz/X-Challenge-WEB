@@ -411,6 +411,7 @@
             "set-rfid": "Save data to RFID",
             "referee-settings": "Device settings",
             "is-sliding": "Auto sliding results view",
+            "is-esp32": "Display the RFID and gateway control panel (computer only)",
             "change": "* Preferences cannot be changed independently after registration. Please contact the administrator to make changes.",
             "errors": {
                 "succesfuly-added-phone": "Phone number changed successfully",
