@@ -97,23 +97,23 @@ export class CompetitorComponent {
   }
 
   async sendMessage() {
-    if(this.isFormMessageValid) {
+    if (this.isFormMessageValid) {
       this.loading = true;
       const decision = await this.ui.wantToContinue(`Czy wysłać wiadomość do użytkownika ${this.user!.imie} ${this.user!.nazwisko}?`)
-    if (decision) {
-      this.refereeService.sendPrivateMessage(this.user.uzytkownik_uuid, this.formMessage.get('message')?.value).catch(err => {
-      }).then(() => {
-        this.ui.showFeedback("succes", `Wysłano wiadomość do użytkownika ${this.user!.imie} ${this.user!.nazwisko}`, 2);
-        this.formMessage.reset();
-      }).finally(() => {
-        this.loading = false;
-      });
-    }
+      if (decision) {
+        this.refereeService.sendPrivateMessage(this.user.uzytkownik_uuid, this.formMessage.get('message')?.value).catch(err => {
+        }).then(() => {
+          this.ui.showFeedback("succes", `Wysłano wiadomość do użytkownika ${this.user!.imie} ${this.user!.nazwisko}`, 2);
+          this.formMessage.reset();
+        }).finally(() => {
+          this.loading = false;
+        });
+      }
     }
   }
 
   async changeUserType() {
-    if(this.isFormUserTypeValid) {
+    if (this.isFormUserTypeValid) {
       // console.log(this.formUserType.get('user_type')?.value)
       this.loading = true;
       this.refereeService.changeUserType(this.user.uzytkownik_uuid, this.formUserType.get('user_type')?.value).catch(err => {
@@ -124,23 +124,23 @@ export class CompetitorComponent {
   }
 
   async onRemoveReferee(stanowisko: any) {
-    if(this.user) {
+    if (this.user) {
       const decision = await this.ui.wantToContinue(`Czy na pewno chcesz usunąć sędziego z stanowiska ${stanowisko.nazwa_stanowiska}?`)
-      if(!decision) return;
+      if (!decision) return;
       this.loadingReferee = true;
-      this.positionsService.removeRefereeFromPosition(stanowisko.stanowisko_id,this.user.uzytkownik_uuid).then(succes => {
+      this.positionsService.removeRefereeFromPosition(stanowisko.stanowisko_id, this.user.uzytkownik_uuid).then(succes => {
         this.ui.showFeedback("succes", "Usunięto sędziego ze stanowiska")
-      }, err => {console.log(err)}).finally(() => {this.loadingReferee = false});
+      }, err => { console.log(err) }).finally(() => { this.loadingReferee = false });
     }
   }
 
   onAddReferee() {
-    if(this.isFormRefereeValid) {
+    if (this.isFormRefereeValid) {
       let stanowisko_id = this.formReferee.get("position")?.value;
       this.loadingReferee = true;
-      this.positionsService.addRefereeToPosition(stanowisko_id,this.user.uzytkownik_uuid).then(succes => {
+      this.positionsService.addRefereeToPosition(stanowisko_id, this.user.uzytkownik_uuid).then(succes => {
         this.ui.showFeedback("succes", "Dodano sędziego")
-      }, err => {console.log(err)}).finally(() => {this.loadingReferee = false; this.formReferee.reset()});
+      }, err => { console.log(err) }).finally(() => { this.loadingReferee = false; this.formReferee.reset() });
     }
   }
 
@@ -160,7 +160,7 @@ export class CompetitorComponent {
     return this.formUserType.valid
   }
 
-  get isFormRefereeValid () {
+  get isFormRefereeValid() {
     return this.formReferee.valid;
   }
 
@@ -172,14 +172,16 @@ export class CompetitorComponent {
     return this.loadingStarerpack;
   }
 
-  get isLoadingReferee () {
+  get isLoadingReferee() {
     return this.loadingReferee;
   }
 
-
+  public get isRegisteredAfterFirstDate() {
+    return this.user && new Date(this.user.data_rejestracji) > new Date(2022, 9, 1)
+  }
 
   openRobotDetails(robot_uuid: any) {
-    if(this.userSerceice.isReferee) window.open(`/competitor-zone/(outlet:robot/${robot_uuid})`);
+    if (this.userSerceice.isReferee) window.open(`/competitor-zone/(outlet:robot/${robot_uuid})`);
   }
 
   public get userCategories() {
@@ -192,7 +194,7 @@ export class CompetitorComponent {
 
   public get userPhone() {
     if (this.user.numer_telefonu) {
-      let kierunkowy = this.user.numer_telefonu.toString().substring(0,2)
+      let kierunkowy = this.user.numer_telefonu.toString().substring(0, 2)
       let numer = this.user.numer_telefonu.toString().substring(2)
       return `(+${kierunkowy})${numer}`
     }
@@ -201,12 +203,12 @@ export class CompetitorComponent {
 
   get foodOption(): string | undefined {
     let foodOptions = this.authService.foodList ? Object.assign(this.authService.foodList) : undefined;
-    return foodOptions && this.user ? this.translate.instant("competitor-zone.register.food."+(foodOptions as Array<string>)[this.user?.preferowane_jedzenie-1]): undefined;
+    return foodOptions && this.user ? this.translate.instant("competitor-zone.register.food." + (foodOptions as Array<string>)[this.user?.preferowane_jedzenie - 1]) : undefined;
   }
 
   get tshirtSize(): string | undefined {
-    let tshirtSizes = this.authService.tshirtSizes ? Object.assign(this.authService.tshirtSizes): undefined;
-    return tshirtSizes && this.user ? (tshirtSizes as Array<string>)[this.user?.rozmiar_koszulki-1] : undefined;
+    let tshirtSizes = this.authService.tshirtSizes ? Object.assign(this.authService.tshirtSizes) : undefined;
+    return tshirtSizes && this.user ? (tshirtSizes as Array<string>)[this.user?.rozmiar_koszulki - 1] : undefined;
   }
 
   public get positionsOptions(): string | undefined {
@@ -222,33 +224,31 @@ export class CompetitorComponent {
     }
   }
 
-
-  get userTypes(): string
-  {
+  get userTypes(): string {
     return JSON.stringify([
       { value: "Użytkownik", id: 0 },
       { value: "Wolontariusz", id: 1 },
       { value: "Sędzia", id: 2 },
       { value: "Administrator", id: 3 }
-      ])
+    ])
   }
 
 
-  copyUUID(){
+  copyUUID() {
     let selBox = document.createElement('textarea');
-      selBox.style.position = 'fixed';
-      selBox.style.left = '0';
-      selBox.style.top = '0';
-      selBox.style.opacity = '0';
-      selBox.value = this.user!.uzytkownik_uuid;
-      document.body.appendChild(selBox);
-      selBox.focus();
-      selBox.select();
-      document.execCommand('copy');
-      document.body.removeChild(selBox);
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = this.user!.uzytkownik_uuid;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
 
-      this.ui.showFeedback('loading', this.translate.instant('competitor-zone.settings.errors.copied'), 3);
-    }
+    this.ui.showFeedback('loading', this.translate.instant('competitor-zone.settings.errors.copied'), 3);
+  }
 
   ngOnDestroy(): void {
     this.subs?.unsubscribe();

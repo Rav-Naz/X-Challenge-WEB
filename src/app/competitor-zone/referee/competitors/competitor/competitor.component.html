@@ -8,6 +8,7 @@
                 <p class="competitor-detail" *ngIf="user?.email">{{'competitor-zone.competitor.email' | translate}}<span>{{user?.email}}</span></p>
                 <p class="competitor-detail" *ngIf="user?.stanowiska">{{'competitor-zone.competitor.positions' | translate}}<span>{{user?.stanowiska}}</span></p>
                 <p class="competitor-detail" *ngIf="user?.kod_pocztowy">{{'competitor-zone.competitor.postal' | translate}}<span>{{user?.kod_pocztowy}}</span></p>
+                <p class="competitor-detail" *ngIf="user?.data_rejestracji">{{'competitor-zone.competitor.registration' | translate}}<span>{{user?.data_rejestracji | date:'dd.MM.YYYY'}}</span></p>
                 <!-- <div *ngIf="userSerceice.isAdmin && user && !user.kod_pocztowy" class="postal">
                     <app-input [group]="formPostal" controlName="postal_code" [collapsed]="true"></app-input>
                     <button [disabled]="!isFormPostalCodeValid" class="submit-button" (click)="savePostalCode()"><i class="las la-save"></i></button>
@@ -30,10 +31,12 @@
                 <button [disabled]="!isFormMessageValid" class="submit-button" (click)="sendMessage()">{{'competitor-zone.competitor.send' | translate}}</button>
             </div>
         </section>
+        <!-- <section class="starterpack" *ngIf="user"> -->
         <section class="starterpack" *ngIf="user && authService.isEvent">
             <div class="row">
                 <div [ngClass]="{'starterpack-given-true': user.czy_odebral_starterpack}">
                     <a>Starterpack</a>
+                    <p class="competitor-detail competitor-deadline" *ngIf="isRegisteredAfterFirstDate">{{'competitor-zone.competitor.is_registered_after_first_date' | translate}}</p>
                     <div>
                         <p class="competitor-detail" *ngIf="user?.rozmiar_koszulki">{{'controls.tshirtSize.name' | translate}}:<span>{{tshirtSize}}</span></p>
                         <p class="competitor-detail" *ngIf="user?.preferowane_jedzenie">{{'controls.preferedFood.name' | translate}}:<span>{{foodOption}}</span></p>

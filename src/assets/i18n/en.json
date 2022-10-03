@@ -499,6 +499,8 @@
             "send": "Send message",
             "robots": "Robots",
             "carer": "Carer",
+            "is_registered_after_first_date": "Registered after the first registration deadline",
+            "registration": "Registration date",
             "starterpack-given": "Starterpack given"
         },
         "competitors": {

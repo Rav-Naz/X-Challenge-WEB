@@ -504,6 +504,8 @@
             "send": "Wyślij wiadomość",
             "robots": "Roboty",
             "carer": "Opiekun",
+            "is_registered_after_first_date": "Zarejestrowany po pierwszym terminie rejestracji",
+            "registration": "Data rejestracji",
             "starterpack-given": "Wydano pakiet startowy"
         },
         "competitors": {
