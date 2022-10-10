@@ -1,6 +1,7 @@
 @import '../../../user/my-robots/robot/robot.component.scss';
 @import '../../../user/settings/settings.component.scss';
 @import '../../../../scss/variables';
+@import '../../positions/positions.component.scss';
 .competitor-name {
     width: max-content;
     padding: 1rem 0!important;
@@ -62,6 +63,12 @@
 .competitor-container {
     // height: 30rem !important;
     max-height: 40rem !important;
+}
+
+.competitor-deadline {
+    color: red;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .grid {
@@ -252,4 +259,9 @@
 
 .banned {
     color: red !important;
+}
+
+.grid-button {
+    margin: 0 !important;
+    margin-top: 1rem !important;
 }

@@ -32,6 +32,9 @@ import { RobomotionComponent } from './home/categories/robomotion/robomotion.com
 import { RegisterGuard } from './services/register-guard.service';
 import { CountingVisitorsComponent } from './competitor-zone/referee/counting-visitors/counting-visitors.component';
 import { AdminGuard } from './services/admin-guard.service';
+import { PositionsComponent } from './competitor-zone/referee/positions/positions.component';
+import { AnnouncementsComponent } from './competitor-zone/referee/announcements/announcements.component';
+
 
 
 const routes: Routes = [
@@ -56,6 +59,8 @@ const routes: Routes = [
     {path: 'add-robot', component: NewRobotComponent,  outlet: 'outlet'},
     {path: 'statistics', component: ChartsComponent,  outlet: 'outlet'},
     {path: 'counting-visitors', component: CountingVisitorsComponent,  outlet: 'outlet'},
+    {path: 'positions', component: PositionsComponent,  outlet: 'outlet'},
+    {path: 'announcements', component: AnnouncementsComponent,  outlet: 'outlet'},
 
     {path: 'referee-zone/:stanowisko_id/:kategoria_id/:grupa_id', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
     {path: 'referee-zone/:stanowisko_id/:kategoria_id', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet'},

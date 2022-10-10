@@ -13,8 +13,11 @@
                 <p class="my-robots-element-uuid">{{user.uzytkownik_uuid}}</p>
                 <p class="my-robots-element-name">{{user.imie}} {{user.nazwisko}}</p>
             </div>
-            <details class="my-robots-element-categories" (click)="dummy($event)">{{'competitor-zone.competitor.positions' | translate}}<b>{{user.stanowiska}}</b><br>{{'competitor-zone.competitors.categories' | translate}}<b>{{user.kategorie}}</b><br>
-                <ng-container *ngIf="user.numer_telefonu">{{'competitor-zone.competitor.phone' | translate}}<b>{{user.numer_telefonu}}</b></ng-container>
+            <details class="my-robots-element-categories" (click)="dummy($event)" style="display: flex; flex-direction: column;">
+                <a *ngIf="user.numer_telefonu">{{'competitor-zone.competitor.phone' | translate}}<b>{{user.numer_telefonu}}</b></a>
+                <a *ngIf="user.data_rejestracji">{{'competitor-zone.competitor.registration' | translate}}<b>{{user.data_rejestracji | date:'dd.MM.YYYY'}}</b></a>
+                <a *ngIf="user.roboty && user.roboty.length > 0">{{'competitor-zone.competitors.filters.robots-name' | translate}}<b *ngFor="let robot of user.roboty">{{robot.nazwa_robota}}</b></a>
+                <a *ngIf="user.kategorie && user.kategorie.length > 0">{{'competitor-zone.competitors.filters.categories' | translate}}<b *ngFor="let category of user.kategorie">{{category}}</b></a>
             </details>
             <span class="my-robots-element-edit">{{'competitor-zone.competitors.more' | translate}}<i class="las la-angle-double-right"></i></span>
         </div>

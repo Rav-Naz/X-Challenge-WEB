@@ -1,16 +1,12 @@
 @import '../../../scss/colors';
 @import '../../../scss/variables';
-// .scroll {
-//     // height: 50rem;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: flex-start;
-//     align-items: center;
-//     overflow-y: auto;
-//     overflow-x: hidden;
-//     max-height: 100%;
-//     height: 100%;
-// }
+.scroll {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .referee {
     padding: 1rem 0;
     display: flex;
@@ -25,7 +21,7 @@
         padding-bottom: 0;
         justify-content: center;
         align-items: center;
-        border-bottom: 5px dotted rgba($color-grey-0, 0.3);
+        border-bottom: .2rem dashed rgba($color-grey-0, 0.5);
     }
     &-categories {
         width: 100%;
@@ -35,7 +31,7 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        border-bottom: 5px dotted rgba($color-grey-0, 0.3);
+        border-bottom: .2rem dashed rgba($color-grey-0, 0.5);
         padding: 1rem 0;
         &-header {
             height: 100%;
@@ -105,6 +101,19 @@
             align-items: center;
             // overflow-y: auto;
             height: min-content;
+            &-best {
+                font-size: 3rem;
+                font-family: 'Goldman';
+                text-align: center;
+                span {
+                    color: $color-primary;
+                }
+                b {
+                    font-size: 2rem;
+                    color: rgba($color-white, 0.7);
+                    font-family: 'Jura';
+                }
+            }
             &>span {
                 padding: .8rem 0;
                 font-size: 2rem;
@@ -137,7 +146,7 @@
                 display: grid;
                 grid-template-rows: max-content;
                 grid-template-columns: min-content minmax(min-content, 35rem) 2fr max-content;
-                padding: 1.5rem 2rem;
+                padding: 1rem 2rem;
                 cursor: pointer;
                 &-info {
                     display: flex;
@@ -153,7 +162,7 @@
                     color: $color-grey-0;
                     justify-self: center;
                     align-self: center;
-                    font-size: 2rem;
+                    font-size: 1.5rem;
                     padding: 1rem;
                     padding-left: 0;
                     min-width: 3rem;
@@ -163,12 +172,14 @@
                     align-items: center;
                     line-height: 120%;
                     max-width: 33rem;
-                    font-size: 4rem !important;
+                    font-size: 3rem !important;
                     // transform: translateY(15%);
                     word-wrap: break-word;
+                    font-family: 'Goldman';
                 }
                 &-uuid {
                     font-size: 1rem;
+                    font-family: 'Goldman';
                     color: $color-primary;
                     align-items: center;
                     justify-self: left;
@@ -183,11 +194,11 @@
                     align-items: center;
                     justify-self: flex-end;
                     align-self: center;
-                    font-size: 3rem;
-                    padding-right: 3rem;
+                    font-size: 2rem;
+                    // padding-right: 3rem;
                     p {
                         // font-weight: 100;
-                        font-size: 4rem !important;
+                        font-size: 2.3rem !important;
                         font-family: $title-font;
                         font-weight: bold !important;
                         color: $color-white;
@@ -199,7 +210,7 @@
                     align-items: center;
                     line-height: normal;
                     color: rgba($color-grey-0, 0.5);
-                    font-size: 2rem;
+                    font-size: 1.5rem;
                     grid-column: 4;
                     grid-row: 1;
                     align-self: center;
@@ -222,6 +233,16 @@
                             font-size: 2.5rem !important;
                             justify-self: center;
                             align-self: center;
+                        }
+                        &-button-red {
+                            // margin: 0;
+                            background: linear-gradient(#e02727, #cf1616) !important;
+                            color: white;
+                            box-shadow: 0 0.2rem 2.3rem rgb(207 22 22 / 70%);
+                            &:hover {
+                                box-shadow: 0 0.2rem 3rem red;
+                            }
+                            height: min-content;
                         }
                     }
                 }
@@ -259,7 +280,7 @@
                 display: grid;
                 grid-template-rows: max-content;
                 grid-template-columns: min-content 1fr min-content 1fr max-content;
-                padding: 1.5rem 2rem;
+                padding: 1rem;
                 overflow: hidden;
                 cursor: pointer;
                 &:hover {
@@ -348,20 +369,20 @@
                     align-items: center;
                     line-height: normal;
                     color: rgba($color-grey-0, 0.5);
-                    font-size: 2rem;
+                    font-size: 1.5rem;
                     grid-row: 1;
                     align-self: center;
                     border-bottom: 1px dashed rgba($color-grey-0, 0.5);
-                    padding-bottom: .4rem;
+                    // padding-bottom: .4rem;
                     i {
                         padding-left: .5rem;
                     }
                 }
                 &-details {
                     border-top: 1px solid rgba($color-grey-0, $alpha: .35);
-                    padding-left: 3rem;
+                    // padding-left: 3rem;
                     margin-top: 1rem;
-                    padding-top: 1rem;
+                    padding-top: .4rem;
                     grid-row: 2;
                     grid-column: 1/6;
                     display: flex;
@@ -369,7 +390,7 @@
                     justify-content: center;
                     align-items: center;
                     &-flex {
-                        padding: 2rem;
+                        padding: .5rem;
                         display: flex;
                         flex-direction: row;
                         flex-wrap: wrap;
@@ -380,14 +401,14 @@
                             display: inline-block;
                             width: max-content;
                             font-weight: 400;
-                            font-size: 1.5rem;
+                            font-size: 1.2rem;
                             label {
                                 letter-spacing: .1rem;
                                 // font-size: 2rem !important;
                                 font-family: $default-font !important;
                                 font-weight: 400 !important;
                                 &:last-child {
-                                    font-size: 1.7rem;
+                                    font-size: 1.4rem;
                                     font-weight: bold !important;
                                 }
                             }
@@ -432,28 +453,28 @@
     }
 }
 
-@media only screen and (max-width: $max-width-5) {
-    .referee {
-        &-results {
-            &-times {
-                &-element {
-                    &-id {
-                        width: 100%;
-                        text-align: left;
-                    }
-                    &-categories {
-                        justify-content: flex-end;
-                        align-items: flex-end;
-                        width: 100%;
-                        // p {
-                        //     width: 100%;
-                        //     text-align: right;
-                        // }
-                    }
-                    display: flex;
-                    flex-direction: column;
-                }
-            }
-        }
-    }
-}
+// @media only screen and (max-width: $max-width-5) {
+//     .referee {
+//         &-results {
+//             &-times {
+//                 &-element {
+//                     &-id {
+//                         width: 100%;
+//                         text-align: left;
+//                     }
+//                     &-categories {
+//                         justify-content: flex-end;
+//                         align-items: flex-end;
+//                         width: 100%;
+//                         // p {
+//                         //     width: 100%;
+//                         //     text-align: right;
+//                         // }
+//                     }
+//                     display: flex;
+//                     flex-direction: column;
+//                 }
+//             }
+//         }
+//     }
+// }

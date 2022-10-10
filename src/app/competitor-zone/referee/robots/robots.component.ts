@@ -48,7 +48,6 @@ export class RobotsComponent implements OnInit, OnDestroy {
       if (val[0] !== null && val[1]) {
         this.allRobots = JSON.parse(JSON.stringify(val[1]!));
         this.categories = JSON.parse(JSON.stringify(val[0]!));
-        console.log(this.allRobots)
         // this.allRobots = this.allRobots!.concat(this.allRobots).concat(this.allRobots)
         this.allRobots?.forEach((robot) => {
           const a = [...[...robot.kategorie.split(", ")].map((cat) => this.categories!.find(obj => obj.kategoria_id.toString() === cat)?.nazwa)].join(", ");

@@ -188,11 +188,14 @@
                 { "id": 11, "patreonCategory": 5, "description": "Mayor of the City of Rzeszów", "image": "../../assets/jpg/rzeszow.png", "linkToSite": "https://bip.erzeszow.pl/" },
                 { "id": 12, "patreonCategory": 6, "description": "zrobotyzowany.pl", "image": "../../assets/jpg/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl/" },
                 { "id": 13, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
-                { "id": 14, "patreonCategory": 3, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
-                { "id": 15, "patreonCategory": 3, "description": "Matlab", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
-                { "id": 16, "patreonCategory": 3, "description": "Zespół Szkół Technicznych", "image": "../../assets/jpg/zst.png", "linkToSite": "http://www.zstrzeszow.pl/" },
-                { "id": 17, "patreonCategory": 6, "description": "Botland", "image": "../../assets/jpg/botland.webp", "linkToSite": "https://botland.com.pl/" },
-                { "id": 18, "patreonCategory": 5, "description": "Voivode of Podkarpacie", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" }
+                { "id": 14, "patreonCategory": 3, "description": "FANUC", "image": "../../assets/jpg/fanuc.png", "linkToSite": "https://www.fanuc.eu/uk/en" },
+                { "id": 15, "patreonCategory": 3, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
+                { "id": 16, "patreonCategory": 3, "description": "Matlab", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
+                { "id": 17, "patreonCategory": 3, "description": "Zespół Szkół Technicznych", "image": "../../assets/jpg/zst.png", "linkToSite": "http://www.zstrzeszow.pl/" },
+                { "id": 18, "patreonCategory": 6, "description": "Botland", "image": "../../assets/jpg/botland.webp", "linkToSite": "https://botland.com.pl/" },
+                { "id": 19, "patreonCategory": 5, "description": "Voivode of Podkarpacie", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" },
+                { "id": 20, "patreonCategory": 6, "description": "Huawei", "image": "../../assets/jpg/huawei.png", "linkToSite": "https://seedsforthefuture.pl/" },
+                { "id": 21, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" }
 
 
             ],
@@ -324,7 +327,10 @@
             "statistics": "STATISTICS",
             "register": "REGISTER",
             "counting": "VISITORS",
-            "fights": "WALK PLANNER",
+            "fights": "FIGHT PLANNER",
+            "positions": "POSITIONS",
+            "announcements": "ANNOUNCEMENTS",
+
             "hello": {
                 "1": "Welcome to the ",
                 "2": "Competitor Zone!",
@@ -415,6 +421,9 @@
             "get-rfid": "Read RFID",
             "get-lap-time": "Read lap time",
             "set-rfid": "Save data to RFID",
+            "referee-settings": "Device settings",
+            "is-sliding": "Auto sliding results view",
+            "is-esp32": "Display the RFID and gateway control panel (computer only)",
             "change": "* Preferences cannot be changed independently after registration. Please contact the administrator to make changes.",
             "errors": {
                 "succesfuly-added-phone": "Phone number changed successfully",
@@ -439,6 +448,8 @@
                 "3": "Call the robot constructors"
             },
             "next": "Next",
+            "skip": "Skip",
+
             "2": {
                 "1": "Now you can start the fight. When finished, enter the result.",
                 "2": "Enter the number of rounds won by"
@@ -488,6 +499,8 @@
             "send": "Send message",
             "robots": "Robots",
             "carer": "Carer",
+            "is_registered_after_first_date": "Registered after the first registration deadline",
+            "registration": "Registration date",
             "starterpack-given": "Starterpack given"
         },
         "competitors": {
@@ -499,7 +512,8 @@
                 "name": "First and last name",
                 "user-uuid": "User UUID",
                 "positions": "Positions",
-                "robots-uuid": "Robots UUID",
+                "robots-uuid": "Robot UUID",
+                "robots-name": "Robot name",
                 "phone": "Phone number",
                 "email": "Email",
                 "categories": "Categories"
@@ -549,6 +563,10 @@
         },
         "categories": {
             "join": "Join now"
+        },
+        "fights-view": {
+            "3rd-fight": "Fight for 3rd place",
+            "no-groups": "No groups"
         }
     },
     "app-rules": {
@@ -1096,6 +1114,25 @@
             "validators": {
                 "required": "This field is required"
             }
+        },
+        "next_fight": {
+            "name": "Next fight",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "referee": {
+            "name": "Referee",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "group_name": {
+            "name": "Group name",
+            "validators": {
+                "required": "This field is required"
+            }
+
         }
     },
     "errors": {
