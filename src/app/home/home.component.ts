@@ -3,7 +3,7 @@ import { UserService } from './../services/user.service';
 import { HttpService } from './../services/http.service';
 import { Patreon } from './../models/patreon';
 import { EventDescription } from './../models/event-description.model';
-import { AfterViewInit, Component, OnInit} from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import {
   trigger,
   state,
@@ -18,7 +18,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { WindowSize } from '../models/window_size.model';
 import { fromEvent, Observable, Subscription } from "rxjs";
 // import Swiper core and required components
-import SwiperCore , {
+import SwiperCore, {
   Navigation,
   Pagination,
   Scrollbar,
@@ -81,7 +81,7 @@ SwiperCore.use([
     ])
   ],
 })
-export class HomeComponent implements OnInit, AfterViewInit{
+export class HomeComponent implements OnInit, AfterViewInit {
 
   eventsList: Array<EventDescription> = [];
   categories: Array<Category> = [];
@@ -100,7 +100,7 @@ export class HomeComponent implements OnInit, AfterViewInit{
   public switchAnimationStateName: 'start' | 'void' | 'end' = 'void';
   public eventDate: Date = new Date(2022, 10, 25, 9, 0, 0);
   public eventEndDate: Date = new Date(2022, 10, 26, 18, 0, 0);
-  public windowSize: WindowSize = { height: 1080, width: 1920};
+  public windowSize: WindowSize = { height: 1080, width: 1920 };
   public registerInfo: any = null;
 
   public timeLeft: number | undefined;
@@ -153,14 +153,14 @@ export class HomeComponent implements OnInit, AfterViewInit{
   ]
 
   public dateList = [
-    {date: new Date(2022,8,30), title: "home.news.points.register-end.title",content: "home.news.points.register-end.content", printedDate: "30.09.2022", id: ""},
-    {date: new Date(2022,8,1), title: "home.news.points.register-start.title",content: "home.news.points.register-start.content", printedDate: "01.09.2022", id: ""},
-    {date: new Date(2022,10,25), title: "home.news.points.event-start.title",content: "home.news.points.event-start.content", printedDate: "25-26.11.2022", id: ""},
+    { date: new Date(2022, 9, 7), title: "home.news.points.register-end.title", content: "home.news.points.register-end.content", printedDate: "07.10.2022", id: "" },
+    { date: new Date(2022, 8, 1), title: "home.news.points.register-start.title", content: "home.news.points.register-start.content", printedDate: "01.09.2022", id: "" },
+    { date: new Date(2022, 10, 25), title: "home.news.points.event-start.title", content: "home.news.points.event-start.content", printedDate: "25-26.11.2022", id: "" },
   ]
 
-  constructor(public translate: TranslateService, private httpService: HttpService, private authService: AuthService,public datepipe: DatePipe) {
+  constructor(public translate: TranslateService, private httpService: HttpService, private authService: AuthService, public datepipe: DatePipe) {
     let teraz = new Date()
-    this.dateList.push({date: teraz, title: "home.news.points.now.title",content: "home.news.points.now.content", printedDate: this.datepipe.transform(teraz, 'dd.MM.YYYY')!.toString(), id: ""})
+    this.dateList.push({ date: teraz, title: "home.news.points.now.title", content: "home.news.points.now.content", printedDate: this.datepipe.transform(teraz, 'dd.MM.YYYY')!.toString(), id: "" })
     this.dateList.sort((a, b) => { return a.date.getTime() - b.date.getTime(); });
     let iter = 0;
     this.dateList.forEach(element => {
@@ -171,18 +171,18 @@ export class HomeComponent implements OnInit, AfterViewInit{
       this.switcher = !this.switcher;
     }, 5000)
     const sub1 = this.authService.info$.subscribe((data) => {
-      if(data === undefined || data === null) return;
+      if (data === undefined || data === null) return;
       // this.eventDate = new Date((data as any).eventDate);
-      if((data as any).streamLink) {
+      if ((data as any).streamLink) {
         this.streamLink = (data as any).streamLink;
         this.registerInfo = (data as any).registerInfo;
       }
     })
-    this.windowSize = {height: window.innerHeight, width: window.innerWidth };
+    this.windowSize = { height: window.innerHeight, width: window.innerWidth };
     const resizeObs = fromEvent(window, 'resize') as Observable<any>;
     const sub2 = resizeObs.subscribe(size => {
       if (!size) { return; }
-      this.windowSize = {height: size.currentTarget.innerHeight, width: size.currentTarget.innerWidth};
+      this.windowSize = { height: size.currentTarget.innerHeight, width: size.currentTarget.innerWidth };
     })
     this.refreshCounter()
     setInterval(() => {
@@ -196,10 +196,10 @@ export class HomeComponent implements OnInit, AfterViewInit{
       this.categories = categories;
     });
     const sub5 = translate.stream('home.patreons.patreonList').subscribe((patreons: Array<Patreon>) => {
-      if(typeof patreons === 'object') this.patreons = patreons;
+      if (typeof patreons === 'object') this.patreons = patreons;
     });
     const sub6 = translate.stream('home.patreons.tiers').subscribe((tiers: Array<string>) => {
-      if(typeof tiers === 'object') this.patreonNames = tiers;
+      if (typeof tiers === 'object') this.patreonNames = tiers;
     });
     this.subs?.add(sub1).add(sub2).add(sub3).add(sub4).add(sub5).add(sub6);
   }
@@ -210,22 +210,22 @@ export class HomeComponent implements OnInit, AfterViewInit{
   }
 
   addColorInit() {
-   (document.getElementsByClassName('swiper-slide-active')[0] as HTMLElement).children[0].classList.add('gallery-color');
+    (document.getElementsByClassName('swiper-slide-active')[0] as HTMLElement).children[0].classList.add('gallery-color');
   }
-  addColor(args:any) {
-    var img:HTMLElement;
-    if(args.previousIndex < args.activeIndex) {
-     img = (document.getElementsByClassName('swiper-slide-next')[0] as HTMLElement)
+  addColor(args: any) {
+    var img: HTMLElement;
+    if (args.previousIndex < args.activeIndex) {
+      img = (document.getElementsByClassName('swiper-slide-next')[0] as HTMLElement)
     } else {
       img = (document.getElementsByClassName('swiper-slide-prev')[0] as HTMLElement)
     }
     // console.log(img)
-    if(img && !img.children[0].classList.contains('gallery-color')) {
+    if (img && !img.children[0].classList.contains('gallery-color')) {
       img.children[0].classList.add('gallery-color')
     }
     var img_old = (document.getElementsByClassName('swiper-slide-active')[0] as HTMLElement);
     // console.log(img)
-    if(img_old && img_old.children[0].classList.contains('gallery-color')) {
+    if (img_old && img_old.children[0].classList.contains('gallery-color')) {
       img_old.children[0].classList.remove('gallery-color')
     }
   }
@@ -233,29 +233,29 @@ export class HomeComponent implements OnInit, AfterViewInit{
   ngAfterViewInit(): void {
     setTimeout(() => {
       //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
-    //Add 'implements AfterViewInit' to the class.
-    var swiperRight = (document.getElementsByClassName('swiper-button-next')[0] as HTMLElement);
-    // swiperRight.style.padding = '6rem';
-    swiperRight.style.transform = "scale(0.5) translateY(-50%)";
-    swiperRight.style.backgroundColor = '#4BDA19';
-    swiperRight.style.borderRadius = '10rem';
-    swiperRight.style.boxShadow = '0 .2rem 2rem .5rem rgba(0, 0, 0, 0.5)';
-    // var swiperRightAfter = (document.getElementsByClassName('swiper-button-next::after')[0] as HTMLElement);
-    var swiperLeft = (document.getElementsByClassName('swiper-button-prev')[0]  as HTMLElement);
-    // swiperLeft.style.padding = '6rem';
-    swiperLeft.style.transform = "scale(0.5) translateY(-50%)";
-    swiperLeft.style.backgroundColor = '#4BDA19';
-    swiperLeft.style.borderRadius = '10rem';
-    swiperLeft.style.boxShadow = '0 .2rem 2rem .5rem rgba(0, 0, 0, 0.5)';
-    var slidersInGallery = document.getElementsByClassName('swiper-slide');
-    for (let index = 0; index < slidersInGallery.length; index++) {
-      const slide = slidersInGallery[index] as HTMLElement;
-      slide.style.width = 'auto';
-    }
+      //Add 'implements AfterViewInit' to the class.
+      var swiperRight = (document.getElementsByClassName('swiper-button-next')[0] as HTMLElement);
+      // swiperRight.style.padding = '6rem';
+      swiperRight.style.transform = "scale(0.5) translateY(-50%)";
+      swiperRight.style.backgroundColor = '#4BDA19';
+      swiperRight.style.borderRadius = '10rem';
+      swiperRight.style.boxShadow = '0 .2rem 2rem .5rem rgba(0, 0, 0, 0.5)';
+      // var swiperRightAfter = (document.getElementsByClassName('swiper-button-next::after')[0] as HTMLElement);
+      var swiperLeft = (document.getElementsByClassName('swiper-button-prev')[0] as HTMLElement);
+      // swiperLeft.style.padding = '6rem';
+      swiperLeft.style.transform = "scale(0.5) translateY(-50%)";
+      swiperLeft.style.backgroundColor = '#4BDA19';
+      swiperLeft.style.borderRadius = '10rem';
+      swiperLeft.style.boxShadow = '0 .2rem 2rem .5rem rgba(0, 0, 0, 0.5)';
+      var slidersInGallery = document.getElementsByClassName('swiper-slide');
+      for (let index = 0; index < slidersInGallery.length; index++) {
+        const slide = slidersInGallery[index] as HTMLElement;
+        slide.style.width = 'auto';
+      }
     }, 50)
     let iter = 0;
     this.dateList.forEach(element => {
-      document.getElementById("card" + iter)?.setAttribute('data-aos-delay', ((iter+1)*250).toString());
+      document.getElementById("card" + iter)?.setAttribute('data-aos-delay', ((iter + 1) * 250).toString());
       iter++;
     });
   }
@@ -294,18 +294,18 @@ export class HomeComponent implements OnInit, AfterViewInit{
       for (let index = 0; index < temp; index++) {
         if (eventIndex < this.selectedEventIndex) {
           this.switchAnimationStateName = 'end';
-          await this.timeout(switchTime/temp);
+          await this.timeout(switchTime / temp);
           this.switchAnimationStateName = 'start';
           this.selectedEventIndex -= 1;
-          await this.timeout(switchTime/temp);
+          await this.timeout(switchTime / temp);
           this.switchAnimationStateName = 'void';
         }
         else {
           this.switchAnimationStateName = 'start';
-          await this.timeout(switchTime/temp);
+          await this.timeout(switchTime / temp);
           this.switchAnimationStateName = 'end';
           this.selectedEventIndex += 1;
-          await this.timeout(switchTime/temp);
+          await this.timeout(switchTime / temp);
           this.switchAnimationStateName = 'void';
         }
       }
@@ -327,13 +327,13 @@ export class HomeComponent implements OnInit, AfterViewInit{
     clearInterval(this.scrollTimer);
     const flavoursContainer = document.getElementById('competitions-scroll')! as HTMLElement;
     this.scrollTimer = setInterval(() => {
-      if(!this.isScrollPaused) {
+      if (!this.isScrollPaused) {
         if (lastScroll !== flavoursContainer.scrollLeft && !scrollingBack) {
           lastScroll = flavoursContainer.scrollLeft;
           flavoursContainer.scrollTo(flavoursContainer.scrollLeft + 1, 0);
         }
         else {
-          this.isScrollPaused  = true;
+          this.isScrollPaused = true;
           scrollingBack = true;
           setTimeout(() => {
             flavoursContainer.scrollTo({
@@ -354,15 +354,15 @@ export class HomeComponent implements OnInit, AfterViewInit{
     this.isScrollPaused = value;
   }
 
-  refreshCounter() :void {
-    if(this.eventDate === undefined) return;
+  refreshCounter(): void {
+    if (this.eventDate === undefined) return;
     this.timeToEvent = this.eventDate.getTime() - new Date().getTime();
-    if(Math.floor(this.timeToEvent/1000) < 0) {
+    if (Math.floor(this.timeToEvent / 1000) < 0) {
       this.timeIsUp = true;
     }
-    if(!this.authService.accessToModifyExpirationDate) return;
+    if (!this.authService.accessToModifyExpirationDate) return;
     this.timeLeft = this.authService.accessToModifyExpirationDate.getTime() - new Date().getTime();
-    if(Math.floor(this.timeLeft/1000) < 0) {
+    if (Math.floor(this.timeLeft / 1000) < 0) {
       this.timeIsUp2 = true;
     }
   }
@@ -387,7 +387,7 @@ export class HomeComponent implements OnInit, AfterViewInit{
   }
 
   patreonClassPicker(index: number) {
-    return {[`patreons-class-${index}`]: true};
+    return { [`patreons-class-${index}`]: true };
   }
   isDateBefore(data: Date) {
     return data.getTime() > new Date().getTime()
@@ -405,17 +405,16 @@ export class HomeComponent implements OnInit, AfterViewInit{
     return icon == undefined ? '' : icon;
   }
 
-  get isMobile()
-  {
+  get isMobile() {
     return this.windowSize.width <= 800;
   }
 
   get isLessThanWeek() {
-    return this.timeLeft && Math.floor(this.timeLeft/1000) < 604800;
+    return this.timeLeft && Math.floor(this.timeLeft / 1000) < 604800;
   }
 
   get isLessThanWeekSmashBots() {
-    return this.timeLeftSmashBots && Math.floor(this.timeLeftSmashBots/1000) < 604800;
+    return this.timeLeftSmashBots && Math.floor(this.timeLeftSmashBots / 1000) < 604800;
   }
 
   get isEnglish() {
@@ -435,11 +434,11 @@ export class HomeComponent implements OnInit, AfterViewInit{
   }
 
   get getDaysToEndRegistration() {
-    return this.timeLeft ? Math.ceil(this.timeLeft/86400000) : 100000;
+    return this.timeLeft ? Math.ceil(this.timeLeft / 86400000) : 100000;
   }
 
   get registerPercentageCompletion() {
-    return this.registerInfo != null ? Math.ceil((this.registerInfo.aktualnie / this.registerInfo.limitOsob)*100) : null
+    return this.registerInfo != null ? Math.ceil((this.registerInfo.aktualnie / this.registerInfo.limitOsob) * 100) : null
   }
 
   timeout(ms: number) {
