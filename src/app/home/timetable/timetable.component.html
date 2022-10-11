@@ -1,7 +1,49 @@
 <div class="container">
     <app-header [pageName]="'menu.timetable'"></app-header>
     <div class="timetable">
-        <table>
+        <div class="timetable-tables">
+            <label *ngFor="let table of timetableValues; let i = index" (click)="changeTimetable(i)" [ngClass]="{'timetable-tables-active': timetableIndex == i}">{{table.nazwa}}</label>
+        </div>
+        <p style="color: red; cursor: pointer;font-size:2rem;" (click)="onDeleteTimetable()">Usuń aktualny harmonogram</p>
+        <app-spinner *ngIf="!timetableValues"></app-spinner>
+        <div class="timetable-grid" *ngIf="timetableValues" [style]="getTimetableStyle">
+            <ng-container *ngFor="let row of getRows">
+                <ng-container *ngFor="let col of getColumns">
+                    <div *ngIf="buildCell(col,row) as cell" [style]="cell.style" [ngClass]="{'timetable-tables-hover': userService.isAdmin}" (click)="onCellClick(col-1,row)"><label>{{isEnglish ? cell.nazwaENG : cell.nazwaPL}}</label></div>
+                </ng-container>
+            </ng-container>
+        </div>
+        <!-- <table *ngIf="timetableValues">
+            <tr *ngFor="let row of getRows">
+                <td *ngFor="let col of getColumns">
+                    <div *ngIf="buildCell(col,row) as cell" [style]="cell.style" [ngClass]="{'timetable-tables-hover': userService.isAdmin}" (click)="onCellClick(col-1,row)"><label>{{isEnglish ? cell.nazwaENG : cell.nazwaPL}}</label></div>
+                </td>
+            </tr>
+        </table> -->
+        <div *ngIf="userService.isAdmin" class="timetable-container">
+            <div class="timetable-new">
+                Nowy harmonogram
+                <app-input [group]="formTimetable" controlName="harmonogram"></app-input>
+                <app-input [group]="formTimetable" controlName="kolumny" type="number"></app-input>
+                <app-input [group]="formTimetable" controlName="wiersze" type="number"></app-input>
+                <app-input [group]="formTimetable" controlName="interwal" type="number"></app-input>
+                <app-input [group]="formTimetable" controlName="godzina_rozpoczecia" type="time"></app-input>
+                <button class="submit-button" [disabled]="!isFormTimetableValid" (click)="onFormSubmit()">Dodaj</button>
+            </div>
+            <div style="width: 5rem; height: 60rem; border-right: 2px grey dotted; border-left: 2px grey dotted;"></div>
+            <div class="timetable-new">
+                Edytuj komórke
+                <app-input [group]="formCell" controlName="nazwaPL"></app-input>
+                <app-input [group]="formCell" controlName="nazwaENG"></app-input>
+                <app-input [group]="formCell" controlName="kolumna" type="number"></app-input>
+                <app-input [group]="formCell" controlName="wiersz" type="number"></app-input>
+                <app-input [group]="formCell" controlName="colSpan" type="number"></app-input>
+                <app-input [group]="formCell" controlName="rowSpan" type="number"></app-input>
+                <button class="submit-button" [disabled]="editingCellIndex == null" (click)="removeCurrentCell()">Usuń komorke</button>
+                <button class="submit-button" (click)="onSaveTimetable()">Zapisz harmonogram</button>
+            </div>
+        </div>
+        <!-- <table>
             <thead>
                 <tr>
                     <th class="timetable-time">{{'timetable.time' | translate}}</th>
@@ -237,7 +279,7 @@
                     <th class="timetable-time">{{'timetable.time' | translate}}</th>
                 </tr>
             </tbody>
-        </table>
+        </table> -->
         <p>{{'timetable.info' | translate}}</p>
     </div>
 </div>

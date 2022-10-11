@@ -219,7 +219,7 @@
         "info": "The results will be shown here"
     },
     "timetable": {
-        "info": "The schedule may change. Please keep an eye on this page for the latest information.\nAll categories except Freestyle take place on the main floor of the hall, Robots in the Freestyle category can be viewed in the hallway at the entrance. ONLY people with appropriate IDs can enter the main floor.",
+        "info": "The schedule is subject to change. Please follow this page for the latest information. \nAll categories are held on the main hall and our Partners are located on the ground floor at the entrance identifiers. ONLY and ONLY persons with appropriate identifiers may enter the main hall. ",
         "time": "Hour",
         "onion": "Onion House",
         "register": "Competitors registration",
@@ -423,6 +423,7 @@
             "set-rfid": "Save data to RFID",
             "referee-settings": "Device settings",
             "is-sliding": "Auto sliding results view",
+            "is-showing-details": "Show result details",
             "is-esp32": "Display the RFID and gateway control panel (computer only)",
             "change": "* Preferences cannot be changed independently after registration. Please contact the administrator to make changes.",
             "errors": {
@@ -1133,6 +1134,72 @@
                 "required": "This field is required"
             }
 
+        },
+        "harmonogram": {
+            "name": "Timetable name",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "kolumny": {
+            "name": "Columns count",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "wiersze": {
+            "name": "Rows count",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "interwal": {
+            "name": "Interval (in minutes)",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "godzina_rozpoczecia": {
+            "name": "Start hour",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "username": {
+            "name": "Polish name",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "ENGname": {
+            "name": "English name",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "column": {
+            "name": "Column",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "row": {
+            "name": "Row",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "colSpan": {
+            "name": "Column range",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "rowSpan": {
+            "name": "Row range",
+            "validators": {
+                "required": "This field is required"
+            }
         }
     },
     "errors": {
@@ -1193,7 +1260,8 @@
             "too-many-sumo-categories": "You cannot add more than 2 categories in the Sumo competition!",
             "time-to-modify-ended": "The time to add and modify robots is over",
             "time-to-modify-ended-smash": "The time to add and modify robots in the SmashBots category is over",
-            "register-ends": "Registration has ended"
+            "register-ends": "Registration has ended",
+            "no-timetable": "Selected timetable does not exist"
         },
         "statusCodes": {
             "400": "Incorrectly specified data - user error",
