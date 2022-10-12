@@ -5,6 +5,8 @@ import { ErrorsService } from './errors.service';
 import { HttpService } from './http.service';
 import { UiService } from './ui.service';
 import { WebsocketService } from './websocket.service';
+import { AuthService } from './auth.service';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -104,11 +106,14 @@ export class TimetableService {
     this.allTimetables.next(this.allTimetables.value)
   }
   public WS_editTimetable(data: any) {
-    console.log(data)
+    const timetableIndex = this.allTimetables.value?.findIndex(timetable => timetable.harmonogram_id === data?.harmonogram_id)
+    if (timetableIndex !== undefined && timetableIndex !== null && timetableIndex >= 0 && this.allTimetables.value) {
+      this.allTimetables.value[timetableIndex].komorki = data.komorki;
+      this.allTimetables.next(this.allTimetables.value)
+    }
   }
 
   public WS_deleteTimeline(data: any) {
-    console.log(data)
     const timetableIndex = this.allTimetables.value?.findIndex(timetable => timetable.harmonogram_id === data?.harmonogram_id)
     if (timetableIndex !== undefined && timetableIndex !== null && timetableIndex >= 0 && this.allTimetables.value) {
       this.allTimetables.value.splice(timetableIndex, 1);

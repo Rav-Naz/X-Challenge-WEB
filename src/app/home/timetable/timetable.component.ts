@@ -53,8 +53,11 @@ export class TimetableComponent {
       fontSize: [null, [Validators.required]],
       fontWeight: [null, [Validators.required]]
     });
-    this.formCell.valueChanges.subscribe((val) => {
+    this.formTimetable.valueChanges.subscribe(val => {
       console.log(val)
+      console.log(this.isFormTimetableValid)
+    })
+    this.formCell.valueChanges.subscribe((val) => {
       if (this.editingCellIndex != null && val.nazwaPL != null && val.nazwaENG != null && val.kolumna != null && val.wiersz != null && val.colSpan != null && val.rowSpan != null) {
         let cell = this.activeTimetableCells![this.editingCellIndex];
         cell.nazwaPL = val.nazwaPL;
@@ -166,6 +169,7 @@ export class TimetableComponent {
         cells
       ).catch(err => console.log(err))
         .finally(() => {
+          this.ui.showFeedback("succes", "Harmonogram został zaktualizowany")
           this.loading = false;
         })
     }
@@ -226,6 +230,7 @@ export class TimetableComponent {
         this.formTimetable.get('kolumny')?.value
       ).catch(err => console.log(err))
         .finally(() => {
+          this.ui.showFeedback("succes", "Harmonogram został zaktualizowany")
           this.formTimetable.reset()
           this.loading = false;
         })
@@ -241,6 +246,8 @@ export class TimetableComponent {
     if (decision) {
       this.loading = true;
       this.timetableService.deleteTimetable(wybrany.harmonogram_id).finally(() => {
+        this.ui.showFeedback("succes", "Harmonogram został usunięty")
+        this.formCell.reset()
         this.loading = false;
       });
     }
@@ -275,9 +282,12 @@ export class TimetableComponent {
   }
 
   get getTimetableStyle() {
-    let columns = "min(min-content, 1fr) ".repeat(this.getCurrentTable.kolumny + 2)
-    let rows = "auto ".repeat(this.getCurrentTable.wiersze)
-    return `grid-template-columns: ${columns};`
+    if (this.getCurrentTable) {
+      let columns = "min(min-content, 1fr) ".repeat(this.getCurrentTable.kolumny + 2)
+      let rows = "auto ".repeat(this.getCurrentTable.wiersze)
+      return `grid-template-columns: ${columns};`
+    }
+    return ""
   }
 
   get isFormTimetableValid() {
