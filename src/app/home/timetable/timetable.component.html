@@ -4,282 +4,50 @@
         <div class="timetable-tables">
             <label *ngFor="let table of timetableValues; let i = index" (click)="changeTimetable(i)" [ngClass]="{'timetable-tables-active': timetableIndex == i}">{{table.nazwa}}</label>
         </div>
-        <p style="color: red; cursor: pointer;font-size:2rem;" (click)="onDeleteTimetable()">Usuń aktualny harmonogram</p>
+        <p *ngIf="userService.isAdmin" style="color: red; cursor: pointer;font-size:2rem;margin: 0;" (click)="onDeleteTimetable()">{{'timetable.delete-timetable' | translate}}</p>
         <app-spinner *ngIf="!timetableValues"></app-spinner>
-        <div class="timetable-grid" *ngIf="timetableValues" [style]="getTimetableStyle">
-            <ng-container *ngFor="let row of getRows">
-                <ng-container *ngFor="let col of getColumns">
-                    <div *ngIf="buildCell(col,row) as cell" [style]="cell.style" [ngClass]="{'timetable-tables-hover': userService.isAdmin}" (click)="onCellClick(col-1,row)"><label>{{isEnglish ? cell.nazwaENG : cell.nazwaPL}}</label></div>
+        <div class="timetable-grid-scroll">
+            <div class="timetable-grid" *ngIf="timetableValues" [style]="getTimetableStyle">
+                <ng-container *ngFor="let row of getRows">
+                    <ng-container *ngFor="let col of getColumns">
+                        <div *ngIf="buildCell(col,row) as cell" [style]="cell.style" [ngClass]="{'timetable-tables-hover': userService.isAdmin}" (click)="onCellClick(col-1,row)"><label>{{isEnglish ? cell.nazwaENG : cell.nazwaPL}}</label></div>
+                    </ng-container>
                 </ng-container>
-            </ng-container>
+            </div>
         </div>
-        <!-- <table *ngIf="timetableValues">
-            <tr *ngFor="let row of getRows">
-                <td *ngFor="let col of getColumns">
-                    <div *ngIf="buildCell(col,row) as cell" [style]="cell.style" [ngClass]="{'timetable-tables-hover': userService.isAdmin}" (click)="onCellClick(col-1,row)"><label>{{isEnglish ? cell.nazwaENG : cell.nazwaPL}}</label></div>
-                </td>
-            </tr>
-        </table> -->
+
         <div *ngIf="userService.isAdmin" class="timetable-container">
             <div class="timetable-new">
-                Nowy harmonogram
+                {{'timetable.new-timetable' | translate}}
                 <app-input [group]="formTimetable" controlName="harmonogram"></app-input>
                 <app-input [group]="formTimetable" controlName="kolumny" type="number"></app-input>
                 <app-input [group]="formTimetable" controlName="wiersze" type="number"></app-input>
                 <app-input [group]="formTimetable" controlName="interwal" type="number"></app-input>
                 <app-input [group]="formTimetable" controlName="godzina_rozpoczecia" type="time"></app-input>
-                <button class="submit-button" [disabled]="!isFormTimetableValid" (click)="onFormSubmit()">Dodaj</button>
+                <label>{{'timetable.new-timetable-warning' | translate}}</label>
+                <button class="submit-button" [disabled]="!isFormTimetableValid" (click)="onFormSubmit()">              {{'timetable.new-timetable-add' | translate}}
+                </button>
             </div>
             <div style="width: 5rem; height: 60rem; border-right: 2px grey dotted; border-left: 2px grey dotted;"></div>
             <div class="timetable-new">
-                Edytuj komórke
+                {{'timetable.edit-timetable' | translate}}
                 <app-input [group]="formCell" controlName="nazwaPL"></app-input>
                 <app-input [group]="formCell" controlName="nazwaENG"></app-input>
                 <app-input [group]="formCell" controlName="kolumna" type="number"></app-input>
                 <app-input [group]="formCell" controlName="wiersz" type="number"></app-input>
                 <app-input [group]="formCell" controlName="colSpan" type="number"></app-input>
                 <app-input [group]="formCell" controlName="rowSpan" type="number"></app-input>
-                <button class="submit-button" [disabled]="editingCellIndex == null" (click)="removeCurrentCell()">Usuń komorke</button>
-                <button class="submit-button" (click)="onSaveTimetable()">Zapisz harmonogram</button>
+            </div>
+            <div class="timetable-new">
+                {{'timetable.styling-timetable' | translate}}
+                <app-input [group]="formCell" controlName="backgroundColor" type="color"></app-input>
+                <app-input [group]="formCell" controlName="fontColor" type="color"></app-input>
+                <app-input [group]="formCell" controlName="fontSize" type="number"></app-input>
+                <app-input [group]="formCell" controlName="fontWeight" placeholder="100-900"></app-input>
+                <button class="submit-button" [disabled]="editingCellIndex == null" (click)="removeCurrentCell()">{{'timetable.delete-cell' | translate}}</button>
+                <button class="submit-button" (click)="onSaveTimetable()">{{'timetable.save-timetable' | translate}}</button>
             </div>
         </div>
-        <!-- <table>
-            <thead>
-                <tr>
-                    <th class="timetable-time">{{'timetable.time' | translate}}</th>
-                    <th>Robot Sprint</th>
-                    <th>{{'timetable.onion' | translate}}</th>
-                    <th>Micromouse</th>
-                    <th>Tug of War</th>
-                    <th>Freestyle</th>
-                    <th>Drag Race</th>
-                    <th>Line Follower</th>
-                    <th>Sumo</th>
-                    <th>Smash Bots by RoboLAB</th>
-                    <th class="timetable-time">{{'timetable.time' | translate}}</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="timetable-time">9:00</td>
-                    <td colspan="9" rowspan="6" class="timetable-register">{{'timetable.register' | translate}}</td>
-                    <td class="timetable-time">9:00</td>
-                </tr>
-                <tr class="timetable-time">
-                    <td>9:15</td>
-                    <td>9:15</td>
-                </tr>
-                <tr class="timetable-time">
-                    <td>9:30</td>
-                    <td>9:30</td>
-                </tr>
-                <tr class="timetable-time">
-                    <td>9:45</td>
-                    <td>9:45</td>
-                </tr>
-                <tr class="timetable-time">
-                    <td>10:00</td>
-                    <td>10:00</td>
-                </tr>
-                <tr class="timetable-time">
-                    <td>10:15</td>
-                    <td>10:15</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">10:30</td>
-                    <td colspan="9">{{'timetable.viewers' | translate}}</td>
-                    <td class="timetable-time">10:30</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">10:45</td>
-                    <td colspan="9" class="timetable-register">{{'timetable.brief' | translate}}</td>
-                    <td class="timetable-time">10:45</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">11:00</td>
-                    <td colspan="9" class="timetable-open">{{'timetable.open' | translate}}</td>
-                    <td class="timetable-time">11:00</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">11:15</td>
-                    <td class="timetable-info">{{'timetable.draw-groups' | translate}}</td>
-                    <td rowspan="14" class="timetable-cebula">{{'timetable.rides' | translate}}</td>
-                    <td rowspan="14" class="timetable-mouse">{{'timetable.rides' | translate}}</td>
-                    <td rowspan="22" class="timetable-tug">{{'timetable.fights' | translate}}</td>
-                    <td rowspan="19" class="timetable-free">{{'timetable.exhibition' | translate}}</td>
-                    <td rowspan="22" class="timetable-drag">{{'timetable.rides' | translate}}</td>
-                    <td rowspan="30" class="timetable-lf">{{'timetable.rides' | translate}}</td>
-                    <td rowspan="17" class="timetable-sumo">{{'timetable.fights' | translate}}</td>
-                    <td class="timetable-info">{{'timetable.draw' | translate}}</td>
-                    <td class="timetable-time">11:15</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">11:30</td>
-                    <td class="timetable-sprint-1">{{'timetable.ride' | translate}} I</td>
-                    <td rowspan="4" class="timetable-smash-1">{{'timetable.fight1' | translate}}</td>
-                    <td class="timetable-time">11:30</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">11:45</td>
-                    <td rowspan="2" class="timetable-info">{{'timetable.break' | translate}}</td>
-                    <td class="timetable-time">11:45</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">12:00</td>
-                    <td class="timetable-time">12:00</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">12:15</td>
-                    <td class="timetable-sprint-2">{{'timetable.ride' | translate}} II</td>
-                    <td class="timetable-time">12:15</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">12:30</td>
-                    <td rowspan="2" class="timetable-info">{{'timetable.break' | translate}}</td>
-                    <td rowspan="3" class="timetable-info">{{'timetable.technical-break' | translate}}</td>
-                    <td class="timetable-time">12:30</td>
-                </tr>
-                <tr class="timetable-time">
-                    <td>12:45</td>
-                    <td>12:45</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">13:00</td>
-                    <td class="timetable-sprint-3">{{'timetable.ride' | translate}} III</td>
-                    <td class="timetable-time">13:00</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">13:15</td>
-                    <td rowspan="2" class="timetable-info">{{'timetable.break' | translate}}</td>
-                    <td rowspan="3" class="timetable-smash-2">{{'timetable.fight2' | translate}}</td>
-                    <td class="timetable-time">13:15</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">13:30</td>
-                    <td class="timetable-time">13:30</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">13:45</td>
-                    <td class="timetable-sprint-4">{{'timetable.ride' | translate}} IV</td>
-                    <td class="timetable-time">13:45</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">14:00</td>
-                    <td rowspan="2" class="timetable-info">{{'timetable.break' | translate}}</td>
-                    <td rowspan="6" class="timetable-info">{{'timetable.technical-break' | translate}}</td>
-                    <td class="timetable-time">14:00</td>
-                </tr>
-                <tr class="timetable-time">
-                    <td>14:15</td>
-                    <td>14:15</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">14:30</td>
-                    <td class="timetable-sprint-5">{{'timetable.ride' | translate}} V</td>
-                    <td class="timetable-time">14:30</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">14:45</td>
-                    <td colspan="3" class="timetable-info">{{'timetable.technical-break' | translate}}</td>
-                    <td class="timetable-time">14:45</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">15:00</td>
-                    <td colspan="3" class="timetable-results">{{'timetable.results' | translate}} (1)<i class="las la-trophy"></i></td>
-                    <td class="timetable-time">15:00</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">15:15</td>
-                    <td colspan="3" rowspan="16"></td>
-                    <td class="timetable-time">15:15</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">15:30</td>
-                    <td rowspan="4" class="timetable-info">{{'timetable.technical-break' | translate}}</td>
-                    <td rowspan="2" class="timetable-smash-3">{{'timetable.fight3' | translate}}</td>
-                    <td class="timetable-time">15:30</td>
-                </tr>
-                <tr class="timetable-time">
-                    <td>15:45</td>
-                    <td>15:45</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">16:00</td>
-                    <td rowspan="3" class="timetable-free-1">{{'timetable.comission' | translate}}</td>
-                    <td rowspan="8" class="timetable-info">{{'timetable.technical-break' | translate}}</td>
-                    <td class="timetable-time">16:00</td>
-                </tr>
-                <tr class="timetable-time">
-                    <td>16:15</td>
-                    <td>16:15</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">16:30</td>
-                    <td rowspan="9" class="timetable-sumo-1">{{'timetable.finals' | translate}}</td>
-                    <td class="timetable-time">16:30</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">16:45</td>
-                    <td colspan="3" class="timetable-info">{{'timetable.technical-break' | translate}}</td>
-                    <td class="timetable-time">16:45</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">17:00</td>
-                    <td colspan="3" class="timetable-results">{{'timetable.results' | translate}} (2)<i class="las la-trophy"></i></td>
-                    <td class="timetable-time">17:00</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">17:15</td>
-                    <td colspan="3" rowspan="8"></td>
-                    <td class="timetable-time">17:15</td>
-                </tr>
-                <tr class="timetable-time">
-                    <td>17:30</td>
-                    <td>17:30</td>
-                </tr>
-                <tr class="timetable-time">
-                    <td>17:45</td>
-                    <td>17:45</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">18:00</td>
-                    <td rowspan="2" class="timetable-smash-4">{{'timetable.fight4' | translate}}</td>
-                    <td class="timetable-time">18:00</td>
-                </tr>
-                <tr class="timetable-time">
-                    <td>18:15</td>
-                    <td>18:15</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">18:30</td>
-                    <td rowspan="2" class="timetable-info">{{'timetable.technical-break' | translate}}</td>
-                    <td class="timetable-time">18:30</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">18:45</td>
-                    <td colspan="2" class="timetable-info">{{'timetable.technical-break' | translate}}</td>
-                    <td class="timetable-time">18:45</td>
-                </tr>
-                <tr>
-                    <td class="timetable-time">19:00</td>
-                    <td colspan="3" class="timetable-results">{{'timetable.results' | translate}} (3)<i class="las la-trophy"></i></td>
-                    <td class="timetable-time">19:00</td>
-                </tr>
-                <tr>
-                    <th class="timetable-time">{{'timetable.time' | translate}}</th>
-                    <th>Robot Sprint</th>
-                    <th>{{'timetable.onion' | translate}}</th>
-                    <th>Micromouse</th>
-                    <th>Tug of War</th>
-                    <th>Freestyle</th>
-                    <th>Drag Race</th>
-                    <th>Line Follower</th>
-                    <th>Sumo</th>
-                    <th>Smash Bots by RoboLAB</th>
-                    <th class="timetable-time">{{'timetable.time' | translate}}</th>
-                </tr>
-            </tbody>
-        </table> -->
         <p>{{'timetable.info' | translate}}</p>
     </div>
 </div>

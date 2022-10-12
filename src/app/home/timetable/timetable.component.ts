@@ -47,9 +47,14 @@ export class TimetableComponent {
       kolumna: [null, [Validators.required]],
       wiersz: [null, [Validators.required]],
       colSpan: [null, [Validators.required]],
-      rowSpan: [null, [Validators.required]]
+      rowSpan: [null, [Validators.required]],
+      backgroundColor: [null, [Validators.required]],
+      fontColor: [null, [Validators.required]],
+      fontSize: [null, [Validators.required]],
+      fontWeight: [null, [Validators.required]]
     });
     this.formCell.valueChanges.subscribe((val) => {
+      console.log(val)
       if (this.editingCellIndex != null && val.nazwaPL != null && val.nazwaENG != null && val.kolumna != null && val.wiersz != null && val.colSpan != null && val.rowSpan != null) {
         let cell = this.activeTimetableCells![this.editingCellIndex];
         cell.nazwaPL = val.nazwaPL;
@@ -59,6 +64,22 @@ export class TimetableComponent {
         cell.colSpan = Number(val.colSpan);
         cell.rowSpan = Number(val.rowSpan);
         let splitted = cell.style.split(";")
+        if (val.fontColor) {
+          splitted = splitted.filter(element => !(element.includes("color")));
+          splitted.push(`color: ${val.fontColor}`)
+        }
+        if (val.backgroundColor) {
+          splitted = splitted.filter(element => !(element.includes("background-color")));
+          splitted.push(`background-color: ${val.backgroundColor}`)
+        }
+        if (val.fontSize) {
+          splitted = splitted.filter(element => !(element.includes("font-size")));
+          splitted.push(`font-size: ${val.fontSize}px`)
+        }
+        if (val.fontWeight) {
+          splitted = splitted.filter(element => !(element.includes("font-weight")));
+          splitted.push(`font-weight: ${val.fontWeight}`)
+        }
         splitted = splitted.filter(element => !(element.includes("grid-column-start") || element.includes("grid-column-end") || element.includes("grid-row-start") || element.includes("grid-row-end") || element.includes("z-index")))
         cell.style = splitted.join(';') + ";" + this._gridColAndRow(cell.col, cell.row, cell.colSpan, cell.rowSpan, this.editingCellIndex + 10)
       }
@@ -67,13 +88,17 @@ export class TimetableComponent {
 
   changeTimetable(index: number) {
     this.timetableIndex = index;
+    if (this.userService.isAdmin) {
+      this.formCell.reset()
+      this.editingCellIndex = null;
+    }
     this.updateTimetableCells();
   }
 
   updateTimetableCells() {
+    this.activeTimetableCells = null;
     if (this.getCurrentTableCells != null) {
       let cells = JSON.parse(JSON.parse(this.getCurrentTableCells)) as Array<any>
-      // cells
       this.activeTimetableCells = cells.map(el => new TableCell(el.nazwaPL, el.nazwaENG, el.col, el.row, el.colspan, el.rowSpan, el.style))
     }
   }
@@ -106,6 +131,8 @@ export class TimetableComponent {
   }
 
   _updateFormCell(cell: TableCell | null) {
+    if (!this.userService.isAdmin) return;
+
     if (cell) {
       this.formCell.get('nazwaPL')?.setValue(cell.nazwaPL);
       this.formCell.get('nazwaENG')?.setValue(cell.nazwaENG);
@@ -113,11 +140,24 @@ export class TimetableComponent {
       this.formCell.get('wiersz')?.setValue(cell.row);
       this.formCell.get('colSpan')?.setValue(cell.colSpan);
       this.formCell.get('rowSpan')?.setValue(cell.rowSpan);
+
+      let splitted = cell.style.split(";")
+      let color = splitted.find(el => el.includes('color') && el.length <= 15)?.split(": ")[1]
+      this.formCell.get('fontColor')?.setValue(color);
+      let bgcolor = splitted.find(el => el.includes('background-color'))?.split(": ")[1]
+      this.formCell.get('backgroundColor')?.setValue(bgcolor);
+      let fsize = splitted.find(el => el.includes('font-size'))?.split(": ")[1]
+      fsize = fsize?.substring(0, fsize.length - 2)
+      this.formCell.get('fontSize')?.setValue(Number(fsize));
+      let fweight = splitted.find(el => el.includes('font-weight'))?.split(": ")[1]
+      this.formCell.get('fontWeight')?.setValue(fweight);
       this.editingCellIndex = this.activeTimetableCells!.indexOf(cell);
     } else { this.formCell.reset() }
   }
 
   onSaveTimetable() {
+    if (!this.userService.isAdmin) return;
+
     if (this.activeTimetableCells && this.getCurrentTable) {
       let cells = JSON.stringify([...this.activeTimetableCells].map(tc => tc.toObject()))
       this.loading = true;
@@ -132,6 +172,7 @@ export class TimetableComponent {
   }
 
   onCellClick(col: number, row: number) {
+    if (!this.userService.isAdmin) return;
     if (col != -1 && col != (this.getColumns!.length - 1)) {
       const cellIndex = this.activeTimetableCells?.findIndex(cell => cell.col == col + 1 && cell.row == row)
       if (cellIndex != undefined && cellIndex != null && cellIndex >= 0) {
@@ -139,7 +180,11 @@ export class TimetableComponent {
         this._updateFormCell(this.activeTimetableCells![cellIndex]);
       } else {
         this.editingCellIndex = null;
-        let cell = new TableCell('nowy', 'nowy', col + 1, row, 0, 0, `background-color: blue; color: white;`)
+        let color = this.formCell.get('fontColor')?.value;
+        let bgcolor = this.formCell.get('backgroundColor')?.value;
+        let fsize = this.formCell.get('fontSize')?.value;
+        let fweight = this.formCell.get('fontWeight')?.value;
+        let cell = new TableCell('nowy', 'nowy', col + 1, row, 0, 0, `background-color: ${bgcolor ? bgcolor : "#0000ff"}; color: ${color ? color : "#ffffff"}; font-size: ${fsize ? fsize + "px" : "16px"}; font-weight: ${fweight ? fweight : '400'};`)
         cell.style += this._gridColAndRow(cell.col, cell.row, cell.colSpan, cell.rowSpan, 2);
         if (this.activeTimetableCells) {
           this.activeTimetableCells?.push(cell);
@@ -152,6 +197,8 @@ export class TimetableComponent {
   }
 
   async removeCurrentCell() {
+    if (!this.userService.isAdmin) return;
+
     if (this.editingCellIndex != null && this.activeTimetableCells) {
       let cell = this.activeTimetableCells[this.editingCellIndex];
       const decision = await this.ui.wantToContinue(`Czy na pewno chcesz usunąć komórkę ${cell.nazwaPL}?`);
@@ -163,6 +210,8 @@ export class TimetableComponent {
   }
 
   onFormSubmit() {
+    if (!this.userService.isAdmin) return;
+
     if (this.isFormTimetableValid) {
       this.loading = true;
       let time = (this.formTimetable.get('godzina_rozpoczecia')?.value as string).split(':');
@@ -184,6 +233,8 @@ export class TimetableComponent {
   }
 
   async onDeleteTimetable() {
+    if (!this.userService.isAdmin) return;
+
     if (this.isLoading || this.getCurrentTable == null) return;
     let wybrany = this.getCurrentTable
     const decision = await this.ui.wantToContinue(`Czy na pewno chcesz usunąć harmonogram ${wybrany.nazwa}?`);
@@ -220,11 +271,11 @@ export class TimetableComponent {
   }
 
   get getCurrentTableCells() {
-    return this.getCurrentTable ? (this.getCurrentTable.komorki ? this.getCurrentTable.komorki : "[]") : null;
+    return this.getCurrentTable ? (this.getCurrentTable.komorki ? this.getCurrentTable.komorki : "\"[]\"") : null;
   }
 
   get getTimetableStyle() {
-    let columns = "minmax(0, 1fr) ".repeat(this.getCurrentTable.kolumny + 2)
+    let columns = "min(min-content, 1fr) ".repeat(this.getCurrentTable.kolumny + 2)
     let rows = "auto ".repeat(this.getCurrentTable.wiersze)
     return `grid-template-columns: ${columns};`
   }

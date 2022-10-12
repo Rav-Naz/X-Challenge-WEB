@@ -190,12 +190,14 @@
                 { "id": 13, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
                 { "id": 14, "patreonCategory": 3, "description": "FANUC", "image": "../../assets/jpg/fanuc.png", "linkToSite": "https://www.fanuc.eu/uk/en" },
                 { "id": 15, "patreonCategory": 3, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
-                { "id": 16, "patreonCategory": 3, "description": "Matlab", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
+                { "id": 16, "patreonCategory": 3, "description": "ONT", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
                 { "id": 17, "patreonCategory": 3, "description": "Zespół Szkół Technicznych", "image": "../../assets/jpg/zst.png", "linkToSite": "http://www.zstrzeszow.pl/" },
                 { "id": 18, "patreonCategory": 6, "description": "Botland", "image": "../../assets/jpg/botland.webp", "linkToSite": "https://botland.com.pl/" },
                 { "id": 19, "patreonCategory": 5, "description": "Voivode of Podkarpacie", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" },
                 { "id": 20, "patreonCategory": 6, "description": "Huawei", "image": "../../assets/jpg/huawei.png", "linkToSite": "https://seedsforthefuture.pl/" },
-                { "id": 21, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" }
+                { "id": 21, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" },
+                { "id": 22, "patreonCategory": 2, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
+                { "id": 23, "patreonCategory": 1, "description": "Podkarpackie Innovation Center", "image": "../../assets/jpg/pci.png", "linkToSite": "https://pcinn.org/" }
 
 
             ],
@@ -241,7 +243,15 @@
         "technical-break": "Technical break",
         "results": "Announcement of results",
         "comission": "Evaluation of the commission",
-        "finals": "Final fights"
+        "finals": "Final fights",
+        "delete-timetable": "Delete current schedule",
+        "new-timetable": "New timetable",
+        "new-timetable-warning": "Warning! After creating the calendar, there is no option to edit the above values!",
+        "new-timetable-add": "Add",
+        "edit-timetable": "Edit cell",
+        "styling-timetable": "Stylowanie",
+        "delete-cell": "Delete cell",
+        "save-timetable": "Save the schedule"
     },
     "building-plan": {
         "floor": {
@@ -1165,25 +1175,25 @@
                 "required": "To pole jest wymagane"
             }
         },
-        "username": {
+        "nazwaPL": {
             "name": "Polish name",
             "validators": {
                 "required": "This field is required"
             }
         },
-        "ENGname": {
+        "nazwaENG": {
             "name": "English name",
             "validators": {
                 "required": "This field is required"
             }
         },
-        "column": {
+        "kolumna": {
             "name": "Column",
             "validators": {
                 "required": "This field is required"
             }
         },
-        "row": {
+        "wiersz": {
             "name": "Row",
             "validators": {
                 "required": "This field is required"
@@ -1197,6 +1207,30 @@
         },
         "rowSpan": {
             "name": "Row range",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "backgroundColor": {
+            "name": "Background color",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "fontColor": {
+            "name": "Text color",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "fontSize": {
+            "name": "Font size",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "fontWeight": {
+            "name": "Font weight",
             "validators": {
                 "required": "This field is required"
             }
