@@ -190,12 +190,14 @@
                 { "id": 13, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
                 { "id": 14, "patreonCategory": 3, "description": "FANUC", "image": "../../assets/jpg/fanuc.png", "linkToSite": "https://www.fanuc.eu/uk/en" },
                 { "id": 15, "patreonCategory": 3, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
-                { "id": 16, "patreonCategory": 3, "description": "Matlab", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
+                { "id": 16, "patreonCategory": 3, "description": "ONT", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
                 { "id": 17, "patreonCategory": 3, "description": "Zespół Szkół Technicznych", "image": "../../assets/jpg/zst.png", "linkToSite": "http://www.zstrzeszow.pl/" },
                 { "id": 18, "patreonCategory": 6, "description": "Botland", "image": "../../assets/jpg/botland.webp", "linkToSite": "https://botland.com.pl/" },
                 { "id": 19, "patreonCategory": 5, "description": "Voivode of Podkarpacie", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" },
                 { "id": 20, "patreonCategory": 6, "description": "Huawei", "image": "../../assets/jpg/huawei.png", "linkToSite": "https://seedsforthefuture.pl/" },
-                { "id": 21, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" }
+                { "id": 21, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" },
+                { "id": 22, "patreonCategory": 2, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
+                { "id": 23, "patreonCategory": 1, "description": "Podkarpackie Innovation Center", "image": "../../assets/jpg/pci.png", "linkToSite": "https://pcinn.org/" }
 
 
             ],
@@ -219,7 +221,7 @@
         "info": "The results will be shown here"
     },
     "timetable": {
-        "info": "The schedule may change. Please keep an eye on this page for the latest information.\nAll categories except Freestyle take place on the main floor of the hall, Robots in the Freestyle category can be viewed in the hallway at the entrance. ONLY people with appropriate IDs can enter the main floor.",
+        "info": "The schedule is subject to change. Please follow this page for the latest information. \nAll categories are held on the main hall and our Partners are located on the ground floor at the entrance identifiers. ONLY and ONLY persons with appropriate identifiers may enter the main hall. ",
         "time": "Hour",
         "onion": "Onion House",
         "register": "Competitors registration",
@@ -241,7 +243,15 @@
         "technical-break": "Technical break",
         "results": "Announcement of results",
         "comission": "Evaluation of the commission",
-        "finals": "Final fights"
+        "finals": "Final fights",
+        "delete-timetable": "Delete current schedule",
+        "new-timetable": "New timetable",
+        "new-timetable-warning": "Warning! After creating the calendar, there is no option to edit the above values!",
+        "new-timetable-add": "Add",
+        "edit-timetable": "Edit cell",
+        "styling-timetable": "Stylowanie",
+        "delete-cell": "Delete cell",
+        "save-timetable": "Save the schedule"
     },
     "building-plan": {
         "floor": {
@@ -423,6 +433,7 @@
             "set-rfid": "Save data to RFID",
             "referee-settings": "Device settings",
             "is-sliding": "Auto sliding results view",
+            "is-showing-details": "Show result details",
             "is-esp32": "Display the RFID and gateway control panel (computer only)",
             "change": "* Preferences cannot be changed independently after registration. Please contact the administrator to make changes.",
             "errors": {
@@ -1133,6 +1144,96 @@
                 "required": "This field is required"
             }
 
+        },
+        "harmonogram": {
+            "name": "Timetable name",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "kolumny": {
+            "name": "Columns count",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "wiersze": {
+            "name": "Rows count",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "interwal": {
+            "name": "Interval (in minutes)",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "godzina_rozpoczecia": {
+            "name": "Start hour",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "nazwaPL": {
+            "name": "Polish name",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "nazwaENG": {
+            "name": "English name",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "kolumna": {
+            "name": "Column",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "wiersz": {
+            "name": "Row",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "colSpan": {
+            "name": "Column range",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "rowSpan": {
+            "name": "Row range",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "backgroundColor": {
+            "name": "Background color",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "fontColor": {
+            "name": "Text color",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "fontSize": {
+            "name": "Font size",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "fontWeight": {
+            "name": "Font weight",
+            "validators": {
+                "required": "This field is required"
+            }
         }
     },
     "errors": {
@@ -1193,7 +1294,8 @@
             "too-many-sumo-categories": "You cannot add more than 2 categories in the Sumo competition!",
             "time-to-modify-ended": "The time to add and modify robots is over",
             "time-to-modify-ended-smash": "The time to add and modify robots in the SmashBots category is over",
-            "register-ends": "Registration has ended"
+            "register-ends": "Registration has ended",
+            "no-timetable": "Selected timetable does not exist"
         },
         "statusCodes": {
             "400": "Incorrectly specified data - user error",
