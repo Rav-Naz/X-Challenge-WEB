@@ -81,6 +81,7 @@ export class ResultsComponent implements OnInit, OnDestroy {
         this.loading = false;
         this.showCategories = this.categoriesInPosition!;
         if (this.getCategoryType == 2) {
+
           this.threeBestRobotsInPoints().then(val => {
             this.threeBestRobots = val;
           })
@@ -116,6 +117,7 @@ export class ResultsComponent implements OnInit, OnDestroy {
     if (this.isDisplayDevice) {
       this.scrollTimer = setInterval(() => {
         if (window.scrollY < document.body.scrollHeight) {
+
           window.scrollTo(0, window.scrollY + (this.getCategoryType == 1 ? 1 : 3));
           this.isScrolling = this.lastScrollPos != window.scrollY;
           this.lastScrollPos = window.scrollY;
@@ -147,6 +149,7 @@ export class ResultsComponent implements OnInit, OnDestroy {
                 this.actualShowingGroup = this.filteredGroups[groupIndex + 1].grupa_id;
                 return;
               } else if (this.filteredGroups.length > 0 && groupIndex != this.filteredGroups.length - 1) {
+
                 this.actualShowingGroup = this.filteredGroups[0].grupa_id;
                 return;
               }
@@ -155,7 +158,6 @@ export class ResultsComponent implements OnInit, OnDestroy {
             this.selectCategory(this.categories[0].kategoria_id);
             this.actualShowingGroup = null;
             window.scrollTo(0, 0)
-
             if (this.filteredGroups) {
               let group = this.filteredGroups?.find(gr => gr.grupa_id == this.actualShowingGroup)
               let groupIndex = this.filteredGroups?.indexOf(group)

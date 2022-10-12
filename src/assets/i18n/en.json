@@ -199,7 +199,6 @@
                 { "id": 22, "patreonCategory": 2, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
                 { "id": 23, "patreonCategory": 1, "description": "Podkarpackie Innovation Center", "image": "../../assets/jpg/pci.png", "linkToSite": "https://pcinn.org/" }
 
-
             ],
             "tiers": [
                 "Main Partner",
