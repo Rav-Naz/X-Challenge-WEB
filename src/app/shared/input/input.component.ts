@@ -14,8 +14,9 @@ export class InputComponent {
   @Input() nameKey!: string;
   @Input() collapsed: undefined | boolean;
   @Input() type: undefined | string;
+  @Input() placeholder: string = " ";
 
-  constructor (public esp32Service: Esp32Service) {}
+  constructor(public esp32Service: Esp32Service) { }
 
   get isFormInvalid() {
     return !this.group.get(this.controlName)?.valid && this.group.get(this.controlName)?.touched;

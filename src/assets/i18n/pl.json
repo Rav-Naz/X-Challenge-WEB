@@ -197,12 +197,14 @@
                 { "id": 13, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
                 { "id": 14, "patreonCategory": 3, "description": "FANUC", "image": "../../assets/jpg/fanuc.png", "linkToSite": "https://www.fanuc.eu/pl/pl" },
                 { "id": 15, "patreonCategory": 3, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
-                { "id": 16, "patreonCategory": 3, "description": "Matlab", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
+                { "id": 16, "patreonCategory": 3, "description": "ONT", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
                 { "id": 17, "patreonCategory": 3, "description": "Zespół Szkół Technicznych", "image": "../../assets/jpg/zst.png", "linkToSite": "http://www.zstrzeszow.pl/" },
                 { "id": 18, "patreonCategory": 6, "description": "Botland", "image": "../../assets/jpg/botland.webp", "linkToSite": "https://botland.com.pl/" },
                 { "id": 19, "patreonCategory": 5, "description": "Wojewoda Podkarpacki", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" },
                 { "id": 20, "patreonCategory": 6, "description": "Huawei", "image": "../../assets/jpg/huawei.png", "linkToSite": "https://seedsforthefuture.pl/" },
-                { "id": 21, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" }
+                { "id": 21, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" },
+                { "id": 22, "patreonCategory": 2, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
+                { "id": 23, "patreonCategory": 1, "description": "Podkarpackie Centrum Innowacji", "image": "../../assets/jpg/pci.png", "linkToSite": "https://pcinn.org/" }
 
             ],
             "tiers": [
@@ -225,7 +227,7 @@
         "info": "Wyniki będą się pojawiać w tym miejscu"
     },
     "timetable": {
-        "info": "Harmonogram może się zmienić. Prosimy obserwować tę stronę w celu uzyskania najnowszych informacji.\nWszystkie kategorie poza Freestyle odbywają się na głównej płycie hali, Roboty kategorii Freestyle można oglądać w korytarzu przy wejściu. Na płytę główną mogą wejść TYLKO i WYŁĄCZNIE osoby posiadające stosowne identyfikatory.",
+        "info": "Harmonogram może się zmienić. Prosimy obserwować tę stronę w celu uzyskania najnowszych informacji.\nWszystkie kategorie odbywają się na głównej płycie hali natomiast nasi Partnerzy zajmują miesca na parterze przy wejściu. Na płytę główną mogą wejść TYLKO i WYŁĄCZNIE osoby posiadające stosowne identyfikatory.",
         "time": "Godzina",
         "onion": "Cebula House",
         "register": "Rejestracja zawodników",
@@ -247,7 +249,15 @@
         "technical-break": "Przerwa techniczna",
         "results": "Ogłoszenie wyników",
         "comission": "Ocena komisji",
-        "finals": "Walki finałowe"
+        "finals": "Walki finałowe",
+        "delete-timetable": "Usuń aktualny harmonogram",
+        "new-timetable": "Nowy harmonogram",
+        "new-timetable-warning": "Uwaga! Po utworzeniu kalendarza nie ma opcji edycji powyższych wartości!",
+        "new-timetable-add": "Dodaj",
+        "edit-timetable": "Edytuj komórke",
+        "styling-timetable": "Stylowanie",
+        "delete-cell": "Usuń komorke",
+        "save-timetable": "Zapisz harmonogram"
     },
     "building-plan": {
         "floor": {
@@ -430,6 +440,7 @@
             "set-rfid": "Zapisz dane na karcie RFID",
             "referee-settings": "Ustawienia urządzenia",
             "is-sliding": "Automatyczne przewijanie strony z walkami",
+            "is-showing-details": "Pokaż szczegóły wyników",
             "is-esp32": "Wyświetlaj panel obsługi RFID i bramek (tylko komputer)",
             "change": "* Preferencji nie da się samodzielnie zmienić po rejestracji. Aby dokonać zmian, prosimy skontaktować się z administratorem.",
             "errors": {
@@ -1140,7 +1151,96 @@
             "validators": {
                 "required": "To pole jest wymagane"
             }
-
+        },
+        "harmonogram": {
+            "name": "Nazwa harmonogramu",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "kolumny": {
+            "name": "Ilość kolumn",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "wiersze": {
+            "name": "Ilość wierszy",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "interwal": {
+            "name": "Interwał (w minutach)",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "godzina_rozpoczecia": {
+            "name": "Godzina rozpoczecia",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "nazwaPL": {
+            "name": "Nazwa polska",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "nazwaENG": {
+            "name": "Nazwa angielska",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "kolumna": {
+            "name": "Kolumna",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "wiersz": {
+            "name": "Wiersz",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "colSpan": {
+            "name": "Zakres kolumn",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "rowSpan": {
+            "name": "Zakres wierszy",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "backgroundColor": {
+            "name": "Kolor tła",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "fontColor": {
+            "name": "Kolor tekstu",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "fontSize": {
+            "name": "Rozmiar tekstu",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "fontWeight": {
+            "name": "Grubość tekstu",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
         }
     },
     "errors": {
@@ -1201,7 +1301,8 @@
             "too-many-sumo-categories": "Nie można dodać więcej niż 2 kategorie w konkurencji Sumo!",
             "time-to-modify-ended": "Czas na dodawanie i modyfikację robotów minął",
             "time-to-modify-ended-smash": "Czas na dodawanie i modyfikację robotów w kategori SmashBots minął",
-            "register-ends": "Rejestracja na zawody zakończyła się"
+            "register-ends": "Rejestracja na zawody zakończyła się",
+            "no-timetable": "Wybrany harmonogram nie istnieje"
         },
         "statusCodes": {
             "400": "Błędnie określone dane - błąd użytkownika",

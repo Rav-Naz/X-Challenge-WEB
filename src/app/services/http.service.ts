@@ -39,7 +39,8 @@ export class HttpService {
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
-    })  }
+    })
+  }
 
   checkIfRobotCanInThisPosition(robot_uuid: string, kategoria_id: number, stanowisko_id: number): Promise<APIResponse> {
     return new Promise<APIResponse>((resolve, rejects) => {
@@ -212,7 +213,7 @@ export class HttpService {
     })
   }
 
-  public resetPassword(uzytkownik_uuid : string, kod: string, hasloHashed: string) {
+  public resetPassword(uzytkownik_uuid: string, kod: string, hasloHashed: string) {
     return new Promise<any>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}public/reset-password`, {
         uzytkownik_uuid: uzytkownik_uuid,
@@ -228,6 +229,15 @@ export class HttpService {
   public getCurrentVisitors() {
     return new Promise<any>((resolve, rejects) => {
       this.http.get<APIResponse>(`${this.url}public/currentVisitors`, { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public getTimetables() {
+    return new Promise<any>((resolve, rejects) => {
+      this.http.get<APIResponse>(`${this.url}public/getTimetables`, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -254,12 +264,12 @@ export class HttpService {
     })
   }
 
-  public changeUserPassword(stareHasloHashed: string,noweHasloHashed: string) {
+  public changeUserPassword(stareHasloHashed: string, noweHasloHashed: string) {
     return new Promise<any>((resolve, rejects) => {
       this.http.put<APIResponse>(`${this.url}user/changeUserPassword`, {
         stareHaslo: stareHasloHashed,
         noweHaslo: noweHasloHashed,
-      }, {headers: this.headers}).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -271,7 +281,7 @@ export class HttpService {
       this.http.put<APIResponse>(`${this.url}user/editUser`, {
         imie: imie,
         nazwisko: nazwisko,
-      }, {headers: this.headers}).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -282,7 +292,7 @@ export class HttpService {
     return new Promise<any>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}user/addUserPhoneNumber`, {
         numer_telefonu: numer_telefonu
-      }, {headers: this.headers}).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -314,9 +324,11 @@ export class HttpService {
 
   public deleteRobot(robot_uuid: string) {
     return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.delete<APIResponse>(`${this.url}user/deleteRobot`, { headers: this.headers, body: {
-        robot_uuid: robot_uuid
-      } }).toPromise().then(
+      this.http.delete<APIResponse>(`${this.url}user/deleteRobot`, {
+        headers: this.headers, body: {
+          robot_uuid: robot_uuid
+        }
+      }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -343,7 +355,7 @@ export class HttpService {
       let headers = new HttpHeaders({
         'token': this.token!
       })
-      this.http.post<APIResponse>(`${this.url}user/uploadDocumentation`, formData, {headers: headers}).toPromise().then(
+      this.http.post<APIResponse>(`${this.url}user/uploadDocumentation`, formData, { headers: headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -352,19 +364,19 @@ export class HttpService {
 
   public downloadDocumentation(robot_uuid: string) {
     return new Promise<APIResponse>((resolve, rejects) => {
-      const headers = new HttpHeaders().set('token',this.token!);
-      this.http.get(`${this.url}user/downloadDocumentation/${robot_uuid}`, {headers, responseType: 'blob' as 'json'}).subscribe(
-        (response: any) =>{
+      const headers = new HttpHeaders().set('token', this.token!);
+      this.http.get(`${this.url}user/downloadDocumentation/${robot_uuid}`, { headers, responseType: 'blob' as 'json' }).subscribe(
+        (response: any) => {
           let dataType = response.type;
           let binaryData = [];
           binaryData.push(response);
           let downloadLink = document.createElement('a');
-          downloadLink.href = window.URL.createObjectURL(new Blob(binaryData, {type: dataType}));
+          downloadLink.href = window.URL.createObjectURL(new Blob(binaryData, { type: dataType }));
           downloadLink.target = "_blank";
-          downloadLink.setAttribute('download', "doc-"+robot_uuid);
+          downloadLink.setAttribute('download', "doc-" + robot_uuid);
           document.body.appendChild(downloadLink);
           downloadLink.click();
-      }
+        }
       )
     })
   }
@@ -395,10 +407,12 @@ export class HttpService {
 
   public deleteRobotCategory(kategoria_id: number, robot_uuid: string) {
     return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.delete<APIResponse>(`${this.url}user/deleteRobotCategory`, { headers: this.headers, body: {
-        kategoria_id: kategoria_id,
-        robot_uuid: robot_uuid
-      } }).toPromise().then(
+      this.http.delete<APIResponse>(`${this.url}user/deleteRobotCategory`, {
+        headers: this.headers, body: {
+          kategoria_id: kategoria_id,
+          robot_uuid: robot_uuid
+        }
+      }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -432,10 +446,12 @@ export class HttpService {
 
   public deleteConstructor(konstruktor_id: number, robot_uuid: string) {
     return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.delete<APIResponse>(`${this.url}user/deleteConstructor`, { headers: this.headers, body: {
-        konstruktor_id : konstruktor_id,
-        robot_uuid: robot_uuid
-      } }).toPromise().then(
+      this.http.delete<APIResponse>(`${this.url}user/deleteConstructor`, {
+        headers: this.headers, body: {
+          konstruktor_id: konstruktor_id,
+          robot_uuid: robot_uuid
+        }
+      }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -468,7 +484,7 @@ export class HttpService {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.put<APIResponse>(`${this.url}referee/activateGroup`, {
         grupa_id: grupa_id
-      } ,{ headers: this.headers }).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -479,7 +495,7 @@ export class HttpService {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.put<APIResponse>(`${this.url}referee/deactivateGroup`, {
         grupa_id: grupa_id
-      } ,{ headers: this.headers }).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -495,27 +511,27 @@ export class HttpService {
     })
   }
 
-  public setTimeResult(robot_uuid : string, czas_przejazdu: number, stanowisko_id: number, kategoria_id: number) {
+  public setTimeResult(robot_uuid: string, czas_przejazdu: number, stanowisko_id: number, kategoria_id: number) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}referee/setTimeResult`, {
         robot_uuid: robot_uuid,
         czas_przejazdu: czas_przejazdu,
         stanowisko_id: stanowisko_id,
         kategoria_id: kategoria_id
-       },{ headers: this.headers }).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
     })
   }
 
-  public setFightResult(walka_id: number, wygrane_rundy_robot1: number, wygrane_rundy_robot2: number ) {
+  public setFightResult(walka_id: number, wygrane_rundy_robot1: number, wygrane_rundy_robot2: number) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}referee/setFightResult`, {
         walka_id: walka_id,
         wygrane_rundy_robot1: wygrane_rundy_robot1,
         wygrane_rundy_robot2: wygrane_rundy_robot2
-       },{ headers: this.headers }).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -527,7 +543,7 @@ export class HttpService {
       this.http.put<APIResponse>(`${this.url}referee/updateTimeResult`, {
         wynik_id: wynik_id,
         czas_przejazdu: czas_przejazdu
-       },{ headers: this.headers }).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -536,12 +552,14 @@ export class HttpService {
   public deleteTimeResult(wynik_id: number) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.delete<APIResponse>(`${this.url}referee/deleteTimeResult`,
-      { headers: this.headers, body: {
-        wynik_id: wynik_id
-      }}).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
+        {
+          headers: this.headers, body: {
+            wynik_id: wynik_id
+          }
+        }).toPromise().then(
+          (value) => { resolve(value) },
+          (error) => { rejects(error) }
+        );
     })
   }
 
@@ -549,7 +567,7 @@ export class HttpService {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.put<APIResponse>(`${this.url}referee/confirmStarterpackGiven`, {
         uzytkownik_uuid: uzytkownik_uuid
-       },{ headers: this.headers }).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -583,12 +601,12 @@ export class HttpService {
     })
   }
 
-  public callForConstructors(robot_uuid : string, stanowisko_id: number, robot_nazwa: string) {
+  public callForConstructors(robot_uuid: string, stanowisko_id: number, robot_nazwa: string) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}referee/sendMessageToAllConstructorsOfRobot`, {
         robot_uuid: robot_uuid,
         tresc: `/PL/ Twoja walka wlasnie sie rozpoczyna! Przyjdz z robotem ${robot_nazwa} na Stanowisko ${stanowisko_id} w trybie natychmiastowym. Nie pojawienie sie w przeciagu 3 minut oznaczac bedzie walkower! /EN/ Your fight is about to begin! Come with the robot ${robot_nazwa} to Position ${stanowisko_id} immediately. Not showing up within 3 minutes will mean a forfeit!`
-      },{ headers: this.headers }).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -600,19 +618,19 @@ export class HttpService {
       this.http.put<APIResponse>(`${this.url}referee/confirmArrival`, {
         robot_uuid: robot_uuid,
         value: value
-       },{ headers: this.headers }).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
     })
   }
 
-  public sendPrivateMessage(uzytkownik_uuid: string, tresc : string) {
+  public sendPrivateMessage(uzytkownik_uuid: string, tresc: string) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}referee/sendPrivateMessage`, {
         uzytkownik_uuid: uzytkownik_uuid,
         tresc: tresc
-       },{ headers: this.headers }).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -622,72 +640,72 @@ export class HttpService {
   public testLED_OFF() {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.get<APIResponse>(`http://bramki.xchallenge.pl:5000/testLED_OFF`,
-      { headers: this.headers }).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
+        { headers: this.headers }).toPromise().then(
+          (value) => { resolve(value) },
+          (error) => { rejects(error) }
+        );
     })
   }
 
   public testLED_ON() {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.get<APIResponse>(`http://bramki.xchallenge.pl:5000/testLED_ON`,
-      { headers: this.headers }).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
+        { headers: this.headers }).toPromise().then(
+          (value) => { resolve(value) },
+          (error) => { rejects(error) }
+        );
     })
   }
 
   public readRFIDTag() {
     return new Promise<any>((resolve, rejects) => {
       this.http.get<any>(`http://bramki.xchallenge.pl:5000/referee/readRFIDTag`,
-      { headers: this.headers }).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
+        { headers: this.headers }).toPromise().then(
+          (value) => { resolve(value) },
+          (error) => { rejects(error) }
+        );
     })
   }
 
   public eraseRFIDTag() {
     return new Promise<any>((resolve, rejects) => {
       this.http.get<any>(`http://bramki.xchallenge.pl:5000/referee/eraseRFIDTag`,
-      { headers: this.headers }).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
+        { headers: this.headers }).toPromise().then(
+          (value) => { resolve(value) },
+          (error) => { rejects(error) }
+        );
     })
   }
 
   public readOneGate() {
     return new Promise<any>((resolve, rejects) => {
       this.http.get<any>(`http://bramki.xchallenge.pl:5000/referee/readOneGate`,
-      { headers: this.headers }).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
+        { headers: this.headers }).toPromise().then(
+          (value) => { resolve(value) },
+          (error) => { rejects(error) }
+        );
     })
   }
 
   public readTwoGates() {
     return new Promise<any>((resolve, rejects) => {
       this.http.get<any>(`http://bramki.xchallenge.pl:5000/referee/readTwoGates`,
-      { headers: this.headers }).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
+        { headers: this.headers }).toPromise().then(
+          (value) => { resolve(value) },
+          (error) => { rejects(error) }
+        );
     })
   }
 
   public writeRFIDTag(uzytkownik_id: number) {
     return new Promise<any>((resolve, rejects) => {
-      this.http.post<any>(`http://bramki.xchallenge.pl:5000/referee/writeRFIDTag`,{
+      this.http.post<any>(`http://bramki.xchallenge.pl:5000/referee/writeRFIDTag`, {
         uzytkownik_id: uzytkownik_id
       },
-      { headers: this.headers }).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
+        { headers: this.headers }).toPromise().then(
+          (value) => { resolve(value) },
+          (error) => { rejects(error) }
+        );
     })
   }
 
@@ -698,7 +716,7 @@ export class HttpService {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}user/addPostalCode`, {
         kod_pocztowy: kod_pocztowy
-       },{ headers: this.headers }).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -710,19 +728,19 @@ export class HttpService {
       this.http.put<APIResponse>(`${this.url}admin/addRobotRejection`, {
         robot_uuid: robot_uuid,
         powod_odrzucenia: powod_odrzucenia
-       },{ headers: this.headers }).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
     })
   }
 
-  public changeUserType(uzytkownik_uuid: string, uzytkownik_typ : number) {
+  public changeUserType(uzytkownik_uuid: string, uzytkownik_typ: number) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.put<APIResponse>(`${this.url}admin/changeUserType`, {
         uzytkownik_uuid: uzytkownik_uuid,
         uzytkownik_typ: uzytkownik_typ
-       },{ headers: this.headers }).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -736,7 +754,7 @@ export class HttpService {
         kategoria_id: kategoria_id,
         iloscDoFinalu: iloscDoFinalu,
         opcjaTworzenia: opcjaTworzenia
-       },{ headers: this.headers }).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -748,7 +766,7 @@ export class HttpService {
       this.http.post<APIResponse>(`${this.url}admin/addGroup`, {
         nazwa: nazwa,
         kategoria_id: kategoria_id
-       },{ headers: this.headers }).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -760,7 +778,7 @@ export class HttpService {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}admin/deleteGroup`, {
         grupa_id: grupa_id
-       },{ headers: this.headers }).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -773,7 +791,7 @@ export class HttpService {
         stanowisko_id: stanowisko_id,
         nastepna_walka_id: nastepna_walka_id,
         grupa_id: grupa_id
-       },{ headers: this.headers }).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -786,7 +804,7 @@ export class HttpService {
         robot_uuid: robot_uuid,
         walka_id: walka_id,
         robot1czy2: robot1czy2
-       },{ headers: this.headers }).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -795,9 +813,11 @@ export class HttpService {
 
   public deleteFight(walka_id: number) {
     return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.delete<APIResponse>(`${this.url}admin/removeFight`, { headers: this.headers, body: {
-        walka_id: walka_id
-      }}).toPromise().then(
+      this.http.delete<APIResponse>(`${this.url}admin/removeFight`, {
+        headers: this.headers, body: {
+          walka_id: walka_id
+        }
+      }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -807,18 +827,18 @@ export class HttpService {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}admin/addPosition`, {
         nazwa: nazwa
-      }, { headers: this.headers}).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
     })
   }
-  public editPosition(stanowisko_id: number,nazwa: string) {
+  public editPosition(stanowisko_id: number, nazwa: string) {
     return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.put<APIResponse>(`${this.url}admin/editPosition`,{
+      this.http.put<APIResponse>(`${this.url}admin/editPosition`, {
         stanowisko_id: stanowisko_id,
         nazwa: nazwa
-      }, { headers: this.headers}).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -827,9 +847,11 @@ export class HttpService {
 
   public removePosition(stanowisko_id: number) {
     return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.delete<APIResponse>(`${this.url}admin/removePosition`, { headers: this.headers, body: {
-        stanowisko_id: stanowisko_id
-      }}).toPromise().then(
+      this.http.delete<APIResponse>(`${this.url}admin/removePosition`, {
+        headers: this.headers, body: {
+          stanowisko_id: stanowisko_id
+        }
+      }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -841,7 +863,7 @@ export class HttpService {
       this.http.post<APIResponse>(`${this.url}admin/addCategoryToPosition`, {
         stanowisko_id: stanowisko_id,
         kategoria_id: kategoria_id
-      }, { headers: this.headers}).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -849,10 +871,12 @@ export class HttpService {
   }
   public removeCategoryFromPosition(stanowisko_id: number, kategoria_id: number) {
     return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.delete<APIResponse>(`${this.url}admin/removeCategoryFromPosition`, { headers: this.headers, body: {
-        stanowisko_id: stanowisko_id,
-        kategoria_id: kategoria_id
-      }}).toPromise().then(
+      this.http.delete<APIResponse>(`${this.url}admin/removeCategoryFromPosition`, {
+        headers: this.headers, body: {
+          stanowisko_id: stanowisko_id,
+          kategoria_id: kategoria_id
+        }
+      }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -864,7 +888,7 @@ export class HttpService {
       this.http.post<APIResponse>(`${this.url}admin/addRefereeToPosition`, {
         stanowisko_id: stanowisko_id,
         uzytkownik_uuid: uzytkownik_uuid
-      },{ headers: this.headers}).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -872,10 +896,12 @@ export class HttpService {
   }
   public removeRefereeToPosition(stanowisko_id: number, uzytkownik_uuid: string) {
     return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.delete<APIResponse>(`${this.url}admin/removeRefereeFromPosition`, { headers: this.headers, body: {
-        stanowisko_id: stanowisko_id,
-        uzytkownik_uuid: uzytkownik_uuid
-      }}).toPromise().then(
+      this.http.delete<APIResponse>(`${this.url}admin/removeRefereeFromPosition`, {
+        headers: this.headers, body: {
+          stanowisko_id: stanowisko_id,
+          uzytkownik_uuid: uzytkownik_uuid
+        }
+      }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
@@ -886,7 +912,47 @@ export class HttpService {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}admin/sendMessageToAllUsers`, {
         tresc: tresc
-      },{ headers: this.headers}).toPromise().then(
+      }, { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public addNewTimetable(nazwa: string, godzina_rozpoczecia: Date, interwal: number, wiersze: number, kolumny: number) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`${this.url}admin/addNewTimetable`, {
+        nazwa: nazwa,
+        godzina_rozpoczecia: godzina_rozpoczecia.toISOString(),
+        interwal: interwal,
+        wiersze: wiersze,
+        kolumny: kolumny
+      }, { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public editTimetable(harmonogram_id: number, komorki: any) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.put<APIResponse>(`${this.url}admin/editTimetable`, {
+        harmonogram_id: harmonogram_id,
+        komorki: JSON.stringify(komorki)
+      }, { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public deleteTimetable(harmonogram_id: number) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.delete<APIResponse>(`${this.url}admin/deleteTimetable`, {
+        body: {
+          harmonogram_id: harmonogram_id
+        }, headers: this.headers
+      }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
       );
