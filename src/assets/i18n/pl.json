@@ -204,7 +204,8 @@
                 { "id": 20, "patreonCategory": 6, "description": "Huawei", "image": "../../assets/jpg/huawei.png", "linkToSite": "https://seedsforthefuture.pl/" },
                 { "id": 21, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" },
                 { "id": 22, "patreonCategory": 2, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
-                { "id": 23, "patreonCategory": 1, "description": "Podkarpackie Centrum Innowacji", "image": "../../assets/jpg/pci.png", "linkToSite": "https://pcinn.org/" }
+                { "id": 23, "patreonCategory": 1, "description": "Podkarpackie Centrum Innowacji", "image": "../../assets/jpg/pci.png", "linkToSite": "https://pcinn.org/" },
+                { "id": 24, "patreonCategory": 5, "description": "Minister Edukacji i Nauki", "image": "../../assets/jpg/minister_edukacji.png", "linkToSite": "https://www.gov.pl/web/edukacja-i-nauka" }
 
             ],
             "tiers": [
