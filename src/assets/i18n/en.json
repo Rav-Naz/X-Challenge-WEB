@@ -437,6 +437,9 @@
             "is-sliding": "Auto sliding results view",
             "is-showing-details": "Show result details",
             "is-esp32": "Display the RFID and gateway control panel (computer only)",
+            "read-card": "Read card",
+            "erase-card": "Erase card",
+            "read-time": "Read time",
             "change": "* Preferences cannot be changed independently after registration. Please contact the administrator to make changes.",
             "errors": {
                 "succesfuly-added-phone": "Phone number changed successfully",
@@ -1234,6 +1237,12 @@
         },
         "fontWeight": {
             "name": "Font weight",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "rfid_option": {
+            "name": "RFID reader and gate options",
             "validators": {
                 "required": "This field is required"
             }

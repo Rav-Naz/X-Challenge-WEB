@@ -11,7 +11,7 @@ import { InputComponent } from '../shared/input/input.component';
 })
 export class Esp32Service {
 
-  public isRFIDDevice: boolean = false;
+  public rfidOption: number = 1;
   public isLoading: boolean = false;
   public isAutocomplete: boolean = false;
   public lastResponse: any = null;
@@ -19,15 +19,17 @@ export class Esp32Service {
   public lastActivedElement: InputComponent | null = null;
 
   constructor(private errorService: ErrorsService, private translate: TranslateService, private http: HttpService, private ui: UiService, private refereeService: RefereeService) {
-    this.isRFIDDevice = localStorage.getItem('isRFIDDevice') == 'true';
+    let option = localStorage.getItem('rfidOption');
+    this.rfidOption = option != null ? Number(option) : 1;
     this.refereeService.allUsers$.subscribe((data) => {
       this.allUsers = data;
     })
   }
 
-  onChangeRFIDDevice() {
-    this.isRFIDDevice = !this.isRFIDDevice;
-    localStorage.setItem('isRFIDDevice', this.isRFIDDevice.toString());
+  onChangeRFIDDevice(option: number) {
+    this.rfidOption = option;
+    console.log(option)
+    localStorage.setItem('rfidOption', option.toString());
   }
   onChangeAutocomplete() {
     this.isAutocomplete = !this.isAutocomplete;
@@ -42,7 +44,7 @@ export class Esp32Service {
     this.lastActivedElement = currentInput;
   }
 
-  uzytkownikIdHandler(uzytkownik_id:number) {
+  uzytkownikIdHandler(uzytkownik_id: number) {
     let finded = this.allUsers?.find(user => user.uzytkownik_id == uzytkownik_id)
     if (finded) {
       this.lastResponse = finded.uzytkownik_uuid
@@ -56,9 +58,9 @@ export class Esp32Service {
 
   public readRFIDTag() {
     this.isLoading = true;
-    return new Promise<any>(async (resolve,reject) => {
+    return new Promise<any>(async (resolve, reject) => {
       const value = await this.http.readRFIDTag().catch(err => {
-        if(err.status === 400) {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
           reject(err);
         } else {
@@ -78,9 +80,9 @@ export class Esp32Service {
 
   public eraseRFIDTag() {
     this.isLoading = true;
-    return new Promise<any>(async (resolve,reject) => {
+    return new Promise<any>(async (resolve, reject) => {
       const value = await this.http.eraseRFIDTag().catch(err => {
-        if(err.status === 400) {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
           reject(err);
         } else {
@@ -93,7 +95,7 @@ export class Esp32Service {
         this.errorHandler(value)
       } else {
         this.lastResponse = null
-        this.ui.showFeedback('succes',"Pomyślnie wyczyszczono kartę RFID",3)
+        this.ui.showFeedback('succes', "Pomyślnie wyczyszczono kartę RFID", 3)
         resolve(value);
       }
     });
@@ -101,9 +103,9 @@ export class Esp32Service {
 
   public readOneGate() {
     this.isLoading = true;
-    return new Promise<any>(async (resolve,reject) => {
+    return new Promise<any>(async (resolve, reject) => {
       const value = await this.http.readOneGate().catch(err => {
-        if(err.status === 400) {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
           reject(err);
         } else {
@@ -125,9 +127,9 @@ export class Esp32Service {
 
   public readTwoGates() {
     this.isLoading = true;
-    return new Promise<any>(async (resolve,reject) => {
+    return new Promise<any>(async (resolve, reject) => {
       const value = await this.http.readTwoGates().catch(err => {
-        if(err.status === 400) {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
           reject(err);
         } else {
@@ -149,9 +151,9 @@ export class Esp32Service {
 
   public writeRFIDTag(uzytkownik_id: number) {
     this.isLoading = true;
-    return new Promise<any>(async (resolve,reject) => {
+    return new Promise<any>(async (resolve, reject) => {
       const value = await this.http.writeRFIDTag(uzytkownik_id).catch(err => {
-        if(err.status === 400) {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
           reject(err);
         } else {
@@ -169,24 +171,24 @@ export class Esp32Service {
     });
   }
 
-  copyToClipboard(value: string){
-    if(this.lastActivedElement && this.isAutocomplete) {
+  copyToClipboard(value: string) {
+    if (this.lastActivedElement && this.isAutocomplete) {
       this.lastActivedElement.updateValueFromOutside(value);
     }
     let selBox = document.createElement('textarea');
-      selBox.style.position = 'fixed';
-      selBox.style.left = '0';
-      selBox.style.top = '0';
-      selBox.style.opacity = '0';
-      selBox.value = value;
-      document.body.appendChild(selBox);
-      selBox.focus();
-      selBox.select();
-      document.execCommand('copy');
-      document.body.removeChild(selBox);
-    }
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = value;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
+  }
 
-  copyLastResponse(){
+  copyLastResponse() {
     this.copyToClipboard(this.lastResponse)
   }
 }
