@@ -511,13 +511,14 @@ export class HttpService {
     })
   }
 
-  public setTimeResult(robot_uuid: string, czas_przejazdu: number, stanowisko_id: number, kategoria_id: number) {
+  public setTimeResult(robot_uuid: string, czas_przejazdu: number, stanowisko_id: number, kategoria_id: number, uwagi: string | null) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}referee/setTimeResult`, {
         robot_uuid: robot_uuid,
         czas_przejazdu: czas_przejazdu,
         stanowisko_id: stanowisko_id,
-        kategoria_id: kategoria_id
+        kategoria_id: kategoria_id,
+        uwagi: uwagi
       }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
@@ -778,6 +779,18 @@ export class HttpService {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}admin/deleteGroup`, {
         grupa_id: grupa_id
+      }, { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public editGroup(grupa_id: number, nazwa: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.put<APIResponse>(`${this.url}admin/editName`, {
+        grupa_id: grupa_id,
+        nazwa: nazwa
       }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }

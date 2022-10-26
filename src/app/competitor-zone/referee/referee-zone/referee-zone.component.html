@@ -102,6 +102,10 @@
                                                 <label>{{'competitor-zone.referee-zone.robot-id' | translate}}&nbsp;</label>
                                                 <label>{{time.robot_id}}</label>
                                             </div>
+                                            <div *ngIf="time.uwagi" class="referee-results-fights-element-details-flex-piece">
+                                                <label>{{'competitor-zone.referee-zone.comment' | translate}}&nbsp;</label>
+                                                <label>{{time.uwagi}}</label>
+                                            </div>
                                             <!-- <div class="referee-results-fights-element-details-flex-piece">
                                                 <label>{{'competitor-zone.referee-zone.result-id' | translate}}&nbsp;</label>
                                                 <label>{{time.wynik_id}}</label>

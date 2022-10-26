@@ -221,6 +221,7 @@ export class ResultsComponent implements OnInit, OnDestroy {
   }
   async threeBestRobotsInPoints() {
     let results = this.getCategoryTimesResult;
+    // console.log(results);
     if (results == undefined || results == null) return null;
     results.sort((a, b) => b.czas_przejazdu - a.czas_przejazdu);
     let robotsAndPoints: any[] = []
@@ -232,7 +233,14 @@ export class ResultsComponent implements OnInit, OnDestroy {
         robotsAndPoints.push({ robot_uuid: result.robot_uuid, nazwa_robota: result.nazwa_robota, wynik: result.czas_przejazdu })
       }
     })
-    robotsAndPoints = robotsAndPoints.sort((a, b) => b.wynik - a.wynik)
+    if (this.selectedCategory == 11) { // Cebula house
+      robotsAndPoints.forEach(robot => {
+        var count = results?.filter(res => robot.robot_uuid == res.robot_uuid).length;
+        robot.wynik /= count != undefined ? count : 1;
+        robot.wynik = Math.floor(robot.wynik * 10) / 10;
+      });
+    }
+    robotsAndPoints = robotsAndPoints.sort((a, b) => b.wynik - a.wynik);
     return robotsAndPoints
   }
 

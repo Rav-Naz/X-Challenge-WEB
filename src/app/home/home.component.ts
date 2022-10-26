@@ -175,6 +175,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       // this.eventDate = new Date((data as any).eventDate);
       if ((data as any).streamLink) {
         this.streamLink = (data as any).streamLink;
+        // console.log((this.streamLink as any));
         this.registerInfo = (data as any).registerInfo;
       }
     })

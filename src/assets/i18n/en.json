@@ -198,7 +198,9 @@
                 { "id": 21, "patreonCategory": 6, "description": "Huawei", "image": "../../assets/jpg/huawei.png", "linkToSite": "https://seedsforthefuture.pl/" },
                 { "id": 22, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" },
                 { "id": 23, "patreonCategory": 2, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
-                { "id": 24, "patreonCategory": 1, "description": "Podkarpackie Innovation Center", "image": "../../assets/jpg/pci.png", "linkToSite": "https://pcinn.org/" }
+                { "id": 24, "patreonCategory": 1, "description": "Podkarpackie Innovation Center", "image": "../../assets/jpg/pci.png", "linkToSite": "https://pcinn.org/" },
+                { "id": 25, "patreonCategory": 3, "description": "Podkarpackie Medical Rescue Center", "image": "../../assets/jpg/pcmr.png", "linkToSite": "https://pcrm.com.pl/" },
+                { "id": 26, "patreonCategory": 4, "description": "Student Research Group of Computer Science KOD", "image": "../../assets/jpg/skni.png", "linkToSite": "https://kod.prz.edu.pl/" }
 
             ],
             "tiers": [
@@ -545,6 +547,7 @@
             "pts": "pts",
             "category-id": "Category ID: ",
             "robot-id": "Robot ID: ",
+            "comment": "Comment: ",
             "result-id": "Result ID: ",
             "add": "Add result",
             "added": "Result added",
@@ -1234,6 +1237,9 @@
             "validators": {
                 "required": "This field is required"
             }
+        },
+        "comment": {
+            "name": "Comment"
         }
     },
     "errors": {

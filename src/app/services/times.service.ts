@@ -41,7 +41,7 @@ export class TimesService {
   public getAllTimes() {
     return new Promise<APIResponse | void>(async (resolve, reject) => {
       if (this.allTimes.value === null && this.allTimes.value === undefined && this) { reject(); return; }
-      if(this.allTimes.value !== null) { resolve({message: "INFO: OK", body: this.allTimes.value}); return;}
+      if (this.allTimes.value !== null) { resolve({ message: "INFO: OK", body: this.allTimes.value }); return; }
       const value = await this.http.getAllTimes.catch(err => {
         if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
@@ -107,9 +107,9 @@ export class TimesService {
   }
 
 
-  public setTimeResult(robot_uuid: string, czas_przejazdu: number, stanowisko_id: number, kategoria_id: number) {
+  public setTimeResult(robot_uuid: string, czas_przejazdu: number, stanowisko_id: number, kategoria_id: number, uwagi: string | null) {
     return new Promise<APIResponse | void>(async (resolve) => {
-      const value = await this.http.setTimeResult(robot_uuid, czas_przejazdu, stanowisko_id, kategoria_id).catch(err => {
+      const value = await this.http.setTimeResult(robot_uuid, czas_przejazdu, stanowisko_id, kategoria_id, uwagi).catch(err => {
         if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
@@ -142,7 +142,7 @@ export class TimesService {
           this.errorService.showError(err.status);
         }
       })
-      if(value) {
+      if (value) {
         this.ui.showFeedback('loading', `Usunięto wynik ${value.body.wynik_id}`, 3)
       }
       resolve(value);
