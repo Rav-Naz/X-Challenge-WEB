@@ -36,7 +36,8 @@ export class AddTimeResultComponent implements OnInit, OnDestroy {
       constructor_uuid: [null, [Validators.required, Validators.minLength(36), Validators.maxLength(36)]]
     });
     this.formTime = this.formBuilder.group({
-      time: [null, [Validators.required, Validators.maxLength(7)]]
+      time: [null, [Validators.required, Validators.maxLength(7)]],
+      comment: [null, [Validators.maxLength(500)]]
     });
   }
 
@@ -46,7 +47,7 @@ export class AddTimeResultComponent implements OnInit, OnDestroy {
   }
 
   async getUserRobots() {
-    if(this.isFormUserUUIDValid) {
+    if (this.isFormUserUUIDValid) {
       this.loading = true;
       const uzytkownik_uuid = this.formUUID.get('constructor_uuid')?.value;
       const response = await this.refereeService.getRobotsOfUserInCategory(uzytkownik_uuid, this.kategoria_id!).catch(err => {
@@ -81,7 +82,8 @@ export class AddTimeResultComponent implements OnInit, OnDestroy {
     if (this.isFromTimeValid) {
       this.loading = true;
       const czas_przejazdu = this.formTime.get('time')?.value;
-      const response = await this.timesService.setTimeResult(this.selectedRobot!.robot_uuid, czas_przejazdu, this.stanowisko_id!, this.kategoria_id!).catch(err => {
+      const uwagi = this.formTime.get('comment')?.value;
+      const response = await this.timesService.setTimeResult(this.selectedRobot!.robot_uuid, czas_przejazdu, this.stanowisko_id!, this.kategoria_id!, uwagi != undefined ? uwagi : null).catch(err => {
         return null
       });
       if (response !== undefined && response !== null && response.message === "INFO: OK") {
@@ -98,7 +100,7 @@ export class AddTimeResultComponent implements OnInit, OnDestroy {
   }
 
   previousPage() {
-    if(this.viewCounter === 0) {
+    if (this.viewCounter === 0) {
       this.backToPositions();
     } else {
       this.viewCounter--;
@@ -112,7 +114,7 @@ export class AddTimeResultComponent implements OnInit, OnDestroy {
   }
 
   get getCategoryType() {
-    if(this.kategoria_id) {
+    if (this.kategoria_id) {
       return this.categoryService.getCategoryType(this.kategoria_id);
     } else {
       return undefined
@@ -128,7 +130,7 @@ export class AddTimeResultComponent implements OnInit, OnDestroy {
   }
 
   get isCredentials() {
-    return this.kategoria_id && this.stanowisko_id && typeof(this.kategoria_id) === "number" && typeof(this.stanowisko_id) === 'number';
+    return this.kategoria_id && this.stanowisko_id && typeof (this.kategoria_id) === "number" && typeof (this.stanowisko_id) === 'number';
   }
 
   get isLoading() {

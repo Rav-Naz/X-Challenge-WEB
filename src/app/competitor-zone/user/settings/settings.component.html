@@ -58,11 +58,13 @@
               <input type="checkbox" (click)="onChangeDisplayDevice()" [checked]="isDisplayDevice">
               <span class="checkmark"></span>
           </label>
-            <label class="checkbox-container">
+            <!-- <label class="checkbox-container">
               <a [ngClass]="{'checkbox-checked': esp32Service.isRFIDDevice}">{{'competitor-zone.settings.is-esp32' | translate}}</a>
               <input type="checkbox" (click)="esp32Service.onChangeRFIDDevice()" [checked]="esp32Service.isRFIDDevice">
               <span class="checkmark"></span>
-          </label>
+          </label> -->
+            <app-select [group]="formRFID" controlName="rfid_option" [options]="gatesOptions" translatePrefix="controls"></app-select>
+
         </section>
         <!-- <section *ngIf="userService.isReferee">
             <a>{{'competitor-zone.settings.test'  | translate}}</a>

@@ -22,7 +22,7 @@
                     <button class="submit-button" [disabled]="!isPositionFormValid || !isLessThanFinalValueButton" (click)="addPosition()"><i class="las la-plus"></i></button>
                 </div>
                 <label *ngFor="let selPos of getSelectedPositions"><i class="las la-trash-alt" (click)="removePosition(selPos)"></i> {{selPos}}</label>
-                <a>Ilość wybranych stanowisk jest jednocześnie ilością grup (2,4,8 lub 16) i nie może być mniejsza niż "Ilość do finału"</a>
+                <a>Ilość wybranych stanowisk jest jednocześnie ilością grup (2,4,8 lub 16) i nie może być większe niż "Ilość do finału"</a>
                 <p>Wiadomość zwrotna:</p>
                 <p *ngIf="resp">{{resp}}</p>
                 <button class="submit-button" [disabled]="!isNewGroupFormValid || !isLessThanFinalValue" (click)="createGroup()">UTWÓRZ GRUPY DLA KATEGORII</button>
@@ -32,7 +32,11 @@
     </section>
     <section class="tree" *ngIf="!isLoadingDeletingGroup && selectedGroup && selectedGroup != -1">
         <div class="tree-fight-row tree-fight-row-height" *ngIf="canModify">
-            <button class="submit-button tree-button" (click)="deleteGroup()">USUŃ GRUPE</button>
+            <div style="display: flex; flex-direction:column;">
+                <button class="submit-button tree-button" (click)="deleteGroup()">USUŃ GRUPE</button>
+                <app-input [group]="formManualNewGroup" controlName="group_name" translatePrefix="controls" [collapsed]="true"></app-input>
+                <button class="submit-button" [disabled]="!isManualNewGroupFormValid" (click)="editGroup()">ZMIEŃ NAZWĘ GRUPY</button>
+            </div>
             <!-- <button class="submit-button" (click)="deleteGroup()">DODAJ WALKĘ</button> -->
             <ng-container *ngIf="{new: false} as variable">
                 <button class="submit-button" (click)="variable.new = true; formNewFight.reset();" *ngIf="!variable.new && getSelectedGroupType == 1">DODAJ WALKĘ</button>

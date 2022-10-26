@@ -3,14 +3,13 @@ import { WebsocketService } from './websocket.service';
 import { BehaviorSubject } from 'rxjs';
 import { UiService } from './ui.service';
 import { ErrorsService } from './errors.service';
-import { Injectable } from '@angular/core';
+import { Injectable, Injector } from '@angular/core';
 import { HttpService } from './http.service';
 import { Router } from '@angular/router';
 import { sha256 } from 'js-sha256'
 import { TranslateService } from '@ngx-translate/core';
 import jwt_decode from 'jwt-decode';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { APIResponse } from '../models/response';
 
 
 @Injectable({
@@ -18,7 +17,7 @@ import { APIResponse } from '../models/response';
 })
 export class AuthService {
 
-  public JWT: string | null= null;
+  public JWT: string | null = null;
   public eventDate: Date | null = null;
   public accessToModifyExpirationDate: Date | null = null;
   public accesToSendDocumentation: Date | null = null;
@@ -32,10 +31,10 @@ export class AuthService {
   public tshirtSizes: Array<string> | null = null;
 
   constructor(private http: HttpService, private router: Router, private errorService: ErrorsService, private ui: UiService,
-     private translate: TranslateService, private webSocket: WebsocketService, private userService: UserService,private sanitizer: DomSanitizer) {
-       const details = localStorage.getItem('details');
-       this.http.getHomePageInfo.subscribe((data) => {
-      if(data === undefined || data === null) return;
+    private translate: TranslateService, private webSocket: WebsocketService, private userService: UserService, private sanitizer: DomSanitizer, private injector: Injector) {
+    const details = localStorage.getItem('details');
+    this.http.getHomePageInfo.subscribe((data) => {
+      if (data === undefined || data === null) return;
       this.accessToModifyExpirationDate = new Date(data.body.accessToModifyExpirationDate.data_zakonczenia);
       this.registrationStart = new Date(data.body.accessToModifyExpirationDate.data_rozpoczecia);
       this.registrationEnd = new Date(data.body.accessToModifyExpirationDate.data_zakonczenia);
@@ -43,7 +42,7 @@ export class AuthService {
       this.accesToSendDocumentation = new Date(data.body.accesToSendDocumentation.data_zakonczenia);
       this.robotAcceptTime = new Date(data.body.robotAcceptTime.data_zakonczenia);
       this.registerInfo = data.body.registerInfo;
-      if(data.body.streamLink) {
+      if (data.body.streamLink) {
         this.streamLink = this.sanitizer.bypassSecurityTrustResourceUrl(data.body.streamLink);
       }
       this.info.next({
@@ -58,11 +57,11 @@ export class AuthService {
     })
     if (details) {
       this.SetDetails(details).then(() => {
-        if(!this.isLogged) { this.SetDetails(null) }
+        if (!this.isLogged) { this.SetDetails(null) }
         else {
           setTimeout(() => {
             this.userService.getUser().then((value) => {
-              this.SetDetails(JSON.stringify({...value.body, token: this.JWT}))
+              this.SetDetails(JSON.stringify({ ...value.body, token: this.JWT }))
             })
           }, 1000)
         };
@@ -75,7 +74,7 @@ export class AuthService {
   SetDetails(userDetails: string | null) {
     return new Promise<void>((resolve) => {
 
-      if(userDetails !== null) {
+      if (userDetails !== null) {
         const detailsParsed = JSON.parse(userDetails);
         this.userService.userDetails = detailsParsed;
         this.JWT = detailsParsed.token;
@@ -100,21 +99,20 @@ export class AuthService {
     localStorage.setItem('details', JSON.stringify(this.userService.userDetails));
   }
 
-  async login(email: string, haslo: string)
-  {
+  async login(email: string, haslo: string) {
     return new Promise<string>(async (resolve) => {
-      const value = await this.http.login(email,this.hashPassword(haslo).toString()).catch(err => {
-        if(err.status === 400) {
+      const value = await this.http.login(email, this.hashPassword(haslo).toString()).catch(err => {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
 
         } else if (err.status === 401) {
           this.errorService.showError(err.status, this.translate.instant('competitor-zone.login.errors.failed'));
         }
-         else {
+        else {
           this.errorService.showError(err.status);
         }
       })
-      if(value !== undefined) {
+      if (value !== undefined) {
         this.SetDetails(JSON.stringify(value.body))
         this.router.navigateByUrl('/competitor-zone').then(() => {
         })
@@ -128,14 +126,14 @@ export class AuthService {
       var kod_pocztowy = kodPocztowy != null && kodPocztowy.length > 0 ? kodPocztowy : null;
       var numer_telefonu = numerTelefonu != null && numerTelefonu.length > 0 ? numerTelefonu : null;
       var czy_opiekun = czyOpiekun ? 1 : 0;
-      const value = await this.http.register(imie,nazwisko,email,kod_pocztowy,numer_telefonu,rozmiarKoszulki,preferowaneJedzenie,czy_opiekun,this.hashPassword(haslo).toString()).catch(err => {
-        if(err.status === 400) {
+      const value = await this.http.register(imie, nazwisko, email, kod_pocztowy, numer_telefonu, rozmiarKoszulki, preferowaneJedzenie, czy_opiekun, this.hashPassword(haslo).toString()).catch(err => {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
           this.errorService.showError(err.status);
         }
       })
-      if(value !== undefined) {
+      if (value !== undefined) {
         this.router.navigateByUrl('/login').then(() => {
           setTimeout(() => {
             this.ui.showFeedback("succes", this.translate.instant('competitor-zone.register.errors.success'), 4)
@@ -149,13 +147,13 @@ export class AuthService {
   async remindPassword(email: string) {
     return new Promise<string>(async (resolve, reject) => {
       const value = await this.http.remindPassword(email).catch(err => {
-        if(err.status === 400) {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
           this.errorService.showError(err.status);
         }
       })
-      if(value !== undefined) {
+      if (value !== undefined) {
         this.ui.showFeedback("succes", this.translate.instant('competitor-zone.forgot-password.errors.sended'), 4)
         resolve(value);
       } else {
@@ -164,16 +162,16 @@ export class AuthService {
     });
   }
 
-  async resetPassword(uzytkownik_uuid : string, kod: string, haslo: string) {
+  async resetPassword(uzytkownik_uuid: string, kod: string, haslo: string) {
     return new Promise<string>(async (resolve) => {
-      const value = await this.http.resetPassword(uzytkownik_uuid,kod,this.hashPassword(haslo).toString()).catch(err => {
-        if(err.status === 400) {
+      const value = await this.http.resetPassword(uzytkownik_uuid, kod, this.hashPassword(haslo).toString()).catch(err => {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
           this.errorService.showError(err.status);
         }
       })
-      if(value !== undefined) {
+      if (value !== undefined) {
         this.router.navigateByUrl('/login').then(() => {
           setTimeout(() => {
             this.ui.showFeedback("succes", this.translate.instant('competitor-zone.reset-password.errors.success'), 4)
@@ -184,27 +182,26 @@ export class AuthService {
     });
   }
 
-  async changeUserPassword(stareHaslo : string, noweHaslo: string) {
+  async changeUserPassword(stareHaslo: string, noweHaslo: string) {
     return new Promise<string>(async (resolve) => {
       const value = await this.http.changeUserPassword(this.hashPassword(stareHaslo).toString(), this.hashPassword(noweHaslo).toString()).catch(err => {
-        if(err.status === 400) {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
           this.errorService.showError(err.status);
         }
       })
-      if(value !== undefined) {
+      if (value !== undefined) {
         this.ui.showFeedback("succes", this.translate.instant('competitor-zone.settings.errors.success'))
       }
       resolve(value);
     });
   }
 
-  async logout()
-  {
+  async logout() {
     return new Promise<void>(async (resolve) => {
       await this.SetDetails(null);
-      if(this.router.url.length === 1 || (this.router.url.length > 1 && this.router.url.slice(0,2) === '/#')) { //jeśli jest na stronie głownej
+      if (this.router.url.length === 1 || (this.router.url.length > 1 && this.router.url.slice(0, 2) === '/#')) { //jeśli jest na stronie głownej
         setTimeout(() => {
           this.ui.showFeedback('succes', this.translate.instant('competitor-zone.login.errors.logout'), 3);
         }, 400);
@@ -219,18 +216,17 @@ export class AuthService {
     });
   }
 
-  async getRegisterAddons()
-  {
+  async getRegisterAddons() {
     return new Promise<any>(async (resolve) => {
-      if(this.foodList == null || this.tshirtSizes == null) {
+      if (this.foodList == null || this.tshirtSizes == null) {
         this.http.getRegisterAddons.toPromise().then((value) => {
-            this.foodList = value.body.jedzenie;
-            this.tshirtSizes = value.body.rozmiaryKoszulek;
-            resolve(value);
+          this.foodList = value.body.jedzenie;
+          this.tshirtSizes = value.body.rozmiaryKoszulek;
+          resolve(value);
         }).catch((err) => {
           resolve(null)
         });
-      } else { resolve(null)}
+      } else { resolve(null) }
     });
 
   }
@@ -243,9 +239,8 @@ export class AuthService {
     return this.info.asObservable();
   }
 
-  get isLogged()
-  {
-    if(this.JWT === null || this.JWT === undefined) return false;
+  get isLogged() {
+    if (this.JWT === null || this.JWT === undefined) return false;
     const d = new Date(0);
     d.setUTCSeconds((jwt_decode(this.JWT!) as any).exp);
     return new Date() < d;
@@ -278,10 +273,10 @@ export class AuthService {
 
   get isEvent() {
     // return false
-    return (this.eventDate != null && this.eventDate < new Date());
+    return (this.eventDate != null && this.eventDate < new Date()) || this.injector.get(UserService).isAdmin;
   }
 
   get registerPercentageCompletion() {
-    return this.registerInfo != null ? Math.round((this.registerInfo.aktualnie / this.registerInfo.limitOsob)*100) : 100
+    return this.registerInfo != null ? Math.round((this.registerInfo.aktualnie / this.registerInfo.limitOsob) * 100) : 100
   }
 }

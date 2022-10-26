@@ -22,11 +22,10 @@
             skills of many robotics. In addition to the standard competitions, the organizers have prepared many surprises. Every constructor, regardless of whether he is just starting his adventure with electronics or is already experienced, will surely
             find something for himself. There will also be competition dedicated to LEGO fans.</h4>
         <h3 class="section-header" *ngIf="timeToEvent">{{timeIsUp ? streamLink === undefined ? ('home.event-info.status.ended' | translate) : ('home.event-info.status.live' | translate) : ('home.event-info.status.coming' | translate)}}</h3>
-        <!-- <div class="iframe-container" *ngIf="timeIsUp && streamLink !== undefined"> -->
-        <!-- <iframe src="" width="500" height="500" style="border:none;overflow:hidden" scrolling="no"
-                frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe> -->
-        <!-- <iframe [src]="streamLink" target="_top" title="ROBOmotion Livestream" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-        <!-- </div> -->
+        <div class="iframe-container" *ngIf="timeIsUp && streamLink !== undefined">
+            <iframe src="" width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+            <iframe [src]="streamLink" target="_top" title="ROBOmotion Livestream" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
         <!-- <a class="stream" target="_blank" href="https://www.twitch.tv/robomotion2021">STREAM Z ROZGRYWKI</a> -->
 
         <button [routerLink]="['/results']" *ngIf="timeIsUp">{{'home.event-info.results' | translate}}</button>
@@ -93,11 +92,11 @@
                 </p>
             </div>
         </div>
-        <!-- <label class="event-info-details-main">
-            {{'home.event-info.covid.1' | translate}}
-            <a [routerLink]="['/app-rules']">{{'home.event-info.covid.2' | translate}}</a>
-            {{'home.event-info.covid.3' | translate}}
-        </label> -->
+        <label class="event-info-details-main">
+            <a style="cursor: pointer" href="https://rzgit-my.sharepoint.com/:f:/g/personal/robo_kneiti_prz_edu_pl/EqKx4mHvtytAlsWma5vp-x4BTKe2h5ESdhWSw5pcakTBWg?e=N23Zmr">{{'home.event-info.important.1' | translate}}</a>
+            <!-- <a [routerLink]="['/app-rules']">{{'home.event-info.covid.2' | translate}}</a>
+            {{'home.event-info.covid.3' | translate}} -->
+        </label>
         <!-- <ng-container *ngIf="!timeIsUp">
             <a class="event-info-choose" href="https://forms.office.com/r/6aN4DYgAZ4" target="_blank">{{'home.event-info.important-choose' | translate}}<i class="las la-external-link-alt"></i></a>
             <p *ngIf="!timeIsUp2 && timeLeft" [routerLink]="['/login']">{{'home.event-info.open' | translate}}</p>

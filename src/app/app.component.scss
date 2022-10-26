@@ -565,8 +565,31 @@
         }
     }
     .buttons-row {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 2rem;
         i {
-            margin: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &:hover {
+                &,
+                &>* {
+                    color: $color-primary;
+                    cursor: pointer;
+                }
+            }
+            width: 10rem;
+            &>label {
+                max-width: 7rem;
+                text-align: center;
+                font-size: 1.5rem;
+            }
         }
         font-size: 5rem;
     }
@@ -575,13 +598,6 @@
         font-size: 2rem;
     }
     a {
-        &:hover {
-            &,
-            &>* {
-                color: $color-primary;
-                cursor: pointer;
-            }
-        }
         font-size: 2.3rem;
     }
 }

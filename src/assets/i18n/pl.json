@@ -33,6 +33,9 @@
                 "hall": "Regionalne Centrum Sportowo-Widowiskowe",
                 "name": "\"Podpromie\""
             },
+            "important": {
+                "1": "Uwaga! Ważne informacje dla kategorii: Micromouse, Drag Race, Smash Bots oraz Task Hunters znajdują się folderze Regulamin Ogólny, do którego można się dostać poprzez menu po prawej stronie lub klikając w ten link."
+            },
             "covid": {
                 "1": "Wstęp na wydarzenie jest całkowicie darmowy. Podczas trwania wydarzenia na terenie obiektu należy obowiązkowo przestrzegać regulaminu znajdującego się w zakładce",
                 "2": "'Regulamin i polityka prywatności'",
@@ -41,7 +44,6 @@
             "details": "XChallenge dąży do realizacji wielu kategorii zawodów na szczeblu międzynarodowym, gdzie zawodnicy będą mogli sprawdzić swoje umiejętności manualne oraz programistyczne. Zawody kierowane będą dla uczniów szkół średnich oraz studentów, lecz nie zabraknie również konkurencji dla młodszych i starszych uczestników. Zawody oferują nie tylko nagrody materialne, lecz również doświadczenie pozyskane od osób z całego świata i nowe kontakty.",
             "results": "Zobacz wyniki!",
             "open": "Rejestracja jest jeszcze otwarta!",
-            "important": "Ważne informacje dla konstruktorów robotów kategorii Line Follower, Drag Race, Micromouse oraz SmashBots by RoboLAB (28.10.2021)",
             "important-choose": "!!! WAŻNE !!! Ankieta dla zawodników"
         },
         "event-program": {
@@ -187,24 +189,27 @@
                 { "id": 3, "patreonCategory": 0, "description": "Województwo Podkarpackie", "image": "../../assets/jpg/podkarpackie.png", "linkToSite": "https://podkarpackie.eu/" },
                 { "id": 4, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/jpg/kronospan.png", "linkToSite": "https://kronosfera.pl/" },
                 { "id": 5, "patreonCategory": 1, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/jpg/ale-primary-logo-white.png", "linkToSite": "https://www.al-enterprise.com/" },
-                { "id": 6, "patreonCategory": 0, "description": "Rzeszów Stolica Innowacji", "image": "../../assets/jpg/rzeszow_stolica_white.png", "linkToSite": "https://www.erzeszow.pl/" },
-                { "id": 7, "patreonCategory": 5, "description": "Marszałek Województwa Podkarpackiego", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/" },
-                { "id": 8, "patreonCategory": 5, "description": "Podkarpacki Kurator Oświaty", "image": "../../assets/jpg/kuratorium.png", "linkToSite": "https://www.ko.rzeszow.pl/" },
-                { "id": 9, "patreonCategory": 3, "description": "Deloitte", "image": "../../assets/svg/deloitte.svg", "linkToSite": "https://www2.deloitte.com/pl/pl.html" },
-                { "id": 10, "patreonCategory": 1, "description": "Wago", "image": "../../assets/svg/wago.png", "linkToSite": "https://www.wago.com/pl/" },
-                { "id": 11, "patreonCategory": 5, "description": "Prezydent Miasta Rzeszowa", "image": "../../assets/jpg/rzeszow.png", "linkToSite": "https://bip.erzeszow.pl/" },
-                { "id": 12, "patreonCategory": 6, "description": "zrobotyzowany.pl", "image": "../../assets/jpg/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl/" },
-                { "id": 13, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
-                { "id": 14, "patreonCategory": 3, "description": "FANUC", "image": "../../assets/jpg/fanuc.png", "linkToSite": "https://www.fanuc.eu/pl/pl" },
-                { "id": 15, "patreonCategory": 3, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
-                { "id": 16, "patreonCategory": 3, "description": "ONT", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
-                { "id": 17, "patreonCategory": 3, "description": "Zespół Szkół Technicznych", "image": "../../assets/jpg/zst.png", "linkToSite": "http://www.zstrzeszow.pl/" },
-                { "id": 18, "patreonCategory": 6, "description": "Botland", "image": "../../assets/jpg/botland.webp", "linkToSite": "https://botland.com.pl/" },
-                { "id": 19, "patreonCategory": 5, "description": "Wojewoda Podkarpacki", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" },
-                { "id": 20, "patreonCategory": 6, "description": "Huawei", "image": "../../assets/jpg/huawei.png", "linkToSite": "https://seedsforthefuture.pl/" },
-                { "id": 21, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" },
-                { "id": 22, "patreonCategory": 2, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
-                { "id": 23, "patreonCategory": 1, "description": "Podkarpackie Centrum Innowacji", "image": "../../assets/jpg/pci.png", "linkToSite": "https://pcinn.org/" }
+                { "id": 6, "patreonCategory": 3, "description": "Deloitte", "image": "../../assets/svg/deloitte.svg", "linkToSite": "https://www2.deloitte.com/pl/pl.html" },
+                { "id": 7, "patreonCategory": 1, "description": "Wago", "image": "../../assets/svg/wago.png", "linkToSite": "https://www.wago.com/pl/" },
+                { "id": 8, "patreonCategory": 5, "description": "Minister Edukacji i Nauki", "image": "../../assets/jpg/minister_edukacji.jpg", "linkToSite": "https://www.gov.pl/web/edukacja-i-nauka" },
+                { "id": 9, "patreonCategory": 5, "description": "Wojewoda Podkarpacki", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" },
+                { "id": 10, "patreonCategory": 5, "description": "Marszałek Województwa Podkarpackiego", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/" },
+                { "id": 11, "patreonCategory": 0, "description": "Rzeszów Stolica Innowacji", "image": "../../assets/jpg/rzeszow_stolica_white.png", "linkToSite": "https://www.erzeszow.pl/" },
+                { "id": 12, "patreonCategory": 5, "description": "Prezydent Miasta Rzeszowa", "image": "../../assets/jpg/rzeszow.png", "linkToSite": "https://bip.erzeszow.pl/" },
+                { "id": 13, "patreonCategory": 5, "description": "Podkarpacki Kurator Oświaty", "image": "../../assets/jpg/kuratorium.png", "linkToSite": "https://www.ko.rzeszow.pl/" },
+                { "id": 14, "patreonCategory": 6, "description": "zrobotyzowany.pl", "image": "../../assets/jpg/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl/" },
+                { "id": 15, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
+                { "id": 16, "patreonCategory": 3, "description": "FANUC", "image": "../../assets/jpg/fanuc.png", "linkToSite": "https://www.fanuc.eu/pl/pl" },
+                { "id": 17, "patreonCategory": 3, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
+                { "id": 18, "patreonCategory": 3, "description": "ONT", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
+                { "id": 19, "patreonCategory": 3, "description": "Zespół Szkół Technicznych", "image": "../../assets/jpg/zst.png", "linkToSite": "http://www.zstrzeszow.pl/" },
+                { "id": 20, "patreonCategory": 6, "description": "Botland", "image": "../../assets/jpg/botland.webp", "linkToSite": "https://botland.com.pl/" },
+                { "id": 21, "patreonCategory": 6, "description": "Huawei", "image": "../../assets/jpg/huawei.png", "linkToSite": "https://seedsforthefuture.pl/" },
+                { "id": 22, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" },
+                { "id": 23, "patreonCategory": 2, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
+                { "id": 24, "patreonCategory": 1, "description": "Podkarpackie Centrum Innowacji", "image": "../../assets/jpg/pci.png", "linkToSite": "https://pcinn.org/" },
+                { "id": 25, "patreonCategory": 3, "description": "Podkarpackie Centrum Ratownictwa Medycznego", "image": "../../assets/jpg/pcmr.png", "linkToSite": "https://pcrm.com.pl/" },
+                { "id": 26, "patreonCategory": 4, "description": "Studenckie Koło Naukowe Informatyków KOD", "image": "../../assets/jpg/skni.png", "linkToSite": "https://kod.prz.edu.pl/" }
 
             ],
             "tiers": [
@@ -442,6 +447,9 @@
             "is-sliding": "Automatyczne przewijanie strony z walkami",
             "is-showing-details": "Pokaż szczegóły wyników",
             "is-esp32": "Wyświetlaj panel obsługi RFID i bramek (tylko komputer)",
+            "read-card": "Odczytaj kartę",
+            "erase-card": "Wyczyść kartę",
+            "read-time": "Odczytaj czas",
             "change": "* Preferencji nie da się samodzielnie zmienić po rejestracji. Aby dokonać zmian, prosimy skontaktować się z administratorem.",
             "errors": {
                 "succesfuly-added-phone": "Pomyślnie zaktualizowano numer telefonu",
@@ -551,6 +559,7 @@
             "pts": "pkt",
             "category-id": "Kategoria ID: ",
             "robot-id": "Robot ID: ",
+            "comment": "Komentarz: ",
             "result-id": "Wynik ID: ",
             "add": "Dodaj wynik",
             "added": "Ustalono wynik",
@@ -1241,6 +1250,15 @@
             "validators": {
                 "required": "To pole jest wymagane"
             }
+        },
+        "rfid_option": {
+            "name": "Opcje czytnika RFID i bramek",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "comment": {
+            "name": "Komentarz"
         }
     },
     "errors": {

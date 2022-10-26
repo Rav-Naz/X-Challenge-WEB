@@ -6,14 +6,30 @@
         <button class="submit-button" (click)="acceptCookies()">{{'cookies.button' | translate}}</button>
     </div>
 </div>
-<div class="rfid-panel" *ngIf="esp32Service.isRFIDDevice">
+<div class="rfid-panel" *ngIf="esp32Service.rfidOption != 1">
     <div>
         <ng-container *ngIf="!esp32Service.isLoading">
             <div class="buttons-row">
-                <i class="las la-id-card" (click)="esp32Service.readRFIDTag()"></i>
-                <i class="las la-eraser" (click)="esp32Service.eraseRFIDTag()"></i>
-                <i class="las la-stopwatch" (click)="esp32Service.readOneGate()"></i>
-                <i class="las la-road" (click)="esp32Service.readTwoGates()"></i>
+
+                <div *ngIf="esp32Service.rfidOption > 1">
+                    <i class="las la-id-card" (click)="esp32Service.readRFIDTag()"></i>
+                    <label>{{'competitor-zone.settings.read-card'  | translate}}</label>
+                </div>
+                <div *ngIf="esp32Service.rfidOption > 1">
+
+                    <i class="las la-eraser" (click)="esp32Service.eraseRFIDTag()"></i>
+                    <label>{{'competitor-zone.settings.erase-card'  | translate}}</label>
+                </div>
+                <div *ngIf="esp32Service.rfidOption == 3">
+
+                    <i class="las la-stopwatch" (click)="esp32Service.readOneGate()"></i>
+                    <label>{{'competitor-zone.settings.read-time'  | translate}}</label>
+                </div>
+                <div *ngIf="esp32Service.rfidOption == 4">
+
+                    <i class="las la-road" (click)="esp32Service.readTwoGates()"></i>
+                    <label>{{'competitor-zone.settings.read-time'  | translate}}</label>
+                </div>
             </div>
             <label class="checkbox-container">
               <a [ngClass]="{'checkbox-checked': esp32Service.isAutocomplete}">Autouzupełnianie</a>
