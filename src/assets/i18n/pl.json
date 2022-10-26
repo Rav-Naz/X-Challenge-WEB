@@ -33,6 +33,9 @@
                 "hall": "Regionalne Centrum Sportowo-Widowiskowe",
                 "name": "\"Podpromie\""
             },
+            "important": {
+                "1": "Uwaga! Ważne informacje dla kategorii: Micromouse, Drag Race, Smash Bots oraz Task Hunters znajdują się folderze Regulamin Ogólny, do którego można się dostać poprzez menu po prawej stronie lub klikając w ten link."
+            },
             "covid": {
                 "1": "Wstęp na wydarzenie jest całkowicie darmowy. Podczas trwania wydarzenia na terenie obiektu należy obowiązkowo przestrzegać regulaminu znajdującego się w zakładce",
                 "2": "'Regulamin i polityka prywatności'",
@@ -41,7 +44,6 @@
             "details": "XChallenge dąży do realizacji wielu kategorii zawodów na szczeblu międzynarodowym, gdzie zawodnicy będą mogli sprawdzić swoje umiejętności manualne oraz programistyczne. Zawody kierowane będą dla uczniów szkół średnich oraz studentów, lecz nie zabraknie również konkurencji dla młodszych i starszych uczestników. Zawody oferują nie tylko nagrody materialne, lecz również doświadczenie pozyskane od osób z całego świata i nowe kontakty.",
             "results": "Zobacz wyniki!",
             "open": "Rejestracja jest jeszcze otwarta!",
-            "important": "Ważne informacje dla konstruktorów robotów kategorii Line Follower, Drag Race, Micromouse oraz SmashBots by RoboLAB (28.10.2021)",
             "important-choose": "!!! WAŻNE !!! Ankieta dla zawodników"
         },
         "event-program": {
