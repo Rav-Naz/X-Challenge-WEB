@@ -202,7 +202,10 @@
                 { "id": 23, "patreonCategory": 2, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
                 { "id": 24, "patreonCategory": 1, "description": "Podkarpackie Innovation Center", "image": "../../assets/jpg/pci.png", "linkToSite": "https://pcinn.org/" },
                 { "id": 25, "patreonCategory": 3, "description": "Podkarpackie Medical Rescue Center", "image": "../../assets/jpg/pcmr.png", "linkToSite": "https://pcrm.com.pl/" },
-                { "id": 26, "patreonCategory": 4, "description": "Student Research Group of Computer Science KOD", "image": "../../assets/jpg/skni.png", "linkToSite": "https://kod.prz.edu.pl/" }
+                { "id": 26, "patreonCategory": 4, "description": "Student Research Group of Computer Science KOD", "image": "../../assets/jpg/skni.png", "linkToSite": "https://kod.prz.edu.pl/" },
+                { "id": 27, "patreonCategory": 3, "description": "TME", "image": "../../assets/jpg/tme.png", "linkToSite": "https://www.tme.eu/en/" },
+                { "id": 28, "patreonCategory": 2, "description": "Sędziszów Małopolski", "image": "../../assets/jpg/sedziszow.png", "linkToSite": "https://sedziszow-mlp.pl/" }
+
 
             ],
             "tiers": [
