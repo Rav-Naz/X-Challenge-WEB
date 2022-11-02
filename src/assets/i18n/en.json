@@ -42,7 +42,8 @@
             "results": "See the results!",
             "open": "Registration is still open!",
             "important": {
-                "1": "Attention! Important information for the categories: Micromouse, Drag Race, Smash Bots and Task Hunters is in the General Regulations folder, which can be accessed via the menu on the right or by clicking on this link."
+                "1": "Attention! Important information for the categories: Micromouse, Drag Race, Smash Bots and Task Hunters is in the General Regulations folder, which can be accessed via the menu on the right or by clicking on this link.",
+                "2": "Riddles for the 2nd stage of Task Hunters are available in the folder with the rules of the Tash Hunters competition."
             },
             "important-choose": "!!! IMPORTANT !!! Survey for players"
 
