@@ -43,7 +43,7 @@
             "open": "Registration is still open!",
             "important": {
                 "1": "Attention! Important information for the categories: Micromouse, Drag Race, Smash Bots and Task Hunters is in the General Regulations folder, which can be accessed via the menu on the right or by clicking on this link.",
-                "2": "Riddles for the 2nd stage of Task Hunters are available in the folder with the rules of the Tash Hunters competition."
+                "2": "Riddles for the 2nd stage of Task Hunters are available in the folder with the rules of the Task Hunters competition."
             },
             "important-choose": "!!! IMPORTANT !!! Survey for players"
 
@@ -186,6 +186,7 @@
                 { "id": 6, "patreonCategory": 3, "description": "Deloitte", "image": "../../assets/svg/deloitte.svg", "linkToSite": "https://www2.deloitte.com/pl/pl.html" },
                 { "id": 7, "patreonCategory": 1, "description": "Wago", "image": "../../assets/svg/wago.png", "linkToSite": "https://www.wago.com/pl/" },
                 { "id": 8, "patreonCategory": 5, "description": "Minister of Education and Science", "image": "../../assets/jpg/minister_edukacji.jpg", "linkToSite": "https://www.gov.pl/web/edukacja-i-nauka" },
+                { "id": 8, "patreonCategory": 5, "description": "Ministry of Development and Technology", "image": "../../assets/jpg/mrit.png", "linkToSite": "https://www.gov.pl/web/rozwoj-technologia " },
                 { "id": 9, "patreonCategory": 5, "description": "Voivode of Podkarpacie", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" },
                 { "id": 10, "patreonCategory": 5, "description": "Marshal of the Podkarpackie Voivodeship", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/" },
                 { "id": 11, "patreonCategory": 0, "description": "Rzeszów The capital of innovation", "image": "../../assets/jpg/rzeszow_stolica_white.png", "linkToSite": "https://www.erzeszow.pl/" },
