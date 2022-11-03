@@ -35,7 +35,7 @@
             },
             "important": {
                 "1": "Uwaga! Ważne informacje dla kategorii: Micromouse, Drag Race, Smash Bots oraz Task Hunters znajdują się folderze Regulamin Ogólny, do którego można się dostać poprzez menu po prawej stronie lub klikając w ten link.",
-                "2": "Zagadki do II etapu Task Hunters dostępne są w folderze z regulaminami zawodów Tash Hunters."
+                "2": "Zagadki do II etapu Task Hunters dostępne są w folderze z regulaminami zawodów Task Hunters."
             },
             "covid": {
                 "1": "Wstęp na wydarzenie jest całkowicie darmowy. Podczas trwania wydarzenia na terenie obiektu należy obowiązkowo przestrzegać regulaminu znajdującego się w zakładce",
@@ -193,6 +193,7 @@
                 { "id": 6, "patreonCategory": 3, "description": "Deloitte", "image": "../../assets/svg/deloitte.svg", "linkToSite": "https://www2.deloitte.com/pl/pl.html" },
                 { "id": 7, "patreonCategory": 1, "description": "Wago", "image": "../../assets/svg/wago.png", "linkToSite": "https://www.wago.com/pl/" },
                 { "id": 8, "patreonCategory": 5, "description": "Minister Edukacji i Nauki", "image": "../../assets/jpg/minister_edukacji.jpg", "linkToSite": "https://www.gov.pl/web/edukacja-i-nauka" },
+                { "id": 8, "patreonCategory": 5, "description": "Minister Rozwoju i Technologii", "image": "../../assets/jpg/mrit.png", "linkToSite": "https://www.gov.pl/web/rozwoj-technologia" },
                 { "id": 9, "patreonCategory": 5, "description": "Wojewoda Podkarpacki", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" },
                 { "id": 10, "patreonCategory": 5, "description": "Marszałek Województwa Podkarpackiego", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/" },
                 { "id": 11, "patreonCategory": 0, "description": "Rzeszów Stolica Innowacji", "image": "../../assets/jpg/rzeszow_stolica_white.png", "linkToSite": "https://www.erzeszow.pl/" },
