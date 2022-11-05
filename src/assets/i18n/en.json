@@ -220,7 +220,6 @@
                 { "id": 34, "patreonCategory": 6, "description": "Huawei", "image": "../../assets/jpg/huawei.png", "linkToSite": "https://seedsforthefuture.pl/" },
                 { "id": 35, "patreonCategory": 6, "description": "zrobotyzowany.pl", "image": "../../assets/jpg/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl/" }
 
-
             ],
             "tiers": [
                 "Main Partner",
