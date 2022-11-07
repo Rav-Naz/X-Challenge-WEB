@@ -1,0 +1,24 @@
+<div class="router-child">
+    <p *ngIf="activeFightsOrTimes.length == 0">Brak aktywnych walk lub przejazdów </p>
+    <div *ngFor="let stano of activeFightsOrTimes" class="stanowisko">
+        <p>{{stano.stanowisko_nazwa}}</p>
+        <div *ngFor="let category of stano.kategorie" class="kategoria">
+            <p>{{category.kategoria_nazwa}}</p>
+            <table class="walka">
+                <tr>
+                    <th>Arena</th>
+                    <th>Nazwa robota 1</th>
+                    <th>Nazwa robota 2</th>
+                    <th>Godzina rozpoczęcia</th>
+                </tr>
+                <tr *ngFor="let active of category.aktywne">
+                    <td>{{active.ring_arena}}</td>
+                    <td class="onhover" (click)="openRobotDetails(active.robot1_uuid)">{{active.robot1_nazwa}}</td>
+                    <td class="onhover" (click)="openRobotDetails(active.robot2_uuid)">{{active.robot2_nazwa}}</td>
+                    <td>{{active.czas_rozpoczecia | date:'HH:mm:ss'}}</td>
+                    <button class="submit-button" *ngIf="userSerceice.isAdmin" (click)="removeActive(stano.stanowisko_id,category.kategoria_id,active.ring_arena)">USUŃ</button>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

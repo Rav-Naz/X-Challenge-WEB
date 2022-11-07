@@ -17,10 +17,23 @@
 
                 </div>
             </div>
-            <button class="submit-button" [disabled]="!isFormUserUUIDValid" (click)="goToSetFight()">{{'competitor-zone.add-fight-result.next' | translate}}<i class="las la-forward"></i></button>
-            <button class="submit-button" (click)="skip()">{{'competitor-zone.add-fight-result.skip' | translate}}<i class="las la-forward"></i></button>
+            <button class="submit-button" [disabled]="!isFormUserUUIDValid" (click)="goToArenaNumber()">{{'competitor-zone.add-fight-result.next' | translate}}<i class="las la-forward"></i></button>
+            <button class="submit-button" (click)="skip(true)">{{'competitor-zone.add-fight-result.skip' | translate}}<i class="las la-forward"></i></button>
         </div>
         <div *ngIf="viewCounter === 1" class="robots view">
+            <h5>{{'competitor-zone.add-fight-result.title.1.1' | translate}}<span>{{'competitor-zone.add-fight-result.title.1.2' | translate}}</span></h5>
+            <!-- <span>{{'competitor-zone.add-fight-result.2.1' | translate}}</span> -->
+            <div class="grid grid-one">
+                <div>
+                    <p>{{'competitor-zone.add-fight-result.3.1' | translate}}</p>
+                    <app-input [group]="formArena" controlName="arena" class="result"></app-input>
+                </div>
+            </div>
+            <button class="submit-button" [disabled]="!isFormArenaValid" (click)="goToSetFight()">{{'competitor-zone.add-fight-result.3.next' | translate}}<i class="las la-forward"></i></button>
+            <button class="submit-button" (click)="skip(false)">{{'competitor-zone.add-fight-result.skip' | translate}}<i class="las la-forward"></i></button>
+
+        </div>
+        <div *ngIf="viewCounter === 2" class="robots view">
             <h5>{{'competitor-zone.add-fight-result.title.1.1' | translate}}<span>{{'competitor-zone.add-fight-result.title.1.2' | translate}}</span></h5>
             <span>{{'competitor-zone.add-fight-result.2.1' | translate}}</span>
             <div class="grid grid-2">

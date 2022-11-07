@@ -244,6 +244,15 @@ export class HttpService {
     })
   }
 
+  get getCurrentFightsOrTimes() {
+    return new Promise<any>((resolve, rejects) => {
+      this.http.get<APIResponse>(`${this.url}public/getCurrentFightsOrTimes`, { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
   // ------------- USER
 
   public checkIfUserIsConstructorOfRobot(uzytkownik_uuid: string, robot_uuid: string) {
@@ -710,6 +719,35 @@ export class HttpService {
     })
   }
 
+  public addCurrentFightOrTime(stanowisko_id: number, kategoria_id: number, ring_arena: number, robot1_id: number, robot2_id: number) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`${this.url}referee/addCurrentFightOrTime`, {
+        stanowisko_id: stanowisko_id,
+        kategoria_id: kategoria_id,
+        ring_arena: ring_arena,
+        robot1_id: robot1_id,
+        robot2_id: robot2_id
+      }, { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public removeCurrentFightOrTime(stanowisko_id: number, kategoria_id: number, ring_arena: number) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.delete<APIResponse>(`${this.url}referee/removeCurrentFightOrTime`, {
+        headers: this.headers, body: {
+          stanowisko_id: stanowisko_id,
+          kategoria_id: kategoria_id,
+          ring_arena: ring_arena
+        }
+      }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
   // ------------- ADMIN
 
 
@@ -947,11 +985,12 @@ export class HttpService {
     })
   }
 
-  public editTimetable(harmonogram_id: number, komorki: any) {
+  public editTimetable(harmonogram_id: number, komorki: any, czy_widoczny: number) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.put<APIResponse>(`${this.url}admin/editTimetable`, {
         harmonogram_id: harmonogram_id,
-        komorki: JSON.stringify(komorki)
+        komorki: JSON.stringify(komorki),
+        czy_widoczny: czy_widoczny
       }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }

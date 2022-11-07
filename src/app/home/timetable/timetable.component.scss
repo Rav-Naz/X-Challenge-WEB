@@ -1,5 +1,6 @@
 @import '../../scss/colors';
 @import '../../scss/variables';
+@import '../../competitor-zone/register/register.component.scss';
 .timetable {
     padding-top: 12rem;
     padding-bottom: 5rem;
@@ -236,6 +237,19 @@
     //     font-weight: 400;
     //     font-size: 1.7rem;
     // }
+}
+
+.checkbox-container {
+    display: flex;
+    flex-direction: row;
+    // width: max-content;
+    a {
+        margin-left: 4rem;
+    }
+}
+
+.checkbox-checked {
+    color: white;
 }
 
 @media only screen and (max-width: $max-width-4) {

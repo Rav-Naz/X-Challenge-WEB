@@ -1,0 +1,53 @@
+@import '../../../scss/colors';
+@import '../../../scss/variables';
+.stanowisko {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+    &>p {
+        color: $color-primary;
+        font-size: 3rem;
+    }
+}
+
+p {
+    max-width: none;
+}
+
+.kategoria {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    &>p {
+        // color: $color-primary;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.walka {
+    // display: flex;
+    // flex-direction: column;
+    // align-items: flex-start;
+    width: 100%;
+    font-size: 2rem;
+    th {
+        text-align: start;
+        color: $color-grey-0;
+    }
+    &>p {
+        // color: $color-primary;
+        font-size: 2rem;
+    }
+}
+
+.onhover {
+    &:hover {
+        cursor: pointer;
+        color: $color-primary;
+    }
+}

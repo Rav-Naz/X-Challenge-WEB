@@ -187,6 +187,7 @@
                 { "id": 6, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/jpg/kronospan.png", "linkToSite": "https://kronosfera.pl/" },
                 { "id": 7, "patreonCategory": 1, "description": "Podkarpackie Innovation Center", "image": "../../assets/jpg/pci.png", "linkToSite": "https://pcinn.org/" },
                 { "id": 8, "patreonCategory": 1, "description": "Wago", "image": "../../assets/svg/wago.png", "linkToSite": "https://www.wago.com/pl/" },
+                { "id": 8, "patreonCategory": 1, "description": "3D House", "image": "../../assets/jpg/3dhouse.png", "linkToSite": "http://www.3dhouse.pl/" },
 
                 { "id": 9, "patreonCategory": 2, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
                 { "id": 10, "patreonCategory": 2, "description": "EDOCS", "image": "../../assets/jpg/edocs.png", "linkToSite": "https://edocssystems.com/" },
@@ -206,6 +207,7 @@
                 { "id": 23, "patreonCategory": 3, "description": "TME", "image": "../../assets/jpg/tme.png", "linkToSite": "https://www.tme.eu/en/" },
                 { "id": 24, "patreonCategory": 3, "description": "Zespół Szkół Technicznych", "image": "../../assets/jpg/zst.png", "linkToSite": "http://www.zstrzeszow.pl/" },
 
+                { "id": 25, "patreonCategory": 4, "description": "Rzeszów Center of 3D Technologies", "image": "../../assets/jpg/rcd.png", "linkToSite": "https://rct3d.pl/" },
                 { "id": 25, "patreonCategory": 4, "description": "Student Research Group of Computer Science KOD", "image": "../../assets/jpg/skni.png", "linkToSite": "https://kod.prz.edu.pl/" },
 
                 { "id": 26, "patreonCategory": 5, "description": "Minister of Education and Science", "image": "../../assets/jpg/minister_edukacji.jpg", "linkToSite": "https://www.gov.pl/web/edukacja-i-nauka" },
@@ -271,7 +273,9 @@
         "edit-timetable": "Edit cell",
         "styling-timetable": "Stylowanie",
         "delete-cell": "Delete cell",
-        "save-timetable": "Save the schedule"
+        "save-timetable": "Save the schedule",
+        "timetable-visible": "Is timetable visible?"
+
     },
     "building-plan": {
         "floor": {
@@ -360,6 +364,7 @@
             "fights": "FIGHT PLANNER",
             "positions": "POSITIONS",
             "announcements": "ANNOUNCEMENTS",
+            "active-fights-and-times": "FOR STREAMERS",
 
             "hello": {
                 "1": "Welcome to the ",
@@ -487,6 +492,10 @@
             "2": {
                 "1": "Now you can start the fight. When finished, enter the result.",
                 "2": "Enter the number of rounds won by"
+            },
+            "3": {
+                "1": "Enter the number of the arena where the fight will take place",
+                "next": "Next"
             },
             "add": "Add and finish"
 
@@ -1261,6 +1270,12 @@
         },
         "rfid_option": {
             "name": "RFID reader and gate options",
+            "validators": {
+                "required": "This field is required"
+            }
+        },
+        "arena": {
+            "name": "Arena number",
             "validators": {
                 "required": "This field is required"
             }

@@ -64,6 +64,8 @@ import { AdminGuard } from './services/admin-guard.service';
 import { FightsViewComponent } from './shared/fights-view/fights-view.component';
 import { PositionsComponent } from './competitor-zone/referee/positions/positions.component';
 import { AnnouncementsComponent } from './competitor-zone/referee/announcements/announcements.component';
+import { ActiveFightsAndTimesComponent } from './competitor-zone/referee/active-fights-and-times/active-fights-and-times.component';
+import { ActiveFightsService } from './services/active_fights';
 
 
 
@@ -99,7 +101,7 @@ import { AnnouncementsComponent } from './competitor-zone/referee/announcements/
     RobotsComponent,
     CompetitorsComponent,
     CompetitorComponent,
-    ThanksComponent,    TaskChallengeComponent,
+    ThanksComponent, TaskChallengeComponent,
     SmashBotsComponent,
     RobomotionComponent,
     InputFileComponent,
@@ -107,7 +109,8 @@ import { AnnouncementsComponent } from './competitor-zone/referee/announcements/
     ManageFightsComponent,
     FightsViewComponent,
     PositionsComponent,
-    AnnouncementsComponent
+    AnnouncementsComponent,
+    ActiveFightsAndTimesComponent
 
   ],
   imports: [
@@ -147,6 +150,7 @@ import { AnnouncementsComponent } from './competitor-zone/referee/announcements/
     RobotsService,
     ConstructorsService,
     PositionsService,
+    ActiveFightsService,
     DatePipe
   ],
   bootstrap: [AppComponent]

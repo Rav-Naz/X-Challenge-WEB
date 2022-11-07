@@ -21,13 +21,15 @@ export class TimetableComponent {
   formTimetable: FormGroup;
   formCell: FormGroup;
   private loading: boolean = false;
+  isTimetableVisible: boolean = false;
 
 
   constructor(public translate: TranslateService, public timetableService: TimetableService, public userService: UserService, private formBuilder: FormBuilder, private ui: UiService) {
     const prefLanguage = localStorage.getItem("prefLang");
     this.isEnglish = prefLanguage !== 'pl';
     this.timetableService.allTimetables$.subscribe((val) => {
-      this.timetableValues = val;
+      let filtered = val?.filter(el => el.czy_widoczny == 1 || userService.isAdmin);
+      this.timetableValues = filtered ? filtered : null;
       this.updateTimetableCells();
 
     });
@@ -53,10 +55,10 @@ export class TimetableComponent {
       fontSize: [null, [Validators.required]],
       fontWeight: [null, [Validators.required]]
     });
-    this.formTimetable.valueChanges.subscribe(val => {
-      console.log(val)
-      console.log(this.isFormTimetableValid)
-    })
+    // this.formTimetable.valueChanges.subscribe(val => {
+    //   console.log(val)
+    //   console.log(this.isFormTimetableValid)
+    // })
     this.formCell.valueChanges.subscribe((val) => {
       if (this.editingCellIndex != null && val.nazwaPL != null && val.nazwaENG != null && val.kolumna != null && val.wiersz != null && val.colSpan != null && val.rowSpan != null) {
         let cell = this.activeTimetableCells![this.editingCellIndex];
@@ -166,7 +168,8 @@ export class TimetableComponent {
       this.loading = true;
       this.timetableService.editTimetable(
         this.getCurrentTable.harmonogram_id,
-        cells
+        cells,
+        this.isTimetableVisible ? 1 : 0
       ).catch(err => console.log(err))
         .finally(() => {
           this.ui.showFeedback("succes", "Harmonogram został zaktualizowany")
@@ -260,6 +263,11 @@ export class TimetableComponent {
         ? max
         : num
   }
+
+  onChangeDisplayDevice() {
+    this.isTimetableVisible = !this.isTimetableVisible;
+  }
+
 
   get getRows() {
     return this.timetableValues && this.timetableIndex < this.timetableValues.length ? Array.from({ length: this.getCurrentTable.wiersze }, (v, i) => i) : null
