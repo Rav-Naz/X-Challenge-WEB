@@ -41,6 +41,10 @@
                         <i class="las la-bullhorn"></i>
                         <p>{{'competitor-zone.bar.announcements' | translate}}</p>
                     </section>
+                    <section class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['active-fights-and-times']}}]" *ngIf="userService.isWolo" routerLinkActive="competitor-zone-bar-segment-active">
+                        <i class="las la-stream"></i>
+                        <p>{{'competitor-zone.bar.active-fights-and-times' | translate}}</p>
+                    </section>
                     <section *ngIf="!isMobile" class="competitor-zone-bar-segment" [routerLink]="['/competitor-zone', { outlets: {'outlet': ['statistics']}}]">
                         <i class="las la-chart-pie"></i>
                         <p>{{'competitor-zone.bar.statistics' | translate}}</p>

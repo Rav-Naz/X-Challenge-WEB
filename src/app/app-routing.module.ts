@@ -34,51 +34,55 @@ import { CountingVisitorsComponent } from './competitor-zone/referee/counting-vi
 import { AdminGuard } from './services/admin-guard.service';
 import { PositionsComponent } from './competitor-zone/referee/positions/positions.component';
 import { AnnouncementsComponent } from './competitor-zone/referee/announcements/announcements.component';
+import { ActiveFightsAndTimesComponent } from './competitor-zone/referee/active-fights-and-times/active-fights-and-times.component';
 
 
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  { path: '', component: HomeComponent },
   // {path: 'gallery', component: GalleryComponent},
-  {path: 'task-hunters', component: TaskChallengeComponent},
-  {path: 'smash-bots', component: SmashBotsComponent},
-  {path: 'robomotion', component: RobomotionComponent},
-  {path: 'results', component: ResultsComponent},
-  {path: 'timetable', component: TimetableComponent},
-  {path: 'building-plan', component: BuildingPlanComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', canActivate: [RegisterGuard], component: RegisterComponent},
-  {path: 'app-rules', component: AppRulesComponent},
-  {path: 'thank-you', component: ThanksComponent},
-  {path: 'forgot-password', component: ForgotPasswordComponent},
-  {path: 'reset-password/:uzytkownik_uuid/:kod', component: ResetPasswordComponent},
-  {path: 'competitor-zone', canActivate: [AuthGuard], component: CompetitorZoneComponent, children: [
-    {path: 'my-robots', component: MyRobotsComponent, outlet: 'outlet'},
-    {path: 'settings', component: SettingsComponent, outlet: 'outlet'},
-    {path: 'robot/:robot_uuid', component: RobotComponent, outlet: 'outlet'},
-    {path: 'add-robot', component: NewRobotComponent,  outlet: 'outlet'},
-    {path: 'statistics', component: ChartsComponent,  outlet: 'outlet'},
-    {path: 'counting-visitors', component: CountingVisitorsComponent,  outlet: 'outlet'},
-    {path: 'positions', component: PositionsComponent,  outlet: 'outlet'},
-    {path: 'announcements', component: AnnouncementsComponent,  outlet: 'outlet'},
+  { path: 'task-hunters', component: TaskChallengeComponent },
+  { path: 'smash-bots', component: SmashBotsComponent },
+  { path: 'robomotion', component: RobomotionComponent },
+  { path: 'results', component: ResultsComponent },
+  { path: 'timetable', component: TimetableComponent },
+  { path: 'building-plan', component: BuildingPlanComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', canActivate: [RegisterGuard], component: RegisterComponent },
+  { path: 'app-rules', component: AppRulesComponent },
+  { path: 'thank-you', component: ThanksComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'reset-password/:uzytkownik_uuid/:kod', component: ResetPasswordComponent },
+  {
+    path: 'competitor-zone', canActivate: [AuthGuard], component: CompetitorZoneComponent, children: [
+      { path: 'my-robots', component: MyRobotsComponent, outlet: 'outlet' },
+      { path: 'settings', component: SettingsComponent, outlet: 'outlet' },
+      { path: 'robot/:robot_uuid', component: RobotComponent, outlet: 'outlet' },
+      { path: 'add-robot', component: NewRobotComponent, outlet: 'outlet' },
+      { path: 'statistics', component: ChartsComponent, outlet: 'outlet' },
+      { path: 'counting-visitors', component: CountingVisitorsComponent, outlet: 'outlet' },
+      { path: 'active-fights-and-times', component: ActiveFightsAndTimesComponent, outlet: 'outlet' },
+      { path: 'positions', component: PositionsComponent, outlet: 'outlet' },
+      { path: 'announcements', component: AnnouncementsComponent, outlet: 'outlet' },
 
-    {path: 'referee-zone/:stanowisko_id/:kategoria_id/:grupa_id', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
-    {path: 'referee-zone/:stanowisko_id/:kategoria_id', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
-    {path: 'referee-zone/:stanowisko_id', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
-    {path: 'referee-zone', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
-    {path: 'manage-fights', component: ManageFightsComponent, canActivate: [AdminGuard], outlet: 'outlet'},
-    {path: 'add-time-result/:stanowisko_id/:kategoria_id', component: AddTimeResultComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
-    {path: 'add-fight-result/:stanowisko_id/:kategoria_id', component: AddFightResultComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
-    {path: 'competitors', component: CompetitorsComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
-    {path: 'competitor/:uzytkownik_uuid', component: CompetitorComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
-    {path: 'robots', component: RobotsComponent, canActivate: [RefereeGuard], outlet: 'outlet'},
-  ]},
-  {path: 'confirm-code/:uzytkownik_uuid/:kod/:czy_na_telefon', component: ConfirmCodeComponent},
-  {path: '**', redirectTo: ''},
+      { path: 'referee-zone/:stanowisko_id/:kategoria_id/:grupa_id', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet' },
+      { path: 'referee-zone/:stanowisko_id/:kategoria_id', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet' },
+      { path: 'referee-zone/:stanowisko_id', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet' },
+      { path: 'referee-zone', component: RefereeZoneComponent, canActivate: [RefereeGuard], outlet: 'outlet' },
+      { path: 'manage-fights', component: ManageFightsComponent, canActivate: [AdminGuard], outlet: 'outlet' },
+      { path: 'add-time-result/:stanowisko_id/:kategoria_id', component: AddTimeResultComponent, canActivate: [RefereeGuard], outlet: 'outlet' },
+      { path: 'add-fight-result/:stanowisko_id/:kategoria_id', component: AddFightResultComponent, canActivate: [RefereeGuard], outlet: 'outlet' },
+      { path: 'competitors', component: CompetitorsComponent, canActivate: [RefereeGuard], outlet: 'outlet' },
+      { path: 'competitor/:uzytkownik_uuid', component: CompetitorComponent, canActivate: [RefereeGuard], outlet: 'outlet' },
+      { path: 'robots', component: RobotsComponent, canActivate: [RefereeGuard], outlet: 'outlet' },
+    ]
+  },
+  { path: 'confirm-code/:uzytkownik_uuid/:kod/:czy_na_telefon', component: ConfirmCodeComponent },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {anchorScrolling: "enabled"})],
+  imports: [RouterModule.forRoot(routes, { anchorScrolling: "enabled" })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

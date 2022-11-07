@@ -67,9 +67,9 @@ export class TimetableService {
     });
   }
 
-  public editTimetable(harmonogram_id: number, komorki: string) {
+  public editTimetable(harmonogram_id: number, komorki: string, czy_widoczny: number) {
     return new Promise<any | void>(async (resolve) => {
-      const value = await this.http.editTimetable(harmonogram_id, komorki).catch(err => {
+      const value = await this.http.editTimetable(harmonogram_id, komorki, czy_widoczny).catch(err => {
         if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
@@ -109,6 +109,7 @@ export class TimetableService {
     const timetableIndex = this.allTimetables.value?.findIndex(timetable => timetable.harmonogram_id === data?.harmonogram_id)
     if (timetableIndex !== undefined && timetableIndex !== null && timetableIndex >= 0 && this.allTimetables.value) {
       this.allTimetables.value[timetableIndex].komorki = data.komorki;
+      this.allTimetables.value[timetableIndex].czy_widoczny = data.czy_widoczny;
       this.allTimetables.next(this.allTimetables.value)
     }
   }

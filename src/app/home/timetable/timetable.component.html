@@ -45,6 +45,11 @@
                 <app-input [group]="formCell" controlName="fontSize" type="number"></app-input>
                 <app-input [group]="formCell" controlName="fontWeight" placeholder="100-900"></app-input>
                 <button class="submit-button" [disabled]="editingCellIndex == null" (click)="removeCurrentCell()">{{'timetable.delete-cell' | translate}}</button>
+                <label class="checkbox-container">
+                  <p [ngClass]="{'checkbox-checked': isTimetableVisible}">{{'timetable.timetable-visible' | translate}}</p>
+                  <input type="checkbox" (click)="onChangeDisplayDevice()" [checked]="isTimetableVisible">
+                  <span class="checkmark"></span>
+              </label>
                 <button class="submit-button" (click)="onSaveTimetable()">{{'timetable.save-timetable' | translate}}</button>
             </div>
         </div>

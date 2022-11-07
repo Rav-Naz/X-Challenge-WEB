@@ -194,6 +194,7 @@
                 { "id": 6, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/jpg/kronospan.png", "linkToSite": "https://kronosfera.pl/" },
                 { "id": 7, "patreonCategory": 1, "description": "Podkarpackie Centrum Innowacji", "image": "../../assets/jpg/pci.png", "linkToSite": "https://pcinn.org/" },
                 { "id": 8, "patreonCategory": 1, "description": "Wago", "image": "../../assets/svg/wago.png", "linkToSite": "https://www.wago.com/pl/" },
+                { "id": 8, "patreonCategory": 1, "description": "3D House", "image": "../../assets/jpg/3dhouse.png", "linkToSite": "http://www.3dhouse.pl/" },
 
                 { "id": 9, "patreonCategory": 2, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
                 { "id": 10, "patreonCategory": 2, "description": "EDOCS", "image": "../../assets/jpg/edocs.png", "linkToSite": "https://edocssystems.com/" },
@@ -213,6 +214,7 @@
                 { "id": 23, "patreonCategory": 3, "description": "TME", "image": "../../assets/jpg/tme.png", "linkToSite": "https://www.tme.eu/en/" },
                 { "id": 24, "patreonCategory": 3, "description": "Zespół Szkół Technicznych", "image": "../../assets/jpg/zst.png", "linkToSite": "http://www.zstrzeszow.pl/" },
 
+                { "id": 25, "patreonCategory": 4, "description": "Rzeszowskie Centrum Technologii 3D", "image": "../../assets/jpg/rcd.png", "linkToSite": "https://rct3d.pl/" },
                 { "id": 25, "patreonCategory": 4, "description": "Studenckie Koło Naukowe Informatyków KOD", "image": "../../assets/jpg/skni.png", "linkToSite": "https://kod.prz.edu.pl/" },
 
                 { "id": 26, "patreonCategory": 5, "description": "Minister Edukacji i Nauki", "image": "../../assets/jpg/minister_edukacji.jpg", "linkToSite": "https://www.gov.pl/web/edukacja-i-nauka" },
@@ -278,7 +280,8 @@
         "edit-timetable": "Edytuj komórke",
         "styling-timetable": "Stylowanie",
         "delete-cell": "Usuń komorke",
-        "save-timetable": "Zapisz harmonogram"
+        "save-timetable": "Zapisz harmonogram",
+        "timetable-visible": "Czy widoczny?"
     },
     "building-plan": {
         "floor": {
@@ -367,6 +370,7 @@
             "fights": "PLANER WALK",
             "positions": "STANOWISKA",
             "announcements": "OGŁOSZENIA",
+            "active-fights-and-times": "DLA STREAMERÓW",
 
 
             "hello": {
@@ -493,6 +497,10 @@
             "2": {
                 "1": "Teraz możesz przejść do przeprowadzenia walki. Po jej zakończeniu wpisz wynik.",
                 "2": "Wprowadź ilość wygranych rund przez"
+            },
+            "3": {
+                "1": "Wprowadź numer areny, na której będzie rozgrywać się walka",
+                "next": "Dalej"
             },
             "add": "Dodaj i zakończ"
 
@@ -1269,6 +1277,12 @@
         },
         "rfid_option": {
             "name": "Opcje czytnika RFID i bramek",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "arena": {
+            "name": "Numer areny",
             "validators": {
                 "required": "To pole jest wymagane"
             }
