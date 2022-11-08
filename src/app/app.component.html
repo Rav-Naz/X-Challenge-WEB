@@ -15,7 +15,7 @@
                     <i class="las la-id-card" (click)="esp32Service.readRFIDTag()"></i>
                     <label>{{'competitor-zone.settings.read-card'  | translate}}</label>
                 </div>
-                <div *ngIf="esp32Service.rfidOption > 1">
+                <div *ngIf="esp32Service.rfidOption > 1 && userService.isAdmin">
 
                     <i class="las la-eraser" (click)="esp32Service.eraseRFIDTag()"></i>
                     <label>{{'competitor-zone.settings.erase-card'  | translate}}</label>

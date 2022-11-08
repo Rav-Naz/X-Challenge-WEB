@@ -9,6 +9,7 @@
                 <p class="competitor-detail" *ngIf="user?.stanowiska">{{'competitor-zone.competitor.positions' | translate}}<span>{{user?.stanowiska}}</span></p>
                 <p class="competitor-detail" *ngIf="user?.kod_pocztowy">{{'competitor-zone.competitor.postal' | translate}}<span>{{user?.kod_pocztowy}}</span></p>
                 <p class="competitor-detail" *ngIf="user?.data_rejestracji">{{'competitor-zone.competitor.registration' | translate}}<span>{{user?.data_rejestracji | date:'dd.MM.YYYY'}}</span></p>
+                <p class="competitor-detail" *ngIf="user?.kategorie && user.kategorie.length > 0">{{'competitor-zone.competitors.filters.categories' | translate}}<span *ngFor="let category of user.kategorie">{{category}}</span></p>
                 <!-- <div *ngIf="userSerceice.isAdmin && user && !user.kod_pocztowy" class="postal">
                     <app-input [group]="formPostal" controlName="postal_code" [collapsed]="true"></app-input>
                     <button [disabled]="!isFormPostalCodeValid" class="submit-button" (click)="savePostalCode()"><i class="las la-save"></i></button>

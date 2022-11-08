@@ -192,6 +192,7 @@
                 { "id": 9, "patreonCategory": 2, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
                 { "id": 10, "patreonCategory": 2, "description": "EDOCS", "image": "../../assets/jpg/edocs.png", "linkToSite": "https://edocssystems.com/" },
                 { "id": 11, "patreonCategory": 2, "description": "Elektrolift", "image": "../../assets/jpg/elektrolift.png", "linkToSite": "https://www.windy.rzeszow.pl/" },
+                { "id": 11, "patreonCategory": 2, "description": "ENF", "image": "../../assets/jpg/enf.png", "linkToSite": "https://www.enf.pl/" },
                 { "id": 12, "patreonCategory": 2, "description": "Hobbistycznie.pl", "image": "../../assets/jpg/hobbistycznie.png", "linkToSite": "https://www.hobbistycznie.pl/" },
                 { "id": 13, "patreonCategory": 2, "description": "infoSoftware", "image": "../../assets/jpg/infosoft.png", "linkToSite": "https://infosoftware.pl/" },
                 { "id": 14, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
@@ -206,6 +207,22 @@
                 { "id": 22, "patreonCategory": 3, "description": "Podkarpackie Medical Rescue Center", "image": "../../assets/jpg/pcmr.png", "linkToSite": "https://pcrm.com.pl/" },
                 { "id": 23, "patreonCategory": 3, "description": "TME", "image": "../../assets/jpg/tme.png", "linkToSite": "https://www.tme.eu/en/" },
                 { "id": 24, "patreonCategory": 3, "description": "Zespół Szkół Technicznych", "image": "../../assets/jpg/zst.png", "linkToSite": "http://www.zstrzeszow.pl/" },
+
+                { "id": 25, "patreonCategory": 4, "description": "Rzeszów Center of 3D Technologies", "image": "../../assets/jpg/rcd.png", "linkToSite": "https://rct3d.pl/" },
+                { "id": 25, "patreonCategory": 4, "description": "Student Research Group of Computer Science KOD", "image": "../../assets/jpg/skni.png", "linkToSite": "https://kod.prz.edu.pl/" },
+
+                { "id": 26, "patreonCategory": 5, "description": "Minister of Education and Science", "image": "../../assets/jpg/minister_edukacji.jpg", "linkToSite": "https://www.gov.pl/web/edukacja-i-nauka" },
+                { "id": 27, "patreonCategory": 5, "description": "Minister of Development and Technology", "image": "../../assets/jpg/mrit.png", "linkToSite": "https://www.gov.pl/web/rozwoj-technologia " },
+                { "id": 28, "patreonCategory": 5, "description": "Voivode of Podkarpacie", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" },
+                { "id": 29, "patreonCategory": 5, "description": "Marshal of the Podkarpackie Voivodeship", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/" },
+                { "id": 30, "patreonCategory": 5, "description": "Mayor of the City of Rzeszów", "image": "../../assets/jpg/rzeszow.png", "linkToSite": "https://bip.erzeszow.pl/" },
+                { "id": 31, "patreonCategory": 5, "description": "Podkarpacki Education Superintendent", "image": "../../assets/jpg/kuratorium.png", "linkToSite": "https://www.ko.rzeszow.pl/" },
+
+                { "id": 32, "patreonCategory": 6, "description": "Botland", "image": "../../assets/jpg/botland.webp", "linkToSite": "https://botland.com.pl/" },
+                { "id": 33, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" },
+                { "id": 34, "patreonCategory": 6, "description": "Huawei", "image": "../../assets/jpg/huawei.png", "linkToSite": "https://seedsforthefuture.pl/" },
+                { "id": 35, "patreonCategory": 6, "description": "zrobotyzowany.pl", "image": "../../assets/jpg/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl/" },
+                { "id": 35, "patreonCategory": 6, "description": "Radio Feniks", "image": "../../assets/jpg/feniks.png", "linkToSite": "http://feniks.fm/" }
 
                 { "id": 25, "patreonCategory": 4, "description": "Rzeszów Center of 3D Technologies", "image": "../../assets/jpg/rcd.png", "linkToSite": "https://rct3d.pl/" },
                 { "id": 25, "patreonCategory": 4, "description": "Student Research Group of Computer Science KOD", "image": "../../assets/jpg/skni.png", "linkToSite": "https://kod.prz.edu.pl/" },
