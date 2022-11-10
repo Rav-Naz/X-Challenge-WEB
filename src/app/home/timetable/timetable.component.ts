@@ -28,7 +28,7 @@ export class TimetableComponent {
     const prefLanguage = localStorage.getItem("prefLang");
     this.isEnglish = prefLanguage !== 'pl';
     this.timetableService.allTimetables$.subscribe((val) => {
-      let filtered = val?.filter(el => el.czy_widoczny == 1 || userService.isAdmin);
+      let filtered = userService.isAdmin ? val : val?.filter(el => el.czy_widoczny == 1);
       this.timetableValues = filtered ? filtered : null;
       this.updateTimetableCells();
 
