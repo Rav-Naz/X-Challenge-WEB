@@ -212,6 +212,7 @@
 
                 { "id": 25, "patreonCategory": 4, "description": "Rzeszów Center of 3D Technologies", "image": "../../assets/jpg/rcd.png", "linkToSite": "https://rct3d.pl/" },
                 { "id": 25, "patreonCategory": 4, "description": "Student Research Group of Computer Science KOD", "image": "../../assets/jpg/skni.png", "linkToSite": "https://kod.prz.edu.pl/" },
+                { "id": 25, "patreonCategory": 4, "description": "Koło fotograficzne Uniwersytetu Rzeszowskiego LENS", "image": "../../assets/jpg/lens.png", "linkToSite": "https://www.facebook.com/Lens.Uniwersytet.Rzeszowski/" },
 
                 { "id": 26, "patreonCategory": 5, "description": "Minister of Education and Science", "image": "../../assets/jpg/minister_edukacji.jpg", "linkToSite": "https://www.gov.pl/web/edukacja-i-nauka" },
                 { "id": 27, "patreonCategory": 5, "description": "Minister of Development and Technology", "image": "../../assets/jpg/mrit.png", "linkToSite": "https://www.gov.pl/web/rozwoj-technologia " },
@@ -226,7 +227,8 @@
                 { "id": 35, "patreonCategory": 6, "description": "zrobotyzowany.pl", "image": "../../assets/jpg/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl/" },
                 { "id": 35, "patreonCategory": 6, "description": "Radio Feniks", "image": "../../assets/jpg/feniks.png", "linkToSite": "http://feniks.fm/" },
                 { "id": 35, "patreonCategory": 6, "description": "nowiny24", "image": "../../assets/svg/nowiny.svg", "linkToSite": "https://nowiny24.pl/" },
-                { "id": 35, "patreonCategory": 6, "description": "Radio Supernova", "image": "../../assets/svg/supernova.svg", "linkToSite": "https://www.radiosupernova.pl/" }
+                { "id": 35, "patreonCategory": 6, "description": "Radio Supernova", "image": "../../assets/svg/supernova.svg", "linkToSite": "https://www.radiosupernova.pl/" },
+                { "id": 35, "patreonCategory": 6, "description": "Telewizja Polska", "image": "../../assets/jpg/tvp.jpg", "linkToSite": "https://rzeszow.tvp.pl/" }
 
             ],
             "tiers": [
