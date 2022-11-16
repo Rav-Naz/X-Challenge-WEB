@@ -11,23 +11,23 @@
         <ng-container *ngIf="!esp32Service.isLoading">
             <div class="buttons-row">
 
-                <div *ngIf="esp32Service.rfidOption > 1">
-                    <i class="las la-id-card" (click)="esp32Service.readRFIDTag()"></i>
+                <div *ngIf="esp32Service.rfidOption > 1" (click)="esp32Service.readRFIDTag()">
+                    <i class="las la-id-card"></i>
                     <label>{{'competitor-zone.settings.read-card'  | translate}}</label>
                 </div>
-                <div *ngIf="esp32Service.rfidOption > 1 && userService.isAdmin">
+                <div *ngIf="esp32Service.rfidOption > 1 && userService.isAdmin" (click)="esp32Service.eraseRFIDTag()">
 
-                    <i class="las la-eraser" (click)="esp32Service.eraseRFIDTag()"></i>
+                    <i class="las la-eraser"></i>
                     <label>{{'competitor-zone.settings.erase-card'  | translate}}</label>
                 </div>
-                <div *ngIf="esp32Service.rfidOption == 3">
+                <div *ngIf="esp32Service.rfidOption == 3" (click)="esp32Service.readOneGate()">
 
-                    <i class="las la-stopwatch" (click)="esp32Service.readOneGate()"></i>
+                    <i class="las la-stopwatch"></i>
                     <label>{{'competitor-zone.settings.read-time'  | translate}}</label>
                 </div>
-                <div *ngIf="esp32Service.rfidOption == 4">
+                <div *ngIf="esp32Service.rfidOption == 4" (click)="esp32Service.readTwoGates()">
 
-                    <i class="las la-road" (click)="esp32Service.readTwoGates()"></i>
+                    <i class="las la-road"></i>
                     <label>{{'competitor-zone.settings.read-time'  | translate}}</label>
                 </div>
             </div>

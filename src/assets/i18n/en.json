@@ -228,7 +228,8 @@
                 { "id": 35, "patreonCategory": 6, "description": "Radio Feniks", "image": "../../assets/jpg/feniks.png", "linkToSite": "http://feniks.fm/" },
                 { "id": 35, "patreonCategory": 6, "description": "nowiny24", "image": "../../assets/svg/nowiny.svg", "linkToSite": "https://nowiny24.pl/" },
                 { "id": 35, "patreonCategory": 6, "description": "Radio Supernova", "image": "../../assets/svg/supernova.svg", "linkToSite": "https://www.radiosupernova.pl/" },
-                { "id": 35, "patreonCategory": 6, "description": "Telewizja Polska", "image": "../../assets/jpg/tvp.jpg", "linkToSite": "https://rzeszow.tvp.pl/" }
+                { "id": 35, "patreonCategory": 6, "description": "Telewizja Polska", "image": "../../assets/jpg/tvp.jpg", "linkToSite": "https://rzeszow.tvp.pl/" },
+                { "id": 35, "patreonCategory": 6, "description": "Polish Radio Rzeszów", "image": "../../assets/jpg/radio_rzeszow.jpg", "linkToSite": "https://radio.rzeszow.pl/" }
 
             ],
             "tiers": [
