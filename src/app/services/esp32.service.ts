@@ -24,6 +24,7 @@ export class Esp32Service {
     this.refereeService.allUsers$.subscribe((data) => {
       this.allUsers = data;
     })
+    this.isAutocomplete = localStorage.getItem("espAutocomplete") == 'true';
   }
 
   onChangeRFIDDevice(option: number) {
@@ -33,6 +34,8 @@ export class Esp32Service {
   }
   onChangeAutocomplete() {
     this.isAutocomplete = !this.isAutocomplete;
+    localStorage.setItem('espAutocomplete', this.isAutocomplete ? 'true' : 'false');
+
   }
 
   errorHandler(error: any) {

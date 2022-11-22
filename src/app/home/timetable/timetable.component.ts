@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { TimetableService } from '../../services/timetable.service';
@@ -10,7 +10,7 @@ import { UiService } from '../../services/ui.service';
   templateUrl: './timetable.component.html',
   styleUrls: ['./timetable.component.scss']
 })
-export class TimetableComponent {
+export class TimetableComponent implements OnInit, OnDestroy {
 
   timetable: Array<any> = [];
   timetableValues: Array<any> | null = null;
@@ -22,6 +22,9 @@ export class TimetableComponent {
   formCell: FormGroup;
   private loading: boolean = false;
   isTimetableVisible: boolean = false;
+  public scrollTimer: any;
+  private isScrollingDown = true;
+  public lastScrollPos = 0;
 
 
   constructor(public translate: TranslateService, public timetableService: TimetableService, public userService: UserService, private formBuilder: FormBuilder, private ui: UiService) {
@@ -89,6 +92,33 @@ export class TimetableComponent {
         cell.style = splitted.join(';') + ";" + this._gridColAndRow(cell.col, cell.row, cell.colSpan, cell.rowSpan, this.editingCellIndex + 10)
       }
     });
+  }
+
+  ngOnInit(): void {
+    let isDisplayDevice = localStorage.getItem('isDisplayDevice') == 'true';
+
+    if (isDisplayDevice) {
+      this.scrollTimer = setInterval(() => {
+        if (window.scrollY < document.body.scrollHeight && this.isScrollingDown) {
+          window.scrollTo(0, window.scrollY + 3);
+          if (window.scrollY == this.lastScrollPos) {
+            this.isScrollingDown = false;
+          }
+          this.lastScrollPos = window.scrollY;
+        } else if (window.scrollY > 0 && !this.isScrollingDown) {
+          window.scrollTo(0, window.scrollY - 3);
+          this.lastScrollPos = window.scrollY;
+        } else if (window.scrollY == document.body.scrollHeight) {
+          this.isScrollingDown = false;
+        } else if (window.scrollY == 0) {
+          this.isScrollingDown = true;
+        }
+      }, 50)
+    }
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.scrollTimer);
   }
 
   changeTimetable(index: number) {
