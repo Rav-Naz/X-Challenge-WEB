@@ -35,7 +35,8 @@
             },
             "important": {
                 "1": "Zgody RODO znajdują się w folderze z regulaminem ogólnym.",
-                "2": "W zakładce Harmonogram zostały opublikowane orientacyjne plany przebiegu zawodów zarówno w piątek jak i w sobotę. Zachęcamy do zapoznania się z nimi i obserwowania zmian."
+                "2": "W zakładce Harmonogram zostały opublikowane orientacyjne plany przebiegu zawodów zarówno w piątek jak i w sobotę. Zachęcamy do zapoznania się z nimi i obserwowania zmian.",
+                "3": "WSTĘP NA WYDARZENIE JEST CAŁKOWICIE DARMOWY I OTWARTY DLA WSZYSTKICH CHĘTNYCH!"
             },
             "covid": {
                 "1": "Wstęp na wydarzenie jest całkowicie darmowy. Podczas trwania wydarzenia na terenie obiektu należy obowiązkowo przestrzegać regulaminu znajdującego się w zakładce",
@@ -217,6 +218,7 @@
                 { "id": 24, "patreonCategory": 3, "description": "Fibrain", "image": "../../assets/jpg/fibrain.png", "linkToSite": "https://fibrain.pl/" },
                 { "id": 24, "patreonCategory": 3, "description": "Lord Jack", "image": "../../assets/svg/lordjack.svg", "linkToSite": "https://lordjack.pl/" },
                 { "id": 24, "patreonCategory": 3, "description": "Fotoacc Warsztat Produktowy", "image": "../../assets/jpg/fotoacc.png", "linkToSite": "https://fotoacc.pl/" },
+                { "id": 24, "patreonCategory": 3, "description": "Rockstar Energy Drink", "image": "../../assets/svg/rockstar.svg", "linkToSite": "https://www.rockstarenergy.com/" },
 
                 { "id": 25, "patreonCategory": 4, "description": "Rzeszowskie Centrum Technologii 3D", "image": "../../assets/jpg/rcd.png", "linkToSite": "https://rct3d.pl/" },
                 { "id": 25, "patreonCategory": 4, "description": "Studenckie Koło Naukowe Informatyków KOD", "image": "../../assets/jpg/skni.png", "linkToSite": "https://kod.prz.edu.pl/" },
