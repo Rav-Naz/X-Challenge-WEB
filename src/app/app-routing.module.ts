@@ -49,6 +49,7 @@ const routes: Routes = [
   { path: 'building-plan', component: BuildingPlanComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', canActivate: [RegisterGuard], component: RegisterComponent },
+  { path: 'register/:email', canActivate: [RegisterGuard], component: RegisterComponent },
   { path: 'app-rules', component: AppRulesComponent },
   { path: 'thank-you', component: ThanksComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
