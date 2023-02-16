@@ -98,8 +98,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public streamLink: SafeResourceUrl | undefined = undefined;
   public timeIsUp = false;
   public switchAnimationStateName: 'start' | 'void' | 'end' = 'void';
-  public eventDate: Date = new Date(2022, 10, 25, 9, 0, 0);
-  public eventEndDate: Date = new Date(2022, 10, 26, 18, 0, 0);
+  public eventDate: Date = new Date(2023, 9, 20, 9, 0, 0);
+  public eventEndDate: Date = new Date(2023, 9, 21, 18, 0, 0);
   public windowSize: WindowSize = { height: 1080, width: 1920 };
   public registerInfo: any = null;
 
@@ -172,7 +172,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }, 5000)
     const sub1 = this.authService.info$.subscribe((data) => {
       if (data === undefined || data === null) return;
-      // this.eventDate = new Date((data as any).eventDate);
+      this.eventDate = new Date((data as any).eventDate);
       if ((data as any).streamLink) {
         this.streamLink = (data as any).streamLink;
         // console.log((this.streamLink as any));
