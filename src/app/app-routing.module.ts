@@ -1,3 +1,4 @@
+import { PartnerZoneComponent } from './partner-zone/partner-zone.component';
 import { ManageFightsComponent } from './competitor-zone/referee/manage-fights/manage-fights.component';
 import { ThanksComponent } from './home/thanks/thanks.component';
 import { CompetitorComponent } from './competitor-zone/referee/competitors/competitor/competitor.component';
@@ -79,6 +80,7 @@ const routes: Routes = [
     ]
   },
   { path: 'confirm-code/:uzytkownik_uuid/:kod/:czy_na_telefon', component: ConfirmCodeComponent },
+  { path: 'partner-zone', component: PartnerZoneComponent },
   { path: '**', redirectTo: '' },
 ];
 
