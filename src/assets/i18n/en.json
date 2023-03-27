@@ -42,8 +42,9 @@
             "results": "See the results!",
             "open": "Registration is still open!",
             "important": {
-                "1": "In the Timetable tab, approximate plans for the course of the competition, both on Friday and Saturday, have been published. We encourage you to read them and observe the changes.",
-                "2": "Riddles for the 2nd stage of Task Hunters are available in the folder with the rules of the Task Hunters competition."
+                "2": "In the Timetable tab, approximate plans for the course of the competition, both on Friday and Saturday, have been published. We encourage you to read them and observe the changes.",
+                "1": "GDPR consents can be found in the folder with general regulations.",
+                "3": "ENTRY TO THE EVENT IS COMPLETELY FREE AND OPEN FOR ALL!"
             },
             "important-choose": "!!! IMPORTANT !!! Survey for players"
 
@@ -60,14 +61,13 @@
             "learn": "LEARN MORE",
             "regulations": "Rules",
             "categories": [
-                { "id": 1, "name": "Smash Bots", "description": "This is the toughest competition in XChallenge! In a special arena, remote-controlled robots will fight each other until the last breath. Sparks and flames are guaranteed here.", "icon": "battlebot.gif", "linkToRegulation": "https://bit.ly/xchallengeSB22rules" },
-                { "id": 2, "name": "Task Hunters", "description": "The team and its robot must face the tasks and score as many points as possible in the previously prepared arenas. There will be a lot going on here!", "icon": "task_hunters.gif", "linkToRegulation": "https://bit.ly/xchallengeTH22rules" },
-                { "id": 3, "name": "Freestyle", "description": "In this competition, competitors can put on any project, robot or machine. The structures are assessed by referees and visitors. Each voter completes a questionnaire in which they award points for each project, so it is important that each competitor presents their project in the best possible way.", "icon": "freestyle.gif", "linkToRegulation": "https://bit.ly/xchallengeRM22FSrules" },
-                { "id": 4, "name": "Line Follower", "description": "The goal of the robot in this competition is to follow the route marked by the black line drawn on the board as quickly as possible. The robot must follow the line as accurately as possible, without avoiding or cutting corners.", "icon": "line_follower.gif", "linkToRegulation": "https://bit.ly/xchallengeRM22LFrules" },
-                { "id": 5, "name": "Micromouse", "description": "The robot's task is to find the fastest path from the starting field to the area consisting of four fields arranged in a square. The robot must be very accurate so that it does not bounce off the walls.", "icon": "micromouse.gif", "linkToRegulation": "https://bit.ly/xchallengeRM22MMrules" },
-                { "id": 6, "name": "Onion House", "description": "It is a modified version of the competition known as Ketchup House. We focused on Polish products and flavors, so onions will be the subject of our competition. Because why not? You can come to this competition with independently selected onions.", "icon": "onion_house.gif", "linkToRegulation": "https://bit.ly/xchallengeRM22CHrules" },
-                { "id": 7, "name": "Sumo", "description": "Robots like SUMO wrestlers must push the opponent out of a specially prepared ring. Many categories will allow you to easily select the appropriate robot class for your preferences and capabilities.", "icon": "sumo.gif", "linkToRegulation": "https://bit.ly/xchallengeRM22SMrules" },
-                { "id": 8, "name": "LEGO® Tug of War", "description": "This competition is also brand new! Two robots facing each other will compete in tugging the rope. The winner is the one who manages to pull most of the rope to his side. This competition is only intended for robots made of LEGO® bricks.", "icon": "tug_of_war.gif", "linkToRegulation": "https://bit.ly/xchallengeRM22TOWrules" }
+                { "id": 1, "name": "Smash Bots", "description": "This is the toughest competition in XChallenge! In a special arena, remote-controlled robots will fight each other until the last breath. Sparks and flames are guaranteed here.", "icon": "battlebot.gif", "linkToRegulation": "https://xchallenge.pl/regulations/Smash_Bots.pdf" },
+                { "id": 2, "name": "Task Hunters", "description": "The team and its robot must face the tasks and score as many points as possible in the previously prepared arenas. There will be a lot going on here!", "icon": "task_hunters.gif", "linkToRegulation": "https://xchallenge.pl/regulations/Task_Hunters_2023.pdf" },
+                { "id": 3, "name": "Freestyle", "description": "In this competition, competitors can put on any project, robot or machine. The structures are assessed by referees and visitors. Each voter completes a questionnaire in which they award points for each project, so it is important that each competitor presents their project in the best possible way.", "icon": "freestyle.gif", "linkToRegulation": "https://xchallenge.pl/regulations/ROBOmotion_2023_FreeStyle.pdf" },
+                { "id": 4, "name": "Line Follower", "description": "The goal of the robot in this competition is to follow the route marked by the black line drawn on the board as quickly as possible. The robot must follow the line as accurately as possible, without avoiding or cutting corners.", "icon": "line_follower.gif", "linkToRegulation": "https://xchallenge.pl/regulations/ROBOmotion_2023_LineFollower.pdf" },
+                { "id": 6, "name": "Onion House", "description": "It is a modified version of the competition known as Ketchup House. We focused on Polish products and flavors, so onions will be the subject of our competition. Because why not? You can come to this competition with independently selected onions.", "icon": "onion_house.gif", "linkToRegulation": "https://xchallenge.pl/regulations/ROBOmotion_2023_Cebula_House.pdf" },
+                { "id": 7, "name": "Sumo", "description": "Robots like SUMO wrestlers must push the opponent out of a specially prepared ring. Many categories will allow you to easily select the appropriate robot class for your preferences and capabilities.", "icon": "sumo.gif", "linkToRegulation": "https://xchallenge.pl/regulations/ROBOmotion_2023_Sumo.pdf" },
+                { "id": 8, "name": "LEGO® Tug of War", "description": "This competition is also brand new! Two robots facing each other will compete in tugging the rope. The winner is the one who manages to pull most of the rope to his side. This competition is only intended for robots made of LEGO® bricks.", "icon": "tug_of_war.gif", "linkToRegulation": "https://xchallenge.pl/regulations/ROBOmotion_2023_LEGO_Tug_of_War.pdf" }
             ]
         },
         "news": {
@@ -117,11 +117,11 @@
                     },
                     "stages": {
                         "1": {
-                            "title": "Stage 1",
+                            "title": "Stage 1 - soon",
                             "description": "Upon reaching the site, the Task Hunters team analyzes the situation. The first task is to overcome the security of a power plant that can only be reached by mobile robots. In order to be able to get close to it, a complicated maze awaits the volunteers, which must be overcome in the shortest possible time. Dangerous opponents await the team, who attack the vehicle with special balls, making it difficult to ride. Having reached the side of the power plant, the team discovers the source of the disaster - a wall explosion! As a result of the explosion, energy cubes jumped out of the reactor's warehouse and landed in different places on the premises of the facility and the wall itself lies in pieces on the premises of the facility. The power plant must be brought back into operation quickly! The robot has to get to the energy cubes, paying attention to obstacles in the area, and then take them and put them in the reactor warehouse by matching the size and color of energy cubes to the appropriate places in the warehouse. Both the color and size define the power of the cube, make no mistake about that."
                         },
                         "2": {
-                            "title": "Stage 2",
+                            "title": "Stage 2 - soon",
                             "description": "However, proper arrangement of energy cubes itself will not activate the reactor - it must be excited using the power plant's built-in starter modules. In the event of an accident, two neutral systems to initiate the reactor activator were used, and it is up to a team of volunteers to decide which path they will go. In the first option, the mobile robot must properly set the energy paths using logic gates to power the activator module. In the second option, the mobile robot must cross the platform with a precipice to reach the button that activates the power supply of the activator module. To be able to cross the platform, the robot must find the platform element and place it in the right place to make a bridge. By completing these tasks, the team gets access to special power balls required to speed up the reactor. After a preset time, the gates to the inside of the reactor open and the mobile robot can drive through them. There are power balls on the spot that need to be fired towards the base of the reactor. The impact force of the power balls generates energy that allows the reactor to accelerate and start. The more power balls, the more energy the power plant generates. How much power will the reactor reach and how much energy will the power plant start to generate? What really happened at the power plant that made it stop working? When looking for clues, a team of volunteers must uncover the mystery so that the situation will never happen again."
                         }
                     }
@@ -178,66 +178,6 @@
             "title": "PATRONS",
             "question": "Do you want to become a patron? Contact us at robo@kneiti.prz.edu.pl",
             "patreonList": [
-                { "id": 1, "patreonCategory": 0, "description": "Rzeszow University of Technology im. Ignacego Łukasiewicza", "image": "../../assets/jpg/prz_pl.png", "linkToSite": "https://w.prz.edu.pl/" },
-                { "id": 2, "patreonCategory": 0, "description": "Pratt & Whitney", "image": "../../assets/jpg/pratt.png", "linkToSite": "https://pwrze.com/" },
-                { "id": 3, "patreonCategory": 0, "description": "Rzeszów The capital of innovation", "image": "../../assets/jpg/rzeszow_stolica_white.png", "linkToSite": "https://www.erzeszow.pl/" },
-                { "id": 4, "patreonCategory": 0, "description": "Podkarpackie voivodeship", "image": "../../assets/jpg/podkarpackie.png", "linkToSite": "https://podkarpackie.eu/" },
-
-                { "id": 5, "patreonCategory": 1, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/jpg/ale-primary-logo-white.png", "linkToSite": "https://www.al-enterprise.com/" },
-                { "id": 6, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/jpg/kronospan.png", "linkToSite": "https://kronosfera.pl/" },
-                { "id": 7, "patreonCategory": 1, "description": "Podkarpackie Innovation Center", "image": "../../assets/jpg/pci.png", "linkToSite": "https://pcinn.org/" },
-                { "id": 8, "patreonCategory": 1, "description": "Wago", "image": "../../assets/svg/wago.png", "linkToSite": "https://www.wago.com/pl/" },
-                { "id": 8, "patreonCategory": 1, "description": "3D House", "image": "../../assets/jpg/3dhouse.png", "linkToSite": "http://www.3dhouse.pl/" },
-
-                { "id": 9, "patreonCategory": 2, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
-                { "id": 10, "patreonCategory": 2, "description": "EDOCS", "image": "../../assets/jpg/edocs.png", "linkToSite": "https://edocssystems.com/" },
-                { "id": 11, "patreonCategory": 2, "description": "Elektrolift", "image": "../../assets/jpg/elektrolift.png", "linkToSite": "https://www.windy.rzeszow.pl/" },
-                { "id": 11, "patreonCategory": 2, "description": "ENF", "image": "../../assets/jpg/enf.png", "linkToSite": "https://www.enf.pl/" },
-                { "id": 12, "patreonCategory": 2, "description": "Hobbistycznie.pl", "image": "../../assets/jpg/hobbistycznie.png", "linkToSite": "https://www.hobbistycznie.pl/" },
-                { "id": 13, "patreonCategory": 2, "description": "infoSoftware", "image": "../../assets/jpg/infosoft.png", "linkToSite": "https://infosoftware.pl/" },
-                { "id": 14, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
-                { "id": 15, "patreonCategory": 2, "description": "Sędziszów Małopolski", "image": "../../assets/jpg/sedziszow.png", "linkToSite": "https://sedziszow-mlp.pl/" },
-
-                { "id": 16, "patreonCategory": 3, "description": "Deloitte", "image": "../../assets/svg/deloitte.svg", "linkToSite": "https://www2.deloitte.com/pl/pl.html" },
-                { "id": 17, "patreonCategory": 3, "description": "FANUC", "image": "../../assets/jpg/fanuc.png", "linkToSite": "https://www.fanuc.eu/uk/en" },
-                { "id": 18, "patreonCategory": 3, "description": "Fundacja Magnezyty", "image": "../../assets/jpg/magnezyty.png", "linkToSite": "https://ropczyce.com.pl/relacje-inwestorskie/odpowiedzialnosc-biznesu/fundacja-magnezyty/" },
-                { "id": 19, "patreonCategory": 3, "description": "MamutTV", "image": "../../assets/jpg/mamuttv.png", "linkToSite": "http://mamuttv.pl/" },
-                { "id": 20, "patreonCategory": 3, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
-                { "id": 21, "patreonCategory": 3, "description": "ONT", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
-                { "id": 22, "patreonCategory": 3, "description": "Podkarpackie Medical Rescue Center", "image": "../../assets/jpg/pcmr.png", "linkToSite": "https://pcrm.com.pl/" },
-                { "id": 23, "patreonCategory": 3, "description": "TME", "image": "../../assets/jpg/tme.png", "linkToSite": "https://www.tme.eu/en/" },
-                { "id": 24, "patreonCategory": 3, "description": "Zespół Szkół Technicznych", "image": "../../assets/jpg/zst.png", "linkToSite": "http://www.zstrzeszow.pl/" },
-
-                { "id": 25, "patreonCategory": 4, "description": "Rzeszów Center of 3D Technologies", "image": "../../assets/jpg/rcd.png", "linkToSite": "https://rct3d.pl/" },
-                { "id": 25, "patreonCategory": 4, "description": "Student Research Group of Computer Science KOD", "image": "../../assets/jpg/skni.png", "linkToSite": "https://kod.prz.edu.pl/" },
-
-                { "id": 26, "patreonCategory": 5, "description": "Minister of Education and Science", "image": "../../assets/jpg/minister_edukacji.jpg", "linkToSite": "https://www.gov.pl/web/edukacja-i-nauka" },
-                { "id": 27, "patreonCategory": 5, "description": "Minister of Development and Technology", "image": "../../assets/jpg/mrit.png", "linkToSite": "https://www.gov.pl/web/rozwoj-technologia " },
-                { "id": 28, "patreonCategory": 5, "description": "Voivode of Podkarpacie", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" },
-                { "id": 29, "patreonCategory": 5, "description": "Marshal of the Podkarpackie Voivodeship", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/" },
-                { "id": 30, "patreonCategory": 5, "description": "Mayor of the City of Rzeszów", "image": "../../assets/jpg/rzeszow.png", "linkToSite": "https://bip.erzeszow.pl/" },
-                { "id": 31, "patreonCategory": 5, "description": "Podkarpacki Education Superintendent", "image": "../../assets/jpg/kuratorium.png", "linkToSite": "https://www.ko.rzeszow.pl/" },
-
-                { "id": 32, "patreonCategory": 6, "description": "Botland", "image": "../../assets/jpg/botland.webp", "linkToSite": "https://botland.com.pl/" },
-                { "id": 33, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" },
-                { "id": 34, "patreonCategory": 6, "description": "Huawei", "image": "../../assets/jpg/huawei.png", "linkToSite": "https://seedsforthefuture.pl/" },
-                { "id": 35, "patreonCategory": 6, "description": "zrobotyzowany.pl", "image": "../../assets/jpg/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl/" },
-                { "id": 35, "patreonCategory": 6, "description": "Radio Feniks", "image": "../../assets/jpg/feniks.png", "linkToSite": "http://feniks.fm/" }
-
-                { "id": 25, "patreonCategory": 4, "description": "Rzeszów Center of 3D Technologies", "image": "../../assets/jpg/rcd.png", "linkToSite": "https://rct3d.pl/" },
-                { "id": 25, "patreonCategory": 4, "description": "Student Research Group of Computer Science KOD", "image": "../../assets/jpg/skni.png", "linkToSite": "https://kod.prz.edu.pl/" },
-
-                { "id": 26, "patreonCategory": 5, "description": "Minister of Education and Science", "image": "../../assets/jpg/minister_edukacji.jpg", "linkToSite": "https://www.gov.pl/web/edukacja-i-nauka" },
-                { "id": 27, "patreonCategory": 5, "description": "Minister of Development and Technology", "image": "../../assets/jpg/mrit.png", "linkToSite": "https://www.gov.pl/web/rozwoj-technologia " },
-                { "id": 28, "patreonCategory": 5, "description": "Voivode of Podkarpacie", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" },
-                { "id": 29, "patreonCategory": 5, "description": "Marshal of the Podkarpackie Voivodeship", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/" },
-                { "id": 30, "patreonCategory": 5, "description": "Mayor of the City of Rzeszów", "image": "../../assets/jpg/rzeszow.png", "linkToSite": "https://bip.erzeszow.pl/" },
-                { "id": 31, "patreonCategory": 5, "description": "Podkarpacki Education Superintendent", "image": "../../assets/jpg/kuratorium.png", "linkToSite": "https://www.ko.rzeszow.pl/" },
-
-                { "id": 32, "patreonCategory": 6, "description": "Botland", "image": "../../assets/jpg/botland.webp", "linkToSite": "https://botland.com.pl/" },
-                { "id": 33, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" },
-                { "id": 34, "patreonCategory": 6, "description": "Huawei", "image": "../../assets/jpg/huawei.png", "linkToSite": "https://seedsforthefuture.pl/" },
-                { "id": 35, "patreonCategory": 6, "description": "zrobotyzowany.pl", "image": "../../assets/jpg/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl/" }
 
             ],
             "tiers": [

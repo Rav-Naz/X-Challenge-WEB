@@ -15,6 +15,7 @@ export class InputComponent {
   @Input() collapsed: undefined | boolean;
   @Input() type: undefined | string;
   @Input() placeholder: string = " ";
+  @Input() disabled: boolean = false;
 
   constructor(public esp32Service: Esp32Service) { }
 
@@ -33,7 +34,7 @@ export class InputComponent {
   }
 
   get isDisabled() {
-    return this.group.disabled;
+    return this.group.disabled || this.disabled;
   }
 
   updateActiveInput() {

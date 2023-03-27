@@ -1,3 +1,4 @@
+import { PartnerZoneComponent } from './partner-zone/partner-zone.component';
 import { ManageFightsComponent } from './competitor-zone/referee/manage-fights/manage-fights.component';
 import { ThanksComponent } from './home/thanks/thanks.component';
 import { CompetitorComponent } from './competitor-zone/referee/competitors/competitor/competitor.component';
@@ -49,6 +50,7 @@ const routes: Routes = [
   { path: 'building-plan', component: BuildingPlanComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', canActivate: [RegisterGuard], component: RegisterComponent },
+  { path: 'register/:email', canActivate: [RegisterGuard], component: RegisterComponent },
   { path: 'app-rules', component: AppRulesComponent },
   { path: 'thank-you', component: ThanksComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
@@ -78,6 +80,7 @@ const routes: Routes = [
     ]
   },
   { path: 'confirm-code/:uzytkownik_uuid/:kod/:czy_na_telefon', component: ConfirmCodeComponent },
+  { path: 'partner-zone', component: PartnerZoneComponent },
   { path: '**', redirectTo: '' },
 ];
 

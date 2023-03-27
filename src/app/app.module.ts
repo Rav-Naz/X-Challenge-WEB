@@ -66,6 +66,7 @@ import { PositionsComponent } from './competitor-zone/referee/positions/position
 import { AnnouncementsComponent } from './competitor-zone/referee/announcements/announcements.component';
 import { ActiveFightsAndTimesComponent } from './competitor-zone/referee/active-fights-and-times/active-fights-and-times.component';
 import { ActiveFightsService } from './services/active_fights';
+import { PartnerZoneComponent } from './partner-zone/partner-zone.component';
 
 
 
@@ -110,7 +111,8 @@ import { ActiveFightsService } from './services/active_fights';
     FightsViewComponent,
     PositionsComponent,
     AnnouncementsComponent,
-    ActiveFightsAndTimesComponent
+    ActiveFightsAndTimesComponent,
+    PartnerZoneComponent
 
   ],
   imports: [

@@ -93,9 +93,13 @@
             </div>
         </div>
         <label class="event-info-details-main">
+          <!-- <a style="cursor: pointer" target="_blank">{{'home.event-info.important.3' | translate}}</a>
+          <br><br><br>
+          <br><br><br>
+          <br><br><br>
           <a style="cursor: pointer" target="_blank"  href="https://xchallenge.pl/timetable">{{'home.event-info.important.1' | translate}}</a>
           <br><br><br>
-          <a style="cursor: pointer" target="_blank" href="https://bit.ly/xchallengeTH22rules">{{'home.event-info.important.2' | translate}}</a>
+          <a style="cursor: pointer" target="_blank" href="https://bit.ly/xchallengeTH22rules">{{'home.event-info.important.2' | translate}}</a> -->
             <!-- <a [routerLink]="['/app-rules']">{{'home.event-info.covid.2' | translate}}</a>
             {{'home.event-info.covid.3' | translate}} -->
         </label>
@@ -244,9 +248,9 @@
         </div>
     </section> -->
     <!-- NEWS -->
-    <section class="news" id="news">
+    <!-- <section class="news" id="news">
         <h3 class="section-header">{{'home.news.title' | translate}}</h3>
-        <!-- <p class="news-one" data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="center-center">{{'home.news.register' | translate}}</p> -->
+        <p class="news-one" data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="center-center">{{'home.news.register' | translate}}</p>
         <div class="timeline">
             <div class="timeline-outer">
                 <div class="timeline-card" *ngFor="let point of dateList; let i = index" [id]="'border'+i">
@@ -269,7 +273,7 @@
             <article *ngIf="registerPercentageCompletion && registerPercentageCompletion > 80">{{'home.news.register-limit.body1' | translate : {registerPercentageCompletion: registerPercentageCompletion} }}</article>
             <article *ngIf="isLessThanWeek">{{'home.news.register-limit.body2' | translate : {days: getDaysToEndRegistration} }}</article>
         </div>
-    </section>
+    </section> -->
     <!-- CATEGORIES -->
     <section class="categories" id="categories">
         <div class="categories-container">
@@ -354,7 +358,8 @@
             </div>
         </div> -->
         <div data-aos="slide-right" data-aos-duration="1000">
-            <span>{{'home.patreons.organizer5.name' | translate}}</span>
+            <!-- <span>{{'home.patreons.organizer5.name' | translate}}</span> -->
+
             <img src="../../assets/jpg/rzit.png" alt="Logo organizatora RzIT">
             <div class="organizer-social">
                 <p (click)="openUrl('https://www.facebook.com/rzeszowska.grupa.it')" class="organizer-social-item organizer-social-item--fb"><i class="lab la-facebook-f"></i></p>

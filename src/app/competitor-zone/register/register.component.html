@@ -9,7 +9,7 @@
                 <app-input [group]="form" controlName="surname"></app-input>
             </div>
             <div style="width: 100%;">
-                <app-input [group]="form" controlName="email"></app-input>
+                <app-input [group]="form" controlName="email" [disabled]="!isEmailEditable"></app-input>
             </div>
 
             <div style="width: 100%;">
