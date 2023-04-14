@@ -7,13 +7,19 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app-rules.component.html',
   styleUrls: ['./app-rules.component.scss']
 })
-export class AppRulesComponent implements OnInit{
+export class AppRulesComponent implements OnInit {
 
   private rules: Array<any> | undefined;
   private subs = new Subscription();
 
+  regulation1 = '';
+  regulation2 = '';
   constructor(private translate: TranslateService) {
 
+  }
+
+  openUrl(url: string): void {
+    window.open(url);
   }
 
   ngOnInit() {
@@ -21,7 +27,13 @@ export class AppRulesComponent implements OnInit{
       this.rules = rules;
       // if(typeof rules === 'object') this.rules = rules;
     });
-    this.subs.add(sub5);
+    const sub6 = this.translate.stream('app-rules.regulations.link').subscribe((rule: string) => {
+      this.regulation1 = rule;
+    });
+    const sub7 = this.translate.stream('app-rules.rodo.link').subscribe((rule: string) => {
+      this.regulation2 = rule;
+    });
+    this.subs.add(sub5).add(sub6).add(sub7);
   }
 
   get getRules() {

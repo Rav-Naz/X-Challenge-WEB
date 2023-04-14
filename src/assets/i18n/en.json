@@ -579,6 +579,15 @@
             "4": "TERMS AND CONDITIONS OF INTERNATIONAL COMPETITIONS XCHALLENGE",
             "5": "ADMINISTRATOR'S INFORMATION IN CONNECTION WITH THE PROCESSING OF PERSONAL DATA"
         },
+        "regulations": {
+            "title": "TERMS AND CONDITIONS OF INTERNATIONAL COMPETITIONS XCHALLENGE",
+            "link": "https://xchallenge.pl/regulations/XChallenge_2023_General_Regulations_EN.pdf"
+        },
+        "rodo": {
+            "title": "ADMINISTRATOR'S INFORMATION REGARDING THE PROCESSING OF PERSONAL DATA",
+            "link": "https://xchallenge.pl/regulations/Consents_and_RODO.pdf"
+
+        },
         "rules": [{
                 "title": "COOKIES POLICY OF THE XCHALLENGE.PL SITE",
                 "description": "The following Cookies Policy sets out the rules for saving and accessing data on Users' Devices using the Website for the purpose of providing electronic services by the Website Administrator.",
@@ -755,146 +764,6 @@
                         ]
                     }
                 ]
-            },
-            {
-                "title": "TERMS AND CONDITIONS OF INTERNATIONAL COMPETITIONS XCHALLENGE",
-                "description": "Last update: 13.11.2021",
-                "paragrphs": [{
-                        "title": "Definition",
-                        "bodies": [
-                            "<b>Team</b> – a group of people consisting of Participants and Competitors who independently created at least one Robot or its algorithm, taking part in the Competition.",
-                            "<b>Constructor</b> – a personor persons taking part in the competition that created the Robot",
-                            "<b>Organizer</b> – a person supervising and influencing the course of the Competition, having a personal identifier with theword “Organizer”",
-                            "<b>Robot</b> – a mechatronic device powered by electric energy that moves autonomously and reacts noticeably to changes of environment.",
-                            "<b>IdenticalRobots</b> – Robots having a similar design and using similaral gorithms. The Main Referee decides whether the Robots are identical.",
-                            "<b>Referee</b> – a person supervising the course of the competition on the day of the Competition.",
-                            "<b>Participant</b> – a person who takes active or passive participation in the competition. This could be a Competitor, Referee, Organizer or spectator.",
-                            "<b>Competitor</b> – see Constructor."
-                        ]
-                    },
-                    {
-                        "title": "General informations",
-                        "bodies": [
-                            "These regulations define the conditions for participation in the International Robot Competition XChallenge (hereinafter called Competition) and the rules of conduct to prevent the spread of the SARS-CoV-2 virus in Poland",
-                            "International Robot Competition XChallenge 2021 is the next edition of the Competition organized by „Koło Naukowe Automatyków i Robotyków ROBO” operating at the Faculty of Electrical Engineering and Computer Science of the Rzeszow University of Technology together with its partners. The aim of the event is to popularize robotics among young people and students.",
-                            "The competition will take place on Sunday, November 28, 2021. The duration depends on the number of submitted robots, therefore the final schedule will be made available on the xchallenge.pl website no later than 4 days before the competition, i.e. on Wednesday, November 24, 2021",
-                            "The competition will be held in the building of the Regional Sports and Entertainment Center \"Podpromie\" located at 10 Podpromie Street, 35-010 Rzeszow",
-                            "The Organizers will supervise the proper course of the Competition. Each of the Organizers will have a personal identifier.",
-                            "A necessary condition for joining the Competition is consent to the processing of personal data, including image:",
-                            "&nbsp; o Persons of age consent to the processing of personal data and personal data in the form of an image sign on the spot - printouts will be ready - the consent form is available at <a href=\"xchallenge.pl\" target=\"_blank\" style=\"color:yellow;\">xchallenge.pl</a>",
-                            "&nbsp; o Minors are asked to bring a printed consent form signed by the Parent / Legal Guardian on the day of the Tournament - the consent form for a minor is available at <a href=\"xchallenge.pl\" target=\"_blank\" style=\"color:yellow;\">xchallenge.pl</a>"
-                        ]
-                    },
-                    {
-                        "title": "Participants",
-                        "bodies": [
-                            "Adults may take part in the Competition, who consent to the processing of personal data, including their images, and accept the regulations. In the case of minors, written consent of the parent or legal guardian to participate in the Competition is required, consent to the processing of personal data, including image, and acceptance of the regulations - the form is available at <a href=\"xchallenge.pl\" target=\"_blank\" style=\"color:blue;\">xchallenge.pl</a>",
-                            "Teams of 1-20 people may register for the Competition",
-                            "Each team without an adult must come to the competition under the supervision of an adult - a guardian",
-                            "During registration on the day of the competition, each team member must have an identity document and present it at the request of the Organizer, Referee or Staff.",
-                            "Registering a team in the Competition on the website <a href=\"xchallenge.pl\" target=\"_blank\" style=\"color:yellow;\">xchallenge.pl</a> is tantamount to accepting the General Regulations of the Competition and the regulations of individual competitions.",
-                            "Each passive or active participant, starting or not taking part in the Competition, participating in the event, is obliged to comply with all the Competition Regulations and the Regulations in force in the building of the Regional Sports and Entertainment Center \"Podpromie\". Entering the event area is tantamount to accepting the regulations",
-                            "Ignorance of any of the Regulations does not exempt the participant from the necessity to comply with them",
-                            "The organizers undertake not to disclose the telephone number provided during registration to third parties without the consent of the number owner"
-                        ]
-                    },
-                    {
-                        "title": "Competitions",
-                        "bodies": [
-                            "There will be 17 separate competitions. One team can take part in several of them, however the different stages of different competitions can take place at the same time",
-                            "Competitions that will be held at the event:",
-                            "&nbsp;<b>Smash Bots by RoboLAB</b>",
-                            "&nbsp;<b>LEGO Sumo</b>",
-                            "&nbsp;<b>Nano Sumo</b>",
-                            "&nbsp;<b>Micro Sumo</b>",
-                            "&nbsp;<b>Mini Sumo</b>",
-                            "&nbsp;<b>Sumo</b>",
-                            "&nbsp;<b>LineFollower Standard</b>",
-                            "&nbsp;<b>LineFollower Standard LEGO</b>",
-                            "&nbsp;<b>LineFollower Turbo</b>",
-                            "&nbsp;<b>LineFollower Standard Enhanced</b>",
-                            "&nbsp;<b>LineFollower Turbo Enhanced</b>",
-                            "&nbsp;<b>Drag Race</b>",
-                            "&nbsp;<b>Cebula House</b>",
-                            "&nbsp;<b>Micromouse</b>",
-                            "&nbsp;<b>Robot Sprint</b>",
-                            "&nbsp;<b>LEGO Tug of War</b>",
-                            "&nbsp;<b>Freestyle</b>",
-                            "The exact regulations of each competition can be found on the home page of <a href=\"xchallenge.pl\" target=\"_blank\" style=\"color:yellow;\">xchallenge.pl</a> the link to the regulations is available after selecting the appropriate category",
-                            "In the case of a small number of teams participating in a given competition, the organizer reserves the right to play only the final phase or to cancel the competition."
-
-                        ]
-                    },
-                    {
-                        "title": "Organizational matters",
-                        "bodies": [
-                            "The organizer reserves the right to amend these regulations.",
-                            "Prizes are awarded on a team basis.",
-                            "The robot and the program taking part in a given competition must be authored only and exclusively by the members of a given team.",
-                            "Any questions regarding the regulations should be directed to robo@kneiti.prz.edu.pl"
-                        ]
-                    },
-                    {
-                        "title": "Rules of conduct to counteract the spread of SARS-CoV-2 virus in Poland",
-                        "bodies": [
-                            "Each participant is obliged to cover his mouth and nose only with a protective mask on the premises of the event, the participant himself is obliged to have an appropriate number of protective masks. The organizer reserves the right to ask or refuse to admit a person who does not have a protective mask or an appropriate certificate confirming the inability to wear a protective mask, accepted by the currently applicable legal regulations, to the event area.",
-                            "The organizer provides an appropriate amount of disinfectants that will be placed throughout the facility.",
-                            "The number of seats in the audience will be limited, only the unfolded seats (with the backrest raised) may be occupied, while the seats with the backrest down (folded) are excluded from use.",
-                            "Each participant also undertakes to maintain the required social distance.",
-                            "The organizer reserves the right to admit to the event area only people fully vaccinated against SARS-CoV-2 in the event that the maximum number of people allowed on the basis of the currently applicable restrictions are present in the hall",
-                            "The organizers of the event are required to provide the collected personal data to the State Poviat Sanitary Inspector who performs epidemiological supervision in a given area and to the security services at their request."
-                        ]
-                    },
-                    {
-                        "title": "Disputes, liability",
-                        "bodies": [
-                            "All disputes related to the category described in the regulations of the category are resolved by the judge of the given category.",
-                            "All disputes and situations not described in the Regulations of the categories are resolved by the Main Judge.",
-                            "Any disputes and situations not described in these regulations and not related to any category will be settled by the Organizer in accordance with applicable law and safety regulations.",
-                            "In the event of the Participant's behavior that violates: moral standards, good manners, human dignity, religious feelings or safety of the Participants, the Main Referee or the Organizers have the right to impose a penalty on the Participant in the form of a ban on staying at the event, in which case the punished Participant is obliged to leave the event area immediately.",
-                            "The decision of the Chief Referee and the Organizer is final."
-                        ]
-                    },
-                    {
-                        "title": "Agreements",
-                        "bodies": [
-                            "Participation in the competition means consent to the publication of the image (photos from the competition, recordings of the competition and video materials transmitted live using appropriate platforms), basic data about the robot and the team by the Competition Organizers and Partners without the need to inform the Participant about it."
-                        ]
-                    },
-                    {
-                        "title": "Final Provision",
-                        "bodies": [
-                            "Personal data of the Competition participants will be processed only for the purposes of conducting the Competition, selecting the winners and awarding, issuing, receiving and settling the terms of prizes and distinctions.",
-                            "The administrator of personal data is Rzeszow University of Technology names of Ignacy Łukasiewicz with its seat at al. Powstańców Warszawy 12, 35-959 Rzeszow",
-                            "Processing of personal data in connection with participation in the Competition includes the publication of the image, name and surname and result of the participant who won one of the Competition awards. Each of the remaining participants of the Competition will have the opportunity to consent to the disclosure of its result, name and e-mail address to the companies organizing the Competition. Data and detailed results of participants of the Competition who do not give their consent will not be disclosed.",
-                            "Data processing concerns all participants of the Competition. Participants have the right to access their personal data and to correct them. Providing personal data (name, surname, school or university, e-mail address) is voluntary, but failure to do so prevents participation in the Competition. By joining the Competition, participants consent to the processing of their data for the purpose specified in these Regulations",
-                            "The competition is organized according to the fair-play principle. In the event of breaking the rules of this idea, e.g. by deliberately damaging another participant's robot, the Competition organizers reserve the right to exclude the entire team of the participant from this and subsequent editions of the ROBO ~ motion International Competition",
-                            "In matters not covered by the Regulations, the provisions of the Civil Code shall apply"
-                        ]
-                    }
-                ]
-            },
-            {
-                "title": "INFORMACJA ADMINISTRATORA W ZWIĄZKU Z PRZETWARZANIEM DANYCH OSOBOWYCH",
-                "paragrphs": [{
-                    "title": "Informacje ogólne",
-                    "bodies": [
-                        "The administrator of personal data is the Ignacy Łukasiewicz University of Technology in Rzeszów al. Powstańców Warszawy 12, 35-959 Rzeszow, (hereinafter referred to as the University), email address: kancelaria@prz.edu.pl",
-                        "The Data Protection Supervisor at the Rzeszow University of Technology can be contacted by calling 17 865 1775 or by e-mail: iod@prz.edu.pl",
-                        "The administrator processes your personal data in accordance with the Regulation pursuant to Article 13 (1) (2) of Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of individuals with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46 / EC (hereinafter referred to as GDPR).",
-                        "The Administrator collects and processes the following personal data of the Participant provided via the registration form on the website xchallenge.pl: name and surname, e-mail address and telephone number.",
-                        "&nbsp; a) based onconsent to register participants and organize the competition (Article 6 (1) (a) of the GDPR)-providing the above data is voluntary, however, it is necessary for registration and participation in the 6th International XChallenge Competition,",
-                        "&nbsp; b) based on consent consent for marketing and promotional purposes related to the offer of the Partners and the Organizer (Article 6 (1) (a) of the GDPR) - consent is voluntary, it can be withdrawn at any time.",
-                        "During the International XChallenge Competition, photo and video sessions will be held, the Administrator and the Organizer's Partners will process the Participant's imagebased on his consentor in the case of minors, on the basis of consent expressed by their legal guardians (Article 6 (1) (a) of the GDPR). Granting consent for image processing is voluntary, but necessary to participate in the International XChallenge Competition. Consent is available under this <a href=\"https://rzit.smarthost.pl/robomotion/rodo.pdf\" target=\"_blank\">link</a>.",
-                        "Each Participant is entitled to:",
-                        "&nbsp; a) request access to data and obtain information on their processing",
-                        "&nbsp; b) rectify data and demand their removal or limitation of processing",
-                        "&nbsp; c) object to processing",
-                        "&nbsp; d) withdraw consent to the processing of data at any time - this withdrawal, however, does not affect the compliance of the processing prior to its execution",
-                        "&nbsp; e) lodging a complaint to the supervisory body regarding the protection of personal data - in Poland to the President of the Office for Personal Data Protection",
-                        "In order to exercise the above rights, please contact the Organizer."
-                    ]
-                }]
             }
         ]
     },

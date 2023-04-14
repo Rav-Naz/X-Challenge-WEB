@@ -18,6 +18,8 @@
                     <p [innerHtml]="body" *ngFor="let body of paragraph.bodies"></p>
                 </ng-container>
             </ng-container>
+            <h5 (click)="openUrl(regulation1)" style="cursor: pointer;">{{'app-rules.regulations.title' | translate}}</h5>
+            <h5 (click)="openUrl(regulation2)" style="cursor: pointer;">{{'app-rules.rodo.title' | translate}}</h5>
         </div>
     </div>
 </div>
