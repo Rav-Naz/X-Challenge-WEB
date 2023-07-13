@@ -121,7 +121,7 @@
                         },
                         "2": {
                             "title": "Etap 2 - wkrótce",
-                            "description": "„Musimy ostatecznie pokonać smoka! Tylko smocze owoce i moc elementów lub artefaktów mogą pokonać jego i Goruka na zawsze!” - powiedział Rycerz. „Smocze owoce, których smok tak bardzo nie lubi, rosną na drzewie przy zamku. Musimy je zdobyć. Jak widzicie mają różne kolory – warunkuje to ich skuteczność. Niektóre zdobędziemy w prosty sposób. Te najsilniejsze odblokują tylko moce 4 żywiołów – wody, ognia, powietrza i ziemi lub 3 magiczne artefakty. Niestety odkąd zniknęły artefakty i elementy żywiołów drzewo nie rodzi już nowych owoców dlatego tym bardziej ważne jest odzyskanie przedmiotów. Na dziedzińcu znajdują się ołtarze żywiołów. Są połączone ze sobą i smoczym drzewem. Elementy żywiołów zostały zagubione. Jeśli uda Wam się je dostarczyć na miejsce odblokujecie potężne smocze owoce. Możecie też użyć artefaktów. Ich energia osłabi smoka i także odblokuje silne smocze owoce. Żeby dotrzeć do miejsca złożenia magicznych artefaktów musicie najpierw opuścić most zwodzony. Zbierzcie je i złóżcie na postumentach. Musicie sami wybrać ścieżkę - elementy bądź artefakty. W Was nadzieja bohaterowie, pokonajcie ich!” Po trudzie wyzwań walka została zakończona. Niestety obecność bohaterów zaczynała burzyć czasoprzestrzeń. Rycerz otworzył im wrota i aktywował portal. Szybko podziękował im za pomoc i kazał udać się do portalu aby móc wrócić do swojego świata nim zamknie się na zawsze. Nasi bohaterowie wraz z ich robotem przeszli przez portal i powrócili do Starlight City wiedząc, że wdzięczność Rycerza oraz mieszkańców jego planety na zawsze pozostanie w ich sercach."
+                            "description": "„Musimy ostatecznie pokonać smoka! Tylko smocze owoce i moc elementów lub artefaktów mogą pokonać jego i Goruka na zawsze!” - powiedział Rycerz. „Smocze owoce, których smok tak bardzo nie lubi, rosną na drzewie przy zamku. Musimy je zdobyć. Jak widzicie mają różne kolory – warunkuje to ich skuteczność. Niektóre zdobędziemy w prosty sposób. Te najsilniejsze odblokują tylko moce 4 żywiołów – wody, ognia, powietrza i ziemi lub 3 magiczne artefakty. Niestety odkąd zniknęły artefakty i elementy żywiołów drzewo nie rodzi już nowych owoców dlatego tym bardziej ważne jest odzyskanie przedmiotów. Na dziedzińcu znajdują się ołtarze żywiołów. Są połączone ze sobą i smoczym drzewem. Elementy żywiołów zostały zagubione. Jeśli uda Wam się je dostarczyć na miejsce odblokujecie potężne smocze owoce. Możecie też użyć artefaktów. Ich energia osłabi smoka i także odblokuje silne smocze owoce. Żeby dotrzeć do miejsca złożenia magicznych artefaktów musicie najpierw opuścić most zwodzony. Zbierzcie je i złóżcie na postumentach. Musicie sami wybrać ścieżkę - elementy bądź artefakty. W Was nadzieja bohaterowie, pokonajcie ich!”"
                         }
                     }
                 }
@@ -185,15 +185,28 @@
             "title": "Partnerzy",
             "question": "Chcesz zostać patronem? Skontaktuj się z nami pod adresem robo@kneiti.prz.edu.pl",
             "patreonList": [
+                { "id": 1, "patreonCategory": 0, "description": "Politechnika Rzeszowska im. Ignacego Łukasiewicza", "image": "../../assets/jpg/prz_pl.png", "linkToSite": "https://w.prz.edu.pl/" },
+                { "id": 2, "patreonCategory": 0, "description": "Pratt & Whitney", "image": "../../assets/jpg/pratt.png", "linkToSite": "https://pwrze.com/" },
+                { "id": 3, "patreonCategory": 0, "description": "Rzeszów Stolica Innowacji", "image": "../../assets/jpg/rzeszow_stolica_white.png", "linkToSite": "https://www.erzeszow.pl/" },
 
+                { "id": 4, "patreonCategory": 1, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/jpg/ale-primary-logo-white.png", "linkToSite": "https://www.al-enterprise.com/" },
+                
+                { "id": 5, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
+
+                { "id": 6, "patreonCategory": 3, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
+
+                { "id": 7, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
+                { "id": 8, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
+
+                { "id": 9, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" }
 
             ],
             "tiers": [
                 "Partner Główny",
+                "Partner Diamentowy",
                 "Partner Złoty",
                 "Partner Srebrny",
                 "Partner Brązowy",
-                "Partner strategiczny",
                 "Patronat honorowy",
                 "Patronat medialny"
             ]
