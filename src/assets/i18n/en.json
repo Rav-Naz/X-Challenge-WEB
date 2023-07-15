@@ -184,15 +184,16 @@
                 { "id": 3, "patreonCategory": 0, "description": "Rzeszów The capital of innovation", "image": "../../assets/jpg/rzeszow_stolica_white.png", "linkToSite": "https://www.erzeszow.pl/" },
 
                 { "id": 4, "patreonCategory": 1, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/jpg/ale-primary-logo-white.png", "linkToSite": "https://www.al-enterprise.com/" },
+                { "id": 5, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/jpg/kronospan.png", "linkToSite": "https://kronosfera.pl/" },
                 
-                { "id": 5, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
+                { "id": 6, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
 
-                { "id": 6, "patreonCategory": 3, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
+                { "id": 7, "patreonCategory": 3, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
 
-                { "id": 7, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
-                { "id": 8, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
+                { "id": 8, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
+                { "id": 9, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
 
-                { "id": 9, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" }
+                { "id": 10, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" }
 
             ],
             "tiers": [
