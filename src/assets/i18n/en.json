@@ -178,22 +178,22 @@
             "title": "PATRONS",
             "question": "Do you want to become a patron? Contact us at robo@kneiti.prz.edu.pl",
             "patreonList": [
+                { "id": 1, "patreonCategory": 0, "description": "theprotocol.it ", "image": "../../assets/jpg/theprotocol_logo_dark.png", "linkToSite": "https://theprotocol.it/" },
+                { "id": 2, "patreonCategory": 0, "description": "Rzeszow University of Technology im. Ignacego Łukasiewicza", "image": "../../assets/jpg/prz_pl.png", "linkToSite": "https://w.prz.edu.pl/" },
+                { "id": 3, "patreonCategory": 0, "description": "Pratt & Whitney", "image": "../../assets/jpg/pratt.png", "linkToSite": "https://pwrze.com/" },
+                { "id": 4, "patreonCategory": 0, "description": "Rzeszów The capital of innovation", "image": "../../assets/jpg/rzeszow_stolica_white.png", "linkToSite": "https://www.erzeszow.pl/" },
 
-                { "id": 1, "patreonCategory": 0, "description": "Rzeszow University of Technology im. Ignacego Łukasiewicza", "image": "../../assets/jpg/prz_pl.png", "linkToSite": "https://w.prz.edu.pl/" },
-                { "id": 2, "patreonCategory": 0, "description": "Pratt & Whitney", "image": "../../assets/jpg/pratt.png", "linkToSite": "https://pwrze.com/" },
-                { "id": 3, "patreonCategory": 0, "description": "Rzeszów The capital of innovation", "image": "../../assets/jpg/rzeszow_stolica_white.png", "linkToSite": "https://www.erzeszow.pl/" },
-
-                { "id": 4, "patreonCategory": 1, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/jpg/ale-primary-logo-white.png", "linkToSite": "https://www.al-enterprise.com/" },
-                { "id": 5, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/jpg/kronospan.png", "linkToSite": "https://kronosfera.pl/" },
+                { "id": 5, "patreonCategory": 1, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/jpg/ale-primary-logo-white.png", "linkToSite": "https://www.al-enterprise.com/" },
+                { "id": 6, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/jpg/kronospan.png", "linkToSite": "https://kronosfera.pl/" },
                 
-                { "id": 6, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
+                { "id": 7, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
 
-                { "id": 7, "patreonCategory": 3, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
+                { "id": 8, "patreonCategory": 3, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
 
-                { "id": 8, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
-                { "id": 9, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
+                { "id": 9, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
+                { "id": 10, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
 
-                { "id": 10, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" }
+                { "id": 11, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" }
 
             ],
             "tiers": [
