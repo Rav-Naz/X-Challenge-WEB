@@ -117,11 +117,11 @@
                     },
                     "stages": {
                         "1": {
-                            "title": "Stage 1 - soon",
+                            "title": "Stage 1",
                             "description": "The heroes, along with the knight, arrived at his kingdom. They saw before them a beautiful green area, full of flowers and trees joined in synergy with buildings but shrouded in darkness. The knight led them toward the forest beyond which, he explained to them, was the castle. He himself took the other road so that he could prepare for a clash with the sorcerer. Standing at the edge of the forest, they activated the robot and set it off ahead. Driving among the trees, the members of the special task team noticed beautiful plants flashing with light, magical to them in a way. When the robot drove through the forest they saw a castle, large, majestic, reflected in the sunlight. Without waiting they sent the robot into the courtyard where they saw a lot of strange stones. The knight had explained to them earlier that these were powerful power minerals scattered by a dragon who had failed to move all of them into its den - terrium and fucoxodal. Their energy will give them the power to break the magical seal of darkness cast by the sorcerer. In order to activate their full power, the heroes must collect a significant amount of them and deposit them in the vault. The minerals appeared in various forms, including hard-to-reach terrain. Suddenly right next to them they spotted a dragon! It looked like it was protecting something. Collecting stones, the heroes noticed what the dragon was protecting. A chest filled with majestic white spheres. It was oxidium - the most powerful material on their planet. The dragon did not let the chest out of his sight, however, the heroes saw an opportunity to get it - they must close the gate to slam the dragon in its cave which would help them take the chest to the vault. Time was running out, the dragon was trying to escape, the darkness was growing - the sorcerer was approaching. They must hurry to collect as many minerals as possible. After successfully collecting the elements, their combined power gave a huge light - a light beam broke the seal and brightness returned to the kingdom. Unfortunately, this was only the beginning. The sorcerer reached the den and released the dragon, which headed to the castle and took over the treasury again. The gate was raised, the robot of heroes bogged down in the courtyard."
                         },
                         "2": {
-                            "title": "Stage 2 - soon",
+                            "title": "Stage 2",
                             "description": "„We must ultimately defeat the dragon! Only dragon fruit and the power of elements or artifacts can defeat him and Goruk forever!” - said the Knight. „The dragon fruits, which the dragon dislikes so much, grow on a tree near the castle. We have to get them. As you can see they have different colors - this determines their effectiveness. Some we will acquire in a simple way. The strongest ones will only unlock the powers of 4 elements - water, fire, air and earth or 3 magical artifacts. Unfortunately, since the artifacts and elemental elements have disappeared, the tree no longer bears new fruit so it is all the more important to recover the items. There are elemental altars in the courtyard. They are connected to each other and the dragon tree. The elemental items have been lost. If you manage to deliver them to the place you will unlock powerful dragon fruits. You can also use artifacts. Their energy will weaken the dragon and also unlock powerful dragon fruits. To reach the place where the magical artifacts are deposited, you must first leave the drawbridge. Collect them and deposit them on pedestals. You must choose the path yourself - elements or artifacts. In you hope heroes, defeat them!”"
                         }
                     }
@@ -176,7 +176,7 @@
                 "name": "Scientific Circle of Electronics and Information Technology of the Rzeszów University of Technology"
             },
             "title": "PATRONS",
-            "question": "Do you want to become a patron? Contact us at robo@kneiti.prz.edu.pl",
+            "question": "Do you want to become a Partner? Contact us at robo@kneiti.prz.edu.pl",
             "patreonList": [
                 { "id": 1, "patreonCategory": 0, "description": "theprotocol.it ", "image": "../../assets/jpg/theprotocol_logo_dark.png", "linkToSite": "https://theprotocol.it/" },
                 { "id": 2, "patreonCategory": 0, "description": "Rzeszow University of Technology im. Ignacego Łukasiewicza", "image": "../../assets/jpg/prz_pl.png", "linkToSite": "https://w.prz.edu.pl/" },
@@ -187,13 +187,21 @@
                 { "id": 6, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/jpg/kronospan.png", "linkToSite": "https://kronosfera.pl/" },
                 
                 { "id": 7, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
+                { "id": 8, "patreonCategory": 2, "description": "Hobbistycznie.pl", "image": "../../assets/jpg/hobbistycznie.png", "linkToSite": "https://www.hobbistycznie.pl/" },
+                { "id": 9, "patreonCategory": 2, "description": "Rzeszów Center of 3D Technologies", "image": "../../assets/jpg/rcd.png", "linkToSite": "https://rct3d.pl/" },
 
-                { "id": 8, "patreonCategory": 3, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
+                { "id": 10, "patreonCategory": 3, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
+                { "id": 11, "patreonCategory": 3, "description": "ENF", "image": "../../assets/jpg/enf.png", "linkToSite": "https://www.enf.pl/" },
 
-                { "id": 9, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
-                { "id": 10, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
+                { "id": 12, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
+                { "id": 13, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
 
-                { "id": 11, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" }
+                { "id": 14, "patreonCategory": 5, "description": "Minister of Education and Science", "image": "../../assets/jpg/minister_edukacji.jpg", "linkToSite": "https://www.gov.pl/web/edukacja-i-nauka" },
+                { "id": 15, "patreonCategory": 5, "description": "Voivode of Podkarpacie", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" },
+                { "id": 16, "patreonCategory": 5, "description": "Marshal of the Podkarpackie Voivodeship", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/" },
+                { "id": 17, "patreonCategory": 5, "description": "Mayor of the City of Rzeszów", "image": "../../assets/jpg/rzeszow.png", "linkToSite": "https://bip.erzeszow.pl/" },
+
+                { "id": 18, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" }
 
             ],
             "tiers": [
