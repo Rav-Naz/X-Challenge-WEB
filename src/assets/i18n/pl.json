@@ -116,11 +116,11 @@
                     },
                     "stages": {
                         "1": {
-                            "title": "Etap 1 - wkrótce",
+                            "title": "Etap 1",
                             "description": "Bohaterowie wraz z rycerzem dotarli do jego królestwa. Ujrzeli przed sobą piękne zielone tereny, pełne kwiatów i drzew połączonych w synergii z budowlami jednak spowite mrokiem. Rycerz poprowadził ich w stronę lasu za którym jak im wyjaśnił znajdował się zamek. Sam poszedł drugą drogą aby móc przygotować się na starcie z czarnoksiężnikiem. Stojąc na skraju lasu aktywowali robota i ruszyli nim przed siebie. Jadąc pośród drzew członkowie zespołu do zadań specjalnych dostrzegali piękne rośliny migające światłem, dla nich na sposób magiczne. Gdy robot przejechał przez las zobaczyli zamek, wielki, majestatyczny, odbijający się w blasku słońca. Nie czekając wysłali robota na dziedziniec gdzie zobaczyli mnóstwo dziwnych kamieni. Rycerz wyjaśnił im wcześniej, iż są to potężne minerały mocy rozrzucone przez smoka, któremu nie udało się przenieść wszystkich do jego jamy – terrium i fuksodal. Ich energia da im siłę aby przełamać magiczną pieczęć mroku rzuconą przez czarnoksiężnika. Aby aktywować ich pełną moc bohaterowie muszą zebrać ich znaczną ilość i złożyć w skarbcu. Minerały pojawiały się w różnej postaci, w tym także na trudno dostępnym terenie. Nagle tuż obok dostrzegli smoka! Wyglądał jakby coś chronił. Zbierając kamienie bohaterowie dostrzegli co chroni smok. Skrzynię wypełnioną majestatycznie białymi kulami. To oksydium – najpotężniejszy materiał na ich planecie. Smok nie spuszczał skrzyni z oka jednak bohaterowie dostrzegli możliwość jej zdobycia – muszą zamknąć bramę, aby zatrzasnąć smoka w jego jaskini co pomoże im zabrać skrzynię do skarbca. Czas uciekał, smok próbował uciec, mrok narastał – czarnoksiężnik się zbliżał. Muszą się śpieszyć żeby zebrać jak najwięcej minerałów. Po pomyślnym zebraniu elementów ich połączona moc dała ogromne światło – promień świetlny przełamał pieczęć i jasność powróciła do królestwa. Niestety, był to dopiero początek. Czarnoksiężnik dotarł do jamy i wypuścił smoka, który skierował się do zamku i przejął ponownie skarbiec. Brama została podniesiona, robot bohaterów ugrzązł na dziedzińcu."
                         },
                         "2": {
-                            "title": "Etap 2 - wkrótce",
+                            "title": "Etap 2",
                             "description": "„Musimy ostatecznie pokonać smoka! Tylko smocze owoce i moc elementów lub artefaktów mogą pokonać jego i Goruka na zawsze!” - powiedział Rycerz. „Smocze owoce, których smok tak bardzo nie lubi, rosną na drzewie przy zamku. Musimy je zdobyć. Jak widzicie mają różne kolory – warunkuje to ich skuteczność. Niektóre zdobędziemy w prosty sposób. Te najsilniejsze odblokują tylko moce 4 żywiołów – wody, ognia, powietrza i ziemi lub 3 magiczne artefakty. Niestety odkąd zniknęły artefakty i elementy żywiołów drzewo nie rodzi już nowych owoców dlatego tym bardziej ważne jest odzyskanie przedmiotów. Na dziedzińcu znajdują się ołtarze żywiołów. Są połączone ze sobą i smoczym drzewem. Elementy żywiołów zostały zagubione. Jeśli uda Wam się je dostarczyć na miejsce odblokujecie potężne smocze owoce. Możecie też użyć artefaktów. Ich energia osłabi smoka i także odblokuje silne smocze owoce. Żeby dotrzeć do miejsca złożenia magicznych artefaktów musicie najpierw opuścić most zwodzony. Zbierzcie je i złóżcie na postumentach. Musicie sami wybrać ścieżkę - elementy bądź artefakty. W Was nadzieja bohaterowie, pokonajcie ich!”"
                         }
                     }
@@ -183,7 +183,7 @@
                 "name": "Koło Naukowe Elektroniki i Technologii Informacyjnych Politechniki Rzeszowskiej"
             },
             "title": "Partnerzy",
-            "question": "Chcesz zostać patronem? Skontaktuj się z nami pod adresem robo@kneiti.prz.edu.pl",
+            "question": "Chcesz zostać Partnerem? Skontaktuj się z nami pod adresem robo@kneiti.prz.edu.pl",
             "patreonList": [
                 { "id": 1, "patreonCategory": 0, "description": "theprotocol.it", "image": "../../assets/jpg/theprotocol_logo_dark.png", "linkToSite": "https://theprotocol.it/" },
                 { "id": 2, "patreonCategory": 0, "description": "Politechnika Rzeszowska im. Ignacego Łukasiewicza", "image": "../../assets/jpg/prz_pl.png", "linkToSite": "https://w.prz.edu.pl/" },
@@ -194,13 +194,21 @@
                 { "id": 6, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/jpg/kronospan.png", "linkToSite": "https://kronosfera.pl/" },
                 
                 { "id": 7, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
+                { "id": 8, "patreonCategory": 2, "description": "Hobbistycznie.pl", "image": "../../assets/jpg/hobbistycznie.png", "linkToSite": "https://www.hobbistycznie.pl/" },
+                { "id": 9, "patreonCategory": 2, "description": "Rzeszowskie Centrum Technologii 3D", "image": "../../assets/jpg/rcd.png", "linkToSite": "https://rct3d.pl/" },
 
-                { "id": 8, "patreonCategory": 3, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
+                { "id": 10, "patreonCategory": 3, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
+                { "id": 11, "patreonCategory": 3, "description": "ENF", "image": "../../assets/jpg/enf.png", "linkToSite": "https://www.enf.pl" },
 
-                { "id": 9, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
-                { "id": 10, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
+                { "id": 12, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
+                { "id": 13, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
 
-                { "id": 11, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" }
+                { "id": 14, "patreonCategory": 5, "description": "Minister Edukacji i Nauki", "image": "../../assets/jpg/minister_edukacji.jpg", "linkToSite": "https://www.gov.pl/web/edukacja-i-nauka" },
+                { "id": 15, "patreonCategory": 5, "description": "Wojewoda Podkarpacki", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" },
+                { "id": 16, "patreonCategory": 5, "description": "Marszałek Województwa Podkarpackiego", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/" },
+                { "id": 17, "patreonCategory": 5, "description": "Prezydent Miasta Rzeszowa", "image": "../../assets/jpg/rzeszow.png", "linkToSite": "https://bip.erzeszow.pl/" },
+
+                { "id": 18, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" }
 
             ],
             "tiers": [
