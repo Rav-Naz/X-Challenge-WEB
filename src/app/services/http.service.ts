@@ -168,7 +168,7 @@ export class HttpService {
     })
   }
 
-  public register(imie: string, nazwisko: string, email: string, kodPocztowy: string | null, numerTelefonu: string | null, rozmiarKoszulki: number, preferowaneJedzenie: number, czyOpiekun: number, hasloHashed: string) {
+  public register(imie: string, nazwisko: string, email: string, kodPocztowy: string | null, numerTelefonu: string | null, rozmiarKoszulki: number, preferowaneJedzenie: number, czyOpiekun: number, hasloHashed: string, czyBedzieOsobiscie: boolean) {
     return new Promise<any>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}public/registerUser`, {
         imie: imie,
@@ -181,7 +181,8 @@ export class HttpService {
         rozmiar_koszulki: rozmiarKoszulki,
         czy_opiekun: czyOpiekun,
         referencerToken: this.token ?? null,
-        lang: this.translate.currentLang
+        lang: this.translate.currentLang,
+        czy_bedzie_osobiscie: czyBedzieOsobiscie
       }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
@@ -278,6 +279,17 @@ export class HttpService {
       this.http.put<APIResponse>(`${this.url}user/changeUserPassword`, {
         stareHaslo: stareHasloHashed,
         noweHaslo: noweHasloHashed,
+      }, { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+  public changePersnoally(czyBedzieOsobisice: boolean) {
+    return new Promise<any>((resolve, rejects) => {
+      this.http.put<APIResponse>(`${this.url}user/changePersonally`, {
+        czy_bedzie_osobiscie: czyBedzieOsobisice,
+
       }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }

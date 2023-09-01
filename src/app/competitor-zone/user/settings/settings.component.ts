@@ -32,7 +32,7 @@ export class SettingsComponent {
   public confirmingPhone: boolean = false;
   public returnedPayload: any;
   public isDisplayDevice: boolean = false;
-
+  public isPersonally: boolean = true;
   constructor(public translate: TranslateService, private formBuilder: FormBuilder,
     public authService: AuthService, public userService: UserService, private ui: UiService, private injector: Injector, public esp32Service: Esp32Service) {
     this.isDisplayDevice = localStorage.getItem('isDisplayDevice') == 'true';
@@ -192,6 +192,12 @@ export class SettingsComponent {
     this.isDisplayDevice = !this.isDisplayDevice;
     localStorage.setItem('isDisplayDevice', this.isDisplayDevice.toString());
   }
+
+  onChangePersonally() {
+    this.isPersonally = !this.isPersonally;
+    this.userService.changePersnoally(this.isPersonally);
+  }
+
 
   get createPhoneNumber() {
     if (this.formPhone.get('country_code')?.value && this.formPhone.get('phone')?.value) {

@@ -10,6 +10,8 @@
         "contact": "Contact",
         "timetable": "Timetable",
         "plan": "Building plan",
+        "faq-spectators": "FAQ for viewers",
+        "faq-participants": "FAQ for players",
         "competitor-zone": "Competitor Zone",
         "app-rules": "Regulations and privacy policy",
         "hello": "Hello",
@@ -320,6 +322,7 @@
             "title": "Register",
             "accept": "I accept the terms and privacy policy",
             "carer": "I am the player's carer",
+            "personally": "I will be at the competition personally",
             "sign-in": "Sign up",
             "have": "Already have an account?",
             "login": "Sign in!",
@@ -882,7 +885,7 @@
             }
         },
         "phone": {
-            "name": "Phone number (optional)",
+            "name": "Phone number",
             "validators": {
                 "required": "This field is required",
                 "minlength": "Phone number must be longer than 7 characters",
@@ -930,7 +933,7 @@
             "validators": {}
         },
         "postal_code": {
-            "name": "Postal code (optional)",
+            "name": "Postal code",
             "validators": {
                 "required": "This field is required",
                 "maxlength": "The postal code must be longer than 2 characters",

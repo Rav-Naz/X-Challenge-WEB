@@ -18,6 +18,7 @@ export class RegisterComponent {
   public isRulesChecked: boolean = false;
   public isCarer: boolean = false;
   public isEmailEditable: boolean = true;
+  public isPersonally: boolean = true;
 
   constructor(public translate: TranslateService, private formBuilder: FormBuilder, private authService: AuthService, private route: ActivatedRoute) {
     const email = this.route.snapshot.paramMap.get('email');
@@ -27,7 +28,7 @@ export class RegisterComponent {
       name: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(40)]],
       surname: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(40)]],
       email: [email, [Validators.required, Validators.minLength(2), Validators.maxLength(100), Validators.pattern(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)]],
-      postal_code: [null, [Validators.minLength(2), Validators.maxLength(8)]],
+      postal_code: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(8)]],
       tshirtSize: [null, [Validators.required]],
       preferedFood: [null, [Validators.required]],
       password: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(64)]],
@@ -36,7 +37,7 @@ export class RegisterComponent {
       validator: ConfirmedValidator('password', 'repeatPassword')
     });
     this.formPhone = this.formBuilder.group({
-      phone: [null, [Validators.pattern('^[0-9]{3}[-\s\.]?[0-9, ]{4,8}$')]],
+      phone: [null, [Validators.required, Validators.pattern('^[0-9]{3}[-\s\.]?[0-9, ]{4,8}$')]],
       country_code: [48, [Validators.required]]
     });
   }
@@ -53,7 +54,8 @@ export class RegisterComponent {
         this.form.get('tshirtSize')?.value,
         this.form.get('preferedFood')?.value,
         this.isCarer,
-        this.form.get('password')?.value
+        this.form.get('password')?.value,
+        this.isPersonally,
       ).catch(err => console.log(err))
         .finally(() => {
           this.loading = false;
@@ -75,6 +77,9 @@ export class RegisterComponent {
 
   onChangeCarer() {
     this.isCarer = !this.isCarer;
+  }
+  onChangePersonally() {
+    this.isPersonally = !this.isPersonally;
   }
 
   get foodOptions(): string | undefined {
@@ -100,7 +105,7 @@ export class RegisterComponent {
   }
 
   get isFormGroupValid() {
-    return this.form.valid && !this.isLoading && this.isRulesChecked;
+    return this.form.valid && this.formPhone.valid && !this.isLoading && this.isRulesChecked;
   }
 
   get isLoading() {

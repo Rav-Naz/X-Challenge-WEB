@@ -32,6 +32,13 @@
                 <app-input [group]="formPostal" controlName="postal_code"></app-input>
                 <button class="submit-button" [disabled]="!isFormGroupPostalValid || !isPostalChanged" (click)="onSubmitPostalForm()"><i class="las la-save"></i></button>
             </div>
+            <div class="checkbox" style="margin-bottom: 2rem;">
+                <label class="checkbox-container">{{'competitor-zone.register.personally' | translate}}
+                  <input type="checkbox" (click)="onChangePersonally()" [checked]="isPersonally">
+                  <span class="checkmark"></span>
+              </label>
+
+            </div>
         </section>
         <section>
             <a>{{'competitor-zone.settings.preferences'  | translate}}</a>
