@@ -81,6 +81,24 @@ section {
     }
 }
 
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    height: 4rem;
+    line-height: 2rem;
+    label {
+        color: $color-white;
+        padding-left: 4.4rem;
+        cursor: pointer;
+        text-align: center;
+        font-size: 2rem;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+}
+
 .row {
     padding-right: 2rem;
     margin-top: .5rem;

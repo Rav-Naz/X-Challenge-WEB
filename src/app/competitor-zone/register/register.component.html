@@ -24,6 +24,14 @@
                     <input type="checkbox" (click)="onChangeCarer()" [checked]="isCarer">
                     <span class="checkmark"></span>
                 </label>
+
+            </div>
+            <div class="register-form-checkbox" style="margin-bottom: 2rem;">
+                <label class="checkbox-container">{{'competitor-zone.register.personally' | translate}}
+                    <input type="checkbox" (click)="onChangePersonally()" [checked]="isPersonally">
+                    <span class="checkmark"></span>
+                </label>
+
             </div>
             <div class="register-form-row">
                 <app-select [group]="form" controlName="preferedFood" translatePrefix="controls" [options]="foodOptions"></app-select>
@@ -38,7 +46,7 @@
                     <input type="checkbox" (click)="onChangeCheckbox()" [checked]="isRulesChecked">
                     <span class="checkmark"></span>
                 </label>
-                <i class="las la-external-link-alt" (click)="openUrl('https://robomotion.com.pl/app-rules')"></i>
+                <i class="las la-external-link-alt" (click)="openUrl('https://xchallenge.pl/app-rules')"></i>
             </div>
             <button class="submit-button" [disabled]="!isFormGroupValid" (click)="onSubmit()">{{'competitor-zone.register.sign-in' | translate}}</button>
             <p>{{'competitor-zone.register.have' | translate}}</p><span [routerLink]="['/login']">{{'competitor-zone.register.login' | translate}}</span>

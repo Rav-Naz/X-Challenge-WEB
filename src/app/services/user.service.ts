@@ -32,7 +32,7 @@ export class UserService {
   public getUser() {
     return new Promise<any>(async (resolve) => {
       const value = await this.http.getUser().catch(err => {
-        if(err.status === 400) {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
           this.errorService.showError(err.status);
@@ -44,8 +44,8 @@ export class UserService {
 
   public editUser(imie: string, nazwisko: string) {
     return new Promise<any>(async (resolve) => {
-      const value = await this.http.editUser(imie,nazwisko).catch(err => {
-        if(err.status === 400) {
+      const value = await this.http.editUser(imie, nazwisko).catch(err => {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
           this.errorService.showError(err.status);
@@ -58,10 +58,10 @@ export class UserService {
     });
   }
 
-  public  addUserPhoneNumber(numer_telefonu: string) {
+  public addUserPhoneNumber(numer_telefonu: string) {
     return new Promise<any>(async (resolve) => {
       const value = await this.http.addUserPhoneNumber(numer_telefonu).catch(err => {
-        if(err.status === 400) {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
           this.errorService.showError(err.status);
@@ -76,8 +76,8 @@ export class UserService {
 
   public confirmUserPhone(kod: string) {
     return new Promise<any>(async (resolve) => {
-      const value = await this.http.confirmCode(this.userUUID,kod,'1').catch(err => {
-        if(err.status === 400) {
+      const value = await this.http.confirmCode(this.userUUID, kod, '1').catch(err => {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
           this.errorService.showError(err.status);
@@ -99,7 +99,7 @@ export class UserService {
   public addPostalCode(kod_pocztowy: string) {
     return new Promise<any>(async (resolve) => {
       const value = await this.http.addPostalCode(kod_pocztowy).catch(err => {
-        if(err.status === 400) {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
           this.errorService.showError(err.status);
@@ -112,19 +112,29 @@ export class UserService {
       resolve(value);
     });
   }
+  public changePersnoally(czyBedzieOsobisice: boolean) {
+    return new Promise<any>(async (resolve) => {
+      const value = await this.http.changePersnoally(czyBedzieOsobisice).catch(err => {
+        if (err.status === 400) {
+          this.errorService.showError(err.status, this.translate.instant(err.error.body));
+        } else {
+          this.errorService.showError(err.status);
+        }
+      })
+      resolve(value);
+    });
+  }
 
 
   get getUser$() {
     return this.user.asObservable();
   }
 
-  get userType()
-  {
+  get userType() {
     return this.userDetails ? (this.userDetails as any).uzytkownik_typ : null;
   }
 
-  get userUUID()
-  {
+  get userUUID() {
     return this.userDetails ? (this.userDetails as any).uzytkownik_uuid : null;
   }
 

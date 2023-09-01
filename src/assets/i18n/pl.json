@@ -12,6 +12,8 @@
         "plan": "Plan budynku",
         "competitor-zone": "Strefa Zawodnika",
         "app-rules": "Regulamin i polityka prywatności",
+        "faq-spectators": "FAQ dla widzów",
+        "faq-participants": "FAQ dla zawodników",
         "hello": "Witaj",
         "logout": "Wyloguj",
         "uuid": "Identyfikator użytkownika (UUID):"
@@ -303,6 +305,7 @@
             "title": "Rejestracja",
             "accept": "Akceptuję regulamin i politykę prywatności",
             "carer": "Jestem opiekunem zawodnika",
+            "personally": "Będę na zawodach osobiście",
             "sign-in": "Zarejestruj się",
             "have": "Posiadasz już konto?",
             "login": "Zaloguj się!",
@@ -865,7 +868,7 @@
             }
         },
         "phone": {
-            "name": "Numer telefonu (opcjonalnie)",
+            "name": "Numer telefonu",
             "validators": {
                 "required": "To pole jest wymagane",
                 "minlength": "Numer telefonu musi być dłuższy niż 7 znaki",
@@ -912,7 +915,7 @@
             "validators": {}
         },
         "postal_code": {
-            "name": "Kod pocztowy (opcjonalnie)",
+            "name": "Kod pocztowy",
             "validators": {
                 "required": "To pole jest wymagane",
                 "maxlength": "Kod pocztowy musi być dłuższy niż 2 znaki",
