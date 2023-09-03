@@ -17,6 +17,7 @@ import { ConstructorsService } from 'src/app/services/constructors.service';
 import { AlreadyExist } from 'src/app/shared/utils/exist';
 import { RefereeService } from '../../../../services/referee.service';
 import { Title } from '@angular/platform-browser';
+import { HttpService } from 'src/app/services/http.service';
 
 
 @Component({
@@ -31,18 +32,22 @@ export class RobotComponent {
 
   public oldName: string = "";
   public formName: FormGroup;
-  public formDocumentation: FormGroup;
   public formMovie: FormGroup;
+  public formMovie2: FormGroup;
   public formCategory: FormGroup;
   public formConstructor: FormGroup;
   public formAcceptation: FormGroup;
+  public formDocumentation: FormGroup;
+  public formWeight: FormGroup;
   private loadingName: boolean = true;
   private loadingCategories: boolean = true;
   private loadingConstructors: boolean = true;
   private loadingAcceptation: boolean = true;
+  private loadingWeight: boolean = true;
   public loadingResults: boolean = true;
   public loadingDocumenation: boolean = true;
   public loadingMovie: boolean = true;
+  public loadingMovie2: boolean = true;
   private subs: Subscription = new Subscription;
   public robot: Robot | null = null;
   public categories: Array<CategoryMain> | null = null;
@@ -58,10 +63,12 @@ export class RobotComponent {
   private documentationFile: File | null = null;
   public isEditingDocumentation = false;
   public isEditingMovie = false;
+  public isEditingMovie2 = false;
 
   constructor(private route: ActivatedRoute, private formBuilder: FormBuilder, public authService: AuthService, private robotsService: RobotsService,
     private categoriesService: CategoriesService, private constructorsService: ConstructorsService, public userSerceice: UserService, private router: Router,
-    private ui: UiService, private translate: TranslateService, private fightsService: FightsService, private timesService: TimesService, private injector: Injector,  private titleService: Title) {
+    private ui: UiService, private translate: TranslateService, private fightsService: FightsService, private timesService: TimesService, private injector: Injector,
+    private titleService: Title, private httpService: HttpService) {
     const robot_uuid = this.route.snapshot.paramMap.get('robot_uuid');
 
     const sub1 = combineLatest(this.categoriesService.categories$, userSerceice.isReferee ? this.robotsService.allRobots$ : this.robotsService.userRobots$, this.constructorsService.getNewConstructors$).subscribe(async (val) => {
@@ -88,13 +95,33 @@ export class RobotComponent {
           }
           if (this.robot) {
             this.titleService.setTitle(`🤖 ${this.robot.nazwa_robota}`);
-          }
-          if(this.robotFilm) {
-            this.formMovie = this.formBuilder.group({
-              movie: [this.robotFilm, [Validators.required, Validators.maxLength(500)]]
+            httpService.getDocumentation(this.robot.robot_uuid).then((val) => {
+              var body = val.body;
+              this.formDocumentation = this.formBuilder.group({
+                pole1: [body.pole1, [Validators.maxLength(1500)]],
+                pole2: [body.pole2, [Validators.maxLength(1500)]],
+                pole3: [body.pole3, [Validators.maxLength(1500)]],
+                pole4: [body.pole4, [Validators.maxLength(1500)]],
+                pole5: [body.pole5, [Validators.maxLength(1500)]],
+                pole6: [body.pole6, [Validators.maxLength(1500)]],
+              });
+              this.loadingDocumenation = false;
+
             });
           }
-
+          if (this.robotFilm) {
+            this.formMovie = this.formBuilder.group({
+              movie: [this.robotFilm, [Validators.required, Validators.maxLength(300)]],
+            });
+            this.formMovie2 = this.formBuilder.group({
+              movie: [this.robotFilm2, [Validators.required, Validators.maxLength(300)]],
+            });
+          }
+          if (this.robotWeight) {
+            this.formWeight = this.formBuilder.group({
+              robot_weight: [this.robotWeight, [Validators.required, Validators.maxLength(500)]]
+            });
+          }
           this.formName = this.formBuilder.group({
             robot_name: [this.oldName, [Validators.required, Validators.minLength(2), Validators.maxLength(40)]]
           });
@@ -106,16 +133,14 @@ export class RobotComponent {
           setTimeout(() => {
             this.loadingName = false;
             this.loadingCategories = false;
-            this.loadingDocumenation = false;
             this.loadingMovie = false;
+            this.loadingMovie2 = false;
             this.loadingAcceptation = false;
+            this.loadingWeight = false;
           }, 100);
           this.formConstructor = this.formBuilder.group({
             constructor_uuid: [null, [Validators.required, Validators.minLength(36), Validators.maxLength(36)]]
           });
-          if (this.formDocumentation) {
-            this.formDocumentation.reset();
-          }
         }
         if (val[2] !== this.lastConstructorMessage) {
           const newData = val[2] as any;
@@ -171,14 +196,25 @@ export class RobotComponent {
     this.formConstructor = this.formBuilder.group({
       constructor_uuid: [null, [Validators.required, Validators.minLength(36), Validators.maxLength(36)]]
     });
-    this.formDocumentation = this.formBuilder.group({
-      documentation: [null, [Validators.required]]
-    });
     this.formMovie = this.formBuilder.group({
-      movie: [this.robotFilm, [Validators.required, Validators.maxLength(500)]]
+      movie: [this.robotFilm, [Validators.required, Validators.maxLength(300)]],
+    });
+    this.formMovie2 = this.formBuilder.group({
+      movie: [this.robotFilm2, [Validators.required, Validators.maxLength(300)]],
     });
     this.formAcceptation = this.formBuilder.group({
       reason: [null, [Validators.required, Validators.maxLength(1000)]]
+    });
+    this.formWeight = this.formBuilder.group({
+      robot_weight: [null, [Validators.required, Validators.maxLength(6)]]
+    });
+    this.formDocumentation = this.formBuilder.group({
+      pole1: [null, [Validators.maxLength(1500)]],
+      pole2: [null, [Validators.maxLength(1500)]],
+      pole3: [null, [Validators.maxLength(1500)]],
+      pole4: [null, [Validators.maxLength(1500)]],
+      pole5: [null, [Validators.maxLength(1500)]],
+      pole6: [null, [Validators.maxLength(1500)]],
     });
   }
 
@@ -284,23 +320,14 @@ export class RobotComponent {
     this.documentationFile = file;
   }
 
-  async onSendDocumentation() {
-    if (this.isFormGroupDocumentationValid) {
-      this.loadingDocumenation = true;
-      this.robotsService.addRobotDocumentation(this.robot!.robot_uuid, this.documentationFile!).catch((err) => {
-        this.backToMyRobots();
-      }).then(() => {
-        this.loadingDocumenation = false;
-        this.isEditingDocumentation = false;
-        this.ui.showFeedback("succes", this.translate.instant('competitor-zone.robot.update-documentation'), 2);
-      });
-    }
+  onSendDocumentation() {
+
   }
 
   async onAddRobotMovie() {
     if (this.isFormGroupMovieValid) {
       this.loadingMovie = true;
-      this.robotsService.addRobotMovie(this.robot!.robot_uuid, this.formMovie.get('movie')?.value).catch((err) => {
+      this.robotsService.addRobotMovie(this.robot!.robot_uuid, this.formMovie.get('movie')?.value, this.robotFilm2).catch((err) => {
         this.backToMyRobots();
       }).then(() => {
         this.loadingMovie = false;
@@ -309,18 +336,52 @@ export class RobotComponent {
       });
     }
   }
+  async onAddRobotMovie2() {
+    if (this.isFormGroupMovieValid2) {
+      this.loadingMovie2 = true;
+      this.robotsService.addRobotMovie(this.robot!.robot_uuid, this.robotFilm, this.formMovie2.get('movie')?.value).catch((err) => {
+        this.backToMyRobots();
+      }).then(() => {
+        this.loadingMovie2 = false;
+        this.isEditingMovie2 = false;
+        this.ui.showFeedback("succes", this.translate.instant('competitor-zone.robot.update-film'), 2);
+      });
+    }
+  }
 
   async onSaveReason() {
     if (this.isFormGroupAcceptationValid) {
       this.loadingAcceptation = true;
-      this.injector.get(RefereeService).addRobotRejection(this.robot!.robot_uuid,this.formAcceptation.get('reason')?.value).then(() => {
-          this.loadingAcceptation = false;
-          this.ui.showFeedback("succes", this.translate.instant('competitor-zone.robot.update-reason'), 2);
-        });
+      this.injector.get(RefereeService).addRobotRejection(this.robot!.robot_uuid, this.formAcceptation.get('reason')?.value).then(() => {
+        this.loadingAcceptation = false;
+        this.ui.showFeedback("succes", this.translate.instant('competitor-zone.robot.update-reason'), 2);
+      });
+    }
+  }
+  async onSaveWeight() {
+    if (this.isFormGroupWeightValid) {
+      this.loadingWeight = true;
+      this.injector.get(RefereeService).setRobotWeight(this.robot!.robot_uuid, this.formWeight.get('robot_weight')?.value).then(() => {
+        this.loadingWeight = false;
+        this.ui.showFeedback("succes", this.translate.instant('competitor-zone.robot.update-weight'), 2);
+      });
+    }
+  }
+  async onSaveDocumentation() {
+    if (this.isFormGroupDocumentationValid) {
+      this.loadingDocumenation = true;
+
+      this.httpService.addRobotDocumentation2(this.robot!.robot_uuid, this.formDocumentation.get('pole1')?.value,
+        this.formDocumentation.get('pole2')?.value, this.formDocumentation.get('pole3')?.value, this.formDocumentation.get('pole4')?.value,
+        this.formDocumentation.get('pole5')?.value, this.formDocumentation.get('pole6')?.value).then(() => {
+          this.loadingDocumenation = false;
+          this.ui.showFeedback("succes", this.translate.instant('competitor-zone.robot.update-documentation'), 2);
+        })
+
     }
   }
 
-  async confirmArrival( value: boolean, event: Event) {
+  async confirmArrival(value: boolean, event: Event) {
     if (!this.robot) return;
     event.stopPropagation();
     const decision = await this.ui.wantToContinue(`Potwierdzasz ${value ? "" : "nie"} dotarcie robota ${this.robot.nazwa_robota}`)
@@ -347,6 +408,11 @@ export class RobotComponent {
   async onOpenMovie() {
     if (this.robotFilm != null) {
       window.open(this.robotFilm, '_blank')
+    }
+  }
+  async onOpenMovie2() {
+    if (this.robotFilm2 != null) {
+      window.open(this.robotFilm2, '_blank')
     }
   }
 
@@ -397,14 +463,20 @@ export class RobotComponent {
   public get isFormGroupConstructorValid() {
     return this.formConstructor.valid && !this.isLoadingConstructors && this.authService.canModify && this.canAddConstructor;
   }
-  public get isFormGroupDocumentationValid() {
-    return this.formDocumentation.valid && !this.isLoadingDocumentation && this.authService.canSendDocumetation && this.documentationFile != null && this.isSuitableFileFormat;
-  }
   public get isFormGroupMovieValid() {
     return this.formMovie.valid && !this.isLoadingMovie && this.authService.canSendDocumetation;
   }
+  public get isFormGroupMovieValid2() {
+    return this.formMovie2.valid && !this.isLoadingMovie2 && this.authService.canSendDocumetation;
+  }
   public get isFormGroupAcceptationValid() {
     return this.formAcceptation.valid && !this.isLoadingAcceptation && this.userSerceice.isAdmin;
+  }
+  public get isFormGroupWeightValid() {
+    return this.formWeight.valid && !this.isLoadingWeight && this.userSerceice.isReferee;
+  }
+  public get isFormGroupDocumentationValid() {
+    return this.formDocumentation.valid && !this.isLoadingDocumentation;
   }
 
   public get isLoadingName() {
@@ -422,8 +494,14 @@ export class RobotComponent {
   public get isLoadingMovie() {
     return this.loadingMovie;
   }
+  public get isLoadingMovie2() {
+    return this.loadingMovie2;
+  }
   public get isLoadingAcceptation() {
     return this.loadingAcceptation;
+  }
+  public get isLoadingWeight() {
+    return this.loadingWeight;
   }
 
   public get userUUID() {
@@ -440,7 +518,7 @@ export class RobotComponent {
 
   public get canAddConstructor() {
     let finded = this.formConstructor.get('constructor_uuid')?.value;
-    return this.constructors  && finded != null? (this.constructors.find((el) => el.uzytkownik_uuid == finded) == undefined) : true;
+    return this.constructors && finded != null ? (this.constructors.find((el) => el.uzytkownik_uuid == finded) == undefined) : true;
   }
 
   public get nameFormEmpty() {
@@ -482,6 +560,17 @@ export class RobotComponent {
   public get robotFilm() {
     return this.robot?.link_do_filmiku ? this.robot.link_do_filmiku : null;
   }
+  public get robotFilm2() {
+    return this.robot?.link_do_filmiku_2 ? this.robot.link_do_filmiku_2 : null;
+  }
+  public get robotWeight() {
+    return this.robot?.waga ? this.robot.waga : null;
+  }
+
+  public get isDocumentationVisible() {
+    let a = this.categories?.filter(el => this.robot?.kategorie.split(', ').includes(el.kategoria_id.toString())).map(el => el.konkurencja);
+    return a?.includes(1) || a?.includes(2);
+  }
 
   public get canAddCategory() {
     return this.robotCategories ? this.robotCategories?.length < 4 : false;
@@ -509,7 +598,7 @@ export class RobotComponent {
   }
 
   get getCategoryFigths() {
-    const fights =  this.robotFights?.filter(el => el.kategoria_id === this.selectedCategory).sort((a, b) => new Date(a.czas_zakonczenia).getTime() - new Date(b.czas_zakonczenia).getTime());
+    const fights = this.robotFights?.filter(el => el.kategoria_id === this.selectedCategory).sort((a, b) => new Date(a.czas_zakonczenia).getTime() - new Date(b.czas_zakonczenia).getTime());
     return fights
   }
 

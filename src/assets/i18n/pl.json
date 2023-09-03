@@ -194,7 +194,7 @@
 
                 { "id": 5, "patreonCategory": 1, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/jpg/ale-primary-logo-white.png", "linkToSite": "https://www.al-enterprise.com/" },
                 { "id": 6, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/jpg/kronospan.png", "linkToSite": "https://kronosfera.pl/" },
-                
+
                 { "id": 7, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
                 { "id": 8, "patreonCategory": 2, "description": "Hobbistycznie.pl", "image": "../../assets/jpg/hobbistycznie.png", "linkToSite": "https://www.hobbistycznie.pl/" },
                 { "id": 9, "patreonCategory": 2, "description": "Rzeszowskie Centrum Technologii 3D", "image": "../../assets/jpg/rcd.png", "linkToSite": "https://rct3d.pl/" },
@@ -416,7 +416,7 @@
             "want-to-delete-category": "Usunięcie kategorii robota uniemożliwi jego start w tej kategorii",
             "want-to-delete-constructor": "Usunięcie konstruktora uniemożliwi użytkownikowi edycję robota oraz dostęp do ewentualnych nagród",
             "want-to-delete-robot": "Usunięcie robota wyklucza jego udział w zawodach. Uwaga! Tej decyzji nie można cofnąć!",
-            "update-documentation": "Pomyślnie przesłano dokumentację",
+            "update-documentation": "Pomyślnie zaktualizowano dokumentację",
             "documentation-uploaded": "Dokumentacja została już przesłana",
             "documentation-not-uploaded": "Dokumentacja nie została przesłana",
             "documentation-find-info": "* Wzór można znaleźć w regulaminie kategorii",
@@ -424,15 +424,73 @@
             "update-film": "Pomyślnie przesłano link do filmu",
             "film-uploaded": "Link do filmu został już przesłany",
             "film-not-uploaded": "Link do filmu nie został jeszcze przesłany",
+            "film-uploaded-2": "Link do drugiego filmu został już przesłany",
+            "film-not-uploaded-2": "Link do drugiego filmu nie został jeszcze przesłany",
             "film-format-info": "* Link powinien prowadzić do filmu na platformie YouTube",
             "update-reason": "Pomyślnie zaktualizowano powód odrzucenia",
+            "update-weight": "Pomyślnie zaktualizowano wagę",
             "acceptation-status": "Status akceptacji robota",
             "acceptation-true": "ZAAKCEPTOWANY",
             "acceptation-false": "ODRZUCONY",
             "acceptation-waiting": "OCZEKIWANIE",
             "is-arrived": "Czy dotarł:",
             "is-arrived-true": "DOTARŁ",
-            "is-arrived-false": "NIE DOTARŁ"
+            "is-arrived-false": "NIE DOTARŁ",
+            "documentation": {
+                "title": "DOKUMENTACJA",
+                "smash-bots": {
+                    "1": {
+                        "title": "1. Nazwa drużyny:",
+                        "description": "Poniżej Wpiszcie jaką Nazwę ma Wasza Drużyna."
+                    },
+                    "2": {
+                        "title": "2. Opis drużyny:",
+                        "description": "Poniżej Wpiszcie krótki opis Waszej Drużyny – kim jesteście, jak narodził się pomysł na stworzenie Drużyny, czym się zajmujecie, kto wchodzi w skład Waszej Drużyny, kto jest waszym opiekunem / kapitanem, skąd pochodzicie (z jakiej miejscowości) itp. (min.  50 wyrazów)."
+                    },
+                    "3": {
+                        "title": "3. Skąd dowiedzieliście się o zawodach?:",
+                        "description": "Poniżej Wpiszcie gdzie znaleźliście informację o XChallenge."
+                    },
+                    "4": {
+                        "title": "4. Informacje o Robocie część I:",
+                        "description": "Poniżej Wpiszcie z czego zbudowany został Wasz Robot, jaki napęd wykorzystaliście, jakie zasilanie ma Wasz Robot oraz z jakiej aparatury sterującej korzystacie. (min. 50 wyrazów)."
+                    },
+                    "5": {
+                        "title": "5. Informacje o Robocie część II:",
+                        "description": "Poniżej Wpiszcie jakie uzbrojenie posiada Wasz Robot (należy szczegółowo opisać uzbrojenie robota), jaka jest Wasza strategia i w jaki sposób Wasz Robot jest zabezpieczony przed atakami przeciwnika (min. 200 wyrazów)."
+                    },
+                    "6": {
+                        "title": "6. Dodatkowe Informacje:",
+                        "description": "Poniżej Wpiszcie dodatkowe informacje, które Chcecie przekazać Organizatorom a nie pasują w pozostałych miejscach."
+                    }
+                },
+                "task-hunters": {
+                    "1": {
+                        "title": "1. Nazwa drużuny:",
+                        "description": "Poniżej Wpiszcie jaką Nazwę ma Wasza Drużyna."
+                    },
+                    "2": {
+                        "title": "2. Opis drużyny:",
+                        "description": "Poniżej Wpiszcie krótki opis Waszej Drużyny – kim jesteście, jak narodził się pomysł na stworzenie Drużyny, czym się zajmujecie, kto wchodzi w skład Waszej Drużyny, kto jest waszym opiekunem / kapitanem, skąd pochodzicie (z jakiej miejscowości) itp. (min.  50 wyrazów)."
+                    },
+                    "3": {
+                        "title": "3. Skąd dowiedzieliście się o zawodach?:",
+                        "description": "Poniżej Wpiszcie gdzie znaleźliście informację o XChallenge."
+                    },
+                    "4": {
+                        "title": "4. Informacje o Robocie część I:",
+                        "description": "Poniżej Wpiszcie z czego zbudowany został Wasz Robot, jaki napęd wykorzystaliście, jakie zasilanie ma Wasz Robot oraz z jakiej aparatury sterującej korzystacie. (min. 50 wyrazów)."
+                    },
+                    "5": {
+                        "title": "5. Informacje o Robocie część II:",
+                        "description": "Poniżej Wpiszcie jakie zadania Próbujecie wykonać, jaka jest Wasza strategia i w jaki sposób Wasz Robot przygotowany jest do wykonania danego zadania (min. 100 wyrazów)."
+                    },
+                    "6": {
+                        "title": "6. Inne uwagi:",
+                        "description": "Poniżej Wpiszcie dodatkowe uwagi."
+                    }
+                }
+            }
         },
         "settings": {
             "user": "Dane użytkownika",
@@ -890,6 +948,13 @@
                 "maxlength": "Nazwa musi być krótsza niż 40 znaków"
             }
         },
+        "robot_weight": {
+            "name": "Waga robota (w gramach)",
+            "validators": {
+                "required": "To pole jest wymagane",
+                "maxlength": "Możesz wpisać maksymalnie 6 znaków"
+            }
+        },
         "phone": {
             "name": "Numer telefonu",
             "validators": {
@@ -1142,6 +1207,43 @@
                 "required": "To pole jest wymagane"
             }
         },
+        "pole1": {
+            "name": "Wpisz tekst",
+            "validators": {
+                "maxlength": "Treść musi być krótsza niż 1500 znaków"
+            }
+        },
+        "pole2": {
+            "name": "Wpisz tekst",
+            "validators": {
+                "maxlength": "Treść musi być krótsza niż 1500 znaków"
+            }
+        },
+        "pole3": {
+            "name": "Wpisz tekst",
+            "validators": {
+                "maxlength": "Treść musi być krótsza niż 1500 znaków"
+            }
+        },
+        "pole4": {
+            "name": "Wpisz tekst",
+            "validators": {
+                "maxlength": "Treść musi być krótsza niż 1500 znaków"
+            }
+        },
+        "pole5": {
+            "name": "Wpisz tekst",
+            "validators": {
+                "maxlength": "Treść musi być krótsza niż 1500 znaków"
+            }
+        },
+        "pole6": {
+            "name": "Wpisz tekst",
+            "validators": {
+                "maxlength": "Treść musi być krótsza niż 1500 znaków"
+            }
+        },
+
         "comment": {
             "name": "Komentarz"
         }

@@ -73,6 +73,25 @@
     }
 }
 
+textarea {
+    min-height: 30rem;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    background-color: transparent;
+    border: 2px solid $color-grey-0;
+    border-radius: 2rem;
+    padding: 1rem;
+    font-family: $title-font;
+    font-weight: bold;
+    font-size: 2rem;
+    color: $color-white;
+}
+
+textarea::placeholder {
+    color: $color-grey-0;
+}
+
 .acceptation {
     p {
         max-width: max-content;

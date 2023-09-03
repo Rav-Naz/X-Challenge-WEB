@@ -37,7 +37,7 @@
             <div class="row">
                 <div [ngClass]="{'starterpack-given-true': user.czy_odebral_starterpack}">
                     <a>Starterpack</a>
-                    <p class="competitor-detail competitor-deadline" *ngIf="isRegisteredAfterFirstDate">{{'competitor-zone.competitor.is_registered_after_first_date' | translate}}</p>
+                    <!-- <p class="competitor-detail competitor-deadline" *ngIf="isRegisteredAfterFirstDate">{{'competitor-zone.competitor.is_registered_after_first_date' | translate}}</p> -->
                     <div>
                         <p class="competitor-detail" *ngIf="user?.rozmiar_koszulki">{{'controls.tshirtSize.name' | translate}}:<span>{{tshirtSize}}</span></p>
                         <p class="competitor-detail" *ngIf="user?.preferowane_jedzenie">{{'controls.preferedFood.name' | translate}}:<span>{{foodOption}}</span></p>
