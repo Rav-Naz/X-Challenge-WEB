@@ -83,7 +83,6 @@ export class CompetitorComponent {
               }
             })
             user.kategorie = nazwy_kategorii
-            console.log(user)
           }
           setTimeout(() => {
             this.formUserType.controls['user_type'].setValue(this.user.uzytkownik_typ);

@@ -14,8 +14,8 @@ export class RefereeService {
 
   private allUsers = new BehaviorSubject<Array<any> | null>(null);
 
-  constructor (private errorService: ErrorsService, private http: HttpService, private translate: TranslateService, private websocket: WebsocketService, private ui: UiService, private injector: Injector) {
-    if(injector.get(UserService).isReferee) {
+  constructor(private errorService: ErrorsService, private http: HttpService, private translate: TranslateService, private websocket: WebsocketService, private ui: UiService, private injector: Injector) {
+    if (injector.get(UserService).isReferee) {
       this.getUsers();
     }
     this.websocket.getWebSocket$.subscribe((socket) => {
@@ -32,8 +32,8 @@ export class RefereeService {
 
   public getRobotsOfUserInCategory(uzytkownik_uuid: string, kategoria_id: number) {
     return new Promise<any>(async (resolve) => {
-      const value = await this.http.getRobotsOfUserInCategory(uzytkownik_uuid,kategoria_id).catch(err => {
-        if(err.status === 400) {
+      const value = await this.http.getRobotsOfUserInCategory(uzytkownik_uuid, kategoria_id).catch(err => {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
           this.errorService.showError(err.status);
@@ -45,8 +45,8 @@ export class RefereeService {
 
   public checkIfRobotHasCategory(robot_uuid: string, kategoria_id: number) {
     return new Promise<any>(async (resolve, reject) => {
-      const value = await this.http.checkIfRobotHasCategory(robot_uuid,kategoria_id).catch(err => {
-        if(err.status === 400) {
+      const value = await this.http.checkIfRobotHasCategory(robot_uuid, kategoria_id).catch(err => {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
           this.errorService.showError(err.status);
@@ -59,7 +59,7 @@ export class RefereeService {
   public checkIfUserIsConstructorOfRobot(uzytkownik_uuid: string, robot_uuid: string) {
     return new Promise<any>(async (resolve) => {
       const value = await this.http.checkIfUserIsConstructorOfRobot(uzytkownik_uuid, robot_uuid).catch(err => {
-        if(err.status === 400) {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
           this.errorService.showError(err.status);
@@ -69,10 +69,10 @@ export class RefereeService {
     });
   }
 
-  public callForConstructors(robot_uuid : string, stanowisko_id: number, robot_nazwa: string) {
+  public callForConstructors(robot_uuid: string, stanowisko_id: number, robot_nazwa: string) {
     return new Promise<any>(async (resolve) => {
       const value = await this.http.callForConstructors(robot_uuid, stanowisko_id, robot_nazwa).catch(err => {
-        if(err.status === 400) {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
           this.errorService.showError(err.status);
@@ -82,10 +82,10 @@ export class RefereeService {
     });
   }
 
-  public sendPrivateMessage(uzytkownik_uuid: string, tresc : string) {
+  public sendPrivateMessage(uzytkownik_uuid: string, tresc: string) {
     return new Promise<any>(async (resolve) => {
       const value = await this.http.sendPrivateMessage(uzytkownik_uuid, tresc).catch(err => {
-        if(err.status === 400) {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
           this.errorService.showError(err.status);
@@ -95,10 +95,10 @@ export class RefereeService {
     });
   }
 
-  public confirmArrival(robot_uuid : string, value: boolean) {
+  public confirmArrival(robot_uuid: string, value: boolean) {
     return new Promise<any>(async (resolve) => {
       const resp = await this.http.confirmArrival(robot_uuid, value).catch(err => {
-        if(err.status === 400) {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
           this.errorService.showError(err.status);
@@ -108,10 +108,10 @@ export class RefereeService {
     });
   }
 
-  public confirmGivenStarterPack(uzytkownik_uuid : string) {
+  public confirmGivenStarterPack(uzytkownik_uuid: string) {
     return new Promise<any>(async (resolve) => {
       const value = await this.http.confirmGivenStarterpack(uzytkownik_uuid).catch(err => {
-        if(err.status === 400) {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
           this.errorService.showError(err.status);
@@ -121,10 +121,23 @@ export class RefereeService {
     });
   }
 
-  public addRobotRejection(robot_uuid : string, powod_odrzucenia: string) {
+  public addRobotRejection(robot_uuid: string, powod_odrzucenia: string) {
     return new Promise<any>(async (resolve) => {
       const value = await this.http.addRobotRejection(robot_uuid, powod_odrzucenia).catch(err => {
-        if(err.status === 400) {
+        if (err.status === 400) {
+          this.errorService.showError(err.status, this.translate.instant(err.error.body));
+        } else {
+          this.errorService.showError(err.status);
+        }
+      })
+      resolve(value);
+    });
+  }
+  public setRobotWeight(robot_uuid: string, weight: string) {
+    console.log(weight);
+    return new Promise<any>(async (resolve) => {
+      const value = await this.http.setRobotWeight(robot_uuid, weight).catch(err => {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
           this.errorService.showError(err.status);
@@ -134,16 +147,16 @@ export class RefereeService {
     });
   }
 
-  public changeUserType(uzytkownik_uuid: string, uzytkownik_typ : number) {
+  public changeUserType(uzytkownik_uuid: string, uzytkownik_typ: number) {
     return new Promise<any>(async (resolve) => {
       const value = await this.http.changeUserType(uzytkownik_uuid, uzytkownik_typ).catch(err => {
-        if(err.status === 400) {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
           this.errorService.showError(err.status);
         }
       })
-      this.ui.showFeedback('succes','Zmieniono typ użytkownika', 2)
+      this.ui.showFeedback('succes', 'Zmieniono typ użytkownika', 2)
       resolve(value);
     });
   }
@@ -151,13 +164,13 @@ export class RefereeService {
   public getUsers() {
     return new Promise<any>(async (resolve) => {
       const value = await this.http.getUsers.catch(err => {
-        if(err.status === 400) {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
           this.errorService.showError(err.status);
         }
       })
-      if(value !== undefined) {
+      if (value !== undefined) {
         this.allUsers.next(Object.assign(value.body));
       }
       resolve(value);
@@ -165,9 +178,9 @@ export class RefereeService {
   }
 
   public createGroupForCategory(stanowiskaLista: Array<number>, kategoria_id: number, iloscDoFinalu: number, opcjaTworzenia: number | null) {
-    return new Promise<any>(async (resolve,reject) => {
+    return new Promise<any>(async (resolve, reject) => {
       const value = await this.http.createGroupsFromCategory(stanowiskaLista, kategoria_id, iloscDoFinalu, opcjaTworzenia).catch(err => {
-        if(err.status === 400) {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
           reject(err);
         } else {
@@ -180,9 +193,9 @@ export class RefereeService {
   }
 
   public deleteGroup(grupa_id: number) {
-    return new Promise<any>(async (resolve,reject) => {
+    return new Promise<any>(async (resolve, reject) => {
       const value = await this.http.removeGroup(grupa_id).catch(err => {
-        if(err.status === 400) {
+        if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
           reject(err);
         } else {
@@ -196,7 +209,7 @@ export class RefereeService {
 
   async WS_addPostalCode(data: any) {
     const userIndex = this.allUsers.value?.findIndex(user => user.uzytkownik_id === data?.uzytkownik_id)
-    if(userIndex !== undefined && userIndex !== null && userIndex >= 0 && this.allUsers.value) {
+    if (userIndex !== undefined && userIndex !== null && userIndex >= 0 && this.allUsers.value) {
       this.allUsers.value![userIndex].kod_pocztowy = data.kod_pocztowy;
       this.allUsers.next(this.allUsers.value);
     }
@@ -204,7 +217,7 @@ export class RefereeService {
 
   async WS_givenStarterpack(data: any) {
     const userIndex = this.allUsers.value?.findIndex(user => user.uzytkownik_uuid === data?.uzytkownik_uuid)
-    if(userIndex !== undefined && userIndex !== null && userIndex >= 0 && this.allUsers.value) {
+    if (userIndex !== undefined && userIndex !== null && userIndex >= 0 && this.allUsers.value) {
       this.allUsers.value![userIndex].czy_odebral_starterpack = data.czy_odebral_starterpack;
       this.allUsers.next(this.allUsers.value);
     }

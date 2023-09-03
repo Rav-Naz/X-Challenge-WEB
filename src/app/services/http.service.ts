@@ -382,6 +382,30 @@ export class HttpService {
       );
     })
   }
+  public addRobotDocumentation2(robot_uuid: string, pole1: string | null, pole2: string | null, pole3: string | null, pole4: string | null, pole5: string | null, pole6: string | null) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.put<APIResponse>(`${this.url}user/editDocumentation`, {
+        pole1: pole1,
+        pole2: pole2,
+        pole3: pole3,
+        pole4: pole4,
+        pole5: pole5,
+        pole6: pole6,
+        robot_uuid: robot_uuid
+      }, { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+  public getDocumentation(robot_uuid: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.get<APIResponse>(`${this.url}user/getRobotDocumentation/${robot_uuid}`, { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
 
   public downloadDocumentation(robot_uuid: string) {
     return new Promise<APIResponse>((resolve, rejects) => {
@@ -402,10 +426,11 @@ export class HttpService {
     })
   }
 
-  public addRobotMovie(robot_uuid: string, link_do_filmiku: string) {
+  public addRobotMovie(robot_uuid: string, link_do_filmiku: string | null, link_do_filmiku_2: string | null) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}user/addFilm`, {
         link_do_filmiku: link_do_filmiku,
+        link_do_filmiku_2: link_do_filmiku_2,
         robot_uuid: robot_uuid
       }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
@@ -640,6 +665,18 @@ export class HttpService {
       this.http.put<APIResponse>(`${this.url}referee/confirmArrival`, {
         robot_uuid: robot_uuid,
         value: value
+      }, { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public setRobotWeight(robot_uuid: string, weight: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.put<APIResponse>(`${this.url}referee/setRobotWeight`, {
+        robot_uuid: robot_uuid,
+        weight: weight
       }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }

@@ -182,7 +182,6 @@
             </div>
         </section>
         <section class="acceptation arrival" *ngIf="robot && isEvent && !robot.powod_odrzucenia">
-
             <div class="row acceptation-row">
                 <p>{{"competitor-zone.robot.is-arrived" | translate}}
                     <span class="arrival-true" *ngIf="robot?.czy_dotarl == 1">{{"competitor-zone.robot.is-arrived-true" | translate}}</span>
@@ -193,8 +192,15 @@
                     <button class="submit-button arrival-button" [disabled]="robot?.czy_dotarl == 0" (click)="confirmArrival(false, $event)"><i class="las la-plane-departure"></i></button>
                 </ng-container>
             </div>
+            <p *ngIf="userSerceice.isUser">{{"controls.robot_weight.name" | translate}}
+                <span>{{robotWeight}}</span>
+            </p>
+            <div class="row acceptation-row" *ngIf="userSerceice.isReferee">
+                <app-input [group]="formWeight" controlName="robot_weight"></app-input>
+                <button [disabled]="!isFormGroupWeightValid" class="submit-button" (click)="onSaveWeight()"><i class="las la-save"></i></button>
+            </div>
         </section>
-        <section class="documentation">
+        <!-- <section class="documentation">
             <div>
                 <div class="row" *ngIf="!isLoadingDocumentation && !isEditingDocumentation">
                     <label *ngIf="robotDocumentation">{{'competitor-zone.robot.documentation-uploaded' | translate}}</label>
@@ -207,14 +213,12 @@
                 </div>
                 <div class="row" *ngIf="!isLoadingDocumentation && isEditingDocumentation">
                     <div class="column">
-                        <app-input-file accept=".pdf,.docx,.doc" [group]="formDocumentation" controlName="documentation" (file)="setDocumentationFile($event)"></app-input-file>
-                        <a>{{'competitor-zone.robot.documentation-format-info' | translate}}</a>
                     </div>
-                    <button *ngIf="((authService.canSendDocumetation && userSerceice.isUser) || userSerceice.isAdmin) && userSerceice.userType !== 1" [disabled]="!isFormGroupDocumentationValid || isLoadingDocumentation" class="submit-button" (click)="onSendDocumentation()"><i class="las la-save"></i></button>
+                    <button *ngIf="((authService.canSendDocumetation && userSerceice.isUser) || userSerceice.isAdmin) && userSerceice.userType !== 1" [disabled]=" isLoadingDocumentation" class="submit-button" (click)="onSendDocumentation()"><i class="las la-save"></i></button>
                 </div>
             </div>
             <app-spinner *ngIf="isLoadingDocumentation"></app-spinner>
-        </section>
+        </section> -->
         <section class="documentation" *ngIf="isSmashBot || isFreestyle || isTaskHunters">
 
 
@@ -233,7 +237,45 @@
                     <button *ngIf="((authService.canSendDocumetation && userSerceice.isUser) || userSerceice.isAdmin) && userSerceice.userType !== 1" [disabled]="!isFormGroupMovieValid || loadingMovie" class="submit-button" (click)="onAddRobotMovie()"><i class="las la-save"></i></button>
                 </div>
             </div>
-            <app-spinner *ngIf="loadingMovie"></app-spinner>
+
+            <div *ngIf="isTaskHunters">
+                <div class="row" *ngIf="!loadingMovie2 && !isEditingMovie2">
+                    <label *ngIf="robotFilm2">{{'competitor-zone.robot.film-uploaded-2' | translate}}</label>
+                    <label *ngIf="!robotFilm2">{{'competitor-zone.robot.film-not-uploaded-2' | translate}}</label>
+                    <button *ngIf="((authService.canSendDocumetation && userSerceice.isUser) || userSerceice.isAdmin)" [disabled]="!authService.canSendDocumetation && !userSerceice.isAdmin" class="submit-button" (click)="isEditingMovie2=true"><i class="las la-edit"></i></button>
+                    <button *ngIf="robotFilm2" [disabled]="!robotFilm2" class="submit-button" (click)="onOpenMovie2()"><i class="las la-external-link-alt"></i></button>
+                </div>
+                <div class="row" *ngIf="!loadingMovie2 && isEditingMovie2">
+                    <div class="column">
+                        <app-input [group]="formMovie2" controlName="movie"></app-input>
+                        <a>{{'competitor-zone.robot.film-format-info' | translate}}</a>
+                    </div>
+                    <button *ngIf="((authService.canSendDocumetation && userSerceice.isUser) || userSerceice.isAdmin) && userSerceice.userType !== 1" [disabled]="!isFormGroupMovieValid2 || loadingMovie2" class="submit-button" (click)="onAddRobotMovie2()"><i class="las la-save"></i></button>
+                </div>
+            </div>
+            <app-spinner *ngIf="loadingMovie || loadingMovie2"></app-spinner>
+        </section>
+        <section class="documentation" [formGroup]="formDocumentation" *ngIf="isDocumentationVisible && !isLoadingDocumentation">
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">{{'competitor-zone.robot.documentation.title' | translate}}</h1>
+            <h2 style="font-size: 2rem; color: #4BDA19;  margin-top: 1rem;">{{'competitor-zone.robot.documentation.'+ (isSmashBot ? "smash-bots" : "task-hunters") +'.1.title' | translate}}</h2>
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">{{'competitor-zone.robot.documentation.'+ (isSmashBot ? "smash-bots" : "task-hunters") +'.1.description' | translate}}</h2>
+            <textarea formControlName="pole1"></textarea>
+            <h2 style="font-size: 2rem; color: #4BDA19;  margin-top: 1rem;">{{'competitor-zone.robot.documentation.'+ (isSmashBot ? "smash-bots" : "task-hunters") +'.2.title' | translate}}</h2>
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">{{'competitor-zone.robot.documentation.'+ (isSmashBot ? "smash-bots" : "task-hunters") +'.2.description' | translate}}</h2>
+            <textarea formControlName="pole2"></textarea>
+            <h2 style="font-size: 2rem; color: #4BDA19;  margin-top: 1rem;">{{'competitor-zone.robot.documentation.'+ (isSmashBot ? "smash-bots" : "task-hunters") +'.3.title' | translate}}</h2>
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">{{'competitor-zone.robot.documentation.'+ (isSmashBot ? "smash-bots" : "task-hunters") +'.3.description' | translate}}</h2>
+            <textarea formControlName="pole3"></textarea>
+            <h2 style="font-size: 2rem; color: #4BDA19;  margin-top: 1rem;">{{'competitor-zone.robot.documentation.'+ (isSmashBot ? "smash-bots" : "task-hunters") +'.4.title' | translate}}</h2>
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">{{'competitor-zone.robot.documentation.'+ (isSmashBot ? "smash-bots" : "task-hunters") +'.4.description' | translate}}</h2>
+            <textarea formControlName="pole4"></textarea>
+            <h2 style="font-size: 2rem; color: #4BDA19;  margin-top: 1rem;">{{'competitor-zone.robot.documentation.'+ (isSmashBot ? "smash-bots" : "task-hunters") +'.5.title' | translate}}</h2>
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">{{'competitor-zone.robot.documentation.'+ (isSmashBot ? "smash-bots" : "task-hunters") +'.5.description' | translate}}</h2>
+            <textarea formControlName="pole5"></textarea>
+            <h2 style="font-size: 2rem; color: #4BDA19;  margin-top: 1rem;">{{'competitor-zone.robot.documentation.'+ (isSmashBot ? "smash-bots" : "task-hunters") +'.6.title' | translate}}</h2>
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">{{'competitor-zone.robot.documentation.'+ (isSmashBot ? "smash-bots" : "task-hunters") +'.6.description' | translate}}</h2>
+            <textarea formControlName="pole6"></textarea>
+            <button *ngIf="authService.canSendDocumetation" [disabled]="!isFormGroupDocumentationValid || isLoadingDocumentation || !authService.canSendDocumetation" class="submit-button" (click)="onSaveDocumentation()"><i class="las la-save"></i></button>
         </section>
     </div>
 </div>

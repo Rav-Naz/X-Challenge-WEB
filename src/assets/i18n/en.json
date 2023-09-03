@@ -187,7 +187,7 @@
 
                 { "id": 5, "patreonCategory": 1, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/jpg/ale-primary-logo-white.png", "linkToSite": "https://www.al-enterprise.com/" },
                 { "id": 6, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/jpg/kronospan.png", "linkToSite": "https://kronosfera.pl/" },
-                
+
                 { "id": 7, "patreonCategory": 2, "description": "MTU", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
                 { "id": 8, "patreonCategory": 2, "description": "Hobbistycznie.pl", "image": "../../assets/jpg/hobbistycznie.png", "linkToSite": "https://www.hobbistycznie.pl/" },
                 { "id": 9, "patreonCategory": 2, "description": "Rzeszów Center of 3D Technologies", "image": "../../assets/jpg/rcd.png", "linkToSite": "https://rct3d.pl/" },
@@ -419,13 +419,69 @@
             "film-not-uploaded": "The link to the movie has not been uploaded yet",
             "film-format-info": "* The link should lead to the video on YouTube platform",
             "update-reason": "Successfully updated rejection reason",
+            "update-weight": "Successfully updated weight",
             "acceptation-status": "Robot's acceptance status",
             "acceptation-true": "ACCEPTED",
             "acceptation-false": "REJECTED",
             "acceptation-waiting": "WAITING",
             "is-arrived": "Has arrived:",
             "is-arrived-true": "ARRIVED",
-            "is-arrived-false": "DIDN'T ARRIVED"
+            "is-arrived-false": "DIDN'T ARRIVED",
+            "documentation": {
+                "title": "DOCUMENTATION",
+                "smash-bots": {
+                    "1": {
+                        "title": "1. Team Name:",
+                        "description": "Enter your Team Name below."
+                    },
+                    "2": {
+                        "title": "2. Team Description:",
+                        "description": "Enter a short description of your Team below - who are you, how did the idea to create the Team come about, what do you do, who is your Team's member, who is your guardian / captain, where are you from (from what city), etc. (min. 50 words)."
+                    },
+                    "3": {
+                        "title": "3. How did you find out about the competition?:",
+                        "description": "Enter where you found information about the XChallenge below."
+                    },
+                    "4": {
+                        "title": "4. About the Robot Part I:",
+                        "description": "Below, please write what your Robot is made of, what drive you used, what power supply your Robot has and what control apparatus you use. (min. 50 words)."
+                    },
+                    "5": {
+                        "title": "5. About the Robot part II:",
+                        "description": "Below, please enter what armament your Robot has (the armament of the robot should be described in detail), what is your strategy and how your Robot is protected against enemy attacks (min. 200 words)."
+                    },
+                    "6": {
+                        "title": "6. Additional Information:",
+                        "description": "Below, type any additional information you want to provide to the Organizers that doesn't fit anywhere else."
+                    }
+                },
+                "task-hunters": {
+                    "1": {
+                        "title": "1. Team name:",
+                        "description": "Enter your Team Name below."
+                    },
+                    "2": {
+                        "title": "2. Team description:",
+                        "description": "Enter a short description of your Team below - who are you, how did the idea to create the Team come about, what do you do, who is your Team's member, who is your guardian / captain, where are you from (from what city), etc. (min. 50 words)."
+                    },
+                    "3": {
+                        "title": "3. How did you find out about the competition?:",
+                        "description": "Enter where you found information about the XChallenge below."
+                    },
+                    "4": {
+                        "title": "4. About the Robot part I:",
+                        "description": "Below, please write what your Robot is made of, what drive you used, what power supply your Robot has and what control apparatus you use. (min. 50 words)."
+                    },
+                    "5": {
+                        "title": "5. About the Robot part II:",
+                        "description": "Below, write what tasks you are trying to perform, what is your strategy and how your robot is prepared to perform a given task (min. 100 words)."
+                    },
+                    "6": {
+                        "title": "6. Other notes:",
+                        "description": "Enter additional comments below."
+                    }
+                }
+            }
         },
         "settings": {
             "user": "User details",
@@ -884,6 +940,13 @@
                 "maxlength": "Robot name must be less than 40 characters"
             }
         },
+        "robot_weight": {
+            "name": "Robot weight (in grams)",
+            "validators": {
+                "required": "This field is required",
+                "maxlength": "Robot name must be less than 6 characters"
+            }
+        },
         "phone": {
             "name": "Phone number",
             "validators": {
@@ -1131,6 +1194,42 @@
             "name": "Arena number",
             "validators": {
                 "required": "This field is required"
+            }
+        },
+        "field1": {
+            "name": "Enter text",
+            "validators": {
+                "maxlength": "Content must be less than 1500 characters"
+            }
+        },
+        "field2": {
+            "name": "Enter text",
+            "validators": {
+                "maxlength": "Content must be less than 1500 characters"
+            }
+        },
+        "field3": {
+            "name": "Enter text",
+            "validators": {
+                "maxlength": "Content must be less than 1500 characters"
+            }
+        },
+        "field4": {
+            "name": "Enter text",
+            "validators": {
+                "maxlength": "Content must be less than 1500 characters"
+            }
+        },
+        "field5": {
+            "name": "Enter text",
+            "validators": {
+                "maxlength": "Content must be less than 1500 characters"
+            }
+        },
+        "field6": {
+            "name": "Enter text",
+            "validators": {
+                "maxlength": "Content must be less than 1500 characters"
             }
         },
         "comment": {
