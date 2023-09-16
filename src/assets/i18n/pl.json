@@ -215,7 +215,7 @@
 
                 { "id": 21, "patreonCategory": 6, "description": "Botland", "image": "../../assets/jpg/botland.webp", "linkToSite": "https://botland.com.pl" },
                 { "id": 22, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" },
-                { "id": 23, "patreonCategory": 6, "description": "Kurier Rzeszowski", "image": "../../assets/jpg/kurier.jpg", "linkToSite": "https://kurierrzeszowski.pl" }
+                { "id": 23, "patreonCategory": 6, "description": "Kurier Rzeszowski", "image": "../../assets/jpg/kurier.jpg", "linkToSite": "https://kurierrzeszowski.pl" },
                 { "id": 24, "patreonCategory": 6, "description": "Media Rzeszów", "image": "../../assets/jpg/logo_media.jpg", "linkToSite": "https://www.mediarzeszow.pl" },
                 { "id": 25, "patreonCategory": 6, "description": "nowiny", "image": "../../assets/jpg/nowiny.png", "linkToSite": "https://nowiny24.pl" },
                 { "id": 26, "patreonCategory": 6, "description": "nowiny24", "image": "../../assets/jpg/nowiny24.png", "linkToSite": "https://nowiny24.pl" },
