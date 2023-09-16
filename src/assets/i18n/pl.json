@@ -224,10 +224,7 @@
 
                 { "id": 29, "patreonCategory": 7, "description": "Sektorowa Rada ds. Kompetencji Informatyka", "image": "../../assets/jpg/sektorowaRada2.jpg", "linkToSite": "https://srit.radasektorowa.pl/o-projekcie" },
                 { "id": 30, "patreonCategory": 7, "description": "Sektorowa Rada ds. Kompetencji Telekomunikacja i Cyberbezpieczeństwo", "image": "../../assets/jpg/sektorowaRada1.jpg", "linkToSite": "https://srtcb.radasektorowa.pl/o-projekcie" }
-                
-
-                
-
+                      
             ],
             "tiers": [
                 "Partner Główny",
@@ -237,7 +234,7 @@
                 "Partner Brązowy",
                 "Patronat Honorowy",
                 "Patronat Medialny",
-                "Patron Merytoryczny"
+                "Partner Merytoryczny"
             ]
         },
         "footer": {
