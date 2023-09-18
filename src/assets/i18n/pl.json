@@ -195,36 +195,36 @@
                 { "id": 5, "patreonCategory": 1, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/jpg/ale-primary-logo-white.png", "linkToSite": "https://www.al-enterprise.com/" },
                 { "id": 6, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/jpg/kronospan.png", "linkToSite": "https://kronosfera.pl/" },
 
-                { "id": 7, "patreonCategory": 2, "description": "Hobbistycznie.pl", "image": "../../assets/jpg/hobbistycznie.png", "linkToSite": "https://www.hobbistycznie.pl/" },
-                { "id": 8, "patreonCategory": 2, "description": "infoSoftware", "image": "../../assets/jpg/infosoft.png", "linkToSite": "https://infosoftware.pl" },
-                { "id": 9, "patreonCategory": 2, "description": "MTU Aero Engines Polska", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
-                { "id": 10, "patreonCategory": 2, "description": "Perfect Solutions", "image": "../../assets/jpg/perfect_logo.png", "linkToSite": "https://perfectsolution.com.pl/" },
-                { "id": 11, "patreonCategory": 2, "description": "Rzeszowskie Centrum Technologii 3D", "image": "../../assets/jpg/rcd.png", "linkToSite": "https://rct3d.pl/" },
+                { "id": 10, "patreonCategory": 2, "description": "Hobbistycznie.pl", "image": "../../assets/jpg/hobbistycznie.png", "linkToSite": "https://www.hobbistycznie.pl/" },
+                { "id": 11, "patreonCategory": 2, "description": "infoSoftware", "image": "../../assets/jpg/infosoft.png", "linkToSite": "https://infosoftware.pl/" },
+                { "id": 12, "patreonCategory": 2, "description": "MTU Aero Engines Polska", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
+                { "id": 13, "patreonCategory": 2, "description": "Perfect Solutions", "image": "../../assets/jpg/ps-logo-white.png", "linkToSite": "https://perfectsolution.com.pl/" },
+                { "id": 14, "patreonCategory": 2, "description": "Rzeszowskie Centrum Technologii 3D", "image": "../../assets/jpg/rcd.png", "linkToSite": "https://rct3d.pl/" },
 
-                { "id": 12, "patreonCategory": 3, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/?mtm_campaign=XChallenge%20Rzesz%C3%B3w" },
-                { "id": 13, "patreonCategory": 3, "description": "ENF", "image": "../../assets/jpg/enf.png", "linkToSite": "https://www.enf.pl" },
+                { "id": 18, "patreonCategory": 3, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/" },
+                { "id": 19, "patreonCategory": 3, "description": "ENF", "image": "../../assets/jpg/enf.png", "linkToSite": "https://www.enf.pl/" },
+                { "id": 20, "patreonCategory": 3, "description": "Sędziszów Małopolski", "image": "../../assets/jpg/sedziszow.png", "linkToSite": "https://sedziszow-mlp.pl/asp/start,0" },
 
-                { "id": 14, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
-                { "id": 15, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
+                { "id": 24, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
+                { "id": 25, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
 
-                { "id": 16, "patreonCategory": 5, "description": "Minister Edukacji i Nauki", "image": "../../assets/jpg/minister_edukacji.jpg", "linkToSite": "https://www.gov.pl/web/edukacja-i-nauka" },
-                { "id": 17, "patreonCategory": 5, "description": "Podkarpacki Kurator Oświaty", "image": "../../assets/jpg/kuratorium.png", "linkToSite": "https://www.ko.rzeszow.pl" },
-                { "id": 18, "patreonCategory": 5, "description": "Wojewoda Podkarpacki", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" },
-                { "id": 19, "patreonCategory": 5, "description": "Marszałek Województwa Podkarpackiego", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/" },
-                { "id": 20, "patreonCategory": 5, "description": "Prezydent Miasta Rzeszowa", "image": "../../assets/jpg/rzeszow.png", "linkToSite": "https://bip.erzeszow.pl/" },
+                { "id": 30, "patreonCategory": 5, "description": "Sektorowa Rada ds. Kompetencji Informatyka", "image": "../../assets/jpg/sektorowaRada_inf.png", "linkToSite": "https://srit.radasektorowa.pl/o-projekcie" },
+                { "id": 31, "patreonCategory": 5, "description": "Sektorowa Rada ds. Kompetencji Telekomunikacja i Cyberbezpieczeństwo", "image": "../../assets/jpg/sektorowaRada_cyber.png", "linkToSite": "https://srtcb.radasektorowa.pl/o-projekcie" },
 
-                { "id": 21, "patreonCategory": 6, "description": "Botland", "image": "../../assets/jpg/botland.webp", "linkToSite": "https://botland.com.pl" },
-                { "id": 22, "patreonCategory": 6, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" },
-                { "id": 23, "patreonCategory": 6, "description": "Kurier Rzeszowski", "image": "../../assets/jpg/kurier.jpg", "linkToSite": "https://kurierrzeszowski.pl" },
-                { "id": 24, "patreonCategory": 6, "description": "Media Rzeszów", "image": "../../assets/jpg/logo_media.jpg", "linkToSite": "https://www.mediarzeszow.pl" },
-                { "id": 25, "patreonCategory": 6, "description": "nowiny", "image": "../../assets/jpg/nowiny.png", "linkToSite": "https://nowiny24.pl" },
-                { "id": 26, "patreonCategory": 6, "description": "nowiny24", "image": "../../assets/jpg/nowiny24.png", "linkToSite": "https://nowiny24.pl" },
-                { "id": 27, "patreonCategory": 6, "description": "Polskie Radio Rzeszów", "image": "../../assets/jpg/radio_rzeszow.jpg", "linkToSite": "https://radio.rzeszow.pl" },
-                { "id": 28, "patreonCategory": 6, "description": "Zrobotyzowany.pl", "image": "../../assets/jpg/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl" },
+                { "id": 35, "patreonCategory": 6, "description": "Minister Edukacji i Nauki", "image": "../../assets/jpg/mein_www.png", "linkToSite": "https://www.gov.pl/web/edukacja-i-nauka" },
+                { "id": 36, "patreonCategory": 6, "description": "Podkarpacki Kurator Oświaty", "image": "../../assets/jpg/kuratorium.png", "linkToSite": "https://www.ko.rzeszow.pl" },
+                { "id": 37, "patreonCategory": 6, "description": "Wojewoda Podkarpacki", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" },
+                { "id": 38, "patreonCategory": 6, "description": "Marszałek Województwa Podkarpackiego", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/" },
+                { "id": 39, "patreonCategory": 6, "description": "Prezydent Miasta Rzeszowa", "image": "../../assets/jpg/rzeszow.png", "linkToSite": "https://bip.erzeszow.pl/" },
 
-                { "id": 29, "patreonCategory": 7, "description": "Sektorowa Rada ds. Kompetencji Informatyka", "image": "../../assets/jpg/sektorowaRada2.jpg", "linkToSite": "https://srit.radasektorowa.pl/o-projekcie" },
-                { "id": 30, "patreonCategory": 7, "description": "Sektorowa Rada ds. Kompetencji Telekomunikacja i Cyberbezpieczeństwo", "image": "../../assets/jpg/sektorowaRada1.jpg", "linkToSite": "https://srtcb.radasektorowa.pl/o-projekcie" }
-                      
+                { "id": 45, "patreonCategory": 7, "description": "Botland", "image": "../../assets/jpg/botland.webp", "linkToSite": "https://botland.com.pl" },
+                { "id": 46, "patreonCategory": 7, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" },
+                { "id": 47, "patreonCategory": 7, "description": "Kurier Rzeszowski", "image": "../../assets/jpg/kurier round.png", "linkToSite": "https://kurierrzeszowski.pl" }
+                { "id": 48, "patreonCategory": 7, "description": "Media Rzeszów", "image": "../../assets/jpg/logo media round.png", "linkToSite": "https://www.mediarzeszow.pl" },
+                { "id": 49, "patreonCategory": 7, "description": "nowiny", "image": "../../assets/jpg/nowiny.png", "linkToSite": "https://nowiny24.pl" },
+                { "id": 50, "patreonCategory": 7, "description": "nowiny24", "image": "../../assets/jpg/nowiny24.png", "linkToSite": "https://nowiny24.pl" },
+                { "id": 51, "patreonCategory": 7, "description": "Polskie Radio Rzeszów", "image": "../../assets/jpg/radio_rzeszow.jpg", "linkToSite": "https://radio.rzeszow.pl" },
+                { "id": 52, "patreonCategory": 7, "description": "Zrobotyzowany.pl", "image": "../../assets/jpg/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl" }                      
             ],
             "tiers": [
                 "Partner Główny",
@@ -232,9 +232,9 @@
                 "Partner Złoty",
                 "Partner Srebrny",
                 "Partner Brązowy",
+                "Partner Merytoryczny",
                 "Patronat Honorowy",
-                "Patronat Medialny",
-                "Partner Merytoryczny"
+                "Patronat Medialny"                
             ]
         },
         "footer": {
