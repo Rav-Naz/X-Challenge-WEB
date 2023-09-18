@@ -204,7 +204,7 @@
                 { "id": 30, "patreonCategory": 5, "description": "Sektorowa Rada ds. Kompetencji Informatyka", "image": "../../assets/jpg/sektorowaRada_inf.png", "linkToSite": "https://srit.radasektorowa.pl/o-projekcie" },
                 { "id": 31, "patreonCategory": 5, "description": "Sektorowa Rada ds. Kompetencji Telekomunikacja i Cyberbezpieczeństwo", "image": "../../assets/jpg/sektorowaRada_cyber.png", "linkToSite": "https://srtcb.radasektorowa.pl/o-projekcie" },
 
-                { "id": 35, "patreonCategory": 6, "description": "Minister of Education and Science", "image": "../../assets/jpg/minister_edukacji.jpg", "linkToSite": "https://www.gov.pl/web/edukacja-i-nauka" },
+                { "id": 35, "patreonCategory": 6, "description": "Minister of Education and Science", "image": "../../assets/jpg/mein_www.png", "linkToSite": "https://www.gov.pl/web/edukacja-i-nauka" },
                 { "id": 36, "patreonCategory": 6, "description": "Podkarpacki Kurator Oświaty", "image": "../../assets/jpg/kuratorium.png", "linkToSite": "https://www.ko.rzeszow.pl" },
                 { "id": 37, "patreonCategory": 6, "description": "Voivode of Podkarpacie", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" },
                 { "id": 38, "patreonCategory": 6, "description": "Marshal of the Podkarpackie Voivodeship", "image": "../../assets/jpg/marszalek.png", "linkToSite": "https://www.podkarpackie.pl/" },
