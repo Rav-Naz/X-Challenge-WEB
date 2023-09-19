@@ -97,16 +97,16 @@ export class RobotComponent {
             this.titleService.setTitle(`🤖 ${this.robot.nazwa_robota}`);
             httpService.getDocumentation(this.robot.robot_uuid).then((val) => {
               var body = val.body;
-              if (body != null) {
-                this.formDocumentation = this.formBuilder.group({
-                  pole1: [body.pole1, [Validators.maxLength(1500)]],
-                  pole2: [body.pole2, [Validators.maxLength(1500)]],
-                  pole3: [body.pole3, [Validators.maxLength(1500)]],
-                  pole4: [body.pole4, [Validators.maxLength(1500)]],
-                  pole5: [body.pole5, [Validators.maxLength(1500)]],
-                  pole6: [body.pole6, [Validators.maxLength(1500)]],
-                });
-              }
+
+              this.formDocumentation = this.formBuilder.group({
+                pole1: [body.pole1, [Validators.maxLength(1500)]],
+                pole2: [body.pole2, [Validators.maxLength(1500)]],
+                pole3: [body.pole3, [Validators.maxLength(1500)]],
+                pole4: [body.pole4, [Validators.maxLength(1500)]],
+                pole5: [body.pole5, [Validators.maxLength(1500)]],
+                pole6: [body.pole6, [Validators.maxLength(1500)]],
+              });
+
               this.loadingDocumenation = false;
 
             });
