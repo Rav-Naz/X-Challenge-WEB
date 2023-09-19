@@ -212,7 +212,7 @@
 
                 { "id": 45, "patreonCategory": 7, "description": "Botland", "image": "../../assets/jpg/botland.webp", "linkToSite": "https://botland.com.pl" },
                 { "id": 46, "patreonCategory": 7, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" },
-                { "id": 47, "patreonCategory": 7, "description": "Kurier Rzeszowski", "image": "../../assets/jpg/kurier round.png", "linkToSite": "https://kurierrzeszowski.pl" }
+                { "id": 47, "patreonCategory": 7, "description": "Kurier Rzeszowski", "image": "../../assets/jpg/kurier round.png", "linkToSite": "https://kurierrzeszowski.pl" },
                 { "id": 48, "patreonCategory": 7, "description": "Media Rzeszów", "image": "../../assets/jpg/logo media round.png", "linkToSite": "https://www.mediarzeszow.pl" },
                 { "id": 49, "patreonCategory": 7, "description": "nowiny", "image": "../../assets/jpg/nowiny.png", "linkToSite": "https://nowiny24.pl" },
                 { "id": 50, "patreonCategory": 7, "description": "nowiny24", "image": "../../assets/jpg/nowiny24.png", "linkToSite": "https://nowiny24.pl" },
@@ -227,7 +227,7 @@
                 "Bronze Partner",
                 "Content Partner",
                 "Honorary patronage",
-                "Media patronage"                
+                "Media patronage"
             ]
         },
         "footer": {
