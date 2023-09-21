@@ -583,7 +583,7 @@ export class RobotComponent {
   }
 
   get isSmashBot() {
-    return this.robotCategories ? this.robotCategories?.find(el => el === 1) != undefined : false;
+    return this.robotCategories ? this.robotCategories?.filter(el => el === 1 || el == 19).length > 0 : false;
   }
 
   get isFreestyle() {
