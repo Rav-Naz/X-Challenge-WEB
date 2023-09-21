@@ -97,7 +97,6 @@ export class RobotComponent {
             this.titleService.setTitle(`🤖 ${this.robot.nazwa_robota}`);
             httpService.getDocumentation(this.robot.robot_uuid).then((val) => {
               var body = val.body;
-
               this.formDocumentation = this.formBuilder.group({
                 pole1: [body.pole1, [Validators.maxLength(1500)]],
                 pole2: [body.pole2, [Validators.maxLength(1500)]],
@@ -106,7 +105,6 @@ export class RobotComponent {
                 pole5: [body.pole5, [Validators.maxLength(1500)]],
                 pole6: [body.pole6, [Validators.maxLength(1500)]],
               });
-
               this.loadingDocumenation = false;
 
             });
@@ -583,7 +581,7 @@ export class RobotComponent {
   }
 
   get isSmashBot() {
-    return this.robotCategories ? this.robotCategories?.filter(el => el === 1 || el == 19).length > 0 : false;
+    return this.robotCategories ? this.robotCategories?.find(el => el === 1) != undefined : false;
   }
 
   get isFreestyle() {
