@@ -188,7 +188,6 @@
             "question": "Chcesz zostać Partnerem? Skontaktuj się z nami pod adresem robo@kneiti.prz.edu.pl",
             "patreonList": [
                 { "id": 1, "patreonCategory": 0, "description": "theprotocol.it", "image": "../../assets/jpg/theprotocol_logo_dark.png", "linkToSite": "https://theprotocol.it/" },
-                { "id": 2, "patreonCategory": 0, "description": "Politechnika Rzeszowska im. Ignacego Łukasiewicza", "image": "../../assets/jpg/prz_pl.png", "linkToSite": "https://w.prz.edu.pl/" },
                 { "id": 3, "patreonCategory": 0, "description": "Pratt & Whitney", "image": "../../assets/jpg/pratt.png", "linkToSite": "https://pwrze.com/" },
                 { "id": 4, "patreonCategory": 0, "description": "Rzeszów Stolica Innowacji", "image": "../../assets/jpg/rzeszow_stolica_white.png", "linkToSite": "https://www.erzeszow.pl/" },
 
@@ -232,9 +231,7 @@
                 { "id": 54, "patreonCategory": 7, "description": "Polskie Radio Rzeszów", "image": "../../assets/jpg/radio_rzeszow.jpg", "linkToSite": "https://radio.rzeszow.pl" },
                 { "id": 55, "patreonCategory": 7, "description": "Radio Centrum", "image": "../../assets/jpg/radio_centrum.png", "linkToSite": "https://radiocentrum.pl" },
                 { "id": 56, "patreonCategory": 7, "description": "TVP 3 Rzeszów", "image": "../../assets/jpg/tvprzeszow.jpg", "linkToSite": "https://rzeszow.tvp.pl" },
-                { "id": 57, "patreonCategory": 7, "description": "Zrobotyzowany.pl", "image": "../../assets/jpg/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl" },
-
-                { "id": 60, "patreonCategory": 8, "description": "Przystanek – Czas na Podkarpacką Młodzież!", "image": "../../assets/jpg/czasmlodzierz.png", "linkToSite": "https://podkarpackamlodziez.pl" }
+                { "id": 57, "patreonCategory": 7, "description": "Zrobotyzowany.pl", "image": "../../assets/jpg/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl" }
             ],
             "tiers": [
                 "Partner Główny",

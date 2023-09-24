@@ -1659,6 +1659,12 @@
             padding: 7.5%;
             max-width: 100%;
             background-color: $color-grey-2;
+            &-czasmlodzierz {
+                width: 90%;
+                // height: 50rem !important;
+                max-height: none !important;
+                cursor: pointer;
+            }
             p {
                 font-size: 2rem;
                 text-align: center;
@@ -1811,7 +1817,6 @@
                         }
                     }
                 }
-                
             }
             &-one {
                 padding: 2rem;
