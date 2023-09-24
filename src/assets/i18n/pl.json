@@ -203,7 +203,7 @@
                 { "id": 14, "patreonCategory": 2, "description": "TME", "image": "../../assets/jpg/tme.png", "linkToSite": "https://tme.eu" },
 
                 { "id": 18, "patreonCategory": 3, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/" },
-                { "id": 19, "patreonCategory": 3, "description": "Electro-Lift", "image": "../../assets/jpg/electrolift.png", "linkToSite": "https://www.windy.rzeszow.pl" },
+                { "id": 19, "patreonCategory": 3, "description": "Electro-Lift", "image": "../../assets/jpg/elektrolift.png", "linkToSite": "https://www.windy.rzeszow.pl" },
                 { "id": 20, "patreonCategory": 3, "description": "ENF", "image": "../../assets/jpg/enf.png", "linkToSite": "https://www.enf.pl/" },
                 { "id": 21, "patreonCategory": 3, "description": "Sędziszów Małopolski", "image": "../../assets/jpg/sedziszow.png", "linkToSite": "https://sedziszow-mlp.pl/asp/start,0" },
 
@@ -234,7 +234,7 @@
                 { "id": 56, "patreonCategory": 7, "description": "TVP 3 Rzeszów", "image": "../../assets/jpg/tvprzeszow.jpg", "linkToSite": "https://rzeszow.tvp.pl" },
                 { "id": 57, "patreonCategory": 7, "description": "Zrobotyzowany.pl", "image": "../../assets/jpg/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl" },
 
-                { "id": 60, "patreonCategory": 8, "description": "", "image": "../../assets/jpg/czasmlodzierz.png", "linkToSite": "https://podkarpackamlodziez.pl" }
+                { "id": 60, "patreonCategory": 8, "description": "Przystanek – Czas na Podkarpacką Młodzież!", "image": "../../assets/jpg/czasmlodzierz.png", "linkToSite": "https://podkarpackamlodziez.pl" }
             ],
             "tiers": [
                 "Partner Główny",
