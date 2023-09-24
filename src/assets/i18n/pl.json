@@ -188,7 +188,6 @@
             "question": "Chcesz zostać Partnerem? Skontaktuj się z nami pod adresem robo@kneiti.prz.edu.pl",
             "patreonList": [
                 { "id": 1, "patreonCategory": 0, "description": "theprotocol.it", "image": "../../assets/jpg/theprotocol_logo_dark.png", "linkToSite": "https://theprotocol.it/" },
-                { "id": 2, "patreonCategory": 0, "description": "Politechnika Rzeszowska im. Ignacego Łukasiewicza", "image": "../../assets/jpg/prz_pl.png", "linkToSite": "https://w.prz.edu.pl/" },
                 { "id": 3, "patreonCategory": 0, "description": "Pratt & Whitney", "image": "../../assets/jpg/pratt.png", "linkToSite": "https://pwrze.com/" },
                 { "id": 4, "patreonCategory": 0, "description": "Rzeszów Stolica Innowacji", "image": "../../assets/jpg/rzeszow_stolica_white.png", "linkToSite": "https://www.erzeszow.pl/" },
 
@@ -198,15 +197,18 @@
                 { "id": 10, "patreonCategory": 2, "description": "Hobbistycznie.pl", "image": "../../assets/jpg/hobbistycznie.png", "linkToSite": "https://www.hobbistycznie.pl/" },
                 { "id": 11, "patreonCategory": 2, "description": "infoSoftware", "image": "../../assets/jpg/infosoft.png", "linkToSite": "https://infosoftware.pl/" },
                 { "id": 12, "patreonCategory": 2, "description": "MTU Aero Engines Polska", "image": "../../assets/jpg/mtu.png", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
-                { "id": 13, "patreonCategory": 2, "description": "Perfect Solutions", "image": "../../assets/jpg/ps-logo-white.png", "linkToSite": "https://perfectsolution.com.pl/" },
+                { "id": 13, "patreonCategory": 2, "description": "Perfect Solution", "image": "../../assets/jpg/ps-logo-white.png", "linkToSite": "https://perfectsolution.com.pl/" },
                 { "id": 14, "patreonCategory": 2, "description": "Rzeszowskie Centrum Technologii 3D", "image": "../../assets/jpg/rcd.png", "linkToSite": "https://rct3d.pl/" },
+                { "id": 14, "patreonCategory": 2, "description": "TME", "image": "../../assets/jpg/tme.png", "linkToSite": "https://tme.eu" },
 
                 { "id": 18, "patreonCategory": 3, "description": "Beckhoff", "image": "../../assets/jpg/beckhoff.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/" },
-                { "id": 19, "patreonCategory": 3, "description": "ENF", "image": "../../assets/jpg/enf.png", "linkToSite": "https://www.enf.pl/" },
-                { "id": 20, "patreonCategory": 3, "description": "Sędziszów Małopolski", "image": "../../assets/jpg/sedziszow.png", "linkToSite": "https://sedziszow-mlp.pl/asp/start,0" },
+                { "id": 19, "patreonCategory": 3, "description": "Electro-Lift", "image": "../../assets/jpg/elektrolift.png", "linkToSite": "https://www.windy.rzeszow.pl" },
+                { "id": 20, "patreonCategory": 3, "description": "ENF", "image": "../../assets/jpg/enf.png", "linkToSite": "https://www.enf.pl/" },
+                { "id": 21, "patreonCategory": 3, "description": "Sędziszów Małopolski", "image": "../../assets/jpg/sedziszow.png", "linkToSite": "https://sedziszow-mlp.pl/asp/start,0" },
 
                 { "id": 24, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
                 { "id": 25, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
+                { "id": 26, "patreonCategory": 4, "description": "SEP", "image": "../../assets/jpg/sep.gif", "linkToSite": "http://www.seprzeszow.pl" },
 
                 { "id": 30, "patreonCategory": 5, "description": "Sektorowa Rada ds. Kompetencji Informatyka", "image": "../../assets/jpg/sektorowaRada_inf.png", "linkToSite": "https://srit.radasektorowa.pl/o-projekcie" },
                 { "id": 31, "patreonCategory": 5, "description": "Sektorowa Rada ds. Kompetencji Telekomunikacja i Cyberbezpieczeństwo", "image": "../../assets/jpg/sektorowaRada_cyber.png", "linkToSite": "https://srtcb.radasektorowa.pl/o-projekcie" },
@@ -219,12 +221,17 @@
 
                 { "id": 45, "patreonCategory": 7, "description": "Botland", "image": "../../assets/jpg/botland.webp", "linkToSite": "https://botland.com.pl" },
                 { "id": 46, "patreonCategory": 7, "description": "Forbot", "image": "../../assets/jpg/forbot.png", "linkToSite": "https://forbot.pl/blog/" },
-                { "id": 47, "patreonCategory": 7, "description": "Kurier Rzeszowski", "image": "../../assets/jpg/kurier round.png", "linkToSite": "https://kurierrzeszowski.pl" },
-                { "id": 48, "patreonCategory": 7, "description": "Media Rzeszów", "image": "../../assets/jpg/logo media round.png", "linkToSite": "https://www.mediarzeszow.pl" },
-                { "id": 49, "patreonCategory": 7, "description": "nowiny", "image": "../../assets/jpg/nowiny.png", "linkToSite": "https://nowiny24.pl" },
-                { "id": 50, "patreonCategory": 7, "description": "nowiny24", "image": "../../assets/jpg/nowiny24.png", "linkToSite": "https://nowiny24.pl" },
-                { "id": 51, "patreonCategory": 7, "description": "Polskie Radio Rzeszów", "image": "../../assets/jpg/radio_rzeszow.jpg", "linkToSite": "https://radio.rzeszow.pl" },
-                { "id": 52, "patreonCategory": 7, "description": "Zrobotyzowany.pl", "image": "../../assets/jpg/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl" }
+                { "id": 47, "patreonCategory": 7, "description": "gospodarkaPodkarpacka.pl", "image": "../../assets/jpg/gospodarka.png", "linkToSite": "http://gospodarkapodkarpacka.pl" },
+                { "id": 48, "patreonCategory": 7, "description": "Halo Rzeszów", "image": "../../assets/jpg/halo.png", "linkToSite": "https://www.halorzeszow.pl" },
+                { "id": 49, "patreonCategory": 7, "description": "Kurier Rzeszowski", "image": "../../assets/jpg/kurier round.png", "linkToSite": "https://kurierrzeszowski.pl" },
+                { "id": 50, "patreonCategory": 7, "description": "Media Rzeszów", "image": "../../assets/jpg/logo media round.png", "linkToSite": "https://www.mediarzeszow.pl" },
+                { "id": 51, "patreonCategory": 7, "description": "msalamon.pl", "image": "../../assets/jpg/salamon.png", "linkToSite": "https://msalamon.pl" },
+                { "id": 52, "patreonCategory": 7, "description": "nowiny", "image": "../../assets/jpg/nowiny.png", "linkToSite": "https://nowiny24.pl" },
+                { "id": 53, "patreonCategory": 7, "description": "nowiny24", "image": "../../assets/jpg/nowiny24.png", "linkToSite": "https://nowiny24.pl" },
+                { "id": 54, "patreonCategory": 7, "description": "Polskie Radio Rzeszów", "image": "../../assets/jpg/radio_rzeszow.jpg", "linkToSite": "https://radio.rzeszow.pl" },
+                { "id": 55, "patreonCategory": 7, "description": "Radio Centrum", "image": "../../assets/jpg/radio_centrum.png", "linkToSite": "https://radiocentrum.pl" },
+                { "id": 56, "patreonCategory": 7, "description": "TVP 3 Rzeszów", "image": "../../assets/jpg/tvprzeszow.jpg", "linkToSite": "https://rzeszow.tvp.pl" },
+                { "id": 57, "patreonCategory": 7, "description": "Zrobotyzowany.pl", "image": "../../assets/jpg/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl" }
             ],
             "tiers": [
                 "Partner Główny",
@@ -234,7 +241,8 @@
                 "Partner Brązowy",
                 "Partner Merytoryczny",
                 "Patronat Honorowy",
-                "Patronat Medialny"
+                "Patronat Medialny",
+                "Partner Projektowy"
             ]
         },
         "footer": {
