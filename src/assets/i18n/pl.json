@@ -213,6 +213,7 @@
                 { "id": 26, "patreonCategory": 4, "description": "SEP", "image": "../../assets/jpg/sep.gif", "linkToSite": "http://www.seprzeszow.pl" },
                 { "id": 27, "patreonCategory": 4, "description": "Zespół Szkół Technicznych", "image": "../../assets/jpg/zst.png", "linkToSite": "http://www.zstrzeszow.pl" },
 
+
                 { "id": 30, "patreonCategory": 5, "description": "Sektorowa Rada ds. Kompetencji Informatyka", "image": "../../assets/jpg/sektorowaRada_inf.png", "linkToSite": "https://srit.radasektorowa.pl/o-projekcie" },
                 { "id": 31, "patreonCategory": 5, "description": "Sektorowa Rada ds. Kompetencji Telekomunikacja i Cyberbezpieczeństwo", "image": "../../assets/jpg/sektorowaRada_cyber.png", "linkToSite": "https://srtcb.radasektorowa.pl/o-projekcie" },
 
