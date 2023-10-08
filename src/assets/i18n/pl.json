@@ -188,8 +188,8 @@
             "question": "Chcesz zostać Partnerem? Skontaktuj się z nami pod adresem robo@kneiti.prz.edu.pl",
             "patreonList": [
                 { "id": 1, "patreonCategory": 0, "description": "theprotocol.it", "image": "../../assets/jpg/theprotocol_logo_dark.png", "linkToSite": "https://theprotocol.it/" },
-                { "id": 3, "patreonCategory": 0, "description": "Pratt & Whitney", "image": "../../assets/jpg/pratt.png", "linkToSite": "https://pwrze.com/" },
-                { "id": 4, "patreonCategory": 0, "description": "Rzeszów Stolica Innowacji", "image": "../../assets/jpg/rzeszow_stolica_white.png", "linkToSite": "https://www.erzeszow.pl/" },
+                { "id": 2, "patreonCategory": 0, "description": "Pratt & Whitney", "image": "../../assets/jpg/pratt.png", "linkToSite": "https://pwrze.com/" },
+                { "id": 3, "patreonCategory": 0, "description": "Rzeszów Stolica Innowacji", "image": "../../assets/jpg/rzeszow_stolica_white.png", "linkToSite": "https://www.erzeszow.pl/" },
 
                 { "id": 5, "patreonCategory": 1, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/jpg/ale-primary-logo-white.png", "linkToSite": "https://www.al-enterprise.com/" },
                 { "id": 6, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/jpg/kronospan.png", "linkToSite": "https://kronosfera.pl/" },
@@ -206,13 +206,17 @@
                 { "id": 20, "patreonCategory": 3, "description": "ENF", "image": "../../assets/jpg/enf.png", "linkToSite": "https://www.enf.pl/" },
                 { "id": 21, "patreonCategory": 3, "description": "Sędziszów Małopolski", "image": "../../assets/jpg/sedziszow.png", "linkToSite": "https://sedziszow-mlp.pl/asp/start,0" },
 
+                { "id": 22, "patreonCategory": 4, "description": "Centrum Medyk", "image": "../../assets/jpg/medyk.png", "linkToSite": "https://www.medyk.rzeszow.pl" },
+                { "id": 23, "patreonCategory": 4, "description": "Lord Jack", "image": "../../assets/jpg/logo_biale_lord_jack.png", "linkToSite": "https://lordjack.pl" },
                 { "id": 24, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/ont.png", "linkToSite": "https://www.ont.com.pl/" },
                 { "id": 25, "patreonCategory": 4, "description": "ONT", "image": "../../assets/jpg/mathworks.png", "linkToSite": "https://www.mathworks.com/" },
                 { "id": 26, "patreonCategory": 4, "description": "SEP", "image": "../../assets/jpg/sep.gif", "linkToSite": "http://www.seprzeszow.pl" },
+                { "id": 27, "patreonCategory": 4, "description": "SEP", "image": "../../assets/jpg/zst.png", "linkToSite": "http://www.zstrzeszow.pl" },
 
                 { "id": 30, "patreonCategory": 5, "description": "Sektorowa Rada ds. Kompetencji Informatyka", "image": "../../assets/jpg/sektorowaRada_inf.png", "linkToSite": "https://srit.radasektorowa.pl/o-projekcie" },
                 { "id": 31, "patreonCategory": 5, "description": "Sektorowa Rada ds. Kompetencji Telekomunikacja i Cyberbezpieczeństwo", "image": "../../assets/jpg/sektorowaRada_cyber.png", "linkToSite": "https://srtcb.radasektorowa.pl/o-projekcie" },
 
+                { "id": 34, "patreonCategory": 6, "description": "Minister Rozwoju i Technologii", "image": "../../assets/jpg/mrit.png", "linkToSite": "https://www.gov.pl/web/rozwoj-technologia" },
                 { "id": 35, "patreonCategory": 6, "description": "Minister Edukacji i Nauki", "image": "../../assets/jpg/mein_www.png", "linkToSite": "https://www.gov.pl/web/edukacja-i-nauka" },
                 { "id": 36, "patreonCategory": 6, "description": "Podkarpacki Kurator Oświaty", "image": "../../assets/jpg/kuratorium.png", "linkToSite": "https://www.ko.rzeszow.pl" },
                 { "id": 37, "patreonCategory": 6, "description": "Wojewoda Podkarpacki", "image": "../../assets/jpg/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl/wojewoda/wojewoda/" },
