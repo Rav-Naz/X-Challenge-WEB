@@ -37,6 +37,8 @@ export class TimetableComponent implements OnInit, OnDestroy {
 
     });
     translate.stream('timetable.table').subscribe((table: Array<any>) => {
+      const prefLanguage = localStorage.getItem("prefLang");
+      this.isEnglish = prefLanguage !== 'pl';
       this.timetable = table;
     });
     this.formTimetable = this.formBuilder.group({
