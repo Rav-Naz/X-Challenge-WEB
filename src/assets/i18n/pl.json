@@ -48,7 +48,8 @@
             "details": "XChallenge dąży do realizacji wielu kategorii zawodów na szczeblu międzynarodowym, gdzie zawodnicy będą mogli sprawdzić swoje umiejętności manualne oraz programistyczne. Zawody kierowane będą dla uczniów szkół średnich oraz studentów, lecz nie zabraknie również konkurencji dla młodszych i starszych uczestników. Zawody oferują nie tylko nagrody materialne, lecz również doświadczenie pozyskane od osób z całego świata i nowe kontakty.",
             "results": "Zobacz wyniki!",
             "open": "Rejestracja jest jeszcze otwarta!",
-            "important-choose": "!!! WAŻNE !!! Ankieta dla zawodników"
+            "important-choose": "!!! WAŻNE !!! Ankieta dla zawodników",
+            "next_edition":"Prace nad kolejną edycją zawodów już trwają. Więcej informacji wkrótce."
         },
         "event-program": {
             "eventsList": [
