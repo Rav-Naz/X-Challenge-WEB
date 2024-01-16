@@ -21,14 +21,15 @@
         <h4 style="visibility: collapse;">Participants will be able to compete in as many as 8 categories. The organizers prepared the arenas for the struggle on the tracks for LineFollowers or Sumo fights. The track itself in the LF category will test the programming and construction
             skills of many robotics. In addition to the standard competitions, the organizers have prepared many surprises. Every constructor, regardless of whether he is just starting his adventure with electronics or is already experienced, will surely
             find something for himself. There will also be competition dedicated to LEGO fans.</h4>
-        <h3 class="section-header" *ngIf="timeToEvent">{{timeIsUp ? streamLink === undefined ? ('home.event-info.status.ended' | translate) : ('home.event-info.status.live' | translate) : ('home.event-info.status.coming' | translate)}}</h3>
+        <h3 class="section-header">{{('home.event-info.next_edition' | translate)}}</h3>
+        <!-- <h3 class="section-header" *ngIf="timeToEvent">{{timeIsUp ? streamLink === undefined ? ('home.event-info.status.ended' | translate) : ('home.event-info.status.live' | translate) : ('home.event-info.status.coming' | translate)}}</h3>
         <div class="iframe-container" *ngIf="timeIsUp && streamLink !== undefined">
             <iframe src="" width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
             <iframe [src]="streamLink" target="_top" title="ROBOmotion Livestream" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <!-- <a class="stream" target="_blank" href="https://www.twitch.tv/robomotion2021">STREAM Z ROZGRYWKI</a> -->
 
-        <button [routerLink]="['/results']" *ngIf="timeIsUp">{{'home.event-info.results' | translate}}</button>
+        <button [routerLink]="['/results']" *ngIf="timeIsUp">{{'home.event-info.results' | translate}}</button> -->
         <div class="event-info-counter" *ngIf="!timeIsUp && timeToEvent" data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
             <div class="event-info-counter-part">
                 <p class="event-info-counter-part--number">
@@ -188,9 +189,11 @@
         <!-- <a [href]="isEnglish === 'pl' ? 'https://rzit.smarthost.pl/robomotion/info-28-10-2021.pdf' : 'https://rzit.smarthost.pl/robomotion/info-28-10-2021-ang.pdf'" target="_blank">{{'home.event-info.important' | translate}}<i class="las la-external-link-alt"></i></a> -->
     </section>
     <h3 style="visibility: collapse; height: 0px">XChallange dąży do realizacji wielu kategorii zawodów na szczeblu międzynarodowym, gdzie zawodnicy będą mogli sprawdzić swoje umiejętności manualne oraz programistyczne. Zawody kierowane będą dla uczniów szkół średnich oraz studentów, lecz nie zabraknie
-        również konkurencji dla młodszych i starszych uczestników. Zawody oferują nie tylko nagrody materialne, lecz również doświadczenie w postaci tajników techniki od osób z całego świata i nowe kontakty. PRACE NAD NOWĄ EDYCJĄ - 2024 już trwają! Oczekujcie nowych informacji wkrótce</h3>
+        również konkurencji dla młodszych i starszych uczestników. Zawody oferują nie tylko nagrody materialne, lecz również doświadczenie w postaci tajników techniki od osób z całego świata i nowe kontakty. PRACE NAD NOWĄ EDYCJĄ - 2024 już trwają! Oczekujcie
+        nowych informacji wkrótce</h3>
     <h3 style="visibility: collapse; height: 0px">XChallange aims to implement many categories of competitions at the international level, where competitors will be able to test their manual and programming skills. The competition will be directed to high school students and students, but there will
-        also be competition for younger and older participants. The competition offers not only material prizes, but also experience in the form of technical secrets from people from all over the world and new contacts. PREPARATION FOR THE NEW EDITION - 2024 is already underway! Expect new information soon</h3>
+        also be competition for younger and older participants. The competition offers not only material prizes, but also experience in the form of technical secrets from people from all over the world and new contacts. PREPARATION FOR THE NEW EDITION
+        - 2024 is already underway! Expect new information soon</h3>
     <!-- <section class="event-program" id="programme">
         <div class="event-program-grid" *ngIf="!isMobile">
             <div class="event-program-grid-names">
