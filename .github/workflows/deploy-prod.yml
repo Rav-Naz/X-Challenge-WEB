@@ -32,7 +32,7 @@
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_USER_PASS }}
           port: 6001
-          source: "./dist/xchallenge/"
+          source: "dist/xchallenge/*"
           target: /var/www/html/xchallenge.pl
 
       # - name: Ftp deploy over FTP
