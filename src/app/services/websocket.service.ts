@@ -25,7 +25,7 @@ export class WebsocketService{
 
   createSocket(jwt?: string) {
     if (jwt) {
-      const socket = io(environment.apiUrl, {
+      const socket = io(environment.apiUrl.replace('api/', ''), {
         auth: {
           token: jwt
         }
@@ -33,7 +33,7 @@ export class WebsocketService{
       // console.log("socket", socket)
       this.socket.next(socket);
     } else {
-      const socket = io(environment.apiUrl);
+      const socket = io(environment.apiUrl.replace('api/', ''));
       // console.log("socket", socket)
       this.socket.next(socket);
     }

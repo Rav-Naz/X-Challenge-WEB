@@ -1,5 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://api.xchallenge.pl/'
-
+  apiUrl: 'https://xchallenge.pl/api/'
 };
