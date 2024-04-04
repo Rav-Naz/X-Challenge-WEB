@@ -1,34 +1,46 @@
- name: deploy  Xchallenge production 
+ name: deploy  Xchallenge production
  on:
   push:
     paths-ignore:
-      - '.github/**'  
+      - '.github/**'
     branches:
       - master
   workflow_dispatch:
-  
+
  jobs:
    deploy-prod:
      runs-on: ubuntu-latest
      steps:
       - name: Checkout repository
-        uses: actions/checkout@v2     
-      
+        uses: actions/checkout@v2
+
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
           node-version: 12
 
       - name: Install dependencies
-        run: | 
+        run: |
           npm install
-          npm run build  
-      - name: Ftp deploy over FTP 
-        if: contains(github.ref, 'master')
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+          npm run build
+
+
+      - name: copy file via ssh password
+        uses: appleboy/scp-action@v0.1.7
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_USER_PASS }}
-          local-dir: ./dist/xchallenge/
-          server-dir: ./public_html/xchallenge.pl/
+          host: ${{ secrets.SSH_SERVER }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_USER_PASS }}
+          port: 6001
+          source: "dist/xchallenge/*"
+          target: /var/www/html/xchallenge.pl
+
+      # - name: Ftp deploy over FTP
+      #   if: contains(github.ref, 'master')
+      #   uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      #   with:
+      #     server: ${{ secrets.FTP_SERVER }}
+      #     username: ${{ secrets.FTP_USER }}
+      #     password: ${{ secrets.FTP_USER_PASS }}
+      #     local-dir: ./dist/xchallenge/
+      #     server-dir: ./public_html/xchallenge.pl/
