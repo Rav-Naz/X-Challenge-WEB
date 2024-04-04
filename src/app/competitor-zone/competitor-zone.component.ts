@@ -18,13 +18,13 @@ import { MessagesService } from '../services/messages.service';
   encapsulation: ViewEncapsulation.None,
   providers: [RobotsService, ConstructorsService, PositionsService, RefereeService]
 })
-export class CompetitorZoneComponent implements OnInit, OnDestroy{
+export class CompetitorZoneComponent implements OnInit, OnDestroy {
 
   public timeLeft: number | undefined;
   public timeIsUp: boolean = false;
   public switcher = false;
   public isNewMessage = false;
-  public windowSize: WindowSize = { height: 1080, width: 1920};
+  public windowSize: WindowSize = { height: 1080, width: 1920 };
   private subs: Subscription = new Subscription;
 
 
@@ -34,11 +34,11 @@ export class CompetitorZoneComponent implements OnInit, OnDestroy{
     setInterval(() => {
       this.refreshCounter();
     }, 1000);
-    this.windowSize = {height: window.innerHeight, width: window.innerWidth };
+    this.windowSize = { height: window.innerHeight, width: window.innerWidth };
     const resizeObs = fromEvent(window, 'resize') as Observable<any>;
     const sub1 = resizeObs.subscribe(size => {
       if (!size) { return; }
-      this.windowSize = {height: size.currentTarget.innerHeight, width: size.currentTarget.innerWidth};
+      this.windowSize = { height: size.currentTarget.innerHeight, width: size.currentTarget.innerWidth };
     })
     this.subs?.add(sub1);
 
@@ -46,27 +46,27 @@ export class CompetitorZoneComponent implements OnInit, OnDestroy{
   ngOnInit(): void {
     setInterval(() => {
       this.isNewMessage = this.messageService.isNewAnnouncement;
-    },500)
+    }, 500)
   }
 
-  refreshCounter() :void {
-    if(!this.authService.accessToModifyExpirationDate) return;
+  refreshCounter(): void {
+    if (!this.authService.accessToModifyExpirationDate) return;
     this.timeLeft = this.authService.accessToModifyExpirationDate.getTime() - new Date().getTime();
-    if(Math.floor(this.timeLeft/1000) < 0) {
+    if (Math.floor(this.timeLeft / 1000) < 0) {
       this.timeIsUp = true;
     }
   }
 
   openTutorial() {
     if (this.translate.currentLang == "pl") {
-      window.open('https://fwe.smarthost.pl/xchallenge.pl/tutorial.pdf');
+      window.open('https://xchallenge.pl/regulations/tutorial.pdf');
     } else {
-      window.open('https://fwe.smarthost.pl/xchallenge.pl/tutorial-ang.pdf');
+      window.open('https://xchallenge.pl/regulations/tutorial-ang.pdf');
     }
   }
 
   get isLessThanWeek() {
-    return this.timeLeft && Math.floor(this.timeLeft/1000) < 604800;
+    return this.timeLeft && Math.floor(this.timeLeft / 1000) < 604800;
   }
 
   get isFirstPage() {

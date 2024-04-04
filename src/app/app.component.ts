@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
 
   constructor(public translate: TranslateService, private injector: Injector, private ui: UiService, private authService: AuthService, public userService: UserService, public esp32Service: Esp32Service) {
     const cookies = localStorage.getItem('cookies');
-    if(cookies) {
+    if (cookies) {
       this.isCookies = false;
     } else {
       this.isCookies = true;
@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
     }
 
     const sub1 = this.authService.info$.subscribe((data: any) => {
-      if(data === undefined || data === null) return;
+      if (data === undefined || data === null) return;
       this.eventDate = data.eventDate;
       this.registerStart = data.registerStart;
     })
@@ -98,21 +98,21 @@ export class AppComponent implements OnInit {
     localStorage.setItem('cookies', 'accepted');
   }
 
-  copyUUID(){
+  copyUUID() {
     let selBox = document.createElement('textarea');
-      selBox.style.position = 'fixed';
-      selBox.style.left = '0';
-      selBox.style.top = '0';
-      selBox.style.opacity = '0';
-      selBox.value = this.injector.get(UserService).userUUID;
-      document.body.appendChild(selBox);
-      selBox.focus();
-      selBox.select();
-      document.execCommand('copy');
-      document.body.removeChild(selBox);
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = this.injector.get(UserService).userUUID;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
 
-      this.ui.showFeedback('loading', this.translate.instant('competitor-zone.settings.errors.copied'), 3);
-    }
+    this.ui.showFeedback('loading', this.translate.instant('competitor-zone.settings.errors.copied'), 3);
+  }
 
   onLogout() {
     this.injector.get(AuthService).logout();
@@ -125,9 +125,9 @@ export class AppComponent implements OnInit {
 
   openTutorial() {
     if (this.translate.currentLang == "pl") {
-      window.open('https://fwe.smarthost.pl/xchallenge.pl/tutorial.pdf');
+      window.open('https://xchallenge.pl/regulations/tutorial.pdf');
     } else {
-      window.open('https://fwe.smarthost.pl/xchallenge.pl/tutorial-ang.pdf');
+      window.open('https://xchallenge.pl/regulations/tutorial-ang.pdf');
     }
   }
 
