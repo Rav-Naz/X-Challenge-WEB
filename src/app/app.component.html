@@ -71,9 +71,9 @@
     <div class="navigator-footer">
         <img (click)="switchLang()" [src]="!isEnglish ? '../assets/svg/gb.svg' : '../assets/svg/pl.svg'">
         <br><br>
-        <a class="navigator-footer-rules" target="_blank" [href]="isEnglish ? 'https://xchallenge.pl/regulations/XChallenge_FAQ_Participants.pdf' : 'https://xchallenge.pl/regulations/XChallenge_FAQ_Zawodnicy.pdf'">{{'menu.faq-participants' | translate}}</a>
-        <br><br>
-        <a class="navigator-footer-rules" target="_blank" [href]="isEnglish ? 'https://xchallenge.pl/regulations/XChallenge_FAQ_Spectators.pdf' : 'https://xchallenge.pl/regulations/XChallenge_FAQ_Widzowie.pdf'">{{'menu.faq-spectators' | translate}}</a>
+        <!-- <a class="navigator-footer-rules" target="_blank" [href]="isEnglish ? 'https://xchallenge.pl/regulations/XChallenge_FAQ_Participants.pdf' : 'https://xchallenge.pl/regulations/XChallenge_FAQ_Zawodnicy.pdf'">{{'menu.faq-participants' | translate}}</a>
+        <br><br> -->
+        <a class="navigator-footer-rules" target="_blank" href="https://web.archive.org/web/20240404080613/https://xchallenge.pl/">{{'menu.archive' | translate}}</a>
         <br><br>
         <a class="navigator-footer-rules" [routerLink]="['/app-rules']" (click)="switchMenu(false)">{{'menu.app-rules' | translate}}</a><br>
         <a target="_blank" href="https://www.facebook.com/xchallenge.poland"><i class="lab la-facebook-square"></i></a>
