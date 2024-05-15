@@ -6,19 +6,19 @@
                 margin-top: 2rem;
             }
         }
-
+        
         @media only screen and (max-width: $max-width-5) {
             .section-header {
                 font-size: 3rem;
             }
         }
-
+        
         @media only screen and (max-width: $max-width-6) {
             .section-header {
                 font-size: 2.7rem;
             }
         }
-
+        
         .paralax {
             overflow: hidden;
             position: relative;
@@ -85,7 +85,7 @@
                 $color-grey-3 100%);
             }
         }
-
+        
         @media only screen and (max-width: $max-width-3) {
             .paralax {
                 height: 60vh;
@@ -101,7 +101,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-4) {
             .paralax {
                 &-background {
@@ -128,7 +128,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-5) {
             .paralax {
                 height: 35vh;
@@ -145,7 +145,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-6) {
             .paralax {
                 height: 30vh;
@@ -157,7 +157,7 @@
                 }
             }
         }
-
+        
         @keyframes pulse {
             0% {
                 transform: scale(1);
@@ -171,7 +171,7 @@
                 transform: scale(1);
             }
         }
-
+        
         @keyframes pulse2 {
             0% {
                 color: $color-white;
@@ -186,7 +186,7 @@
                 border-color: $color-white;
             }
         }
-
+        
         .event-info {
             background-color: $color-grey-3;
             // background: linear-gradient(180deg,rgba($color-grey-3, 1) 95%, rgba($color-grey-5, 0.88) 99%, rgba($color-grey-5, 1) 100%);
@@ -409,7 +409,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-2) {
             .event-info {
                 padding: 5rem 0;
@@ -418,7 +418,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-3) {
             .event-info {
                 padding: 3rem 0;
@@ -427,7 +427,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-4) {
             .event-info {
                 padding: 1rem 0;
@@ -456,7 +456,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-5) {
             .event-info {
                 padding: 1rem 0;
@@ -481,7 +481,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-6) {
             .event-info {
                 padding: 1rem 0;
@@ -505,7 +505,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-7) {
             .event-info {
                 padding: 1rem 0;
@@ -528,7 +528,7 @@
                 }
             }
         }
-
+        
         .event-program {
             width: 100%;
             height: min-content;
@@ -654,7 +654,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-2) {
             .event-program {
                 &-grid {
@@ -662,7 +662,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-3) {
             .event-program {
                 &-grid {
@@ -670,7 +670,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-5) {
             .event-program {
                 &-grid {
@@ -682,7 +682,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-6) {
             .event-program {
                 &-grid {
@@ -694,7 +694,7 @@
                 }
             }
         }
-
+        
         .news {
             background-color: $color-grey-3;
             width: 100%;
@@ -722,7 +722,7 @@
                 }
             }
         }
-
+        
         .categories {
             background-color: $color-grey-3;
             width: 100%;
@@ -826,12 +826,12 @@
                 &-sb {
                     background: linear-gradient(151.69deg, rgba($color-sb, 0.5) 15%, rgba($color-sb-dark, 0.7) 110%), url('../../assets/jpg/K.Szydelko_144.jpg');
                     background-position: 20% 20%;
-                    margin-right: 5rem;
+                    // margin-right: 5rem;
                 }
                 &-rm {
                     background: linear-gradient(151.69deg, rgba($color-rm, 0.5) 15%, rgba($color-rm-dark, 0.7) 110%), url('../../assets/jpg/A.Szkulska_LENS\ UR_30.JPG');
                     background-position: 50% 60%;
-                    margin-left: 5rem;
+                    // margin-left: 5rem;
                     img {
                         align-self: center;
                         width: 70%;
@@ -840,7 +840,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-2) {
             .categories {
                 .category {
@@ -852,7 +852,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-3) {
             .categories {
                 .category {
@@ -870,7 +870,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-4) {
             .categories {
                 &-container {
@@ -911,7 +911,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-5) {
             .categories {
                 .category {
@@ -920,13 +920,13 @@
                 }
             }
         }
-
+        
         .swiper {
             width: 100vw;
             height: 50rem;
             background-color: $color-primary-dark;
         }
-
+        
         .timeline {
             // margin: 0 !important;
             // padding: 0 !important;
@@ -1065,7 +1065,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-2) {
             .timeline {
                 &-info {
@@ -1081,7 +1081,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-3) {
             .timeline {
                 &-info {
@@ -1097,7 +1097,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-4) {
             .timeline {
                 width: 70%;
@@ -1210,7 +1210,7 @@
                 }
             }
         }
-
+        
         .gallery {
             background-color: $color-grey-3;
             width: 100%;
@@ -1239,7 +1239,7 @@
                 cursor: pointer;
             }
         }
-
+        
         .location {
             position: relative;
             min-height: 50vh;
@@ -1338,7 +1338,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-2) {
             .location {
                 &-grid {
@@ -1362,7 +1362,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-3) {
             .location {
                 &-wave {
@@ -1384,7 +1384,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-4) {
             .location {
                 height: 40vh;
@@ -1396,7 +1396,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-5) {
             .location {
                 height: 40vh !important;
@@ -1421,7 +1421,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-6) {
             .location {
                 height: 35vh !important;
@@ -1433,7 +1433,7 @@
                 }
             }
         }
-
+        
         .organizer {
             width: 100%;
             padding: 2rem;
@@ -1593,7 +1593,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-3) {
             .organizer {
                 display: flex;
@@ -1609,7 +1609,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-4) {
             .organizer {
                 &-social {
@@ -1631,7 +1631,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-6) {
             .organizer {
                 div {
@@ -1647,7 +1647,7 @@
                 }
             }
         }
-
+        
         .patreons {
             margin-top: 5rem;
             box-shadow: 0 -1rem 2rem rgba($color-grey-5, 0.5);
@@ -1851,7 +1851,7 @@
                 margin-bottom: 5rem;
             }
         }
-
+        
         @media only screen and (max-width: $max-width-3) {
             .patreons {
                 &-name {
@@ -1870,7 +1870,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-4) {
             .patreons {
                 &-name {
@@ -1889,7 +1889,7 @@
                 }
             }
         }
-
+        
         .footer {
             padding-top: 5rem;
             display: flex;
@@ -1976,12 +1976,12 @@
                 }
             }
         }
-
+        
         .stream {
             font-size: 5rem;
             color: white;
         }
-
+        
         @media only screen and (max-width: $max-width-3) {
             .footer {
                 p {
@@ -1992,7 +1992,7 @@
                 }
             }
         }
-
+        
         @media only screen and (max-width: $max-width-4) {
             .footer {
                 p {

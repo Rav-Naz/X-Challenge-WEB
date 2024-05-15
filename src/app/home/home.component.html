@@ -84,7 +84,7 @@
                 <h3 class="event-info-details-name-date" data-aos="zoom-out-right" data-aos-delay="500">
                     {{'home.event-info.university.hall' | translate}}
                     <br> {{'home.event-info.university.name' | translate}}
-                    <br> <br><span class="event-info-details-name-date-big">{{getEventDateDay}}-{{getEventDateDay+1}}.{{ getEventDate | date: 'MM.YYYY'}}</span>
+                    <!-- <br> <br><span class="event-info-details-name-date-big">{{getEventDateDay}}-{{getEventDateDay+1}}.{{ getEventDate | date: 'MM.YYYY'}}</span> -->
                 </h3>
             </div>
             <div class="event-info-details-description" data-aos="zoom-out-left" data-aos-delay="500">
@@ -281,7 +281,7 @@
     <section class="categories" id="categories">
         <div class="categories-container">
             <div class="categories-container-day">
-                <p class="category-day">{{getEventDateDay}}.{{ getEventDate | date: 'MM.YYYY'}}</p>
+                <!-- <p class="category-day">{{getEventDateDay}}.{{ getEventDate | date: 'MM.YYYY'}}</p> -->
                 <div class="categories-container-day-row">
                     <div class="category category-tc" [routerLink]="['/task-hunters']" data-aos="fade-in" data-aos-duration="500" data-aos-delay="0">
                         <h4>Task<br>Hunters</h4>
@@ -290,14 +290,29 @@
 
                 </div>
             </div>
-            <span></span>
+            <!-- <span></span> -->
             <div class="categories-container-day">
-                <p class="category-day">{{getEventDateDay+1}}.{{ getEventDate | date: 'MM.YYYY'}}</p>
+                <!-- <p class="category-day">{{getEventDateDay+1}}.{{ getEventDate | date: 'MM.YYYY'}}</p> -->
                 <div class="categories-container-day-row">
                     <div class="category category-sb" [routerLink]="['/smash-bots']" data-aos="fade-in" data-aos-duration="500" data-aos-delay="500">
                         <h4>Smash<br>Bots</h4>
                         <span>{{'home.categories.learn-more' | translate}}</span>
                     </div>
+                    <!-- <div class="category category-rm" [routerLink]="['/robomotion']" data-aos="fade-in" data-aos-duration="500" data-aos-delay="1000">
+                        <h4 style="display: none;">ROBO~motion</h4>
+                        <img src="../../assets/svg/robomotion_logo_black.svg" alt="Logo ROBO~motion">
+                        <span>{{'home.categories.learn-more' | translate}}</span>
+                    </div> -->
+                </div>
+            </div>
+            <!-- <span></span> -->
+            <div class="categories-container-day">
+                <!-- <p class="category-day">{{getEventDateDay+1}}.{{ getEventDate | date: 'MM.YYYY'}}</p> -->
+                <div class="categories-container-day-row">
+                    <!-- <div class="category category-sb" [routerLink]="['/smash-bots']" data-aos="fade-in" data-aos-duration="500" data-aos-delay="500">
+                        <h4>Smash<br>Bots</h4>
+                        <span>{{'home.categories.learn-more' | translate}}</span>
+                    </div> -->
                     <div class="category category-rm" [routerLink]="['/robomotion']" data-aos="fade-in" data-aos-duration="500" data-aos-delay="1000">
                         <h4 style="display: none;">ROBO~motion</h4>
                         <img src="../../assets/svg/robomotion_logo_black.svg" alt="Logo ROBO~motion">
