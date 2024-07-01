@@ -2,6 +2,9 @@
 @import '../app/scss/variables';
 @import '../app/competitor-zone/user/settings/settings.component.scss';
 .navigator {
+    &-rzethon {
+        background: linear-gradient(-90deg, $color-rzethon, $color-rzethon-dark) !important;
+    }
     &-tc {
         background: linear-gradient(-90deg, $color-tc, $color-tc-dark) !important;
     }
@@ -235,6 +238,25 @@
                 color: $color-grey-1 !important;
                 background-color: $color-grey-1 !important;
                 border: .2rem solid $color-grey-1 !important;
+            }
+        }
+        &-rzethon {
+            &,
+            &:link,
+            &:visited {
+                background-color: $color-grey-1;
+                border: .3rem solid $color-rzethon !important;
+                &:focus {
+                    &:active {
+                        border: .3rem solid $color-rzethon !important;
+                    }
+                }
+                &.open {
+                    background-color: transparent;
+                }
+            }
+            .navigator-menu-burger {
+                background: $color-rzethon !important;
             }
         }
         &-tc {

@@ -67,6 +67,7 @@ import { AnnouncementsComponent } from './competitor-zone/referee/announcements/
 import { ActiveFightsAndTimesComponent } from './competitor-zone/referee/active-fights-and-times/active-fights-and-times.component';
 import { ActiveFightsService } from './services/active_fights';
 import { PartnerZoneComponent } from './partner-zone/partner-zone.component';
+import { RzethonComponent } from './home/categories/rzethon/rzethon.component';
 
 
 
@@ -105,6 +106,7 @@ import { PartnerZoneComponent } from './partner-zone/partner-zone.component';
     ThanksComponent, TaskChallengeComponent,
     SmashBotsComponent,
     RobomotionComponent,
+    RzethonComponent,
     InputFileComponent,
     CountingVisitorsComponent,
     ManageFightsComponent,

@@ -21,15 +21,15 @@
         <h4 style="visibility: collapse;">Participants will be able to compete in as many as 8 categories. The organizers prepared the arenas for the struggle on the tracks for LineFollowers or Sumo fights. The track itself in the LF category will test the programming and construction
             skills of many robotics. In addition to the standard competitions, the organizers have prepared many surprises. Every constructor, regardless of whether he is just starting his adventure with electronics or is already experienced, will surely
             find something for himself. There will also be competition dedicated to LEGO fans.</h4>
-        <h3 class="section-header">{{('home.event-info.next_edition' | translate)}}</h3>
-        <!-- <h3 class="section-header" *ngIf="timeToEvent">{{timeIsUp ? streamLink === undefined ? ('home.event-info.status.ended' | translate) : ('home.event-info.status.live' | translate) : ('home.event-info.status.coming' | translate)}}</h3>
+        <!-- <h3 class="section-header">{{('home.event-info.next_edition' | translate)}}</h3> -->
+        <h3 class="section-header" *ngIf="timeToEvent">{{timeIsUp ? streamLink === undefined ? ('home.event-info.status.ended' | translate) : ('home.event-info.status.live' | translate) : ('home.event-info.status.coming' | translate)}}</h3>
         <div class="iframe-container" *ngIf="timeIsUp && streamLink !== undefined">
             <iframe src="" width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
             <iframe [src]="streamLink" target="_top" title="ROBOmotion Livestream" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <a class="stream" target="_blank" href="https://www.twitch.tv/robomotion2021">STREAM Z ROZGRYWKI</a>
+        <!-- <a class="stream" target="_blank" href="https://www.twitch.tv/robomotion2021">STREAM Z ROZGRYWKI</a> -->
 
-        <button [routerLink]="['/results']" *ngIf="timeIsUp">{{'home.event-info.results' | translate}}</button> -->
+        <button [routerLink]="['/results']" *ngIf="timeIsUp">{{'home.event-info.results' | translate}}</button>
         <div class="event-info-counter" *ngIf="!timeIsUp && timeToEvent" data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
             <div class="event-info-counter-part">
                 <p class="event-info-counter-part--number">
@@ -84,7 +84,7 @@
                 <h3 class="event-info-details-name-date" data-aos="zoom-out-right" data-aos-delay="500">
                     {{'home.event-info.university.hall' | translate}}
                     <br> {{'home.event-info.university.name' | translate}}
-                    <!-- <br> <br><span class="event-info-details-name-date-big">{{getEventDateDay}}-{{getEventDateDay+1}}.{{ getEventDate | date: 'MM.YYYY'}}</span> -->
+                    <br> <br><span class="event-info-details-name-date-big">{{getEventDateDay}}-{{getEventDateDay+1}}.{{ getEventDate | date: 'MM.YYYY'}}</span>
                 </h3>
             </div>
             <div class="event-info-details-description" data-aos="zoom-out-left" data-aos-delay="500">
@@ -93,7 +93,9 @@
                 </p>
             </div>
         </div>
+
         <label class="event-info-details-main">
+          <p> {{'home.event-info.free' | translate}}</p>
           <!-- <a style="cursor: pointer" target="_blank">{{'home.event-info.important.3' | translate}}</a>
           <br><br><br>
           <br><br><br>
@@ -101,9 +103,10 @@
           <a style="cursor: pointer" target="_blank"  href="https://xchallenge.pl/timetable">{{'home.event-info.important.1' | translate}}</a>
           <br><br><br>
           <a style="cursor: pointer" target="_blank" href="https://bit.ly/xchallengeTH22rules">{{'home.event-info.important.2' | translate}}</a> -->
-            <!-- <a [routerLink]="['/app-rules']">{{'home.event-info.covid.2' | translate}}</a>
-            {{'home.event-info.covid.3' | translate}} -->
+          <!-- <a [routerLink]="['/app-rules']">{{'home.event-info.covid.2' | translate}}</a>
+          {{'home.event-info.covid.3' | translate}} -->
         </label>
+        <a href="/timetable">{{'menu.timetable' | translate}}</a>
         <!-- <ng-container *ngIf="!timeIsUp">
             <a class="event-info-choose" href="https://forms.office.com/r/6aN4DYgAZ4" target="_blank">{{'home.event-info.important-choose' | translate}}<i class="las la-external-link-alt"></i></a>
             <p *ngIf="!timeIsUp2 && timeLeft" [routerLink]="['/login']">{{'home.event-info.open' | translate}}</p>
@@ -281,45 +284,35 @@
     <section class="categories" id="categories">
         <div class="categories-container">
             <div class="categories-container-day">
-                <!-- <p class="category-day">{{getEventDateDay}}.{{ getEventDate | date: 'MM.YYYY'}}</p> -->
+                <p class="category-day">{{getEventDateDay}}.{{ getEventDate | date: 'MM.YYYY'}}</p>
                 <div class="categories-container-day-row">
-                    <div class="category category-tc" [routerLink]="['/task-hunters']" data-aos="fade-in" data-aos-duration="500" data-aos-delay="0">
+                    <div class="category category-rzethon" [routerLink]="['/rzethon']" data-aos="fade-in" data-aos-duration="500" data-aos-delay="0">
+                        <h4>Rzethon</h4>
+                        <span>{{'home.categories.learn-more' | translate}}</span>
+                    </div>
+                    <div class="category category-tc" [routerLink]="['/task-hunters']" data-aos="fade-in" data-aos-duration="500" data-aos-delay="500">
                         <h4>Task<br>Hunters</h4>
                         <span>{{'home.categories.learn-more' | translate}}</span>
                     </div>
 
                 </div>
             </div>
-            <!-- <span></span> -->
+            <span></span>
             <div class="categories-container-day">
-                <!-- <p class="category-day">{{getEventDateDay+1}}.{{ getEventDate | date: 'MM.YYYY'}}</p> -->
+                <p class="category-day">{{getEventDateDay+1}}.{{ getEventDate | date: 'MM.YYYY'}}</p>
                 <div class="categories-container-day-row">
-                    <div class="category category-sb" [routerLink]="['/smash-bots']" data-aos="fade-in" data-aos-duration="500" data-aos-delay="500">
+                    <div class="category category-sb" [routerLink]="['/smash-bots']" data-aos="fade-in" data-aos-duration="500" data-aos-delay="1000">
                         <h4>Smash<br>Bots</h4>
                         <span>{{'home.categories.learn-more' | translate}}</span>
                     </div>
-                    <!-- <div class="category category-rm" [routerLink]="['/robomotion']" data-aos="fade-in" data-aos-duration="500" data-aos-delay="1000">
-                        <h4 style="display: none;">ROBO~motion</h4>
-                        <img src="../../assets/svg/robomotion_logo_black.svg" alt="Logo ROBO~motion">
-                        <span>{{'home.categories.learn-more' | translate}}</span>
-                    </div> -->
-                </div>
-            </div>
-            <!-- <span></span> -->
-            <div class="categories-container-day">
-                <!-- <p class="category-day">{{getEventDateDay+1}}.{{ getEventDate | date: 'MM.YYYY'}}</p> -->
-                <div class="categories-container-day-row">
-                    <!-- <div class="category category-sb" [routerLink]="['/smash-bots']" data-aos="fade-in" data-aos-duration="500" data-aos-delay="500">
-                        <h4>Smash<br>Bots</h4>
-                        <span>{{'home.categories.learn-more' | translate}}</span>
-                    </div> -->
-                    <div class="category category-rm" [routerLink]="['/robomotion']" data-aos="fade-in" data-aos-duration="500" data-aos-delay="1000">
+                    <div class="category category-rm" [routerLink]="['/robomotion']" data-aos="fade-in" data-aos-duration="500" data-aos-delay="1500">
                         <h4 style="display: none;">ROBO~motion</h4>
                         <img src="../../assets/svg/robomotion_logo_black.svg" alt="Logo ROBO~motion">
                         <span>{{'home.categories.learn-more' | translate}}</span>
                     </div>
                 </div>
             </div>
+            <!-- <span></span> -->
         </div>
     </section>
     <!-- GALLERY -->

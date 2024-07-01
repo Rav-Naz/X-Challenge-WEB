@@ -1,0 +1,72 @@
+@import '../task-challenge/task-challenge.component.scss';
+// @import '../../../scss/colors';
+.category {
+    &-title {
+        background: radial-gradient(100% 100% at 50% 0%, rgba($color-rzethon, 1) 0%, transparent 100%);
+    }
+}
+
+.competitions {
+    &-grid {
+        &-card {
+            &--front {
+                button {
+                    &,
+                    &:link,
+                    &:visited {
+                        box-shadow: 0 0.2rem 2rem rgba($color-rzethon, 0.5);
+                        background: linear-gradient($color-rzethon 60%, $color-rzethon-dark 100%);
+                    }
+                    &:hover {
+                        box-shadow: 0 0.2rem 3rem rgba($color-rzethon, 0.7);
+                    }
+                }
+            }
+            &--back {
+                button {
+                    &,
+                    &:link,
+                    &:visited {
+                        color: $color-rzethon;
+                        border: .2rem solid $color-rzethon;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.swiper {
+    width: 100vw;
+    height: 50rem;
+    background-color: $color-rzethon;
+}
+
+.gallery {
+    // background-color: $color-grey-3;
+    width: 100%;
+    padding: 10rem 0rem !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+        height: 48rem !important;
+        padding: 1rem .5rem;
+        transition: .5s all;
+        filter: grayscale(1);
+    }
+    &-color {
+        filter: grayscale(0) !important;
+    }
+    span {
+        width: 100%;
+        text-align: right;
+        font-family: $title-font;
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 3rem 5%;
+        cursor: pointer;
+    }
+}

@@ -128,6 +128,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   }
 
+  /// Zdjęcia w galerii
   public imageList = [
     'A.Kotlarska(123).jpg',
     'A.Szkulska_LENS_UR_38.jpg',
@@ -358,9 +359,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   refreshCounter(): void {
     if (this.eventDate === undefined) return;
     this.timeToEvent = this.eventDate.getTime() - new Date().getTime();
-    if (Math.floor(this.timeToEvent / 1000) < 0) {
-      this.timeIsUp = true;
-    }
+    this.timeIsUp = Math.floor(this.timeToEvent / 1000) < 0
     if (!this.authService.accessToModifyExpirationDate) return;
     this.timeLeft = this.authService.accessToModifyExpirationDate.getTime() - new Date().getTime();
     if (Math.floor(this.timeLeft / 1000) < 0) {
