@@ -50,8 +50,8 @@
                 "3": "ENTRY TO THE EVENT IS COMPLETELY FREE AND OPEN FOR ALL!"
             },
             "important-choose": "!!! IMPORTANT !!! Survey for players",
-            "next_edition": "Work on the next edition of the competition is already underway. More information soon."
-
+            "next_edition": "Work on the next edition of the competition is already underway. More information soon.",
+            "free": "Admission and participation are free!"
         },
         "event-program": {
             "eventsList": [
@@ -65,6 +65,7 @@
             "learn": "LEARN MORE",
             "regulations": "Rules",
             "categories": [
+                { "id": 0, "name": "Rzethon", "description": "Hackathon consists of two sub-competitions, programming and construction ", "icon": "rzethon_logo.gif", "linkToRegulation": "https:/ /xchallenge.pl/regulations/Smash_Bots_2024.pdf" },
                 { "id": 1, "name": "Smash Bots", "description": "This is the toughest competition in XChallenge! In a special arena, remote-controlled robots will fight each other until the last breath. Sparks and flames are guaranteed here.", "icon": "battlebot.gif", "linkToRegulation": "https://xchallenge.pl/regulations/Smash_Bots_2024_EN.pdf" },
                 { "id": 2, "name": "Task Hunters", "description": "The team and its robot must face the tasks and score as many points as possible in the previously prepared arenas. There will be a lot going on here!", "icon": "task_hunters.gif", "linkToRegulation": "https://xchallenge.pl/regulations/Task_Hunters_2024.pdf" },
                 { "id": 3, "name": "Freestyle", "description": "In this competition, competitors can put on any project, robot or machine. The structures are assessed by referees and visitors. Each voter completes a questionnaire in which they award points for each project, so it is important that each competitor presents their project in the best possible way.", "icon": "freestyle.gif", "linkToRegulation": "https://xchallenge.pl/regulations/ROBOmotion_2024_FreeStyle_EN.pdf" },
@@ -131,6 +132,9 @@
                         }
                     }
                 }
+            },
+            "rzethon": {
+                "description": "Rzethon is an extraordinary hackathon that brings together enthusiasts of technology, programming and innovation. It is addressed to programmers, designers, engineers and anyone who has an idea for a modern technological solution. Rzethon is not only intensive work on the project, but also amazing an opportunity to learn, make contacts and gain experience. The event offers support from mentors, valuable workshops and the opportunity to win attractive prizes. What makes Rzethon great? It is the dynamic atmosphere, creativity of participants and a unique opportunity to create something unique ride the wave of innovation!"
             },
             "smash-bots": {
                 "description": "Smash Bots is one of the most spectacular competitions, where remote-controlled robots fight each other in a specially prepared arena. This competition is based on a simple rule that only the robot that survives all the fights wins. The construction of the robot has no restrictions in terms of the materials used, which means that such equipment as hammers, saws or blades are allowed. The only restrictions imposed on competitors are the standards set out in the regulations, such as weight and dimensions of the structure."

@@ -726,14 +726,14 @@
         .categories {
             background-color: $color-grey-3;
             width: 100%;
-            padding: 6rem;
+            padding: 5rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             justify-self: center;
             align-self: center;
-            padding: 10rem 0;
+            padding: 5rem 0;
             &-container {
                 padding: 10% 7%;
                 background-color: $color-grey-5;
@@ -819,19 +819,26 @@
                     padding-bottom: 8rem;
                     color: $color-grey-0;
                 }
+                &-rzethon {
+                    background: linear-gradient(151.69deg, rgba($color-rzethon, 0.6) 15%, rgba($color-rzethon-dark, 0.6) 110%), url('../../assets/jpg/rzethon.png');
+                    background-position: 50% 50%;
+                    background-size: contain !important;
+                    margin-right: 2rem;
+                }
                 &-tc {
                     background: linear-gradient(151.69deg, rgba($color-tc, 0.6) 15%, rgba($color-tc-dark, 0.6) 110%), url('../../assets/jpg/IMG_20210601_141312.jpg');
                     background-position: 0% 60%;
+                    margin-left: 2rem;
                 }
                 &-sb {
                     background: linear-gradient(151.69deg, rgba($color-sb, 0.5) 15%, rgba($color-sb-dark, 0.7) 110%), url('../../assets/jpg/K.Szydelko_144.jpg');
                     background-position: 20% 20%;
-                    // margin-right: 5rem;
+                    margin-right: 2rem;
                 }
                 &-rm {
                     background: linear-gradient(151.69deg, rgba($color-rm, 0.5) 15%, rgba($color-rm-dark, 0.7) 110%), url('../../assets/jpg/A.Szkulska_LENS\ UR_30.JPG');
                     background-position: 50% 60%;
-                    // margin-left: 5rem;
+                    margin-left: 2rem;
                     img {
                         align-self: center;
                         width: 70%;
@@ -1658,7 +1665,7 @@
             width: 100%;
             padding: 7.5%;
             max-width: 100%;
-            background-color: $color-grey-2;
+            background-color: white;
             &-czasmlodzierz {
                 width: 75%;
                 // height: 50rem !important;
@@ -1668,6 +1675,7 @@
             p {
                 font-size: 2rem;
                 text-align: center;
+                color: $color-grey-2;
             }
             &>img {
                 padding: 2rem;
@@ -1754,7 +1762,7 @@
                 &-4 {
                     &>p {
                         font-size: 3rem !important;
-                        color: #daceb4;
+                        color: #8a4416;
                     }
                     .patreons-one {
                         max-width: 40rem;

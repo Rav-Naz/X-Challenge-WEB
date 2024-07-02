@@ -36,6 +36,7 @@ import { AdminGuard } from './services/admin-guard.service';
 import { PositionsComponent } from './competitor-zone/referee/positions/positions.component';
 import { AnnouncementsComponent } from './competitor-zone/referee/announcements/announcements.component';
 import { ActiveFightsAndTimesComponent } from './competitor-zone/referee/active-fights-and-times/active-fights-and-times.component';
+import { RzethonComponent } from './home/categories/rzethon/rzethon.component';
 
 
 
@@ -45,6 +46,7 @@ const routes: Routes = [
   { path: 'task-hunters', component: TaskChallengeComponent },
   { path: 'smash-bots', component: SmashBotsComponent },
   { path: 'robomotion', component: RobomotionComponent },
+  { path: 'rzethon', component: RzethonComponent },
   { path: 'results', component: ResultsComponent },
   { path: 'timetable', component: TimetableComponent },
   { path: 'building-plan', component: BuildingPlanComponent },

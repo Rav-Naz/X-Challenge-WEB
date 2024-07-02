@@ -11,7 +11,7 @@
         <div class="my-robots-element" *ngFor="let user of competitorsFiltered" (click)="editUser(user.uzytkownik_uuid)">
             <div class="my-robots-element-info">
                 <p class="my-robots-element-uuid">{{user.uzytkownik_uuid}}</p>
-                <p class="my-robots-element-name">{{user.imie}} {{user.nazwisko}}</p>
+                <p class="my-robots-element-name">{{user.imie}} {{user.nazwisko}}<i class="las la-chess-queen" style="color: red" *ngIf="user.czy_opiekun"></i></p>
             </div>
             <details class="my-robots-element-categories" (click)="dummy($event)" style="display: flex; flex-direction: column;">
                 <a *ngIf="user.numer_telefonu">{{'competitor-zone.competitor.phone' | translate}}<b>{{user.numer_telefonu}}</b></a>

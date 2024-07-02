@@ -157,7 +157,7 @@
                         <div>
                             <i class="las la-chevron-left"></i>
                             <div class="grid-constructors-user">
-                                <label [ngClass]="{'grid-constructors-user-this': userUUID === constructor.uzytkownik_uuid}">{{constructor.imie}} {{constructor.nazwisko}}</label>
+                                <label [ngClass]="{'grid-constructors-user-this': userUUID === constructor.uzytkownik_uuid}">{{constructor.imie}} {{constructor.nazwisko}}<i class="las la-chess-queen" style="color: red" *ngIf="constructor.czy_opiekun"></i></label>
                                 <p>{{constructor.uzytkownik_uuid}}</p>
                                 <details *ngIf="userSerceice.isReferee && constructor.numer_telefonu">TEL: {{constructor.numer_telefonu}}</details>
                             </div>
