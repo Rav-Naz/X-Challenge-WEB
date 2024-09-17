@@ -116,6 +116,7 @@ import { RzethonComponent } from './home/categories/rzethon/rzethon.component';
     ActiveFightsAndTimesComponent,
     PartnerZoneComponent
 
+
   ],
   imports: [
     BrowserModule,

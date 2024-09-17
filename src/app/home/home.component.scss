@@ -781,7 +781,7 @@
                 width: 40rem;
                 height: 40rem;
                 max-width: 80vw;
-                // margin: 0 8rem;
+                margin: 0 8rem;
                 box-shadow: 0 .5rem 5rem 2rem rgba($color-black, 0.5);
                 border-radius: 3rem;
                 background-size: 170% !important;
@@ -828,17 +828,17 @@
                 &-tc {
                     background: linear-gradient(151.69deg, rgba($color-tc, 0.6) 15%, rgba($color-tc-dark, 0.6) 110%), url('../../assets/jpg/IMG_20210601_141312.jpg');
                     background-position: 0% 60%;
-                    margin-left: 2rem;
+                    // margin-right: 2rem;
                 }
                 &-sb {
                     background: linear-gradient(151.69deg, rgba($color-sb, 0.5) 15%, rgba($color-sb-dark, 0.7) 110%), url('../../assets/jpg/K.Szydelko_144.jpg');
                     background-position: 20% 20%;
-                    margin-right: 2rem;
+                    // margin-right: 2rem;
                 }
                 &-rm {
                     background: linear-gradient(151.69deg, rgba($color-rm, 0.5) 15%, rgba($color-rm-dark, 0.7) 110%), url('../../assets/jpg/A.Szkulska_LENS\ UR_30.JPG');
                     background-position: 50% 60%;
-                    margin-left: 2rem;
+                    // margin-left: 2rem;
                     img {
                         align-self: center;
                         width: 70%;

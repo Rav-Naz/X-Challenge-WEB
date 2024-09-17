@@ -6,12 +6,12 @@
         <button class="submit-button" (click)="acceptCookies()">{{'cookies.button' | translate}}</button>
     </div>
 </div>
-<div class="rfid-panel" *ngIf="esp32Service.rfidOption != 1">
+<div class="rfid-panel" *ngIf="esp32Service.rfidOption > 1">
     <div>
         <ng-container *ngIf="!esp32Service.isLoading">
             <div class="buttons-row">
 
-                <div *ngIf="esp32Service.rfidOption > 1" (click)="esp32Service.readRFIDTag()">
+                <!-- <div *ngIf="esp32Service.rfidOption > 1" (click)="esp32Service.readRFIDTag()">
                     <i class="las la-id-card"></i>
                     <label>{{'competitor-zone.settings.read-card'  | translate}}</label>
                 </div>
@@ -19,13 +19,13 @@
 
                     <i class="las la-eraser"></i>
                     <label>{{'competitor-zone.settings.erase-card'  | translate}}</label>
-                </div>
-                <div *ngIf="esp32Service.rfidOption == 3" (click)="esp32Service.readOneGate()">
+                </div> -->
+                <div *ngIf="esp32Service.rfidOption == 2" (click)="esp32Service.readOneGate()">
 
                     <i class="las la-stopwatch"></i>
                     <label>{{'competitor-zone.settings.read-time'  | translate}}</label>
                 </div>
-                <div *ngIf="esp32Service.rfidOption == 4" (click)="esp32Service.readTwoGates()">
+                <div *ngIf="esp32Service.rfidOption == 3" (click)="esp32Service.readTwoGates()">
 
                     <i class="las la-road"></i>
                     <label>{{'competitor-zone.settings.read-time'  | translate}}</label>
@@ -38,10 +38,20 @@
           </label>
             <ng-container *ngIf="esp32Service.lastResponse">
                 <p>Odpowiedź:</p>
-                <a (click)="esp32Service.copyLastResponse()">{{esp32Service.lastResponse}} <i class="las la-copy"></i></a>
+                <a (click)="esp32Service.copyLastResponse(esp32Service.isAutocomplete)">{{esp32Service.lastResponse}} <i class="las la-copy"></i></a>
             </ng-container>
         </ng-container>
-        <app-spinner *ngIf="esp32Service.isLoading"></app-spinner>
+        <ng-container *ngIf="esp32Service.isLoading">
+            <div class="buttons-row">
+
+                <div (click)="esp32Service.resetTime()">
+
+                    <i class="las la-ban"></i>
+                    <label>{{'competitor-zone.settings.reset-time'  | translate}}</label>
+                </div>
+            </div>
+
+        </ng-container>
     </div>
 </div>
 <div class="navigator" id="navigator">

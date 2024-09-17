@@ -49,7 +49,7 @@ export class FightsService {
   public getAllFights() {
     return new Promise<APIResponse | void>(async (resolve, reject) => {
       if (this.allFights.value === null && this.allFights.value === undefined) { reject(); return; }
-      if (this.allFights.value !== null) { resolve({message: "INFO: OK", body: this.allFights.value}); return;}
+      if (this.allFights.value !== null) { resolve({ message: "INFO: OK", body: this.allFights.value }); return; }
       const value = await this.http.getAllFights.catch(err => {
         if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
@@ -99,13 +99,13 @@ export class FightsService {
         resolve(fights)
       } else {
         const value = await this.http.getAllFightsOfRobot(robot_uuid).catch(err => {
-          if(err.status === 400) {
+          if (err.status === 400) {
             this.errorService.showError(err.status, this.translate.instant(err.error.body));
           } else {
             this.errorService.showError(err.status);
           }
         });
-        if(value !== undefined) {
+        if (value !== undefined) {
           this.fightsForRobot.next(Object.assign(value.body));
         }
         resolve(value);
@@ -113,9 +113,9 @@ export class FightsService {
     });
   }
 
-  public setFightResult(walka_id: number, wygrane_rundy_robot1: number, wygrane_rundy_robot2: number) {
+  public setFightResult(walka_id: number, wygrane_rundy_robot1: number, wygrane_rundy_robot2: number, uwagi: string | null) {
     return new Promise<APIResponse | void>(async (resolve, reject) => {
-      const value = await this.http.setFightResult(walka_id, wygrane_rundy_robot1, wygrane_rundy_robot2).catch(err => {
+      const value = await this.http.setFightResult(walka_id, wygrane_rundy_robot1, wygrane_rundy_robot2, uwagi).catch(err => {
         if (err.status === 400) {
           this.errorService.showError(err.status, this.translate.instant(err.error.body));
         } else {
@@ -185,7 +185,7 @@ export class FightsService {
       // delete fight.stanowisko_id;
       // this.timesForPosition.value?.push(new_time);
     }
-    if(this.fightsForRobot.value && this.fightsForRobot.value.length > 0) {
+    if (this.fightsForRobot.value && this.fightsForRobot.value.length > 0) {
       const fight = this.fightsForRobot.value.find(val => val.walka_id === data.walka_id);
       if (fight) {
         fight.czas_zakonczenia = data.czas_zakonczenia;
@@ -210,9 +210,9 @@ export class FightsService {
     if (this.actualPosition === data.stanowisko_id && this.fightsForPosition.value !== null && this.fightsForPosition.value !== undefined) {
       this.fightsForPosition.value.push(data);
       this.pushNewFigthsForPosition(this.fightsForPosition.value);
-      this.ui.showFeedback('loading', `Dodano walkę ${data.walka_id}`,3);
+      this.ui.showFeedback('loading', `Dodano walkę ${data.walka_id}`, 3);
     }
-    if(this.fightsForRobot.value && this.fightsForRobot.value.length > 0 && (this.fightsForRobot.value[0].robot1_id === data.robot1_id || this.fightsForRobot.value[0].robot1_id === data.robot2_id || this.fightsForRobot.value[0].robot2_id === data.robot1_id || this.fightsForRobot.value[0].robot2_id === data.robot2_id)) {
+    if (this.fightsForRobot.value && this.fightsForRobot.value.length > 0 && (this.fightsForRobot.value[0].robot1_id === data.robot1_id || this.fightsForRobot.value[0].robot1_id === data.robot2_id || this.fightsForRobot.value[0].robot2_id === data.robot1_id || this.fightsForRobot.value[0].robot2_id === data.robot2_id)) {
       const index = this.fightsForRobot.value.findIndex(val => val.walka_id === data.walka_id);
       if (index >= 0) {
         this.fightsForRobot.value[index] = data;
@@ -239,10 +239,10 @@ export class FightsService {
       if (fightIndex >= 0) {
         this.fightsForPosition.value[fightIndex] = data;
         this.fightsForPosition.next(this.fightsForPosition.value);
-        this.ui.showFeedback('loading', `Dodano robota do walki ${data.walka_id}`,3);
+        this.ui.showFeedback('loading', `Dodano robota do walki ${data.walka_id}`, 3);
       }
     }
-    if(this.fightsForRobot.value && this.fightsForRobot.value.length > 0 && (this.fightsForRobot.value[0].robot1_id === data.robot1_id || this.fightsForRobot.value[0].robot1_id === data.robot2_id || this.fightsForRobot.value[0].robot2_id === data.robot1_id || this.fightsForRobot.value[0].robot2_id === data.robot2_id)) {
+    if (this.fightsForRobot.value && this.fightsForRobot.value.length > 0 && (this.fightsForRobot.value[0].robot1_id === data.robot1_id || this.fightsForRobot.value[0].robot1_id === data.robot2_id || this.fightsForRobot.value[0].robot2_id === data.robot1_id || this.fightsForRobot.value[0].robot2_id === data.robot2_id)) {
       const index = this.fightsForRobot.value.findIndex(val => val.walka_id === data.walka_id);
       if (index >= 0) {
         this.fightsForRobot.value[index] = data;
@@ -266,10 +266,10 @@ export class FightsService {
       if (fightIndex >= 0) {
         this.fightsForPosition.value.splice(fightIndex, 1);
         this.fightsForPosition.next(this.fightsForPosition.value);
-        this.ui.showFeedback('loading', `Usunięto walkę ${data.walka_id}`,3);
+        this.ui.showFeedback('loading', `Usunięto walkę ${data.walka_id}`, 3);
       }
     }
-    if(this.fightsForRobot.value && this.fightsForRobot.value.length > 0) {
+    if (this.fightsForRobot.value && this.fightsForRobot.value.length > 0) {
       const index = this.fightsForRobot.value.findIndex(val => val.walka_id === data.walka_id);
       if (index >= 0) {
         this.fightsForRobot.value.splice(index, 1);

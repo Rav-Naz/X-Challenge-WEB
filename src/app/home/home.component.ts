@@ -441,6 +441,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     return this.registerInfo != null ? Math.ceil((this.registerInfo.aktualnie / this.registerInfo.limitOsob) * 100) : null
   }
 
+  get isRegisterOpen() {
+    return this.registerInfo.czyRejestracjaOtwarta == 1;
+  }
+
   timeout(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }

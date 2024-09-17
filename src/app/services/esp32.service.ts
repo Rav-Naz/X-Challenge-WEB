@@ -47,11 +47,11 @@ export class Esp32Service {
     this.lastActivedElement = currentInput;
   }
 
-  uzytkownikIdHandler(uzytkownik_id: number) {
-    let finded = this.allUsers?.find(user => user.uzytkownik_id == uzytkownik_id)
+  uzytkownikIdHandler(uzytkownik_kod: string, pasteToLastInput: boolean) {
+    let finded = this.allUsers?.find(user => user.uzytkownik_kod == uzytkownik_kod)
     if (finded) {
       this.lastResponse = finded.uzytkownik_uuid
-      this.copyLastResponse()
+      this.copyLastResponse(pasteToLastInput)
       this.ui.showFeedback('succes', `Skopiowano identyfikator użytkownika ${finded.imie} ${finded.nazwisko} do schowka`, 3)
     } else {
       this.ui.showFeedback('error', "Nie znaleziono użytkownika o takim identyfikatorze", 3)
@@ -75,7 +75,7 @@ export class Esp32Service {
       if (value.status == "Error") {
         this.errorHandler(value)
       } else {
-        this.uzytkownikIdHandler(value.body.uzytkownik_id)
+        this.uzytkownikIdHandler(value.body.uzytkownik_id, this.isAutocomplete)
         resolve(value);
       }
     });
@@ -121,7 +121,7 @@ export class Esp32Service {
         this.errorHandler(value)
       } else {
         this.lastResponse = value.body.czas_przejazdu
-        this.copyLastResponse()
+        this.copyLastResponse(this.isAutocomplete)
         this.ui.showFeedback('succes', `Skopiowano czas przejazdu do schowka`, 3)
         resolve(value);
       }
@@ -145,8 +145,32 @@ export class Esp32Service {
         this.errorHandler(value)
       } else {
         this.lastResponse = value.body.czas_przejazdu
-        this.copyLastResponse()
+        this.copyLastResponse(this.isAutocomplete)
         this.ui.showFeedback('succes', `Skopiowano czas przejazdu do schowka`, 3)
+        resolve(value);
+      }
+    });
+  }
+
+  public resetTime() {
+    this.isLoading = true;
+    return new Promise<any>(async (resolve, reject) => {
+      const value = await this.http.resetTime().catch(err => {
+        if (err.status === 400) {
+          this.errorService.showError(err.status, this.translate.instant(err.error.body));
+          reject(err);
+        } else {
+          this.errorService.showError(err.status);
+          reject(err);
+        }
+      })
+      this.isLoading = false;
+      if (value.status == "Error") {
+        this.errorHandler(value)
+      } else {
+        // this.lastResponse = value.body.czas_przejazdu
+        // this.copyLastResponse(this.isAutocomplete)
+        // this.ui.showFeedback('succes', `Skopiowano czas przejazdu do schowka`, 3)
         resolve(value);
       }
     });
@@ -168,14 +192,14 @@ export class Esp32Service {
       if (value.status == "Error") {
         this.errorHandler(value)
       } else {
-        this.uzytkownikIdHandler(value.body.uzytkownik_id)
+        this.uzytkownikIdHandler(value.body.uzytkownik_id, this.isAutocomplete)
         resolve(value);
       }
     });
   }
 
-  copyToClipboard(value: string) {
-    if (this.lastActivedElement && this.isAutocomplete) {
+  copyToClipboard(value: string, pasteToLastInput: boolean) {
+    if (this.lastActivedElement && pasteToLastInput) {
       this.lastActivedElement.updateValueFromOutside(value);
     }
     let selBox = document.createElement('textarea');
@@ -191,7 +215,7 @@ export class Esp32Service {
     document.body.removeChild(selBox);
   }
 
-  copyLastResponse() {
-    this.copyToClipboard(this.lastResponse)
+  copyLastResponse(pasteToLastInput: boolean) {
+    this.copyToClipboard(this.lastResponse, pasteToLastInput)
   }
 }

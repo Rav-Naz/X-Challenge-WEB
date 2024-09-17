@@ -168,7 +168,7 @@ export class HttpService {
     })
   }
 
-  public register(imie: string, nazwisko: string, email: string, kodPocztowy: string | null, numerTelefonu: string | null, rozmiarKoszulki: number, preferowaneJedzenie: number, czyOpiekun: number, hasloHashed: string, czyBedzieOsobiscie: boolean) {
+  public register(imie: string, nazwisko: string, email: string, kodPocztowy: string | null, numerTelefonu: string | null, rozmiarKoszulki: number, czyOpiekun: number, hasloHashed: string, czyBedzieOsobiscie: boolean, wiek: number) {
     return new Promise<any>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}public/registerUser`, {
         imie: imie,
@@ -177,7 +177,7 @@ export class HttpService {
         haslo: hasloHashed,
         numer_telefonu: numerTelefonu,
         kod_pocztowy: kodPocztowy,
-        preferowane_jedzenie: preferowaneJedzenie,
+        wiek: wiek,
         rozmiar_koszulki: rozmiarKoszulki,
         czy_opiekun: czyOpiekun,
         referencerToken: this.token ?? null,
@@ -504,6 +504,28 @@ export class HttpService {
     })
   }
 
+  public addPostalCode(kod_pocztowy: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`${this.url}user/addPostalCode`, {
+        kod_pocztowy: kod_pocztowy
+      }, { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+  public addAge(wiek: number) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.post<APIResponse>(`${this.url}user/addAge`, {
+        wiek: wiek
+      }, { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
   // ------------- VOLOUNTEER
 
   public addCurrentVisitors() {
@@ -572,12 +594,13 @@ export class HttpService {
     })
   }
 
-  public setFightResult(walka_id: number, wygrane_rundy_robot1: number, wygrane_rundy_robot2: number) {
+  public setFightResult(walka_id: number, wygrane_rundy_robot1: number, wygrane_rundy_robot2: number, uwagi: string | null) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.post<APIResponse>(`${this.url}referee/setFightResult`, {
         walka_id: walka_id,
         wygrane_rundy_robot1: wygrane_rundy_robot1,
-        wygrane_rundy_robot2: wygrane_rundy_robot2
+        wygrane_rundy_robot2: wygrane_rundy_robot2,
+        uwagi: uwagi
       }, { headers: this.headers }).toPromise().then(
         (value) => { resolve(value) },
         (error) => { rejects(error) }
@@ -672,6 +695,19 @@ export class HttpService {
     })
   }
 
+  public changeBarcode(uzytkownik_uuid: string, uzytkownik_kod: string) {
+    return new Promise<APIResponse>((resolve, rejects) => {
+      this.http.put<APIResponse>(`${this.url}referee/setBarcode`, {
+        uzytkownik_uuid: uzytkownik_uuid,
+        uzytkownik_kod: uzytkownik_kod
+      }, { headers: this.headers }).toPromise().then(
+        (value) => { resolve(value) },
+        (error) => { rejects(error) }
+      );
+    })
+  }
+
+
   public setRobotWeight(robot_uuid: string, weight: string) {
     return new Promise<APIResponse>((resolve, rejects) => {
       this.http.put<APIResponse>(`${this.url}referee/setRobotWeight`, {
@@ -756,6 +792,16 @@ export class HttpService {
     })
   }
 
+  public resetTime() {
+    return new Promise<any>((resolve, rejects) => {
+      this.http.get<any>(`http://bramki.xchallenge.pl:5000/referee/resetTime`,
+        { headers: this.headers }).toPromise().then(
+          (value) => { resolve(value) },
+          (error) => { rejects(error) }
+        );
+    })
+  }
+
   public writeRFIDTag(uzytkownik_id: number) {
     return new Promise<any>((resolve, rejects) => {
       this.http.post<any>(`http://bramki.xchallenge.pl:5000/referee/writeRFIDTag`, {
@@ -798,18 +844,6 @@ export class HttpService {
     })
   }
   // ------------- ADMIN
-
-
-  public addPostalCode(kod_pocztowy: string) {
-    return new Promise<APIResponse>((resolve, rejects) => {
-      this.http.post<APIResponse>(`${this.url}user/addPostalCode`, {
-        kod_pocztowy: kod_pocztowy
-      }, { headers: this.headers }).toPromise().then(
-        (value) => { resolve(value) },
-        (error) => { rejects(error) }
-      );
-    })
-  }
 
   public addRobotRejection(robot_uuid: string, powod_odrzucenia: string) {
     return new Promise<APIResponse>((resolve, rejects) => {

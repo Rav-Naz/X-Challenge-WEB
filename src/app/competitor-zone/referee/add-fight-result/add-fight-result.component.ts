@@ -24,7 +24,7 @@ export class AddFightResultComponent implements OnInit, OnDestroy {
   formArena: FormGroup;
   formResult1: FormGroup;
   formResult2: FormGroup;
-  // formTime: FormGroup;
+  formComment: FormGroup;
   private loading: boolean = false;
   private subs: Subscription = new Subscription;
   public viewCounter: number = 0;
@@ -49,6 +49,9 @@ export class AddFightResultComponent implements OnInit, OnDestroy {
     });
     this.formArena = this.formBuilder.group({
       arena: [null, [Validators.required]]
+    });
+    this.formComment = this.formBuilder.group({
+      comment: [null, [Validators.maxLength(500)]]
     });
 
   }
@@ -110,7 +113,9 @@ export class AddFightResultComponent implements OnInit, OnDestroy {
       const decision = await this.ui.wantToContinue(`Czy potwierdzasz, że robot ${this.walka.robot1_nazwa} wygrał ${wygrane_rundy1} rund/y a robot ${this.walka.robot2_nazwa} wygrał ${wygrane_rundy2} rund/y?`)
       if (decision) {
         this.loading = true;
-        const response = await this.fightService.setFightResult(this.walka.walka_id, wygrane_rundy1, wygrane_rundy2).catch(err => { return null });
+        const uwagi = this.formComment.get('comment')?.value;
+
+        const response = await this.fightService.setFightResult(this.walka.walka_id, wygrane_rundy1, wygrane_rundy2, uwagi != undefined ? uwagi : null).catch(err => { return null });
         if (this.settedArena) {
           await this.activeFightService.removeCurrentFightOrTime(this.stanowisko_id!, this.kategoria_id!, this.settedArena);
         }

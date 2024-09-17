@@ -29,7 +29,7 @@ export class RobotsComponent implements OnInit, OnDestroy {
     { value: "competitor-zone.robots.filters.name", id: 1 },
     { value: "competitor-zone.robots.filters.uuid", id: 2 },
     { value: "competitor-zone.robots.filters.categories", id: 3 }
-    ]);
+  ]);
   private selectedFilter: number | null = 1;
   private filter: string = '';
 
@@ -50,20 +50,20 @@ export class RobotsComponent implements OnInit, OnDestroy {
         this.categories = JSON.parse(JSON.stringify(val[0]!));
         // this.allRobots = this.allRobots!.concat(this.allRobots).concat(this.allRobots)
         this.allRobots?.forEach((robot) => {
-          const a = [...[...robot.kategorie.split(", ")].map((cat) => this.categories!.find(obj => obj.kategoria_id.toString() === cat)?.nazwa)].join(", ");
+          const a = [...[...(robot.kategorie != null ? robot.kategorie?.split(", ") : [])].map((cat) => this.categories!.find(obj => obj.kategoria_id.toString() === cat)?.nazwa)].join(", ");
           robot.kategorie = a;
         })
       } else if (!val[1]) {
         this.robotsService.getAllRobots();
       }
     })
-    const sub2 = this.formOption.valueChanges.subscribe( async (data) => {
-      if(data !== null && data !== undefined) {
+    const sub2 = this.formOption.valueChanges.subscribe(async (data) => {
+      if (data !== null && data !== undefined) {
         this.selectedFilter = Number(data.filter);
       }
     });
-    const sub3 = this.formFilter.valueChanges.subscribe( async (data) => {
-      if(data !== null && data !== undefined) {
+    const sub3 = this.formFilter.valueChanges.subscribe(async (data) => {
+      if (data !== null && data !== undefined) {
         this.filter = data.filter_name.toLowerCase();
       }
     });
@@ -82,7 +82,7 @@ export class RobotsComponent implements OnInit, OnDestroy {
           break;
         case 2:
           roboty = roboty.filter(robot => String(robot.robot_uuid).toLowerCase().includes(this.filter));
-            break;
+          break;
         case 3:
           roboty = roboty.filter(robot => String(robot.kategorie).toLowerCase().includes(this.filter));
           break;
@@ -101,7 +101,6 @@ export class RobotsComponent implements OnInit, OnDestroy {
       const response = await this.refereeService.confirmArrival(robot.robot_uuid, true).catch(err => {
         return null
       });
-      // console.log(response);
       if (response !== undefined && response !== null && response.message === "INFO: OK") {
         // this.robotsService.confirmArrival(robot.robot_uuid)
         this.ui.showFeedback("succes", `Pomyślnie potwierdzono dotarcie robota ${robot.nazwa_robota}`, 3);

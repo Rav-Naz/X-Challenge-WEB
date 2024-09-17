@@ -24,9 +24,11 @@ export class SettingsComponent {
   formPreferences: FormGroup;
   formPassword: FormGroup;
   formRFID: FormGroup;
+  formAge: FormGroup;
   private loadingName: boolean = false;
   private loadingPhone: boolean = false;
   private loadingPostal: boolean = false;
+  private loadingAge: boolean = false;
   private loadingPassword: boolean = false;
   private loadingRFID: boolean = false;
   public confirmingPhone: boolean = false;
@@ -48,6 +50,9 @@ export class SettingsComponent {
     });
     this.formPostal = this.formBuilder.group({
       postal_code: [(userService.userDetails as any)?.kod_pocztowy, [Validators.minLength(2), Validators.maxLength(8)]],
+    });
+    this.formAge = this.formBuilder.group({
+      age: [(userService.userDetails as any)?.wiek, [Validators.required, Validators.max(100), Validators.maxLength(3)]],
     });
     this.formPreferences = this.formBuilder.group({
       preferedFood: [null, [Validators.required]],
@@ -122,6 +127,17 @@ export class SettingsComponent {
         .catch(err => { })
         .finally(() => {
           this.loadingPostal = false;
+        })
+    }
+  }
+
+  onSubmitAgeForm() {
+    if (this.isFormGroupAgeValid) {
+      this.loadingAge = true;
+      this.userService.addAge(Number(this.formAge.get('age')?.value))
+        .catch(err => { })
+        .finally(() => {
+          this.loadingAge = false;
         })
     }
   }
@@ -219,20 +235,24 @@ export class SettingsComponent {
   }
 
   get gatesOptions(): string | undefined {
-    let options = ['Brak', 'Tylko RFID', 'Pojedyńcza bramka', 'Podwójna bramka'];
+    let options = ['Brak', 'Pojedyncza bramka', 'Podwójna bramka'];
     return options ? JSON.stringify(options.map((option: any) => {
       return { value: option, id: options.indexOf(option) + 1 }
     })) : undefined;
   }
 
+  get userDetails() {
+    return this.userService.userDetails as any;
+  }
 
-  copyUUID() {
+
+  copyValue(value: string) {
     let selBox = document.createElement('textarea');
     selBox.style.position = 'fixed';
     selBox.style.left = '0';
     selBox.style.top = '0';
     selBox.style.opacity = '0';
-    selBox.value = this.userService.userUUID;
+    selBox.value = value;
     document.body.appendChild(selBox);
     selBox.focus();
     selBox.select();
@@ -250,6 +270,9 @@ export class SettingsComponent {
   }
   public get isFormGroupPostalValid() {
     return this.formPostal.valid && !this.loadingPostal;
+  }
+  public get isFormGroupAgeValid() {
+    return this.formAge.valid && !this.loadingAge;
   }
   public get isFormGroupPasswordValid() {
     return this.formPassword.valid && !this.loadingPassword;
@@ -277,6 +300,13 @@ export class SettingsComponent {
   public get isPostalChanged() {
     if (this.userService.userDetails && this.formPostal) {
       return (this.userService.userDetails as any)?.kod_pocztowy !== this.formPostal.get('postal_code')?.value;
+    } else {
+      return false;
+    }
+  }
+  public get isAgeChanged() {
+    if (this.userService.userDetails && this.formAge) {
+      return (this.userService.userDetails as any)?.wiek !== this.formAge.get('age')?.value;
     } else {
       return false;
     }

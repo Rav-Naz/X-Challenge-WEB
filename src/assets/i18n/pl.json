@@ -545,6 +545,7 @@
             "read-card": "Odczytaj kartę",
             "erase-card": "Wyczyść kartę",
             "read-time": "Odczytaj czas",
+            "reset-time": "Resetuj czas",
             "change": "* Preferencji nie da się samodzielnie zmienić po rejestracji. Aby dokonać zmian, prosimy skontaktować się z administratorem.",
             "errors": {
                 "succesfuly-added-phone": "Pomyślnie zaktualizowano numer telefonu",
@@ -635,6 +636,7 @@
             "filters": {
                 "name": "Imię i nazwisko",
                 "user-uuid": "Użytkownik UUID",
+                "barcode": "Kod kreskowy",
                 "positions": "Stanowiska",
                 "robots-uuid": "Robot UUID",
                 "robots-name": "Roboty",
@@ -1059,6 +1061,14 @@
                 "minlength": "Kod ma długość 6 znaków"
             }
         },
+        "age": {
+            "name": "Wiek w chwili zawodów",
+            "validators": {
+                "required": "To pole jest wymagane",
+                "maxlength": "Wiek powinien być krótszy niż 3 znaki",
+                "max": "Wiek powinien być mniejszy niż 100"
+            }
+        },
         "preferedFood": {
             "name": "Preferowane jedzenie",
             "validators": {
@@ -1092,6 +1102,12 @@
         },
         "user_type": {
             "name": "Typ użytkownika",
+            "validators": {
+                "required": "To pole jest wymagane"
+            }
+        },
+        "barcode": {
+            "name": "Kod kreskowy",
             "validators": {
                 "required": "To pole jest wymagane"
             }

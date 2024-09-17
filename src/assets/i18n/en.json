@@ -536,6 +536,7 @@
             "read-card": "Read card",
             "erase-card": "Erase card",
             "read-time": "Read time",
+            "reset-time": "Reset time",
             "change": "* Preferences cannot be changed independently after registration. Please contact the administrator to make changes.",
             "errors": {
                 "succesfuly-added-phone": "Phone number changed successfully",
@@ -627,6 +628,7 @@
             "filters": {
                 "name": "First and last name",
                 "user-uuid": "User UUID",
+                "barcode": "Barcode",
                 "positions": "Positions",
                 "robots-uuid": "Robot UUID",
                 "robots-name": "Robot name",
@@ -1052,6 +1054,14 @@
                 "minlength": "The code is 6 characters long"
             }
         },
+        "age": {
+            "name": "Age at the time of the competition",
+            "validators": {
+                "required": "This field is required",
+                "minlength": "Age should be less than 3 characters",
+                "max": "Age should be less than 100"
+            }
+        },
         "preferedFood": {
             "name": "Prefered food",
             "validators": {
@@ -1087,6 +1097,12 @@
             "name": "User type",
             "validators": {
                 "required": "This field is required"
+            }
+        },
+        "barcode": {
+            "name": "Barcode",
+            "validators": {
+                "required": "To pole jest wymagane"
             }
         },
         "payload": {

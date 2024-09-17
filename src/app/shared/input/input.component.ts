@@ -16,6 +16,7 @@ export class InputComponent {
   @Input() type: undefined | string;
   @Input() placeholder: string = " ";
   @Input() disabled: boolean = false;
+  @Input() showBarcodeIcon: boolean = false;
 
   constructor(public esp32Service: Esp32Service) { }
 
@@ -37,12 +38,31 @@ export class InputComponent {
     return this.group.disabled || this.disabled;
   }
 
+  get barcodeInput() {
+    return (document.getElementById("barcode") as any).value as string;
+  }
+
   updateActiveInput() {
     this.esp32Service.setActiveInput(this);
   }
 
   updateValueFromOutside(value: string) {
     this.group.get(this.controlName)?.setValue(value)
+  }
+
+  showModal() {
+    const dialog = document.getElementById("customDialog") as any;
+    (document.getElementById("barcode") as any).value = '';
+    this.updateActiveInput();
+    dialog?.showModal();
+  }
+
+  closeModal() {
+    const dialog = document.getElementById("customDialog") as any;
+    dialog?.close();
+    if (this.barcodeInput.length >= 1) {
+      this.esp32Service.uzytkownikIdHandler(this.barcodeInput, true);
+    }
   }
 
 }

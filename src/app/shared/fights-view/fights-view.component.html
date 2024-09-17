@@ -65,6 +65,11 @@
                       <a class="tree-fight-body-name" [ngClass]="{'tree-fight-body-score-win': getFightsInGroup[0] ? getFightsInGroup[0].wygrane_rundy_robot1! < getFightsInGroup[0].wygrane_rundy_robot2! : false, 'tree-fight-body-score-lose': getFightsInGroup[0] ? getFightsInGroup[0].wygrane_rundy_robot1! > getFightsInGroup[0].wygrane_rundy_robot2! : false}">{{getFightsInGroup[0].robot2_nazwa ?? "TBA"}}</a>
                     </label>
                             <a *ngIf="getFightsInGroup[0].robot1_nazwa != null && getFightsInGroup[0].robot2_nazwa != null" class="tree-fight-pos">{{getFightsInGroup[0].nazwa_stanowiska}}</a>
+                            <a *ngIf="getFightsInGroup[0].uwagi != null" class="tree-fight-pos">
+                                <br>
+                                <label>{{'competitor-zone.referee-zone.comment' | translate}}&nbsp;</label>
+                                <label>{{getFightsInGroup[0].uwagi}}</label>
+                            </a>
                         </ng-container>
                         <ng-container *ngIf="variable.edit && canModify">
                             <div>
@@ -97,6 +102,12 @@
                                 <a class="tree-fight-body-name" [ngClass]="{'tree-fight-body-score-win': filteredFightsInGroup?.fight ? filteredFightsInGroup!.fight!.wygrane_rundy_robot1! < filteredFightsInGroup!.fight!.wygrane_rundy_robot2! : false, 'tree-fight-body-score-lose': filteredFightsInGroup?.fight ? filteredFightsInGroup!.fight!.wygrane_rundy_robot1! > filteredFightsInGroup!.fight!.wygrane_rundy_robot2! : false}">{{filteredFightsInGroup?.fight?.robot2_nazwa ?? "TBA"}}</a>
                               </label>
                                 <a *ngIf="filteredFightsInGroup?.fight?.robot1_nazwa != null && filteredFightsInGroup?.fight?.robot2_nazwa != null" class="tree-fight-pos">{{filteredFightsInGroup?.fight?.nazwa_stanowiska}}</a>
+                                <a *ngIf="filteredFightsInGroup?.fight?.uwagi != null" class="tree-fight-pos">
+                                    <br>
+                                    <label>{{'competitor-zone.referee-zone.comment' | translate}}&nbsp;</label>
+                                    <label>{{filteredFightsInGroup?.fight?.uwagi}}</label>
+                                </a>
+
                             </ng-container>
                             <ng-container *ngIf="variable.edit && canModify">
                                 <div>
@@ -134,6 +145,11 @@
                     <a class="tree-fight-body-name" [ngClass]="{'tree-fight-body-score-win': fight ? fight.wygrane_rundy_robot1! < fight.wygrane_rundy_robot2! : false, 'tree-fight-body-score-lose': fight ? fight.wygrane_rundy_robot1! > fight.wygrane_rundy_robot2! : false}">{{fight.robot2_nazwa ?? "TBA"}}</a>
                   </label>
                         <a *ngIf="fight.robot1_nazwa != null && fight.robot2_nazwa != null" class="tree-fight-pos">{{fight.nazwa_stanowiska}}</a>
+                        <a *ngIf="fight.uwagi != null" class="tree-fight-pos">
+                            <br>
+                            <label>{{'competitor-zone.referee-zone.comment' | translate}}&nbsp;</label>
+                            <label>{{fight.uwagi}}</label>
+                        </a>
                     </ng-container>
                     <ng-container *ngIf="variable.edit && canModify">
                         <div>
@@ -183,6 +199,11 @@
                       <a class="tree-fight-body-name" [ngClass]="{'tree-fight-body-score-win': child.fight.wygrane_rundy_robot1 < child.fight.wygrane_rundy_robot2, 'tree-fight-body-score-lose': child.fight.wygrane_rundy_robot1 > child.fight.wygrane_rundy_robot2}">{{child.fight.robot2_nazwa ?? "TBA"}}</a>
                     </label>
                         <a *ngIf="child.fight.robot1_nazwa != null && child.fight.robot2_nazwa != null" class="tree-fight-pos">{{child.fight.nazwa_stanowiska}}</a>
+                        <a *ngIf="child.fight.nazwa_stanowiska != null" class="tree-fight-pos">
+                            <br>
+                            <label>{{'competitor-zone.referee-zone.comment' | translate}}&nbsp;</label>
+                            <label>{{child.fight.nazwa_stanowiska}}</label>
+                        </a>
                     </ng-container>
                     <ng-container *ngIf="variable.edit && canModify">
                         <div class="tree-fight-new">
