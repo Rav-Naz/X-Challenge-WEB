@@ -84,7 +84,7 @@
                 <h3 class="event-info-details-name-date" data-aos="zoom-out-right" data-aos-delay="500">
                     {{'home.event-info.university.hall' | translate}}
                     <br> {{'home.event-info.university.name' | translate}}
-                    <!-- <br> <br><span class="event-info-details-name-date-big">{{getEventDateDay}}-{{getEventDateDay+1}}.{{ getEventDate | date: 'MM.YYYY'}}</span> -->
+                    <br> <br><span class="event-info-details-name-date-big">{{getEventDateDay}}.{{ getEventDate | date: 'MM.YYYY'}}</span>
                 </h3>
             </div>
             <div class="event-info-details-description" data-aos="zoom-out-left" data-aos-delay="500">
@@ -106,7 +106,8 @@
           <!-- <a [routerLink]="['/app-rules']">{{'home.event-info.covid.2' | translate}}</a>
           {{'home.event-info.covid.3' | translate}} -->
         </label>
-        <a href="/timetable">{{'menu.timetable' | translate}}</a>
+        <a *ngIf="isRegisterOpen" href="/register">{{'competitor-zone.login.register' | translate}}</a>
+        <a *ngIf="isLessThanWeek" href="/timetable">{{'menu.timetable' | translate}}</a>
         <!-- <ng-container *ngIf="!timeIsUp">
             <a class="event-info-choose" href="https://forms.office.com/r/6aN4DYgAZ4" target="_blank">{{'home.event-info.important-choose' | translate}}<i class="las la-external-link-alt"></i></a>
             <p *ngIf="!timeIsUp2 && timeLeft" [routerLink]="['/login']">{{'home.event-info.open' | translate}}</p>
@@ -283,24 +284,15 @@
     <!-- CATEGORIES -->
     <section class="categories" id="categories">
         <div class="categories-container">
-            <div class="categories-container-day">
-                <!-- <p class="category-day">{{getEventDateDay}}.{{ getEventDate | date: 'MM.YYYY'}}</p> -->
-                <div class="categories-container-day-row">
-                    <div class="category category-rzethon" [routerLink]="['/rzethon']" data-aos="fade-in" data-aos-duration="500" data-aos-delay="0">
-                        <h4>Rzethon</h4>
-                        <span>{{'home.categories.learn-more' | translate}}</span>
-                    </div>
-                    <div class="category category-tc" [routerLink]="['/task-hunters']" data-aos="fade-in" data-aos-duration="500" data-aos-delay="500">
-                        <h4>Task<br>Hunters</h4>
-                        <span>{{'home.categories.learn-more' | translate}}</span>
-                    </div>
 
-                </div>
-            </div>
             <!-- <span></span> -->
             <div class="categories-container-day">
                 <!-- <p class="category-day">{{getEventDateDay+1}}.{{ getEventDate | date: 'MM.YYYY'}}</p> -->
                 <div class="categories-container-day-row">
+                    <div class="category category-tc" [routerLink]="['/task-hunters']" data-aos="fade-in" data-aos-duration="500" data-aos-delay="500">
+                        <h4>Task<br>Hunters</h4>
+                        <span>{{'home.categories.learn-more' | translate}}</span>
+                    </div>
                     <div class="category category-sb" [routerLink]="['/smash-bots']" data-aos="fade-in" data-aos-duration="500" data-aos-delay="1000">
                         <h4>Smash<br>Bots</h4>
                         <span>{{'home.categories.learn-more' | translate}}</span>
@@ -412,7 +404,7 @@
         </div>
     </section>
     <section class="patreons">
-        <h3 class="section-header">{{'home.patreons.title' | translate}}</h3>
+        <!-- <h3 class="section-header">{{'home.patreons.title' | translate}}</h3> -->
         <ng-container *ngFor="let name of patreonNames; let i = index">
             <div class="patreons-class" [ngClass]="patreonClassPicker(i)" *ngIf="getAllPatreonsWithIndex(i).length > 0">
                 <p class="patreons-name">{{name}}</p>

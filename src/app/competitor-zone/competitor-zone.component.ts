@@ -2,7 +2,7 @@ import { RefereeService } from 'src/app/services/referee.service';
 import { AuthService } from './../services/auth.service';
 import { Router } from '@angular/router';
 import { UserService } from './../services/user.service';
-import { Component, ViewEncapsulation, OnDestroy, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnDestroy, OnInit, OnChanges } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { RobotsService } from '../services/robots.service';
 import { ConstructorsService } from '../services/constructors.service';
@@ -47,6 +47,17 @@ export class CompetitorZoneComponent implements OnInit, OnDestroy {
     setInterval(() => {
       this.isNewMessage = this.messageService.isNewAnnouncement;
     }, 500)
+    if (this.userService.isUser) {
+      this.router.navigate(['/competitor-zone', { outlets: { 'outlet': ['my-robots'] } }])
+
+    } else if (this.userService.isAdmin || this.userService.isReferee) {
+      this.router.navigate(['/competitor-zone', { outlets: { 'outlet': ['referee-zone'] } }])
+
+    } else if (this.userService.isWolo) {
+      this.router.navigate(['/competitor-zone', { outlets: { 'outlet': ['counting-visitors'] } }])
+
+    }
+
   }
 
   refreshCounter(): void {

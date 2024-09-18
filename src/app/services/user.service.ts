@@ -112,6 +112,27 @@ export class UserService {
       resolve(value);
     });
   }
+  setAgeLocaly(wiek: number | null) {
+    (this.userDetails as any).wiek = wiek;
+    this.user.next(this.userDetails);
+    localStorage.setItem('details', JSON.stringify(this.userDetails));
+  }
+  public addAge(wiek: number) {
+    return new Promise<any>(async (resolve) => {
+      const value = await this.http.addAge(wiek).catch(err => {
+        if (err.status === 400) {
+          this.errorService.showError(err.status, this.translate.instant(err.error.body));
+        } else {
+          this.errorService.showError(err.status);
+        }
+      })
+      if (value) {
+        this.setAgeLocaly(wiek);
+        this.ui.showFeedback("succes", this.translate.instant('competitor-zone.settings.errors.succesfuly-confirmed'), 3)
+      }
+      resolve(value);
+    });
+  }
   public changePersnoally(czyBedzieOsobisice: boolean) {
     return new Promise<any>(async (resolve) => {
       const value = await this.http.changePersnoally(czyBedzieOsobisice).catch(err => {

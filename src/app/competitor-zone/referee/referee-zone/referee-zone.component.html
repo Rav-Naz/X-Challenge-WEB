@@ -89,6 +89,10 @@
                                         <button class="submit-button referee-results-times-element-edit-form-button-red" (click)="deleteTime()"><i class="las la-trash"></i></button>
                                     </div>
                                     <div class="referee-results-fights-element-details">
+                                        <div *ngIf="time.uwagi" class="referee-results-fights-element-details-flex-piece">
+                                            <label>{{'competitor-zone.referee-zone.comment' | translate}}&nbsp;</label>
+                                            <label>{{time.uwagi}}</label>
+                                        </div>
                                         <div class="referee-results-fights-element-details-flex" *ngIf="variable.open">
                                             <div *ngIf="time.czas_zakonczenia" class="referee-results-fights-element-details-flex-piece">
                                                 <label>{{'competitor-zone.referee-zone.end-time' | translate}}&nbsp;</label>
@@ -102,10 +106,7 @@
                                                 <label>{{'competitor-zone.referee-zone.robot-id' | translate}}&nbsp;</label>
                                                 <label>{{time.robot_id}}</label>
                                             </div>
-                                            <div *ngIf="time.uwagi" class="referee-results-fights-element-details-flex-piece">
-                                                <label>{{'competitor-zone.referee-zone.comment' | translate}}&nbsp;</label>
-                                                <label>{{time.uwagi}}</label>
-                                            </div>
+
                                             <!-- <div class="referee-results-fights-element-details-flex-piece">
                                                 <label>{{'competitor-zone.referee-zone.result-id' | translate}}&nbsp;</label>
                                                 <label>{{time.wynik_id}}</label>

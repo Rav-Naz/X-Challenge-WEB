@@ -13,4 +13,5 @@ export interface Fight {
   walka_id: number
   wygrane_rundy_robot1: number | null
   wygrane_rundy_robot2: number | null
+  uwagi: string | null
 }

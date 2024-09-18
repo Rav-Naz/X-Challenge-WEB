@@ -24,8 +24,18 @@ export class RefereeService {
       })
     })
     this.websocket.getWebSocket$.subscribe((socket) => {
+      socket?.on('user/addAge', (data) => {
+        this.WS_addAge(data);
+      })
+    })
+    this.websocket.getWebSocket$.subscribe((socket) => {
       socket?.on('user/giveStarterpack', (data) => {
         this.WS_givenStarterpack(data);
+      })
+    })
+    this.websocket.getWebSocket$.subscribe((socket) => {
+      socket?.on('user/setBarcode', (data) => {
+        this.WS_setBarcode(data);
       })
     })
   }
@@ -147,6 +157,19 @@ export class RefereeService {
     });
   }
 
+  public changeBarcode(uzytkownik_uuid: string, uzytkownik_kod: string) {
+    return new Promise<any>(async (resolve) => {
+      const value = await this.http.changeBarcode(uzytkownik_uuid, uzytkownik_kod).catch(err => {
+        if (err.status === 400) {
+          this.errorService.showError(err.status, this.translate.instant(err.error.body));
+        } else {
+          this.errorService.showError(err.status);
+        }
+      })
+      this.ui.showFeedback('succes', 'Zmieniono kod użytkownika', 2)
+      resolve(value);
+    });
+  }
   public changeUserType(uzytkownik_uuid: string, uzytkownik_typ: number) {
     return new Promise<any>(async (resolve) => {
       const value = await this.http.changeUserType(uzytkownik_uuid, uzytkownik_typ).catch(err => {
@@ -207,10 +230,25 @@ export class RefereeService {
     });
   }
 
+  async WS_setBarcode(data: any) {
+    const userIndex = this.allUsers.value?.findIndex(user => user.uzytkownik_uuid === data?.uzytkownik_uuid)
+    if (userIndex !== undefined && userIndex !== null && userIndex >= 0 && this.allUsers.value) {
+      this.allUsers.value![userIndex].uzytkownik_kod = data.uzytkownik_kod;
+      this.allUsers.next(this.allUsers.value);
+    }
+  }
+
   async WS_addPostalCode(data: any) {
     const userIndex = this.allUsers.value?.findIndex(user => user.uzytkownik_id === data?.uzytkownik_id)
     if (userIndex !== undefined && userIndex !== null && userIndex >= 0 && this.allUsers.value) {
       this.allUsers.value![userIndex].kod_pocztowy = data.kod_pocztowy;
+      this.allUsers.next(this.allUsers.value);
+    }
+  }
+  async WS_addAge(data: any) {
+    const userIndex = this.allUsers.value?.findIndex(user => user.uzytkownik_id === data?.uzytkownik_id)
+    if (userIndex !== undefined && userIndex !== null && userIndex >= 0 && this.allUsers.value) {
+      this.allUsers.value![userIndex].wiek = data.wiek;
       this.allUsers.next(this.allUsers.value);
     }
   }

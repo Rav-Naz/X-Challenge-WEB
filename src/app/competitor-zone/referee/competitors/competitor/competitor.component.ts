@@ -26,6 +26,7 @@ export class CompetitorComponent {
   public formPostal: FormGroup;
   public formMessage: FormGroup;
   public formUserType: FormGroup;
+  public formBarcode: FormGroup;
   public formReferee: FormGroup;
 
   private subs: Subscription = new Subscription;
@@ -53,6 +54,9 @@ export class CompetitorComponent {
     });
     this.formUserType = this.formBuilder.group({
       user_type: [null, [Validators.required]]
+    });
+    this.formBarcode = this.formBuilder.group({
+      barcode: [null, []]
     });
     this.formReferee = this.formBuilder.group({
       position: [null, [Validators.required]]
@@ -87,6 +91,9 @@ export class CompetitorComponent {
           setTimeout(() => {
             this.formUserType.controls['user_type'].setValue(this.user.uzytkownik_typ);
           }, 300)
+          setTimeout(() => {
+            this.formBarcode.controls['barcode'].setValue(this.user.uzytkownik_kod);
+          }, 300)
           this.titleService.setTitle(`🧑 ${this.user.imie} ${this.user.nazwisko}`);
           if (this.user.uzytkownik_typ >= 2) {
             this.allPositions = val[2];
@@ -104,7 +111,6 @@ export class CompetitorComponent {
       }
     });
   }
-
 
   giveStarterpack() {
     if (this.user) {
@@ -129,6 +135,16 @@ export class CompetitorComponent {
     }
   }
 
+  async changeBarcode() {
+    if (this.isFormBarcodeValid) {
+      // console.log(this.formUserType.get('user_type')?.value)
+      this.loading = true;
+      this.refereeService.changeBarcode(this.user.uzytkownik_uuid, this.formBarcode.get('barcode')?.value).catch(err => {
+      }).finally(() => {
+        this.loading = false;
+      });
+    }
+  }
   async changeUserType() {
     if (this.isFormUserTypeValid) {
       // console.log(this.formUserType.get('user_type')?.value)
@@ -175,6 +191,9 @@ export class CompetitorComponent {
 
   get isFormUserTypeValid() {
     return this.formUserType.valid
+  }
+  get isFormBarcodeValid() {
+    return this.formBarcode.valid
   }
 
   get isFormRefereeValid() {
@@ -251,13 +270,13 @@ export class CompetitorComponent {
   }
 
 
-  copyUUID() {
+  copyValue(value: string) {
     let selBox = document.createElement('textarea');
     selBox.style.position = 'fixed';
     selBox.style.left = '0';
     selBox.style.top = '0';
     selBox.style.opacity = '0';
-    selBox.value = this.user!.uzytkownik_uuid;
+    selBox.value = value;
     document.body.appendChild(selBox);
     selBox.focus();
     selBox.select();

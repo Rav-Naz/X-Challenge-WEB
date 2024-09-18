@@ -30,7 +30,7 @@ export class RegisterComponent {
       email: [email, [Validators.required, Validators.minLength(2), Validators.maxLength(100), Validators.pattern(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)]],
       postal_code: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(8)]],
       tshirtSize: [null, [Validators.required]],
-      preferedFood: [null, [Validators.required]],
+      age: [null, [Validators.required, Validators.max(100), Validators.maxLength(3)]],
       password: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(64)]],
       repeatPassword: [null, [Validators.required]]
     }, {
@@ -52,10 +52,11 @@ export class RegisterComponent {
         this.form.get('postal_code')?.value,
         this.createPhoneNumber,
         this.form.get('tshirtSize')?.value,
-        this.form.get('preferedFood')?.value,
+        // this.form.get('preferedFood')?.value,
         this.isCarer,
         this.form.get('password')?.value,
         this.isPersonally,
+        parseInt(this.form.get('age')?.value)
       ).catch(err => console.log(err))
         .finally(() => {
           this.loading = false;

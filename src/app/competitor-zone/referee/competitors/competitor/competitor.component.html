@@ -16,14 +16,18 @@
                 </div> -->
                 <div class="uuid">
                     <span class="competitor-name">{{'menu.uuid' | translate}}</span>
-                    <div (click)="copyUUID()" class="competitor-uuid">
+                    <div (click)="copyValue(user.uzytkownik_uuid)" class="competitor-uuid">
                         <a>{{user?.uzytkownik_uuid}}</a>
                         <i class="las la-copy"></i>
                     </div>
-                    <button *ngIf="esp32Service.rfidOption > 1" (click)="esp32Service.writeRFIDTag(user.uzytkownik_id)" class="submit-button" style="color: white; display: flex; flex-direction:row; min-height: auto; line-height: auto !important; justify-content:center; align-items:center;">RFID<i class="las la-share-square" style="color: white;"></i><i class="las la-id-card" style="color: white;"></i></button>
+                    <!-- <button *ngIf="esp32Service.rfidOption > 1" (click)="esp32Service.writeRFIDTag(user.uzytkownik_id)" class="submit-button" style="color: white; display: flex; flex-direction:row; min-height: auto; line-height: auto !important; justify-content:center; align-items:center;">RFID<i class="las la-share-square" style="color: white;"></i><i class="las la-id-card" style="color: white;"></i></button> -->
                 </div>
-                <div class="row" *ngIf="userSerceice.isAdmin" style="margin-top: 2rem;">
-                    <app-select [group]="formUserType" [collapsed]="true" controlName="user_type" translatePrefix="controls" [options]="userTypes"></app-select>
+                <div class="row" *ngIf="userSerceice.isReferee">
+                    <app-input [group]="formBarcode" [collapsed]="true" controlName="barcode" translatePrefix="controls"></app-input>
+                    <button [disabled]="!isFormBarcodeValid || isLoading" class="submit-button" (click)="changeBarcode()" style="margin-top: 3.3rem;"><i class="las la-save"></i></button>
+                </div>
+                <div class="row" *ngIf="userSerceice.isAdmin">
+                    <app-select [group]="formUserType" [collapsed]="true" controlName="user_type" translatePrefix="controls" [options]="userTypes" style="margin-top: 1rem;"></app-select>
                     <button [disabled]="!isFormUserTypeValid || isLoading" class="submit-button" (click)="changeUserType()"><i class="las la-save"></i></button>
                 </div>
             </div>
@@ -40,7 +44,7 @@
                     <!-- <p class="competitor-detail competitor-deadline" *ngIf="isRegisteredAfterFirstDate">{{'competitor-zone.competitor.is_registered_after_first_date' | translate}}</p> -->
                     <div>
                         <p class="competitor-detail" *ngIf="user?.rozmiar_koszulki">{{'controls.tshirtSize.name' | translate}}:<span>{{tshirtSize}}</span></p>
-                        <p class="competitor-detail" *ngIf="user?.preferowane_jedzenie">{{'controls.preferedFood.name' | translate}}:<span>{{foodOption}}</span></p>
+                        <!-- <p class="competitor-detail" *ngIf="user?.preferowane_jedzenie">{{'controls.preferedFood.name' | translate}}:<span>{{foodOption}}</span></p> -->
                         <p class="competitor-detail">{{'competitor-zone.competitor.carer' | translate}}:<span><i *ngIf="user.czy_opiekun" class="las la-check"></i><i *ngIf="!user.czy_opiekun" class="las la-times"></i></span></p>
                     </div>
                 </div>

@@ -10,12 +10,21 @@
             <div class="row">
                 <div class="uuid">
                     <span>{{'menu.uuid' | translate}}</span>
-                    <div (click)="copyUUID()">
+                    <div (click)="copyValue(userService.userUUID)">
                         <a>{{userService.userUUID}}</a>
                         <i class="las la-copy"></i>
                     </div>
                 </div>
                 <label>{{'competitor-zone.settings.user-info'  | translate}}</label>
+            </div>
+            <div class="row" *ngIf="userDetails.uzytkownik_kod !== null">
+                <div class="uuid">
+                    <span>{{'competitor-zone.competitors.filters.barcode' | translate}}</span>
+                    <div (click)="copyValue(userDetails.uzytkownik_kod)">
+                        <a>{{userDetails.uzytkownik_kod}}</a>
+                        <i class="las la-copy"></i>
+                    </div>
+                </div>
             </div>
         </section>
         <section>
@@ -27,10 +36,15 @@
             <label>{{'competitor-zone.settings.phone-info'  | translate}}</label>
         </section>
         <section>
+
             <a>{{'competitor-zone.settings.postal'  | translate}}</a>
             <div class="row">
                 <app-input [group]="formPostal" controlName="postal_code"></app-input>
                 <button class="submit-button" [disabled]="!isFormGroupPostalValid || !isPostalChanged" (click)="onSubmitPostalForm()"><i class="las la-save"></i></button>
+            </div>
+            <div class="row">
+                <app-input [group]="formAge" controlName="age" type="number"></app-input>
+                <button class="submit-button" [disabled]="!isFormGroupAgeValid || !isAgeChanged" (click)="onSubmitAgeForm()"><i class="las la-save"></i></button>
             </div>
             <div class="checkbox" style="margin-bottom: 2rem;">
                 <label class="checkbox-container">{{'competitor-zone.register.personally' | translate}}
@@ -43,7 +57,7 @@
         <section>
             <a>{{'competitor-zone.settings.preferences'  | translate}}</a>
             <div class="row">
-                <app-input [group]="formPreferences" controlName="preferedFood"></app-input>
+                <!-- <app-input [group]="formPreferences" controlName="preferedFood"></app-input> -->
                 <app-input [group]="formPreferences" controlName="tshirtSize"></app-input>
             </div>
             <label>{{'competitor-zone.settings.change'  | translate}}</label>

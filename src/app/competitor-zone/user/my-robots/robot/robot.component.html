@@ -146,7 +146,7 @@
                 <span>{{'competitor-zone.robot.constructors' | translate}}</span>
                 <div class="grid-categories-new" *ngIf="((authService.canModify && userSerceice.isUser) || userSerceice.isAdmin) && userSerceice.userType !== 1">
                     <div class="grid-constructors-div">
-                        <app-input *ngIf="!isLoadingConstructors" [group]="formConstructor" controlName="constructor_uuid" [collapsed]="true"></app-input>
+                        <app-input *ngIf="!isLoadingConstructors" [group]="formConstructor" controlName="constructor_uuid" [collapsed]="true" [showBarcodeIcon]="true"></app-input>
                         <a *ngIf="nameFormEmpty">{{'competitor-zone.robot.constructors-info' | translate}}</a>
                     </div>
                     <button [disabled]="!isFormGroupConstructorValid || isLoadingConstructors" class="submit-button grid-button" (click)="onAddConstructor()"><i class="las la-plus-circle"></i></button>

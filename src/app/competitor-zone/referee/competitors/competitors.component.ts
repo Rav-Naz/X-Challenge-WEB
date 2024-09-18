@@ -26,7 +26,7 @@ export class CompetitorsComponent implements OnInit {
   public filterOptions: string = JSON.stringify([
     { value: "competitor-zone.competitors.filters.name", id: 1 },
     { value: "competitor-zone.competitors.filters.user-uuid", id: 2 },
-    // { value: "competitor-zone.competitors.filters.positions", id: 3 },
+    { value: "competitor-zone.competitors.filters.barcode", id: 3 },
     { value: "competitor-zone.competitors.filters.robots-name", id: 4 },
     { value: "competitor-zone.competitors.filters.phone", id: 5 },
     { value: "competitor-zone.competitors.filters.email", id: 6 },
@@ -51,14 +51,14 @@ export class CompetitorsComponent implements OnInit {
         this.allCompetitors = JSON.parse(JSON.stringify(val[1]!));
         this.categories = JSON.parse(JSON.stringify(val[0]!));
         this.allCompetitors?.forEach((user) => {
-          if(user.roboty_json) {
+          if (user.roboty_json) {
             user.roboty = JSON.parse(user.roboty_json);
             if (user.roboty) {
               let user_kategorie: Array<number> = []
               for (let element of user.roboty) {
                 let cat = element.kategorie.split(', ').map((e: string) => Number(e))
-                cat.forEach((el: number) =>{
-                  if(!user_kategorie.includes(el)) {user_kategorie.push(el)}
+                cat.forEach((el: number) => {
+                  if (!user_kategorie.includes(el)) { user_kategorie.push(el) }
                 })
               }
               let nazwy_kategorii: Array<string> = []
@@ -74,13 +74,13 @@ export class CompetitorsComponent implements OnInit {
         })
       }
     })
-    const sub2 = this.formOption.valueChanges.subscribe( async (data) => {
-      if(data !== null && data !== undefined) {
+    const sub2 = this.formOption.valueChanges.subscribe(async (data) => {
+      if (data !== null && data !== undefined) {
         this.selectedFilter = Number(data.filter);
       }
     });
-    const sub3 = this.formFilter.valueChanges.subscribe( async (data) => {
-      if(data !== null && data !== undefined) {
+    const sub3 = this.formFilter.valueChanges.subscribe(async (data) => {
+      if (data !== null && data !== undefined) {
         this.filter = data.filter_name.toLowerCase();
       }
     });
@@ -96,9 +96,9 @@ export class CompetitorsComponent implements OnInit {
           break;
         case 2:
           userzy = userzy.filter(user => String(user.uzytkownik_uuid).toLowerCase().includes(this.filter));
-            break;
+          break;
         case 3:
-          userzy = userzy.filter(user => String(user.stanowiska).toLowerCase().includes(this.filter));
+          userzy = userzy.filter(user => String(user.uzytkownik_kod).toLowerCase().includes(this.filter));
           break;
         case 4:
           userzy = userzy.filter(user => String(user.roboty_json).toLowerCase().includes(this.filter));
