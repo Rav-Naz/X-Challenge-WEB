@@ -52,7 +52,7 @@ export class SettingsComponent {
       postal_code: [(userService.userDetails as any)?.kod_pocztowy, [Validators.minLength(2), Validators.maxLength(8)]],
     });
     this.formAge = this.formBuilder.group({
-      age: [(userService.userDetails as any)?.wiek, [Validators.required, Validators.max(100), Validators.maxLength(3)]],
+      age: [(userService.userDetails as any)?.wiek, [Validators.required, Validators.min(1), Validators.max(100), Validators.maxLength(3)]],
     });
     this.formPreferences = this.formBuilder.group({
       preferedFood: [null, [Validators.required]],

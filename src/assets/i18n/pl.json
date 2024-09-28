@@ -65,7 +65,6 @@
             "learn": "DOWIEDZ SIĘ WIĘCEJ",
             "regulations": "Regulamin",
             "categories": [
-                { "id": 0, "name": "Rzethon", "description": "Hackathon składa się z dwóch podkonkurencji, programistycznej i konstrukcyjnej ", "icon": "rzethon_logo.gif", "linkToRegulation": "https://xchallenge.pl/regulations/Smash_Bots_2024.pdf" },
                 { "id": 1, "name": "Smash Bots", "description": "To najbardziej wymagająca konkurencja w XChallenge! W specjalnej arenie, zdalnie sterowane roboty będą walczyć ze sobą do ostatniego tchu. Iskry i płomienie są tutaj gwarantowane.", "icon": "battlebot.gif", "linkToRegulation": "https://xchallenge.pl/regulations/Smash_Bots_2024.pdf" },
                 { "id": 2, "name": "Task Hunters", "description": "Drużyna wraz ze swym robotem musi stawić czoła zadaniom i zdobyć jak największą ilość punktów na wcześniej przygotowanych arenach. Tutaj będzie się działo!", "icon": "task_hunters.gif", "linkToRegulation": "https://xchallenge.pl/regulations/Task_Hunters_2024.pdf" },
                 { "id": 3, "name": "Freestyle", "description": "W tej konkurencji zawodnicy mogą wystawić całkowicie dowolny projekt, robota lub maszynę. Konstrukcje są oceniane prze sędziów oraz odwiedzających. Każdy głosujący wypełnia ankietę, w której przyznaje punkty każdemu projektowi, dlatego ważne jest, aby każdy zawodnik jak najlepiej zaprezentował swój projekt.", "icon": "freestyle.gif", "linkToRegulation": "https://xchallenge.pl/regulations/ROBOmotion_2024_FreeStyle.pdf" },
@@ -583,6 +582,7 @@
             "email": "Adres email: ",
             "positions": "Stanowiska: ",
             "postal": "Kod pocztowy: ",
+            "age": "Wiek w chwili zawodów: ",
             "send": "Wyślij wiadomość",
             "robots": "Roboty",
             "carer": "Opiekun",
@@ -1028,6 +1028,7 @@
             "name": "Wiek w chwili zawodów",
             "validators": {
                 "required": "To pole jest wymagane",
+                "min": "Wiek powinien być większy niż 0",
                 "maxlength": "Wiek powinien być krótszy niż 3 znaki",
                 "max": "Wiek powinien być mniejszy niż 100"
             }

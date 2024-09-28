@@ -9,7 +9,7 @@
 <div class="top" [formGroup]="group" [ngClass]="{'collapsed': collapsed}">
     <div class="form">
         <input type="text" [id]="controlName" class="form__input" [autocomplete]="controlName" [placeholder]="placeholder" [ngClass]="{'form__input-invalid': isFormInvalid && !isDisabled, 'form__input-disabled': isDisabled, 'form__input__barcode-offset': showBarcodeIcon}"
-            [formControlName]="controlName" [type]="type ? type : isControlPassword ? 'password' : 'text'" [name]="controlName" (focus)="updateActiveInput()">
+            [formControlName]="controlName" [type]="type ? type : isControlPassword ? 'password' : 'text'" [name]="controlName" (focus)="updateActiveInput()" [min]="min" [max]="max">
         <i *ngIf="showBarcodeIcon" class="las la-barcode form__input__barcode" (click)="showModal()"></i>
         <!-- <button class=" form__input__barcode " #show>Show dialog</button> -->
         <label [for]="controlName " class="form__label " [ngClass]="{ 'form__label-invalid': isFormInvalid && !isDisabled} ">{{('controls.'+controlName+'.name') | translate}}</label>

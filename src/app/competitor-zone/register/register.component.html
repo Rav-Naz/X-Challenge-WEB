@@ -34,7 +34,7 @@
 
             </div>
             <div class="register-form-row">
-                <app-input [group]="form" controlName="age" type="number"></app-input>
+                <app-input [group]="form" controlName="age" type="number" [min]="1"></app-input>
                 <!-- <app-select [group]="form" controlName="preferedFood" translatePrefix="controls" [options]="foodOptions"></app-select> -->
                 <app-select [group]="form" controlName="tshirtSize" translatePrefix="controls" [options]="tshirtSizes"></app-select>
             </div>

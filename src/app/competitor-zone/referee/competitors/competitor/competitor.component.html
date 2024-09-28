@@ -8,6 +8,7 @@
                 <p class="competitor-detail" *ngIf="user?.email">{{'competitor-zone.competitor.email' | translate}}<span>{{user?.email}}</span></p>
                 <p class="competitor-detail" *ngIf="user?.stanowiska">{{'competitor-zone.competitor.positions' | translate}}<span>{{user?.stanowiska}}</span></p>
                 <p class="competitor-detail" *ngIf="user?.kod_pocztowy">{{'competitor-zone.competitor.postal' | translate}}<span>{{user?.kod_pocztowy}}</span></p>
+                <p class="competitor-detail" *ngIf="user?.wiek">{{'competitor-zone.competitor.age' | translate}}<span [ngClass]="{'competitor-detail-warning': user.wiek != null && user.wiek < 18}">{{user?.wiek}} <i *ngIf="user.wiek < 18" class="las la-exclamation-triangle"></i></span></p>
                 <p class="competitor-detail" *ngIf="user?.data_rejestracji">{{'competitor-zone.competitor.registration' | translate}}<span>{{user?.data_rejestracji | date:'dd.MM.YYYY'}}</span></p>
                 <p class="competitor-detail" *ngIf="user?.kategorie && user.kategorie.length > 0">{{'competitor-zone.competitors.filters.categories' | translate}}<span *ngFor="let category of user.kategorie">{{category}}<br></span></p>
                 <!-- <div *ngIf="userSerceice.isAdmin && user && !user.kod_pocztowy" class="postal">
