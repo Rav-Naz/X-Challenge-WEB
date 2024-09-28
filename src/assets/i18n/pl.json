@@ -205,8 +205,6 @@
                 { "id": 7, "patreonCategory": 2, "description": "infoSoftware", "image": "../../assets/logaKolor/logo_is_kolor.png", "linkToSite": "https://infosoftware.pl/" },
                 { "id": 8, "patreonCategory": 2, "description": "MTU Aero Engines Polska", "image": "../../assets/logaKolor/mtu_kolor.jpg", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
                 { "id": 9, "patreonCategory": 2, "description": "Rzeszowskie Centrum Technologii 3D", "image": "../../assets/logaKolor/rcd_kolor.png", "linkToSite": "https://perfectsolution.com.pl/" },
-
-
                 { "id": 20, "patreonCategory": 5, "description": "Forbot", "image": "../../assets/logaKolor/forbot_kolor.png", "linkToSite": "https://forbot.pl/blog/" }
             ],
             "tiers": [
