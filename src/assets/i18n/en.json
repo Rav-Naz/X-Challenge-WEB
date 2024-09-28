@@ -65,7 +65,6 @@
             "learn": "LEARN MORE",
             "regulations": "Rules",
             "categories": [
-                { "id": 0, "name": "Rzethon", "description": "Hackathon consists of two sub-competitions, programming and construction ", "icon": "rzethon_logo.gif", "linkToRegulation": "https:/ /xchallenge.pl/regulations/Smash_Bots_2024.pdf" },
                 { "id": 1, "name": "Smash Bots", "description": "This is the toughest competition in XChallenge! In a special arena, remote-controlled robots will fight each other until the last breath. Sparks and flames are guaranteed here.", "icon": "battlebot.gif", "linkToRegulation": "https://xchallenge.pl/regulations/Smash_Bots_2024_EN.pdf" },
                 { "id": 2, "name": "Task Hunters", "description": "The team and its robot must face the tasks and score as many points as possible in the previously prepared arenas. There will be a lot going on here!", "icon": "task_hunters.gif", "linkToRegulation": "https://xchallenge.pl/regulations/Task_Hunters_2024.pdf" },
                 { "id": 3, "name": "Freestyle", "description": "In this competition, competitors can put on any project, robot or machine. The structures are assessed by referees and visitors. Each voter completes a questionnaire in which they award points for each project, so it is important that each competitor presents their project in the best possible way.", "icon": "freestyle.gif", "linkToRegulation": "https://xchallenge.pl/regulations/ROBOmotion_2024_FreeStyle_EN.pdf" },
@@ -574,6 +573,7 @@
             "email": "Email: ",
             "positions": "Positions: ",
             "postal": "Postal code: ",
+            "age": "Age at the time of event: ",
             "send": "Send message",
             "robots": "Robots",
             "carer": "Carer",
@@ -1019,8 +1019,10 @@
             "name": "Age at the time of the competition",
             "validators": {
                 "required": "This field is required",
-                "minlength": "Age should be less than 3 characters",
+                "min": "Age should be greater than 0",
+                "maxlength": "Age should be less than 3 characters",
                 "max": "Age should be less than 100"
+
             }
         },
         "preferedFood": {

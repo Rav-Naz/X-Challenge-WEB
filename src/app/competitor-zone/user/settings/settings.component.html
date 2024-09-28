@@ -43,7 +43,7 @@
                 <button class="submit-button" [disabled]="!isFormGroupPostalValid || !isPostalChanged" (click)="onSubmitPostalForm()"><i class="las la-save"></i></button>
             </div>
             <div class="row">
-                <app-input [group]="formAge" controlName="age" type="number"></app-input>
+                <app-input [group]="formAge" controlName="age" type="number" [min]="1"></app-input>
                 <button class="submit-button" [disabled]="!isFormGroupAgeValid || !isAgeChanged" (click)="onSubmitAgeForm()"><i class="las la-save"></i></button>
             </div>
             <div class="checkbox" style="margin-bottom: 2rem;">

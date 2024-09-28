@@ -17,6 +17,8 @@ export class InputComponent {
   @Input() placeholder: string = " ";
   @Input() disabled: boolean = false;
   @Input() showBarcodeIcon: boolean = false;
+  @Input() min: number | undefined;
+  @Input() max: number | undefined;
 
   constructor(public esp32Service: Esp32Service) { }
 
