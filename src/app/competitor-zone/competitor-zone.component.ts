@@ -47,16 +47,16 @@ export class CompetitorZoneComponent implements OnInit, OnDestroy {
     setInterval(() => {
       this.isNewMessage = this.messageService.isNewAnnouncement;
     }, 500)
-    if (this.userService.isUser) {
-      this.router.navigate(['/competitor-zone', { outlets: { 'outlet': ['my-robots'] } }])
+    // if (this.userService.isUser) {
+    //   this.router.navigate(['/competitor-zone', { outlets: { 'outlet': ['my-robots'] } }])
 
-    } else if (this.userService.isAdmin || this.userService.isReferee) {
-      this.router.navigate(['/competitor-zone', { outlets: { 'outlet': ['referee-zone'] } }])
+    // } else if (this.userService.isAdmin || this.userService.isReferee) {
+    //   this.router.navigate(['/competitor-zone', { outlets: { 'outlet': ['referee-zone'] } }])
 
-    } else if (this.userService.isWolo) {
-      this.router.navigate(['/competitor-zone', { outlets: { 'outlet': ['counting-visitors'] } }])
+    // } else if (this.userService.isWolo) {
+    //   this.router.navigate(['/competitor-zone', { outlets: { 'outlet': ['counting-visitors'] } }])
 
-    }
+    // }
 
   }
 
