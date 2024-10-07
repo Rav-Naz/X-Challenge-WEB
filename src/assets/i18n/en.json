@@ -51,7 +51,8 @@
             },
             "important-choose": "!!! IMPORTANT !!! Survey for players",
             "next_edition": "Work on the next edition of the competition is already underway. More information soon.",
-            "free": "Admission and participation are free!"
+            "free": "Admission and participation are free!",
+            "app-rules": "Event Rules and Consents"
         },
         "event-program": {
             "eventsList": [

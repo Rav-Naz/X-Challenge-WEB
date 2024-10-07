@@ -107,6 +107,8 @@
           {{'home.event-info.covid.3' | translate}} -->
         </label>
         <a *ngIf="isRegisterOpen" href="/register">{{'competitor-zone.login.register' | translate}}</a>
+        <!-- <h1 href="/app-rules">{{'menu.app-rules' | translate}}</h1> -->
+        <a *ngIf="isRegisterOpen" href="/app-rules">{{'home.event-info.app-rules' | translate}}</a>
         <a *ngIf="isLessThanWeek" href="/timetable">{{'menu.timetable' | translate}}</a>
         <!-- <ng-container *ngIf="!timeIsUp">
             <a class="event-info-choose" href="https://forms.office.com/r/6aN4DYgAZ4" target="_blank">{{'home.event-info.important-choose' | translate}}<i class="las la-external-link-alt"></i></a>
