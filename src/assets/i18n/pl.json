@@ -51,7 +51,8 @@
             "open": "Rejestracja jest jeszcze otwarta!",
             "important-choose": "!!! WAŻNE !!! Ankieta dla zawodników",
             "next_edition": "Prace nad kolejną edycją zawodów już trwają. Więcej informacji wkrótce.",
-            "free": "Wstęp oraz udział jest bezpłatny!"
+            "free": "Wstęp oraz udział jest bezpłatny!",
+            "app-rules": "Regulamin wydarzenia i zgody"
         },
         "event-program": {
             "eventsList": [
