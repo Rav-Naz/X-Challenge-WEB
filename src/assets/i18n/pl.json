@@ -196,8 +196,8 @@
             "question": "Chcesz zostać Partnerem? Skontaktuj się z nami pod adresem robo@kneiti.prz.edu.pl",
             "patreonList": [
                 { "id": 1, "patreonCategory": 0, "description": "Pratt & Whitney", "image": "../../assets/logaKolor/pw_logo_black.png", "linkToSite": "https://pwrze.com/" },
-                { "id": 2, "patreonCategory": 0, "description": "Rzeszów Stolica Innowacji", "image": "../../assets/logaKolor/logo_rz_pl.jpg", "linkToSite": "https://www.erzeszow.pl/" },
-
+                
+                { "id": 2, "patreonCategory": 1, "description": "Rzeszów Stolica Innowacji", "image": "../../assets/logaKolor/logo_rz_pl.jpg", "linkToSite": "https://www.erzeszow.pl/" },
                 { "id": 3, "patreonCategory": 1, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/logaKolor/ale_kolor.png", "linkToSite": "https://www.al-enterprise.com/" },
                 { "id": 4, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/logaKolor/kronospan.jpg", "linkToSite": "https://kronosfera.pl/" },
 
@@ -206,13 +206,13 @@
                 { "id": 7, "patreonCategory": 2, "description": "infoSoftware", "image": "../../assets/logaKolor/logo_is_kolor.png", "linkToSite": "https://infosoftware.pl/" },
                 { "id": 8, "patreonCategory": 2, "description": "MTU Aero Engines Polska", "image": "../../assets/logaKolor/mtu_kolor.jpg", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
                 { "id": 9, "patreonCategory": 2, "description": "Rzeszowskie Centrum Technologii 3D", "image": "../../assets/logaKolor/rcd_kolor.png", "linkToSite": "https://perfectsolution.com.pl/" },
-                { "id": 20, "patreonCategory": 5, "description": "Forbot", "image": "../../assets/logaKolor/forbot_kolor.png", "linkToSite": "https://forbot.pl/blog/" }
+
+                { "id": 20, "patreonCategory": 4, "description": "Forbot", "image": "../../assets/logaKolor/forbot_kolor.png", "linkToSite": "https://forbot.pl/blog/" }
             ],
             "tiers": [
                 "Partner Strategiczny",
                 "Partner Główny",
                 "Partner",
-                "Partner Akademicki",
                 "Patronat Honorowy",
                 "Patronat Medialny"
             ]
