@@ -210,7 +210,7 @@
                 { "id": 34, "patreonCategory": 3, "description": "Elektro-Lift", "image": "../../assets/logaKolor/elektroliftpng.png", "linkToSite": "https://www.windy.rzeszow.pl" },
                 { "id": 35, "patreonCategory": 3, "description": "Fibrain", "image": "../../assets/logaKolor/logofibrain.jpg", "linkToSite": "https://fibrain.pl" },
                 { "id": 36, "patreonCategory": 3, "description": "Edu4Industry", "image": "../../assets/logaKolor/edu4industry.jpg", "linkToSite": "https://edu4industry.com/" },
-                { "id": 37, "patreonCategory": 3, "description": "Podkarpackie Centrum Nauki", "image": "../../assets/logaKolor/logoPCN.jpg", "linkToSite": "https://pcn.org.pl/" },
+                { "id": 37, "patreonCategory": 3, "description": "Podkarpackie Centrum Nauki", "image": "../../assets/logaKolor/logoPCN.png", "linkToSite": "https://pcn.org.pl/" },
                 { "id": 38, "patreonCategory": 3, "description": "Laboratorium Rozwiązań", "image": "../../assets/logaKolor/laboratorium.png", "linkToSite": "http://www.laboratoriumrozwiazan.pl" },
                 { "id": 39, "patreonCategory": 3, "description": "CDA", "image": "../../assets/logaKolor/cda.jpg", "linkToSite": "https://www.cda.pl" },
 
