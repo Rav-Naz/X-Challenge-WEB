@@ -197,21 +197,41 @@
             "patreonList": [
                 { "id": 1, "patreonCategory": 0, "description": "Pratt & Whitney", "image": "../../assets/logaKolor/pw_logo_black.png", "linkToSite": "https://pwrze.com/" },
                 
-                { "id": 2, "patreonCategory": 1, "description": "Rzeszów Stolica Innowacji", "image": "../../assets/logaKolor/logo_rz_pl.jpg", "linkToSite": "https://www.erzeszow.pl/" },
-                { "id": 3, "patreonCategory": 1, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/logaKolor/ale_kolor.png", "linkToSite": "https://www.al-enterprise.com/" },
-                { "id": 4, "patreonCategory": 1, "description": "Kronospan", "image": "../../assets/logaKolor/kronospan.jpg", "linkToSite": "https://kronosfera.pl/" },
+                { "id": 10, "patreonCategory": 1, "description": "Rzeszów Stolica Innowacji", "image": "../../assets/logaKolor/logo_rz_pl.jpg", "linkToSite": "https://www.erzeszow.pl/" },
+                { "id": 11, "patreonCategory": 1, "description": "Województwo Podkarpackie", "image": "../../assets/logaKolor/podkarpackie.jpg", "linkToSite": "https://podkarpackie.pl/" },
+                
+                { "id": 20, "patreonCategory": 2, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/logaKolor/ale_kolor.png", "linkToSite": "https://www.al-enterprise.com/" },
+                { "id": 21, "patreonCategory": 2, "description": "Kronospan", "image": "../../assets/logaKolor/kronospan.jpg", "linkToSite": "https://kronosfera.pl/" },
 
-                { "id": 5, "patreonCategory": 2, "description": "Beckhoff", "image": "../../assets/logaKolor/beckhoff_kolor.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/" },
-                { "id": 6, "patreonCategory": 2, "description": "Hobbistycznie.pl", "image": "../../assets/logaKolor/hobbistycznie_czarne.png", "linkToSite": "https://www.hobbistycznie.pl/" },
-                { "id": 7, "patreonCategory": 2, "description": "infoSoftware", "image": "../../assets/logaKolor/logo_is_kolor.png", "linkToSite": "https://infosoftware.pl/" },
-                { "id": 8, "patreonCategory": 2, "description": "MTU Aero Engines Polska", "image": "../../assets/logaKolor/mtu_kolor.jpg", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
-                { "id": 9, "patreonCategory": 2, "description": "Rzeszowskie Centrum Technologii 3D", "image": "../../assets/logaKolor/rcd_kolor.png", "linkToSite": "https://perfectsolution.com.pl/" },
+                { "id": 30, "patreonCategory": 3, "description": "MTU Aero Engines Polska", "image": "../../assets/logaKolor/mtu_kolor.jpg", "linkToSite": "https://www.mtu.de/about-us/mtu-worldwide/mtu-aero-engines-polska/website-polska/" },
+                { "id": 31, "patreonCategory": 3, "description": "infoSoftware", "image": "../../assets/logaKolor/logo_is_kolor.png", "linkToSite": "https://infosoftware.pl/" },
+                { "id": 32, "patreonCategory": 3, "description": "Beckhoff", "image": "../../assets/logaKolor/beckhoff_kolor.jpg", "linkToSite": "https://www.beckhoff.com/pl-pl/" },
+                { "id": 33, "patreonCategory": 3, "description": "Hobbistycznie.pl", "image": "../../assets/logaKolor/hobbistycznie_czarne.png", "linkToSite": "https://www.hobbistycznie.pl/" },
+                { "id": 33, "patreonCategory": 3, "description": "Elektro-Lift", "image": "../../assets/logaKolor/elektroliftpng.png", "linkToSite": "https://www.windy.rzeszow.pl" },
+                { "id": 33, "patreonCategory": 3, "description": "Fibrain", "image": "../../assets/logaKolor/logofibrain.jpg", "linkToSite": "https://fibrain.pl" },
+                { "id": 33, "patreonCategory": 3, "description": "Edu4Industry", "image": "../../assets/logaKolor/edu4industry.jpg", "linkToSite": "https://edu4industry.com/" },
+                { "id": 33, "patreonCategory": 3, "description": "Podkarpackie Centrum Nauki", "image": "../../assets/logaKolor/logoPCN.jpg", "linkToSite": "https://pcn.org.pl/" },
+                { "id": 33, "patreonCategory": 3, "description": "Laboratorium Rozwiązań", "image": "../../assets/logaKolor/laboratorium.png", "linkToSite": "http://www.laboratoriumrozwiazan.pl" },
 
-                { "id": 20, "patreonCategory": 4, "description": "Forbot", "image": "../../assets/logaKolor/forbot_kolor.png", "linkToSite": "https://forbot.pl/blog/" }
+                { "id": 40, "patreonCategory": 4, "description": "Minister Nauki", "image": "../../assets/logaKolor/mniswPL.png", "linkToSite": "https://www.gov.pl/web/nauka" },
+                { "id": 41, "patreonCategory": 4, "description": "POLSA", "image": "../../assets/logaKolor/blackPolsa.png", "linkToSite": "https://polsa.gov.pl/" },
+                { "id": 42, "patreonCategory": 4, "description": "Polish Space Professionals Association", "image": "../../assets/logaKolor/pspa.png", "linkToSite": "https://pspa.pl" },
+                { "id": 43, "patreonCategory": 4, "description": "Wojewoda Podkarpacki", "image": "../../assets/logaKolor/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl" },
+                { "id": 44, "patreonCategory": 4, "description": "Marszałek Województwa Podkarpackiego", "image": "../../assets/logaKolor/marszalek.png", "linkToSite": "https://podkarpackie.pl/" },
+                { "id": 45, "patreonCategory": 4, "description": "Prezydent Miasta Rzeszowa", "image": "../../assets/logaKolor/herbRzeszowa.png", "linkToSite": "https://www.erzeszow.pl" },
+                { "id": 46, "patreonCategory": 4, "description": "Podkarpacka Kurator Oświaty", "image": "../../assets/logaKolor/pko.png", "linkToSite": "https://www.ko.rzeszow.pl" },
+
+                { "id": 50, "patreonCategory": 5, "description": "Botland", "image": "../../assets/logaKolor/botland.png", "linkToSite": "https://botland.com.pl" },
+                { "id": 50, "patreonCategory": 5, "description": "Forbot", "image": "../../assets/logaKolor/forbot_kolor.png", "linkToSite": "https://forbot.pl/blog/" },
+                { "id": 50, "patreonCategory": 5, "description": "Gospodarka Podkarpacka", "image": "../../assets/logaKolor/gospodarka.png", "linkToSite": "https://gospodarkapodkarpacka.pl" },
+                { "id": 50, "patreonCategory": 5, "description": "Halo Rzeszów", "image": "../../assets/logaKolor/halo.png", "linkToSite": "https://www.halorzeszow.pl" },
+                { "id": 50, "patreonCategory": 5, "description": "Kurier Rzeszowski", "image": "../../assets/logaKolor/kurier.png", "linkToSite": "https://kurierrzeszowski.pl" },
+                { "id": 50, "patreonCategory": 5, "description": "Zrobotyzowany.pl", "image": "../../assets/logaKolor/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl" }
             ],
             "tiers": [
                 "Partner Strategiczny",
                 "Partner Główny",
+                "Partner Wspierający",
                 "Partner",
                 "Patronat Honorowy",
                 "Patronat Medialny"
