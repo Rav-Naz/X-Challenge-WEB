@@ -52,7 +52,6 @@ export class CompetitorsComponent implements OnInit {
         this.categories = JSON.parse(JSON.stringify(val[0]!));
         this.allCompetitors?.forEach((user) => {
           if (user.roboty_json) {
-            console.log(user.roboty_json)
             user.roboty = JSON.parse(user.roboty_json);
             if (user.roboty) {
               let user_kategorie: Array<number> = []
