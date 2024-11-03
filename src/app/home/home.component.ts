@@ -438,10 +438,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   get registerPercentageCompletion() {
+    if (this.registerInfo == null) return false;
     return this.registerInfo != null ? Math.ceil((this.registerInfo.aktualnie / this.registerInfo.limitOsob) * 100) : null
   }
 
   get isRegisterOpen() {
+    if (this.registerInfo == null) return false;
     return this.registerInfo.czyRejestracjaOtwarta == 1;
   }
 
