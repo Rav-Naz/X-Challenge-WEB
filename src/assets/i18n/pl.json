@@ -214,7 +214,7 @@
                 { "id": 38, "patreonCategory": 3, "description": "Laboratorium Rozwiązań", "image": "../../assets/logaKolor/laboratorium.png", "linkToSite": "http://www.laboratoriumrozwiazan.pl" },
                 { "id": 39, "patreonCategory": 3, "description": "CDA", "image": "../../assets/logaKolor/cda.jpg", "linkToSite": "https://www.cda.pl" },
 
-                { "id": 40, "patreonCategory": 4, "description": "Minister Nauki", "image": "../../assets/logaKolor/mniswPL.png", "linkToSite": "https://www.gov.pl/web/nauka" },
+                { "id": 40, "patreonCategory": 4, "description": "Minister Nauki", "image": "../../assets/logaKolor/mniswPLmain.png", "linkToSite": "https://www.gov.pl/web/nauka" },
                 { "id": 41, "patreonCategory": 4, "description": "POLSA", "image": "../../assets/logaKolor/blackPolsa.png", "linkToSite": "https://polsa.gov.pl/" },
                 { "id": 42, "patreonCategory": 4, "description": "Polish Space Professionals Association", "image": "../../assets/logaKolor/pspa.png", "linkToSite": "https://pspa.pl" },
                 { "id": 43, "patreonCategory": 4, "description": "Wojewoda Podkarpacki", "image": "../../assets/logaKolor/logo_woj_pod.jpg", "linkToSite": "https://rzeszow.uw.gov.pl" },
@@ -223,11 +223,17 @@
                 { "id": 46, "patreonCategory": 4, "description": "Podkarpacka Kurator Oświaty", "image": "../../assets/logaKolor/pko.png", "linkToSite": "https://www.ko.rzeszow.pl" },
 
                 { "id": 50, "patreonCategory": 5, "description": "Botland", "image": "../../assets/logaKolor/botland.png", "linkToSite": "https://botland.com.pl" },
-                { "id": 51, "patreonCategory": 5, "description": "Forbot", "image": "../../assets/logaKolor/forbot_kolor.png", "linkToSite": "https://forbot.pl/blog/" },
-                { "id": 52, "patreonCategory": 5, "description": "Gospodarka Podkarpacka", "image": "../../assets/logaKolor/gospodarka.png", "linkToSite": "https://gospodarkapodkarpacka.pl" },
-                { "id": 53, "patreonCategory": 5, "description": "Halo Rzeszów", "image": "../../assets/logaKolor/halo.png", "linkToSite": "https://www.halorzeszow.pl" },
-                { "id": 54, "patreonCategory": 5, "description": "Kurier Rzeszowski", "image": "../../assets/logaKolor/kurier.png", "linkToSite": "https://kurierrzeszowski.pl" },
-                { "id": 55, "patreonCategory": 5, "description": "Zrobotyzowany.pl", "image": "../../assets/logaKolor/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl" }
+                { "id": 51, "patreonCategory": 5, "description": "Czytaj Rzeszów", "image": "../../assets/logaKolor/czytajPL.jpg", "linkToSite": "https://zrobotyzowany.pl" },
+                { "id": 52, "patreonCategory": 5, "description": "Forbot", "image": "../../assets/logaKolor/forbot_kolor.png", "linkToSite": "https://forbot.pl/blog/" },
+                { "id": 53, "patreonCategory": 5, "description": "Gospodarka Podkarpacka", "image": "../../assets/logaKolor/gospodarka.png", "linkToSite": "https://gospodarkapodkarpacka.pl" },
+                { "id": 54, "patreonCategory": 5, "description": "Halo Rzeszów", "image": "../../assets/logaKolor/halo.png", "linkToSite": "https://www.halorzeszow.pl" },
+                { "id": 55, "patreonCategory": 5, "description": "Kurier Rzeszowski", "image": "../../assets/logaKolor/kurier.png", "linkToSite": "https://kurierrzeszowski.pl" },
+                { "id": 56, "patreonCategory": 5, "description": "Polskie Radio Rzeszów", "image": "../../assets/logaKolor/radioRzeszów.png", "linkToSite": "https://radio.rzeszow.pl" },
+                { "id": 57, "patreonCategory": 5, "description": "Rzeszów News", "image": "../../assets/logaKolor/rzeszownews.png", "linkToSite": "https://rzeszow-news.pl" },
+                { "id": 58, "patreonCategory": 5, "description": "Telewizja Obiektyw", "image": "../../assets/logaKolor/logo-obiektyw.jpg", "linkToSite": "https://www.tvobiektyw.pl" },
+                { "id": 59, "patreonCategory": 5, "description": "TVP 3 Rzeszów", "image": "../../assets/logaKolor/logotvprzeszow.jpg", "linkToSite": "https://rzeszow.tvp.pl" },
+                { "id": 60, "patreonCategory": 5, "description": "Zrobotyzowany.pl", "image": "../../assets/logaKolor/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl" }
+                
             ],
             "tiers": [
                 "Partner Strategiczny",
