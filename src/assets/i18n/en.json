@@ -186,12 +186,13 @@
             },
             "title": "PATRONS",
             "question": "Do you want to become a Partner? Contact us at robo@kneiti.prz.edu.pl",
+            "question-pci": "The Podkarpackie Innovation Center 2029 project, implemented under the European Funds for Podkarpacie for 2021-2027",
             "patreonList": [
                 { "id": 1, "patreonCategory": 0, "description": "Pratt & Whitney", "image": "../../assets/logaKolor/pw_logo_black.png", "linkToSite": "https://pwrze.com/" },
-                
+
                 { "id": 10, "patreonCategory": 1, "description": "Rzeszów Stolica Innowacji", "image": "../../assets/logaKolor/logo_rz_pl.jpg", "linkToSite": "https://www.erzeszow.pl/" },
                 { "id": 11, "patreonCategory": 1, "description": "Województwo Podkarpackie", "image": "../../assets/logaKolor/podkarpackie.jpg", "linkToSite": "https://podkarpackie.pl/" },
-                
+
                 { "id": 20, "patreonCategory": 2, "description": "Alcatel·Lucent Enterprise", "image": "../../assets/logaKolor/ale_kolor.png", "linkToSite": "https://www.al-enterprise.com/" },
                 { "id": 21, "patreonCategory": 2, "description": "Kronospan", "image": "../../assets/logaKolor/kronospan.jpg", "linkToSite": "https://kronosfera.pl/" },
 
@@ -228,11 +229,6 @@
                 { "id": 60, "patreonCategory": 5, "description": "Telewizja Obiektyw", "image": "../../assets/logaKolor/logo-obiektyw.jpg", "linkToSite": "https://www.tvobiektyw.pl" },
                 { "id": 61, "patreonCategory": 5, "description": "TVP 3 Rzeszów", "image": "../../assets/logaKolor/logotvprzeszow.jpg", "linkToSite": "https://rzeszow.tvp.pl" },
                 { "id": 62, "patreonCategory": 5, "description": "Zrobotyzowany.pl", "image": "../../assets/logaKolor/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl" }
-
-
-
-                !!!!!!!!!!!!!!{ "id": 90, "patreonCategory": X, "description": "Projekt Podkarpackie Centrum Innowacji 2029”, realizowany w ramach Funduszy Europejskich dla Podkarpacia na lata 2021-2027", "image": "../../assets/logaKolor/fundusze.png", "linkToSite": "nigdzie nie przechodzi" }
-
             ],
             "tiers": [
                 "Strategic Partner",
