@@ -142,29 +142,37 @@ export class TimetableComponent implements OnInit, OnDestroy {
 
   buildCell(col: number, row: number): TableCell {
     if (col == 0 || col == (this.getColumns!.length - 1)) {
-      if (row == 0) {
-        let cell = new TableCell('Godzina', 'Hour', 0, 0, 0, 0, `background-color: #202020; color: white; font-weight: bold; font-family: 'Goldman'; font-size: 2rem;`)
-        cell.style += this._gridColAndRow(col, row + 1, cell.colSpan, cell.rowSpan, 2);
+      if (row == 0) { // First Row
+        let cell = new TableCell('Godzina', 'Hour', 0, 0, 0, 0, `font-family: 'Goldman'; font-size: 2rem;`);
+        cell.style += this._gridColAndRow(col, row + 1, cell.colSpan, cell.rowSpan, 2, true);
         return cell;
       } else {
         let date = new Date(this.getCurrentTable.godzina_rozpoczecia);
         date.setMinutes(date.getMinutes() + this.getCurrentTable.interwal * (row - 1));
-        let cell = new TableCell(`${date.toLocaleTimeString().substring(0, 5)}`, `${date.toLocaleTimeString().substring(0, 5)}`, 0, 0, 0, 0, `background-color: #202020; color: white; font-weight: bold; font-family: 'Goldman'; font-size: 2rem;`)
-        cell.style += this._gridColAndRow(col, row + 1);
+        let cell = new TableCell(
+          `${date.toLocaleTimeString().substring(0, 5)}`,
+          `${date.toLocaleTimeString().substring(0, 5)}`,
+          0, 0, 0, 0,
+          `font-family: 'Goldman'; font-size: 2rem;`
+        );
+        cell.style += this._gridColAndRow(col, row + 1, undefined, undefined, undefined, false);
         return cell;
       }
     }
-    let znalezione = this.activeTimetableCells?.find(cell => cell.col == col && cell.row == row);
-    if (znalezione) {
-      return znalezione;
+
+    let foundCell = this.activeTimetableCells?.find(cell => cell.col === col && cell.row === row);
+    if (foundCell) {
+      return foundCell;
     }
-    let cell = new TableCell("", "", 0, 0, 0, 0, "")
+
+    let cell = new TableCell("", "", 0, 0, 0, 0, "");
     cell.style += this._gridColAndRow(col, row);
     return cell;
   }
 
-  _gridColAndRow(col: number, row: number, colSpan: number = 0, rowSpan: number = 0, zIndex: number = 1) {
-    return `grid-column-start: ${col + 1}; grid-column-end: ${col + 2 + colSpan}; grid-row-start: ${row}; grid-row-end: ${row + rowSpan}; z-index: ${zIndex}`
+  _gridColAndRow(col: number, row: number, colSpan: number = 0, rowSpan: number = 0, zIndex: number = 1, sticky: boolean = false) {
+    const stickyStyle = sticky ? `position: sticky; top: 0; z-index: 9999;` : '';
+    return `grid-column-start: ${col + 1}; grid-column-end: ${col + 2 + colSpan}; grid-row-start: ${row}; grid-row-end: ${row + rowSpan}; z-index: ${zIndex}; ${stickyStyle}`;
   }
 
   _updateFormCell(cell: TableCell | null) {
@@ -303,6 +311,13 @@ export class TimetableComponent implements OnInit, OnDestroy {
 
   get getRows() {
     return this.timetableValues && this.timetableIndex < this.timetableValues.length ? Array.from({ length: this.getCurrentTable.wiersze }, (v, i) => i) : null
+  }
+
+  get getFirstRow() {
+    return this.getRows != null ? this.getRows[0] : null;
+  }
+  get getFirstRowColumns() {
+    return this.getColumns != null ? this.getColumns[0] : null;
   }
 
   get getColumns() {
