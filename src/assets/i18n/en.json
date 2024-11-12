@@ -186,7 +186,7 @@
             },
             "title": "PATRONS",
             "question": "Do you want to become a Partner? Contact us at robo@kneiti.prz.edu.pl",
-            "question-pci": "The Podkarpackie Innovation Center 2029 project, implemented under the European Funds for Podkarpacie for 2021-2027",
+            "question-pci": "Projekt Podkarpackie Centrum Innowacji 2029, realizowany w ramach Funduszy Europejskich dla Podkarpacia na lata 2021-2027",
             "patreonList": [
                 { "id": 1, "patreonCategory": 0, "description": "Pratt & Whitney", "image": "../../assets/logaKolor/pw_logo_black.png", "linkToSite": "https://pwrze.com/" },
 
@@ -207,6 +207,8 @@
                 { "id": 38, "patreonCategory": 3, "description": "Laboratorium Rozwiązań", "image": "../../assets/logaKolor/laboratorium.png", "linkToSite": "http://www.laboratoriumrozwiazan.pl" },
                 { "id": 39, "patreonCategory": 3, "description": "CDA", "image": "../../assets/logaKolor/cda.jpg", "linkToSite": "https://www.cda.pl" },
                 { "id": 40, "patreonCategory": 3, "description": "Regionalna Strategia Innowacji", "image": "../../assets/logaKolor/rsi.jpg", "linkToSite": "https://rsi.podkarpackie.pl/pl/" },
+                { "id": 41, "patreonCategory": 3, "description": "Program PROJEKTOR", "image": "../../assets/logaKolor/projektor.jpg", "linkToSite": "https://www.projektor.org.pl" },
+                { "id": 42, "patreonCategory": 3, "description": "Zakład Transportu Miejskiego w Rzeszowie", "image": "../../assets/logaKolor/ztmLogoPNG.png", "linkToSite": "https://ztm.rzeszow.pl" },
 
                 { "id": 70, "patreonCategory": 4, "description": "Minister of Science", "image": "../../assets/logaKolor/mniswENGmain.png", "linkToSite": "https://www.gov.pl/web/nauka" },
                 { "id": 71, "patreonCategory": 4, "description": "POLSA", "image": "../../assets/logaKolor/blackENGpolsa.png", "linkToSite": "https://polsa.gov.pl/en/" },
