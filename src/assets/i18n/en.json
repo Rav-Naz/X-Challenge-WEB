@@ -186,7 +186,7 @@
             },
             "title": "PATRONS",
             "question": "Do you want to become a Partner? Contact us at robo@kneiti.prz.edu.pl",
-            "question-pci": "Projekt Podkarpackie Centrum Innowacji 2029, realizowany w ramach Funduszy Europejskich dla Podkarpacia na lata 2021-2027",
+            "question-pci": "The Podkarpackie Innovation Center 2029 project, implemented under the European Funds for Podkarpacie for 2021-2027",
             "patreonList": [
                 { "id": 1, "patreonCategory": 0, "description": "Pratt & Whitney", "image": "../../assets/logaKolor/pw_logo_black.png", "linkToSite": "https://pwrze.com/" },
 
