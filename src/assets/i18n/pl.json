@@ -52,7 +52,8 @@
             "important-choose": "!!! WAŻNE !!! Ankieta dla zawodników",
             "next_edition": "Prace nad kolejną edycją zawodów już trwają. Więcej informacji wkrótce.",
             "free": "Wstęp oraz udział jest bezpłatny!",
-            "app-rules": "Regulamin wydarzenia i zgody"
+            "app-rules": "Regulamin wydarzenia i zgody",
+            "viewers-info": "Informacje dla widzów"
         },
         "event-program": {
             "eventsList": [
