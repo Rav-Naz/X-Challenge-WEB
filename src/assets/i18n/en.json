@@ -52,7 +52,8 @@
             "important-choose": "!!! IMPORTANT !!! Survey for players",
             "next_edition": "Work on the next edition of the competition is already underway. More information soon.",
             "free": "Admission and participation are free!",
-            "app-rules": "Event Rules and Consents"
+            "app-rules": "Event Rules and Consents",
+            "viewers-info": "Viewers Information"
         },
         "event-program": {
             "eventsList": [
@@ -209,6 +210,7 @@
                 { "id": 40, "patreonCategory": 3, "description": "Regionalna Strategia Innowacji", "image": "../../assets/logaKolor/rsi.jpg", "linkToSite": "https://rsi.podkarpackie.pl/pl/" },
                 { "id": 41, "patreonCategory": 3, "description": "Program PROJEKTOR", "image": "../../assets/logaKolor/projektor.jpg", "linkToSite": "https://www.projektor.org.pl" },
                 { "id": 42, "patreonCategory": 3, "description": "Zakład Transportu Miejskiego w Rzeszowie", "image": "../../assets/logaKolor/ztmLogoPNG.png", "linkToSite": "https://ztm.rzeszow.pl" },
+                { "id": 43, "patreonCategory": 3, "description": "Centrum Medyczne MEDYK", "image": "../../assets/logaKolor/medyk.png", "linkToSite": "https://www.medyk.rzeszow.pl" },
 
                 { "id": 70, "patreonCategory": 4, "description": "Minister of Science", "image": "../../assets/logaKolor/mniswENGmain.png", "linkToSite": "https://www.gov.pl/web/nauka" },
                 { "id": 71, "patreonCategory": 4, "description": "POLSA", "image": "../../assets/logaKolor/blackENGpolsa.png", "linkToSite": "https://polsa.gov.pl/en/" },
@@ -230,7 +232,8 @@
                 { "id": 59, "patreonCategory": 5, "description": "Rzeszów News", "image": "../../assets/logaKolor/rzeszownews.png", "linkToSite": "https://rzeszow-news.pl" },
                 { "id": 60, "patreonCategory": 5, "description": "Telewizja Obiektyw", "image": "../../assets/logaKolor/logo-obiektyw.jpg", "linkToSite": "https://www.tvobiektyw.pl" },
                 { "id": 61, "patreonCategory": 5, "description": "TVP 3 Rzeszów", "image": "../../assets/logaKolor/logotvprzeszow.jpg", "linkToSite": "https://rzeszow.tvp.pl" },
-                { "id": 62, "patreonCategory": 5, "description": "Zrobotyzowany.pl", "image": "../../assets/logaKolor/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl" }
+                { "id": 62, "patreonCategory": 3, "description": "Telewizja Studencka Hi5", "image": "../../assets/logaKolor/hi5.png", "linkToSite": "https://www.facebook.com/TVHi5" },
+                { "id": 63, "patreonCategory": 5, "description": "Zrobotyzowany.pl", "image": "../../assets/logaKolor/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl" }
             ],
             "tiers": [
                 "Strategic Partner",
