@@ -22,7 +22,7 @@
     "home": {
         "event-info": {
             "status": {
-                "ended": "Wydarzenie zakończyło się",
+                "ended": "Wydarzenie zakończyło się.\nDziękujemy za udział - zapraszamy za rok!",
                 "live": "Wydarzenie właśnie trwa!",
                 "coming": "Wydarzenie zaczyna się za"
             },
@@ -240,8 +240,15 @@
                 { "id": 59, "patreonCategory": 5, "description": "Rzeszów News", "image": "../../assets/logaKolor/rzeszownews.png", "linkToSite": "https://rzeszow-news.pl" },
                 { "id": 60, "patreonCategory": 5, "description": "Telewizja Obiektyw", "image": "../../assets/logaKolor/logo-obiektyw.jpg", "linkToSite": "https://www.tvobiektyw.pl" },
                 { "id": 61, "patreonCategory": 5, "description": "TVP 3 Rzeszów", "image": "../../assets/logaKolor/logotvprzeszow.jpg", "linkToSite": "https://rzeszow.tvp.pl" },
-                { "id": 62, "patreonCategory": 3, "description": "Telewizja Studencka Hi5", "image": "../../assets/logaKolor/hi5.png", "linkToSite": "https://www.facebook.com/TVHi5" },
-                { "id": 63, "patreonCategory": 5, "description": "Zrobotyzowany.pl", "image": "../../assets/logaKolor/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl" }
+                { "id": 62, "patreonCategory": 5, "description": "Telewizja Studencka Hi5", "image": "../../assets/logaKolor/hi5.png", "linkToSite": "https://www.facebook.com/TVHi5" },
+                { "id": 63, "patreonCategory": 5, "description": "Zrobotyzowany.pl", "image": "../../assets/logaKolor/zrobotyzowany.png", "linkToSite": "https://zrobotyzowany.pl" },
+
+                { "id": 80, "patreonCategory": 6, "description": "Kosmiczna Akademia", "image": "../../assets/logaKolor/akademia.png", "linkToSite": "https://kosmicznaakademia.pl" },
+                { "id": 81, "patreonCategory": 6, "description": "esero", "image": "../../assets/logaKolor/erero.png", "linkToSite": "https://esero.kopernik.org.pl" },
+                { "id": 82, "patreonCategory": 6, "description": "Kraina Twórczości", "image": "../../assets/logaKolor/kraina.png", "linkToSite": "https://www.krainatworczosci.pl" },
+                { "id": 83, "patreonCategory": 6, "description": "Polska Fundacja Fantastyki Naukowej", "image": "../../assets/logaKolor/pffn.png", "linkToSite": "https://pffn.org.pl" },
+                { "id": 84, "patreonCategory": 6, "description": "Space 4 Talents", "image": "../../assets/logaKolor/space4talents.jpg", "linkToSite": "https://www.stalowawola.pl/pl/aktualnosci/space-4-talents-stalowa-wola.html" },
+                { "id": 85, "patreonCategory": 6, "description": "SpaceShip", "image": "../../assets/logaKolor/spaceship.png", "linkToSite": "https://spaceship.edu.pl" }
             ],
             "tiers": [
                 "Partner Strategiczny",
@@ -249,7 +256,8 @@
                 "Partner Wspierający",
                 "Partner",
                 "Patronat Honorowy",
-                "Patronat Medialny"
+                "Patronat Medialny",
+                "Wystawca kosmiczny"
             ]
         },
         "footer": {
