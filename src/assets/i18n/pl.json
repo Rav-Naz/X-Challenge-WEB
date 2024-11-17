@@ -249,8 +249,6 @@
                 { "id": 83, "patreonCategory": 6, "description": "Polska Fundacja Fantastyki Naukowej", "image": "../../assets/logaKolor/pffn.png", "linkToSite": "https://pffn.org.pl" },
                 { "id": 84, "patreonCategory": 6, "description": "Space 4 Talents", "image": "../../assets/logaKolor/space4talents.jpg", "linkToSite": "https://www.stalowawola.pl/pl/aktualnosci/space-4-talents-stalowa-wola.html" },
                 { "id": 85, "patreonCategory": 6, "description": "SpaceShip", "image": "../../assets/logaKolor/spaceship.png", "linkToSite": "https://spaceship.edu.pl" }
-
-
             ],
             "tiers": [
                 "Partner Strategiczny",
