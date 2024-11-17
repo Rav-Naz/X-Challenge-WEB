@@ -22,7 +22,7 @@
     "home": {
         "event-info": {
             "status": {
-                "ended": "Wydarzenie zakończyło się",
+                "ended": "Wydarzenie zakończyło się.\nDziękujemy za udział - zapraszamy za rok!",
                 "live": "Wydarzenie właśnie trwa!",
                 "coming": "Wydarzenie zaczyna się za"
             },

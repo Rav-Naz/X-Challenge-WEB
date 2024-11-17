@@ -22,7 +22,7 @@
     "home": {
         "event-info": {
             "status": {
-                "ended": "Event is ended",
+                "ended": "The event has ended.\nThank you for your participation - see you next year!",
                 "live": "Event is now live!",
                 "coming": "Event starts in"
             },
